@@ -1,0 +1,217 @@
+Following database schema is expected by the scripts.
+
+
+CREATE TABLE `allowedgenres` (
+    `genreid` int(11) NOT NULL AUTO_INCREMENT,
+    `genrename` varchar(50) NOT NULL,
+    `video` tinyint(4) NOT NULL DEFAULT '1',
+    `audio` tinyint(4) NOT NULL DEFAULT '1',
+    `porn` tinyint(4) NOT NULL DEFAULT '0',
+    PRIMARY KEY (`genreid`),
+    UNIQUE KEY `genrename` (`genrename`),
+    KEY `video` (`video`,`audio`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `bots` (
+    `botid` int(11) NOT NULL AUTO_INCREMENT,
+    `botname` varchar(40) NOT NULL,
+    `botowner` varchar(40) DEFAULT NULL,
+    `status` int(1) NOT NULL DEFAULT '1',
+    `info` tinyint(4) NOT NULL DEFAULT '1',
+    `genre` tinyint(4) NOT NULL DEFAULT '1',
+    `nuke` tinyint(4) NOT NULL DEFAULT '1',
+    `delpre` tinyint(4) NOT NULL DEFAULT '1',
+    `nfo` tinyint(4) NOT NULL DEFAULT '1',
+    `url` tinyint(4) NOT NULL DEFAULT '1',
+    `updatetime` tinyint(4) NOT NULL DEFAULT '1',
+    PRIMARY KEY (`botid`),
+    KEY `botname` (`botname`),
+    KEY `botowner` (`botowner`),
+    KEY `info` (`info`,`genre`,`delpre`,`nfo`,`url`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `channels` (
+    `channelid` int(11) NOT NULL AUTO_INCREMENT,
+    `channelname` varchar(30) NOT NULL,
+    `channelrights` varchar(100) NOT NULL,
+    `networkshort` varchar(20) NOT NULL,
+    `networkname` varchar(50) NOT NULL,
+    `info` varchar(250) DEFAULT NULL,
+    `priority` int(11) DEFAULT NULL,
+    `allowednukenets` varchar(255) DEFAULT NULL,
+    `alloweddelprenets` varchar(255) DEFAULT NULL,
+    PRIMARY KEY (`channelid`),
+    KEY `channelname` (`channelname`),
+    KEY `networkname` (`networkname`),
+    KEY `channelrights` (`channelrights`),
+    KEY `networkshort` (`networkshort`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `delpred` (
+    `delpreid` int(11) NOT NULL AUTO_INCREMENT,
+    `releasename` varchar(250) NOT NULL,
+    `section` varchar(50) NOT NULL,
+    `pretime` int(11) NOT NULL,
+    `files` int(11) DEFAULT NULL,
+    `size` varchar(11) DEFAULT NULL,
+    `genre` varchar(50) DEFAULT NULL,
+    `nukereason` varchar(250) DEFAULT NULL,
+    `nukenetid` int(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    `origchannelid` int(11) DEFAULT NULL,
+    `origbotid` int(11) DEFAULT NULL,
+    `deletereason` varchar(250) NOT NULL,
+    `deletetime` int(11) NOT NULL,
+    `nfo` mediumblob,
+    `nfoname` varchar(100) DEFAULT NULL,
+    PRIMARY KEY (`delpreid`),
+    UNIQUE KEY `releasename` (`releasename`),
+    KEY `section` (`section`),
+    KEY `pretime` (`pretime`),
+    KEY `files` (`files`),
+    KEY `size` (`size`),
+    KEY `genre` (`genre`),
+    KEY `nukereason` (`nukereason`),
+    KEY `nukenetid` (`nukenetid`),
+    KEY `channelid` (`channelid`),
+    KEY `botid` (`botid`),
+    KEY `deletereason` (`deletereason`),
+    KEY `deletetime` (`deletetime`),
+    KEY `origchannelid` (`origchannelid`,`origbotid`),
+    KEY `nfoname` (`nfoname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `genres` (
+    `releaseid` int(11) NOT NULL AUTO_INCREMENT,
+    `genreid` int(3) NOT NULL,
+    `genretime` int(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    PRIMARY KEY (`releaseid`),
+    KEY `genre` (`genreid`),
+    KEY `channelid` (`channelid`),
+    KEY `botid` (`botid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `groups` (
+    `groupid` int(11) NOT NULL AUTO_INCREMENT,
+    `groupname` varchar(50) NOT NULL,
+    PRIMARY KEY (`groupid`),
+    UNIQUE KEY `groupname` (`groupname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `infos` (
+    `releaseid` int(11) NOT NULL AUTO_INCREMENT,
+    `files` int(11) NOT NULL,
+    `size` varchar(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    PRIMARY KEY (`releaseid`),
+    KEY `channelid` (`channelid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `nfos` (
+    `releaseid` int(11) NOT NULL AUTO_INCREMENT,
+    `hash` varchar(32) NOT NULL,
+    `nfo` mediumblob NOT NULL,
+    `nfoname` varchar(100) NOT NULL,
+    `time` int(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    `timeout` int(11) DEFAULT NULL,
+    PRIMARY KEY (`releaseid`),
+    KEY `hash` (`hash`),
+    KEY `time` (`time`),
+    KEY `channelid` (`channelid`),
+    KEY `botid` (`botid`),
+    KEY `timeout` (`timeout`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `nukenets` (
+    `nukenetid` int(11) NOT NULL AUTO_INCREMENT,
+    `nukenetname` varchar(30) NOT NULL,
+    `allowedchannels` varchar(250) DEFAULT NULL,
+    `nukestatus` int(1) NOT NULL DEFAULT '1',
+    `delprestatus` int(1) NOT NULL DEFAULT '1',
+    PRIMARY KEY (`nukenetid`),
+    UNIQUE KEY `nukenetname` (`nukenetname`),
+    KEY `status` (`nukestatus`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `nukes` (
+    `nukeid` int(11) NOT NULL AUTO_INCREMENT,
+    `releaseid` int(11) NOT NULL,
+    `nukereason` varchar(250) NOT NULL,
+    `nukenetid` int(11) NOT NULL,
+    `nuketime` int(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    PRIMARY KEY (`nukeid`),
+    KEY `releaseid` (`releaseid`),
+    KEY `nukenetid` (`nukenetid`),
+    KEY `channelid` (`channelid`),
+    KEY `botid` (`botid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `releases` (
+    `releaseid` int(11) NOT NULL AUTO_INCREMENT,
+    `releasename` varchar(250) NOT NULL,
+    `pretime` int(11) NOT NULL,
+    `groupid` int(11) NOT NULL,
+    `sectionid` int(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    `status` int(11) NOT NULL DEFAULT '1',
+    PRIMARY KEY (`releaseid`),
+    UNIQUE KEY `releasename` (`releasename`),
+    KEY `groupid` (`groupid`),
+    KEY `sectionid` (`sectionid`),
+    KEY `channelid` (`channelid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `sections` (
+    `sectionid` int(11) NOT NULL AUTO_INCREMENT,
+    `sectionname` varchar(20) NOT NULL,
+    PRIMARY KEY (`sectionid`),
+    UNIQUE KEY `section` (`sectionname`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `unnukes` (
+    `unnukeid` int(11) NOT NULL AUTO_INCREMENT,
+    `releaseid` int(11) NOT NULL,
+    `unnukereason` varchar(250) NOT NULL,
+    `nukenetid` int(11) NOT NULL,
+    `unnuketime` int(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    PRIMARY KEY (`unnukeid`),
+    KEY `releaseid` (`releaseid`),
+    KEY `unnukereason` (`unnukereason`),
+    KEY `nukenetid` (`nukenetid`),
+    KEY `channelid` (`channelid`),
+    KEY `botid` (`botid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+CREATE TABLE `urls` (
+    `releaseid` int(11) NOT NULL AUTO_INCREMENT,
+    `url` varchar(250) NOT NULL,
+    `urltime` int(11) NOT NULL,
+    `channelid` int(11) NOT NULL,
+    `botid` int(11) NOT NULL,
+    PRIMARY KEY (`releaseid`),
+    KEY `url` (`url`,`channelid`,`botid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
