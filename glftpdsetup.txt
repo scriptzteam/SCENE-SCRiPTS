@@ -1,0 +1,241 @@
+pico /etc/apt/sources.list
+
+deb http://archive.ubuntu.com/ubuntu dapper universe multiverse
+deb-src http://archive.ubuntu.com/ubuntu dapper universe multiverse
+
+apt-get install build-essential
+apt-get install libncurses5-dev zip unzip tcpd
+apt-get install sysv-rc-conf xinetd
+apt-get install tcl8.4 tcl8.4-dev
+apt-get install patch
+apt-get install tcl-tls tcltls tcllib tclcurl
+apt-get install curl openssl libssl-dev
+apt-get install tofrodos
+apt-get install libcurl3-dev libreadline5-dev
+apt-get install libflac8 libflac-dev libogg-dev
+apt-get install subversion
+
+wget http://www.glftpd.com/files/glftpd-LNX_2.01.tgz
+wget http://www.glhelp.org/files/glftpd-LNX_2.01.tgz
+tar xvzf glftpd-LNX_2.01.tgz
+mv glftpd-LNX_2.01 glftpd
+
+wget http://www.glhelp.org/files/glftpd-v2.01-64bits-0.9.8k.tgz
+tar xvzf glftpd-v2.01-64bits-0.9.8k.tgz
+mv glftpd-v2.01-64bits-0.9.8k glftpd
+cd glftpd
+su
+./installgl.sh
+
+TCpd Yes
+
+
+/etc/init.d/xinetd restart
+sysv-rc-conf xinetd on
+
+chmod -R 755 /jail/glftpd/bin
+chmod -R 755 /jail/glftpd/lib
+chmod 777 /jail/glftpd/site/incoming
+chmod 770 /jail
+chmod -R 777 /jail/glftpd/site
+
+echo 'IP *@*'>>/jail/glftpd/ftp-data/users/glftpd
+
+ftp 127.0.0.1 34591
+
+site adduser Islander sImps0ns *@59.*.*.*
+site change Islander flags +147ABCDEFGHI
+site change Islander ratio 0
+site change Islander num_logins 10
+site change Islander max_sim_down 10
+site grpadd SiTE0P
+site grpchange SiTE0P slots 9
+site chgrp Islander SiTE0P
+
+if required {
+pico /etc/hosts.allow
+GLFTPD: ALL
+}
+
+crontab -l
+
+mkdir -m 777 /jail/glftpd/site/incoming/0DAY
+mkdir -m 777 /jail/glftpd/site/incoming/APPS
+mkdir -m 777 /jail/glftpd/site/incoming/DVDR
+mkdir -m 777 /jail/glftpd/site/incoming/FLAC
+mkdir -m 777 /jail/glftpd/site/incoming/GAMES
+mkdir -m 777 /jail/glftpd/site/incoming/MP3
+mkdir -m 777 /jail/glftpd/site/incoming/MVID
+mkdir -m 777 /jail/glftpd/site/incoming/MDVDR
+mkdir -m 777 /jail/glftpd/site/incoming/NDS
+mkdir -m 777 /jail/glftpd/site/incoming/PS3
+mkdir -m 777 /jail/glftpd/site/incoming/PSP
+mkdir -m 777 /jail/glftpd/site/incoming/REQUESTS
+mkdir -m 777 /jail/glftpd/site/incoming/SPEEDTEST
+mkdir -m 777 /jail/glftpd/site/incoming/TV-DVDR
+mkdir -m 777 /jail/glftpd/site/incoming/TV-X264
+mkdir -m 777 /jail/glftpd/site/incoming/TV-XVID
+mkdir -m 777 /jail/glftpd/site/incoming/WII
+mkdir -m 777 /jail/glftpd/site/incoming/X264
+mkdir -m 777 /jail/glftpd/site/incoming/XBOX360
+mkdir -m 777 /jail/glftpd/site/incoming/XVID
+mkdir -m 777 /jail/glftpd/site/incoming/XXX
+
+mkdir -m 777 /jail/glftpd/site/incoming/TV-DVDRIP
+mkdir -m 777 /jail/glftpd/site/incoming/XXX-0DAY
+mkdir -m 777 /jail/glftpd/site/incoming/XXX-X264
+mkdir -m 777 /jail/glftpd/site/incoming/XXX-DVDR
+mkdir -m 777 /jail/glftpd/site/incoming/XXX-IMGSETS
+mkdir -m 777 /jail/glftpd/site/incoming/ARCHIVE
+mkdir -m 777 /jail/glftpd/site/incoming/FOREIGN
+
+cp /jail/glsite.conf /jail/glsite.conf.backup
+cp /jail/glsite.conf /jail/glftpd/etc/glsite.conf
+rm /jail/glsite.conf
+ln -s /jail/glftpd/etc/glsite.conf /etc/glsite.conf
+ln -s /jail/glftpd/etc/glsite.conf /jail/glsite.conf
+mv /jail/glftpd/etc/ftpd-dsa.pem /jail/ftpd-dsa.pem
+
+EDIT glsite.conf and put it into /jail/glftpd/etc/glsite.conf
+
+connect to ftp
+
+# Server Error: (SHMGET) Failed (check FAQ in docs for more info)
+To solve this, type: ipcs
+
+     ------ Shared Memory Segments --------
+     key        shmid     owner     perms     bytes     nattch    status      
+     0x00000000 0         nobody    600       46084     11        dest        
+     0x0000dead 2945      root      644       15840     0               locked
+     ------ Semaphore Arrays --------
+     key       semid     owner     perms     nsems     status      
+     ------ Message Queues --------
+     key       msqid     owner     perms     used-bytes  messages    
+     0x00000000 0         root      700       0
+     
+For linux type: ipcrm shm shmid (In this example, shmid is 2945)
+ipcrm shm shmid
+
+site change =iND startup_dir /incoming
+
+cp /root/glftpd/bin/sitenfo.sh /jail/glftpd/bin/sitenfo.sh
+cp /bin/echo /jail/glftpd/bin/echo
+cp /usr/bin/unzip /jail/glftpd/bin/unzip
+
+chmod 755 /jail/glftpd/bin/echo
+chmod 755 /jail/glftpd/bin/unzip
+
+edit /jail/glftpd/bin/sitenfo.sh
+
+chmod 755 /jail/glftpd/bin/sitenfo.sh
+
+dos2unix /jail/glftpd/bin/sitenfo.sh
+
+add to glsite.conf
+site_cmd NFO            EXEC    /bin/sitenfo.sh
+custom-nfo	!8 *
+
+edit /jail/glftpd/bin/locate.sh
+
+dos2unix /jail/glftpd/bin/locate.sh
+
+chmod 666 /jail/glftpd/dev/null
+
+cd /jail/glftpd/bin/sources;gcc -o /jail/glftpd/bin/undupe undupe.c
+ls /jail/glftpd/bin/undupe
+chmod 755 /jail/glftpd/bin/undupe
+
+edit /jail/glftpd/bin/dated.sh
+
+dos2unix /jail/glftpd/bin/dated.sh
+fromdos /jail/glftpd/bin/dated.sh
+
+/jail/glftpd/bin/./dated.sh
+
+crontab -e
+0  0 * * *      /jail/glftpd/bin/dated.sh
+
+exit root user
+
+install eggdrop
+
+telnet 85.159.237.19 6098            MiNT    tQeBA?QTr7
+
+wget http://www.bogus.net/~sicko/gl/files/pzs-ng_v1.0.X_r2563_64bits.tar.gz
+wget http://www.pzs-ng.com/stable/project-zs-ng_r2500-v1.2.0.tar.gz
+
+wget http://files.glftpd.dk/glftpd/project-zs-ng_r2563_64bit.tar.gz
+tar zxvf project-zs-ng_r2563_64bit.tar.gz
+cd pzs-ng_v1.0.X_r2563_64bits
+
+
+svn co http://svn.pzs-ng.com/svn/pzs-ng/trunk/
+mv trunk zipscript-r47
+cd zipscript-r47
+./configure --with-install-path=/jail/glftpd
+
+wget http://www.pzs-ng.com/unstable/project-zs-ng2_r23.tar.gz
+tar zxvf project-zs-ng2_r23.tar.gz
+cd project-zs-ng2_r23
+
+edit zsconfig.h
+
+make
+make install
+
+
+cd /root/zipscript-r41/scripts/libcopy/
+./libcopy.sh /jail/glftpd/
+
+chmod 666 /jail/glftpd/ftp-data/logs/dupelog
+
+ls -l / | grep jail | cut -d ' ' -f 5
+
+pico /etc/group
+
+exit
+exit root user
+
+mkdir -p /home/eggbots/eggdrop/pzs-ng/themes
+cd /root/zipscript-r32/sitebot
+cp -R ngBot.* plugins themes modules /home/eggbots/eggdrop/pzs-ng/
+cp ngBot.conf.dist /home/eggbots/eggdrop/pzs-ng/ngBot.conf
+
+cp /root/zipscript-r32/sitebot/extra/*.sh /jail/glftpd/bin
+cp /root/zipscript-r32/sitebot/extra/top.tcl /home/eggbots/eggdrop/scripts
+
+chown -R eggbots:eggbots /home/eggbots
+
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/0DAY >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/MP3 >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/APPS >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/DVDR >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FLAC >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/GAMES >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/MVID >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/NDS >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/PS3 >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/PSP >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/TV-DVDR >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/TV-X264 >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/TV-XVID >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/WII >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/X264 >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/XBOX360 >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/XVID >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/XXX >/dev/null 2>&1
+
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/TV-DVDRIP >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FOREIGN/DVDR >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FOREIGN/TV-DVDR >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FOREIGN/TV-DVDRIP >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FOREIGN/TV-X264 >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FOREIGN/TV-XVID >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FOREIGN/X264 >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/FOREIGN/XVID >/dev/null 2>&1
+
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/TV-NORDIC >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/XVID-NORDIC >/dev/null 2>&1
+59 23  * * *     /usr/sbin/chroot /jail/glftpd /bin/datacleaner /site/incoming/X264-NORDIC >/dev/null 2>&1
+
+0xDEADBABE

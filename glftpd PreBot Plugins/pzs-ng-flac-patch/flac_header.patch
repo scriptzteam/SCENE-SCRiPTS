@@ -1,0 +1,63 @@
+diff -crB include/multimedia.h include_new/multimedia.h
+*** include/multimedia.h	Mon Apr  9 01:50:43 2007
+--- include_new/multimedia.h	Sun Feb 27 18:35:26 2011
+***************
+*** 3,8 ****
+--- 3,11 ----
+  #ifndef _MULTIMEDIA_H_
+  #define _MULTIMEDIA_H_
+  
++ #include <FLAC/metadata.h>
++ #include <FLAC/format.h>
++ 
+  #define WHITESPACE_STR  " \f\n\r\t\v"
+  
+  char *trim(char *);
+***************
+*** 10,15 ****
+--- 13,19 ----
+  //void avi_video(char *, struct video *);
+  char *get_preset(char[4]);
+  void get_mpeg_audio_info(char *, struct audio *);
++ void get_flac_audio_info(char *, struct audio *);
+  
+  const unsigned char *fourcc(FOURCC);
+  void avierror(const char *);
+diff -crB include/objects.h include_new/objects.h
+*** include/objects.h	Sun Jul 13 13:49:12 2008
+--- include_new/objects.h	Sun Feb 27 18:35:26 2011
+***************
+*** 62,77 ****
+  };
+  
+  struct audio {
+! 	char		id3_artist[31];
+! 	char		id3_title [31];
+! 	char		id3_album [31];
+  	char		id3_year  [5];
+  	char		bitrate   [5];
+  	char		samplingrate[6];
+! 	char           *id3_genre;
+  	char           *layer;
+! 	char           *codec;
+! 	char           *channelmode;
+  	char		vbr_version_string[10];
+  	char		vbr_preset[15];
+  	int		is_vbr;
+--- 62,77 ----
+  };
+  
+  struct audio {
+! 	char		id3_artist[255];
+! 	char		id3_title [255];
+! 	char		id3_album [255];
+  	char		id3_year  [5];
+  	char		bitrate   [5];
+  	char		samplingrate[6];
+! 	char            id3_genre[30];
+  	char           *layer;
+! 	char            codec[10];
+! 	char            *channelmode;
+  	char		vbr_version_string[10];
+  	char		vbr_preset[15];
+  	int		is_vbr;

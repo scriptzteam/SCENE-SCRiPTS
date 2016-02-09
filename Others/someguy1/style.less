@@ -1,0 +1,361 @@
+// Clearize w/ adapted CSS Reset by Eric Meyer
+html, body { margin: 0; padding: 0; }
+h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, img, q, s, samp, small, strike, strong, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, legend, button, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; font-weight: normal; font-style: normal; font-size: 100%; line-height: 1; font-family: inherit; text-align: left; }
+table { border-collapse: collapse; border-spacing: 0; }
+ol, ul { list-style: none; }
+q:before, q:after, blockquote:before, blockquote:after { content: ""; }
+
+// Bootstrap it!
+@import "bootstrap.less";
+
+// Nice bod
+html, body {
+  background-color: darken(saturate(@purple, 5), 10);
+}
+body {
+  background-attachment: fixed;
+  #gradient > .vertical(darken(saturate(@purple, 5), 10), @blue);
+  padding: 60px 0;
+  color: #fff;
+  text-rendering: optimizeLegibility;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+  .box-shadow(inset 0 50px 200px rgba(0,0,0,.2));
+}
+body, p, li {
+  #font > .sans-serif(normal,15px,20px);
+}
+
+// Bangin' links
+@link-color: #fff;
+a, a:visited {
+  font-weight: bold;
+  color: @link-color;
+  text-decoration: none;
+  .transition(all linear .2s);
+  &:hover {
+    color: @link-color;
+    text-decoration: underline;
+    text-shadow: 0 0 10px rgba(255,255,255,.75);
+  }
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+  margin-bottom: 6px;
+}
+h4 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+p {
+  margin-bottom: 20px;
+}
+ol, ul {
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+ol {
+  list-style: decimal;
+}
+ul {
+  list-style: disc;
+  li a {
+    font-weight: normal;
+  }
+}
+
+// Code!
+code, pre {
+  #gradient > .vertical(rgba(0,0,0,.15), rgba(0,0,0,0));
+  background-color: rgba(0,0,0,.3);
+  #font > .monospace();
+  text-shadow: 0 1px 1px rgba(0,0,0,.25);
+  @shadow: inset 0 1px 3px rgba(0,0,0,.25), 0 1px 0 rgba(255,255,255,.25);
+  .box-shadow(@shadow);
+}
+code {
+  padding: 3px 6px;
+  .border-radius(3px);
+}
+pre {
+  margin: 20px 0;
+  padding: 20px;
+  color: #fff;
+  .border-radius(6px);
+  white-space: pre-wrap;
+}
+
+// Scaffolding
+header,
+section,
+footer {
+  width: 970px;
+  margin: 0 auto;
+  display: block;
+}
+header,
+section {
+  padding-bottom: 40px;
+  margin-bottom: 50px;
+  @shadow: inset 0 -1px 0 rgba(0,0,0,.1), 0 1px 0 rgba(255,255,255,.1);
+  .box-shadow(@shadow);
+}
+header {
+  h2 {
+    font-weight: 200;
+    line-height: 35px;
+  }
+  p {
+    float: right;
+    margin: 15px 0 0;
+  }
+}
+footer {
+  text-shadow: 0 1px 1px rgba(0,0,0,.2);
+  p {
+    text-align: center;
+    margin-bottom: 0;
+    font-size: 13px;
+    span {
+      opacity: .5;
+    }
+  }
+}
+
+// Buttons
+input.button, a.button {
+  .button();
+  &.purple {
+    .button(@purple,#fff,0 -1px 1px rgba(0,0,0,.4));
+  }
+}
+
+// Grid example
+@gridColumns: 7;
+@gridColumnWidth: 100px;
+@gridGutterWidth: 45px;
+div.grid {
+  .container();
+  div.span1 { .columns(1); }
+  div.span2 { .columns(2); }
+  div.span3 { .columns(3); }
+  div.span4 { .columns(4); }
+  div.span5 { .columns(5); }
+  &.show-grid {
+    #translucent > .background(@black,.25);
+    height: 200px;
+    margin-bottom: 20px;
+    div {
+      #translucent > .background(@black,.25);
+      height: 200px;
+      text-align: center;
+      #font > .sans-serif(normal,12px,200px);
+    }
+  }
+}
+
+// Flexbox example
+div.flexbox {
+  #flexbox > .display-box;
+  #flexbox > .box-pack(center);
+  div {
+    margin: 5px;
+    #translucent > .background(@black,.25);
+    .square(50px);
+  }
+  div.box2 {
+    #flexbox > .box-flex(1);
+  }
+}
+
+/*
+ * Tables.less
+ * Tables for, you guessed it, tabular data
+ * ---------------------------------------- */
+
+
+// BASELINE STYLES
+// ---------------
+
+table {
+  width: 100%;
+  margin-bottom: @baseline;
+  padding: 0;
+  font-size: @basefont;
+  border-collapse: collapse;
+  th,
+  td {
+    padding: 10px 10px 9px;
+    line-height: @baseline;
+    text-align: left;
+  }
+  th {
+    padding-top: 9px;
+    font-weight: bold;
+    vertical-align: middle;
+  }
+  td {
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+  }
+  // When scoped to row, fix th in tbody
+  tbody th {
+    border-top: 1px solid #ddd;
+    vertical-align: top;
+  }
+}
+
+
+// CONDENSED VERSION
+// -----------------
+.condensed-table {
+  th,
+  td {
+    padding: 5px 5px 4px;
+  }
+}
+
+
+// BORDERED VERSION
+// ----------------
+
+.bordered-table {
+  border: 1px solid #ddd;
+  border-collapse: separate; // Done so we can round those corners!
+  *border-collapse: collapse; /* IE7, collapse table to remove spacing */
+  .border-radius(4px);
+  th + th,
+  td + td,
+  th + td {
+    border-left: 1px solid #ddd;
+  }
+  thead tr:first-child th:first-child,
+  tbody tr:first-child td:first-child {
+    .border-radius(4px 0 0 0);
+  }
+  thead tr:first-child th:last-child,
+  tbody tr:first-child td:last-child {
+    .border-radius(0 4px 0 0);
+  }
+  tbody tr:last-child td:first-child {
+    .border-radius(0 0 0 4px);
+  }
+  tbody tr:last-child td:last-child {
+    .border-radius(0 0 4px 0);
+  }
+}
+
+
+// TABLE CELL SIZES
+// ----------------
+
+// This is a duplication of the main grid .columns() mixin, but subtracts 20px to account for input padding and border
+.tableColumns(@columnSpan: 1) {
+  width: ((@gridColumnWidth - 20) * @columnSpan) + ((@gridColumnWidth - 20) * (@columnSpan - 1));
+}
+table {
+  // Default columns
+  .span1     { .tableColumns(1); }
+  .span2     { .tableColumns(2); }
+  .span3     { .tableColumns(3); }
+  .span4     { .tableColumns(4); }
+  .span5     { .tableColumns(5); }
+  .span6     { .tableColumns(6); }
+  .span7     { .tableColumns(7); }
+  .span8     { .tableColumns(8); }
+}
+
+
+// ZEBRA-STRIPING
+// --------------
+
+// Default zebra-stripe styles (alternating gray and transparent backgrounds)
+.zebra-striped {
+  tbody {
+    tr:nth-child(odd) td,
+    tr:nth-child(odd) th {
+      background-color: @gray;
+    }
+    tr:hover td,
+    tr:hover th {
+      background-color: @grayLight;
+    }
+  }
+}
+
+
+// LABELS
+// ------
+
+.label {
+  padding: 1px 3px 2px;
+  font-size: @basefont * .75;
+  font-weight: bold;
+  color: @white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  background-color: @grayLight;
+  .border-radius(3px);
+  text-shadow: none;
+  &.important { background-color: #c43c35; }
+  &.warning { background-color: @orange; }
+  &.success { background-color: @green; }
+  &.notice { background-color: lighten(@blue, 25%); }
+}
+
+  // Search Form
+  form {
+    margin: 5px 0 0 0;
+    .opacity(100);
+  }
+
+  input {
+    background-color: #444;
+    background-color: rgba(255,255,255,.3);
+    #font > .sans-serif(13px, normal, 1);
+    padding: 4px 9px;
+    color: @white;
+    color: rgba(255,255,255,.75);
+    border: 1px solid #111;
+    .border-radius(4px);
+    @shadow: inset 0 1px 2px rgba(0,0,0,.1), 0 1px 0px rgba(255,255,255,.25);
+    .box-shadow(@shadow);
+    .transition(none);
+
+    // Placeholder text gets special styles; can't be bundled together though for some reason
+    &:-moz-placeholder {
+      color: @grayLighter;
+    }
+    &::-webkit-input-placeholder {
+      color: @grayLighter;
+    }
+    // Hover states
+    &:hover {
+      background-color: @grayLight;
+      background-color: rgba(255,255,255,.5);
+      color: @white;
+    }
+    // Focus states (we use .focused since IE8 and down doesn't support :focus)
+    &:focus,
+    &.focused {
+      outline: 0;
+      background-color: @white;
+      color: @grayDark;
+      text-shadow: 0 1px 0 @white;
+      border: 0;
+      padding: 5px 10px;
+      .box-shadow(0 0 3px rgba(0,0,0,.15));
+    }
+  }
+

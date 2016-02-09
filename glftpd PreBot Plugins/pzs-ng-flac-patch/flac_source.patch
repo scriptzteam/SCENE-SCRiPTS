@@ -1,0 +1,531 @@
+diff -crB src/Makefile.in src_new/Makefile.in
+*** src/Makefile.in	Sat Mar 22 19:17:58 2008
+--- src_new/Makefile.in	Sun Feb 27 18:19:29 2011
+***************
+*** 5,11 ****
+  using_glftpd=@USING_GLFTPD@
+  
+  CC=@CC@
+! CFLAGS=@CFLAGS@ @STATIC@ @NOFORMAT@ @USING_GLFTPD@ -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE @DEFS@ -I../include/ -I../../ -I../../lib/
+  LDFLAGS=@LDFLAGS@
+  RM=@RM@ -f
+  INSTALL=@INSTALL@
+--- 5,11 ----
+  using_glftpd=@USING_GLFTPD@
+  
+  CC=@CC@
+! CFLAGS=@CFLAGS@ @STATIC@ -lFLAC @NOFORMAT@ @USING_GLFTPD@ -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE @DEFS@ -I../include/ -I../../ -I../../lib/
+  LDFLAGS=@LDFLAGS@
+  RM=@RM@ -f
+  INSTALL=@INSTALL@
+diff -crB src/multimedia.c src_new/multimedia.c
+*** src/multimedia.c	Fri Nov 14 21:37:03 2008
+--- src_new/multimedia.c	Sun Feb 27 18:19:29 2011
+***************
+*** 11,16 ****
+--- 11,19 ----
+  #include "audio.h"
+  #include "video.h"
+  
++ #include <FLAC/metadata.h>
++ #include <FLAC/format.h>
++ 
+  char *genre_s[] = {
+  	"Blues", "Classic Rock", "Country", "Dance",
+  	"Disco", "Funk", "Grunge", "Hip-Hop",
+***************
+*** 245,250 ****
+--- 248,425 ----
+  	return returnval;
+  }
+  
++ /*
++  * Updated     : 30.01.2011 Author      : io
++  *
++  * Description : Reads FLAC header from file and stores info to 'audio'. Hackish.
++  */
++ void
++ get_flac_audio_info (char *file, struct audio *audio)
++ {
++     int fd;
++ 
++     d_log("get_flac_audio_info: starting: %s\n", file);
++ 
++ 
++     fd = open(file, O_RDONLY);
++ 
++     if (fd < 0)
++     {
++ 		d_log("get_flac_audio_info: could not open file '%s': %s\n", file, strerror(errno));
++ 		strcpy(audio->id3_year, "0000");
++ 		strcpy(audio->id3_title, "Unknown");
++ 		strcpy(audio->id3_artist, "Unknown");
++ 		strcpy(audio->id3_album, "Unknown");
++ 		strcpy(audio->id3_genre, genre_s[148]);
++ 
++ 		return;
++ 
++     }
++ 
++     d_log("get_flac_audio_info: opened file for reading\n");
++ 
++     audio->is_vbr = 1;
++     strcpy(audio->codec, "FLAC");
++ 
++ 
++     d_log("get_flac_audio_info: make meta data object\n");
++ 
++     // union that holds all vorbis meta data
++     FLAC__StreamMetadata *temp_meta = FLAC__metadata_object_new(FLAC__METADATA_TYPE_VORBIS_COMMENT);
++ 
++     d_log("get_flac_audio_info: made meta data object\n");
++ 
++     if (FLAC__metadata_get_tags(file, &temp_meta))
++     {
++         d_log("get_flac_auio_info: read metadata for: '%s'\n", file);
++ 	
++ 	d_log("get_flac_auio_info: read metadata for: -- number of comments: %d\n", temp_meta->data.vorbis_comment.num_comments);
++ 	FLAC__uint32 i;
++ 	for (i = 0; i < temp_meta->data.vorbis_comment.num_comments; i++)
++ 	{
++ 		d_log("get_flac_auio_info: for1: -- comments: %s -- length: %d\n", temp_meta->data.vorbis_comment.comments[i].entry, temp_meta->data.vorbis_comment.comments[i].length);
++ 
++ 		char t_field[255];
++ 		char t_args[255];
++ 		char t[255];
++ 		int idx = 0;
++ 		FLAC__uint32 j;
++ 
++ 		for (j = 0; j < temp_meta->data.vorbis_comment.comments[i].length; j++)
++ 		{
++ 			if (temp_meta->data.vorbis_comment.comments[i].entry[j] == '=')
++ 			{
++ 				t[idx] = '\0';
++ 				strcpy(t_field, t);
++ 				idx = 0;
++ 				continue;
++ 			}
++ 			t[idx++] = temp_meta->data.vorbis_comment.comments[i].entry[j];
++ 		}
++ 		t[idx] = '\0';
++ 		strcpy(t_args, t);
++ 
++ 		d_log("get_flac_auio_info: for1: -- field: %s -- args: %s\n", t_field, t_args);
++ 
++                 for (j = 0; j < strlen(t_field); j++)
++ 	                t_field[j] = toupper(t_field[j]);
++ 
++ 
++ 		if (strcmp("ARTIST", t_field) == 0)
++ 		{
++ 			if (t_field != NULL)
++ 				strcpy(audio->id3_artist, t_args);
++ 			else
++ 				strcpy(audio->id3_artist, "EUnknown");
++ 		}
++ 		else if (strcmp("TITLE", t_field) == 0)
++ 		{
++ 			if (t_field != NULL)
++ 				strcpy(audio->id3_title, t_args);
++ 			else
++ 				strcpy(audio->id3_title, "EUnknown");
++ 		}
++ 		else if (strcmp("ALBUM", t_field) == 0)
++ 		{
++ 			if (t_field != NULL)
++ 				strcpy(audio->id3_album, t_args);
++ 			else
++ 				strcpy(audio->id3_album, "EUnknown");
++ 		}
++ 		else if (strcmp("TRACKNUMBER", t_field) == 0)
++ 		{
++ 			// do nothing
++ 		}
++ 		else if (strcmp("DATE", t_field) == 0)
++ 		{
++ 			if (t_field != NULL)
++ 				strcpy(audio->id3_year, t_args);
++ 			else
++ 				strcpy(audio->id3_year, "EUnknown");
++ 		}
++ 		else if (strcmp("GENRE", t_field) == 0)
++ 		{
++ 			if (t_field != NULL)
++ 				strcpy(audio->id3_genre, t_args);
++ 			else
++ 				strcpy(audio->id3_genre, "EUnknown");
++ 		}
++ 		else
++ 		{
++ 			d_log("ERROR: %s -- %s\n", t_field, t_args);
++ 		}
++ 
++ 		t_field[0] = '\0';
++ 		t_args[0] = '\0';
++ 	}
++ 
++ 	d_log("get_flac_audio_info: delete meta object\n");
++ 
++         FLAC__metadata_object_delete(temp_meta);
++ //	close(fd);
++ //	return;
++ 
++ 	d_log("get_flac_audio_info: deleted, create stream info meta object\n");
++     	FLAC__StreamMetadata *temp_meta2 = FLAC__metadata_object_new(FLAC__METADATA_TYPE_STREAMINFO);
++ 
++ 	// now get technical info
++ 
++ 	d_log("get_flac_audio_info: try get streamingo\n");
++ 
++ 	if (FLAC__metadata_get_streaminfo(file, temp_meta2)) 
++ 	{
++ 		d_log("get_flac_audio_info: -- audio info: --- artist: %s album: %s title: %s year: %s genre: %s\n", audio->id3_artist, audio->id3_album, audio->id3_title, audio->id3_title, audio->id3_genre);
++ 		d_log("get_flac_audio_info: --- streaminfo: %d Khz %d channels %d bits per sample %d total samples\n", temp_meta->data.stream_info.sample_rate, temp_meta->data.stream_info.channels, temp_meta->data.stream_info.bits_per_sample, temp_meta->data.stream_info.total_samples);
++ 		sprintf(audio->samplingrate, "%i",  temp_meta->data.stream_info.sample_rate);
++ 		int seconds = (temp_meta->data.stream_info.total_samples / temp_meta->data.stream_info.sample_rate);
++ 		d_log("get_flac_audio_info: duration: %d seconds\n", seconds);
++ 		// get file size
++ 		struct stat st;
++ 		stat(file, &st);
++ 		d_log("get_flac_audio_info: size: %d\n", st.st_size);
++ 		int bitrate = (((st.st_size/seconds) * 8) / 1000);
++ 		d_log("get_flac_audio_info: bitrate: %d\n", bitrate);
++ 		sprintf(audio->bitrate, "%i", bitrate);
++ //		strcpy(audio->channelmode, "Joint Stereo");
++ 
++ 		
++ 	} 
++ 
++ 
++ 	d_log("get_flac_audio_info: end of getting streaminfo\n");
++ 
++         FLAC__metadata_object_delete(temp_meta2);
++         close(fd);
++ 	return;
++     }
++ 
++     d_log("get_flac_audio_info: failed getting meta data\n");
++ 
++     // must be destroyed
++     FLAC__metadata_object_delete(temp_meta);
++     close(fd);
++     return;
++ }
+  
+  /*
+   * Updated     : 01.22.2002 Author      : Dark0n3
+***************
+*** 286,291 ****
+--- 461,468 ----
+  	unsigned char	vbr_minimum_bitrate[1];
+  	unsigned char	vbr_misc[1];
+  
++ 	    d_log("get_mpeg_audio_info: starting: %s\n", f);
++ 
+  	fd = open(f, O_RDONLY);
+  	if (fd < 0)
+  	{
+***************
+*** 294,300 ****
+  		strcpy(audio->id3_title, "Unknown");
+  		strcpy(audio->id3_artist, "Unknown");
+  		strcpy(audio->id3_album, "Unknown");
+! 		audio->id3_genre = genre_s[148];
+  
+  		return;
+  	}
+--- 471,477 ----
+  		strcpy(audio->id3_title, "Unknown");
+  		strcpy(audio->id3_artist, "Unknown");
+  		strcpy(audio->id3_album, "Unknown");
+! 		strcpy(audio->id3_genre, genre_s[148]);
+  
+  		return;
+  	}
+***************
+*** 383,389 ****
+  
+  		sprintf(audio->samplingrate, "%i", samplingrate);
+  		sprintf(audio->bitrate, "%i", bitrate);
+! 		audio->codec = codec_s[version];
+  		audio->layer = layer_s[layer];
+  		audio->channelmode = chanmode_s[channelmode];
+  
+--- 560,566 ----
+  
+  		sprintf(audio->samplingrate, "%i", samplingrate);
+  		sprintf(audio->bitrate, "%i", bitrate);
+! 		strcpy(audio->codec, codec_s[version]);
+  		audio->layer = layer_s[layer];
+  		audio->channelmode = chanmode_s[channelmode];
+  
+***************
+*** 555,561 ****
+  			if (t_genre > 148)
+  				t_genre = 148;
+  
+! 			audio->id3_genre = genre_s[t_genre];
+  			audio->id3_year[4] =
+  				audio->id3_artist[30] =
+  				audio->id3_title[30] =
+--- 732,738 ----
+  			if (t_genre > 148)
+  				t_genre = 148;
+  
+! 			strcpy(audio->id3_genre, genre_s[t_genre]);
+  			audio->id3_year[4] =
+  				audio->id3_artist[30] =
+  				audio->id3_title[30] =
+***************
+*** 564,570 ****
+  	} else {		/* header is broken, shouldnt crc fail? */
+  		strcpy(audio->samplingrate, "0");
+  		strcpy(audio->bitrate, "0");
+! 		audio->codec = codec_s[1];
+  		audio->layer = layer_s[0];
+  		audio->channelmode = chanmode_s[4];
+  	}
+--- 741,747 ----
+  	} else {		/* header is broken, shouldnt crc fail? */
+  		strcpy(audio->samplingrate, "0");
+  		strcpy(audio->bitrate, "0");
+! 		strcpy(audio->codec, codec_s[1]);
+  		audio->layer = layer_s[0];
+  		audio->channelmode = chanmode_s[4];
+  	}
+***************
+*** 574,580 ****
+  		strcpy(audio->id3_title, "Unknown");
+  		strcpy(audio->id3_artist, "Unknown");
+  		strcpy(audio->id3_album, "Unknown");
+! 		audio->id3_genre = genre_s[148];
+  	}
+  	close(fd);
+  
+--- 751,757 ----
+  		strcpy(audio->id3_title, "Unknown");
+  		strcpy(audio->id3_artist, "Unknown");
+  		strcpy(audio->id3_album, "Unknown");
+! 		strcpy(audio->id3_genre, genre_s[148]);
+  	}
+  	close(fd);
+  
+diff -crB src/postdel.c src_new/postdel.c
+*** src/postdel.c	Sat Dec 27 22:28:40 2008
+--- src_new/postdel.c	Sun Feb 27 18:19:29 2011
+***************
+*** 634,640 ****
+  {
+  	if (!(*ext))
+  		return 255;
+! 	if (!strcasecmp(ext, "mp3")) {
+  		g->v.misc.release_type = RTYPE_AUDIO;
+  	}
+  	if (!strcasecmp(ext, "sfv"))
+--- 634,640 ----
+  {
+  	if (!(*ext))
+  		return 255;
+! 	if (!strcasecmp(ext, "mp3") || !strcasecmp(ext, "flac")) {
+  		g->v.misc.release_type = RTYPE_AUDIO;
+  	}
+  	if (!strcasecmp(ext, "sfv"))
+diff -crB src/race-file.c src_new/race-file.c
+*** src/race-file.c	Sun Jan 25 11:56:38 2009
+--- src_new/race-file.c	Sun Feb 27 18:19:29 2011
+***************
+*** 573,580 ****
+  				}
+  #endif
+  
+! 				if (strncasecmp(ptr, "mp3", 4) == 0)
+  					music++;
+  				else if (israr(ptr))
+  					rars++;
+  //				else if (isvideo(ptr))
+--- 573,588 ----
+  				}
+  #endif
+  
+! 				if (!strncasecmp(ptr, "mp3", 4))
+! 				{
+! 					d_log("copysfv: more music\n");
+  					music++;
++ 				}
++ 				if (!strncasecmp(ptr, "flac", 5))
++ 				{
++ 					d_log("copysfv: more music\n");
++ 					music++;
++ 				}
+  				else if (israr(ptr))
+  					rars++;
+  //				else if (isvideo(ptr))
+***************
+*** 593,599 ****
+  			}
+  		}
+  	}
+! 	
+  	if (music > rars) {
+  		if (video > music)
+  			type = (video >= others ? 4 : 2);
+--- 601,607 ----
+  			}
+  		}
+  	}
+! 	d_log("copysfv: music: %d video: %d others: %d\n", music, video, others);
+  	if (music > rars) {
+  		if (video > music)
+  			type = (video >= others ? 4 : 2);
+diff -crB src/zipscript-c.c src_new/zipscript-c.c
+*** src/zipscript-c.c	Thu Nov 20 18:11:03 2008
+--- src_new/zipscript-c.c	Sun Feb 27 18:19:29 2011
+***************
+*** 360,366 ****
+  	g.v.id3_genre[0] = '\0';
+  	g.v.file.unlink[0] = '\0';
+  	g.v.audio.id3_artist[0] = '\0';
+! 	g.v.audio.id3_genre = NULL;
+  	/* Get file extension */
+  
+  	d_log("zipscript-c: Parsing file extension from filename... (%s)\n", argv[1]);
+--- 360,366 ----
+  	g.v.id3_genre[0] = '\0';
+  	g.v.file.unlink[0] = '\0';
+  	g.v.audio.id3_artist[0] = '\0';
+! 	g.v.audio.id3_genre[0] = '\0';
+  	/* Get file extension */
+  
+  	d_log("zipscript-c: Parsing file extension from filename... (%s)\n", argv[1]);
+***************
+*** 466,471 ****
+--- 466,480 ----
+  		strlcpy(g.v.id3_genre, g.v.audio.id3_genre, sizeof(g.v.id3_genre));
+  		d_log("zipscript-c: g.v.id3_artist='%s' - g.v.id3_genre='%s'\n", g.v.id3_artist, g.v.id3_genre);
+  	}
++ 	if (memcmp(fileext, "flac", 5) == 0) {
++         d_log("zipscript-c: Trying to read flac audio header and tags\n");
++         get_flac_audio_info(findfileext(dir, ".flac"), &g.v.audio);
++         strlcpy(g.v.id3_artist, g.v.audio.id3_artist, sizeof(g.v.id3_artist));
++         strlcpy(g.v.id3_genre, g.v.audio.id3_genre, sizeof(g.v.id3_genre));
++         d_log("zipscript-c: g.v.id3_artist='%s' - g.v.id3_genre='%s'\n", g.v.id3_artist, g.v.id3_genre);
++ 		// g.v.misc.release_type = RTYPE_AUDIO;
++     }
++ 
+  	if (strlen(zipscript_header))
+  		printf(zipscript_header);
+  
+***************
+*** 967,978 ****
+  					}
+  				}
+  			} else {
+! 				if (g.v.misc.release_type == RTYPE_AUDIO) {
+! 					d_log("zipscript-c: Reading audio info for completebar\n");
+! 					get_mpeg_audio_info(findfileext(dir, ".mp3"), &g.v.audio);
+! 					strlcpy(g.v.id3_artist, g.v.audio.id3_artist, sizeof(g.v.id3_artist));
+! 					strlcpy(g.v.id3_genre, g.v.audio.id3_genre, sizeof(g.v.id3_genre));
+! 				}
+  			}
+  
+  			if (deny_resume_sfv == TRUE) {
+--- 976,1000 ----
+  					}
+  				}
+  			} else {
+!                                 if (g.v.misc.release_type == RTYPE_AUDIO) {
+!                                         d_log("zipscript-c: Reading audio info for completebar\n");
+!                                         // io mod 30/01/2011
+!                                         const char *temp_dir;
+!                                         temp_dir = findfileext(dir, ".mp3");
+!                                         if (temp_dir != NULL)
+!                                         {
+!                                                 get_mpeg_audio_info(temp_dir, &g.v.audio);
+!                                                 strlcpy(g.v.id3_artist, g.v.audio.id3_artist, sizeof(g.v.id3_artist));
+!                                                 strlcpy(g.v.id3_genre, g.v.audio.id3_genre, sizeof(g.v.id3_genre));
+!                                         }
+!                                         temp_dir = findfileext(dir, ".flac");
+!                                         if (temp_dir != NULL)
+!                                         {
+!                                                 get_flac_audio_info(temp_dir, &g.v.audio);
+!                                                 strlcpy(g.v.id3_artist, g.v.audio.id3_artist, sizeof(g.v.id3_artist));
+!                                                 strlcpy(g.v.id3_genre, g.v.audio.id3_genre, sizeof(g.v.id3_genre));
+!                                         }
+!                                 }
+  			}
+  
+  			if (deny_resume_sfv == TRUE) {
+***************
+*** 1180,1187 ****
+  //				else if (isvideo(fileext))
+  				else if (strcomp(video_types, fileext))
+  					g.v.misc.release_type = RTYPE_VIDEO;	/* AVI/MPEG */
+! 				else if (!memcmp(fileext, "mp3", 4))
+! 					g.v.misc.release_type = RTYPE_AUDIO;	/* MP3 */
+  				else
+  					g.v.misc.release_type = RTYPE_OTHER;	/* OTHER FILE */
+  			}
+--- 1202,1218 ----
+  //				else if (isvideo(fileext))
+  				else if (strcomp(video_types, fileext))
+  					g.v.misc.release_type = RTYPE_VIDEO;	/* AVI/MPEG */
+!                                 else if (!memcmp(fileext, "mp3", 4))
+!                                 {
+!                                         d_log("zipscript-c: Got MP3 File\n");
+!                                         g.v.misc.release_type = RTYPE_AUDIO;    /* MP3 */
+!                                 }
+!                                 else if (memcmp(fileext, "flac", 5) == 0)
+!                                 {
+!                                         d_log("zipscript-c: Got FLAC File\n");
+!                                         g.v.misc.release_type = RTYPE_AUDIO;    /* FLAC - io mod 30/01/2011 */
+!                                 }
+! 
+  				else
+  					g.v.misc.release_type = RTYPE_OTHER;	/* OTHER FILE */
+  			}
+***************
+*** 1205,1211 ****
+  				halfway_msg = CHOOSE(g.v.total.users, audio_halfway, audio_norace_halfway);
+  				newleader_msg = audio_newleader;
+  				d_log("zipscript-c: Trying to read audio header and tags\n");
+! 				get_mpeg_audio_info(g.v.file.name, &g.v.audio);
+  				strlcpy(g.v.id3_artist, g.v.audio.id3_artist, sizeof(g.v.id3_artist));
+  				strlcpy(g.v.id3_genre, g.v.audio.id3_genre, sizeof(g.v.id3_genre));
+  #if ( exclude_non_sfv_dirs )
+--- 1236,1251 ----
+  				halfway_msg = CHOOSE(g.v.total.users, audio_halfway, audio_norace_halfway);
+  				newleader_msg = audio_newleader;
+  				d_log("zipscript-c: Trying to read audio header and tags\n");
+! 				                                // io mod 30/01/2011
+!                                 if (!memcmp(fileext, "mp3", 4))
+!                                 {
+!                                         get_mpeg_audio_info(g.v.file.name, &g.v.audio);
+!                                 }
+!                                 else
+!                                 {
+!                                         get_flac_audio_info(g.v.file.name, &g.v.audio);
+!                                 }
+! 
+  				strlcpy(g.v.id3_artist, g.v.audio.id3_artist, sizeof(g.v.id3_artist));
+  				strlcpy(g.v.id3_genre, g.v.audio.id3_genre, sizeof(g.v.id3_genre));
+  #if ( exclude_non_sfv_dirs )
+diff -crB src/zsfunctions.c src_new/zsfunctions.c
+*** src/zsfunctions.c	Fri Nov 14 22:23:37 2008
+--- src_new/zsfunctions.c	Sun Feb 27 18:19:29 2011
+***************
+*** 106,114 ****
+--- 106,119 ----
+          errno = 0;
+  	rewinddir(dir);
+  	while ((dp = readdir(dir))) {
++ //		d_log("zsfunctions.c: findfileext() - fileext: %s at: %s -- %d\n", fileext, dp->d_name, strcasecmp(dp->d_name + k - 5, fileext));
+  		if ((k = NAMLEN(dp)) < 4)
++ 		{
++ //			d_log("zsfunctions.c: findfileext() - fileext < 5");
+  			continue;
++ 		}
+  		if (strcasecmp(dp->d_name + k - 4, fileext) == 0) {
++ //			d_log("zsfunctions.c: findfileext() - fileext match\n"); 
+  			return dp->d_name;
+  		}
+  	}

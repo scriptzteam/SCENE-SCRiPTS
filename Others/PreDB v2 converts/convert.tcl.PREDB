@@ -1,0 +1,183 @@
+#!/usr/bin/tclsh
+
+if {[llength $argv] != 1} {puts "Invalid arguments passed to script!" ; exit 2}
+
+package require mysqltcl
+
+# Enter in your MySQL connection data
+set mysql_(user) "scenedbaxx"
+set mysql_(password) "Q3wX8GdPV7eKNQpw"
+set mysql_(host) "localhost"
+
+set mysql_(db) "scenestuff"
+
+set db_handle [mysqlconnect -host $mysql_(host) -user $mysql_(user) -password $mysql_(password) -db $mysql_(db)]
+
+# Filter color bold /bla code 
+proc isy:trimcolors { nostring } {
+
+ regsub -all -- {[0-9][0-9],[0-9][0-9]}  $nostring ""   nostring
+ regsub -all -- {[0-9][0-9],[0-9]}       $nostring ""   nostring
+ regsub -all -- {[0-9][0-9]}             $nostring ""   nostring
+ regsub -all -- {[0-9]}                  $nostring ""   nostring
+ regsub -all -- {}                       $nostring ""   nostring
+ regsub -all -- {}                       $nostring ""   nostring
+ regsub -all -- {}                        $nostring ""   nostring
+ regsub -all -- {}                        $nostring ""   nostring
+ regsub -all -- {}                       $nostring ""   nostring
+ regsub -all -- {\002|\003([0-9]{1,2}(,[0-9]{1,2})?)?|\017|\026|\037|\0036|\022} $nostring ""   nostring
+ 
+ return [string trim $nostring]
+ 
+}
+
+proc isy:validrelease { release } {
+
+ set minlen 10
+ set maxlen 256
+ 
+ if {[string length $release] < $minlen}                                 	{return 0}
+ if {[string length $release] > $maxlen}                                 	{return 0}
+ if {![regexp {\-} $release]}                                      		 	{return 0}
+ if {![regexp {\.|\_} $release]}                                      	 	{return 0}
+ if {[regexp {\!|\:|\@|\~|\||\[|\]|\`|\#|\^|\+|\{|\}|\[|\]} $release]}   	{return 0}
+ if {![regexp {\-} $release]}                                            	{return 0}
+ if {[regexp {[\-\.\(\)_]$} $release]}                                   	{return 0}
+ if {![regexp {^[0-9]} $release]}  {
+	if {![regexp -nocase {^[a-z]} $release]}                           		{return 0}
+ }
+ if {[regexp ^[clock format [clock scan today] -format %Y-%m] $release]} 	{return 0}
+ if {[regexp ^[clock format [clock scan today] -format %m%d] $release]}  	{return 0}
+ if {[regexp -all {\(} $release]!=[regexp -all {\)} $release]}           	{return 0}
+ if {[regexp -nocase {p[-\._]?r[-\._]?[e3][-\._]?[7t][-\._]?[e3][-\._]?[s5][-\._]?[t7]|[7t][-\._]?[e3][-\._]?[s5][-\._]?[t7][-\._]?p[-\._]?r[-\._]?[e3][-\._]?|d[o0][-\._]?n[o0]?[t7].*[t7]r[a4]d[e3]|^[t7][-\._]?[e3][-\._]?[s5][-\._]?[t7][-\._]?[a-z0-9]+$} $release]} {return 0}
+ 
+ return 1
+ 
+}
+
+proc isy:validgroup { grp } {
+
+ set minlen 1
+ set maxlen 50
+ 
+ if {[string length $grp] < $minlen}                                 		{return 0}
+ if {[string length $grp] > $maxlen}                                 		{return 0}
+ if {[regexp {\!|\:|\@|\~|\||\[|\]|\`|\#|\.|\^|\+|\{|\}|\[|\]} $grp]}    	{return 0}
+ if {![regexp -nocase {[a-z0-9]} $grp]}                              		{return 0}
+ if {[regexp ^[clock format [clock scan today] -format %Y-%m] $grp]} 		{return 0}
+ if {[regexp ^[clock format [clock scan today] -format %m%d] $grp]}  		{return 0}
+ return 1
+ 
+}
+
+proc isy:getsec_fromrls { release } {
+	
+	set section "PRE"
+	
+	if {[regexp -nocase {[\.\-\_](retail|update|cracked|win(nt|9x|2k|xp|nt2k2003serv|9xnt|9xme|nt2kxp|2kxp|2kxp2k3|all|32|mac|dows)|key(gen|maker)|regged|template|Patch|GAMEGUiDE|unix|(mac)?(osx)?|irix|solaris|freebsd|hpux|linux|archive|multilanguage|beta)[\.\-\_]|^template.+monster+.|\-CORE|\-DIGERATI$|v[0-9.]+|\.(r[1-5]|rc[1-9])[._-]} $release]} { set section "0DAY" }
+	if {[regexp -nocase {[\.\-\_](converter|key(gen|maker)|regged)[\.\-\_]|^template.+monster+.|\-DIGERATI|v[0-9.]+|\.(r[1-5]|rc[1-9])[._-]} $release]} { set section "0DAY" }
+	if {[regexp -nocase {[\.\-\_](pda|i(phone|pad|touch|pod)|palmos|android|blackberry|(win)?(mobile)|wm(2003|2005|5|2006|6|6.5|2007|7)|tablet|symbian|smartphone)[\.\-\_]|\-.+pda$} $release]} { return "PDA" }
+	if {[regexp -nocase {[\-][1-2][0-9][0-9][0-9][\-]} $release]} { set section "MP3" }
+	if {[regexp -nocase {[\.\-\_](PSXPSP|psp|umdrip)[\.\-\_]} $release]} { set section "PSP" }
+	if {[regexp -nocase {\-200[0-9]\-|\-19([6-9][0-9]|xx|9x)\-|\(|\)|\_\-\_|top[0-9]+|\-[0-9]cd\-|vol([._]+)?[0-9]{1,2}|[._-]cdda[._-]} $release] } { set section "MP3" }
+	if {[regexp -nocase {[_-](vinyl|dab|cd(r|g|s|m(2)?)?|abook|dvda|ost|promo|sat|fm|cable|line|bootleg|vls|lp|ep|feat|retail|radio|remix|web)[_-]|^va[-_\.]} $release] } { set section "MP3" }	
+	if {[regexp -nocase {[\.\-\_](trainer|nocd|cheat|manual)[\.\-\_]|\-CHEATERS|\-DARKNeZZ|\-gimpsRus|\-RVL|\-ECU|\-DRUNK|\-TNT|\-.+DOX$} $release]} { set section "DOX" }
+	if {[regexp -nocase {\.(divx|cam|ts|telesync|tc|telecine|xvid|r5|scr|screener|workprint|wp|r4|r3|(dvd|tv|vhs|pdvd)(scr|rip)?)[\.\-\_]} $release]} { set section "XVID" }
+	if {[regexp -nocase {\.(720p|1080i|1080p|[xh]264|blue?ray|brip|brd|b[rd]rip)[\.\-\_]} $release]} { set section "X264" }
+	if {[regexp -nocase {[\.\-\_](cn)?dvd[r9][\.\-\_]} $release]} { set section "DVDR" }
+	if {[regexp -nocase {[\.\-\_]ps2(dvd[59]|cd)?[\.\-\_]} $release]} { set section "PS2" }
+	if {[regexp -nocase {[\.\-\_]xb[o0]x(dvd|rip|cd)?[\.\-\_]} $release]} { set section "XBOX" }
+	if {[regexp -nocase {[\.\-\_]([cms]?vcd|vhs)[\.\-\_]} $release]} { set section "VCD" }
+	if {[regexp -nocase {[\.\-\_]gba[\.\-\_]} $release]} { set section "GBA" }
+	if {[regexp -nocase {[\.\-\_](n?gcn?|gamecube)[\.\-\_]} $release]} { set section "NGC" }
+	if {[regexp -nocase {[\.\_]([SED][0-9]{1,3}[abcd]?|S[0-9]{1,3}[ED][0-9]{1,3}[abcd]?|S[0-9]{1,3}DVD[0-9]{1,3}|S[0-9]{1,3}DIS[CK][0-9]{1,3}|ws|([phs]?[ds]tv|vhs|sat|dvb)(rip)?|hdtv|wwe|TVDVDR|eps|episodes?)[\.\-\_]} $release]} { set section "TV" }
+	if {[regexp -nocase {[\.\_](is[o0]|multilanguage|multilingual|training|lynda|tutors|vtc)[\.\-\_]|\-winbeta$|\-tda$|\-tbe$|\-w3d$|\-PANTHEON$|\-SHooTERS$|\-riSE$|\-DYNAMiCS$|\-.+iso$|\-rhi$|\-restore$|\-BIE|\-HELL|\-YUM|\-SPiRiT|\-ArCADE|\-KOPiE|\-CRBS|\-rG|\-UP2DATE|\-ETH0|\-NoPE|\-EMBRACE} $release]} { set section "APPS" }
+	if {[regexp -nocase {[\.\-\_]wii[\.\-\_]} $release]} { set section "WII" }
+	if {[regexp -nocase {[\.\-\_]ps3[\.\-\_]} $release]} { set section "PS3" }
+	if {[regexp -nocase {[\.\-\_]xb[o0]x36[o0][\.\-\_]} $release]} { set section "XBOX360" }
+	if {[regexp -nocase {[\.\-\_]anim[e3][\.\-\_]} $release]} { set section "ANIME" }
+	if {[regexp -nocase {[\.\-\_]nds[\.\-\_]} $release]} { set section "NDS" }
+	if {[regexp -nocase {[\.\-\_]mdvd[r9]?[\.\-\_]} $release]} { set section "MDVDR" }
+	if {[regexp -nocase {[\.\-\_](bluray\.complete|complete\.bluray)[\.\-\_]} $release]} { set section "BLURAY" }
+	if {[regexp -nocase {[\.\-\_]mbluray[\.\-\_]} $release]} { set section "MBLURAY" }
+	if {[regexp -nocase {[\.\-\_]subs?packs?[\.\-\_]} $release]} { set section "SUBPACK" }
+	if {[regexp -nocase {[\.\-\_]xxx|\-fps$|\-ktr$|\-fugli$|\-yumyum$|\-jiggly$|\-nympho$|\-pr0nstars$|\-pornolation$|\-peepshow$|\-SWE6RUS$|\-teenlovers$|\-JapanX$} $release]} { set section "XXX" }
+	if {[regexp -nocase {[\.\-\_](e|Press)b[o0]{2}k[\.\-\_]} $release]} { set section "EBOOK" }
+	if {[regexp -nocase {[\.\-\_](a|audi[o0])b[o0]{2}k[\.\-\_]} $release]} { set section "AUDIOBOOK" }
+	if {[regexp -nocase {\-postmortem$|\-SKIDROW$|\-SILENTGATE$|\-GRATIS$|\-RELOADED$|\-DEVIANCE$|\-FLT$|\-HATRED$|\-razor1911$|\-HOODLUM$|\-SPHiNX$|\-TECHNiC$|\-RiTUEL$|\-NESSUNO$|\-VITALITY$|\-Unleashed$|\-JFKPC$|\-Micronauts$|\-fasiso$|\-genesis$|\-die$|\-PLEX$|\-alias$|\-PROPHET$|\-Bamboocha$|[\.\-\_](bw|sf|alcohol)?clone(cd|dvd)[\.\-\_]} $release]} { set section "GAMES" }
+	if {[regexp -nocase {[\.\-\_](dvd)?covers[\.\-\_]} $release]} { set section "COVERS" }
+	if {[regexp -nocase {[.\-_](sc[e3]n[e3](n[o0]tic[e3]|ban(n[e3]d)?)|purg[e3]|sc[e3]n[e3]rs|[ui]ns[e3]cur[e3]\.paysit[e3]|p2l|expos[e3]d\.r[e3]nt[e3]d|s[e3]lling\.l[e3][e3]ch|p2p)[.\-_]|\-cl[e3]ansc[e3]n[e3]$|\-spartacus$|\-warning$|\-sc[e3]n[e3]n[o0]tic[e3]$|\-n[o0]tic[e3]$|\-.+n[o0]tic[e3]$} $release]} { set section "SCENENOTiCE" }
+	
+	if { $section == "MP3" } {
+		if {[regexp -nocase {[\.\-\_](divx|mvid|musicvide[o0]|720p|1080i|1080p|[xh]264|mp4|hr|xvid|wmv|mov)[\.\-\_]} $release]} { set section "MVID" }
+		if {[regexp {[\.\-\_]FLAC[\.\-\_]} $release]} { set section "FLAC" }
+	}
+	
+	if { $section == "XXX" } {
+		if {[regexp -nocase {[\.\-\_](b[rd]|dvd|xvid)(rip)?[\.\-\_]} $release]} { set section "XXX" }
+		if {[regexp -nocase {[\.\-\_](dvd[r9]?|NTSC|PAL)[\.\-\_]} $release]} { set section "XXX-DVDR" }
+		if {[regexp -nocase {[\.\-\_](720p|1080i|1080p)[\.\-\_]} $release]} { set section "XXX-X264" }
+		if {[regexp -nocase {[\.\-\_](wmv|mp4|hr|mov|divx)[\.\-\_]} $release]} { set section "XXX-0DAY" }
+		if {[regexp -nocase {[\.\-\_](IMA?G[E3]?S[E3]TS?|IMA?G[E3]?S?|PH[O0]T[O0]S[E3]TS?|PICTUR[E3]S[E3]TS?)[\.\-\_]} $release]} { set section "XXX-IMGSET" }
+	}
+	
+	if { $section == "TV" } { 
+		if {[regexp -nocase {[\.\-\_]([phs]?dtv|vhs|sat|xvid|dvb)(rip)?[\.\-\_]} $release]} { set section "TV-XVID" }
+		if {[regexp -nocase {[\.\-\_]([xh]264|720p|1080i|1080p)[\.\-\_]} $release]} { set section "TV-X264" }
+		if {[regexp -nocase {[\.\-\_]((hd)?dvd|b[rd]|blu[e3]?ray)(rip)[\.\-\_]} $release]} { set section "TV-DVDRIP" }
+		if {[regexp -nocase {[\.\-\_]((S|season)[0-9]{1,3}(DVD|D|DIS[CK])[0-9]{1,3}|(cn)?dvd[r9])[\.\-\_]} $release]} { set section "TV-DVDR" }
+		
+		if { $section == "TV-X264" } { 
+			
+			if {[regexp {[\.\-\_](WS|PDTV|HDTV)[\.\-\_]} $release]} { set section "TV-X264-SD" }
+			if {[regexp -nocase {[\.\-\_](720p|1080i|1080p)[\.\-\_]} $release]} { set section "TV-X264-HD" }
+			if {[regexp -nocase {[\.\-\_]bluray[\.\-\_]} $release]} { set section "TV-HDRIP" }
+		
+		}
+	
+	}
+	
+	return $section
+}
+
+proc isy:dopre { count } {
+	global mysql_ db_handle
+		
+		set query1 [mysqlsel $db_handle "SELECT rlsname,ctime,status,nukereason,files,size FROM predb" -flatlist];
+        
+		if {$query1 != ""} {
+			
+            foreach {rlsname rlstime status nukereason files size} $query1 {
+				
+				set rlsname [string trim [isy:trimcolors $rlsname]]
+				set nukereason [string trim [isy:trimcolors $nukereason]]
+				
+				set grp [string trim [lindex [split $rlsname "-"] end]]
+				
+				set rlsvalid [isy:validrelease $rlsname]
+				set grpvalid [isy:validgroup $grp]
+				set section [isy:getsec_fromrls $rlsname]
+				
+				set nukestatus ""
+				if { $status == "1" } { set nukestatus "Nuked" }
+				set nukereason [string trim $nukereason]
+				
+				if { $rlsvalid == "1" && $grpvalid == "1" } { 
+				
+					set whichtable "newpre"
+				
+				} elseif { $rlsvalid == "0" || $grpvalid == "0" } {
+				
+					set whichtable "newprecrap"
+					
+				}
+				
+				set isdone [mysqlexec $db_handle "INSERT INTO $whichtable ( rlsname,section,unixtime,files,size,grp,nukestatus,nukereason) VALUES ( '[::mysql::escape $rlsname]', '[::mysql::escape $section]', '[::mysql::escape $rlstime]', '[::mysql::escape $files]', '[::mysql::escape $size]', '[::mysql::escape $grp]', '[::mysql::escape $nukestatus]', '[::mysql::escape $nukereason]' ) ON DUPLICATE KEY UPDATE unixtime = IF(VALUES(unixtime) < unixtime, unixtime, VALUES(unixtime)), files = IF(VALUES(files) < files, files, VALUES(files)), size = IF(VALUES(size) < size, size, VALUES(size))"]
+				
+			}
+		}
+}
+
+isy:dopre "100"
+
+exit 0

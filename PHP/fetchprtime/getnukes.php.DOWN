@@ -1,0 +1,18 @@
+<?php
+
+mysql_connect('127.0.0.1', 'scenedbaxx', 'Q3wX8GdPV7eKNQpw');
+mysql_select_db('scenestuff');
+
+
+$query = "SELECT `rlsname`, `nukestatus`, `nukereason`, `nukenet` FROM `newpre` WHERE `nukestatus` != ''";
+$result = mysql_query($query) or die(mysql_error());
+	
+while ($row = mysql_fetch_assoc($result)) {
+
+
+  echo $row['rlsname'].','.$row['nukestatus'].','.$row['nukereason'].','.$row['nukenet'].';';
+
+
+}
+
+?>

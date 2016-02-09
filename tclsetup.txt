@@ -1,0 +1,150 @@
+wget http://heanet.dl.sourceforge.net/sourceforge/tcl/tcl8.5.7-src.tar.gz
+tar xfz tcl8.5.7-src.tar.gz
+cd tcl8.5.7
+cd unix
+
+apt-get install unrar-free imageshack-uploader
+apt-get install tcl8.4 tcl8.4-dev tcllib
+apt-get install build-essential
+apt-get install patch
+apt-get install tcl-tls
+apt-get install tcltls
+apt-get install tcllib tclcurl
+apt-get install curl libcurl4-dev
+apt-get install openssl libssl-dev
+apt-get install mysql-server mysql-client
+apt-get install mysqltcl
+
+wget ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/eggdrop1.6.19+ctcpfix.tar.gz
+tar zxvf eggdrop1.6.19+ctcpfix.tar.gz
+cd eggdrop1.6.19
+
+patch -p1 <30_all_ssl.patch
+
+/home/eggbots/eggdrop1.6.19/src/mod/server.mod/server.c
+
+line 120
+
+#define MAXPENALTY 30
+
+line 126
+
+#define msgrate 0
+
+
+./configure
+make config
+make
+make install DEST=/home/prebots/eggdropssl
+
+cd eggdrop
+
+./eggdrop -m tracefeed.conf
+./eggdrop -m eggdrop.conf
+
+cp scripts/autobotchk ./
+./autobotchk ./prebot.conf
+
+wget http://www.xdobry.de/mysqltcl/mysqltcl-3.05.tar.gz
+
+tar zxvf mysqltcl-3.05.tar.gz
+
+cd mysqltcl-3.05
+
+./configure
+
+rtorrent_fast_resume.pl requires the Convert::Bencode module from CPAN, if this module is not available on your system you will need to install it first
+perl -MCPAN -e 'install Convert::Bencode'
+
+wget http://curl.haxx.se/download/curl-7.26.0.tar.gz
+tar zxfv curl-7.26.0.tar.gz
+cd curl-7.26.0
+./configure
+make
+make install
+
+wget https://launchpad.net/ubuntu/+archive/primary/+files/tclcurl_7.22.0.orig.tar.gz
+tar zxvf tclcurl_7.22.0.orig.tar.gz
+
+wget http://personal.telefonica.terra.es/web/getleft/tclcurl/download/tarball/TclCurl-7.22.0.tar.gz
+tar zxvf TclCurl-7.22.0.tar.gz
+
+cd TclCurl-7.22.0
+./configure --with-tcl=/usr/share/tcltk/tcl8.4 -with-tclinclude=/usr/include/tcl8.4/tcl-private/generic
+make
+make install
+
+
+CREATE USER 'prebots'@'localhost' IDENTIFIED BY 'KhHFf??DStbQ';
+
+GRANT ALL ON *.* TO 'islander'@'1.2.3.4';
+
+
+CREATE USER 'scenedbaxx'@'localhost' IDENTIFIED BY 'Q3wX8GdPV7eKNQpw';
+GRANT SELECT,INSERT,UPDATE,DELETE ON scenestuff.* TO 'scenedbaxx'@'localhost';
+
+FLUSH PRIVILEGES;
+
+/sajoin Prebot #addpre
+
+apt-get install ncurses-base ncurses-dev ncurses-bin
+
+wget http://www.psybnc.at/download/beta/psyBNC-2.3.2-7.tar.gz
+
+tar -zxvf psyBNC-2.3.2-7.tar.gz
+
+cd psybnc
+
+make menuconfig
+
+do config in tht screen
+
+make
+
+wget http://www.sjacob.dk/createcrontab                              ¦¦
+chmod +x createcrontab                                               ¦¦
+./createcrontab                                       ¦¦
+crontab -l   
+
+
+./psybnc     
+
+-----------------------------------------------------------------------------------
+Debian Mail server setup
+
+http://blog.edseek.com/~jasonb/articles/exim4_courier/exim4.html
+
+apt-get update
+apt-get install exim4
+
+dpkg-reconfigure exim4-config
+
+and in php.ini file change to
+
+sendmail_path = /usr/sbin/exim4 -t
+
+Done
+
+-------------------------------------------------------------------------------------
+lftp
+
+apt-get install build-essential libncurses5-dev curl openssl libssl-dev libreadline5-dev libgnutls-dev
+
+wget http://ftp.yars.free.net/pub/source/lftp/lftp-4.3.5.tar.gz
+tar zxvf lftp-4.3.5.tar.gz
+cd lftp-4.3.5
+./configure -with-openssl
+make
+make install
+
+/etc/lftp.conf or .lftprc in user's home directory
+
+set mirror:order "*.nfo *.sfv"
+set mirror:set-permissions off
+set ssl:verify-certificate no
+set dns:max-retries 5
+set net:max-retries 3
+set ftp:use-fxp true
+set cache:enable false
+set ftp:use-site-idle true
+set mirror:no-empty-dirs true

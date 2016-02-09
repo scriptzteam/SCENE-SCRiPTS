@@ -1,0 +1,1650 @@
+diff -Naur eggdrop1.6.19/aclocal.m4 eggdrop1.6.19-ssl/aclocal.m4
+--- eggdrop1.6.19/aclocal.m4	2008-04-19 06:21:20.000000000 +0200
++++ eggdrop1.6.19-ssl/aclocal.m4	2009-01-15 09:45:18.000000000 +0100
+@@ -37,6 +37,64 @@
+ ])
+ 
+ 
++dnl  EGG_SSL_CRAP()
++dnl
++AC_DEFUN(EGG_SSL_CRAP, [dnl
++#ssl checks
++AC_MSG_CHECKING(whether to include SSL support)
++AC_ARG_WITH(ssl,
++[  --with-ssl[=PATH]         Include SSL support (DIR is OpenSSL's install dir).],
++[
++  case "$withval" in
++    no)
++      AC_MSG_RESULT(no) ;;
++    yes)
++      AC_MSG_RESULT(yes)
++      AC_CHECK_LIB(ssl,SSL_accept,[AC_DEFINE(EGG_SSL_EXT)
++      SSL_LIBS="-lssl -lcrypto"],[AC_MSG_ERROR([You requested SSL support, but OpenSSL was not found. Please supply a pathname to OpenSSL])],-lcrypto)
++      ;;
++    *)
++dnl A whole whack of possible places where this might be
++      test -f $withval/openssl/ssl.h && SSL_INCLUDE="$withval"
++      test -f $withval/include/openssl/ssl.h && SSL_INCLUDE="$withval/include"
++
++      test -f $withval/lib/libssl.a && SSL_LIB="$withval/lib"
++      test -f $withval/lib/ssl/libssl.a && SSL_LIB="$withval/lib/ssl"
++      test -f $withval/lib/openssl/libssl.a && SSL_LIB="$withval/lib/openssl/ssl"
++      test -f $withval/libssl.a && SSL_LIB="$withval"
++      test -f $withval/ssl/libssl.a && SSL_LIB="$withval/ssl"
++      test -f $withval/openssl/libssl.a && SSL_LIB="$withval/openssl"
++
++      test -f $withval/lib/libcrypto.a && CRYPTO_LIB="$withval/lib"
++      test -f $withval/lib/ssl/libcrypto.a && CRYPTO_LIB="$withval/lib/ssl"
++      test -f $withval/lib/openssl/libcrypto.a && CRYPTO_LIB="$withval/lib/openssl/ssl"
++      test -f $withval/libcrypto.a && CRYPTO_LIB="$withval"
++      test -f $withval/ssl/libcrypto.a && CRYPTO_LIB="$withval/ssl"
++      test -f $withval/openssl/libcrypto.a && CRYPTO_LIB="$withval/openssl"
++
++      if test -n "$SSL_INCLUDE" && test -n "$SSL_LIB" && test -n "$CRYPTO_LIB"; then
++        SSL_LIBS="-lssl -lcrypto -L$SSL_LIB -L$CRYPTO_LIB";
++        AC_DEFINE(EGG_SSL_EXT)
++        AC_MSG_RESULT(yes)
++      else
++        AC_MSG_RESULT(no)
++        AC_MSG_ERROR([You requested SSL support, but OpenSSL was not found. Please supply a pathname to OpenSSL])
++      fi ;;
++  esac
++],[
++    AC_MSG_RESULT(will try to find)
++    AC_CHECK_LIB(ssl,SSL_accept,[AC_DEFINE(EGG_SSL_EXT)
++     SSL_LIBS="-lssl -lcrypto"],[AC_MSG_ERROR([OpenSSL was not found. Please supply a pathname to OpenSSL])],-lcrypto)
++    AC_CHECK_HEADERS("openssl/ssl.h",,[AC_MSG_ERROR([OpenSSL was not found. Please supply a pathname to OpenSSL])],)
++
++    AC_SUBST(SSL_LIBS)dnl
++    AC_SUBST(SSL_INCLUDE)dnl
++])
++
++#end of ssl checks
++])dnl
++
++
+ dnl EGG_MSG_CONFIGURE_END()
+ dnl
+ AC_DEFUN([EGG_MSG_CONFIGURE_END],
+diff -Naur eggdrop1.6.19/config.h.in eggdrop1.6.19-ssl/config.h.in
+--- eggdrop1.6.19/config.h.in	2006-11-20 12:38:25.000000000 +0100
++++ eggdrop1.6.19-ssl/config.h.in	2009-01-15 09:45:18.000000000 +0100
+@@ -33,6 +33,9 @@
+ /* Define to 1 if you have the `clock' function. */
+ #undef HAVE_CLOCK
+ 
++/* Defines ssl mode  */
++#undef EGG_SSL_EXT 
++
+ /* Define to 1 if you have the <dirent.h> header file, and it defines `DIR'.
+    */
+ #undef HAVE_DIRENT_H
+diff -Naur eggdrop1.6.19/configure eggdrop1.6.19-ssl/configure
+--- eggdrop1.6.19/configure	2008-04-19 06:21:20.000000000 +0200
++++ eggdrop1.6.19-ssl/configure	2009-01-15 13:51:31.000000000 +0100
+@@ -315,7 +315,7 @@
+ # include <unistd.h>
+ #endif"
+ 
+-ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS egg_ac_parameters CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT CPP EGREP INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA SET_MAKE RANLIB ac_ct_RANLIB LN_S HEAD_1 STRIP AWK BASENAME UNAME DEFAULT_MAKE MOD_EXT MODULE_XLIBS MOD_LD MOD_CC MOD_STRIP SHLIB_LD SHLIB_CC SHLIB_STRIP EGGEXEC TCLLIB TCLLIBFN TCLINC TCLINCFN TCL_REQS TCL_LIBS EGGVERSION DEST MOD_UPDIR LIBOBJS LTLIBOBJS'
++ac_subst_vars='SHELL PATH_SEPARATOR PACKAGE_NAME PACKAGE_TARNAME PACKAGE_VERSION PACKAGE_STRING PACKAGE_BUGREPORT exec_prefix prefix program_transform_name bindir sbindir libexecdir datadir sysconfdir sharedstatedir localstatedir libdir includedir oldincludedir infodir mandir build_alias host_alias target_alias DEFS ECHO_C ECHO_N ECHO_T LIBS egg_ac_parameters CC CFLAGS LDFLAGS CPPFLAGS ac_ct_CC EXEEXT OBJEXT CPP EGREP INSTALL_PROGRAM INSTALL_SCRIPT INSTALL_DATA SET_MAKE RANLIB ac_ct_RANLIB LN_S HEAD_1 STRIP AWK BASENAME UNAME DEFAULT_MAKE MOD_EXT MODULE_XLIBS MOD_LD MOD_CC MOD_STRIP SHLIB_LD SHLIB_CC SHLIB_STRIP EGGEXEC TCLLIB TCLLIBFN TCLINC TCLINCFN TCL_REQS TCL_LIBS SSL_LIBS SSL_INCLUDE EGGVERSION DEST MOD_UPDIR LIBOBJS LTLIBOBJS'
+ ac_subst_files=''
+ 
+ # Initialize some variables set by options.
+@@ -856,6 +856,7 @@
+   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+   --with-tcllib=PATH      full path to Tcl library
+   --with-tclinc=PATH      full path to Tcl header
++  --with-ssl=PATH         Include SSL support (DIR is OpenSSL's install dir).
+ 
+ Some influential environment variables:
+   CC          C compiler command
+@@ -8471,6 +8472,374 @@
+ rm -f conftest*
+ 
+ 
++#ssl checks
++echo "$as_me:$LINENO: checking whether to include SSL support" >&5
++echo $ECHO_N "checking whether to include SSL support... $ECHO_C" >&6
++
++# Check whether --with-ssl or --without-ssl was given.
++if test "${with_ssl+set}" = set; then
++  withval="$with_ssl"
++
++  case "$withval" in
++    no)
++      echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6 ;;
++    yes)
++      echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++      echo "$as_me:$LINENO: checking for SSL_accept in -lssl" >&5
++echo $ECHO_N "checking for SSL_accept in -lssl... $ECHO_C" >&6
++if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lssl -lcrypto $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char SSL_accept ();
++int
++main ()
++{
++SSL_accept ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_ssl_SSL_accept=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++ac_cv_lib_ssl_SSL_accept=no
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_ssl_SSL_accept" >&5
++echo "${ECHO_T}$ac_cv_lib_ssl_SSL_accept" >&6
++if test $ac_cv_lib_ssl_SSL_accept = yes; then
++  cat >>confdefs.h <<\_ACEOF
++#define EGG_SSL_EXT 1
++_ACEOF
++
++      SSL_LIBS="-lssl -lcrypto"
++else
++  { { echo "$as_me:$LINENO: error: You requested SSL support, but OpenSSL was not found. Please supply a pathname to OpenSSL" >&5
++echo "$as_me: error: You requested SSL support, but OpenSSL was not found. Please supply a pathname to OpenSSL" >&2;}
++   { (exit 1); exit 1; }; }
++fi
++
++      ;;
++    *)
++      test -f $withval/openssl/ssl.h && SSL_INCLUDE="$withval"
++      test -f $withval/include/openssl/ssl.h && SSL_INCLUDE="$withval/include"
++
++      test -f $withval/lib/libssl.a && SSL_LIB="$withval/lib"
++      test -f $withval/lib/ssl/libssl.a && SSL_LIB="$withval/lib/ssl"
++      test -f $withval/lib/openssl/libssl.a && SSL_LIB="$withval/lib/openssl/ssl"
++      test -f $withval/libssl.a && SSL_LIB="$withval"
++      test -f $withval/ssl/libssl.a && SSL_LIB="$withval/ssl"
++      test -f $withval/openssl/libssl.a && SSL_LIB="$withval/openssl"
++
++      test -f $withval/lib/libcrypto.a && CRYPTO_LIB="$withval/lib"
++      test -f $withval/lib/ssl/libcrypto.a && CRYPTO_LIB="$withval/lib/ssl"
++      test -f $withval/lib/openssl/libcrypto.a && CRYPTO_LIB="$withval/lib/openssl/ssl"
++      test -f $withval/libcrypto.a && CRYPTO_LIB="$withval"
++      test -f $withval/ssl/libcrypto.a && CRYPTO_LIB="$withval/ssl"
++      test -f $withval/openssl/libcrypto.a && CRYPTO_LIB="$withval/openssl"
++
++      if test -n "$SSL_INCLUDE" && test -n "$SSL_LIB" && test -n "$CRYPTO_LIB"; then
++        SSL_LIBS="-lssl -lcrypto -L$SSL_LIB -L$CRYPTO_LIB";
++        cat >>confdefs.h <<\_ACEOF
++#define EGG_SSL_EXT 1
++_ACEOF
++
++        echo "$as_me:$LINENO: result: yes" >&5
++echo "${ECHO_T}yes" >&6
++      else
++        echo "$as_me:$LINENO: result: no" >&5
++echo "${ECHO_T}no" >&6
++        { { echo "$as_me:$LINENO: error: You requested SSL support, but OpenSSL was not found. Please supply a pathname to OpenSSL" >&5
++echo "$as_me: error: You requested SSL support, but OpenSSL was not found. Please supply a pathname to OpenSSL" >&2;}
++   { (exit 1); exit 1; }; }
++      fi ;;
++  esac
++
++else
++
++    echo "$as_me:$LINENO: result: will try to find" >&5
++echo "${ECHO_T}will try to find" >&6
++    echo "$as_me:$LINENO: checking for SSL_accept in -lssl" >&5
++echo $ECHO_N "checking for SSL_accept in -lssl... $ECHO_C" >&6
++if test "${ac_cv_lib_ssl_SSL_accept+set}" = set; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  ac_check_lib_save_LIBS=$LIBS
++LIBS="-lssl -lcrypto $LIBS"
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++
++/* Override any gcc2 internal prototype to avoid an error.  */
++#ifdef __cplusplus
++extern "C"
++#endif
++/* We use char because int might match the return type of a gcc2
++   builtin and then its argument prototype would still apply.  */
++char SSL_accept ();
++int
++main ()
++{
++SSL_accept ();
++  ;
++  return 0;
++}
++_ACEOF
++rm -f conftest.$ac_objext conftest$ac_exeext
++if { (eval echo "$as_me:$LINENO: \"$ac_link\"") >&5
++  (eval $ac_link) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest$ac_exeext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_cv_lib_ssl_SSL_accept=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++ac_cv_lib_ssl_SSL_accept=no
++fi
++rm -f conftest.err conftest.$ac_objext \
++      conftest$ac_exeext conftest.$ac_ext
++LIBS=$ac_check_lib_save_LIBS
++fi
++echo "$as_me:$LINENO: result: $ac_cv_lib_ssl_SSL_accept" >&5
++echo "${ECHO_T}$ac_cv_lib_ssl_SSL_accept" >&6
++if test $ac_cv_lib_ssl_SSL_accept = yes; then
++  cat >>confdefs.h <<\_ACEOF
++#define EGG_SSL_EXT 1
++_ACEOF
++
++     SSL_LIBS="-lssl -lcrypto"
++else
++  { { echo "$as_me:$LINENO: error: OpenSSL was not found. Please supply a pathname to OpenSSL" >&5
++echo "$as_me: error: OpenSSL was not found. Please supply a pathname to OpenSSL" >&2;}
++   { (exit 1); exit 1; }; }
++fi
++
++
++for ac_header in "openssl/ssl.h"
++do
++as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
++if eval "test \"\${$as_ac_Header+set}\" = set"; then
++  echo "$as_me:$LINENO: checking for $ac_header" >&5
++echo $ECHO_N "checking for $ac_header... $ECHO_C" >&6
++if eval "test \"\${$as_ac_Header+set}\" = set"; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++fi
++echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Header'}'`" >&5
++echo "${ECHO_T}`eval echo '${'$as_ac_Header'}'`" >&6
++else
++  # Is the header compilable?
++echo "$as_me:$LINENO: checking $ac_header usability" >&5
++echo $ECHO_N "checking $ac_header usability... $ECHO_C" >&6
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++$ac_includes_default
++#include <$ac_header>
++_ACEOF
++rm -f conftest.$ac_objext
++if { (eval echo "$as_me:$LINENO: \"$ac_compile\"") >&5
++  (eval $ac_compile) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } &&
++	 { ac_try='test -z "$ac_c_werror_flag"
++			 || test ! -s conftest.err'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; } &&
++	 { ac_try='test -s conftest.$ac_objext'
++  { (eval echo "$as_me:$LINENO: \"$ac_try\"") >&5
++  (eval $ac_try) 2>&5
++  ac_status=$?
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); }; }; then
++  ac_header_compiler=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++ac_header_compiler=no
++fi
++rm -f conftest.err conftest.$ac_objext conftest.$ac_ext
++echo "$as_me:$LINENO: result: $ac_header_compiler" >&5
++echo "${ECHO_T}$ac_header_compiler" >&6
++
++# Is the header present?
++echo "$as_me:$LINENO: checking $ac_header presence" >&5
++echo $ECHO_N "checking $ac_header presence... $ECHO_C" >&6
++cat >conftest.$ac_ext <<_ACEOF
++/* confdefs.h.  */
++_ACEOF
++cat confdefs.h >>conftest.$ac_ext
++cat >>conftest.$ac_ext <<_ACEOF
++/* end confdefs.h.  */
++#include <$ac_header>
++_ACEOF
++if { (eval echo "$as_me:$LINENO: \"$ac_cpp conftest.$ac_ext\"") >&5
++  (eval $ac_cpp conftest.$ac_ext) 2>conftest.er1
++  ac_status=$?
++  grep -v '^ *+' conftest.er1 >conftest.err
++  rm -f conftest.er1
++  cat conftest.err >&5
++  echo "$as_me:$LINENO: \$? = $ac_status" >&5
++  (exit $ac_status); } >/dev/null; then
++  if test -s conftest.err; then
++    ac_cpp_err=$ac_c_preproc_warn_flag
++    ac_cpp_err=$ac_cpp_err$ac_c_werror_flag
++  else
++    ac_cpp_err=
++  fi
++else
++  ac_cpp_err=yes
++fi
++if test -z "$ac_cpp_err"; then
++  ac_header_preproc=yes
++else
++  echo "$as_me: failed program was:" >&5
++sed 's/^/| /' conftest.$ac_ext >&5
++
++  ac_header_preproc=no
++fi
++rm -f conftest.err conftest.$ac_ext
++echo "$as_me:$LINENO: result: $ac_header_preproc" >&5
++echo "${ECHO_T}$ac_header_preproc" >&6
++
++# So?  What about this header?
++case $ac_header_compiler:$ac_header_preproc:$ac_c_preproc_warn_flag in
++  yes:no: )
++    { echo "$as_me:$LINENO: WARNING: $ac_header: accepted by the compiler, rejected by the preprocessor!" >&5
++echo "$as_me: WARNING: $ac_header: accepted by the compiler, rejected by the preprocessor!" >&2;}
++    { echo "$as_me:$LINENO: WARNING: $ac_header: proceeding with the compiler's result" >&5
++echo "$as_me: WARNING: $ac_header: proceeding with the compiler's result" >&2;}
++    ac_header_preproc=yes
++    ;;
++  no:yes:* )
++    { echo "$as_me:$LINENO: WARNING: $ac_header: present but cannot be compiled" >&5
++echo "$as_me: WARNING: $ac_header: present but cannot be compiled" >&2;}
++    { echo "$as_me:$LINENO: WARNING: $ac_header:     check for missing prerequisite headers?" >&5
++echo "$as_me: WARNING: $ac_header:     check for missing prerequisite headers?" >&2;}
++    { echo "$as_me:$LINENO: WARNING: $ac_header: see the Autoconf documentation" >&5
++echo "$as_me: WARNING: $ac_header: see the Autoconf documentation" >&2;}
++    { echo "$as_me:$LINENO: WARNING: $ac_header:     section \"Present But Cannot Be Compiled\"" >&5
++echo "$as_me: WARNING: $ac_header:     section \"Present But Cannot Be Compiled\"" >&2;}
++    { echo "$as_me:$LINENO: WARNING: $ac_header: proceeding with the preprocessor's result" >&5
++echo "$as_me: WARNING: $ac_header: proceeding with the preprocessor's result" >&2;}
++    { echo "$as_me:$LINENO: WARNING: $ac_header: in the future, the compiler will take precedence" >&5
++echo "$as_me: WARNING: $ac_header: in the future, the compiler will take precedence" >&2;}
++    (
++      cat <<\_ASBOX
++## -------------------------------- ##
++## Report this to bugs@eggheads.org ##
++## -------------------------------- ##
++_ASBOX
++    ) |
++      sed "s/^/$as_me: WARNING:     /" >&2
++    ;;
++esac
++echo "$as_me:$LINENO: checking for $ac_header" >&5
++echo $ECHO_N "checking for $ac_header... $ECHO_C" >&6
++if eval "test \"\${$as_ac_Header+set}\" = set"; then
++  echo $ECHO_N "(cached) $ECHO_C" >&6
++else
++  eval "$as_ac_Header=\$ac_header_preproc"
++fi
++echo "$as_me:$LINENO: result: `eval echo '${'$as_ac_Header'}'`" >&5
++echo "${ECHO_T}`eval echo '${'$as_ac_Header'}'`" >&6
++
++fi
++if test `eval echo '${'$as_ac_Header'}'` = yes; then
++  cat >>confdefs.h <<_ACEOF
++#define `echo "HAVE_$ac_header" | $as_tr_cpp` 1
++_ACEOF
++
++else
++  { { echo "$as_me:$LINENO: error: OpenSSL was not found. Please supply a pathname to OpenSSL" >&5
++echo "$as_me: error: OpenSSL was not found. Please supply a pathname to OpenSSL" >&2;}
++   { (exit 1); exit 1; }; }
++fi
++
++done
++
++
++
++fi;
++
++#end of ssl checks
++
++
+ 
+ for ac_func in vprintf
+ do
+@@ -10034,7 +10403,6 @@
+ fi
+ 
+ 
+-  if test "$egg_cv_var_tcl_threaded" = "yes"; then
+     if test "$enable_tcl_threads" = "no"; then
+ 
+       cat << 'EOF' >&2
+@@ -10056,7 +10424,6 @@
+     if test ! "${ac_cv_lib_pthread-x}" = "x"; then
+       LIBS="$ac_cv_lib_pthread $LIBS"
+     fi
+-  fi
+ 
+ 
+   if test "$EGG_CYGWIN" = "yes"; then
+@@ -10154,7 +10521,7 @@
+ 
+ 
+ # Create Makefiles
+-                                                                      ac_config_files="$ac_config_files Makefile doc/Makefile scripts/Makefile src/Makefile src/compat/Makefile src/md5/Makefile src/mod/Makefile"
++                                                                      ac_config_files="$ac_config_files Makefile doc/Makefile scripts/Makefile src/Makefile src/compat/Makefile src/mod/Makefile"
+ 
+ cat >confcache <<\_ACEOF
+ # This file is a shell script that caches the results of configure
+@@ -10699,7 +11066,6 @@
+   "scripts/Makefile" ) CONFIG_FILES="$CONFIG_FILES scripts/Makefile" ;;
+   "src/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
+   "src/compat/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/compat/Makefile" ;;
+-  "src/md5/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/md5/Makefile" ;;
+   "src/mod/Makefile" ) CONFIG_FILES="$CONFIG_FILES src/mod/Makefile" ;;
+   "replace-if-changed" ) CONFIG_COMMANDS="$CONFIG_COMMANDS replace-if-changed" ;;
+   "catch-make-rebuild" ) CONFIG_COMMANDS="$CONFIG_COMMANDS catch-make-rebuild" ;;
+@@ -10827,6 +11193,8 @@
+ s,@TCLINCFN@,$TCLINCFN,;t t
+ s,@TCL_REQS@,$TCL_REQS,;t t
+ s,@TCL_LIBS@,$TCL_LIBS,;t t
++s,@SSL_LIBS@,$SSL_LIBS,;t t
++s,@SSL_INCLUDE@,$SSL_INCLUDE,;t t
+ s,@EGGVERSION@,$EGGVERSION,;t t
+ s,@DEST@,$DEST,;t t
+ s,@MOD_UPDIR@,$MOD_UPDIR,;t t
+diff -Naur eggdrop1.6.19/configure.ac eggdrop1.6.19-ssl/configure.ac
+--- eggdrop1.6.19/configure.ac	2008-02-18 23:25:33.000000000 +0100
++++ eggdrop1.6.19-ssl/configure.ac	2009-01-15 09:46:19.000000000 +0100
+@@ -150,6 +150,7 @@
+ EGG_TCL_LIB_REQS
+ EGG_TCL_LUSH
+ 
++EGG_SSL_CRAP
+ 
+ # Substitute Makefile variables.
+ EGG_SUBST_EGGVERSION
+@@ -161,7 +162,7 @@
+ 
+ 
+ # Create Makefiles
+-AC_CONFIG_FILES([Makefile doc/Makefile scripts/Makefile src/Makefile src/compat/Makefile src/md5/Makefile src/mod/Makefile])
++AC_CONFIG_FILES([Makefile doc/Makefile scripts/Makefile src/Makefile src/compat/Makefile src/mod/Makefile])
+ AC_OUTPUT
+ 
+ 
+diff -Naur eggdrop1.6.19/Makefile.in eggdrop1.6.19-ssl/Makefile.in
+--- eggdrop1.6.19/Makefile.in	2004-08-28 08:43:21.000000000 +0200
++++ eggdrop1.6.19-ssl/Makefile.in	2009-01-15 09:45:45.000000000 +0100
+@@ -57,6 +57,8 @@
+ RANLIB = @RANLIB@
+ MOD_EXT = @MOD_EXT@
+ XREQS = @TCL_REQS@
++XSSL_LIBS = @SSL_LIBS@
++XSSL_INCLUDE = @SSL_INCLUDE@
+ TCLLIB = @TCLLIB@
+ TCLLIBFN = @TCLLIBFN@
+ 
+@@ -89,7 +91,8 @@
+ MAKE_MODEGG = $(MAKE) 'MAKE=$(MAKE)' 'CC=$(MOD_CC)' 'LD=$(MOD_LD)' \
+ 'STRIP=$(MOD_STRIP)' 'RANLIB=$(RANLIB)' 'CFLGS=$(CFLGS)' \
+ 'TCLLIB=$(TCLLIB)' 'TCLLIBFN=$(TCLLIBFN)' 'XREQS=$(XREQS)' \
+-'XLIBS=$(XLIBS)' 'EGGEXEC=$(EGGEXEC)' 'EGGBUILD=(standard build)' 'MODOBJS='
++'XSSL_LIBS=$(XSSL_LIBS)' 'XLIBS=$(XLIBS)' 'EGGEXEC=$(EGGEXEC)' \
++'XSSL_INCLUDE=$(XSSL_INCLUDE)' 'EGGBUILD=' 'MODOBJS='
+ 
+ MAKE_MODULES = $(MAKE) 'MAKE=$(MAKE)' 'CC=$(SHLIB_CC)' 'LD=$(SHLIB_LD)' \
+ 'STRIP=$(SHLIB_STRIP)' 'CFLGS=$(CFLGS)' 'XLIBS=$(XLIBS)' 'MOD_EXT=$(MOD_EXT)' \
+@@ -99,12 +102,13 @@
+ 'STRIP=$(STRIP)' 'RANLIB=$(RANLIB)' 'CFLGS=$(CFLGS) -DSTATIC' \
+ 'TCLLIB=$(TCLLIB)' 'TCLLIBFN=$(TCLLIBFN)' 'XREQS=$(XREQS)' \
+ 'XLIBS=$(XLIBS)' 'EGGEXEC=$(EGGEXEC)' 'EGGBUILD=(static version)' \
+-'MODOBJS=mod/*.o'
++'XSSL_INCLUDE=$(XSSL_INCLUDE)' 'XSSL_LIBS=$(XSSL_LIBS)' 'MODOBJS=mod/*.o'
+ 
+ MAKE_DEBEGG = $(MAKE) 'MAKE=$(MAKE)' 'CC=$(MOD_CC)' 'LD=$(MOD_LD) -g' \
+ 'STRIP=touch' 'RANLIB=$(RANLIB)' 'CFLGS=-g3 $(DEBCFLAGS) $(CFLGS)' \
+ 'TCLLIB=$(TCLLIB)' 'TCLLIBFN=$(TCLLIBFN)' 'XREQS=$(XREQS)' \
+-'XLIBS=$(XLIBS)' 'EGGEXEC=$(EGGEXEC)' 'EGGBUILD=(debug version)' 'MODOBJS='
++'XSSL_LIBS=$(XSSL_LIBS)' 'XLIBS=$(XLIBS)' 'EGGEXEC=$(EGGEXEC)' \
++'XSSL_INCLUDE=$(XSSL_INCLUDE)' 'EGGBUILD=(debug version)' 'MODOBJS='
+ 
+ MAKE_DEBMODULES = $(MAKE) 'MAKE=$(MAKE)' 'CC=$(SHLIB_CC)' 'LD=$(SHLIB_LD)' \
+ 'XLIBS=$(XLIBS)' 'STRIP=touch' 'CFLGS=-g3 $(DEBCFLAGS) $(CFLGS)' \
+@@ -113,7 +117,8 @@
+ MAKE_SDEBUG = $(MAKE) 'MAKE=$(MAKE)' 'CC=$(CC)' 'LD=$(LD) -g' \
+ 'STRIP=touch' 'RANLIB=$(RANLIB)' 'CFLGS=-g3 $(DEBCFLAGS) -DSTATIC $(CFLGS)' \
+ 'TCLLIB=$(TCLLIB)' 'TCLLIBFN=$(TCLLIBFN)' 'XREQS=$(XREQS)' 'XLIBS=$(XLIBS)' \
+-'EGGEXEC=$(EGGEXEC)' 'EGGBUILD=(static debug version)' 'MODOBJS=mod/*.o'
++'XSSL_INCLUDE=$(XSSL_INCLUDE)' 'XSSL_LIBS=$(XSSL_LIBS)' 'EGGEXEC=$(EGGEXEC)' \
++'EGGBUILD=(static and debug version)' 'MODOBJS=mod/*.o'
+ 
+ MAKE_DEPEND = $(MAKE) 'MAKE=$(MAKE)' 'CC=$(CC)'
+ 
+@@ -128,7 +133,6 @@
+ 	@cd doc && $(MAKE) clean
+ 	@cd scripts && $(MAKE) clean
+ 	@cd src && $(MAKE) clean
+-	@cd src/md5 && $(MAKE) clean
+ 	@cd src/compat && $(MAKE) clean
+ 
+ clean: eggclean
+@@ -136,7 +140,7 @@
+ 
+ distclean: eggclean clean-modconfig
+ 	@cd src/mod && $(MAKE) distclean
+-	@rm -f Makefile doc/Makefile scripts/Makefile src/Makefile src/md5/Makefile src/compat/Makefile src/mod/Makefile
++	@rm -f Makefile doc/Makefile scripts/Makefile src/Makefile src/compat/Makefile src/mod/Makefile
+ 	@rm -f config.cache config.log config.status config.h lush.h
+ 	@rm -rf autom4te.cache
+ 
+@@ -146,7 +150,6 @@
+ depend:
+ 	@cat /dev/null > lush.h
+ 	@cd src && $(MAKE_DEPEND) depend
+-	@cd src/md5 && $(MAKE_DEPEND) depend
+ 	@cd src/mod && $(MAKE_DEPEND) depend
+ 	@cd src/compat && $(MAKE_DEPEND) depend
+ 
+diff -Naur eggdrop1.6.19/src/dcc.c eggdrop1.6.19-ssl/src/dcc.c
+--- eggdrop1.6.19/src/dcc.c	2008-02-16 22:41:03.000000000 +0100
++++ eggdrop1.6.19-ssl/src/dcc.c	2009-01-15 09:47:24.000000000 +0100
+@@ -32,7 +32,7 @@
+ #include "tandem.h"
+ 
+ /* Includes for botnet md5 challenge/response code <cybah> */
+-#include "md5/md5.h"
++#include "openssl/md5.h"
+ 
+ extern struct userrec *userlist;
+ extern struct chanset_t *chanset;
+diff -Naur eggdrop1.6.19/src/dccutil.c eggdrop1.6.19-ssl/src/dccutil.c
+--- eggdrop1.6.19/src/dccutil.c	2008-02-16 22:41:03.000000000 +0100
++++ eggdrop1.6.19-ssl/src/dccutil.c	2009-01-15 09:45:18.000000000 +0100
+@@ -33,6 +33,7 @@
+ #include "chan.h"
+ #include "modules.h"
+ #include "tandem.h"
++#include "net.h"
+ 
+ extern struct dcc_t *dcc;
+ extern int dcc_total, max_dcc, dcc_flood_thr, backgrd, copy_to_tmp, MAXSOCKS;
+diff -Naur eggdrop1.6.19/src/eggdrop.h eggdrop1.6.19-ssl/src/eggdrop.h
+--- eggdrop1.6.19/src/eggdrop.h	2008-02-16 22:41:03.000000000 +0100
++++ eggdrop1.6.19-ssl/src/eggdrop.h	2009-01-15 09:45:18.000000000 +0100
+@@ -616,17 +616,6 @@
+ #define HELP_TEXT       2
+ #define HELP_IRC        16
+ 
+-/* This is used by the net module to keep track of sockets and what's
+- * queued on them
+- */
+-typedef struct {
+-  int sock;
+-  short flags;
+-  char *inbuf;
+-  char *outbuf;
+-  unsigned long outbuflen;      /* Outbuf could be binary data  */
+-  unsigned long inbuflen;       /* Inbuf could be binary data   */
+-} sock_list;
+ 
+ enum {
+   EGG_OPTION_SET = 1,           /* Set option(s).               */
+diff -Naur eggdrop1.6.19/src/main.c eggdrop1.6.19-ssl/src/main.c
+--- eggdrop1.6.19/src/main.c	2008-02-16 22:41:03.000000000 +0100
++++ eggdrop1.6.19-ssl/src/main.c	2009-01-15 09:45:18.000000000 +0100
+@@ -161,6 +161,9 @@
+ int cx_ptr = 0;
+ #endif
+ 
++#ifdef EGG_SSL_EXT
++int clean_net();
++#endif
+ 
+ void fatal(const char *s, int recoverable)
+ {
+@@ -171,6 +174,9 @@
+   for (i = 0; i < dcc_total; i++)
+     if (dcc[i].sock >= 0)
+       killsock(dcc[i].sock);
++  #ifdef EGG_SSL_EXT
++  clean_net();
++  #endif
+   unlink(pid_file);
+   if (!recoverable) {
+     bg_send_quit(BG_ABORT);
+diff -Naur eggdrop1.6.19/src/Makefile.in eggdrop1.6.19-ssl/src/Makefile.in
+--- eggdrop1.6.19/src/Makefile.in	2006-11-20 12:38:25.000000000 +0100
++++ eggdrop1.6.19-ssl/src/Makefile.in	2009-01-15 09:47:13.000000000 +0100
+@@ -11,6 +11,8 @@
+ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_DATA = @INSTALL_DATA@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
++XSSL_LIBS = @SSL_LIBS@
++XSSL_INCLUDE = @SSL_INCLUDE@
+ 
+ CC = @CC@
+ LD = @CC@
+@@ -33,11 +35,11 @@
+ 	@echo ""
+ 	@cd .. && $(MAKE)
+ 
+-../$(EGGEXEC): build_msg $(eggdrop_objs) $(XREQS) compile_md5 compatability
++../$(EGGEXEC): build_msg $(eggdrop_objs) $(XREQS) compatability
+ 	@echo "Linking eggdrop $(EGGBUILD)."
+ 	@echo ""
+ 	@touch mod/mod.xlibs
+-	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(MODOBJS) $(XLIBS) md5/md5c.o compat/*.o `cat mod/mod.xlibs`
++	$(LD) -o ../$(EGGEXEC) $(eggdrop_objs) $(MODOBJS) $(XLIBS) compat/*.o `cat mod/mod.xlibs` $(XSSL_LIBS) $(XSSL_INCLUDE)
+ 	$(STRIP) ../$(EGGEXEC)
+ 	@echo ""
+ 	@echo "Successful compile: $(EGGEXEC)"
+@@ -68,9 +70,6 @@
+ 	@echo "---------- Yeah! That's the compiling, now the linking! ----------"
+ 	@echo ""
+ 
+-compile_md5:
+-	@cd md5 && $(MAKE_GENERIC) md5
+-
+ libtcle.a: $(TCLLIB)/lib$(TCLLIBFN)
+ 	@echo "[ Fixing lib$(TCLLIBFN) -> libtcle.a ]"
+ 	cp $(TCLLIB)/lib$(TCLLIBFN) libtcle.a
+@@ -122,7 +121,7 @@
+   proto.h misc_file.h cmdt.h tclegg.h tclhash.h chan.h users.h \
+   compat/compat.h compat/inet_aton.h ../src/main.h compat/snprintf.h \
+   compat/memset.h compat/memcpy.h compat/strcasecmp.h compat/strftime.h \
+-  modules.h mod/modvals.h tandem.h md5/md5.h
++  modules.h mod/modvals.h tandem.h
+ dccutil.o: dccutil.c main.h ../config.h ../lush.h lang.h eggdrop.h \
+   flags.h proto.h misc_file.h cmdt.h tclegg.h tclhash.h chan.h users.h \
+   compat/compat.h compat/inet_aton.h ../src/main.h compat/snprintf.h \
+@@ -169,7 +168,7 @@
+   flags.h proto.h misc_file.h cmdt.h tclegg.h tclhash.h chan.h users.h \
+   compat/compat.h compat/inet_aton.h ../src/main.h compat/snprintf.h \
+   compat/memset.h compat/memcpy.h compat/strcasecmp.h compat/strftime.h \
+-  modules.h mod/modvals.h tandem.h md5/md5.h
++  modules.h mod/modvals.h tandem.h
+ net.o: net.c main.h ../config.h ../lush.h lang.h eggdrop.h flags.h \
+   proto.h misc_file.h cmdt.h tclegg.h tclhash.h chan.h users.h \
+   compat/compat.h compat/inet_aton.h ../src/main.h compat/snprintf.h \
+@@ -195,7 +194,7 @@
+   flags.h proto.h misc_file.h cmdt.h tclegg.h tclhash.h chan.h users.h \
+   compat/compat.h compat/inet_aton.h ../src/main.h compat/snprintf.h \
+   compat/memset.h compat/memcpy.h compat/strcasecmp.h compat/strftime.h \
+-  modules.h mod/modvals.h tandem.h md5/md5.h
++  modules.h mod/modvals.h tandem.h
+ tcluser.o: tcluser.c main.h ../config.h ../lush.h lang.h eggdrop.h \
+   flags.h proto.h misc_file.h cmdt.h tclegg.h tclhash.h chan.h users.h \
+   compat/compat.h compat/inet_aton.h ../src/main.h compat/snprintf.h \
+diff -Naur eggdrop1.6.19/src/md5/Makefile.in eggdrop1.6.19-ssl/src/md5/Makefile.in
+--- eggdrop1.6.19/src/md5/Makefile.in	2005-12-09 10:29:11.000000000 +0100
++++ eggdrop1.6.19-ssl/src/md5/Makefile.in	1970-01-01 01:00:00.000000000 +0100
+@@ -1,51 +0,0 @@
+-# Makefile for src/md5/
+-# $Id: Makefile.in,v 1.13 2005-12-09 09:29:11 wcc Exp $
+-
+-SHELL = @SHELL@
+-top_srcdir = @top_srcdir@
+-srcdir = @srcdir@
+-VPATH = @srcdir@
+-
+-@SET_MAKE@
+-INSTALL = @INSTALL@
+-INSTALL_PROGRAM = @INSTALL_PROGRAM@
+-INSTALL_DATA = @INSTALL_DATA@
+-INSTALL_SCRIPT = @INSTALL_SCRIPT@
+-
+-CC = @CC@
+-LD = @CC@
+-STRIP = @STRIP@
+-CFLAGS = @CFLAGS@ -I. -I../.. -I$(top_srcdir) -I$(top_srcdir)/src @DEFS@ $(CFLGS)
+-CPPFLAGS = @CPPFLAGS@
+-
+-OBJS = md5c.o
+-
+-doofus:
+-	@echo ""
+-	@echo "Let's try this from the right directory..."
+-	@echo ""
+-	@cd ../.. && $(MAKE)
+-
+-depend:
+-	$(CC) -I../.. -I../../src -DMAKING_DEPEND -DHAVE_CONFIG_H -MM *.c > .depend
+-
+-clean:
+-	@rm -f .depend *.o *~
+-
+-md5: $(OBJS)
+-
+-.SUFFIXES:
+-.SUFFIXES: .c .o .h
+-
+-.c.o:
+-	$(CC) $(CFLAGS) $(CPPFLAGS) -c $<
+-
+-#safety hash
+-md5c.o: md5c.c md5.h ../../src/compat/compat.h \
+-  ../../src/compat/inet_aton.h ../../src/main.h ../../config.h \
+-  ../../lush.h ../../src/lang.h ../../src/eggdrop.h ../../src/flags.h \
+-  ../../src/proto.h ../../src/misc_file.h ../../src/cmdt.h \
+-  ../../src/tclegg.h ../../src/tclhash.h ../../src/chan.h \
+-  ../../src/users.h ../../src/compat/compat.h ../../src/compat/snprintf.h \
+-  ../../src/compat/memset.h ../../src/compat/memcpy.h \
+-  ../../src/compat/strcasecmp.h ../../src/compat/strftime.h
+diff -Naur eggdrop1.6.19/src/md5/md5c.c eggdrop1.6.19-ssl/src/md5/md5c.c
+--- eggdrop1.6.19/src/md5/md5c.c	2004-04-10 09:49:23.000000000 +0200
++++ eggdrop1.6.19-ssl/src/md5/md5c.c	1970-01-01 01:00:00.000000000 +0100
+@@ -1,271 +0,0 @@
+-/*
+- * This is an OpenSSL-compatible implementation of the RSA Data Security,
+- * Inc. MD5 Message-Digest Algorithm.
+- *
+- * Written by Solar Designer <solar@openwall.com> in 2001, and placed in
+- * the public domain.
+- *
+- * This differs from Colin Plumb's older public domain implementation in
+- * that no 32-bit integer data type is required, there's no compile-time
+- * endianness configuration, and the function prototypes match OpenSSL's.
+- * The primary goals are portability and ease of use.
+- *
+- * This implementation is meant to be fast, but not as fast as possible.
+- * Some known optimizations are not included to reduce source code size
+- * and avoid compile-time configuration.
+- */
+-
+-#include <string.h>
+-
+-#include "md5.h"
+-#include "compat/compat.h"
+-
+-/*
+- * The basic MD5 functions.
+- *
+- * F is optimized compared to its RFC 1321 definition just like in Colin
+- * Plumb's implementation.
+- */
+-#define F(x, y, z)			((z) ^ ((x) & ((y) ^ (z))))
+-#define G(x, y, z)			((y) ^ ((z) & ((x) ^ (y))))
+-#define H(x, y, z)			((x) ^ (y) ^ (z))
+-#define I(x, y, z)			((y) ^ ((x) | ~(z)))
+-
+-/*
+- * The MD5 transformation for all four rounds.
+- */
+-#define STEP(f, a, b, c, d, x, t, s) \
+-	(a) += f((b), (c), (d)) + (x) + (t); \
+-	(a) = (((a) << (s)) | (((a) & 0xffffffff) >> (32 - (s)))); \
+-	(a) += (b);
+-
+-/*
+- * SET reads 4 input bytes in little-endian byte order and stores them
+- * in a properly aligned word in host byte order.
+- *
+- * The check for little-endian architectures which tolerate unaligned
+- * memory accesses is just an optimization.  Nothing will break if it
+- * doesn't work.
+- */
+-#if defined(__i386__) || defined(__vax__)
+-#define SET(n) \
+-	(*(MD5_u32plus *)&ptr[(n) * 4])
+-#define GET(n) \
+-	SET(n)
+-#else
+-#define SET(n) \
+-	(ctx->block[(n)] = \
+-	(MD5_u32plus)ptr[(n) * 4] | \
+-	((MD5_u32plus)ptr[(n) * 4 + 1] << 8) | \
+-	((MD5_u32plus)ptr[(n) * 4 + 2] << 16) | \
+-	((MD5_u32plus)ptr[(n) * 4 + 3] << 24))
+-#define GET(n) \
+-	(ctx->block[(n)])
+-#endif
+-
+-/*
+- * This processes one or more 64-byte data blocks, but does NOT update
+- * the bit counters.  There're no alignment requirements.
+- */
+-static void *body(MD5_CTX *ctx, void *data, unsigned long size)
+-{
+-	unsigned char *ptr;
+-	MD5_u32plus a, b, c, d;
+-	MD5_u32plus saved_a, saved_b, saved_c, saved_d;
+-
+-	ptr = data;
+-
+-	a = ctx->a;
+-	b = ctx->b;
+-	c = ctx->c;
+-	d = ctx->d;
+-
+-	do {
+-		saved_a = a;
+-		saved_b = b;
+-		saved_c = c;
+-		saved_d = d;
+-
+-/* Round 1 */
+-		STEP(F, a, b, c, d, SET(0), 0xd76aa478, 7)
+-		STEP(F, d, a, b, c, SET(1), 0xe8c7b756, 12)
+-		STEP(F, c, d, a, b, SET(2), 0x242070db, 17)
+-		STEP(F, b, c, d, a, SET(3), 0xc1bdceee, 22)
+-		STEP(F, a, b, c, d, SET(4), 0xf57c0faf, 7)
+-		STEP(F, d, a, b, c, SET(5), 0x4787c62a, 12)
+-		STEP(F, c, d, a, b, SET(6), 0xa8304613, 17)
+-		STEP(F, b, c, d, a, SET(7), 0xfd469501, 22)
+-		STEP(F, a, b, c, d, SET(8), 0x698098d8, 7)
+-		STEP(F, d, a, b, c, SET(9), 0x8b44f7af, 12)
+-		STEP(F, c, d, a, b, SET(10), 0xffff5bb1, 17)
+-		STEP(F, b, c, d, a, SET(11), 0x895cd7be, 22)
+-		STEP(F, a, b, c, d, SET(12), 0x6b901122, 7)
+-		STEP(F, d, a, b, c, SET(13), 0xfd987193, 12)
+-		STEP(F, c, d, a, b, SET(14), 0xa679438e, 17)
+-		STEP(F, b, c, d, a, SET(15), 0x49b40821, 22)
+-
+-/* Round 2 */
+-		STEP(G, a, b, c, d, GET(1), 0xf61e2562, 5)
+-		STEP(G, d, a, b, c, GET(6), 0xc040b340, 9)
+-		STEP(G, c, d, a, b, GET(11), 0x265e5a51, 14)
+-		STEP(G, b, c, d, a, GET(0), 0xe9b6c7aa, 20)
+-		STEP(G, a, b, c, d, GET(5), 0xd62f105d, 5)
+-		STEP(G, d, a, b, c, GET(10), 0x02441453, 9)
+-		STEP(G, c, d, a, b, GET(15), 0xd8a1e681, 14)
+-		STEP(G, b, c, d, a, GET(4), 0xe7d3fbc8, 20)
+-		STEP(G, a, b, c, d, GET(9), 0x21e1cde6, 5)
+-		STEP(G, d, a, b, c, GET(14), 0xc33707d6, 9)
+-		STEP(G, c, d, a, b, GET(3), 0xf4d50d87, 14)
+-		STEP(G, b, c, d, a, GET(8), 0x455a14ed, 20)
+-		STEP(G, a, b, c, d, GET(13), 0xa9e3e905, 5)
+-		STEP(G, d, a, b, c, GET(2), 0xfcefa3f8, 9)
+-		STEP(G, c, d, a, b, GET(7), 0x676f02d9, 14)
+-		STEP(G, b, c, d, a, GET(12), 0x8d2a4c8a, 20)
+-
+-/* Round 3 */
+-		STEP(H, a, b, c, d, GET(5), 0xfffa3942, 4)
+-		STEP(H, d, a, b, c, GET(8), 0x8771f681, 11)
+-		STEP(H, c, d, a, b, GET(11), 0x6d9d6122, 16)
+-		STEP(H, b, c, d, a, GET(14), 0xfde5380c, 23)
+-		STEP(H, a, b, c, d, GET(1), 0xa4beea44, 4)
+-		STEP(H, d, a, b, c, GET(4), 0x4bdecfa9, 11)
+-		STEP(H, c, d, a, b, GET(7), 0xf6bb4b60, 16)
+-		STEP(H, b, c, d, a, GET(10), 0xbebfbc70, 23)
+-		STEP(H, a, b, c, d, GET(13), 0x289b7ec6, 4)
+-		STEP(H, d, a, b, c, GET(0), 0xeaa127fa, 11)
+-		STEP(H, c, d, a, b, GET(3), 0xd4ef3085, 16)
+-		STEP(H, b, c, d, a, GET(6), 0x04881d05, 23)
+-		STEP(H, a, b, c, d, GET(9), 0xd9d4d039, 4)
+-		STEP(H, d, a, b, c, GET(12), 0xe6db99e5, 11)
+-		STEP(H, c, d, a, b, GET(15), 0x1fa27cf8, 16)
+-		STEP(H, b, c, d, a, GET(2), 0xc4ac5665, 23)
+-
+-/* Round 4 */
+-		STEP(I, a, b, c, d, GET(0), 0xf4292244, 6)
+-		STEP(I, d, a, b, c, GET(7), 0x432aff97, 10)
+-		STEP(I, c, d, a, b, GET(14), 0xab9423a7, 15)
+-		STEP(I, b, c, d, a, GET(5), 0xfc93a039, 21)
+-		STEP(I, a, b, c, d, GET(12), 0x655b59c3, 6)
+-		STEP(I, d, a, b, c, GET(3), 0x8f0ccc92, 10)
+-		STEP(I, c, d, a, b, GET(10), 0xffeff47d, 15)
+-		STEP(I, b, c, d, a, GET(1), 0x85845dd1, 21)
+-		STEP(I, a, b, c, d, GET(8), 0x6fa87e4f, 6)
+-		STEP(I, d, a, b, c, GET(15), 0xfe2ce6e0, 10)
+-		STEP(I, c, d, a, b, GET(6), 0xa3014314, 15)
+-		STEP(I, b, c, d, a, GET(13), 0x4e0811a1, 21)
+-		STEP(I, a, b, c, d, GET(4), 0xf7537e82, 6)
+-		STEP(I, d, a, b, c, GET(11), 0xbd3af235, 10)
+-		STEP(I, c, d, a, b, GET(2), 0x2ad7d2bb, 15)
+-		STEP(I, b, c, d, a, GET(9), 0xeb86d391, 21)
+-
+-		a += saved_a;
+-		b += saved_b;
+-		c += saved_c;
+-		d += saved_d;
+-
+-		ptr += 64;
+-	} while (size -= 64);
+-
+-	ctx->a = a;
+-	ctx->b = b;
+-	ctx->c = c;
+-	ctx->d = d;
+-
+-	return ptr;
+-}
+-
+-void MD5_Init(MD5_CTX *ctx)
+-{
+-	ctx->a = 0x67452301;
+-	ctx->b = 0xefcdab89;
+-	ctx->c = 0x98badcfe;
+-	ctx->d = 0x10325476;
+-
+-	ctx->lo = 0;
+-	ctx->hi = 0;
+-}
+-
+-void MD5_Update(MD5_CTX *ctx, void *data, unsigned long size)
+-{
+-	MD5_u32plus saved_lo;
+-	unsigned long used, free;
+-
+-	saved_lo = ctx->lo;
+-	if ((ctx->lo = (saved_lo + size) & 0x1fffffff) < saved_lo)
+-		ctx->hi++;
+-	ctx->hi += size >> 29;
+-
+-	used = saved_lo & 0x3f;
+-
+-	if (used) {
+-		free = 64 - used;
+-
+-		if (size < free) {
+-			egg_memcpy(&ctx->buffer[used], data, size);
+-			return;
+-		}
+-
+-		egg_memcpy(&ctx->buffer[used], data, free);
+-		data = ((unsigned char *)data) + free;
+-		size -= free;
+-		body(ctx, ctx->buffer, 64);
+-	}
+-
+-	if (size >= 64) {
+-		data = body(ctx, data, size & ~(unsigned long)0x3f);
+-		size &= 0x3f;
+-	}
+-
+-	egg_memcpy(ctx->buffer, data, size);
+-}
+-
+-void MD5_Final(unsigned char *result, MD5_CTX *ctx)
+-{
+-	unsigned long used, free;
+-
+-	used = ctx->lo & 0x3f;
+-
+-	ctx->buffer[used++] = 0x80;
+-
+-	free = 64 - used;
+-
+-	if (free < 8) {
+-		egg_memset(&ctx->buffer[used], 0, free);
+-		body(ctx, ctx->buffer, 64);
+-		used = 0;
+-		free = 64;
+-	}
+-
+-	egg_memset(&ctx->buffer[used], 0, free - 8);
+-
+-	ctx->lo <<= 3;
+-	ctx->buffer[56] = ctx->lo;
+-	ctx->buffer[57] = ctx->lo >> 8;
+-	ctx->buffer[58] = ctx->lo >> 16;
+-	ctx->buffer[59] = ctx->lo >> 24;
+-	ctx->buffer[60] = ctx->hi;
+-	ctx->buffer[61] = ctx->hi >> 8;
+-	ctx->buffer[62] = ctx->hi >> 16;
+-	ctx->buffer[63] = ctx->hi >> 24;
+-
+-	body(ctx, ctx->buffer, 64);
+-
+-	result[0] = ctx->a;
+-	result[1] = ctx->a >> 8;
+-	result[2] = ctx->a >> 16;
+-	result[3] = ctx->a >> 24;
+-	result[4] = ctx->b;
+-	result[5] = ctx->b >> 8;
+-	result[6] = ctx->b >> 16;
+-	result[7] = ctx->b >> 24;
+-	result[8] = ctx->c;
+-	result[9] = ctx->c >> 8;
+-	result[10] = ctx->c >> 16;
+-	result[11] = ctx->c >> 24;
+-	result[12] = ctx->d;
+-	result[13] = ctx->d >> 8;
+-	result[14] = ctx->d >> 16;
+-	result[15] = ctx->d >> 24;
+-
+-	egg_memset(ctx, 0, sizeof(ctx));
+-}
+diff -Naur eggdrop1.6.19/src/md5/md5.h eggdrop1.6.19-ssl/src/md5/md5.h
+--- eggdrop1.6.19/src/md5/md5.h	2003-03-06 04:35:59.000000000 +0100
++++ eggdrop1.6.19-ssl/src/md5/md5.h	1970-01-01 01:00:00.000000000 +0100
+@@ -1,26 +0,0 @@
+-/*
+- * This is an OpenSSL-compatible implementation of the RSA Data Security,
+- * Inc. MD5 Message-Digest Algorithm.
+- *
+- * Written by Solar Designer <solar@openwall.com> in 2001, and placed in
+- * the public domain.  See md5c.c for more information.
+- */
+-
+-#ifndef _MD5_H
+-#define _MD5_H
+-
+-/* Any 32-bit or wider integer data type will do */
+-typedef unsigned long MD5_u32plus;
+-
+-typedef struct {
+-	MD5_u32plus lo, hi;
+-	MD5_u32plus a, b, c, d;
+-	unsigned char buffer[64];
+-	MD5_u32plus block[16];
+-} MD5_CTX;
+-
+-extern void MD5_Init(MD5_CTX *ctx);
+-extern void MD5_Update(MD5_CTX *ctx, void *data, unsigned long size);
+-extern void MD5_Final(unsigned char *result, MD5_CTX *ctx);
+-
+-#endif
+diff -Naur eggdrop1.6.19/src/mod/compress.mod/compress.c eggdrop1.6.19-ssl/src/mod/compress.mod/compress.c
+--- eggdrop1.6.19/src/mod/compress.mod/compress.c	2008-02-16 22:41:07.000000000 +0100
++++ eggdrop1.6.19-ssl/src/mod/compress.mod/compress.c	2009-01-15 09:45:18.000000000 +0100
+@@ -36,6 +36,8 @@
+ #include "src/mod/module.h"
+ #include "share.mod/share.h"
+ 
++#include <zlib.h>
++
+ #ifdef HAVE_MMAP
+ #  undef panic
+ #  include <sys/types.h>
+diff -Naur eggdrop1.6.19/src/mod/irc.mod/chan.c eggdrop1.6.19-ssl/src/mod/irc.mod/chan.c
+--- eggdrop1.6.19/src/mod/irc.mod/chan.c	2008-02-16 22:41:09.000000000 +0100
++++ eggdrop1.6.19-ssl/src/mod/irc.mod/chan.c	2009-01-15 09:45:18.000000000 +0100
+@@ -965,10 +965,10 @@
+         q = strchr(p, ' ');
+         if (q != NULL) {
+           *q = 0;
+-          set_key(chan, p);
++          set_keyegg(chan, p);
+           strcpy(p, q + 1);
+         } else {
+-          set_key(chan, p);
++          set_keyegg(chan, p);
+           *p = 0;
+         }
+       }
+diff -Naur eggdrop1.6.19/src/mod/irc.mod/irc.c eggdrop1.6.19-ssl/src/mod/irc.mod/irc.c
+--- eggdrop1.6.19/src/mod/irc.mod/irc.c	2008-02-16 22:41:09.000000000 +0100
++++ eggdrop1.6.19-ssl/src/mod/irc.mod/irc.c	2009-01-15 09:45:18.000000000 +0100
+@@ -256,7 +256,7 @@
+ 
+ /* Set the key.
+  */
+-static void set_key(struct chanset_t *chan, char *k)
++static void set_keyegg(struct chanset_t *chan, char *k)
+ {
+   nfree(chan->channel.key);
+   if (k == NULL) {
+diff -Naur eggdrop1.6.19/src/mod/irc.mod/irc.h eggdrop1.6.19-ssl/src/mod/irc.mod/irc.h
+--- eggdrop1.6.19/src/mod/irc.mod/irc.h	2008-02-16 22:41:09.000000000 +0100
++++ eggdrop1.6.19-ssl/src/mod/irc.mod/irc.h	2009-01-15 09:45:18.000000000 +0100
+@@ -69,7 +69,7 @@
+ 
+ static void reset_chan_info(struct chanset_t *);
+ static void recheck_channel(struct chanset_t *, int);
+-static void set_key(struct chanset_t *, char *);
++static void set_keyegg(struct chanset_t *, char *);
+ static void maybe_revenge(struct chanset_t *, char *, char *, int);
+ static int detect_chan_flood(char *, char *, char *, struct chanset_t *, int,
+                              char *);
+diff -Naur eggdrop1.6.19/src/mod/irc.mod/mode.c eggdrop1.6.19-ssl/src/mod/irc.mod/mode.c
+--- eggdrop1.6.19/src/mod/irc.mod/mode.c	2008-02-16 22:41:09.000000000 +0100
++++ eggdrop1.6.19-ssl/src/mod/irc.mod/mode.c	2009-01-15 09:45:18.000000000 +0100
+@@ -1128,7 +1128,7 @@
+             break;
+           }
+           if (ms2[0] == '+') {
+-            set_key(chan, op);
++            set_keyegg(chan, op);
+             if (channel_active(chan))
+               got_key(chan, nick, from, op);
+           } else {
+@@ -1139,7 +1139,7 @@
+                        !chan_master(user) && !match_my_nick(nick))
+                 add_mode(chan, '+', 'k', chan->key_prot);
+             }
+-            set_key(chan, NULL);
++            set_keyegg(chan, NULL);
+           }
+           check_tcl_mode(nick, from, u, chan->dname, ms2, op);
+           break;
+diff -Naur eggdrop1.6.19/src/mod/module.h eggdrop1.6.19-ssl/src/mod/module.h
+--- eggdrop1.6.19/src/mod/module.h	2008-02-16 22:41:06.000000000 +0100
++++ eggdrop1.6.19-ssl/src/mod/module.h	2009-01-15 09:45:18.000000000 +0100
+@@ -471,13 +471,23 @@
+ /* IPv6 leftovers: 286 */
+ /* IPv6 leftovers: 287 */
+ /* 288 - 291 */
+-/* IPv6 leftovers: 288 */
++#ifdef EGG_SSL_EXT
++#define net_switch_to_ssl ((int (*)(int))global[289])
++#define ssl_use (*(int *)global[290]) /* kyotou */
++#define strip_mirc_codes ((void (*)(int, char *))global[291])
++#define check_ansi ((int (*) (char *))global[292])
++#define oatoi ((int (*) (const char *))global[293])
++/* 292 - 295 */
++#define str_isdigit ((int (*) (const char *))global[294])
++#define remove_crlf ((void (*)(char **))global[295])
++#else
+ #define strip_mirc_codes ((void (*)(int, char *))global[289])
+ #define check_ansi ((int (*) (char *))global[290])
+ #define oatoi ((int (*) (const char *))global[291])
+ /* 292 - 295 */
+ #define str_isdigit ((int (*) (const char *))global[292])
+ #define remove_crlf ((void (*)(char **))global[293])
++#endif
+ 
+ /* hostmasking */
+ #define maskhost(a,b) _maskhost((a),(b),1)
+diff -Naur eggdrop1.6.19/src/mod/server.mod/servmsg.c eggdrop1.6.19-ssl/src/mod/server.mod/servmsg.c
+--- eggdrop1.6.19/src/mod/server.mod/servmsg.c	2008-02-16 22:41:10.000000000 +0100
++++ eggdrop1.6.19-ssl/src/mod/server.mod/servmsg.c	2009-01-15 09:45:18.000000000 +0100
+@@ -1293,6 +1293,14 @@
+       fatal("NO SERVERS WILL ACCEPT MY CONNECTION.", 0);
+   } else {
+     dcc[servidx].sock = serv;
++	#ifdef EGG_SSL_EXT
++	if (ssl_use) { /* kyotou */
++		if (net_switch_to_ssl(serv)==0) {
++			putlog(LOG_SERV, "*", "SSL %s %s (Error while switching to SSL)", IRC_FAILEDCONNECT, dcc[servidx].host);
++			lostdcc(servidx);    
++		}
++	}    
++	#endif
+     /* Queue standard login */
+     dcc[servidx].timeval = now;
+     SERVER_SOCKET.timeout_val = &server_timeout;
+diff -Naur eggdrop1.6.19/src/modules.c eggdrop1.6.19-ssl/src/modules.c
+--- eggdrop1.6.19/src/modules.c	2008-02-16 22:41:04.000000000 +0100
++++ eggdrop1.6.19-ssl/src/modules.c	2009-01-15 13:00:44.000000000 +0100
+@@ -29,9 +29,13 @@
+ #include "main.h"
+ #include "modules.h"
+ #include "tandem.h"
+-#include "md5/md5.h"
++
++#include "openssl/md5.h"
++
+ #include "users.h"
+ 
++#include "net.h"
++
+ #ifndef STATIC
+ #  ifdef MOD_USE_SHL
+ #    include <dl.h>
+@@ -94,6 +98,10 @@
+            password_timeout, force_expire, protect_readonly, reserved_port_min,
+            reserved_port_max, copy_to_tmp, quiet_reject;
+ 
++#ifdef EGG_SSL_EXT
++extern int      ssl_use; /* kyotou */
++#endif
++
+ extern party_t *party;
+ extern time_t now, online_since;
+ extern tand_t *tandbot;
+@@ -128,6 +136,10 @@
+ }
+ #endif /* STATIC */
+ 
++#ifdef EGG_SSL_EXT
++int net_switch_to_ssl(int);
++#endif
++
+ 
+ /* The null functions */
+ void null_func()
+@@ -564,7 +576,13 @@
+   (Function) 0,                   /* IPv6 leftovers: 286                 */
+   (Function) 0,                   /* IPv6 leftovers: 287                 */
+   /* 288 - 291 */
++#ifdef EGG_SSL_EXT
+   (Function) 0,                   /* IPv6 leftovers: 288                 */
++  (Function) net_switch_to_ssl,
++  (Function) & ssl_use, /* kyotou */
++#else
++  (Function) 0,                   /* IPv6 leftovers: 288                 */
++#endif
+   (Function) strip_mirc_codes,
+   (Function) check_ansi,
+   (Function) oatoi,
+diff -Naur eggdrop1.6.19/src/net.c eggdrop1.6.19-ssl/src/net.c
+--- eggdrop1.6.19/src/net.c	2008-02-16 22:41:04.000000000 +0100
++++ eggdrop1.6.19-ssl/src/net.c	2009-01-15 09:45:18.000000000 +0100
+@@ -52,6 +52,18 @@
+ #  endif
+ #endif
+ 
++#ifdef EGG_SSL_EXT
++#  ifndef EGG_SSL_INCS
++#    include <openssl/ssl.h>
++#    include <openssl/err.h>
++#    include <openssl/rand.h>
++#    define EGG_SSL_INCS 1
++#  endif
++#endif
++
++#include "net.h"
++
++
+ extern struct dcc_t *dcc;
+ extern int backgrd, use_stderr, resolve_timeout, dcc_total;
+ extern unsigned long otraffic_irc_today, otraffic_bn_today, otraffic_dcc_today,
+@@ -64,7 +76,11 @@
+ int firewallport = 1080;      /* Default port of socks 4/5 firewalls.         */
+ char botuser[21] = "eggdrop"; /* Username of the user running the bot.        */
+ int dcc_sanitycheck = 0;      /* Do some sanity checking on dcc connections.  */
+-
++#ifdef EGG_SSL_EXT
++SSL_CTX *ssl_ctx=NULL;
++char	*tls_rand_file = NULL;
++int     ssl_use = 0; /* kyotou */
++#endif
+ sock_list *socklist = NULL;   /* Enough to be safe.                           */
+ int MAXSOCKS = 0;
+ sigjmp_buf alarmret;             /* Env buffer for alarm() returns.              */
+@@ -88,6 +104,46 @@
+   return ret;
+ }
+ 
++#ifdef EGG_SSL_EXT
++int seed_PRNG(void)
++{
++    char stackdata[1024];
++    static char rand_file[300];
++    FILE *fh;
++    
++#if OPENSSL_VERSION_NUMBER >= 0x00905100
++    if (RAND_status())
++	return 0;     /* PRNG already good seeded */
++#endif
++    /* if the device '/dev/urandom' is present, OpenSSL uses it by default.
++     * check if it's present, else we have to make random data ourselfs.
++     */
++    if ((fh = fopen("/dev/urandom", "r"))) {
++	fclose(fh);
++	return 0;
++    }
++    if (RAND_file_name(rand_file, sizeof(rand_file)))
++	tls_rand_file = rand_file;
++    else
++	return 1;
++    if (!RAND_load_file(rand_file, 1024)) {
++	/* no .rnd file found, create new seed */
++	unsigned int c;
++	c = time(NULL);
++	RAND_seed(&c, sizeof(c));
++	c = getpid();
++	RAND_seed(&c, sizeof(c));
++	RAND_seed(stackdata, sizeof(stackdata));
++    }
++#if OPENSSL_VERSION_NUMBER >= 0x00905100
++    if (!RAND_status())
++	return 2;   /* PRNG still badly seeded */
++#endif
++    return 0;
++}
++#endif
++
++
+ /* Initialize the socklist
+  */
+ void init_net()
+@@ -96,8 +152,34 @@
+ 
+   for (i = 0; i < MAXSOCKS; i++) {
+     socklist[i].flags = SOCK_UNUSED;
++#ifdef EGG_SSL_EXT
++    socklist[i].ssl=NULL;
++#endif
+   }
++#ifdef EGG_SSL_EXT
++  /* good place to init ssl stuff */
++  SSL_load_error_strings();
++  OpenSSL_add_ssl_algorithms();
++  ssl_ctx=SSL_CTX_new(SSLv23_client_method());
++  if (!ssl_ctx) 
++  fatal("SSL_CTX_new() failed",0);
++  if (seed_PRNG())
++    fatal("Wasn't able to properly seed the PRNG!",0);	
++#endif
++}
++
++#ifdef EGG_SSL_EXT
++/* cleanup mess when quiting */
++int clean_net() {
++   if (ssl_ctx) {
++	SSL_CTX_free(ssl_ctx);
++	ssl_ctx = NULL;
++  }
++  if (tls_rand_file)
++	RAND_write_file(tls_rand_file);
++ return 0;
+ }
++#endif
+ 
+ int expmem_net()
+ {
+@@ -307,6 +389,13 @@
+ 
+   for (i = 0; i < MAXSOCKS; i++) {
+     if ((socklist[i].sock == sock) && !(socklist[i].flags & SOCK_UNUSED)) {
++#ifdef EGG_SSL_EXT
++      if (socklist[i].ssl) {
++    	SSL_shutdown(socklist[i].ssl);
++	    SSL_free(socklist[i].ssl);
++	    socklist[i].ssl=NULL;
++      }
++#endif
+       close(socklist[i].sock);
+       if (socklist[i].inbuf != NULL) {
+         nfree(socklist[i].inbuf);
+@@ -448,6 +537,63 @@
+   return sock;
+ }
+ 
++#ifdef EGG_SSL_EXT
++int net_switch_to_ssl(int sock) {
++int err;
++int i=0;
++    debug0("net_switch_to_ssl()");
++    while (i<MAXSOCKS) {
++     if (socklist[i].sock==sock) {
++      break;
++     }
++     i++;
++    }
++    if (i==MAXSOCKS) {
++        debug0("Error while swithing to SSL - sock not found in list");
++	return 0;
++    }
++
++    if (socklist[i].ssl) {
++        debug0("Error while swithing to SSL - already in ssl");
++	return 0;
++    }
++    socklist[i].ssl = SSL_new(ssl_ctx);
++    if (!socklist[i].ssl) {
++        debug0("Error while swithing to SSL - SSL_new() error");
++	return 0;
++    }
++
++     SSL_set_fd(socklist[i].ssl, socklist[i].sock);
++     err = SSL_connect(socklist[i].ssl);
++   
++     while (err <= 0) {
++        int errs;
++        errs=SSL_get_error(socklist[i].ssl,err);
++        if ((errs!=SSL_ERROR_WANT_READ)&&(errs!=SSL_ERROR_WANT_WRITE)&&
++	        (errs!=SSL_ERROR_WANT_X509_LOOKUP)) {
++		putlog(LOG_DEBUG,"*", "SSL_connect() = %d, %s", err,
++			(char *)ERR_error_string(ERR_get_error(), NULL));
++	 	SSL_shutdown(socklist[i].ssl);
++	 	SSL_free(socklist[i].ssl);
++	 	socklist[i].ssl = NULL;
++	        return 0;	    
++        }
++        usleep(1000);
++        err = SSL_connect(socklist[i].ssl);
++     }
++
++     if (err==1) {
++      debug0("SSL_connect() success"); 
++      return 1;
++     }
++     debug0("Error while SSL_connect()"); 
++     SSL_shutdown(socklist[i].ssl);
++     SSL_free(socklist[i].ssl); 
++     socklist[i].ssl = NULL;
++     return 0;
++}
++#endif
++
+ /* Ordinary non-binary connection attempt */
+ int open_telnet(char *server, int port)
+ {
+@@ -627,6 +773,9 @@
+     for (i = 0; i < MAXSOCKS; i++) {
+       if ((!(socklist[i].flags & SOCK_UNUSED)) &&
+           ((FD_ISSET(socklist[i].sock, &fd)) ||
++#ifdef EGG_SSL_EXT
++		  ((socklist[i].ssl)&&(SSL_pending(socklist[i].ssl))) ||
++#endif	  
+           ((socklist[i].sock == STDOUT) && (!backgrd) &&
+           (FD_ISSET(STDIN, &fd))))) {
+         if (socklist[i].flags & (SOCK_LISTEN | SOCK_CONNECT)) {
+@@ -651,7 +800,31 @@
+         if ((socklist[i].sock == STDOUT) && !backgrd)
+           x = read(STDIN, s, grab);
+         else
++#ifdef EGG_SSL_EXT
++	{
++        if (socklist[i].ssl) {
++           x=SSL_read(socklist[i].ssl,s,grab);
++ 	   if (x < 0) {
++	    int err = SSL_get_error(socklist[i].ssl, x);
++	    x = -1;
++	    switch (err) {
++	    	case SSL_ERROR_WANT_READ:
++		    errno = EAGAIN;
++		    break;
++	    	case SSL_ERROR_WANT_WRITE:
++ 		    errno = EAGAIN;
++		    break;
++         	case SSL_ERROR_WANT_X509_LOOKUP:
++		    errno = EAGAIN;
++		    break;
++		}
++  	    }
++        } else
+           x = read(socklist[i].sock, s, grab);
++	}
++#else
++	  x = read(socklist[i].sock, s, grab);
++#endif  
+         if (x <= 0) {           /* eof */
+           if (errno != EAGAIN) { /* EAGAIN happens when the operation would
+                                   * block on a non-blocking socket, if the
+@@ -944,6 +1117,26 @@
+         socklist[i].outbuflen += len;
+         return;
+       }
++#ifdef EGG_SSL_EXT
++      if (socklist[i].ssl) {
++       x=SSL_write(socklist[i].ssl,s,len);
++ 	   if (x < 0) {
++	    int err = SSL_get_error(socklist[i].ssl, x);
++	    x = -1;
++	    switch (err) {
++	    	case SSL_ERROR_WANT_READ:
++			errno = EAGAIN;
++		    break;
++        	case SSL_ERROR_WANT_WRITE:
++		    errno = EAGAIN;
++		    break;
++        	case SSL_ERROR_WANT_X509_LOOKUP:
++		    errno = EAGAIN;
++		    break;
++		}
++  	   }
++      } else
++#endif      
+       /* Try. */
+       x = write(z, s, len);
+       if (x == -1)
+@@ -1010,6 +1203,27 @@
+         (socklist[i].outbuf != NULL) && (FD_ISSET(socklist[i].sock, &wfds))) {
+       /* Trick tputs into doing the work */
+       errno = 0;
++#ifdef EGG_SSL_EXT
++      if (socklist[i].ssl) {
++	   x = write(socklist[i].sock, socklist[i].outbuf,
++		socklist[i].outbuflen);
++ 	   if (x < 0) {
++ 	    int err = SSL_get_error(socklist[i].ssl, x);
++ 	    x = -1;
++ 	    switch (err) {
++ 	    	case SSL_ERROR_WANT_READ:
++ 		    errno = EAGAIN;
++ 		    break;
++ 	    	case SSL_ERROR_WANT_WRITE:
++ 		    errno = EAGAIN;
++ 		    break;
++ 	    	case SSL_ERROR_WANT_X509_LOOKUP:
++ 		    errno = EAGAIN;
++ 		    break;
++ 		}
++   	    }
++       } else
++#endif   
+       x = write(socklist[i].sock, socklist[i].outbuf, socklist[i].outbuflen);
+       if ((x < 0) && (errno != EAGAIN)
+ #ifdef EBADSLT
+diff -Naur eggdrop1.6.19/src/net.h eggdrop1.6.19-ssl/src/net.h
+--- eggdrop1.6.19/src/net.h	1970-01-01 01:00:00.000000000 +0100
++++ eggdrop1.6.19-ssl/src/net.h	2009-01-15 09:45:18.000000000 +0100
+@@ -0,0 +1,30 @@
++#ifndef _EGG_NET_H
++#define _EGG_NET_H
++#ifdef EGG_SSL_EXT
++# ifndef EGG_SSL_INCS
++#  include <openssl/ssl.h>
++#  include <openssl/err.h>
++#  include <openssl/rand.h>
++#  define EGG_SSL_INCS 1
++# endif
++#endif
++
++/* This is used by the net module to keep track of sockets and what's
++ * queued on them
++ */
++typedef struct {
++  int		 sock;
++#ifdef EGG_SSL_EXT
++  SSL *ssl;  
++#endif
++  short		 flags;
++  char		*inbuf;
++  char		*outbuf;
++  unsigned long  outbuflen;	/* Outbuf could be binary data	*/
++  unsigned long	 inbuflen;	/* Inbuf could be binary data	*/
++#ifdef USE_IPV6
++  unsigned int af;
++#endif /* USE_IPV6 */
++} sock_list;
++
++#endif				/* _EGG_NET_H */
+diff -Naur eggdrop1.6.19/src/patch.h eggdrop1.6.19-ssl/src/patch.h
+--- eggdrop1.6.19/src/patch.h	2008-04-19 06:21:20.000000000 +0200
++++ eggdrop1.6.19-ssl/src/patch.h	2009-01-15 09:45:18.000000000 +0100
+@@ -32,7 +32,9 @@
+  *
+  *
+  */
+-/* PATCH GOES HERE */
++#ifdef EGG_SSL_EXT
++patch("SSL");
++#endif
+ /*
+  *
+  *
+diff -Naur eggdrop1.6.19/src/tcl.c eggdrop1.6.19-ssl/src/tcl.c
+--- eggdrop1.6.19/src/tcl.c	2008-02-16 22:41:04.000000000 +0100
++++ eggdrop1.6.19-ssl/src/tcl.c	2009-01-15 09:45:18.000000000 +0100
+@@ -44,6 +44,9 @@
+ 
+ 
+ extern time_t online_since;
++#ifdef EGG_SSL_EXT
++extern int      ssl_use; /* kyotou */
++#endif
+ 
+ extern char origbotname[], botuser[], motdfile[], admin[], userfile[],
+             firewall[], helpdir[], notify_new[], hostname[], myip[], moddir[],
+@@ -522,6 +525,9 @@
+   {"enable-simul",          &enable_simul,         0}, /* compat */
+   {"debug-output",          &debug_output,         0}, /* compat */
+   {"use-console-r",         &use_console_r,        0}, /* compat */
++#ifdef EGG_SSL_EXT
++  {"use-ssl",			&ssl_use,		0}, /* kyotou */
++#endif
+   {NULL,                    NULL,                  0}
+ };
+ 
+diff -Naur eggdrop1.6.19/src/tclmisc.c eggdrop1.6.19-ssl/src/tclmisc.c
+--- eggdrop1.6.19/src/tclmisc.c	2008-02-16 22:41:04.000000000 +0100
++++ eggdrop1.6.19-ssl/src/tclmisc.c	2009-01-15 12:55:27.000000000 +0100
+@@ -26,7 +26,8 @@
+ #include "main.h"
+ #include "modules.h"
+ #include "tandem.h"
+-#include "md5/md5.h"
++
++#include "openssl/md5.h"
+ 
+ #ifdef TIME_WITH_SYS_TIME
+ #  include <sys/time.h>

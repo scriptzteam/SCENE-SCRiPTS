@@ -1,0 +1,22 @@
+set mirror:order "*.nfo *.sfv"
+set mirror:set-permissions off
+set ssl:verify-certificate no
+set dns:max-retries 5
+set net:max-retries 3
+set ftp:use-fxp true
+set cache:enable false
+set ftp:use-site-idle false
+set ftp:use-mdtm false
+set ftp:lang false
+set ftp:use-hftp false
+set ftp:use-feat false
+set ftp:use-stat false
+set ftp:stat-interval 30
+set ftp:sync-mode true
+set ftp:passive-mode false
+set ftp:fix-pasv-address false
+set ftp:fxp-passive-source false
+set ftp:skey-allow false
+set ftp:ssl-protect-data false
+set ftp:ssl-protect-fxp false
+set mirror:no-empty-dirs true

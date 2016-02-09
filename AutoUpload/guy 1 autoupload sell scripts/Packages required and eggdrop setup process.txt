@@ -1,0 +1,42 @@
+u also might want to install mysql server etc packages before installing the below packages.
+
+apt-get install tcl8.4 tcl8.4-dev tcl8.4-doc
+apt-get install build-essential
+apt-get install patch
+apt-get install tcl-tls
+apt-get install tcltls
+apt-get install tcllib
+apt-get install curl libcurl3-dev
+apt-get install openssl libssl-dev
+apt-get install tclcurl
+apt-get install mysql-server mysql-client
+apt-get install mysqltcl
+
+## tclcurl fix
+/usr/lib/tcltk/TclCurl7.19.6
+https://jira.toolserver.org/browse/TS-1393
+
+wget ftp://ftp.eggheads.org/pub/eggdrop/source/1.6/eggdrop1.6.19+ctcpfix.tar.gz
+tar zxvf eggdrop1.6.19+ctcpfix.tar.gz
+cd eggdrop1.6.19
+
+./configure
+make config
+make
+make install
+
+cd eggdrop
+
+cp scripts/autobotchk ./
+
+edit eggdrop.conf files to suite ur needs then strat bot with below command
+
+./eggdrop -m bot-1.conf
+./eggdrop -m bot-2.conf
+./eggdrop -m bot-3.conf
+
+
+crontab the bots so if it quits or pings out it auto starts in 10 minutes.
+./autobotchk ./bot-1.conf
+./autobotchk ./bot-2.conf
+./autobotchk ./bot-3.conf

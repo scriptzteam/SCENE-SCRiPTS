@@ -1,0 +1,140 @@
+Debian 4.0 Minimal  <-------------  REQUIRED TO WORK
+
+login as : root
+password : XXX
+
+apt-get update
+apt-get upgrade
+apt-get install apache2 php5 libapache2-mod-php5 
+apt-get install php5-gd
+apt-get install build-essential mysql-server libmysqlclient15-dev
+apt-get install curl libcurl4-dev
+apt-get install openssl libssl-dev
+apt-get install mysql-server mysql-client php5-mysql
+apt-get install phpmyadmin
+
+mysql -u root
+mysql> USE mysql;
+mysql> UPDATE user SET Password=PASSWORD('?AGBfN?ETe3H') WHERE user='root';
+mysql> FLUSH PRIVILEGES;
+
+---------------------------------------------------------
+
+mysql root pass: bH9YkKr4F6nz
+
+Your Carat Networks VPS Server Information 
+PRIMARY IP: 74.82.212.231 
+ADMIN USERNAME: root 
+ADMIN PASSWORD: 4bYSU8EyVO 
+
+user: codemeharry    pass: 793SaD62T3?
+iser: p2pdb        pass: bkT5nkZG5TK
+h9LeuMEJKyRm3nbh
+----------------------------------------------------------
+
+To set up under Apache all you need to do is include the following line in /etc/apache2/apache2.conf:
+
+Include /etc/phpmyadmin/apache.conf
+
+OR
+
+echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf
+
+/etc/init.d/apache2 restart
+
+ln -s /usr/share/phpmyadmin/ /var/www/phpmyadmin
+
+
+pico /etc/ssh/sshd_config
+
+/etc/init.d/ssh restart
+
+To Create User
+
+You must never use root password, so you might need to create a user to connect to mysql database 
+for a PHP script. Alternatively you can add users to mysql database by using a control panel like 
+webmin or phpMyAdmin to easily create or assign database permission to users.
+
+wget http://curl.haxx.se/download/curl-7.19.6.tar.gz
+tar zxfv curl-7.19.6.tar.gz
+
+wget http://c-ares.haxx.se/c-ares-1.6.0.tar.gz
+tar zxfv c-ares-1.6.0.tar.gz
+
+./curlinstall /home/ircduser/c-ares-1.6.0 /home/ircduser/curl-7.19.6
+
+wget http://www.unrealircd.com/downloads/Unreal3.2.9.tar.gz
+tar zxfv Unreal3.2.9.tar.gz
+cd Unreal3.2
+./Config
+
+Do settings
+
+make
+
+cp doc/example.conf unrealircd.conf
+
+replace unrealircd.config file
+
+./unreal start
+
+wget http://downloads.sourceforge.net/project/anope/anope-stable/Anope%201.8.6/anope-1.8.6.tar.gz?use_mirror=space
+mv anope-1.8.6.tar.gz?use_mirror=space anope-1.8.6.tar.gz
+tar zxfv anope-1.8.6.tar.gz
+cd anope-1.8.6
+./Config
+
+Do settings
+
+cd ~/anope-1.8.5/src/modules
+
+wget http://modules.anope.org/download_module/QVFTTlYwTjJBd1o9/ircd_vhostserv.c
+wget http://modules.anope.org/download_module/QVFBTlYwTmxad0Q9/cs_autoowner.c
+wget http://modules.anope.org/download_module/QXdTTlYwTjRBd1I9/bs_fantasy_ext-1.2.0.tar.gz
+tar zxfv bs_fantasy_ext-1.2.0.tar.gz
+
+cd ~/anope-1.8.5
+make modules
+
+make
+
+make install
+
+cd ~/services
+
+mv example.conf services.conf
+
+replace services.conf file
+
+install required modules into /Unreal3.2/src/modules
+
+cd ~/Unreal3.2
+cd Unreal3.2
+cd ~/anope-1.8.5
+
+
+cd ~/services
+
+/os modload bs_fantasy_ext
+/os modload cs_autoowner
+/os modload ircd_vhostserv
+
+/mkpasswd sha1 password
+
+
+
+
+SSL Setup guide
+
+apt-get install openssl ssl-cert
+apt-get install libapache2-mod-php5 php5-cli php5-common php5-cgi
+
+openssl req $@ -new -x509 -days 365 -nodes -out /etc/apache2/apache.pem -keyout /etc/apache2/apache.pem
+
+chmod 600 /etc/apache2/apache.pem
+
+a2enmod ssl
+
+/etc/init.d/apache2 restart
+
+now edit httpd.conf file and reload apache

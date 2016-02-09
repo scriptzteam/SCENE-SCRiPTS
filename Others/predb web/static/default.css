@@ -1,0 +1,19 @@
+html, body {
+    background-color: #eee;
+}
+
+body {
+    padding-top: 50px;
+}
+
+footer p {
+    text-align: center;
+	margin-top: 17px;
+	padding-top: 17px;
+	border-top: 1px solid #eee;
+	opacity: 0.5;
+}
+
+footer:hover{
+	opacity: 1;
+}

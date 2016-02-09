@@ -1,0 +1,38 @@
+----------------=README=---------------------
+
+
+used to read flac tags and treat them 
+in the same way that pzs-ng treats 
+mp3 files. to apply the patch first make
+sure that you have libFLAC installed,
+on debian this is done with the following 
+packages:
+
+apt-get install libflac8 libflac-dev
+
+once this is done, download ng_r2532
+the version this is patched against. 
+once extracted;
+
+cd zipscript/src
+patch -p1 -i /path/to/flac_source.patch
+
+cd ../include
+patch -p1 -i /path/to/flac_header.patch
+
+
+report any issues you come across during 
+patching.
+
+next step is to ensure that you have the 
+required libs needed in the chroot, to 
+achieve this edit your copy of libcopy.sh 
+(usually in glftpd root) and add "flac" 
+to the list of required bins.
+
+and then test ...
+
+
+-------------------------------------io-----
+
+

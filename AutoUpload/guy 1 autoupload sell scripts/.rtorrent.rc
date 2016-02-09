@@ -1,0 +1,64 @@
+## max connections we will make to others (0=listen only)
+min_peers = 0
+
+## max amount of clients that we will upload to. It is advisable to upload
+## no less than 2KB/s per client. If we allow 100KB/sec max upload speed
+## then we should allow no more then 50 upload slots per torrent.
+max_peers = 100
+
+min_peers_seed = -1
+max_peers_seed = -1
+
+download_rate = 0
+upload_rate = 0
+
+## max upload slots total for all torrents open to clients
+max_uploads = 100
+
+# memory limit for rtorrent set to 1 megabytes, so if it somehow
+# reaches the limit, kernel won't hang or shut it down.
+# a safety measure, really.
+max_memory_usage = 1500M
+
+## max amount of torrent files to keep in memory (reduces hard drive load)
+## max open files must be between 4 and 2^16.
+max_open_files = 256
+
+# someone recommended this to me. it's a rtorrent
+# setting from the nslu2 linux running on a WD NAT.
+# just copy them, do not modify.
+
+# Increasing the send buffer size may help reduce disk seeking as more data is buffered each 
+# time the socket is written to. On linux you may use "cat /proc/sys/net/ipv4/tcp_wmem" to see 
+# the minimum, default and max buffer size, respectively. 
+send_buffer_size = 41930
+receive_buffer_size = 41943
+
+directory = /home/aut0bots/files-db
+session = /home/aut0bots/.rtorrentsession
+
+schedule = watch_directory_1,5,5,load_start=/home/aut0bots/rtorrent-watch/*.torrent
+
+schedule = tied_directory,5,5,start_tied=
+schedule = untied_directory,5,5,close_untied=
+
+schedule = low_diskspace,5,60,close_low_diskspace=1000M
+
+port_range = 55556-61560
+
+port_random = no
+
+# this settings does not make rtorrent check hash on every reboot,
+# but only at the end of downloading.
+check_hash = no
+
+# best hash settings available, use them.
+hash_read_ahead = 8
+hash_interval = 10
+hash_max_tries = 2
+
+encryption = allow_incoming,enable_retry,prefer_plaintext
+
+peer_exchange = no
+
+dht = disable
