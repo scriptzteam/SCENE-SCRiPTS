@@ -1,0 +1,10 @@
+Tur-User_Traffic_Limit (GL1&2)
+
+Description: A script that will monitor and prohibit users from downloading and/or 
+uploading too much in a given duration (DAY/WEEK/MONTH).
+Good for those with limited bandwidth who want to prevent a single user from eating
+it all up.
+
+Author:   Turranius
+Version:  1.1
+Added on: 27-Nov-2004

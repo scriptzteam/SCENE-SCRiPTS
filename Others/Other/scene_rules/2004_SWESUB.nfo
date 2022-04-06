@@ -1,0 +1,105 @@
+
+
+-----------------------[- SWESUB STANDARDS 2004 -]-------------------------------
+
+.1-[ViDEO]
+---| Aspect Ratio PAL 576x480 / NTSC 480x480.
+---| Only FS 4:3 and WS 16/9 are allowed. Not anamorphic ws becouse they
+---| dont work 100% on all standalone dvdplayers.
+---| Telecid should be turned on to get ultimate quality ( if movie is interlaced )
+---| Never release a movie if less bitrate then 1674 or highest 2450 +-1%
+---| Examples below
+---| ( 104Min 74Min=2CDS = 1702 Bitrate )
+---| ( 112Min 80Min=2CDS = 1708 Bitrate )
+---| ( 156Min 74Min=3CDS = 1702 Bitrate )
+---| ( 168Min 80Min=3CDS = 1708 Bitrate )
+---| MAX Bitrate 2496 MIN Bitrate 1554 use 120 or more from MIN/MAX AVG bitrate
+---| else cce/tmpgenc can fail
+---| Never use less PASS then below and always use Varible Bitrate.
+---| Tmpgenc: 2 PASS VBR (Min)
+---| Cinema Craft Encoder: 4 PASS MVBR (Min)
+---|-----------------------------------------------------------------------------
+
+.2-[ViDEO+SOUND]
+---| PEAK Video + Audio
+---| Bitrate on video max avg 2450 + Sound 224kbs 44.1Khz = PEAK at MAX 2674 AVG
+---| Bitrate on video min avg 1674 + Sound 224kbs 44.1Khz = PEAK at MIN 1898 AVG
+---| So never go less then 1898 AVG. and never go higher then 2674 AVG
+---|-----------------------------------------------------------------------------
+
+.3-[AUDiO]
+---| 224Kbs 44100Khz STEREO
+---|-----------------------------------------------------------------------------
+
+.4-[SUBTiTLES]
+---| Subtitles should be as on DVD. / alternative at one 16/9 movie 50/50 on bottom
+---| border if subtitles 100% is in the picture.
+---| Only Permanent subtitles allowed.
+---| Fonts should be ( Verdana ) they are easiest to read.
+---| Subtitle color should be white.
+---|-----------------------------------------------------------------------------
+
+.5-[SAMPLE]
+---| Sample should be 1Min no more or less.
+---|-----------------------------------------------------------------------------
+
+.6-[PACKAGiNG]
+---| All releases must be BIN/CUE.
+---| Must be packed with RAR, compression is NOT ALLOWED and broken into 15MB volumes
+---| If 2/3/4 CD release last CD shouldnt be less then 44/45X15MB = 650MB+
+---| Must have SFV
+---| Must have NFO
+---| Directory names shall NOT exceed 64 characters.
+---| Another.Movie.SVCD.DVDRip.SWESUB.YEAR-GROUP : Example what should be in one dir
+---| Allowed disc dirs CD1 CD2 CD3 Sample not Cd1 Cd2 Cd3 or Disc1 Disc2 Disc3
+---| Always use small letters in the .rar archive and .nfo
+---| Nfo file another.movie.svcd.dvdrip.swesub.year-group.nfo : Example
+---| If its possible please use SVCDINFO.TXT its one proof of the svcd quality
+---| FS = 4:3 and WS = 16/9 and if movie is STV or LiMiTED you need to have that info 
+---| in .NFO or DIRNAME.
+---| On movies from .SE .NO .DK .FI should movie be named like retail/theater title
+---| from that country.
+---| On other movies use .US retail/theater title.
+---| Acceptable characters in a directory
+---|  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+---|  abcdefghijklmnopqrstuvwxyz
+---|  0123456789 . -_
+---|-----------------------------------------------------------------------------
+
+.7-[MENUES/INTRO]
+---| Menu is allowed if they are like source.
+---| Never use intro/cd change pictures
+---|-----------------------------------------------------------------------------
+
+.8-[PROPERS]
+---| No previous releases may be propered based on audio or video bitrate.
+---| Propers will be allowed in the case of technical problems, bad aspect
+---| ratio, sync problems, skipping/freezing, interlaced, wrong placed subtitles,
+---| other font colour then allowed and bad .rar archives,, or stolen sourches.
+---|-----------------------------------------------------------------------------
+
+.9-[DUPES]
+---| FS = 4:3 Dupes WS = 16/9
+---| Wierd proper reasons
+---| Retail subs never dupe Custom sub....
+---|-----------------------------------------------------------------------------
+
+.10[REENCODE]
+---| Dl a dvdr and encode to svcd its NOT oké... And if its one COMPLETE DVDR
+---| (not encoded movie) then you need to have PERMISSION from the group that
+---| released it to make svcd swesub from that.. or else its STOLEN.
+---| Simple honor by thiefs.....
+---|-----------------------------------------------------------------------------
+
+.11[THEATER?]
+---| What is limited and stv?
+---| An limited movie has 1-499 (SCREENS) .US and 1-299 (SCREENS) .UK
+---| A stv never hit one public theater and got straight to video
+---| If movie is Festival it will go like limited.
+---| You can find all info at www.imdb.com ...
+---|-----------------------------------------------------------------------------
+
+-----------------------------[- SiGNED BY -]------------------------------------
+BBSvCD - PWRSVCD - CaKe - PiTch - DiTS - iNSANE 
+-------------------------------[- 2004 -]---------------------------------------
+Updated 2004-01-26

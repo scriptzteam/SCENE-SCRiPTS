@@ -1,0 +1,16 @@
+Note: Since 1.1, you can set it to convert MB to GB at a certain limit. That is not reflected in this example.
+
+11:12 <Turran> !galup
+11:12 <|BoT|> WhereAmI 1.0. Use: !command <username/group>. Commands are, for users: alup,aldn,mnup,mndn,wkup,wkdn,tdup,tddn. For groups, just put a g infront of any user commands, like !galup <group>
+
+11:13 <Turran> !galup iND
+11:13 <|BoT|> iND is 1st with 7854 files and 82612MB, followed by SAiT with 9365 files and 68930MB
+
+11:16 <Turran> !alup turranius
+11:16 <|BoT|> turranius is 1st with 5,618 files and 47234MB, followed by ostnisse with 5,044 files and 36613MB
+
+11:16 <Turran> !wkdn turranius
+11:16 <|BoT|> Ahead of turranius at #23 is Nisse with 37F and 529MB. turranius is #24 with 33F and 473MB. Behind them both at #25 comes LameAzzc with 28F and 391MB.
+
+11:18 <Turran> !wkdn Per
+11:18 <|BoT|> Per is last at #63(Tihi) with 1F in 0MB. In front, at #62 is Lars with 1F in 1MB.

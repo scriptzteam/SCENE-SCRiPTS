@@ -1,0 +1,206 @@
+        ___ ___ _  ___ _      _      ___ ____   ___           _
+    ___| __| __(_)/ __(_)__ _| |    | _ \  _ \ / _ \ _ _ _  _| |___ ___
+   / _ \ _|| _|| | (__| / _` | |__  |  _/ |_) |  _  | '_| || | / -_|_-<
+   \___/_| |_| |_|\___|_\__,_|____| |_| |____/|_| |_|_|  \_,_|_\___/__/
+  
+                     cREATION dATE : [14]-[APR]-[2002]                                  
+  ____/\_____/\_____/\_____/\_____/\_____/\_____/\_____/\_____/\_____/\____
+ |___>  <___>  <___>  <___>  <___>  <___>  <___>  <___>  <___>  <___>  <___|
+      \/     \/     \/     \/     \/     \/     \/     \/     \/     \/
+                    
+                    
+   RELEASE-NAME-CREATION :
+   ***********************
+  
+ <program name>.vX.xx.<optional Language>.PalmOS.<cracktype>-<groupname>
+
+
+ <program name>.vX.xx.<optional Language>.Machine-Type.SymbianOS.<cracktype>-<groupname>              
+
+  Machine-Type : e.g. N9210 or N9210i  (Nokia Communikator)
+
+
+ <program name>.vX.xx.<optional Language>.CPU.OP-SYS.<cracktype>-<groupname>          
+
+ OP-SYS can be                                                                        
+  
+  CE      that is CE 2.0                                                              
+  PPC     that is for WinCE 3.0 but its not called CE, 99runs also on new ARM       
+          machines with PPC2002                                                       
+  HPC2000 that is a HandheldPC with keyboard (no pen) only ONE from HP existing                       
+  PPC2002 that is successor of PPC now most common and runs only on ARM machines                      
+
+ CPU types can be
+
+  SH3 is SH3 CPU                                                                      
+  MIPS is MIPS CPU                                                                    
+  ARM is STRONG ARM CPU                                                               
+  IPAQ is NOT a cpu but runs ARM , there are progs that run only on IPAQ so IPAQ has  
+  to be named as CPU                                                                  
+
+  For future extensions :
+  If there is a program version for a special machine then name the machine type      
+  instead of the cpu ( see the IPAQ example above ! )                                 
+
+
+ or use underscores if you like:
+
+ <program name>_vX.xx_<optional Language>_PalmOS_<cracktype>-<groupname>
+ <program name>_vX.xx_<optional Language>_ALL_OP-SYS_<cracktype>-<groupname>          
+ <program name>_vX.xx_<optional Language>_SymbianOS_<cracktype>-<groupname>          
+             
+
+ <groupname> has to be <name>pda  to part the pda section !!
+
+             
+ Examples:      WOMAN.v1.4.JAPANESE.PalmOS.Regged-GROUPpda
+                WOMAN_v1.4_JAPANESE_PalmOS_Regged-GROUPpda
+                WOMAN.v1.4.JAPANESE.ARM.PPC2002.Regged-GROUPpda                       
+                WOMAN_v1.4_JAPANESE_ARM_PPC_Regged-GROUPpda                           
+                WOMAN_v1.4_JAPANESE_SymbianOS_Regged-GROUPpda                           
+                        
+ optional language tag should only be used on NON english releases...
+
+  
+  
+
+ 
+  EBOOKS : 
+  ********
+
+  <ebook name>.<Edition>.<optional Language>.OP-SYS.-<groupname>
+ 
+  Edition : Bookversion or Edition  
+  OP-SYS  : OperatingSystems eg. PalmOS, PPC
+  
+ 
+ 
+  
+                         
+           
+ CRACKTYPES :
+ ************
+ 
+  can be :
+ 
+  Regged                serial data is included in nfo 
+  Cracked               the program file has been altered to register the
+                        proggy. The program is then "Preregistered", "any
+                        name and/or serial can be entered" or "nags/trials
+                        removed"                     
+  Incl.Keymaker         if keymaker is included in package
+  Incl.Keymaker.Patch   if program is patched and shows correct
+                        serial relating to the hotsyncname(palmos,ppc) after
+                        program start or after entering any serial
+  Incl.PalmOS.Keymaker  if keymaker for PalmOS is in the package (if you wanna
+                        use some kind of plugin system for your keygen you HAVE
+                        to incl. the plugin-proggy too (not only the plugin))
+  Incl.WinCE.Keymaker   if keymaker for WinCE is in the package (if you wanna
+                        use some kind of plugin system for your keygen you HAVE
+                        to incl. the plugin-proggy too (not only the plugin))
+  Incl.Java.Keymaker    if keymaker comes via java applet, the java applet has
+                        to be delivered with a name.html file that loads the
+                        java app.
+
+  if a Keymaker is only in the package then a url to get the prg has to be
+  included in nfo !
+
+  if a Serial (HOTSYNC independent!) is only in the package then a url to get the prg
+  has to be included in nfo !
+  
+
+
+
+  Allowed are :
+
+  Keymaker.Only        
+  JAVA.Keymaker.Only    
+  PalmOS.Keymaker.Only
+  OPL.Keymaker.Only (Epoc16)                                                           
+  OP32.Keymaker.Only (Epoc32)                                                          
+  CPU.OP-SYS.Keymaker.Only 
+                                  
+             
+  Keymakers can be written in :
+  
+                        Dos, Win32, PalmOS, WinCE, Java ( with start.html )                         
+  
+                        
+                          
+ RELEASE RULES :
+ ***************
+  
+ Release format/size :
+  
+ If a release is bigger than 1.44 mb then it has to be parted in 1.44/2.88 MB
+ packages ( ISO can be packed with rar (most common) )
+  
+  
+                                   
+  Keygens:     A keymaker is allowed to be only (re-)released                            
+               1) when a major version hop of the application occurs i.e.
+                  1.xx -> 2.xx 
+               2) when the key algo changes. An algo-change has to be announced        
+                   by including READ.NFO in dirname AND a short           
+                   description in the nfo (for example: "Keygenalgo changed ...")                     
+               3) when there has not been a re-release within a 1 year.
+                                  
+               Example(1) : Keymaker released first time for v1.43 .
+                The first time it can be replaced for not being a dupe is when
+                the version changes to v2.xx or if the keyalgo changes. So also
+                in v1.44 ;)
+               Example(2): Prog.v1.1.incl.Keymaker-GRP released 01/01/2000
+                the next allowed release date for Prog.v1.11.incl.Keymaker-GRP
+                would be 01/01/2001. Its (of course) not allowed to release the                        
+                SAME version again after a 1 year :P
+                                   
+               Keymaker.Only releases are allowed, but then include the url where
+               where to download the program in the nfo.
+                                                                                                          
+  Keygenpatch: A Keygenpatch is a patch that alters the program that it shows the
+               right serial for the actual hotsync (and which regs it of course).
+               Keygenpatches are like Keygens (same rules here) with one difference:
+               Its allowed to release a Keygen after a Keygenpatch 
+               (even for the same version)
+
+  Cracks:      Cracks in form of patched programs can be released for every
+               version UNTIL they got keygened or a serial is released.
+               If a keygen or serial gets invalid for some reason a new crack           
+               can be released.
+                                  
+  Regged:      Can be a serial or name + serial. (hotsync id independent) 
+  (Serial)     Same rules as for keygens apply here (major version hops, serial
+               change, 1 year rule...)                                                                        
+                                                                                            
+  Retail:      A retail is treated like a crack with these exceptions:
+               - You are allowed to release a retail after 
+                 a serial/crack/keygen/keygenpatch IF (!) there's something special
+                 added (some kind of extra stuff that you dont have in the shareware/
+                 demo version). If thats the case you have to add a READ.NFO to the
+                 dirname and list whats the additional stuff.
+       
+             Normally retails should be released when its not possible to download
+             an uncrippled version which can be regged/keygenned.
+                        
+             
+  All releases must be (zip-)packed with the necessary files for the release and
+  a .nfo and .diz from the group.                                                         
+       
+   IMPORTANT INFO TO SITEOPs : 
+   *************************** 
+    
+  As we have seen in the past, there are some rules which prevent groups
+  releases being nuked on an affiliate site.  We think that if a valid nuke
+  reason applies to any release, it should be nuked on all sites - affil or
+  not.
+
+                 ->>> AFFIL PREVENTS NOT FROM BEEING NUKED !! <<
+  
+  
+                                      RULES SIGNED BY
+                                     -+-+-+-+-+-+-+-+-
+
+                                  APR 2002   --  COREpda
+                                  APR 2002   --  UFCpda
+                                  APR 2002   --  BLZpda
+                                    APR 2002   --  NLPDA

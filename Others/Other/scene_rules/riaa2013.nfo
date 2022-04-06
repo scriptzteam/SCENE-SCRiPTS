@@ -1,0 +1,694 @@
+
+	_______________________________________________________________
+	
+	
+                          ‹   ‹
+                      ‹ﬂ           ﬂﬂ˛‹‹
+       ˛              ˛                 ﬂ€‹‹
+         ﬂ‹‹                             ﬁ€€€‹          ‹ﬂ     ‹ ﬂ
+          ﬁ€€€‹‹         ﬂ‹‹            ‹≤€€€€€        ﬁ€€‹  ≤≤
+           €€€€ﬂ€€€‹‹‹     ﬂ€€€‹‹‹‹‹ ˛ ﬂ€€€€ﬂ€€€        ﬂ€€€€€›
+       iks €€€€    ﬂﬂ€€≤±   €€€€€      €€€≤   €€€         €€€€‹       RIAA
+    ∞∞∞∞∞∞ €€€€› ‹‹≤≤ﬂﬂ     ﬁ€€€€›    €€€≤     €€€       €€€€€€€‹     ∞∞∞∞∞∞
+    ∞∞∞∞∞∞ ﬁ€€€€€€€‹        ﬁ€€€€≤  ∞€€€≤       €€≤     €€€€ﬂ ﬂ€€€‹   ∞∞∞∞∞∞
+     titan ﬁ€€€€ﬂ€€€€€‹‹‹   ‹‹€€€€€‹€€€€‹‹‹‹‹   ﬁ€€≤   €€€€     ﬂ€€€‹ 2013
+          ˛‹€€€€›  ﬂﬂ≤ﬂﬂ€€≤≤ﬂﬂﬂﬂ          ﬂﬂﬂﬂﬂ€€€€€≤∞≤€€≤        ﬂ€€€‹
+            ﬂﬂﬂ≤≤    ‹ﬂﬂ   ∞                        ﬂﬂﬂﬂ€‹‹‹        ﬂ€€≤∞
+                   ˛                                       ﬂﬂ€‹‹      €€≤∞
+                  ‹                                            ﬂﬂ€‹‹  ﬁ€€≤
+                   ˛             ﬂ                                 ﬂ≤≤‹€€€›
+                     ﬂ˛ ‹  ‹ ˛          Tried and tested rules       ﬂ€€€€›
+                                        by the true MP3 scene!        ﬁ€€ﬂ
+                                                                     ‹ﬂﬂ
+                                                                  ﬂ
+    
+ 0.0 INDEX:
+     1.00.RELEASING STANDARDS.
+     2.00.TECHNICAL STANDARDS.
+     3.00.HOW TO PACKAGE.
+     4.00.WEB RELEASES.
+     5.00.LIVE RELEASES (BROADCAST).
+     6.00.FLASH RELEASES.
+     7.00.DVD/DVDA RELEASES.
+     8.00.HD RELEASES.
+     9.00.FIXING METHODOLOGY.
+    10.00.TIPS AND TRICKS.
+    11.00.DIRTAGS GLOSSARY.
+    
+ 1.00.RELEASING STANDARDS:
+   1.01.Dupechecking is performed at the release level (for example, a 
+        complete album or EP), not at the level of individual tracks within
+        a release.  A lone single track identical to that found on an 
+        existing scene release is not accepted as a single new release.
+        A new release is not a dupe of an old release if the new
+        release has different or more tracks; this holds true even if some of
+        the individual tracks are identical between the two releases.  
+        Examples of relevant differences include, but are not limited to:
+        remixes, refixes, edits, and remastered versions of tracks.
+        Examples:  
+        This is not a dupe...
+        AC_DC-Blackout_Evolution-CDM-2015-GROUP
+           01-ac_dc-suey_radio-group.mp3
+           02-ac_dc-suey_remix-group.mp3
+           03-ac_dc-suey_instrumental-group.mp3
+           04-ac_dc-suey_hardcoremix-group.mp3
+           05-ac_dc-suey_vocal-group.mp3
+        ...Even if these two similar releases were already pred:
+        AC_DC-Blackout_Evolution-CDS-2015-GROUP1
+           01-ac_dc-suey_radio-group1.mp3
+           02-ac_dc-suey_vocal-group1.mp3
+           03-ac_dc-suey_instrumental-group1.mp3
+        AC_DC-Blackout_Evolution-CDS_REMIX-2015-GROUP2
+           01-ac_dc-suey_remix-group2.mp3
+           02-ac_dc-suey_hardcoremix-group2.mp3
+           03-ac_dc-suey_housemix-group2.mp3
+        Similarly, a release that is a superset of previous releases is not a
+        dupe.  Therefore you can release this...
+        Burial--Street_Halo_Kindred_(BRC320)-CD-2012-CMC
+           01-burial-street_halo-cmc.mp3                  06:47   
+           02-burial-nyc-cmc.mp3                          07:40   
+           03-burial-stolen_dog-cmc.mp3                   06:23  
+           04-burial-kindred-cmc.mp3                      11:28   
+           05-burial-loner-cmc.mp3                        07:30   
+           06-burial-ashtray_wasp-cmc.mp3                 11:45
+        ...Even if those two were already released :
+        Burial-Street_Halo_EP-(HDB013)-WEB-2011-MPX
+            01-burial-street_halo-mpx.mp3                 06:44
+            02-burial-nyc-mpx.mp3                         07:38
+            03-burial-stolen_dog-mpx.mp3                  07:15
+        Burial_-_Kindred_EP-(HDB059)-WEB-2012-LiR
+            04-burial-kindred-lir.mp3                     11:28   
+            05-burial-loner-lir.mp3                       07:30   
+            06-burial-ashtray_wasp-lir.mp3                11:45
+        This is a dupe...
+        AC_DC-Blackout_Evolution-CDS-2015-GROUP1
+           01-ac_dc-suey_radio-group1.mp3
+           02-ac_dc-suey_vocal-group1.mp3
+           03-ac_dc-suey_instrumental-group1.mp3
+        ...if this was already released :
+        AC_DC-Blackout_Evolution-CDM-2015-GROUP2
+           01-ac_dc-suey_radio-group2.mp3
+           02-ac_dc-suey_remix-group2.mp3
+           03-ac_dc-suey_instrumental-group2.mp3
+           04-ac_dc-suey_hardcoremix-group2.mp3
+           05-ac_dc-suey_vocal-group2.mp3
+   1.02.You are only allowed to create a higher quality duplicate release for
+        an existing release that had a source of lower quality.  
+        The priority is: Data Format > Medium.
+        Data Format priority:
+        LPCM stereo > DD+ stereo or E-AC3 stereo > LPCM 3+ channels >
+        AC3 (dolby digital) stereo or DTS stereo > Dolby TrueHD > 
+        AC3 (dolby digital) 3+ channels or DTS 3+ channels (DTS-HD) > MPG
+        Medium priority :
+        BD or DVD or DVDA or DVDS or HDVD or SACD > HDDVDR or BDR or DVDR >
+        CDA or CD or CDS or CDM or CDA or CDEP > CDR > VL > WEB > 
+        CD BOOTLEG > TAPE
+        Example:
+		If an LPCM stereo source becomes available where the previous rip only
+		had an AC3 source, you may create a duplicate release from the LPCM 
+		source. Keep in mind that although the original AC3 source may have 
+		been a Bluray or other advanced format, a LPCM stereo CD source will
+		take priority.
+   1.03.Depending of the stage of creation of a medium, it can be called
+        either RETAIL, ADVANCE or PROMO.  The appropriate Extra dirtag is 
+        determined based upon such factors as the track numbering scheme, the
+        physical package and comparison of the MP3 bitrate with that obtained
+        for previous iterations of the release.  
+        Advances are mastered versions of studio album that resemble the final
+        store version but that may have a slightly different sound or even 
+        different tracks included.  
+        A promotional recording, or -PROMO-, is typically given away free to
+        broadcasters, DJs and journalists prior to the commercial release of
+        the music being promoted.  Promos rarely have detailed tracklists, 
+        liner notes or graphic packaging.  Proof scans for promos need not
+		contain tracklists  if they are not present.  Promos may yield lower 
+		bitrates upon compression than a -ADVANCE- or a -RETAIL- version of the
+		same tracks.  It is also possible that all tracks may not have the same
+		sound amplitude (See 3.17-3.23).
+        Additional tags include -REMASTERED-, which reflects a sonically new 
+        or different version of a release which is thus not a dupe. 
+        -REMASTERED- should never be confused with -REISSUE-, which simply
+        reflects a previously out-of-print or hard to find recording becoming
+        available in a new edition.  If the out of print recording has already
+        had a release, then a release of the -REISSUE- count as a dupe, unless
+        it features some real differences from the original version, like bonus
+        tracks.
+        The priority is REMASTERED > REISSUE or RETAIL >= ADVANCE > PROMO
+        Exceptions:
+        If a RETAIL album has been released and you have a different edition of
+        the same album (foreign/promo/advance/preorder/..) then it's allowed to
+        just release the different tracks and label it as -BONUS_TRACKS-. 
+        However you cannot re-release the entire recording 90 days after the
+        initial scene release except if:
+        A. It's a 1 disc release and more than 50% of the tracks of your 
+           version are not on the previous "retail" version.
+        B. It's a multi disc release and either more than 50% of the tracks or
+           at least 6 tracks of your version are not on the previous "retail" 
+           version.
+        Example:
+		The advance pressings of Spiritualizedís Ladies and Gentlemen, We Are
+		Floating in Space album included some Elvis lyrics in the titular 
+		track.  Due to legal threats, the retail version ended up with a
+		remixed version with different lyrics.  Advances are early drafts of
+		final studio albums and can sometimes yield a very minor difference in
+		bitrate upon compression, compared to the final retail version or other
+		versions that may be available.  If both -ADVANCE- and -RETAIL- prove
+		to contain the same content and length and the only difference is the 
+		proof scan, then -ADVANCE- also counts as -RETAIL-.
+   1.04.The tracks of a release must all be from the same source and have the
+        same quality/cbr-bitrate/vbr-setting/encoder/setting (Exception: FLASH
+        releases and WEB with screenshots of purchase; these sources have 
+        repeatedly been shown to contain files created by multiple encoders).
+        Taking tracks from other sources to release yourself is strictly 
+        forbidden. This prohibition explicitly includes non-purchased lossless
+		sources; if you donít have access to the original media, then don't 
+		bother releasing it as you canít release a fix if needed, and thatís 
+		not acceptable.
+   1.05.Every scene releases must be allowed to be spread on scene sites and
+        to get indexed in dupechecks. Groups that dont allow their affils to
+        spread the releases are allowed to be duped without nuke.It is 
+		however not allowed to repackage the original site-restricted invalid
+		release and claim it as yours.
+   1.06.Self-made(*) is not allowed.  
+       *=A self-made is when you select tracks from various different sources
+	     and release them as new.
+	 
+ 2.00.TECHNICAL STANDARDS:
+   2.01.For ALL sources which need encoding you must use LAME v3.99.5 
+        with preset V0 ("-V0") only.
+   2.02.A proper LAME header is required for retail mediums.
+        Example:
+        http://gabriel.mp3-tech.org/mp3infotag.html
+   2.03.The source sampling rate must either be of 44.1KHz or 48KHz and no
+        upsampling or downsampling is allowed.
+   2.04.ID3 headers shall have no images inserted in them.
+   2.05.All MP3 files need both an ID3 v1.1 and v2 tags. ID3 tags must
+        include the Artist, the Title and the Album.  It is not allowed to use
+        "VA" as the Artist name.  The fields "Year", "Genre" and "Tracknumber"
+        must also be filled but a release  may not be nuked if those are filled
+		incorrectly.
+   2.06.Multi channel audio is not allowed and you need to downmix the source
+        tracks to stereo (2 channels). It is good form, but not required, to
+        give some details about the downmixing process in the releaseís .NFO.
+        Groups are encouraged to release AC3 multichannel rips as INTs where
+        there is a compelling musical interest to do so (for example, 5.1 mixed
+		versions of albums from the Flaming Lips, Beatles, Meat Beat Manifesto
+		or the live 5.1 mix from NINís Beside You In Time Blu-ray).       
+	   
+ 3.00.HOW TO PACKAGE:
+    3.01.Both an .SFV and an .NFO file are required for every release.
+    3.02.Maximum directory+filename-length is 255 characters.
+    3.03.Allowed characters are a-z A-Z 0-9 _ . - ()
+    3.04.Directory name must, at minimum, contain:
+         Artist - Title - Source - Published Year
+    3.05.Directory names can contain:
+         Artist - Title - Special(*) - Additional Comments (**) - Cat Nr - 
+		 Source(***) - Language - Radio Station - Published Year - Group
+       *=ADVANCE, AUDIOBOOK, BONUS, BONUS_TRACK, BOOTLEG, CLEAN, CUE_FIX, DEMO,
+         DELUXE, DIRFIX, EDITION, EXTRA, FANCLUB, LIMITED, LIVE, MAG, MAXI, 
+		 NFOFIX, PROMO, PROPER, PROOFFIX, READ_NFO, REISSUE, REMASTERED, 
+		 REPACK, RERIP, RETAIL, SPLIT, SAMPLER, SNIPPET, TRACKFIX.  This list
+		 is not exclusive.
+      **=Any extra information about the release.
+         You can only use ONE Source per directory name.
+         Examples:
+         AC-DC-Blackout_Evolution-RETAIL-CD-2015-GROUP
+         AC_DC-Blackout_Evolution-CDS-2015-GROUP2
+         AC_DC-Blackout_Evolution-SAT-2015-GROUP3
+         AC_DC-Blackout_Evolution-PROMO-CDR-2015-GROUP4
+         AC_DC-Blackout_Evolution-PROMO-EXTRA-K7-2015-GROUP5
+     ***=AM, AUD, BD, BDR, BONUS_CD, CABLE, CD, CDA, CDEP, CDM, CDR, CDS, DAB,
+         DAT, DLC, DVBC, DVBS, DVBT, DVD, DVDA, DVDR, DVDS, FLASH, FM, HDDVD,
+         HDDVDR, K7, LINE, LP, MCD, MD, MLP, SACD, SAT, SBD, TAPE, VINYL, VLS,
+         VL, WEB (See 11.0).
+    3.06.If any extra packaged material that came bundled with any medium 
+         is released it should be released as is and untouched, unless it is a
+		 lossless music format, in which case it must be encoded using the 
+		 official standard.  Extra packaged material must be tagged as either
+		 -BONUS-, -EXTRA- or -DLC-, be compressed in .RAR and contain a .SFV.
+    3.07.All bootleg(*) and mixtape releases must be tagged as -BOOTLEG-.
+       *=A bootleg recording is any medium that was not officially released by
+         the person/company owning the rights to do so. Bootlegs in the classic
+		 sense of being recorded live at a concert need an additional source 
+		 tag, like ñAUD- for an audience recording, or ñSBD- for a soundboard
+		 recording.
+    3.08.Independently released music is done by an artist without a label (or 
+         with his own small label) and is not a -BOOTLEG-.
+    3.09.If you release a medium that was supplied from a magazine or via any
+         other print media (book/newspaper/etc) then you must tag it -MAG-.
+    3.10.The directory name of an INTERNAL release must end with _INT.  
+         Internals are not subject to nuking, and as such groups can do as
+         they please in this regard (eg: higher bitrates/multichannels/etc)
+         Example: 
+         AC_DC-Blackout_Evolution-CD-2015-GROUP_INT    
+    3.11.If the publication year is nowhere to be found on the medium or 
+         online then an approximation to the best of the ripperís knowledge
+         is allowed.
+         Example:  
+         You get a CD without release year information available on the
+         packaging or online.  You do know for a fact that it was pressed
+         between 2000 and 2009 and there are several sources that back this
+         date range up.  In this case it's allowed to tag the release as
+         -200X-.  If it could have been pressed either in the 1900s or in the
+         2000s, such as the range between 1995-2005, then it's allowed to tag
+         the year as -XXXX-.
+    3.12.Filename must at least contain:  
+         Track Number - Song Title
+         If it's an album with different artists (one artist per track) then
+         you must add the artist name as well ("VA-tracks" like mixes don't
+         need artist names).  The song title for the filename must include
+         the full title as it's written on the cover/cd/inlay with all
+         additional information (remixed/features/etc), subject to filename
+         length limitations.  Common abbreviations are acceptable (feat. for
+         featuring, for example).
+         Exception:
+         If no tracknames are supplied by the source (CD/VLS/etc) then you
+         must provide evidence that these tracks have no names, such as a 
+		 discogs.com link.  If these "untitled tracks" are part of a big mix
+		 (no silence between the "tracks") then it's considered as one track
+		 and you must rip it as one MP3/CUE and title it the same as the 
+		 "album".
+    3.13.Typos are not tolerated in artist name or album title fields.  Other
+	     typos (in tracknames/ID3/etc) are only tolerated if they are minor
+		 (less than 10%) and only if the dirname is 100% correct (Artist and
+		 Title).  If a "typo" was on the original medium and you can proove
+		 this then it doesn't count as a typo.  See rule 3.30 for more on
+		 retail defects.
+    3.14.A release with an apparently incorrect Year or Language may not be
+         nuked.  However a -DIRFIX- is strongly recommended.
+    3.15.It's not allowed to use more than one successive dot (.) for naming
+         directories and/or tracknames.
+         Examples: 
+         AC_DC-Blackout_Evolution...Encore-CD-2020-GROUP =>  Not allowed
+         AC_DC-Blackout_Evolution___Encore-CD-2020-GROUP => Allowed
+    3.16.Split(*) releases need to be tagged as -SPLIT-, not VA or a 
+         combination of both.  Please note that if a release isn't
+         specifically labelled as VA (by the industry) it needs to be tagged
+         as -SPLIT-.  Also, a release cannot be nuked for being VA -SPLIT-.
+       *=A -SPLIT- release is when two or more artists use the same medium to
+         release their own standalone content. There are split albums, singles
+		 and EPs. It is considered a -SPLIT- if there are up to 4 artists.  
+		 Anything else with more than 4 artists should be tagged VA. As a rule
+		 of thumb, a ñSPLIT- release will include several tracks from each of 
+		 just a few artists, in contrast to a VA release which will have many
+		 artists with only one or two tracks each.  
+		 A suggested tagging alternative is to use two dashes in between the 
+		 artist and the album so you can use the single dash to separate the 
+         different artists from one another, the dash being the divider.
+         Example:
+         "Artist1-Artist2-Artist3--Album_Name1-Album_Name2-Album_Name3-
+         SPLIT-2012-GROUP"
+         instead of
+         "Artist1_Artist2_Artist3-Album_Name1-Album_Name2-Albume_Name3-
+         SPLIT-2012-GROUP"
+    3.17.All releases from a physical medium must include a proper Proof.  A
+         proper Proof means a clear and recognizable scan or photo made with
+         a resolution of at least 800*600 (or 600*800) pixels of the physical
+         medium together with the cover or a booklet page from as close as 
+         possible so the Proof can be identified.
+         It's allowed for vinyl proofs to just show the record in the proof
+		 without showing the paper sleeve.
+    3.18.A proof must be unique.  What that means is that you are not allowed
+         to re-use or edit a proof coming any non-MP3-scene source.  You need
+		 to generate your own proof.  
+		 Exception: 
+		 If a mp3 release is made from a sister groupís(*) release, the
+		 sister groupís proof may be recycled.
+       *=A "sister group" is the same group name that expanded into another
+         Section eg if ñABC has the sister group ñABCFlac.
+         Example:
+         Group -ABC can recycle group -ABC-HDís proof.
+    3.19.If the medium or cover/booklet contain anything that may expose your
+         identity then it can be hidden/cut off. Keep in mind that some 
+		 blurring tools may not be secure.
+    3.20.Any upscaling of images or any modification (such as adding 
+         black/white bars) to meet the size requirements is not allowed.
+    3.21.If your release contains multiple media and each item is clearly
+         numbered then you are allowed to only add one of the media in the
+         proof.
+         Example:
+         Artist-Album-15CD-Year-Group
+         Each CD is clearly labeled "CD1/CD2/etc/CD15" then you can provide 
+		 Proof of only CD4 with a cover/booklet in the Proof scan/photo.
+    3.22.Booklet scans are welcomed but optional and do not count
+         as sufficient proof.
+    3.23.For -PROMO- you need to have your group name on a paper and have it 
+	     placed on the medium so both are clearly visible in the Proof.
+    3.24.All MIXED/LIVE CDDA(*) need to be ripped as one track with a .CUE with
+         the Artist and the Tracknames in the .CUE.  If this data is not 
+		 available, you need to label them as Unknown and Untitled and provide
+		 evidence that this is indeed the case.
+       *=MIXED/LIVE CDDA means a medium without silence between the "tracks".
+         It is also strongly encouraged to name the .CUE file accordingly to
+         the .MP3 file and also make sure that the path inside the file points
+         to the corresponding .MP3
+         Lastly, a .CUE file is not allowed if your medium contains just one
+         track, unless there is some compelling technical reason such as 
+		 presence of extra index points as per red book standard.
+    3.25.If a medium has no information about it available then you are allowed
+	     to use BOTH the Label AND the Cat Number as the name of the release.  
+		 If there is only one artist on the vinyl/CD then you must add the
+		 name of the artist.
+         Example:
+         My_Music_Records-MMR941.02-CD-2012-GROUP
+    3.26.If you have a retail Source and it was pressed with a defect/skip 
+         then you are allowed to release it given that you package it with 
+         -READNFO- in the dirname and that everything else is proper 
+         (Proof/Encoding/etc).  Obviously, the .NFO must contain information
+         concerning the nature of the defect.
+    3.27.EPs in CDDA format should be packaged as -CDEP-.
+    3.28.Audiobooks(*) need to be tagged as -AUDIOBOOK-.
+       *=Audiobooks are spoken versions of books that can span one or multiple
+	     media, generally CDDAs.  More often than not there is no music on 
+		 audiobooks; it's just a narrative spoken story.
+    3.29.Any extra packaged material that came bundled in with any medium needs
+         to be released as is and untouched, unless they are lossless, in which 
+         case they need to be encoded using the official standard.  Extra 
+         packaged material must be tagged as either -BONUS-, -EXTRA- or -DLC-, 
+         be compressed in .RAR and contain a .SFV.
+    3.30.A -SAMPLER- is made up of several full songs from an upcoming album
+         while -SNIPPET- is used to tag previews of songs.
+         Examples:
+         Burial--Street_Halo_Kindred_(BRC320)-CD-2012-CMC
+            01-burial-street_halo-cmc.mp3                  06:47   
+            02-burial-nyc-cmc.mp3                          07:40   
+            03-burial-stolen_dog-cmc.mp3                   06:23  
+            04-burial-kindred-cmc.mp3                      11:28   
+            05-burial-loner-cmc.mp3                        07:30   
+            06-burial-ashtray_wasp-cmc.mp3                 11:45
+         Burial--Street_Halo_Kindred-SAMPLER-2011-CMC
+            01-burial-street_halo-cmc.mp3                  06:47   
+            02-burial-loner-cmc.mp3                        07:30   
+            03-burial-ashtray_wasp-cmc.mp3                 11:45
+         Burial--Street_Halo_Kindred-SNIPPET-2012-CMC
+            01-burial-street_halo-cmc.mp3                  00:47   
+            02-burial-nyc-cmc.mp3                          00:40   
+            03-burial-stolen_dog-cmc.mp3                   00:33  
+            04-burial-kindred-cmc.mp3                      00:28   
+            05-burial-loner-cmc.mp3                        00:56   
+            06-burial-ashtray_wasp-cmc.mp3                 00:45
+        
+ 4.00.WEB RELEASES:
+    4.01.The -WEB- tag must be used for releases that are available to 
+	    purchase in webshops(*).  At the time of writing, webshops are 
+		currently the most common method of distributing music online.
+		But it can also, but not exclusively, be bundled in as bonus/extra
+		material on any physical medium.
+       *= Webshop means a place where you can "Add to cart" and "Checkout" and
+        which isn't fuelled by illicit and/or obscure music connections.  
+		Valid webshops are endorsed by the music industry.
+    4.02.Encoding priority is: 
+        VBR (WAVSRC(-V0)) or 320CBR > VBR > 256CBR > 224CBR > 192CBR
+        Any superior quality supersedes any lower quality for a period of 90
+        days (3 months) after pre date.  When releasing a higher quality 
+        version of a rip, it needs to be tagged as -READNFO- and the .NFO needs
+        to explicitly state the difference(s) and/or reason(s) why there is a
+        newer release.
+        Examples:
+        192CBR released in May 2013 => you can release 256CBR in June 2013.
+        VBR released in June 2013 => you can release VBR -V0 in July 2013.
+        VBR -V0 or 320CBR released => you cannot release any other version.
+   4.03.You need to include the valid URL of the webshop(*) from which you
+        purchased your release in the .NFO.  You cannot specify any address
+        where the tracks are free for download for everyone without being 
+		charged.
+   4.04.If your webshop purchase was in a lossless format (such as .WAV) then
+        you must convert it to MP3 (See 4.2).  Conversion to MP3 from any lossy
+		source is not allowed.
+   4.05.-WEB- releases containing MP3s encoded by multiple different encoders,
+        as demonstrated by inspection of the MP3 header, are only allowed if
+        you provide proof that the original online retail source is selling
+        the release in this way.
+   4.06.If a digital (-WEB-) release comes out with a physical medium (or vice
+        versa) then it's allowed to make a proof scan of the medium alongside
+		the download paper that came bundled with it.  You are also allowed to
+        blur a portion of the download path so long as the rest of the URL
+        and the medium can be clearly identified.
+   4.07.It's not allowed to release -WEB- rips with skips/defects in them.
+        You can however release them as internals.
+    
+ 5.00.LIVE RELEASES (BROADCAST):
+    5.01.The source priority is:
+         DAT or LINE or SBD > CABLE or DAB or DVBC or DVBS or DVBT or SAT >
+         terrestrial radio (AM/FM) > WEB > AUD
+    5.02.The set must be complete from the intro to the outro.  If there were
+         broadcasting glitches then it is suggested that you do not release it
+         or do it as INT.
+         Exceptions:
+         If your release has extra material that is part of the original show 
+         but that was aired after the outro (such as encores) and this "extra 
+         segment" is at least 5 minutes long then you are allowed to rerelease
+         the whole show as -READNFO-, not as -PROPER-.
+    5.03.If a show has already been released (e.g. another name, but the mix is
+         the same), no dupe of that same show is allowed. If the show is 
+         included in another release (for example, as a guest mix), then it is
+         neither allowed.
+    5.04.If a show, containing a guest mix, is a partial dupe (either the
+         regular part of the show, or the guest mix), it is allowed to release
+         them both as a set. However, it is encouraged to release only the new
+         part if the other part is available in equal or better quality,
+         denoting in the nfo why the other part was omitted.
+    5.05.If a show contains the broadcast of a commercially released CD then
+         you may not release it unless the CD was not already released.
+    5.06.All commercials must be removed.
+    5.07.DJ talk can be included to a certain extent: track announcements and
+         short lines from the DJ should not be removed; interviews and other
+         long talk needs to be removed.  You can however -WEB-BONUS- it.
+    5.08.It is encouraged to fade-in and fade-out the set. However, lack of 
+         fades does not constitute a reason for releasing a -PROPER-.
+    5.09.Straight-to-MP3 encoding is allowed, but discouraged as the header of
+         the MP3 file must be correct at all times.
+    5.10.Downsampling to 44.1 or 48KHz is allowed (if source is better).  
+         Upsampling to 44.1KHz or 48KHz from a weaker source is not allowed.
+    5.11.Live recordings of concerts (not from broadcast) typically require a
+         tag for source (SBD/LINE/AUD) as well as the -BOOTLEG- tag. -AUD- 
+         reflects a recording made using microphones situated in the audience
+         area.  The .NFO should give as many details on recording hardware and
+         mastering methodology as possible.
+
+ 6.00.FLASH RELEASES:
+   6.01.If your medium contains a version in a lossless format then you are
+        required to release that as -FLASH-.
+		Example:
+		Your flash drive contains both a .MP3 and a .WAV release.  You need to
+		release the converted .WAV version.
+   6.02.If the FLASH medium contains multiple formats (e.g. 10 tracks WAV and
+        a DJ MIX MP3) it is allowed to release it as one release with mixed 
+        VBR/CBR and multiple encoders.
+   6.03.Proof is also required and is subject to the same rules as retail 
+        (See 3.17-3.23).
+   6.04.Codec of source (MP3/PCM(WAV)/etc) is required in the .NFO.
+    
+ 7.00.DVD/DVDA RELEASES:
+   7.01.Priority of audio track source is:
+        1. PCM stereo (doesn't matter if DVDA or CDDA quality)
+        2. PCM 3+ channels
+        3. AC3 (dolby digital) stereo or DTS stereo
+        4. AC3 (dolby digital) 3+ channels or DTS 3+ channels
+        5. MPG
+        Examples:
+        DVD contains AC3 5.1 and AC3 2.0 => you must rip the AC3 2.0 tracks   
+        DVD contains PCM and AC3 2.0 => you must rip the PCM tracks
+        DVD contains MPG and AC3 2.0 => you must rip the AC3 2.0 version
+   7.02.If tracks are available in several audio formats then you must use the
+        "best" version (See 1.2).
+   7.03.Normalizing the sound volume is allowed but optional; it is encouraged
+        that you document normalization status in the .NFO.
+   7.04.Additional .NFO information required includes:
+        - Codec of source (AC3/PCM/MPG/DTS/etc),
+        - Number of channels of source (2.0/2.1/5.1/etc)
+   7.05.By default a DVD's sound is *NOT* DVDA, (sometimes written asDVD-A or
+        DVD-audio).  DVDA is a high fidelity audio format that is distinct 
+		from the audio associated with a regular video DVD.  Groups are 
+		encouraged to release true DVDA as internal .ISO files, to preserve
+		full fidelity.
+        
+ 8.00.HD RELEASES:
+    8.01.The source priority is 
+         DVDA > SACD > BD > HDDVD > DVD or DVDS > HDDVDR > DVDR
+    8.02.A HD DVD/BD concert recording release must contain the complete set
+         of music tracks from the concert.  Additional tracks 
+         (interviews/videos/bonus/etc) are optional.  If those extra tracks are
+         not included then any other group can release them as -EXTRA-
+    8.03.HD DVD and BLU-RAY video clip releases should be ripped as multi track
+         release keeping original tracklist (not .M2TS sequence).
+    8.04.If tracks are available in several audio formats then you must use the
+         highest bitrate lossless source track.  
+    8.05.For a DTS HR/HD MA track you need to extract the DTS core.
+    8.06.Multi channel audio is not allowed.  Always downmix source tracks to
+         stereo (2 channels) if a native stereo version is not available. It is
+		 good form to include details on your downmixing procedure.
+    8.07.Downsampling to 44.1 or 48KHz is allowed (if source is better).  
+         Upsampling to 44.1KHz or 48KHz from a weaker source, however, is not
+         allowed.
+    8.08.Normalizing the sound volume is allowed but optional; please document
+         normalization status in .NFO.
+    8.09. .CUE file made from source chapters should always be included with 
+	     the final release package.
+    8.10.Additional informations required in .NFO (See 10.3) :
+        - Codec of source (AC3/DD+/PCM/MPG/DTS/DTS-HD/Dolby TrueHD)
+        - Bitrate of source (448/640/768kbps/1536kbps/etc)
+        - Number of channels of source (2.0/2.1/5.1/etc)
+
+ 9.00.FIXING METHODOLOGY:
+   9.01.Only one trackfix per release is allowed. If the release needs a
+        second trackfix or more than 50% of the tracks need a fix then you
+        must re-package the whole thing.
+    --> A 1-track fix for a 2-track release is allowed (=50% and not
+        "more than 50%").
+   9.02.If you release a dirfix then the dirname of the problematic release 
+        must be listed in your .NFO file.
+   9.03.Following your release getting nuked, you have:
+        - 7 days to fix for typos and wrong dirnames
+        - 2 days to fix for missing proof, technical flaws (skips, wrong 
+		encoder)  
+		After grace period any other group is allowed to -PROPER-.  It's also
+        allowed to proper even if a release wasn't nuked just as long as the 
+        reason for propering is clearly stated in the .NFO.  In which case
+		it is suggested to tag as -READ_NFO-.
+   9.04.It is not allowed to -DIRFIX- a given release more than once and you
+        cannot -PROPER- a -DIRFIX-.
+   9.05.For -WEB-, if your trackfix comes from a different webshop than the
+        original release then you need to mention it in the NFO while also
+        supplying the new webshop URL.
+       
+10.00.TIPS AND TRICKS:
+   10.01.Make sure that your filenames are unique otherwise some sites might 
+         dupeskip.  This type of mistake doesn't make a release worthy of a
+         nuke, however. This problem often arises with the 
+         "unknown - untitled" tracks scenario.
+   10.02.Wipe EXIF data from your proof scans/photos using your favourite 
+	     freeware.
+   10.03.For finding the Codec source of DVD/BD/etc we suggest using :
+         http://mediainfo.sourceforge.net/en
+   10.04.The audio of a normal video DVD is *NOT* DVDA!  The audio of a DVD
+         usually is MP2/AC3/DTS compressed (lossy) while the audio of a real
+         DVDA is high quality PCM (lossless, e.g. 24bit/192KHz) and/or
+		 multichannel.  
+         To properly rip true DVDA you can use :
+         http://www.pazera-software.com/products/audio-extractor/
+   10.05.Even if the Language and/or the Cat Number are not required in the
+         dirtag they are strongly encouraged.
+   10.06.At the time of writing this, those webshops are known for sometimes
+	     supplying their tracks encoded with multiple encoders :
+         http://www.junodownload.com/
+         http://www.indiegala.com/
+         One way to find out if your release was encoded by multiple encoders
+         is to use a program such as truelame.exe
+   10.07.Even if not required, it is strongly encouraged that dirnames should
+         always begin with a letter or number to avoid spreading issues.
+   10.08.When taking more than 24h to fix a release it's best to -REPACK- (or
+         -RERIP- depending on the case) as some sites purge nuked releases 
+		 after that period of time.
+   10.09.Even if typos are slightly tolerated (See 3.13-3.14) it is strongly
+         suggested that you put extra effort into finding and correcting them
+		 when packaging.
+   10.10 Even if the .M3U is not required with the release it is strongly
+         encouraged to provide it.
+   10.11.For converting to WAV we suggest using Free Audio Converter
+         (AKA FRE:AC) at http://www.freac.org/
+    
+11.00.DIRTAGS GLOSSARY:
+   11.01.Valid physical sources dirtags are: 
+        -BD-                                 [BLU-RAY DISC *PRESSED*]
+        -BDR-                                [BLU-RAY DISC RECORDABLE]
+        -BONUS_CD-                           [CD ADDITIONAL *PRESSED*]
+        -CD-                                 [CD OTHER *PRESSED*]
+        -CDA-                                [CD ALBUM *PRESSED*]
+        -CDEP-                               [CD MINI-ALBUM *PRESSED*]
+        -CDM-                                [CD MAXI *PRESSED*]
+        -CDR-                                [CD-RECORDABLE]
+        -CDS-                                [CD SINGLE *PRESSED*]
+        -DVD-                                [DVD *PRESSED*]
+        -DVDA-                               [DVDA] 
+        -DVDR-                               [DVDR]
+        -DVDS- or -DVD-                      [DVD VIDEO SINGLE *PRESSED*]
+        -EXTRA- or -BONUS- or -DLC-          [EXTRA BONUS CONTENT]
+        -HDDVD-                              [HD DVD *PRESSED*]
+        -HDDVDR-                             [HD DVD RECORDABLE]
+        -LP- or -VINYL-                      [VINYL ALBUM]
+        -MCD-                                [MINI CD]
+        -MD-                                 [MINIDISC]
+        -MLP-                                [MINI VINYL]
+        -SACD-                               [SACD]
+        -SAMPLER-                            [ALBUM PREVIEW]
+        -SNIPPET-                            [TRACK PREVIEWS]
+        -TAPE- or -K7-                       [ANALOG TAPE/CASSETTE] 
+        -VL- or -VINYL-                      [VINYL OTHER]
+        -VLS- or -VINYL-                     [VINYL SINGLE]
+    
+   11.02.Valid live sources dirtags are:
+        -AM-        [AM ANALOG RADIO]
+        -AUD-       [DIRECT LIVE RECORDING FROM THE AUDIENCE]
+        -CABLE-     [ANALOG CABLE]
+        -DAB-       [DIGITAL AUDIO BROADCAST]
+        -DAT-       [DAT TAPE] 
+        -DVBC-      [DIGITAL VIDEO BROADCAST CABLE]
+        -DVBS-      [DIGITAL VIDEO BROADCAST SATELLITE]
+        -DVBT-      [TERRESTRIAL DIGITAL VIDEO BRAODCAST]
+        -FM-        [FM ANALOG RADIO]
+        -LINE-      [DIRECT RECORDING BY THE RIPPER FROM SOUNDBOARD/MIXER 
+                     THROUGH THE LINE-IN INTERFACE]
+        -SAT-       [ANALOG OR DIGITAL SATELLITE]
+        -SBD-       [RADIO STATION OR DJ RECORDING **NOT A WEBSTREAM**]
+   11.03.Valid digital sources dirtags are:
+        -WEB-       [PRE-COMPRESSED MP3 FILES FROM A MEDIUM]
+        -FLASH-     [FLASH MEDIUM : SLOTMUSIC/COMPACSTICK/ETC]
+   11.04.Valid other source dirtag is:
+        -BOOTLEG-   [UNKNOWN]
+   11.05.Unallowed sources are:
+        -FREE-      [ANY FREE]
+        -STREAM-    [FREE WEBSTREAM]
+   11.06.Valid fixing dirtags are:
+        -CUEFIX-    When a group failed to properly package the .CUE file and
+                    rereleases a missing or incorrect .CUE file as standalone.
+        -DIRFIX-    When a group failed to properly package a directory name
+                    and rereleases it as standalone.
+        -NFOFIX-    When a group failed to properly write a NFO file and
+                    rereleases it as standalone.
+        -PROOFFIX-  When a group failed to release a proper proof they need to
+                    use this dirtag to correct their fault.
+        -PROPER-    When a release gets nuked (bad tag, bad rip, no proof, etc)
+                    and another group propers it, they -PROPER- it.
+        -REPACK-    When a group failed to package correctly (ID3vx/missing 
+		            tracks/mislabeled/etc) the *SAME* group repacks their nuked
+					release.
+        -RERIP-     When a group failed to rip properly (clipping, cut off/
+		            incomplete tracks/etc) the same group rerips their nuked
+					release.
+        -TRACKFIX-  When a group failed to release all tracks properly and
+                    rereleases only the fixed tracks as a standalone fix.
+
+	    _______________________________________________________________
+
+                          ‹   ‹
+                      ‹ﬂ           ﬂﬂ˛‹‹
+       ˛              ˛                 ﬂ€‹‹
+         ﬂ‹‹                             ﬁ€€€‹          ‹ﬂ     ‹ ﬂ
+          ﬁ€€€‹‹         ﬂ‹‹            ‹≤€€€€€        ﬁ€€‹  ≤≤
+           €€€€ﬂ€€€‹‹‹     ﬂ€€€‹‹‹‹‹ ˛ ﬂ€€€€ﬂ€€€        ﬂ€€€€€›
+       iks €€€€    ﬂﬂ€€≤±   €€€€€      €€€≤   €€€         €€€€‹       RIAA
+    ∞∞∞∞∞∞ €€€€› ‹‹≤≤ﬂﬂ     ﬁ€€€€›    €€€≤     €€€       €€€€€€€‹     ∞∞∞∞∞∞
+    ∞∞∞∞∞∞ ﬁ€€€€€€€‹        ﬁ€€€€≤  ∞€€€≤       €€≤     €€€€ﬂ ﬂ€€€‹   ∞∞∞∞∞∞
+     titan ﬁ€€€€ﬂ€€€€€‹‹‹   ‹‹€€€€€‹€€€€‹‹‹‹‹   ﬁ€€≤   €€€€     ﬂ€€€‹ 2013
+          ˛‹€€€€›  ﬂﬂ≤ﬂﬂ€€≤≤ﬂﬂﬂﬂ          ﬂﬂﬂﬂﬂ€€€€€≤∞≤€€≤        ﬂ€€€‹
+            ﬂﬂﬂ≤≤    ‹ﬂﬂ   ∞                        ﬂﬂﬂﬂ€‹‹‹        ﬂ€€≤∞
+                   ˛                                       ﬂﬂ€‹‹      €€≤∞
+                  ‹                                            ﬂﬂ€‹‹  ﬁ€€≤
+                   ˛             ﬂ                                 ﬂ≤≤‹€€€›
+                     ﬂ˛ ‹  ‹ ˛          Tried and tested rules       ﬂ€€€€›
+                                        by the true MP3 scene!        ﬁ€€ﬂ
+                                                                     ‹ﬂﬂ
+                                                                  ﬂ
+
+    
+	        RIAA2013 active since 2014-01-01, signed by:
+	1KING, B2R, BF, BOSS, CBR, CMC, CRUELTY, D2H, DGN, dh, DJ, DPS, 
+	EiTheLMP3, FKK, FMC, G4E, GCP, gF, HB, HFT, HQEM, iTS, JiM, JUST, 
+	JUSTiFY, KOPiE, LFA, mbs, MnD, MOD, MST, MTC, NOiR, NRG, OGV, OMA,
+	ONe, RAC, RAiN, SC, SDR, SiBERiA, TALiON, TSP, uC, UKHx, UKi, USF,
+	VOLDiES, VOiCE, wAx, WLM, WUS, wWs, XXL, YARD, YOU & ZzZz.
+  
+					    Complimentary signatures:
+	ALKi, ATM, ATR, Bacardi, diss, EViGHET, iDM, iMPG, kHz, LOGOS, MS,
+	0MNi, PoS, Q17, SYN & TrT.

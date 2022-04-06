@@ -1,0 +1,164 @@
+The.2012.COMPLETE.BLURAY.Releasing.Standards.v2.0
+
+1.0) General ( COMPLETE BLURAY ):
+---------------------------------
+1.1)    Any copyprotection like AACS, BD+ has to be removed. This also applies for modificated
+        directories like ANY! ( ANY! is the renamed AACS Directory )
+
+        This Files are: AnyDVD.xig , AnyDVD.xrl and AnyDVD.xrt
+        This Files are again in the CERTIFICATE/BACKUP Directory.
+
+1.2)    The Release has to be .iso with filesystem UDF2.5
+
+1.3)    RAR/SFV/NFO/SAMPLE are required for each release
+
+1.4)    The release has to be region free
+
+1.5)    BD-Live has to be deactivated.
+        If active BD-Live has the following files in CERTIFICATE and CERTIFICATE/BACKUP:
+        online.crl , online.crt , online.sig
+
+1.6)    Standalone (SAP) and PS3 compatibility is required. Therefore the original
+        structure must be kept in the iso and missing directories must be created if they do not exist:
+	ex: AUXDATA, BDJO, JAR, META
+
+1.7)    A M2TS Sample of 60 Seconds cut out of the final release is required in the /Sample directory.
+
+1.8)    Nothing has to be stripped. The Disc has to be released as it is.
+
+1.9)    Proof is mandatory.
+
+
+2.0) Tagging:
+-------------
+2.1)   Title.{Sxx.DISCx.}YEAR{.DOCU}{.DISCx}<.DUAL|.MULTi|.(LANGUAGE)>.COMPLETE.BLURAY{.PROPER|.iNTERNAL|.READNFO|.REPACK|.RERiP}-GROUP
+       Syntax: {optional}
+	   (LANGUAGE) has to be replaced with the release language if only one audio stream is present. ex: GERMAN, SPANISH, FRENCH
+	   If only english is present on disc the language tag can voluntarily be added.
+
+2.2)   The year tag is the production year and has to be taken out of imdb.com
+
+
+3.0) Packaging:
+---------------
+
+3.1)   Only valid Volumesize is 500MB
+3.2)   Classic style archivies (rar, r00-r99)
+3.3)   Recovery record of 1% must be used
+3.4)   Compression Method: STORE
+
+
+4.0) NFO:
+---------
+
+4.1)   The following entrys in the NFO are mandatory:
+        - Title
+        - Releasedate
+        - Source (BD25/BD50)
+        - RAR Size and Count
+        - Cinedate / STV
+        - Runtime
+        - Genre
+        - imdb.com Link
+        - imdb.com Rating
+        - Video Resolution
+        - Video Bitrate (only valid: UNTOUCHTED)
+        - All included Audiolanguages with format and channels (ex. DTS-HD 5.1) except comentary
+        - All included Subtitles (Every subtitle must be listed. "All included" is not valid) except comentary
+
+
+--- TRANSLATION ---
+
+1.0) General ( COMPLETE BLURAY ):
+---------------------------------
+
+1.1)  Kopierschutz wie AACS, BD+ muss entfernt werden, dies gilt auch fuer nachtraeglich
+      modifizierte Ordner wie ANY! ( Any! is nichts Anderes als das umbenannte Dir AACS )
+      und auch Any-Files , welche man des oefteren im Dir " CERTIFICATE " findet.
+
+      Diese Files heissen : AnyDVD.xig , AnyDVD.xrl und AnyDVD.xrt und sind nochmal im
+      Dir CERTIFICATION/BACKUP enthalten.
+
+1.2)  Die Releases muessen als .iso mit UDF2.5 vorliegen.
+
+1.3)  Rar/Sfv/Nfo/Sample sind zwingend erforderlich.
+
+1.4)  Das Release muss Region Free sein.
+
+1.5)  BD-Live muss deaktiviert werden.Wenn BD-Live nicht deaktiviert wurde, findet man
+      in dem Dir CERTIFICATION und CERTIFICATION/BACKUP die Files : online.crl , online.crt
+      und online.sig.
+      Wenn diese Files noch vorhanden sind im ISO ist BD-LIVE noch Aktiv und das Release wird nuked !
+
+1.6)  Standalone (SAP) und PS3 Kompatibilitaet ist zu gewaehrleisten, d.h. unter anderem die original
+      Verzeichnisstruktur muss erhalten bleiben. Verzeichnisse wie AUXDATA, BDJO, JAR, META
+      sind, falls nicht vorhanden, manuell hinzufuegen.
+
+1.7)  Ein M2TS Sample von etwa 60 Sek., das aus dem finalen Release herausgeschnitten wird, ist im
+      Unterordner /Sample beizulegen.
+
+1.8)  Es darf nichts gestripped werden.
+
+1.9)  Proof ist Pflicht.
+
+
+2.0) Tagging:
+-------------
+
+2.1)  Titel.{Sxx.DISCx.}JAHR{.DOCU}{.DISCx}<.DUAL|.MULTi|.(LANGUAGE)>.COMPLETE.BLURAY{.PROPER|.iNTERNAL|.READNFO|.REPACK|.RERiP}-GROUP
+      Syntax: {optional}
+	  (LANGUAGE) ist zu ersetzen durch die Sprache im Release falls nur eine Sprache vorhanden ist. Es muss die englische Schreibweise verwendet werden.
+	  Falls nur Englisch vorhanden ist kann der Tag weggelassen werden.
+	
+2.2)  Die Jahresangabe ist das Produktionsjahr und muss von imdb uebernommen werden.
+
+
+3.0) Packaging:
+---------------
+
+3.1)  Als Volumengroesse sind folgende Groessen zulaessig: 500 MB
+3.2)  Packen im Classic Style
+3.3)  Wiederherstellungsinformation von 1% ist Pflicht.( Put recovery record )
+3.4)  Kompressionsverfahren ist immer STORE bzw. Speichern ( Unkomprimiert )
+
+4.0) NFO:
+---------
+
+4.1)  In der Nfo muessen mindestens folgende Informationen enthalten sein:
+
+      - Titel
+      - Release date
+      - Source (BD25/BD50)
+      - Rar Groesse und Anzahl
+      - German Cine Date bzw. STV
+      - Runtime
+      - Genre
+      - imdb.com Link
+      - imdb Rating
+      - Resolution
+      - Video Bitrate ( UNTOUCHED )
+      - alle vorhandenen Audiosprachen/Audiokanaele muessen angegeben , ausgenommen AUDIO-KOMMENTARE
+      - alle vorhandenen Untertitel ( Angaben wie " all included " oder Aehnliches sind nicht erlaubt )
+
+
+                                          Notes :
+
+
+       Wir haben uns bemueht aufzuzeigen, dass ein SAUBERES Image absolut einwandfrei funktioniert
+
+       und keinerlei Verbindung mehr zum Internet aufnimmt, wenn man vor allem die Punkte 1.1 und
+
+       1.5 beachtet. Es weiss Niemand was an Daten vom PC des Image-Erstellers in diesen Any-Files
+
+       enthalten ist. Genauso moechte wohl kaum jemand seine IP bei Warner , Universal oder
+
+       anderen Filmvertrieben finden , ohne dieses zu wissen. Deshalb ist das Deaktivieren von
+
+       BD-LIVE unerlaesslich. Bei 3D-BLURAYS laesst sich ohne ANY!-Dir zur Zeit noch keine
+
+       lauffaehige ISO erstellen und aus diesem Grund Verzichten wir auf die 3D-BLURAYS mit
+
+       dem neuen Standard zugunsten der Sicherheit bis eine Loesung gefunden ist.
+
+
+       Rules signed by : TRexHD GVD SharpHD ETM iFPD HDpure FULLSiZE SMAHD

@@ -1,0 +1,291 @@
+
+ ###############################################################################################
+#################################################################################################
+#                                                                                               #
+#              LES.RULES.2011.FRENCH.STANDARD.DVDR-tFR2k11                                      #
+#                                                                                               #
+#                                            CES REGLES SONT EFFECTiF Le 10 DECEMBRE 2011       #
+#                                                                                               #
+#################################################################################################
+#                                                                                               #
+#  0. [ Introduction: ]                                                                         #
+#                                                                                               #
+#       Bonjour a tous, dernierement il y a eu beaucoup trop de NUKE sur les DVD FR car         #
+#       nous sommes obliges de suivre les regles US. Maintenant il y a du changement ce qui     #
+#       necessite une nouvelle regle FR pour nous les FRANCAiS et QUEBECOIS.                    #
+#                                                                                               #
+#  1. [ REGLE General De Base: ]                                                                #
+#                                                                                               #
+#    1.1 La taille du iSO doit etre entre 4.33 et 4.36, si iSO ne peut pas faire                #
+#        cette taille vous devez mettre une explication dans le Nfo.                            #
+#        ( EX: Supprimer BONUS / FULLSCREEN, pour avoir une ViDEO UNTOUCHED )(9.1)              #
+#                                                                                               #
+#    1.2 Le PAL ne peut DUPE un NTSC et un NTSC ne peut DUPE un PAL car ses pas la meme         #
+#        REGiON (15.2)                                                                          #
+#    1.3 PAL encoder en NTSC et NTSC encoder en PAL n'est aucunement tolerer.                   #
+#    1.4 Une release WiDESCREEN est autoriser a PRE apres un FULLSCREEN.                        #
+#    1.5 Une release FULLSCREEN n'est pas autoriser a PRE apres un WiDESCREEN.                  #
+#    1.6 Les coffrets, il est preferable de PRE en disque separer.                              #
+#        ( EX: EXAMPLE.2011.EXTENDED.EDiTiON.DVD1.R1.NTSC.FRENCH.DVDR-GROUP )                   #
+#        (     EXAMPLE.2011.EXTENDED.EDiTiON.DVD2.FiNAL.R1.NTSC.FRENCH.DVDR-GROUP )             #
+#                                                                                               #
+#    1.7 Les protections et les avertissements doivent etre supprimer, les previews ne sont     #
+#        pas obligatoire d'etre enlever.                                                        #
+#    1.8 Une PHOTO du disque avec le nom du GROUP ce qui est un PROOF est obligatoire sur       #
+#        chaque release, prouver qu'il on belle et bien la source en leur possession.           #
+#                                                                                               #
+#  2. [ Taille d'une Release: ]                                                                 #
+#                                                                                               #
+#    2.1 DVD9 Source:                                                                           #
+#     2.1.1 - La Suppression des EXTRA ou AUTRE... est autoriser pour avoir une ViDEO UNTOUCHED #
+#             meme si votre iSO est en bas de 4.33Go (1.1)(9.1)                                 #
+#             ( Ne pas oublier de preciser dans le nfo le pourquoi qui est en bas de 4.33Go )   #
+#    2.2 DVD5 Source:                                                                           #
+#     2.2.1 - Un dvd COMPLETE n'est pas autoriser, car certain DVD sont deja brise a la base.   #
+#     2.2.2 - Les EXTRAS ou AUTRE... n'est pas obligatoire de les garder. ( Choix du GROUP )    #
+#             (9.1)                                                                             #
+#                                                                                               #
+#  3. [ ViDEO: ]                                                                                #
+#                                                                                               #
+#    3.1 Encodeur CCE version 2.67 ou superieur doit etre utiliser en tout temps.               #
+#    3.2 Les programmes automatique qui executent DVD9 en DVD5 est strictement interdit.        #
+#    3.3 DVD Rebuilder Pro 1.28+ est autoriser si les criteres suivant sont respecter:          #
+#     3.3.1 - L'option "ONE-CLiCK" ne peut pas etre utiliser.                                   #
+#     3.3.2 - CCE version mentionner plus haut doit etre l'encodeur utiliser.                   #
+#     3.3.3 - QUAL PREC et VBR BiAS doit etre ajuster en consequence.                           #
+#     3.3.4 - MAX_Bitrate doit etre regler selon les normes du DVD-ViDEO.                       #
+#     3.3.5 - Target_Sectors doit etre regler a utiliser autant de secteurs que possible.       #
+#     3.3.6 - RB-Opt ou d'autre programme externe pour ajouter ou modifier les parametres du    #
+#             CCE sur la base de l'encodage est recommander.                                    #
+#    3.4 Les releases qui sont RE-ENCODE doit appliquer les methodes DE-iNTERLACED approprier   #
+#        au ViDEO source.                                                                       #
+#    3.5 Les releases TV-DVDR n'est pas obliger d'etre DE-iNTERLACED.                           #
+#    3.6 Le bitrate minimum autoriser est de 3000kbps ( 2800 pour des TV-DVDR ) si vous etes en #
+#        dessous du bitrate, vous etes autoriser a splitter votre release avec une explication  #
+#        valable dans votre NFO.                                                                #
+#        ( EX: Nous avons splitter notre release en 2 DVD car le film dure trop longtemps )     #
+#        (     pour etre sur 1 DVD sinon nous etions en dessous du bitrate demander.      )     #
+#    3.7 Parametres de qualite CCE:                                                             #
+#     3.7.1 - Pas de CBR, MULTiPASS doivent etre appliquer.                                     #
+#     3.7.2 - La 1ere PASS initial qui encode le fichier .VAF ou PREC QUAL n'est pas considerer #
+#             dans l'ensemble MULTiPASS.                                                        #
+#     3.7.3 - Valeur VBR BiAS et QUAL PREC doit etre defini comme:                              #
+#            + VBR BiAS  - Recommander = 30                                                     #
+#            + QUAL PREC - Recommander = 28                                                     #
+#     3.7.4 - Le nombre de PASS necessaire pour un film est determiner par le bitrate:          #
+#            + En dessous 4,000 kbit/s avg. = Minimum 6 PASS necessaires.                       #
+#            + Au dessus  4,000 kbit/s avg. = Minimum 5 PASS necessaires.                       #
+#                                                                                               #
+#  4. [ AUDiO: ]                                                                                #
+#                                                                                               #
+#    4.1 Dolby Digital est considere comme le format AUDiO standard et doivent etre incluse     #
+#        lorsqu'elle sont disponible.                                                           #
+#    4.2 Un DVD qui contiennent uniquement des donnees AUDiO PCM est admise et doit le preciser #
+#        dans le NFO.                                                                           #
+#    4.3 Prendre un AUDiO d'un autre source autre que le dvd d'origine n'est pas TOLERER.       #
+#        ( DOWNSAMPLiNG )                                                                       #
+#    4.4 Pour toute les films en FRANCAiS, l'AUDiO FRANCAiS est obligatoire pour ce qui est des #
+#        autre langues ses au choix du GROUP de les supprimes ou de les conserves.Si il a       #
+#        plusieurs LANGUES tag avec "MULTi". (14.8)                                             #
+#    4.5 Si une nouvelle version de DVD est sortit avec d'autre LANGUE qui n'est pas dans les   #
+#        release deja PRED, peuvent les PRE sans etre DUPE.                                     #
+#                                                                                               #
+#  5. [ Source: ]                                                                               #
+#                                                                                               #
+#    5.1 Release avec une EDiTiON superieur / DVD REMASTERiSER sont autoriser car elle ameliore #
+#        la version initiale. Exemple si un DVD contient un AUDiO 5.1 par rapport a la version  #
+#        precedente qui etait 2.0 est ACCEPTER.                                                 #
+#    5.2 DVD UNRATED / DiRECTOR'S CUT ou toute sorte D'EDiTiON avec des scenes supplementaires, #
+#        scene prolonger ne PEUVENT PAS etre DUPE sur une release actuel.                       #
+#                                                                                               #
+#  6. [ Modifier (Authoring): ]                                                                 #
+#                                                                                               #
+#    6.1 Le menu principal de la source doit etre jouer en premier.                             #
+#    6.2 L'ajout de photo ou tag du GROUP dans un VTS TiTLE n'est aucunement TOLERER.(16.1)     #
+#                                                                                               #
+#  7. [ Sous-titres: ]                                                                          #
+#                                                                                               #
+#    7.1 Les commentaires sous-titrer doit etre retirer si l'AUDiO des commentaires est         #
+#        supprimer.                                                                             #
+#    7.2 Tout les autres sous-titres doivent etre conserver. Si certain sous-titre presentent   #
+#        un probleme il est a la discretion du GROUP de la supprimer, de la garder tel quel ou  #
+#        de la reparer. ( N'OUBLiER PAS DE LE PRECiSER DANS LE NFO )                            #
+#    7.3 Les sous-titrages ( CLOSED CAPTiONiNG ) doit etre conserver si elle est presentent     #
+#        sur le dvd source.                                                                     #
+#    7.4 Les sous-titres FORCED ( FORCED SUBTiTLE ) doit etre ajouter au NFO.                   #
+#                                                                                               #
+#  8. [ Menu: ]                                                                                 #
+#                                                                                               #
+#    8.1 Les MENU doivent etre inclus en tout temps, a l'exception si le commerce de detail     #
+#        ne contient pas de "MENU" doit etre mentionner dans le NFO.                            #
+#    8.2 Le MENU doit etre en ANGLAiS ou en FRANCAiS obligatoire, aucune autre langue n'est     #
+#        tolerer.                                                                               #
+#    8.3 Tout MENU autre que ANGLAiS et le FRANCAiS doit etre supprimer.                        #
+#    8.4 Materiel non referencees ne doit pas etre inclus dans la version finale.               #
+#        ( inaccessibles cellules ViDEO et MENU doit etre enlever )                             #
+#    8.5 Les liens inutiles dans le MENU doit etre supprimer.                                   #
+#    8.6 Les boutons inutilises doivent etre supprimer et NON desactiver. La commande NOP n'est #
+#        pas une methode ACCEPTER pour enlever le bouton.                                       #
+#    8.7 Encodage du MENU est a la discretion du GROUP, mais doit etre superieure a 4000 kbit   #
+#        en moyenne, sauf si le bitrate est en dessous du minimum, alors il doit etre d'au      #
+#        moins 3000 kbit/s avg. (A Specifier Dans Le NFO)                                       #
+#                                                                                               #
+#  9. [ Bonus: ]                                                                                #
+#                                                                                               #
+#    9.1 Les EXTRAS peuvent etre supprimer, au choix du GROUP. (1.1)(2)                         #
+#    9.2 ENCODER(CCE) les BONUS est autoriser si les criteres suivant sont respecter:           #
+#     9.2.1 - Minimum bitrate = 2,500 kbit/s avg.                                               #
+#     9.2.2 - Minimum de 5 PASS est REQUiS.                                                     #
+#                                                                                               #
+# 10. [ DVD Limitations/Protection: ]                                                           #
+#                                                                                               #
+#   10.1 TOUT formes de protection doit etre completement supprimer.                            #
+#        (ARccOS, DVDR-MOViE PROTECT, FluxDVD, Ripguard, Rimage etc.)                           #                                                                                               #                                                                                               #
+#   10.2 TOUT les limitations de l'utilisateur et les restrictions doivent etre supprimer.      #
+#        (PUOs, Parental Management etc.)                                                       #
+#        + Aussi Toutes les references a SPRM(13) doit etre retirer.                            #
+#   10.3 TOUT VTS / PGC vide doit etre retirer.                                                 #
+#        ( ViDEO UNTOUCHED n'est pas une raison VALABLE de les gardes )                         #
+#   10.4 TOUT release doit etre de REGiON libre et RCE (Amelioration du code REGiON)            #
+#        doit etre supprimer.                                                                   #
+#   10.5 TOUT nouvelle protection contre la copie doit etre retirer.                            #
+#                                                                                               #
+# 11. [ Compression: ]                                                                          #
+#                                                                                               #
+#   11.1 TOUT release doit utiliser le format .iSO, Les autres formats ne sont pas autoriser.   #
+#   11.2 TOUT Release doit etre diviser en RAR:                                                 #
+#    11.2.1 - DVD5 en RAR de 50.000.000 octets.                                                 #
+#    11.2.2 - DVD9 en RAR de 100 000 000 octets.                                                #
+#   11.3 Methode de compression (COMPRESSION METHODE) Doit utiliser le mode 0 ("store").        #
+#   11.4 VOLUME "Recovery volume" est recommander mais pas obligatoire. S'il est utiliser,      #
+#        la limite maximale est de 2%.                                                          #
+#   11.5 SFV / NFO / SAMPLE / PROOF doit etre inclus.                                           #
+#                                                                                               #
+# 12. [ NFO: ]                                                                                  #
+#                                                                                               #
+#   12.1 Les NFO Doit respecter les criteres suivant:                                           #
+#    12.1.1  - Titre de la release.                                                             #
+#    12.1.2  - Date de sortit de la release.                                                    #
+#    12.1.3  - Nombre de fichier compresser. (94 x 50MB)                                        #
+#    12.1.4  - image FORMAT ainsi que la taille du fichier .iSO                                 #
+#    12.1.5  - iMDB / ALLOCiNE ou un lien similaire.                                            #
+#    12.1.6  - SOURCE du DVD (DVD9 / DVD5) et le numero de la ZONE(REGiON)-(R1 / R2) ainsi      #
+#              que la taille de la source.                                                      #
+#    12.1.7  - Nombre de PASS(CCE) et BiTRATE utilise lors de l'encodage.                       #
+#    12.1.8  - L'AUDiO disponible sur le DVD. "TOUS" est inacceptable, detailler les            #
+#              informations ( EX: FR 5.1 & 2.0 / ENG 5.1 / Spanish 5.1 etc... )                 #
+#    12.1.9  - Detailler les sous-titres disponible.                                            #
+#              ( EX: FR / ENG )                                                                 #
+#    12.1.10 - Detailler qu'est qui a dans les BONUS s'il sont disponible dans le dvd.          #
+#              ( Bande Annonces / Bonus / Extra / Special Features / Trailer / Interviews )     #
+#    12.1.11 - Detailler qu'est qui a etes supprimer du DVD.                                    #
+#              ( Protection / Avertissement / Bande Annonce / Bonus / etc.. )                   #
+#                                                                                               #
+#  EXemple: EXEMPLE.2011.EXTENDED.EDiTiON.DVD1.R1.NTSC.FRENCH.DVDR-GROUP                        #
+#                                                                                               #
+#           Date....: 10/12/2011 (10.Dec.2011)                                                  #
+#           Fichier.: 94 x 50MB                                                                 #
+#           Image...: .iso ( 4.33Go )                                                           #
+#           Lien.url: http://www.imdb.com/..........                                            #
+#                                                                                               #
+#           Source..: DVD9 NTSC R1 - 6,98Go ( 7,504,568,320 octets )                            #
+#           Video...: CCe 9 Pass ( 4 000 kpbs )                                                 #
+#           Langue..: FR 5.1 & 2.0                                                              #
+#           Sous-titres: FR / ENG                                                               #
+#           Autres..: Aucun Bonus                                                               #
+#           Supprimer: Protection / Avertissement / Bonus / VTS & TiTLE                         #
+#                                                                                               #
+#           Notes...: Notes du Group                                                            #
+#                                                                                               #
+# 13. [ Sample: ]                                                                               #
+#                                                                                               #
+#   13.1 Un SAMPLE est necessaire, la taille doit etre entre 30-50Mo.                           #
+#   13.2 Votre fichier doit etre en .vob ( Version DE VOTRE RELEASE ET NON DE LA SOURCE )       #
+#   13.3 Votre fichier SAMPLE Doit etre dans un dossier nommer "sample".                        #
+#   13.4 VOBSplitter ou ChopperXP sont recommander pour faire des sample(.vob)                  #
+#                                                                                               #
+# 14. [ Nom Du Repertoire: ]                                                                    #
+#                                                                                               #
+#   14.1 TOUT release doit respecter les TAG suivant:                                           #
+#    14.1.1 - L'annee du film est obligatoire sauf les TV SERiES.                               #
+#    14.1.2 - Nom du dossier doit inclure de la ViDEO STANDARD (NTSC / PAL).                    #
+#    14.1.3 - Numero de la ZONE(REGiON) doit etre inclus dans le dossier (R1 / R2).             #
+#   14.2 Caracteres ACCEPTER sont les suivants:                                                 #
+#        - ABCDEFGHIJKLMNOPQRSTUVWXYZ                                                           #
+#        - abcdefghijklmnopqrstuvwxyz                                                           #
+#        - 0123456789.-_                                                                        #
+#   14.3 Le TAG "COMPLETE" ne peut PAS etre utiliser. (2.2.1)                                   #
+#   14.4 Toute release doit etre nommer en Titre ANGLAiS Ou FRANCAiS, a l'exception ou le       #
+#        titre n'est nullement "ENG" ou "FR" mais avec piste AUDiO FR.                          #
+#   14.5 TV-DVDR: Utiliser les TAG approprier qui sont sur les COFFRETS ou BOiTiERS.            #
+#        ( Saison / Volume )                                                                    #
+#   14.6 Release iNTERNAL doit etre TAG "iNT" pour eviter un DUPE sur une release existante.    #
+#    14.6.1 - AUCUN ABUS ne doit etre fait,ce qui veut dire ne pas PRE une release qui est      #
+#             sortit la meme journee ou la premiere annee a l'exception si une release n'est    #
+#             pas distribuer par le GROUP.                                                      #
+#   14.7 Le TAG "PROPER" ne peut etre utiliser par le "MEME GROUP" pour corriger un BUG d'une   #
+#        publication REPACK, le TAG "REPACK" doit etre utiliser.                                #
+#   14.8 Le TAG "MULTi" est OBLiGATOiRE d'etre utiliser s'il a plusieurs LANGUES de disponibles #
+#        Si un GROUP US ou AUTRE, ne TAG pas leur RELEASE "MULTi" et qui a l'AUDiO FR, il       #
+#        doivent etre REQNUKE "MiSSiNG.TAG_MULTi-tFR.14.8" car il non pas RESPECTER nos regles  #
+#        FR.(4.4)                                                                               #
+#   14.9 Le TAG "QC" est OBLiGATOiRE, si ses un DVD QUEBECOiS.                                  #
+#                                                                                               #
+# 15. [ Proper / Nuking: ]                                                                      #
+#                                                                                               #
+#   15.1 PROPER sera valable si l'une des normes ci-dessus ont pas ete suivie dans un           #
+#        communique ou si la version precedente avait fait defaut technique                     #
+#        par exemple, des problemes ViDEO, AUDiO erreur, des erreurs de MENU                    #
+#        toutefois si la release peut etre patcher via un patch PPF systeme, un "PROPER" par    #
+#        un autre GROUP ou REPACK par le GROUP initial ne seront pas tolerer.                   #
+#   15.2 Le PAL ne peut DUPE un NTSC et un NTSC ne peut dupe un PAL car ses pas la meme REGiON. #
+#        (1.2)                                                                                  #
+#   15.3 PROPER peut seulement PROPER dans la meme REGiON.                                      #
+#        ( EX: R2 PAL ne peut pas PROPER R1 NTSC )                                              #
+#   15.4 "MULTi" n'est pas considerer comme un DUPE, des releases presente s'il contient des    #
+#         pistes AUDiO differente.                                                              #
+#   15.5 PROPER baser sur les versions presente ayant un mauvais nom de DOSSiER, NFO incomplet, #
+#        mauvais sample, rar manquant n'est PAS TOLERER. Dans ce cas DiRFiX / NFOFiX /          #
+#        SAMPLEFiX / RARFiX doit etre utiliser. "Si LE GROUP CORRiGE LEUR ERREUR"               #
+#   15.6 Apres avoir CONTACTER le GROUP, un PROPER est autoriser, si le GROUP ne peut prouver   #
+#       (PROOF) leur source via un jpg / png. (1.8)                                             #
+#                                                                                               #
+# 16. [ DVD TAG: ]                                                                              #
+#                                                                                               #
+#   16.1 Intro ou toutes autres formes de barbouillage ne sont PAS autoriser. (6.2)             #
+#   16.2 Nom du GROUP ou n'importe quel autre nom dans le DVD est STRiCTEMENT iNTERDiT.         #
+#        ( EX: Nom du GROUP dans le "Provider iD" n'est pas TOLERER )                           #
+#   16.3 "VOLUME LABEL" Doit etre exactement le titre du film et aucun autre NOM / GROUP.       #
+#   16.4 "PROViDER iD" Doit etre exactement le titre du film et aucun autre NOM / GROUP.        #
+#                                                                                               #
+# 17. [ Proof: ]                                                                                #
+#                                                                                               #
+#   17.1 Une Photo prit avec un appareil PHOTO (NON UN SCANNER) du coter imprimer au format     #
+#        .jpg / .png avec le nom du GROUP sur un bout de papier, doit etre quand meme de bonne  #
+#        qualite avec les details du film clair et lisible.                                     #
+#        ( Les autocollants d'un magasin ou codes barres peuvent etre floues ou noirci )        #
+#   17.2 Les pochettes (COVERS) peuvent etre ajouter au dossier mais ne compte PAS comme une    #
+#        preuve suffisante.                                                                     #
+#   17.3 Votre Photo (.jpg ou .png) doit etre mit dans un DOSSiER nommer "Proof".               #
+#                                                                                               #
+#  Note: Certain telephone mobile ajoute "EXiF META DATA" a leur photo (LOCALiSATiON GPS),      #
+#        assurer vous d'avoir supprimer les "META DATA" de votre jpg / png.                     #
+#                                                                                               #
+#################################################################################################
+#                                                                                               #
+#          Les REGLES 2011 FRENCH Standard DVDR ECRiTE Et ORGANiSER Par: tFR (05.Nov.2011)      #
+#                                                                                               #
+#                  Les GROUPES qui on Signer:  CoRa - DUPLI - ENJOi                             #
+#                                                                                               #
+#      Les GROUPES qu'ont a pas pu contacter ou sans nouvelles: AYMO - UNSKiLLED - ZiRCON       #
+#                                                                                               #
+#                  Les GROUPES qui ont refuser de Signer: VIAZAC                                #
+#                                                                                               #
+#              ----------------------------------------------------------------------           #
+#                                                                                               #
+#                       ( Le RESPECT Va A Toute L'EQUiPE tFR 2011 )                             #
+#        Pour toute modification ou suggestion pv un membre des GROUP qui on signer             #
+#                Les informations seront distribuer au personne concerner.                      #
+#                                                                                               #
+#################################################################################################
+ ###############################################################################################

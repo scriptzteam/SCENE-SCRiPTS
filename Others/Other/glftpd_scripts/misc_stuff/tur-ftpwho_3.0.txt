@@ -1,0 +1,8 @@
+Tur-FtpWho (GL1&2)
+
+Description: This is just a ftpwho lister that is used for a multitude of my 
+scripts. No use for it alone unless you plan to script something, using it.
+
+Author:   Turranius
+Version:  3.0
+Added on: 19-Oct-2003

@@ -1,0 +1,11 @@
+BW (GL1&2)
+
+Description: A script for showing total bandwidth on site.
+Uses tur-ftpwho (3.0+) available from this website aswell.
+Dirs can be excluded for noshow and the output can be easely changed. 
+Can also run, say, 3 times with 2 seconds in between and show the average bandwidth
+over those 3 runs.
+
+Author:   Turranius
+Version:  1.1
+Added on: 15-Nov-2003

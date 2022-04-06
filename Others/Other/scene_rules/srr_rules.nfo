@@ -1,0 +1,493 @@
+
+                       Standard Rip Rules (S.R.R).
+
+  In 1998, and again on March 26th 2000, three rip game groups collaborated 
+  to bring about rules with the hope of ensuring quality in a constantly
+  evolving rip fscene. These rules lasted a long time, but as technology moves
+  forward, so to must the rules governing it. It is time once again for
+  the standards by which the games scene operates to be updated.
+
+  As we are all aware there have been major developments in the scene. These
+  new rules may seem to be quite radical as a result. Those fearful of change
+  may very well be opposed to them - but let us not forget that had there
+  never been any change, we would not have any of the existing rules in the
+  first place!
+
+             In lieu of past events, the deciding figures of:
+
+                      Myth, Divine, Vace, and Instinct
+
+  have converged and agreed upon a new set of rules based on those that
+  came before. These new rules have been updated, modified, and
+  agreed upon by a consensus, and should provide a new standard better suited
+  to the scene in this day and age.
+
+  These groups have been active participants in shaping the scene in the
+  last six months, and were given active participation in voicing their point
+  of view. These new rules will allow for a fair and competitive scene
+  while ensuring a quality-minded environment for all, bringing game rips
+  forward into a new era and restoring their relevance.
+
+  It should be noted that CLASS and BACKLASH chose not to attend due to their
+  reduced role within the scene. However former NSA groups (such as CLASS and
+  BACKLASH), who have chosen not to sign up for these new rules, will still
+  be required to abide by the former NSA rules, which they signed.
+
+  In the past, groups setting the rules have been called the SPA, The Faction,
+  or as in the most recent case the NSA (Network Software Association).
+  Some have claimed the exclusive nature of these organizations have locked
+  them out of the process. Hence from this time forth there shall be no
+  organization dictating to the others. All groups are invited to adopt these
+  rules, and every effort has been made to contact the various players in the
+  games rip scene.
+
+  These rules shall be identified simply as the Standard Rip Rules (S.R.R).
+ 
+  They have been ratified and approved among the four groups and will be
+  recognized and followed immediately on this date and thereafter:
+  March 5th, 2004.
+
+  The Standard Rip Rules are as follows:
+
+
+  1.  Files:
+
+      The disk limit is as of now 55 x 5,000,000 bytes.
+      This equates to a total of 275,000,000 bytes of
+      compressed data. Groups may not exceed the total
+      size (including when crack.ace or similar files are
+      are needed in the first disk of a release) to prevent
+      any future cheating. Groups caught cheating on file
+      size WILL be nuked!
+
+      The limit for standard game add-ons is 25 x 5,000,000
+      bytes for any add-on that includes Music, Speech,
+      Commentary or Play By Play for the original release.
+      Any add-on that does not fit these criteria will be
+      restricted to 15 x 5,000,000 bytes. Only the group
+      that won the game release is allowed to release the
+      add-ons for that game.
+
+      Due to an increasingly limited number of file names,
+      and the ability of all modern operating systems to handle
+      long file names, it is now permissible to use file names
+      up to a maximum of 12.3 characters (filename/extension). 
+
+      Acceptable compression formats at this time are ACE or
+      RAR or any future compression that supports multiple
+      volumes and long file names, followed by the
+      traditional PKZIPing.
+
+      The traditional packaging methods (ZIP/DIZ) shall be
+      maintained, with a DIZ file being present in each zip.
+
+  2.  Proper Rips:
+
+      To prevent sloppy rips, a re-release of a game is allowed
+      to ensure groups release proper and respectable rips.
+      The following provisions include:
+
+         it can be ripped in >=7 disks less than the previous
+         release or less than half the size of the previous
+         release by using only lossless compression methods.
+
+      That means all the essential game data must be still
+      included in the re-release. No essential data is allowed
+      to be removed to be considered a valid re-release. A re-
+      release from a competing group may not use tools, original
+      crack or any other files from the previous release that
+      were modified for the original game rip. A group may NOT
+      use DDS conversion on a proper rip unless used on
+      the original rip. Lossy audio conversion is allowed in
+      proper rips; downsampling is not.
+
+      The re-release of a rip can be done by any group and must
+      be done within 48 hours of the original rip, as possibly every
+      game is rippable in a smaller size if enough time is spent.
+
+  3.  Functionality:
+
+      Every release under this limit MUST be a functional and
+      playable complete game with no essential data missing to
+      finish the game. This means that included will be every
+      component  necessary for the successful completion of the
+      game e.g.:
+
+      - all game executables that are needed,
+      - every level (single AND multiplayer),
+      - every track (including practice),
+      - all actor graphics & models etc,
+      - sound effects
+      - registry settings to play on the Internet (Zone/etc.)
+      - if the serial of the game is checked online thus making
+        it impossible to play online with any possible rip, it is
+        allowed to rip out multiplayer, LAN play should still be
+        fully included if it exists
+
+  4.  Packers:
+
+      Any lossless compression method to reduce the size of
+      selected game data is ALLOWED (e.g. uharc).
+
+  5.  Lossy Compression:
+
+      Lossy compression is ALLOWED for sound, videos and non-
+      texture graphics (menu screens and loading screens) but
+      lossless compression is encouraged before using lossy
+      compression. Lossy compression of textures is allowed
+      only using DDS. If a game includes separate texture
+      sets for hires AND lowres systems you are allowed to
+      rip lowres only but the game still has to work on all
+      hardware platforms.
+
+  6.  Sound:
+
+      Sound effects WILL and MUST be included. To reduce the size
+      of rips when possible, standard wave format files (PCM)
+      should be compressed. If the sound files exist inside a big
+      file it's highly regarded when time is invested to extract
+      those files to compress them. Groups are not required to
+      index big  files though. A downgrade of sound quality to sound
+      files to allow the game to fit the limit will NEVER be permitted.
+
+      Acceptable sound compression formats are:
+
+            <22/1 <22/2 22-32/1 22-32/2 44-48/1 44-48+/2 (khz/channels)
+      mp3   32    32    48      56      56      112      (kbit)
+      ogg   32    32    48      48      56      64       (kbit)
+      wma8  20    20    20      32      32      80       (kbit)
+      wma9  16    16    16      20      20      64       (kbit)
+
+      It is allowed to rip music, commentary/speech and ambience
+      files as long as the game remains playable. speech files
+      MUST be included if there exist no on-screen subtitles.
+      Speech can be downsampled, but only to the above SOUNDS
+      quality or to WAV 22.050 quality. No lower. It is okay
+      to remove commentary from a release if size does not
+      permit it.
+
+      It is highly regarded when all sounds, speech and music
+      are included in a rip and not intentionally put out as
+      add-ons.
+
+  7.  Movies:
+
+      Movies (intros, cut scenes) should be removed if they
+      are not game related. Movies must be ripped in a way so
+      that the  game play  experience is  not compromised, e.g.
+      framing of movies is highly regarded. It should always be
+      avoided to create situations in which user-input is
+      necessary on black screens because the video  normally
+      shown has been blacked out.
+
+      Downsampling of Movies is allowed under the following
+      guidelines:
+
+      Divx 3-5 / Xvid / Original codec (used in game):
+      - Kbit rate: 650 kbit+
+      - Quality: 93%+
+      - Quantizer: 4.0 (no more)
+
+      RadVideo (BIK):
+      - Compress to 50%+ of the original file size.
+
+      Windows Media Video (WMV) / MPEG2:
+      - Allowed resolution change, but no less than 50% of original
+        resolution (width/height divided by 2).
+      - Allowed recompression to same resolution but with lower
+        kbit rate.
+
+      *NOTE* Movie conversion on enduser machine is FORBIDDEN.
+
+  8.  Add-ons:
+
+      Other allowed add-ons for games include:
+
+      - cut scenes/movies
+      - commentary/speech
+      - music
+      - editor
+
+      No more than 2 add-ons should be released for a game
+      release.
+
+      Intro and Outro add-ons are EXPLICITLY FORBIDDEN.
+
+      Only the group that released the initial game release
+      can release the above add-ons, unless there is a
+      problem with the release. This is to prevent third
+      party groups that may not understand how to release
+      these properly to correctly support the initial
+      release, and to prevent multiple add-on dupes from
+      appearing.
+
+      This will be ENFORCED on group SITES!
+
+  9.  Kiddie:
+
+      Children's games (aka Kiddie  games) and Edutainment
+      software do not qualify under these rules guidelines for
+      acceptable releases. Kiddie games are usually defined via
+      the game target audience of '5-12 years' as stated by the
+      game's producer. Common sense should be applied by all
+      groups to identify what  really is a kiddie game.
+      Platform games are not to be considered kiddie games
+      unless explicitly stated by the developer/publisher.
+
+ 10.  Official:
+
+      Level packs, game add-ons etc. for rips are only allowed
+      if they are officially released/authorized by the same
+      company, developer or publisher that put out the original
+      game. If possible by its size, the add-on should be made
+      as a standalone and not needing the original game release.
+      The original missions may be removed to allow the game
+      add-on to become standalone if not size can not permit
+      the original game. It should be explained in the NFO
+      if and why a game add-on isn't made to be standalone.
+
+ 11.  Dupes:
+
+      In regard to games distributed in the United States that
+      are  LATER distributed in Europe or vice versa under the
+      same or different name/publisher. These games if released
+      AFTER another group's release are counted as DUPES unless
+      it can be proven that there is a clearly noticeable
+      PLAYABLE difference in the latter release (more than just
+      tiny differences in graphics or sound). Differences in
+      file dates and Game Titles between Euro and US releases
+      are NOT a good enough reason to re-release the game.
+
+ 12.  Information:
+
+      A brief outline of what  has been  stripped and any
+      explicit lossy compression used should  be clearly stated
+      in the game-release in the .NFO or CRACKTRO file. This file
+      should be placed within the first file of a release so
+      everyone knows where to find it.
+
+ 13.  Enhancements:
+
+      Trainer releases & Update patches:
+
+      Fully cracked Update Patches and Trainers are highly
+      regarded, though they are not the responsibility of
+      any group (including  the group which released the
+      original game title).
+     
+      If 2 trainers from the same or different groups are released
+      for 1 game, this does NOT qualify as a dupe unless the latter
+      trainer provides no new features over the prior trainer.
+     
+      Patches that are the same do qualify as a dupe. Also beta
+      patches fall under the area of betas and should also be
+      nuked  accordingly. Even the companies that make beta
+      patches do not support them so, why should the scene?
+     
+      All trainers must work the same on all formats that the
+      game supports. If the game supports W9x/WME/NT4/WXP/W2K3
+      /WOW64, then the trainer's options must work on all those
+      formats too.
+   
+      No TMK/Magic or trainer making utility releases will be
+      allowed in making trainers. These will be banned as they
+      lack the quality that a real trainer employs and can be
+      unreliable on games that check for these in later levels
+      or situations.
+     
+      Beta update patches will not considered a valid release
+      among any game group. No group shall release a cracked
+      patch for a  game if a generic patch exists for a particular
+      game in the scene. If a generic crack exists, a new
+      patch-release must specify that the generic crack does
+      not work anymore.
+
+ 14.  Competition:
+
+      If two or more rips of the same game get released, the first
+      complete working rip wins. Sites should not nuke any release
+      until the winning rip has been proven to work correctly and
+      follows the above rule set.
+ 
+ 15.  Stealing:
+
+      No group shall use another's groups work - be it an iSO
+      crack or tools written by another competing group. Any
+      third party tools are acceptable. A crack from an iSO or
+      past release (even in other languages or iSO's) shall
+      not be used unless permission is given from the cracker or
+      creator of the original release group. This permission can
+      only be given by crackers and not leaders or seniors. Thus
+      making sure crackers control their own cracks and are not
+      dragged into group politics. It should be noted that most
+      iSO cracks are actually cracked by rip group crackers. Thus
+      without permission from the rip group, said crack cannot be
+      used by other groups. Even if no rip currently exists, as
+      that would be stealing. An example of this is groups like
+      TECHNIC who steal cracks all the time and should be banned
+      and nuked on all sites for reasons of quality.
+     
+      If however a group or member makes their said tools/source
+      public, then they loose their right to prevent others using
+      their tools as they have made it public domain. This should
+      act as a deterrent to crackers who wish to brag to everyone
+      as protection companies gain an insight into the scene when
+      people make standard scene tools public.  This then in turn
+      hurts the scene when protections get updated.
+
+ 16.  Flaming:
+
+      While baiting and harping within a groups release has always
+      been a part of the scene, at times groups have taken this
+      too far. This causes all groups to look lame and childish
+      within the eyes of end users; worse still it can lead to
+      security breeches. In order to avoid this being taken too
+      far in the future, direct naming/nicks of individuals (not
+      groups) within NFO files and other materials is STRICTLY
+      PROHIBITED.
+
+ 17.  Ancients:
+
+      No game can be ripped where the latest file date of a file
+      on the original media (CD/DVD) is older than 6 months prior
+      to the releases of the rip. This is to avoid the emergence
+      of new technologies being employed to resurrect past un-rip
+      able games & create a mess of hundreds of ancient games
+      being released. And to promote faster rips at the time of
+      game release. No rips that were deemed unrippable before
+      the date of March 5th, 2004 shall be released because
+      the new rules deem them rippable!
+
+ 18.  Rules:
+
+      These rules should be placed in the first zip file of every rip
+      release. It is hoped that this will prevent groups down the
+      line from feigning ignorance of the rip rules. This should
+      also allow these rules to travel far and wide in the hope that
+      all sites/groups will adopt these standards for game rip
+      releases, thus ensuring the quality we have come to expect
+      within the scene.
+
+ 19.  Sites:
+
+      It is highly regarded for all groups to establish a /GAMERIPS
+      directory on their affiliated FTP sites which will contain
+      game-iso rips and (optionally) DVD rips. Trainers and patches
+      belong to 0day.
+
+ 20.  DVD Amendment Rules:
+
+      With the advent of games on DVD media, albeit in minor
+      quantities, it has been decided to pre-empt any more rule
+      changes in the future by including the following DVD rules.
+      These rules will be based mostly on the existing rip rules
+      and will allow people to get used to this new and developing
+      scene.
+
+   a. Installation:
+
+      The DVD rip release should install from the CD and only
+      run the game from the hard drive. HD running of a game is
+      the goal, not running off CD. This is the usual way with
+      rips.
+     
+   b. Size:
+
+      The game size for DVD RIPS should be made into a burnable
+      CD iSO format for easy burning and distribution. The .bin
+      and .cue format where possible. The release must not have
+      more than 3CD's of 80mins. Regardless of how many DVD's
+      there were. This should only be the case where the normal
+      rip sizes cannot apply and the original media format was
+      indeed DVD. It should not be used as an excuse to rip down
+      6 CD releases, as these have been proven to be rippable
+      even under the old rules in the past.
+     
+   c. Format:
+
+      Release files should be in RAR format or any future
+      compression that supports multiple volumes and long file
+      names, followed by the traditional SFVing. And in also rip
+      sites/places should therefore adjust their scripts to
+      handle the new DVD rip formats as well as the usual ZIP
+      files. Siteops UPDATE your SCRIPTS!
+       
+   d. Valid:
+
+      A rip release of 55 x 5,000,000 bytes and the release of
+      a DVD rip of the same game, are allowed as they will
+      accommodate to different users.
+
+   e. Singular:
+
+      No add-ons are allowed for DVD rips as the current size
+      should be enough. For patches and trainers the current
+      normal rip rules should apply.
+
+   f. CD/DVD availability:
+
+      No DVD rip of a game is allowed if a certain publisher
+      releases a game on CD and DVD unless the DVD game increases
+      some game features (like highres movies, etc.).
+
+   g. General:
+
+      In general the standard rules should be applied also to
+      DVD rips. If a group removes any allowed data and a
+      competing group can leave the data in and make it
+      the same CD count, their release is considered a
+      proper and is the valid release. It is preferred to
+      include as much data as possible on DVD rips.
+      Only if it is not possible to fit all data on 3 CDs by
+      downsampling and other means of compression it is legit
+      to remove data from the game. This means a 3 CD release
+      with movies included is preferred over a 2 CD release
+      with movies ripped out. Reasons for proper are:
+
+      A) If a group can rip a game to the same CD count
+         as the previous groups rip by including gamedata
+         ripped out by the previous group. Downsampling
+         IS ALLOWED. The size of the cds do not matter
+         in this case.
+
+      B) If a group can get 350mb smaller in size
+         as long as all previous data in rip is included
+         and NO downsampling occurs.
+
+      C) If a group can get 1 CD smaller in size
+         as long as all previous data in rip is included.
+         Downsampling IS ALLOWED.
+
+      To cease any confusion examples are provided:
+
+      Scenario A)
+     
+      If group A releases a 2 CD DVDRip with movies and some
+      audio ripped, and group B releases their rip which is also
+      2 CD's with all movies/music included but downsampled,
+      group B's is the valid release. Regardless if group B's
+      release has bigger sized cds.
+
+      Scenario B)
+
+      Group A releases a 2 CD DVDRip with everything included,
+      both CD's being 700mb. Group B releases a 2 CD rip
+      with everything included but because of better technique
+      CD1 is 700mb and CD2 is 350mb, hence half a CD
+      smaller as long as movies are NOT downsampled it is the
+      valid release.
+
+      Scenario C)
+
+      Group A releases a 3 CD DVDRip, 2 CD's being 700mb, CD
+      3 being 200mb. Group B releases a 2 CD rip with everything
+      included from previous rip, because of better technique
+      or downsampling it is the valid release. This is true
+      regardless of the size of the last CD, be it 700mb or 10mb.
+
+
+  S.S.R. March 5th, 2004
+
+    Signed and ratified by Leaders & Council Members of the
+    following groups: Myth, Divine, Vace, Instinct, Dynasty,
+    Oceanine, Cubic, Delice, Bowling, NLrip and Storm.

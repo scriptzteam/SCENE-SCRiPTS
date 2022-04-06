@@ -1,0 +1,160 @@
+
+          [  BALTiC Retail SD x264 Releasing Standards 2012  ]
+
+
+                       Effective date 2012-??-??
+
+
+--------------------------------------------------------------------------------
+
+
+ 0. Intro
+.
+    Here it is. Retail SD x264 ruleset for the releases of/from Baltic countries.
+    Includes Lithuanian, Estonian, Latvian and Russian language releases. Go to
+    Wiki to learn more about Baltic states. LT EE and LV are the official
+    languages and Russian is a 2nd unofficial language because of past historic
+    events. Russian is valid only for releases that contain Baltic subs and
+    such retail dvds are very common in the Baltics.
+
+    Decided to go for crf x264+.mkv rips because the quality is twice as good
+    and the size is smaller than .avi. And all of you know that XviD and .avi is
+    a dead combo nowdays and x264+.mkv is the real deal, we don't live in the
+    early '00s, technologies are getting better and better and we need to move
+    on. So thank you .avi and xvid for everything and now you can retire.
+
+    We can't follow those outdated official XviD rules anymore. We've had enough!
+    We hope others will follow our path and release official Retail SD x264 rules
+    for English too.
+
+    We were inspired by the new TV SD x264 ruleset and have stolen a couple of
+    ideas :)
+
+    And sorry for the retarded English :)
+
+
+ 1. Video
+
+  - Resizers: Lanczos4 and Spline36.
+  - Deinterlacers: Yadif is recommended.
+  - No watermarking, intros and etc.
+  - Resolutions: 640-720.
+  - Sources with horizontal source resolution of 720 after crop must be cropped
+    as needed and only height shall be resized to maintain proper AR using mod2.
+  - mod2/mod4/mod16. Upscaling/downscaling width is forbidden.
+  - AR error 4%.
+  - Overcropping/undercropping the picture not allowed.
+  - 
+  - Suggested command line:
+    x264.exe --crf ## --preset slow --level 3.1 --colormatrix bt709 -o out.h264 in.avs
+
+
+ 2. Audio
+
+  - AAC VBR only.
+  - Average bitrate ~96-192kbps. Lower bitrate is good for talk stuff.
+  - Nero encoder is recommended.
+  - Only one audio track per release.
+  - No out of sync.
+  - Audio stays with same channels as in source. 2.0 and/or 5.1
+
+
+ 3. Codec
+
+  - x264.
+  - Must be up to date. Max 30 days.
+  - No false shit!
+  - Custom matrices not recommended. Use it if it's really good.
+  - CRF 17-23.
+  - Video bitrate must not be more than 2000kbps. A normal final size for an
+    average length movie should be near/around 1gb.
+  - Level 3.1.
+
+
+ 4. Framerate
+
+  - Constant.
+  - Default retail rates.
+
+
+ 5. Container
+
+  - .mkv
+  - mkvmerge is recommended.
+  - Can be muxed with .mkv: .mp4 AAC, .srt or .idx subs.
+
+
+ 6. Tagging
+
+  - DVDRip.x264 and BDRip.x264.
+  - iNTERNAL and iNT.
+  - WS if duping a FS release. FS not allowed after WS.
+  - Examples:
+     White.Men.Cant.Jump.1992.LT.DVDRip.x264-Group
+     Its.All.Gone.Pete.Tong.2004.EE.BDRip.x264.iNT-Group
+     Xotabych.2006.RU.REMASTERED.DVDRip.x264-Group
+  - All other extra tags allowed in global xvid rules are allowed here too.
+  - If Russian release has only one Baltic subtitle it can be tagged with ESTSUB
+    and etc.
+
+
+ 7. Subs
+
+  - Text based format is preferred (e.g. SubRip, SubStation Alpha, etc).
+  - Duping with another subtitle is not allowed. Release a subpack.
+  - If a release (especially Russian) has more than one Baltic subtitle, then
+    every sub should be disabled by default, so user will choose the sub he needs.
+  - No subs in separate files and folders. Mux them.
+  - No .srt and .idx together in a same release.
+
+
+ 8. Samples
+
+  - ~60s sample from a final rip in a Sample folder.
+
+
+ 9. Packaging
+
+  - 15, 20, 50MB rars. 1MB = 1,000,000 bytes
+  - Compression: Store.
+  - No passwords and shit.
+  - Recovery not recommended. 1% max.
+  - .nfo and .sfv is a must.
+  - No any dupe filenames.
+  - .nfo must have all the normal information about the release. Technical details
+    and a link.
+
+
+10. Propers
+
+  - Propering allowed only for logical reasons. For technical flaws and etc.
+  - Russian movies must have at least one Baltic subtitle. Can be propered if
+    missing.
+  - Proper release must always have an explanation in the .nfo.
+
+
+11. Internals
+
+  - Internals are allowed only for duping protection. Every int must follow the
+    ruleset.
+  - Int if DVDRip.x264 is pred and you want to pre a BDRip.x264 and etc.
+
+
+12. Fixes
+
+  - NFOFix, SAMPLEFix, SYNCFix and others.
+  - Must be noted in the .nfo.
+
+
+13. Misc info
+
+  - This ruleset approves previously nuked Baltic related releases. This is the
+    reason why the ruleset was written.
+  - Only LT, LV, EE and RU + Baltic subs releases follows the ruleset.
+
+
+--------------------------------------------------------------------------------
+
+
+    Signed: PAPAi, EMX, TvD, EiSO, TeGijA, PPi
+

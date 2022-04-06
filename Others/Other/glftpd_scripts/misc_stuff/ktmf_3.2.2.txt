@@ -1,0 +1,12 @@
+KTMF
+
+Description: A multipurpose script for checking Dual Downloaders, Dual Uploaders 
+(to same folder), Idlers, Slow Downloaders and Slow Uploaders.
+Can also kick leech users/special users/groups when a number of users are online.
+TONS of options.
+Read the README for more information. Note: 1.2 and up requires the new tur-ftpwho 
+that comes with the package.
+
+Author:   Turranius
+Version:  3.2.2
+Added on: 23-Apr-2003

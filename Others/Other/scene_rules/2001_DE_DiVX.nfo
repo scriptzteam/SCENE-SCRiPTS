@@ -1,0 +1,105 @@
+OFFiZiELLE DEUTSCHE DiVX REGELN 
+
+.ALLGEMEiN_____________________________________________________________________ 
+
+
+1. Der Rip muss komplett von der Gruppe stammen, es muessen Video und Audio 
+von derselben QUELLE kodiert worden sein. 
+
+2. Es muss ein DVD- oder direkt kopierter digital-TV-Rip sein (d.h. die Quelle 
+muss ein rein digital verarbeiter MPEG2-Stream sein). 
+
+3. Digital-TV-Rips duerfen kein Senderlogo oder sonst irgendwelche Einblendun- 
+gen enthalten. 
+
+4. Als KINOSTART wird der deutsche und nicht der Start im Produktionsland ge- 
+wertet, gab es jedoch keinen deutschen Kinostart, ist das Produktionsjahr 
+anzugeben (dies bezieht sich auch auf <jahr> im Dateinamen der NFO). 
+
+5. Ein einminuetiges SAMPLE, welches aus dem releasten avi stammt (d.h. nicht 
+extra encoded wurde) muss in einem separaten Verzeichnis im Release ent- 
+halten sein. 
+
+6. Es muss per SBC encoded worden sein. Die Stats aus dem ersten Pass muessen 
+in einem separaten Verzeichnis im Release enthalten sein. 
+
+7. Die minimale/maximale X-AUFLOESUNG muss gecroppt 512/640 pixel betragen. 
+
+8. Die minimale/maximale AUDIOBITRATE muss 128/192 (C/ABR) oder 96-160/128-224 
+(Lame VBR) sein. Die Audioaufloesung betraegt 44khz @ 16bit. 
+
+9. Das Seitenverhaeltnis der Videoaufloesung darf maximal 5% von dem des DVD- 
+Bildes abweichen. Die X-Y-Werte der Aufloesung muessen div16 sein. 
+
+10. Ein Film kuerzer als 95 MINUTEN muss auf 700mb passen - ausgenommen sind 
+vollstaendig computeranimierte Filme (z.B. Toy Story, Antz, Shrek) und XXX. 
+
+11. Zulaessige Groessen der Release sind: 1CD, 1.5CD (so dass 2 solcher Release 
+auf 3 CDs passen) 2CD und 3CD (bei einem Film laenger als 200 Minuten). 
+
+12. Der ABSPANN muss in einem 1CD Release nicht vollstaendig enthalten sein, 
+jedoch soweit, dass erkennbar ist, dass der Film tatsaechlich geendet hat. 
+Falls im Abspann noch Filmszenen enthalten sind, muss dieser in gleichbe- 
+rechtigter Bitrate wie der eigentliche Film, soweit diese Szenen reichen, 
+kodiert werden. In einem 2CD+ Release muss der Abspann in voller Laenge 
+enthalten sein. 
+
+
+.BENENNUNG_____________________________________________________________________ 
+
+
+<gruppe>-<filmtitel>_<cd#>.avi 1CD = gwl-pitch_black.avi 
+2CD = gwl-pitch_black_1.avi 
+gwl-pitch_black_2.avi 
+
+<gruppe>-<abkuerzung><cd#>.rar 1CD = gwl-pibl.rar 
+2CD = gwl-pib1.rar 
+gwl-pib2.rar 
+
+<gruppe>-<abkuerzung><cd#>.sfv 1CD = gwl-pibl.sfv 
+2CD = gwl-pib1.sfv 
+gwl-pib2.sfv 
+
+<gruppe>-<filmtitel>_(<jahr> ).nfo = gwl-pitch_black_(2000).nfo 
+
+
+Die Benennung des Verzeichnisses ist in gewissen Grenzen beliebig. Ent- 
+halten sein muss jedoch: <Filmtitel> DiVX German <QUELLE> -<GRUPPE> 
+
+Beispiele, Quelle = DVD: 
+
+Pitch.Black.DiVX.DVDRIP.German-GWL 
+Pitch.Black.DiVX-DVDRIP-German-GWL 
+Pitch_Black_DiVX-DVDRIP-German-GWL 
+
+Beispiele, Quelle = digital-TV: 
+
+Pitch.Black.DiVX.dTV.German-GWL 
+Pitch.Black.DiVX-dTV-German-GWL 
+Pitch_Black_DiVX-dTV-German-GWL 
+
+
+.NFO___________________________________________________________________________ 
+
+In der NFO muessen mindestens folgende Informationen enthalten sein: 
+
+Releasedatum 
+Anzahl der RARs pro CD 
+Videoaufloesung 
+Audioaufloesung 
+deutscher Titel und Originaltitel 
+deutscher Kinostart und DVD-Release-Datum 
+Name des Regisseurs 
+Laenge des Films 
+IMDB-Rating und URL zum Film 
+5-zeilige Angabe des Plots 
+
+
+.SiGNiERUNG____________________________________________________________________ 
+
+Diese Regeln sind von folgenden Gruppen anerkannt: 
+
+
+ADM ANNO DiA GDS GME2000 GWL MMP RC 
+
+[ODDR-20010820b.txt]______________________________________________________[EOF] 

@@ -1,0 +1,32 @@
+Here are a few bugs that we know of but don't have time for/don't know how to
+fix or replicate. Most other bugs get fixed immediately.
+
+Legend:
+? - probably fixed, test to make sure and let us know (you can contact us 
+    at #glftpd@EFnet iRC or mail the report to bloody_a at glftpd.com)
+* - need fixing
+
+------------------------------------------------------------
+
+?) on some bsd systems, logging off doesn't end the process, so you have lots of
+   ghosts left.  is this a bsd bug? it seems to work fine on other bsd systems.
+   - was it caused by the lastonline bug? that one has been fixed
+
+?) some systems have a strange problem with certain users idling forever. it
+   appears that the idle timer doesn't disconnect those users when it hits zero,
+   even though it works fine for most other users and for all users on most
+   other systems. this is still a mystery being investigated.
+   - still mysterious, but solved with killghost.c?
+
+?) site renuser only allows 11 characters or so
+   - this part of code is REALLY messy, needs rewriting
+
+*) sometimes xferlog logs negative transfer time - so far the best explanation
+   of this is that sometimes the box moves backwards in time during transfer :)
+   - can't reliably replicate
+
+*) the timezone setting doesn't change time on new files/directories, and was
+   reported to also cause major slowdowns with cookies for some people.
+   - not worth fixing, since the localtime fix works 100%, right?
+
+~

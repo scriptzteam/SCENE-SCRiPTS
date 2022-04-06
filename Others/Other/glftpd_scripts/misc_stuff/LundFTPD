@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8"/>
+<title>LundFTPD - Lundman Wiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"LundFTPD","wgTitle":"LundFTPD","wgCurRevisionId":3679,"wgRevisionId":3679,"wgArticleId":1290,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"LundFTPD","wgRelevantArticleId":1290,"wgRequestId":"7df3eae7fbd889f7f513192b","wgIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.implement("user.options",function($,jQuery,require,module){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery, require, module ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});/*@nomin*/;
+
+});mw.loader.load(["mediawiki.page.startup","skins.vector.js"]);});</script>
+<link rel="stylesheet" href="/wiki/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<script async="" src="/wiki/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.27.1"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/wiki/opensearch_desc.php" title="Lundman Wiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="http://www.lundman.net/wiki/api.php?action=rsd"/>
+<link rel="alternate" type="application/atom+xml" title="Lundman Wiki Atom feed" href="/wiki/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-LundFTPD rootpage-LundFTPD skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">LundFTPD</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Lundman Wiki</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#LundFTPD"><span class="tocnumber">1</span> <span class="toctext">LundFTPD</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Download"><span class="tocnumber">1.1</span> <span class="toctext">Download</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Install"><span class="tocnumber">1.2</span> <span class="toctext">Install</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Usage"><span class="tocnumber">1.3</span> <span class="toctext">Usage</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Setup"><span class="tocnumber">1.4</span> <span class="toctext">Setup</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#FAQ"><span class="tocnumber">1.5</span> <span class="toctext">FAQ</span></a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="LundFTPD">LundFTPD</span></h2>
+<p>Single process, non-blocking FTPD with internal user database, no need to clutter the system's passwords file.
+</p>
+<pre>   * Single process FTPD (two if you use internal SFV testing)
+   * Can run without root (but runs better with)
+   * Full archive testing (zip, rar, sfv, dms, ace etc..)
+   * Both hard and soft chroot support
+   * Bandwidth capping (per session, per user or per entire site )
+   * User ratio system, with daily, time and credits systems.
+   * User settable privilege levels
+   * User settable limits, for logins, download and upload sessions.
+   * Max login users
+   * SITE message support
+   * SITE WALL support
+   * (Deprecated) Full SRP encryption support. For info on SRP, see <a rel="nofollow" class="external free" href="http://srp.stanford.edu/">http://srp.stanford.edu/</a>
+   * (Deprecated) Integrated with SAFETP-encryption scheme for IDENTd relay, see <a rel="nofollow" class="external free" href="http://safetp.cs.berkeley.edu">http://safetp.cs.berkeley.edu</a>
+   * (Deprecated) Bounce and traffic relay support - with shadowftpd over multiple, load balanced paths.
+   * FULL logging capabilities
+   * Tested on most Unix systems (irix, *BSD, Linux, Solaris, HPUX, OSF1),Win32, Amiga)
+   * Anonymous login support
+   * Guest account feature (look only, or, upload only)
+   * Full anonymity possible
+   * Full DUPE checking database (dbm, ndbm, db_open and gdbm systems supported).
+   * Group's private directory feature. Including "pre" command (rename).
+   * Irc bot announce feature
+   * Full IP pattern checking, including ident.
+   * RFC-959 compliance plus loads of SITE commands.
+   * Full remote administration features (minus setting user's passwords&#160;:) )
+   * Smart paths feature
+   * Internal "ls" feature with extra info (megs and files in subdir, num downloads)
+   * and NOW IN COLOUR!
+   * Uses LiON library
+</pre>
+<p><br />
+SRP support has been deprecated, use SSL instead. (Technically, SRP is still around, just not enabled).
+SafeTP support has been deprecated, use SSL instead. (Technically, SafeTP is still around, just not enabled).
+</p><p><br />
+</p>
+<h3><span class="mw-headline" id="Download">Download</span></h3>
+<p><a href="/wiki/index.php/LundFTPD_Download" title="LundFTPD Download">Download</a>
+</p>
+<h3><span class="mw-headline" id="Install">Install</span></h3>
+<p><a href="/wiki/index.php/LundFTPD_install" title="LundFTPD install">Install</a>
+</p>
+<h3><span class="mw-headline" id="Usage">Usage</span></h3>
+<p><a href="/wiki/index.php/LundFTPD_Usage" title="LundFTPD Usage">User guide</a>
+</p>
+<h3><span class="mw-headline" id="Setup">Setup</span></h3>
+<p><a href="/wiki/index.php/LundFTPD_Setip" title="LundFTPD Setip">Setup</a>
+</p>
+<h3><span class="mw-headline" id="FAQ">FAQ</span></h3>
+<p><a href="/wiki/index.php/LundFTPD_FAQ" title="LundFTPD FAQ">FAQ</a>
+</p>
+<!-- 
+NewPP limit report
+Cached time: 20180810021000
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.016 seconds
+Real time usage: 0.016 seconds
+Preprocessor visited node count: 22/1000000
+Preprocessor generated node count: 28/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key lundwikidb-lw_:pcache:idhash:1290-0!*!0!!en!*!* and timestamp 20180810021000 and revision id 3679
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="http://www.lundman.net/wiki/index.php?title=LundFTPD&amp;oldid=3679">http://www.lundman.net/wiki/index.php?title=LundFTPD&amp;oldid=3679</a>"					</div>
+				<div id="catlinks" class="catlinks catlinks-allhidden" data-mw="interface"></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="/wiki/index.php?title=Special:UserLogin&amp;returnto=LundFTPD" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/index.php/LundFTPD"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="/wiki/index.php?title=Talk:LundFTPD&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/index.php/LundFTPD" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="/wiki/index.php?title=LundFTPD&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/wiki/index.php?title=LundFTPD&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/wiki/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Lundman Wiki [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/index.php/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage"><a href="/wiki/index.php/Main_Page" title="Visit the main page [z]" accesskey="z">Main Page</a></li><li id="n-portal"><a href="/wiki/index.php/Lundman_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-currentevents"><a href="/wiki/index.php/Lundman_Wiki:Current_events" title="Find background information on current events">Current events</a></li><li id="n-recentchanges"><a href="/wiki/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="/wiki/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-Tokyo"><a href="/wiki/index.php/Tokyo">Tokyo</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/index.php/Special:WhatLinksHere/LundFTPD" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/index.php/Special:RecentChangesLinked/LundFTPD" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/wiki/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/wiki/index.php?title=LundFTPD&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/wiki/index.php?title=LundFTPD&amp;oldid=3679" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/wiki/index.php?title=LundFTPD&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 20 December 2010, at 01:36.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="/wiki/index.php/Lundman_Wiki:Privacy_policy" title="Lundman Wiki:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/index.php/Lundman_Wiki:About" title="Lundman Wiki:About">About Lundman Wiki</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/index.php/Lundman_Wiki:General_disclaimer" title="Lundman Wiki:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/wiki/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/wiki/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /wiki/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31"/></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>(window.RLQ=window.RLQ||[]).push(function(){mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);});</script><script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgBackendResponseTime":233});});</script>
+	</body>
+</html>

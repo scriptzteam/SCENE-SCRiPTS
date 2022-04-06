@@ -1,0 +1,123 @@
+HUN HD RULES 2009
+
+
+############################################
+#  A SZABALYZAT 2009.06.08.-TOL ERVENYES!  #
+############################################
+
+
+Ez a szabalyzat nem vonatkozik a korabbi rls-ekre, az alabbiak alapjan nem keszitheto
+proper.
+
+
+[ Altalanos ]
+- A rlst RAR-ba kell csomagolni. SFV-t es NFO-t mellekelni kell.
+- A rarok meretenek 50 MiB-nak vagy ennek tobbszorosenek kell lennie, nem allhat 99 file-nal tobbol a rls.
+- A rlst mkv kontenerbe kell muxolni.- Az nfonak adatokat kell tartalmaznia a video es audio bitrate-rol.
+- Ajanlott dirnev forma: Movie.Name.YEAR.<720p/1080p>.BluRay.x264.-GROUP
+- A DUAL tag tovabbra is tiltott.- Introk, outrok, reklamok (beetwenos), vagy a film barmilyen
+  csonkitasa tilos.- Stablistat tilos torolni vagy alacsonyabb bitrataval kodolni ha tartalmaz
+  tovabbi jeleneteket (bakik, veglifejlet, alternativ befejezes stb).
+- A sample kb. 60 masodperc hosszu legyen. A vegso rls-bol kell kivagni, ujrakodolni tilos. 
+  Sample nevu konyvtarba kell elhelyezni. 
+  Barmilyen mas otletes elnevezes (Minta,Reszlet...) TILTOTT! 
+
+[ Audio ]
+- A hang lehet AC3, DTS vagy FLAC, lehetoleg a forrasbol. MP3,AAc,OGG...nem
+  engedelyezett! DTS core-t ki kell muxolni a DTS HR/HD MA track-ekbol. Keszitheto AC3 640 kbit,
+  DTS 768 kbit es DTS 1536 kbit, de csak magasabb bitrate-tel rendelkezo forrasbol. A kodolt DTS
+  track-et a regebbi DTS dekoderrel rendelkezo lejatszoknak/hardwereknek is tudniuk kell
+  dekodolni. FLAC audio keszitheto LPCM-bol, DTS HD-bol DTS MA-bol vagy TRUEHD-bol.
+- A TV-bol szarmazo hangot LD taggel kell ellatni, tovabba akkor keszitheto el ha nincs dvd-rol szarmazo
+  hang illetve Bluray-rol.
+- Hang vagas eseten READ.NFO tag hasznalata kotelezo.
+- Hazai nyelv (Magyar) hangsav mellekelese engedelyezett kulon mappaba, de HDAUDIO-kent is kiadhato. 
+  Masodik hangsav (angol) mellekelese tiltott.
+- A rls csak 2 nyelvi hangsavot tartalmazhat.
+- DVD-rol felhasznalt hang eseten kotelezo megtartani az eredeti bitratat
+- A DVD-rol szarmazo hangokat csak SoundForge vagy Audacity segitsegevel lehet nyujtani NTSC-re, 
+  tovabba elfogadott meg Resample, Prosoniq TimeFactory 2.02, HD-Audio Tools.
+- Minden audio streamnel meg kell tartani a csatornak szamat, azaz tilos a down illetve upmix!
+- Ha hazai Bluray lemezrol szarmazik a magyar hangsav a RETAIL szo feltuntetese ajanlott az infoban.
+- Nem sajat kodolasu filmeknel ha van mar egy elkeszitett munkad dvd-rol szarmazo hangsavval a 
+  RETAiL magyar hangsavot csak HDAUDIO-kent adhatod ki ujra. Ehhez kotelezo mellekelni egy 
+  *.bat filet ami belemuxolja a hangsavot a mar alltalad elkeszitett mkv-ba. 
+
+[ Video ]
+
+- Minimum bitrate-ek:													
+  720p  = 4000 kbps - Maximalis bitrata 8000kbps																
+  animacioknak 2300 kbps
+  
+  1080p = 8000 kbps - Maximalis bitrata 16000kbps  											
+  animacioknak 5000 kbis
+
+  De soha nem lehet nagyobb a bitrata mint a forrase!
+
+  Ha a rls megitelesed szerint megfelelo keppel rendelkezik a minimum bitrata alatt hasznalj READ NFO
+  taget es kozold az nfoba.																
+- Ha szukseges, deinterlacing vagy ivtc megfelelo alkalmazasa lehetseges
+- Legalabb 2 pass hasznalata kotelezo.
+- Minden filmnek meg kell tartani az eredeti framerate-jét.
+- Csak a 4.1 szint high profile az elfogadott.
+- 3 reference frame hasznalata kotelezo.
+- b-frame-ek használata kötelezõ, ezekbõl maximum 3 egymást követõ lehet.
+- A keyframe-ek kozt minimum 24, maximum 240 frame lehet 
+- Croppolas hasznalata kotelezo.
+- Custom matrixok megengedettek
+- VfW (Video for Windows) nem megengedett
+- Minimum --me umh --subme=>6 --b-rdo --bime --partitions p8x8,b8x8,i4x4,i8x8 --8x8dc
+  es CABAC kotelezo a masodik pass soran. 
+- --no-cabac kapcsoló használata TILOS.  torekedjen a legfrissebb x264 hasznalatara 
+  (mindegy melyik patchelt verzio, csak minel frissebbet)
+- Mivel az x264 valtozik ezert elofordulhat, hogy egyes parameterek automotikusan be vannak
+  kapcsolva az ujabb valtozatokban, ilyenkor termeszetesen nem kell azokat alkalmazi (ertsd: ha
+  hibara fut egy parameter miatt, akkor vedd ki mert alapbol be van kapcsolva) 
+- 720p maximalis felbontasa 1280x720 lehet
+
+[ Ajanlott encode beallitasok ]
+       
+- elso pass:
+             x264.exe --pass 1 --level 4.1 --stats .stats --bitrate 4000 --threads auto --bframes 3 
+             --me dia --ref 1 --subme 1 --no-dct-decimate --partitions none --progress --no-psnr --no-ssim 
+             --output NUL movie.avs
+       
+- masodik pass:
+             x264.exe --pass 2 --level 4.1 --stats .stats --bitrate 4000 --threads auto --bframes 3 
+             --b-pyramid --weightb --me umh --ref 5 --mixed-refs --subme 6 --trellis 1 --analyse all 
+             p8x8,b8x8,i4x4,i8x8 --8x8dct --no-fast-pskip --progress --no-psnr --no-ssim --output 
+             movie.mkv movie.avs
+
+[ Feliratok ]
+
+- A feliratoknak szoveges formaban kell lenniuk az mkvba muxolva.
+- Tilos a videostreamre egetett feliratot kesziteni.
+- Multisubs release nem hasznalhato dupe alapjaul.
+- "Subs" dir hasznalata tilos.
+- Amelyik rls tartalmaz angol vagy mas idegen nyelvu hangsavot felirat sav kotelezo.
+- Ha a rls nem retail minden esetbe probaljunk meg dvd-rol rippelt feliratot mellekelni es
+  hanyagoljuk a "homemade" feliratokat.
+- Hazai Blurayen talalhato felirat savot kotelezo hasznalni a sajat kodolasu rlseknel.
+  Ennek elkeszitese a Suprip es SupRead program segitsegevel tortenjen.  
+
+[ Meretezes ]
+
+- A megengedett meretezes: 1/2 DVD5, DVD5 + 1/2 DVD5, 2*DVD5, DVD9, DVD9 + DVD5, 2*DVD9
+- Sajat kodolasu filmeknel maximum 50 MB-tal lehet kisebb a rls a fennt emlitett mereteknel.
+- A nem sajat kodolasu filmeknel torekedjunk arra, hogy ki lehessen irni DVD9 / DVD5 lemezekre vagy
+  ezeknek a tobbszorosere.
+  A nem sajat kodolasu filmeknel maximum 350MB-al lehet kisebb mint a megadott meretek.
+  
+- Engedelyezett tagek: HUN, ENG, DTS, READ NFO, INTERNAL, PROPER, REPACK, LD, DIRFIX, SAMPLEFIX, NFOFIX
+                      UNCUT, DC, UNRATED, REAL
+
+- Engedelyezett karakterek:
+
+  ABCDEFGHIJKLMNOPQRSTUVWXYZ
+  abcdefghijklmnopqrstuvwxyz
+  0123456789._-
+
+
+A szabalyzatot elfogadtak:
+
+TRiNiTY, Ozaki , NoScEnE, TvTiME

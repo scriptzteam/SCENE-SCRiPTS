@@ -1,0 +1,19 @@
+kinfo v0.1 by kulgan
+
+Just edit these variables:
+
+GLROOT=/glftpd/glftpd
+USERDIR=$GLROOT/ftp-data/users
+GLCONF=/glftpd/glftpd.conf
+
+then "chmod +x kuinfo.sh"
+
+Then add the kuinfo.tcl file to your eggdrop
+
+"source scripts/kuinfo.tcl"
+
+rehash...then use it :)
+
+/kulgan
+
+

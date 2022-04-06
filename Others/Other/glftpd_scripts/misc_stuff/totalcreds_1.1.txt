@@ -1,0 +1,9 @@
+TotalCreds (GL1&2)
+
+Description: Little script that shows total amount of credits from all users on 
+site and also gives you the average credits per user. Can exclude usernames and 
+users with leech, as well as deleted users
+
+Author:   Turranius
+Version:  1.1
+Added on: 23-Apr-2003

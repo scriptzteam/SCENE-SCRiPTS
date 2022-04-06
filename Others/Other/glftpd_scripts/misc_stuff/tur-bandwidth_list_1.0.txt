@@ -1,0 +1,12 @@
+Tur-Bandwidth List (GL1&2)
+
+Description: A quick hack script used to display the bandwidth used in irc. It does
+this by logging on to the ftp server and executing 'site traffic'.
+You can choose which values to display (total/all/day etc). 
+
+Since its a quick hack, the presented data looks exactly like 'site traffic' does. 
+No preferences in the script to change that.
+
+Author:   Turranius
+Version:  1.0
+Added on: 26-Jan-2005

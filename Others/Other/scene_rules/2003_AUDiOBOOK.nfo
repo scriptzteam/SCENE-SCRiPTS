@@ -1,0 +1,43 @@
+ POE Releasing Standards of AUDIOBOOKS
+ 2003-03-22
+
+ THE RULESET:
+
+ Since we have decided to open this new scene, we thought it was time for
+ a standard ruleset. Any other groups that wish to compete in the english
+ audiobook scene can contact us if they have questions, or want the rules
+ altered.
+ 
+ 1 - Audiobooks will be encoded in mp3 at 32kbit/22050Hz/Mono. This
+     approximates to roughly 10mb per hour of audio. Now this might seem
+     a rather low standard. However keep in mind that this is purely
+     spoken word. No bells and whistles -g-
+ 
+     Now it is allowed to split the audio into 80 minute slices so they
+     can be burned on conventional cd burners. Otherwise this format is
+     perfectly capable of operating on a standard standalone mp3 player.
+ 
+ 2 - Release directory names will consist of the following information:
+ 
+       Name of Author 
+       Name of Book
+ 
+     Example:
+ 
+       Some_Author-Some_Book-AUDIOBOOK-POE
+
+     Also prefered is the tag of ABRIDGED or UNABRIDGED; Example:
+
+       Some_Author-Some_Book-AUDIOBOOK-UNABRIDGED-POE
+
+     Other TAGS that are accepted are:
+
+     HEARPLAY
+     AUDIOPOEM
+     AUDIOMAG ( this includes papers / magazines / etc. )
+
+ 3 - Included will be the standard .m3u playlist and standard sfv. 
+
+
+  This concludes the standard Audiobook Ruleset. If any changes are made
+        a revised version will be included with a POE release.

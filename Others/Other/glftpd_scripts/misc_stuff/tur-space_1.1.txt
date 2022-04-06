@@ -1,0 +1,13 @@
+Tur-Space
+
+Description: Tur-Space is a spacemaker script. It can move releases from your 
+incoming sections to the archive or simply delete them. More then one archive can 
+be defined per incoming section and it will move the release to the archive with 
+the most space.
+If no archive has enough space for it, it will delete the oldest releases in the 
+archive until there is room. 
+Requires 'tuls', also available from this website.
+
+Author:   Turranius
+Version:  1.1
+Added on: 16-Apr-2004

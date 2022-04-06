@@ -1,0 +1,130 @@
+      ______      _______ ______    _______    _____      _____    _______     
+    _/   _  )__ _/  _   /_\     \ _/  _   /_ _/     \_   /   _/_ _/  _   /__   
+    \   _/     \\  -\___\ \\     \\  -\___\ \\   _\   \--\___   \\  -\___\  \  
+   /    \       .  _/      .      .  _/      .   \     .   :/    .  _/      _\ 
+ ./_____:\_____/____________\      \________/____:\_____\_______/___________\  
+                            /______/                                           
+                        _______                                                
+   _______   _____ _____\      \   __________    _____                         
+  /   __  )__\    \\    \\      \ /    _    /   /   _/____ PS4 Scene Rules 2018
+ /   /_      \     \     \       \\   -\____\---\___      \   [28 June 2018]   
+/      \      .     \     .       .   _/      .   :/       \                   
+\______:\______\___________\       \___________\___________/. ----------------+
+.                          /_______/                       .                  ³
+³                                                                             ³
+³                       PS4 Release Standards v1.1 2018                       ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³ 1) Packing:                                                                 ³
+³    1.1) Releases must be packed in RAR. SFV and NFO must be included.       ³
+³    1.2) Rars must be in multiples of 50.000.000 bytes but no larger than    ³
+³         500.000.000 bytes.                                                  ³
+³    1.3) Rars must be RAR4 compressed with M1 (fastest) or better.           ³
+³    1.4) Rars must use "Old Style volume names".                             ³
+³    1.5) Password protected archives are not allowed.                        ³
+³                                                                             ³
+³ 2) NFO:                                                                     ³
+³    2.1) The release must include a .NFO. The file must be a plain-text      ³
+³         document and at least include the name of the title.                ³
+³    2.2) NFO must include GAMEID and version.                                ³
+³    2.3) The required firmware must be included in the nfo.                  ³
+³    2.4) Patchlevel/Installed updates must be included in the nfo.           ³
+³    2.5) All game languages is encouraged to be included in nfo.             ³
+³    2.6) A short description of release is encouraged to be in the nfo.      ³
+³                                                                             ³
+³ 3) Image format:                                                            ³
+³    3.1) Only PKG Format releases are acceptable.                            ³
+³    3.2) PKG trumps ISO releases.                                            ³
+³    3.3) The game dump needs to be a full working "dump".                    ³
+³    3.4) All groups are encouraged to patch the PKG to the highest           ³
+³         compatible patchlevel. This is not mandatory.                       ³
+³    3.5) Source of game disc origin must be included in nfo.                 ³
+³    3.6) All previous ISO File Format releases can be re-released as PKG.    ³
+³                                                                             ³
+³ 4) Proof:                                                                   ³
+³    4.1) The groups are encouraged to include a proof picture with disc      ³
+³         and a group tag, for "new" groups which pred less then 50 "working" ³
+³         releases this is mandatory.                                         ³
+³    4.2) You have 24 hours AFTER NUKE to release a Prooffix.                 ³
+³         After this 24 hours grace period, any other group is allowed to     ³
+³         release a PROPER with scans/photos.                                 ³
+³    4.3) Proof picture can be scanned and must be in JPEG format.            ³
+³    4.4) Proof picture must not be blurry. Disc/Cart Code must be clearly    ³
+³         visible.                                                            ³
+³    4.5) If the medium or cover/booklet contain anything that may expose     ³
+³         your identity, then that part of the image can be blurred or        ³
+³         blackened. Additional scans may be added but these DO NOT count     ³
+³         as sufficient proof!                                                ³
+³    4.6) PSN releases will be exempt from proof requirements as they are     ³
+³         downloadable.                                                       ³
+³                                                                             ³
+³   NOTE: We STRONGLY recommend the removal of all Exif data! Uniquely        ³
+³         identifying information such as the camera serial number and GPS    ³
+³         coordinates can pose a security threat if not removed.              ³
+³         Use tools such as jhead, PureJPG, EXIF Cleaner...                   ³
+³                                                                             ³
+³ 5) Updates Patches DLC:                                                     ³
+³    5.1) Updates/DLC for releases must also be in PKG format.                ³
+³    5.2) Update/patch/DLC must say in nfo what release it is intended for.   ³
+³    5.3) If Update/patch/DLC is for an iNTERNAL release,                     ³
+³         Update/patch/DLC must be tagged iNTERNAL too.                       ³
+³    5.4) Suggested directory format (if the Update/patch/DLC is pred alone): ³
+³         GAME.NAME.<PROPER/READ.NFO/REPACK>.UPDATE.v1.00.PS4-GRPNAME         ³
+³         Game_Name_<PROPER/READ_NFO/REPACK>_v1.00_PATCH_PS4-GRPNAME          ³
+³         Game.Name.<PROPER/READ.NFO/REPACK>.DLC.PS4-GRPNAME                  ³
+³                                                                             ³
+³ 6) Region and Languages:                                                    ³
+³    6.1) If a game does not include the English language, this must be       ³
+³         specified in the dir name (with use of language tag).               ³
+³         - If the game has only one foreign language an appropriate tag      ³
+³           should be used in the directory for example JPN/KOR/etc.          ³
+³         - If the game includes multiple languages MULTI tag should be       ³
+³           used, and the nfo must specify which languages are included.      ³
+³    6.2) If a game is re-released for having additional foreign languages,   ³
+³         the release must be tagged as MULTI and the nfo must specify        ³
+³         which additional languages are included.                            ³
+³    6.3) Due to releases being region free, region tag EURO, USA and ASIA    ³
+³         is NOT ALLOWED.                                                     ³
+³                                                                             ³
+³ 7) Other:                                                                   ³
+³    7.1) The dirname must only contain the game name, allowed tags,          ³
+³         platform name and groupname.                                        ³
+³    7.2) the 'online only' games must state in nfo that game is for online   ³
+³         only, as those cant be played with the currently known methods.     ³
+³    7.3) Homebrew software, emulators will not be released unless its        ³
+³         official retail or from PSN.                                        ³
+³    7.4) Virtual Reality releases must be tagged 'VR'.                       ³
+³    7.5) If the release is an unlocker or trainer compatible with more than  ³
+³         one version/update of a game, the highest compatible version number ³
+³         must be included in the dirname.                                    ³
+³                                                                             ³
+³ 8) Only these characters are allowed in dirname and filenames:              ³
+³    ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-_        ³
+³                                                                             ³
+³ 9) Suggested directory formats:                                             ³
+³    GAME.NAME.<PROPER/READ.NFO/REPACK>.PS4-GRPNAME                           ³
+³    Game_Name_LANGUAGE_<PROPER/READ_NFO/REPACK>_PS4-GRPNAME                  ³
+³    Game.Name.MULTI.<PROPER/READ.NFO/REPACK>.PS4-GRPNAME                     ³
+³                                                                             ³
+³    Game.Name.<PROPER/READ.NFO/REPACK>.VR.PS4-GRPNAME                        ³
+³    Game.Name.LANGUAGE.<PROPER/READ.NFO/REPACK>.VR.PS4-GRPNAME               ³
+³    GAME.NAME_MULTI_<PROPER/READ_NFO/REPACK>_VR_PS4-GRPNAME                  ³
+³                                                                             ³
+³    NOTE: To nukers/nukenets if something is unclear, ask your resident      ³
+³          groupadmin that signed rules for interpretation and implementing   ³
+³          of above rules.                                                    ³
+³                                                                             ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                   Signed:                                   ³
+³                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ³
+³       ú DarKmooN ú DUPLEX ú Googlecus ú LaKiTu ú LiGHTFORCE ú PACT ú        ³
+³       ú Playable ú PROTOCOL ú RESPAWN ú TRSI ú UNLiMiTED ú WaLMaRT ú        ³
+³                                                                             ³
+³                               Refused to Sign:                              ³
+³                      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~                      ³
+³                                  ú GCMR ú                                   ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³  Compliance with this document is mandatory as of 2018-07-02 00:00:01 UTC   ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+
+        "make good releases. break all rules - we are pirates afterall"        

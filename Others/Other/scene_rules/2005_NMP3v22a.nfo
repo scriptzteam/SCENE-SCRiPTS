@@ -1,0 +1,291 @@
+
+          .--- - ----------------------------------------------------.
+          | S!'                   _ _  ______._                - --. |
+          | '                       \||      |                     | |
+      ____|_______ _____  /\___ _ ____|_ __  |_________/\ ___________|  /\_____
+    _/    _      //     |/      _/    _//_/  |_     _    \______     \_/    __/
+   //     /      /      /      //     |      |/     /     /    _     ./     |
+ _/      /     _/     _/      /       |_     /     ______/     /    //      |
+ \_____ /\___________________/|_______ /    /|______________________/|______|
+ <--- \/ -+------------------------- \/      | .______ --------------|------->
+          | .                        _|______|_|______\_ _           |
+          | |                         '                              |
+          | `-- -                                                    |
+          `----------------------------------------------------------'
+            [ ::::::: Nuclear MP3 Releasing Standards 2005 ::::::: ]
+          .----------------------------------------------------------.
+          |                                            Version 0.22a |
+          `----------------------------------------------------------'
+--
+ 1. SFVs
+
+    1.1. An .SFV file must be included to verify file integrity in every
+         release.
+
+
+
+
+--
+ 2. NFOs
+
+    2.1. An .NFO file must be included with every release.
+
+    2.2. The NFO file must feature at least:
+         - Album Title
+         - Artist Name
+         - Release Date (Recommended format: YYYY-MM-DD)
+         - Tracks & Playtime
+         - Genre
+         - Source
+         - Encoding Bitrate
+         - Encoder Used
+
+         We suggest including:
+         - Label
+
+         Note: The NFO must contain as much information about the release as
+               possible. It is recommended that you place a 'Release Notes'
+               section in your NFO file for any other information pertinent to
+               the release.
+
+
+
+
+--
+ 3. Directory Naming and Labeling Specifications
+
+    3.1. The following are the standards for directory naming:
+
+         - Directories must only contain characters of type a-Z 0-9 _ . - ( )
+           Example: Artist_-_Title-Promo-CDS-2005-Group
+
+         - The first and last characters must be of type a-Z 0-9
+           Examples: Artist-Title-EP-REPACK-2005-Group
+                     Artist-Title_(feat_blah)-DE-2005-Group
+                     DJ_blah-Live_at_blah-CABLE-(YY-MM-DD)-Group
+
+    3.2. Parenthesis are allowed in the directory name.
+
+    3.3. Directory naming will follow this format (spaces are used solely to
+         clearly illustrate the format):
+
+         Artist Name - Title - Additional Info - Published Year - Group Name
+
+         Example: Artist_-_Title-4CD-Retail-2000-Group
+
+    3.4. All release data will be held within the single release directory. No
+         CD1, CD2 directories.
+
+    3.5. Various Artist album releases must be prefixed with "VA-". Soundtrack
+         Album releases must be prefixed with "OST-".
+
+    3.6. Underscores and singular periods will be used. No double periods are
+         to be used.
+
+         Example: ..
+
+    3.7. Directory names can be up to 64 characters in length. It is acceptable
+         to use abbreviations/selftitled/etc to achieve this. This is enforced
+         to ensure wide device filesystem compatibility.
+
+    3.8. Additional Tagging Information (mandatory if applicable):
+
+         VLS     - Vinyl Single (1-2 tracks)
+         EP      - Vinyl Maxi-single (2-5 tracks)
+         LP      - Vinyl Full-length Album
+         CDS     - CD Single (1-2 tracks)
+         CDM     - CD Maxi-single (2-5 tracks)
+         CDR     - CD-Recordable (CD-R)
+         DVDA    - DVD-Audio
+         MD      - MiniDisk
+         Promo   - Promotional
+         Mixtape - Mixtape, Pressed or promotional from a real artist or
+                   one of their representatives
+         Bootleg - Any release not produced by real artists or their
+                   representatives
+
+         XX      - Import
+         RETAIL  - Retail
+         Liveset - DAB/SAT/CABLE/TAPE/etc, full date needed, e.g. -YYYY-MM-DD-
+                   Example: -2005-12-31-
+
+         TLD     - Non-English dialect lang. by Top Level Domain (TLD)
+                   Examples: -DE- -FR- -SE- -UK- -NL- -CN- -JP- -KR- -MX- -BR-
+                   Reference: http://www.iana.org/cctld/cctld-whois.htm
+
+
+
+
+--
+ 4. File Naming and Labeling Specifications
+
+    4.1. Files must only contain characters; a-z A-Z 0-9 _ . - ()
+
+    4.2. Periods are not allowed as replacement for spaces in filenames.
+
+    4.3. The use of periods is restricted to abbreviations only.
+
+    4.4. File names can be up to 64 characters in length. It is acceptable
+         to use abbreviations/selftitled/etc to achieve this. This is enforced
+         to ensure wide device filesystem compatibility.
+
+    4.5. Parenthesis are allowed in the filenames when:
+
+         - They are part of the track title
+           Example: 01-usher_-_i_want_to_pee_on_you_(girl)-group.mp3
+
+         - They are needed to specify a featured artist
+           Example: 01-artist_-_title-(feat_blah)-group.mp3
+
+         - They specify the producers of the track when groupname isnt given
+           Example: 01-artist_-_title-(produced_by_name)-group.mp3
+
+         - They specify unique track properties
+           Example: 01-artist_-_title-(remix)-group.mp3
+
+        Parenthesis are not allowed in any circumstances except those outlined
+        above.
+
+    4.6. All filenames must be lowercase.
+
+    4.7. File naming will follow this format (spaces are used to display the
+         format better):
+
+         Track Number - Artist - Song Title - Additional Info - Group.mp3
+
+         If Group name is chosen to not be used, the producer(s) of each track
+         must be included so that each track has an original filename.
+
+         Track numbering example:
+         Single CD Release, or non CD and less than 2 sides, cds, etc...
+         01-... (track 1)
+         02-... (track 2)
+         etc.
+
+         Multi CD Release, or non CD and more than 1 side, cd, etc...
+         101-... (track 1 from cd 1)
+         102-... (track 2 from cd 1)
+         201-... (track 1 from cd 2)
+         202-... (track 2 from cd 2)
+         etc.
+
+         For vinyl releases you may also use the naming scheme a1, a2, b1, b2,
+         etc.  Labeling with 'a' would indicate side-a, 'b' would indicate
+         side-b, and so forth.
+
+
+
+
+--
+ 5. Encoding
+
+    5.1. Encoder
+
+         The following encoder
+         Lame 3.90.3
+
+         Note: As new significantly improved final builds of codecs are
+               released, this document will be updated by NUCLEAR.
+
+    5.2. Encoding Method:
+
+         Use Lame's --alt-preset standard (APS)
+         URL: http://hqscene.fatty.dk
+
+    5.3. Re-Encoding is strictly forbidden.
+
+
+
+
+--
+ 6. No dupes!
+
+    6.1. You are not allowed to create a duplicate release from a source of
+         lower quality if the original CD has already been released.
+
+         - Not Allowed : Vinyl after CD release
+         - Allowed     : CD after vinyl release
+
+    6.2. A release is a dupe if the complete release (all tracks) is included
+         in ONE previous release.  Futhermore, if a release is different
+         because it has fewer tracks, it is not a valid release if a previous
+         release contains all of the tracks.
+
+
+
+
+--
+ 7. Mixes
+
+    7.1. Mixes must include track listing in NFO and a .CUE file (N/A for
+         liveset)
+
+    7.2. No selfmade or homemade compilations.  Real DJ Mixes are allowed.
+         No, IRC DJs are NOT real DJs.
+
+
+
+
+--
+ 8. ID3 Tags
+
+    8.1. All ID3 tags must be generated correctly and all available information
+         must be used (appropriate information in the correct fields).
+
+    8.2. Both ID3.v1 and ID3.v2 must be used.
+
+
+
+
+--
+ 9. No Partials!
+
+    9.1. The entire CD, Vinyl etc. must be released (no individual tracks).
+
+
+
+
+--
+10. Broadcast Sources
+
+    10.1. Live recordings (from radio etc.) must contain a date when they were
+          broadcast in the directory name.
+          Note: See rule 3.8 for additional info
+
+    10.2. All commercials must be removed.
+
+
+
+--
+11. Additional Specifications
+
+    11.1. Including covers in a release is optional, but strongly advised when
+          possible. This can be done with a scanner, digital camera, or some
+          other image capturing device. If, for whatever reason, you are unable
+          to provide proof, you should include a concise and clearly written
+          explanation in your NFO file. This will save you and everyone else
+          grief and reduce the likelihood of a nuke.
+
+
+
+
+
+
+This Document was signed & approved in March 2005 by the following entities
+representing their respective groups:
+
+
+
+
+2005-03-10 : v0.21a Written and Reviewed by:
+
+laiso mC Jnc7 pinky t0i sJ
+
+
+
+
+
+
+
+
+                                                                            #EOF

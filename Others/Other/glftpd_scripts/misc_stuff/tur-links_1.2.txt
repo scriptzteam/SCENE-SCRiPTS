@@ -1,0 +1,13 @@
+Links (GL1&2)
+
+Description: Intended as an addon to Tur-Space but works fine as a standalone 
+script as well.
+You specify several dirs and one destination dir. The destination dir will then 
+hold symlinks to every release from the source dirs. Its for those of you with the 
+same section spread over multiple disks but still want to present all the releases 
+on those disks in a central location.
+You can specify as many of these as you like.
+
+Author:   Turranius
+Version:  1.2
+Added on: 27-Jun-2004

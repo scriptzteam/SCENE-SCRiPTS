@@ -1,0 +1,180 @@
+
+
+
+       CUSTOM SWESUB regler 2012
+       Gäller från 2012-07-01
+
+       (Available in English after the Swedish text.)
+
+
+       INTRODUKTION
+       För att säkerställa hög kvalitet på CUSTOM.SWESUB releaser och
+       framför allt kvalitén på den svenska undertexten, har dessa 
+       regler framtagits i samråd mellan de CUSTOM SWESUB-grupper som
+       är aktiva för närvarande, aTerFalleT och Hemulen. Syftet med de
+       specifika reglerna för undertexten är att förhindra att så
+       kallade Google-översättningar används. Det krävs många dagars
+       arbete för att skapa en bra undertext till en film.
+
+
+       GENERELLT
+       1.0 CUSTOM SWESUB releaser måste preas senast 10 dagar före
+           svenskt retaildatum för filmen.
+       1.1 Endast scenereleaser tillåts som källor.
+       1.2 Tillåtna källor: R5, DVDSCR, DVDR, x264, Bluray, HDDVD.
+           HDTV-x264 får användas som källa för TV-DVDR, men endast
+           som iNTERNAL release. Ej tillåtna källor: XviD, TS, CAM.
+       1.3 Källreleasen måste uppges i NFO filen.
+       1.4 Namn på den svenska översättaren, samt att texten är custom
+           ska anges i NFO filen.
+       1.5 Användning av andra gruppers översättningar utan tillåtelse,
+           är förbjudet. Användning av texter hämtade på undertextsidor
+           är tillåtet.
+
+
+       DVDR
+       2.0 Videoformatet NTSC/PAL ska anges i NFO filen.
+           Frivilligt i release-namnet.
+       2.1 Releasen ska taggas korrekt med CUSTOM.SWESUB, LiMiTED, osv.
+       2.2 Originalmenyer eller custommenyer ska finnas på samtliga
+           releaser. Retailstrukturen ska i största möjliga mån behållas
+           intakt. Releaser ska följa standarden för DVD-Video.
+       2.3 Om källan har engelsk undertext så ska den alltid inkluderas.
+           Övriga undertexter från källan är frivilliga att inkludera.
+       2.4 I övrigt ska THE 2011 DVDR RELEASING STANDARDS följas, med
+           undantag för 1.1. Storleken får understiga 4,33 GB så länge
+           video bitraten är minst 3000 kbit/s.
+
+
+       REGLER FÖR UNDERTEXTEN
+       3.0 Max två rader/insättning.
+       3.1 Överlappningar är förbjudna.
+       3.2 Texten ska vara rättstavningskontrollerad.
+       3.3 Antal tecken per rad får inte överstiga 45 och bör ligga
+           på max 40 tecken.
+       3.4 Undertexten ska synas tydligt på TV-skärm och får inte gå
+           utanför skärmens kant. Typsnittet Microsoft Sans Serif,
+           stl. 20, fetstil, med svart ytterkant rekommenderas.
+           Vit färg på texten.
+       3.5 Översättningen måste återge det budskap som originalverket
+           eftersträvar. Innehållet i undertexten bör inte motsäga
+           dialog eller bild (exempelvis kroppsspråk). Målspråkets
+           stil bör motsvara källspråkets stil.
+       3.6 Tidkodningen måste följa talrytmen, med hänsyn till klipp
+           och ljudövergångar.
+       3.7 Mängden text per insättning måste stämma överens med en
+           normal tittares läshastighet. För att uppnå detta behöver
+           man oftast komprimera dialogen och hålla undertexten kort
+           och koncis. En normal tittare utan några läs- eller
+           hörselproblem, hinner uppfatta 15 tecken i sekunden, om
+           denne samtidigt ska hinna följa vad som händer i bild.
+           Därför får den minimala visningstiden inte understiga
+           nedanstående regler:
+
+               8 tecken minst 1.4 sekunder
+            9-15 tecken minst 1.7 sekunder
+           16-40 tecken minst 2.0 sekunder
+           41-60 tecken minst 3.2 sekunder
+           61-80 tecken minst 3.7 sekunder
+
+           Avvikelser med +/- 100 millisekunder är tillåtna för
+           ovanstående tider. Självklart finns det undantag som gör
+           att man måste gå utanför den här regeln, men antal
+           tillåtna fel/undantag för den minimala visningstiden
+           får inte överstiga 5 % av det totala antalet insättningar
+           i undertexten.
+
+           Maxtiden styrs inte genom regler men bör hållas till
+           max 10 sekunder.
+
+
+     ____________________________________________________________________
+
+
+
+       The CUSTOM SWESUB rules 2012
+       Effective Date July 1
+
+
+       INTRODUCTION
+       To ensure high quality CUSTOM.SWESUB releases and especially
+       high quality Swedish subtitles, the following rules have been
+       developed by those CUSTOM SWESUB groups which are active at
+       present, aTerFalleT and Hemulen. The purpose of the specific
+       rules for a text are to prevent so-called Google translations.
+       It takes many days to create accurate subtitles for a film.
+
+
+       GENERAL
+       1.0 Pre of CUSTOM SWESUB must take place at least 10 days
+           before the Swedish retail date for the film.
+       1.1 Only scene releases are permitted to be used as sources.
+       1.2 Permitted sources: R5, DVDSCR, retail, x264, Blu-ray, HDDVD.
+           HDTV x264 may be used as source for TV DVDR,
+           but only as iNTERNAL release.
+           Prohibited sources: XviD, TS, CAM.
+       1.3 The name of the source must be provided in the NFO file.
+       1.4 The name of the Swedish translator, and that the text is
+           custom must be specified in the NFO file.
+       1.5 Use of other groups' translations without permission,
+           is prohibited.
+           Use of texts downloaded from subtitle pages is allowed.
+
+
+       DVDR
+       2.0 The video standard NTSC/PAL must be indicated in the
+           NFO file. In the release name it's optional.
+       2.1 The appropriate directory tags must be used CUSTOM.SWESUB,
+           LiMiTED, STV etc.
+       2.2 Original menus or custom menus must be included.
+           The DVD structure should as far as possible remain intact.
+           Releases must follow the DVD-Video standard.
+       2.3 If the source has English subtitles they must always be
+           included. Other subtitles are optional to include.
+       2.4 In other respects, THE 2011 DVDR RELEASING STANDARDS must
+           be followed, except for 1.1. Release size less than
+           4.33 GB is allowed as long as the minimum average video
+           bitrate is over 3,000 kbit/s.
+
+
+       RULES APPLICABLE TO THE SWEDISH SUBTITLES
+       3.0 No more than two lines.
+       3.1 Overlapping is prohibited.
+       3.2 The text must be spell checked.
+       3.3 Number of characters per line may not exceed 45 and
+           should stay at a maximum of 40 characters.
+       3.4 The text must be clear on the TV screen and not go beyond
+           the screen edge. The font Microsoft Sans Serif, size 20,
+           bold, black outline border is recommended.
+           The text colour should be white.
+       3.5 The translation must reproduce the message conveyed in 
+           the original work. The subtitle content should not
+           contradict the dialogue or image (e.g. body language).
+           The style of the target language should be equivalent
+           to the style of the source language.
+       3.6 The cueing of subtitles must follow the speech rhythm,
+           taking cuts and sound bridges into consideration.
+       3.7 The amount of text in the subtitle must be consistent
+           with the viewers' reading speed. Achieving this usually
+           requires compressing of the dialogue thus keeping the
+           text short and concise. A normal viewer, without reading
+           or hearing problems, reads 15 characters per second.
+           The viewer must be given enough time to perceive both
+           image, sound and subtitle.
+           Hence the minimum duration allowed is:
+
+               8 characters at least 1.4 seconds
+            9-15 characters at least 1.7 seconds
+           16-40 characters at least 2.0 seconds
+           41-60 characters at least 3.2 seconds
+           61-80 characters at least 3.7 seconds
+
+           Deviations of +/- 100 milliseconds are allowed.
+           Of course there are exceptions that make it necessary
+           to go beyond these rules, but the number of allowable
+           errors/exceptions for the duration should not exceed 5%
+           of total deposits in the text.
+
+           The maximum time is not governed by rules
+           but should be kept at a maximum of 10 seconds.
+

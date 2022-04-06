@@ -1,0 +1,20 @@
+ ##########################################################################################
+ # Cozmic GLTools v0.1                                                                    #
+ #                                                                                        #
+ # Commands: !idle !dl !ul !seen                                                          #
+ # They will show you the current idlers, downloaders, uploaders and it also has          #
+ # a seen function - hope you have some use of them =)                                    #
+ # You need to have tur-ftpwho installed for this to work (I included it in this package) #
+ # I recommend that you change the 'bind pub -' to 'bind pub o' (coz-gltools.tcl)         #
+ # for all commands except !seen otherwise they can be abused by all non-ops              #
+ ##########################################################################################
+
+ INSTALLATION:
+
+ put the .tcl in your eggdrop's scriptdir
+ copy tur-ftpwho (thanks turranius) and the .sh file to /glftpd/bin
+ and make sure you edit them accordingly
+
+ note: if you dont have glftpd in /glftpd then you need change the 'set binary' path in .tcl
+
+ /Cozmic

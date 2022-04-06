@@ -1,0 +1,226 @@
+[ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ]
+  Name:         Sitebot README
+  Version:      3.3                                                        
+  Last Updated: 2003-12-29                                                 
+  Author:       Original by DaRKHeaRT | Remade by F|owman
+  Contact:      F|owman on Efnet.
+  Notes:        Bad configuration might lead to errors, so be WARNED. 
+                                                                            
+   This program is free software; you can redistribute it and/or modify     
+   it under the terms of the GNU General Public License as published by     
+   the Free Software Foundation; either version 2 of the License, or        
+   (at your option) any later version.                                      
+                                                                            
+   This script is distributed in the hope that it will be useful,           
+   but WITHOUT ANY WARRANTY; without even the implied warranty of           
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the            
+   GNU General Public License for more details.                                   
+[ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ]
+
+Greets  £ DaRKHeaRT, Moonshine Couriers, Krash, kutdrop, Gozem, Amadaeus, Archiemede
+          SkyNet, Zio, v-man, Thanatos, H-o-e, Turranius, Dark0n3 & GOD-EMPEROR.
+          Especially big thanks to dopestar who is responsibly for many procs and for
+          helping me out from when i started tcl to the present.
+
+Contents   
+	 1 £ Install
+	 2 £ Description
+	 3 £ Requirements
+	 4 £ Extra Notes
+	 5 £ Tips
+
+[ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ]
+
+1. Install:
+
+	  1. unpack to a directory called "sitebot" in your eggdrop scripts dir.
+	  2. run installer.sh
+	  3. START THE BOT!
+	  4. dcc chat the bot --> .chattr yourself +C.
+	  5. type ".addons list" for addons u want to install.
+	  6. type ".addons get <addon_name>" for everything u need.
+	  7. setup the variables how you want through edit the
+	     files sitebot-glftpd.cfg and sitebot-glftpd.api or with .sset
+
+	  NOTE: Remeber dont edit the sitebot-default.skin file. Instead copy lines from it
+		and add them to ur sitebot-skin-whatever name you like.skin file. Its because 
+		everytime you update the bot the default file will be over write.
+	      
+	  NOTE: If u want the announce and jtc to work as it should with the sitebot.
+              	Dont forget to install them with the installer.
+              	And don't forget to add the following line to your crontab.
+              	
+              	55 23 * * *             /glftpd/bin/jtc -d
+              
+          NOTE: If you use the Request addon, don't forget to edit siterequest.conf and add the following
+          	lines to your glftpd.conf
+          	
+          	site_cmd request       EXEC    /bin/siterequest.sh request
+		site_cmd reqfilled     EXEC    /bin/siterequest.sh reqfilled
+		site_cmd requests      EXEC    /bin/siterequest.sh status
+		site_cmd reqdel        EXEC    /bin/siterequest.sh reqdel
+		site_cmd reqwipe       EXEC    /bin/siterequest.sh reqwipe
+
+		custom-request         1
+		custom-reqfilled       *
+		custom-requests        *
+		custom-reqdel          1
+		custom-reqwipe         1     
+
+		If you forget this, you will have 2 different request systems in use, this means different Request
+		output in you bot announces than in your glftpd commands.	
+	  	
+2. Description:
+
+          sitebot-glftpd.tcl basically brings together the whole package of
+          scripts for glftpd.. there are five different subsections
+          which i will go over in a diminative time as possible :). please
+          note that i've made this script as configurable as possible so you
+          don't need to touch the tcl for anything anymore; you can turn
+          just about every feature on and off etc.  editing can be done through
+          sitebot-glftpd.cfg and sitebot-glftpd.api manually.
+
+	  At times especially of late you may find it necessary to have your sitebot
+	  on more then one network ive provided two solutions to this:
+	  
+          1. sitebot-leaf.tcl - run this on another bot which you have linked to your current
+             sitebot you can use it to announce all announces to one other channel useful 
+             if you want to echo to more then one net.
+
+	  2. in your eggdrop config file if you want to run two bots out of the same directory
+	     add these lines to your eggdrop config.
+		set sitebot(api) "sitebot-glftpd.api2"
+		set sitebot(cfg) "sitebot-glftpd.cfg2"
+	     run your bot once you will find these files will be generated... edit the 
+	     appropriate values and so on... you can use any names really.
+	  
+
+	  announce section
+            - full support for any entries to glftpd.log and announcing these lines
+              in a formatted way to a specific set of channels based on what type
+	      and stat section they belong too.	
+	    - easy to change "look" of announces and what lines to look for in 
+	      glftpd.log through the use of sitebot-glftpd.api file which can
+	      be edited manually.
+
+          statistics section
+            - a variety of information which you can have your bot spit out
+              to a channel when triggered, such as weektops, bandwidth usage, etc.
+
+		!ver		    	- Show Version.
+		!build <opt addon|all> 	- Show Builds.
+
+          dcc chat section
+            - a package for easy management of your sitebot.
+              some commands include (.supdate).
+            - the flags in eggdrop for different userlevels are as follows.. the
+	      different userlevels will give you access to different combinations
+	      of the below commands.
+
+                +C = siteop
+
+		.leafbots	check leafs connected to the hub.. only on sitebot-glftpd.tcl
+		.hubbots	check hubs connected to a leaf.. only on sitebot-leaf.tcl
+		.timers		check the timers runing
+		.savecfg	save cfg changes
+		.saveapi	save api changes
+		.announce <msg>
+		.set		change sitebot settings
+	    
+          invite section
+            - able to:
+                /msg botname !invite <glusername> <glpassword>
+
+	  updater section
+                .update version     - checks to see if you have the latest version
+	        .update tarball          - downloads latest sitebot tar.gz to your scripts/sitebot dir
+      	        .update install          - downloads and installs latest sitebot-glftpd tcl
+ 	        .update install nocheck  - downloads and installs latest sitebot-glftpd tcl (doesnt makesure your running an old version)
+	    
+          addon section
+         	.addons version     - checks to see if you have the latest addon versions
+         	.addons list        - lists available addons
+         	.addons info        - give some info about the addon and changelog
+         	.addons get <name>  - download and install an addon
+         	.addons del <name>  - delete an addon from your scripts/sitebot dir 
+
+	  Most of the features on this bot can be changed, turned on or off etc through 
+	  your cfg and api files. if you are upgrading your bot then place your old 
+	  .cfg file with the new tcl and it will take whatever old settings you have 
+	  and put them into a new config file.
+
+          ... anyway ON with the show! :)
+
+3. Requirements:
+
+        * The script has been tested on eggdrop 1.1.x , 1.3.x and 1.4.x. 1.6.x the
+          script runs on all versions of glftpd but obviously if a feature
+          is not in your version of glftpd or you haven't set it up, such as
+          seperate stat section in the glftpd.conf file, this tcl will not
+          magically do it for you.
+
+	  * you need these files in your glftpd bin  (normally "/glftpd/bin") 
+
+	    df, tail
+	
+	  * you need these files in your eggdrop scripts directory
+
+		sitebot-glftpd.tcl	- duh?:)
+		sitebot-glftpd.cfg	- (if one doesnt exist default config will be generated.)
+		sitebot-glftpd.api	- (if one doesnt exist default api will be generated.)
+		sitebot-default.skin	- (if one doesnt exist default will be downloaded.)
+
+  	  * You need atleast tcl8.3 running on your system and http 2.3
+
+        * The bot needs a login on the ftp site, which if you want bnc feature
+          to run properly.
+
+        * For those worried about their hosts showing on the bot, I've
+          packed the bnc tcl by kenwood which you can use to get your bot
+          to use a bnc.  If you don't know what i mean when i say bnc (bounce), go
+          download it and read the info files that come with it. ;p
+
+        * Only set a user to +S or +C not a combination of the three
+
+             +C = Siteop Flag
+             +S = Staff Flag
+
+4. Extra Notes  
+	  
+	  Feel free to use this code but please don't forget to give credit
+          to me and to dalix for the original concept.  Moreover, if you use
+          particular features of this script which I've credited to other
+          people, you must give them credit as well.  If this tcl,
+          in any way, shape, or form, is responsible for screwing up your
+          site, computer, or sex life...i take no responsibility.  use at
+          your own risk! :)
+
+          I'm interested in developing this script further still so if you
+          have any ideas that you think would be good for this script or
+          any bugs to report please go to my forums on:
+
+	    http://
+
+	  Alternativly, you can send me a message via dcc chat in your bot like: 
+          ".smsgauthor yourEmail <message>" although you are limited to a 
+	    relativly short message.
+
+	  When you enable/disable some features on the fly it wont actually
+	  be disabled/enabled until you rehash/restart the bot.. so to be 
+	  on the safe side if you change alot of things .die your bot and
+	  load it up again.
+
+	  Please remember the announce section of this TCL primarily is to
+	  report what information is put into the glftpd.log file.. your zipscript
+	  is what is responsible for putting extra info such as racers, complete
+	  info, sfv update etc etc.. so you must use a zipscript which will 
+	  put this info to the log file if you want to have this information
+	  been reported by your sitebot.
+
+	  If the config/api files are old or missing the bot will generate new
+	  ones for you.
+
+5. Tips   Where you have your sitebot's username set do !login so that it
+          will kill its ghost if one is there when you test the bnc.
+
+[ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - ]

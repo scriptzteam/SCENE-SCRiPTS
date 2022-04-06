@@ -1,0 +1,16 @@
+#######################################
+#       Mr V Site Tools v1.0b         #
+#######################################
+# Features:                           #
+# Limits uploads,downloads, idle by   #
+# time, speed, instances respecively  #
+# Needs his own vftpwho binary        #
+# ..moded version of original ftpwho  #
+# It logs to glftpd.log too read the  #
+# ..output for add it into your eggie #
+# Crontab it                          #
+# redirect to /dev/null if you dont   #
+# wants to recieve emails             #
+#######################################
+# Author: Mr_V vampirito@vampirito.com#
+#######################################

@@ -1,0 +1,409 @@
+                        ---------------------------------
+               ----==== Official.FLAC.Standard.Rules v3.0 ====----              
+                        ---------------------------------
+
++-------------------------------------------------------------------------------+
+|                                  INTRODUCTION                                 |
+|       After 4 years of enjoying the FLAC scene and with ruleset wording       |
+|       misinterpretations, it is time to revise and add/update some rules.     |
+|                                                                               |
+| NOTE: The definitions of these keywords are to be interpreted as follows:     |
+|       MUST=obligatory (release not allowed if rule not followed)              |
+|       SHOULD=suggested (release allowed if not followed)                      |
+|       CAN+MAY=optional (release allowed if not followed)                      |
+|                                                                               |
+|       Unless clearly stated in a specific rule or note, capitalization in     |
+|       this ruleset is considered as informative.                              |
++-------------------------------------------------------------------------------+
+| GENERAL                                                                       |
+|  1.1 A release MUST contain an SFV, NFO, and JPG proof.                       |
+|      .1 A release MAY contain other relevant JPG files.                       |
+|      .2 A release MAY contain CUE and LOG files if it is from a CD source.    |
+|      .3 Valid filetypes are: .cue, .flac, .jpg, .log, .m3u, .nfo and .sfv.    |
+|  1.2 Valid media sources are: BLURAY, CD, DVD(A), HDDVD and VINYL.            |
+|      .1 A release MUST not mix sources.                                       |
+|  1.3 Trackfixes are not allowed, bad quality rips require a complete repack   |
+|      and MUST include the ADDITIONAL type tag: -REPACK- (rule 4.6).           |
+|  1.4 The following are reasons for a bad quality rip:                         |
+|      .1 One or more tracks from the release are incomplete or contain skips.  |
+|      .2 The tracks are distorted and constantly clipping (eg. vinyl rips).    |
+|      .3 The tracks contain a constant hiss which was avoidable (eg. vinyl     |
+|         rips).                                                                |
+|      .4 Low sound, mono rips (from stereo sources) and other factors easily   |
+|         heard by the human ear.                                               |
+|  1.5 The maximum directory and filename length is 128 characters. Directories |
+|      and filenames MUST only contain valid characters: a-z A-Z 0-9 _ . - ()   |
+|  1.6 All physical mediums (including mixed CD(s) / e.g. DJ-Mixes) MUST be     |
+|      ripped as separate tracks according to the TOC (Table Of Contents)       |
+|      on the medium. The only occasion where the physical medium is released   |
+|      as one single track is when there is only one track on the medium.       |
+| NOTE: Lossless data compression excludes the possibility of the introduction  |
+|       of padding, all lossless audio file formats are inherently gapless.     |
++-------------------------------------------------------------------------------+
+| DUPES                                                                         |
+|  2.1 A release MUST include all audio tracks. Releasing just the bonus tracks |
+|      or some other subset of tracks is not allowed. Similarly, a BONUS DISC   |
+|      cannot be released by itself, but MUST be released as a complete release.|
+|  2.2 A release MUST not be identical to a previous release, except            |
+|      ADVANCE/PROMO releases (Rule 7.2).                                       |
+|  2.3 A release is not identical to a previous release if:                     |
+|      .1 The previous version has a different mastering.                       |
+|      .2 The previous version has a different tracklist.                       |
+|      .3 The previous version has a different version of a track.              |
+|  2.4 A release MUST not be a collection of discs that have already all been   |
+|      individually released. For example, releasing a 2CD that combines a      |
+|      CD and EP after they have both been indivually released is not allowed.  |
+|      Boxsets of COMPLETE Discographies or REMASTERED Album Series are         |
+|      excluded from this rule.                                                 |
+|  2.5 A release MUST not have all its tracks included in one previous release. |
+|      Examples: a CDS cannot be released after a CDM that includes all the     |
+|      tracks on the CDS. An album cannot be released after a boxset that       |
+|      includes all the tracks from that same album. A CDM or CDEP cannot be    |
+|      released after a release has been reissued with all tracks.              |
+|  2.6 All sources MUST follow the above dupe rules as well as the following    |
+|      source specific rules:                                                   |
+|      .1 BLURAY cannot dupe any other source, except HDDVD.                    |
+|      .2 HDDVD cannot dupe any other source, except BLURAY.                    |
+|      .3 CD cannot dupe any other source, except BLURAY and HDDVD.             |
+|      .4 DVD cannot dupe any other source.                                     |
+|      .5 VINYL cannot dupe any other source.                                   |
++-------------------------------------------------------------------------------+
+| ENCODING                                                                      |
+|  3.1 A release MUST be encoded using FLAC 1.3.1 (no alphas and betas allowed) |
+|      .1 A release MUST be encoded using the --compression-level-8 option.     |
+|      .2 A release SHOULD be encoded using the --verify option.                |
+|      .3 A release MUST NOT be encoded using --replay-gain or any kind of      |
+|         option that changes the audio source quality.                         |
+|  3.2 Encoding quality must be:                                                |
+|      44.100 Hz / 16 bit LPCM (2.0) for CD.                                    |
+|      96.000 Hz / 24 bit LPCM (2.0) for VINYL sources.                         |
+|  3.3 DVD(A) encoding quality:                                                 |
+|      .1 Only LPCM uncompressed audio source is allowed.                       |
+|      .2 Channels, Bits per Sample and Sample Frequency, MUST be kept.         |
+|      .3 A DVD release MUST contain all music tracks. Additional tracks (clips,|
+|         interviews etc.) are optional. If those extra tracks are not included |
+|         then a PROPER (with ALL tracks) or an additional release (extra tracks|
+|         only) is not allowed.                                                 |
+|      .4 The .nfo file MUST contain the following source information:          |
+|         - Codec (LPCM)                                                        |
+|         - Bitrate (640kbps, 768kbps, 1536kbps...)                             |
+|         - Number of channels (Stereo, 5.1, ...)                               |
+|  3.4 HDDVD/BLURAY encoding:                                                   |
+|      .1 The highest audio source MUST be used.                                |
+|      .2 Channels, Bits per Sample and Sample Frequency MUST be kept.          |
+|      .3 Audio source choice priority starting from highest bitrate is:        |
+|         - DTS-HD Master Audio                                                 |
+|         - Dolby TrueHD                                                        |
+|         - LPCM                                                                |
+|      .4 HDDVD/BLURAY video clip releases should be ripped as multiple tracks, |
+|         (eg: like any regular compilation CD release).                        |
+|      .5 HDDVD/BLURAY releases with multiple files, but all belonging to the   |
+|         same playlist index MUST be encoded together in the same order as     |
+|         the playlist index file indicates.                                    |
+|      .6 HDDVD/BLURAY releases MUST contain all music tracks. Additional tracks|
+|         (clips, interviews etc.) are optional. If those extra tracks are not  |
+|         included then a PROPER (with ALL tracks) or an additional release     |
+|         (extra tracks only) is NOT allowed.                                   |
+|      .7 The .nfo file MUST contain the following source information:          |
+|         - Codec (DTS-HD Master Audio, Dolby TrueHD, LPCM)                     |
+|         - Bitrate (640kbps, 768kbps, 1536kbps...)                             |
+|         - Number of channels (Stereo, 5.1, 7.1)                               |
++-------------------------------------------------------------------------------+
+| RELEASE NAME                                                                  |
+|  4.1 The tag -FLAC- MUST be in uppercase in the release name and always       |
+|      before -YEAR- and -GROUP tags.                                           |
+|  4.2 Release name MUST contain at least: Artist, Title, Source, Year, Group.  |
+|      .1 ARTIST tag means performer, band, musician. MUST be a unique name.    |
+|         (ie. no OST in place of artist).                                      |
+|         If not possible to identify, the word "Unknown" can be used.          |
+|         Compilations (eg: Soundtracks, Samplers) with various artists MUST use|
+|         the word "VA" at ARTIST field. Various Artists is considered 4 or more|
+|         different artists with single songs.                                  |
+|      .2 TITLE tag means the title of album. It MUST be a unique name.         |
+|         (ie. no Self-titled). If not possible to identify, the word "Unknown" |
+|         can be used. (Self name artist title MUST not be considered an unknown|
+|         title).                                                               |
+|  4.3 Using CATALOGUE number in a release name is optional but recommended.    |
+|  4.4 Valid SOURCE tags: (Uppercase letters MUST be used)                      |
+|      .1 BLURAY (eg. 2BLURAY, 3BLURAY, etc.)                                   |
+|      .2 HDDVD (eg. 2HDDVD, 3HDDVD, etc.)                                      |
+|      .3 CD, CDS, CDM, CDEP, MCD, CDR, CDRS, CDREP                             |
+|         (eg. 2CD, 3CDS, 4CDREP, 84x3INCH_CDS etc.)                            |
+|      .4 DVD(A) (eg. 2DVD, 3DVD, etc.)                                         |
+|      .5 VINYL, VLS, LP, MLP, EP, INCH_VINYL, FLEXI                            |
+|         (eg. 2VINYL, 3LP, 4INCH_VINYL, 3X5INCH_VINYL, 10x12INCH_VINYL etc.)   |
+|  4.5 TYPE describes the difference in tracks, tracklist or year of this       |
+|      release compared to another version. Difference in tracks usually is:    |
+|      length, mixing, mastering, recording, number of channels. Difference in  |
+|      tracklist usually occurs with specific presses, in different countries,  |
+|      with different artists or different/more tracks for the same release     |
+|      title. Different year reports to reissue releases (refer to rule 4.10).  |
+|      Some releases need to be identified from the normal ones due to their    |
+|      source nature. (eg: soundtrack compilation, magazine bonus CD, etc).     |
+|      Therefore valid allowed TYPE tags are:                                   |
+|      - Advance, Promo, Retail, Bonus, Mag, Split, OST, Digipak,               |
+|      - Audiobook, Bootleg, Demo, Sampler, Whitelabel, Reissue, Remastered.    |
+|      - <country> (eg: JP_Retail, US_Reissue)                                  |
+|      - Ltd, Limited, Limited_Edition, Ltd_Edition, Tour_Edition,              |
+|      - Deluxe_Edition, Special_Edition, Digipa(c)k, Digipa(c)k_Edition        |
+|      - Clean, Explicit, Expanded_Edition, Collectors_Edition, Boxset          |
+|      .1 TYPE can be a combination of the keywords featured in rule 4.5 using  |
+|        the _ (underscore) space replacement. (eg. -Reissue_Limited_Edition-). |
+|      .2 When using EXPLICIT as TYPE it MUST show in the proofpic.             |
+|  4.6 Valid ADDITIONAL tags: (Uppercase MUST be used)                          |
+|      - DIRFIX, NFOFIX, READNFO, PROPER, REAL_PROPER, REPACK, REAL_REPACK.     |
+|      .1 If an ADDITIONAL tag is used, the nfo MUST mention the release name   |
+|         that it is replacing or updating.                                     |
+|      .2 DIRFIX and NFOFIX are exempt from Rule 1.1.                           |
+|      .3 A DIRFIX can only be used to fix parts of the release name that do    |
+|         not affect Vorbis tag contents. (i.e CATALOGUE and TYPE)              |
+|  4.7 LANGUAGE (LANG) MUST follow the ccTLD identifiers (2-chars):             |
+|      (Capitalized letters MUST be used)                                       |
+|      http://www.lingoes.net/en/translator/langcode.htm                        |
+|  4.8 Mandatory release name formats:                                          |
+|      - Artist-Title-SOURCE-FLAC-YEAR-GROUP                                    |
+|      - Artist-Title-LANG-SOURCE-FLAC-YEAR-GROUP                               |
+|      - Artist-Title-LANG-TYPE-SOURCE-FLAC-YEAR-GROUP                          |
+|      - Artist-Title-(CATALOGUE)-LANG-ADDITIONAL-SOURCE-FLAC-YEAR-GROUP        |
+|      - Artist-Title-(CATALOGUE)-LANG-TYPE-SOURCE-FLAC-YEAR-GROUP              |
+|      - Artist-Title-(CATALOGUE)-LANG-ADDITIONAL-TYPE-SOURCE-FLAC-YEAR-GROUP   |
+|      .1 Any spaces in ARTIST and TITLE should be replaced with _ (underscore).|
+|        If ARTIST or TITLE has . (dots) or - (dash), it SHOULD be              |
+|        kept as close as they appear on the cover/booklet/physical medium,     |
+|        but they do not have to be nuked if not.                               |
+|      .2 Brackets () in TITLE are only allowed if it is used in the album      |
+|        title. The proof picture MUST clearly show this.                       |
+|  4.9.1 Internal releases MUST be tagged GRP_iNT or GRP_INT.                   |
+|      .2 Internal releases MUST follow FLAC ruleset.                           |
+|      .3 Internal releases MUST not dupe an existing one that is 732 days old  |
+|        or newer.                                                              |
+|  4.10 YEAR tag MUST be the year when the record company/artist published it.  |
+|       For non-original presses, the additional TYPE tag MUST be applied.      |
+|       (example: release originally released in 1990, but rip is from 2000     |
+|       reissue, correct year would be 2000, with additional TYPE tagging).     |
+| NOTE: IF a YEAR can not be found on medium and/or cover it's allowed          |
+|       to use 198x 199x 200x but it MUST be mentioned in the .nfo              |
+|  4.11 LANGUAGE tag is HIGHLY recommended for non-English releases.            |
+|       If the vocals are non-English and the majority of them are best         |
+|       described using one TLD country code abbreviation, then the most        |
+|       appropriate TLD SHOULD be chosen and MAY be used as a tag in the        |
+|       release name.                                                           |
+|  4.12 Typos in releases (TITLE, ARTIST, YEAR etc.) leaving an invalid VORBIS  |
+|       tag ARE NOT TOLERATED and require a complete REPACK.                    |
+|      .1 ARTIST and/or TITLE must not be translated to English from their      |
+|         native language. English alphabet characters must be used to reflect  |
+|         artist and/or title names (ref to rule 1.5).                          |
+| NOTE: CATALOGUE and TYPE are optional tags (except for rule 4.10).            |
+|       When they are used, they MUST be placed in the correct order.           |
++-------------------------------------------------------------------------------+
+| FILENAME                                                                      |
+|  5.1 Filename MUST at least contain: Track number, Track artist, Track title. |
+|  5.2 All filenames (including SFV, NFO, JPG) MUST be lowercase.               |
+|  5.3 Track titles MUST be exactly the same as written on the backcover.       |
+|      Tracklist containing all additional infos like featured artists or       |
+|      remixers, if they are present, as long it does not exceed the maximum    |
+|      filename length (see rule 1.5).                                          |
+|      If additional information can be found printed on the covers and/or      |
+|      booklet, it is encouraged to write them aswell.                          |
+|      .1 Releases with differences in tracklist because of different pressings |
+|         are not subjected to nukes or PROPERs. (i.e an Asian release tracklist|
+|         might miss description of featured artist(s) while a US release has   |
+|         that description.)                                                    |
+|      .2 If the tracklist is written in more than two languages, the ripper is |
+|         free to write them both or just a single language. If one of the      |
+|         languages is English then the English tracklist MUST be used.         |
+| NOTE: If the tracklist has changes, due to pressing errors for example,       |
+|       it is encouraged to correct and explain them in the .nfo.               |
+|  5.4 Recommended filename formats:                                            |
+|      - nr-artist-title.flac                                                   |
+|      - nr-artist-title_(remixer_or_featured_artist).flac                      |
+|      - a1-artist-title.flac                                                   |
+|      - b2-artist-title.flac                                                   |
+|  5.5 Including -groupname in the filenames is allowed but not recommended.    |
+|  5.6 REPACKed releases MUST include a -repack suffix on each .flac file.      |
+|      PROPER releases MUST include a -proper suffix on each .flac file         |
+| NOTE: -repack and -proper MUST be placed at the end of each .flac file.       |
+|  5.7 In VA releases the actual artist name MUST be before song title. VA      |
+|      (Various Artists) is not a valid artist (01-va-song_title is             |
+|      unacceptable).                                                           |
+|      .1 Excludes single audio track releases if it's a compilation of several |
+|         tunes produced/mixed/remixed by a single artist/producer.             |
++-------------------------------------------------------------------------------+
+| VORBIS TAGS                                                                   |
+|  6.1 FLAC files MUST contain Vorbis comments. Vorbis comment field names      |
+|      MUST be unique. Multiple comment fields are NOT allowed even though      |
+|      the specification supports this.                                         |
+|  6.2 All FLAC files MUST have the following Vorbis comment field names and    |
+|      corresponding field contents: TRACKNUMBER, ARTIST, TITLE, ALBUM, GENRE,  |
+|      and DATE (format: YYYY).                                                 |
+|      .1 All FLAC files SHOULD also have the following Vorbis comment field    |
+|         names and corresponding field contents: TOTALTRACKS, DISCNUMBER and   |
+|         TOTALDISCS.                                                           |
+|      .2 The "vendor_string" field of the VORBIS_COMMENT metadata block MUST   |
+|         be present indicating the correct lib FLAC version. Be aware that some|
+|         software removes this field by default.                               |
+|      .3 For VA releases the ARTIST field contents MUST have the corresponding |
+|         artist name not "VA". (Exempts rule 5.7.1)                            |
+|      .4 Adding SOURCE (CD/CDM/CDS/Vinyl/DVD) or TYPE to the ALBUM field       |
+|          is NOT allowed.                                                      |
+|  6.3 The FLAC picture block (METADATA_BLOCK_PICTURE) MUST be empty. Any cover |
+|      or booklet scans MUST follow Rule 9.5                                    |
+|  6.4 Vorbis comment field contents use UTF-8 character encoding to allow easy |
+|      representation of any language. It is recommended to use UTF-8 in field  |
+|      contents to ensure accurate tagging. Filenames MUST follow Rule 1.5.     |
+|  6.5 The GENRE field content MUST be the same for all the files in a release  |
+|      and it MUST be one of the genres listed:                                 |
+|      A Cappella, Acid, Acid Jazz, Acid Punk, Acoustic, AlternRock,            |
+|      Alternative, Ambient, Anime, Avantgarde, Ballad, Bass, Beat, Bebop,      |
+|      Big Band, Black Metal, Bluegrass, Blues, Booty Bass, BritPop, Cabaret,   |
+|      Celtic, Chamber Music, Chanson, Chorus, Christian Gangsta Rap,           |
+|      Christian Rap, Christian Rock, Classic Rock, Classical, Club, Club-House,|
+|      Comedy, Contemporary Christian, Country, Crossover, Cult, Dance, Dance   |
+|      Hall, Darkwave, Death Metal, Disco, Dream, Drum & Bass, Drum Solo, Duet, |
+|      Easy Listening, Electronic, Ethnic, Euro-House, Euro-Techno, Eurodance,  |
+|      Fast Fusion, Folk, Folk-Rock, Folklore, Freestyle, Funk, Fusion, Game,   |
+|      Gangsta Rap, Goa, Gospel, Gothic, Gothic Rock, Grunge, Hard Rock,        |
+|      Hardcore, Heavy Metal, Hip-Hop, House, Humour, Indie, Industrial,        |
+|      Instrumental, Instrumental Pop, Instrumental Rock, Jazz, Jazz+Funk,      |
+|      JPop, Jungle, Latin, Lo-Fi, Meditative, Merengue, Metal, Musical,        |
+|      National Folk, Native American, Negerpunk, New Age, New Wave, Noise,     |
+|      Oldies, Opera, Other, Polka, Polsk Punk, Pop, Pop-Folk, Pop/Funk,        |
+|      Porn Groove, Power Ballad, Pranks, Primus, Progressive Rock, Psychedelic,|
+|      Psychedelic Rock, Punk, Punk Rock, R&B, Rap, Rave, Reggae, Retro,        |
+|      Revival, Rhythmic Soul, Rock, Rock & Roll, Salsa, Samba, Satire,         |
+|      Showtunes, Ska, Slow Jam, Slow Rock, Sonata, Soul, Sound Clip,           |
+|      Soundtrack, Southern Rock, Space, Speech, Swing, Symphonic Rock,         |
+|      Symphony, Synthpop, Tango, Techno, Techno-Industrial, Terror,            |
+|      Thrash Metal, Top 40, Trailer, Trance, Tribal, Trip-Hop, Vocal, Unknown. |
+| NOTE: Both Psychedelic and Psychadelic are correct and may not be nuked       |
+|       if used.                                                                |
++-------------------------------------------------------------------------------+
+| ADVANCE/PROMO                                                                 |
+|  7.1 An ADVANCE or PROMO is not available at retail and is usually labelled   |
+|      with some variation of the words Advance and/or Promotional. Having a    |
+|      release before its retail date does not automatically make it an ADVANCE.|
+|  7.2 ADVANCE and PROMO releases can always be duped by any retail release even|
+|      if the tracks on both releases are identical.                            |
+|  7.3 ADVANCE and PROMO releases with voice overs, silence, or cuts on tracks  |
+|      are not allowed.                                                         |
++-------------------------------------------------------------------------------+
+| BOOTLEG                                                                       |
+|  8.1 A bootleg is a release or recording that was not officially released by  |
+|      the artist or record company (unofficial / unlicensed recordings).       |
+|  8.2 Conditions for bootleg releases are:                                     |
+|      - There are no signs that the record company really released it.         |
+|      - The artist or record company did not confirm the release as valid.     |
+|      - The record company has no connection to the artist on the release.     |
+|      - The record company does not exist and the release is not self-released.|
+|      - The release is not available at at least three retail stores.          |
+| NOTE: Currently valid retail stores (alphabetic order):                       |
+|       - www.amazon.com                                                        |
+|       - www.boomkat.com                                                       |
+|       - www.bestbuy.com                                                       |
+|       - www.cduniverse.com                                                    |
+|       - www.decks.de                                                          |
+|       - www.deejay.de                                                         |
+|       - www.hmv.com                                                           |
+|       - www.juno.co.uk                                                        |
+|       - www.sonymusicstore.com                                                |
+|       - www.virgin.com                                                        |
+|       - www.ukdancerecords.com                                                |
+|       - www.walmart.com                                                       |
+|       The shop itself must sell the record, not private sellers.              |
+|  8.3 Due to their unofficial nature, bootlegs might carry audio defects       |
+|      (eg. skips, glitches, etc). If these audio defects are identified in the |
+|      nfo then a release cannot be considered invalid until there is a         |
+|      valid one (eg. PROPER release clean of audio defects).                   |
++-------------------------------------------------------------------------------+
+| PROOF                                                                         |
+|  9.1 Releases MUST always contain a proof CAMERA picture in JPEG format.      |
+|  9.2 Proof camera pictures MUST contain both, medium(s) and cover together.   |
+|      If there is no cover, a booklet or promo sheet or anything valid MUST be |
+|      included to prove that the ripper has the release. If the medium/cover/  |
+|      booklet contains anything that may expose your identity, then that       |
+|      part of image can be blurred or blackened.                               |
+|  9.3 The proof picture MUST include a small piece of paper over the medium(s) |
+|      and/or the cover with GROUP name.                                        |
+|      Artist, title and any other relevant info that proves release, must not  |
+|      be hidden behind the piece of paper.                                     |
+|  9.4 GROUP tag must be photographed in the proof picture, software-edited     |
+|      tags are considered invalid proof. Camera picture proof must not be      |
+|      changed except to hide anything that might expose ripper (read Rule 9.2).|
+|  9.5 Additional scans may be added but DO NOT count as proof.                 |
+|  9.6 The resolution of the proof camera picture MUST be at least 640 width    |
+|      and 480 height in JPEG format.                                           |
+|      Artist and/or album/single title MUST be clearly readable.               |
+|  9.7 Proof fixes are NOT allowed, missing proof picture or bad resolution     |
+|      requires a complete repack.                                              |
+| NOTE: EXIF metadata should be removed from JPEG files! Uniquely identifying   |
+|       information such as the camera serial number and GPS coordinates can    |
+|       pose a security threat if not removed, so this is very ESSENTIAL!       |
++-------------------------------------------------------------------------------+
+|                                                                               |
+|  CHANGELOG:                                                                   |
+|                                                                               |
+|  2011-10-03 first version (v1.0)                                              |
+|  2011-10-10 rule 1.10 with NOTE added to forbid single file+cue unless        |
+|             source is single track with index.                                |
+|  2011-10-10 rule 3.5.1 added (explanation for TYPE tag).                      |
+|  2011-10-10 rule 3.8.1 added (explanation for ARTIST and TITLE tags).         |
+|  2011-10-10 rule 5.1 adjusted                                                 |
+|  2011-10-10 rule 5.5 adjusted                                                 |
+|  2011-10-10 rule 5.5.1 added                                                  |
+|  2012-05-15 GENERAL section 1.0 splitted.                                     |
+|  2012-05-15 rule 1.3 adjusted                                                 |
+|  2012-05-15 rule 1.4 adjusted and NOTES removed.                              |
+|  2012-05-15 DUPES section created 2.0                                         |
+|  2012-05-15 rule 3.1 adjusted                                                 |
+|  2012-05-15 rule 3.2 encoding setting changed.                                |
+|  2012-05-15 rule 3.3 DVD encoding audio settings.                             |
+|  2012-05-15 rule 3.4 HDDVD/BLURAY encoding audio settings.                    |
+|  2012-05-15 rule 4.1 adjusted                                                 |
+|  2012-05-15 rule 4.2 adjusted                                                 |
+|  2012-05-15 rule 4.4 adjusted                                                 |
+|  2012-05-15 rule 4.5 adjusted                                                 |
+|  2012-05-15 rule 4.6 adjusted                                                 |
+|  2012-05-15 rule 4.7 adjusted                                                 |
+|  2012-05-15 rule 4.10 adjusted                                                |
+|  2012-05-15 rule 4.12 adjusted                                                |
+|  2012-05-15 rule 5.3 adjusted                                                 |
+|  2012-05-15 rule 5.4 adjusted                                                 |
+|  2012-05-15 rule 5.6 created                                                  |
+|  2012-05-15 rule 5.7 created                                                  |
+|  2012-05-15 rule 6.1 adjusted                                                 |
+|  2012-05-15 rule 6.2 adjusted                                                 |
+|  2012-05-15 rule 6.4 adjusted                                                 |
+|  2012-05-15 rule 6.5 adjusted                                                 |
+|  2012-05-15 PROMO/BOOTLEG section splitted.                                   |
+|  2012-05-15 rule 8.4 created                                                  |
+|  2012-05-15 ADVANCE/PROMO created.                                            |
+|  2016-06-15 rule 2.4 adjusted                                                 |
+|  2016-06-15 rule 3.1 adjusted                                                 |
+|  2016-06-15 rule 4.5 adjusted                                                 |
+|  2016-06-15 rule 4.5.2 added                                                  |
+|  2016-06-15 rule 4.6 adjusted                                                 |
+|  2016-06-15 rule 4.6.3 added                                                  |
+|  2016-06-15 rule 4.7 adjusted                                                 |
+|  2016-06-15 rule 4.8.2 added                                                  |
+|  2016-06-15 rule 4.10 NOTE added                                              |
+|  2016-06-15 rule 4.11 adjusted                                                |
+|  2016-06-15 rule 4.12 adjusted                                                |
+|  2016-06-15 rule 5.3 NOTE adjusted                                            |
+|  2016-06-15 rule 5.3.1 added                                                  |
+|  2016-06-15 rule 5.3.2 added                                                  |
+|  2016-06-15 rule 5.6 adjusted                                                 |
+|  2016-06-15 rule 5.6 NOTE added                                               |
+|  2016-06-15 rule 5.7.1 added                                                  |
+|  2016-06-15 rule 6.1 adjusted                                                 |
+|  2016-06-15 rule.6.2.4 added                                                  |
+|  2016-06-15 rule 6.5 adjusted                                                 |
+|  2016-06-15 rule 6.5 NOTE adjusted                                            |
++-------------------------------------------------------------------------------+
+|                                                                               |
+|  Rules signed by: 2Eleven 86D ATMO BCC BriBerY c05 CMC CUSTODES dh dL         |
+|                   EMP FATHEAD FiH FrB FWYH GRAVEWISH HBFD JLM k4 LiTF LoKET   |
+|                   MAHOU Mrflac mwnd NBFLAC PERFECT psyCZ SCF SCORN SMASH      |
+|                   SPL TiLLMYDEATH VOLDiES WRE YARD                            |
+|                                                                               |
+|  FLAC rules V3.0 apply from 2016-06-15 00:00:00 CET (Central European Time).  |
++-------------------------------------------------------------------------------+

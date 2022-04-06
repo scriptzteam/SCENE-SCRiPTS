@@ -1,0 +1,46 @@
+So, you dont want the script to announce in all chans?
+
+By default it announces in the chan where you execute the script. If you only want it to
+announce to a specific chan, there are two ways we can accomplish this.
+
+The first is to hardcode which chan it send stuff to. This, I guess, is not what you want
+because if I execute the command in #chan1, and we hardcoded it to #chan2, it will
+still show the output, just in the other chan.. not good. It should be quiet then.
+Anyway, to accomplish the above, change this line:
+
+putquick "PRIVMSG $chan :$line"
+to
+putquick "PRIVMSG #sitechan :$line"
+
+putquick might be puthelp or whatever.. dosnt matter. Replace #sitechan with your chan name.
+Dont forget to rehash the bot whenever you change anything in the .tcl.
+
+For the other solution, where it stayes quiet, change so that if it looked like this before:
+
+proc pub:turfreecheck {nick uhost handle chan arg} {
+ set binary {/glftpd/bin/tur-free.sh}
+ set section [lindex $arg 0]
+ foreach line [split [exec $binary $section] "\n"] {
+    putquick "PRIVMSG $chan :$line"
+ }
+}
+
+Change it to:
+
+proc pub:turfreecheck {nick uhost handle chan arg} {
+ if {$chan == "#sitechan"} {
+   set binary {/glftpd/bin/tur-free.sh}
+   set section [lindex $arg 0]
+   foreach line [split [exec $binary $section] "\n"] {
+      putquick "PRIVMSG $chan :$line"
+   }
+ }
+}
+
+If it dosnt announce anywhere, add 
+putquick "PRIVMSG $chan :$chan"
+above the  if {$chan == "#sitechan"} {
+
+It will then announce what chan it thinks its in and what you should specify as #sitechan.
+Its usually the correct name, just lowercase. Its case sensitive, which is you usually specify
+the "wrong" channame =)

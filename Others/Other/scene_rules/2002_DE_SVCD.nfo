@@ -1,0 +1,117 @@
+Inhalt: 
+
+1.) SVCD-Release Regeln 
+2.) NFO Inhalt 
+3.) Sample 
+4.) Dirnamen Konvention 
+
+
+1.) SVCD-Release Regeln 
+======================= 
+1.1 SVCD Releases muessen mit CCE kodiert werden (ab v2.50 aufwaerts) 
+Jeglicher andere Codec (flask/tmpgenc/etc) ist nicht mehr erlaubt. 
+VBR mit mindestens 3-pass ist PFLICHT. 
+
+1.2 Als Aufloesung ist nur 480x576 PAL erlaubt. 
+
+1.3 Die minimale/maximale Audiobitrate muss 128/224 kbit betragen. 
+Die Audioaufloesung muss 44khz@16bit betragen. 
+
+1.4 Die maximale (durchschnittliche) Bitrate darf 2400 nicht ueber- 
+schreiten. Die minimale (durchschnittliche) Bitrate darf 1100 
+nicht unterschreiten. Im NFO muss die durchschnittliche Birtate 
+angegeben werden. 
+
+1.5 Das Release-Format ist BIN/CUE mit maximal 80 Minuten pro CD. 
+
+1.6 Die grenze fuer 2 CD und 3 CD Releases ist momentan noch 
+unbestimmt. Der grobe Richtwert, ab dem 3CD Releases noetig waeren 
+liegt bei 140min (5pass/16:9 AR). Eine genaue Richtwertetabelle folgt 
+im naechsten Rules-Update. 
+
+1.7 Als SVCD Directory sollte das von VCD bekannte "MPEGAV" erstellt 
+sein, denn das koennen alle SVCD faehigen DVD Player lesen. 
+Dies ist aber keine Pflicht. 
+
+1.8 1 CD Releases sind generell bis 75 Minuten Pflicht. Bei Filmen 
+zwischen 75 und 90 Minuten sind 1 CD Releases moeglich, wenn 
+folgende Voraussetzungen erfuellt sind: 
+- keine Action-Kracher a la Schwarzenegger (Explosionen, Kameraschwenks) 
+- mindestens 5pass encoding 
+- Audiobitrate 128 und Videobitrate 1100 wird nicht unterschritten 
+
+1.9 Der Abspann muss in einem 1CD Release nicht vollstaendig enthalten 
+sein, jedoch soweit, dass erkennbar ist, dass der Film tatsaechlich 
+geendet hat. Falls im Abspann noch Filmszenen enthalten sind, muss 
+dieser in gleichberechtigter Bitrate wie der eigentliche Film, soweit 
+diese Szenen reichen, kodiert werden. In einem 2CD+ Release muss 
+der Abspann in voller Laenge enthalten sein. 
+
+1.10 Bei mehreren Scenen mit inhaltsrelevanten fremdsprachlichen Dialogen 
+muessen optionale Subtitels verfuegbar sein. 
+
+2.) NFO Inhalt 
+============== 
+2.1 Im NFO muessen folgende Punkte enthalten sein: 
+
+- Titel des Films (plus evtentuellem Originaltitel) 
+- Angabe, ob Kinorelease oder STV (Videopremiere) 
+- Releasedatum der Groups 
+- Kinojahr und DVD-Release-Datum 
+- Videobitrate (durschnittliche) 
+- Audiobitrate (bei Duallanguage auch jeweils einzeln) 
+- Laenge des Films 
+- REAL Aspect Ratio (z.B. 1:1,85 / 16:9) 
+- IMDB-Rating und URL zum Film 
+- 5-zeilige Angabe desPlots 
+
+Die Gestaltung der File/NFO-Namen sind bis auf weiteres beliebig. 
+
+2.2 Als Kinostart wird der deutsche und nicht der Start im Produktions- 
+land gewertet. Bei Videopremieren ist das Produktionsjahr anzugeben. 
+Das Jahr des Kinostarts/Produktionsjahres ist im NFO anzugeben. 
+
+2.3 Falls weitere SVCD Spezifische Features implementiert wurden, muss 
+dies im NFO erwaehnt werden. Dazu gehoert: 
+
+- Original DVD Chapter-Anwahl 
+- Dual Language (plus Bitratenangabe der jeweiligen Audio-Streams) 
+- Dolby Surround 
+- Motion Menue (Animiertes Chapter Menue wie auf DVD oder Still Menue) 
+
+
+3.) Sample 
+========== 
+3.1 Ein einminuetiges Sample muss in einem separaten Sample Verzeichnis 
+enthalten sein. Dies muss aus dem original MPEG2 stammen und darf 
+nicht extra kodiert werden. 
+
+
+4.) Dirnamen Konvention 
+======================= 
+4.1 Die Benennung des Verzeichnisnamens ist folgendermassen definiert: 
+
+<Filmtitel> German DVDRip SVCD -<GRUPPE> 
+<Filmtitel> German SVCD DVDRip -<GRUPPE> 
+
+Optional kann folgendes eingefuegt werden: 
+
+DS => Dolby Surround 
+DL => Dual Language (German/English switchable) 
+MM => Motion Menue (Animiertes Chapter Menue wie auf DVD oder Still Menue)] 
+
+Beispiel: 
+
+Star.Wars.Episode.2.German.DL.DVDRiP.SVCD-XYZ 
+D-Tox.GERMAN.SVCD.DS.DVDRip-Gruppe 
+
+4.2 Wenn ein Release ein Proper Releaes ist, muss dies durch Angabe von 
+.PROPER. entsprechend gekennzeichnet werden. 
+
+Folgende Gruppen stimmen diesen Rules zu: 
+----------------------------------------- 
+
+AFL - HS - YYY - ZZ 
+
+
+- Stand 03.07.2002 v5.0 

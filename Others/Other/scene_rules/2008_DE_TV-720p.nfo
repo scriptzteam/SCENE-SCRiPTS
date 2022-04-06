@@ -1,0 +1,160 @@
+    °
+ ± ± ± ±±±
+    °         DEUTSCHE 720p SERiEN UND TV RULES 2008                   °
+                          (D720pSTVR.2008)                          ± ± ± ±±±
+    °                                                                  °
+                      - Exclusive HDTV Filme
+                                                                       °
+
+
+ Allgemeines:
+
+ A1.
+    720p TV/Serien Release sind nur im x264 Format (MKV Container) zulaessig. 
+
+    - 720p.HDTV   (HDTV)  Deutschsprachiges HDTV (SAT)
+    - 720p.HDTV   Dubbed  Auslaendische HDTV (Dubbed)
+    - 720p.HDDVD  Dubbed  Auslaendische Retail HDDVDs (Dubbed)
+    - 720p.HDDVD  Retail  Deutschsprachige Retail HDDVDs
+    - 720p.BluRay Dubbed  Auslaendische Retail BluRay (Dubbed)
+    - 720p.BluRay Retail  Deutschsprachige Retail BluRays
+
+ A2.
+    Laufzeit/Groesse:      Single Language (DE) Dual Language  (DE/ENG)
+
+    -bis maximal  21:00  Minuten:       525 MB           625 MB
+    -bis maximal  33:00  Minuten:       700 MB           880 MB
+    -bis maximal  50:00  Minuten:      1100 MB          1400 MB
+    -bis maximal  65:00  Minuten:      1400 MB          1700 MB
+    -bis maximal  95:00  Minuten:      2200 MB          2200 MB
+
+ A3. 
+     Die Laufzeit/Groesse gilt NUR fuer 720p Release die encodet werden bzw.
+     encodet werden muessen. Auslaendische 720p Release die zum dubben 
+     verwendet werden, koennen in ihrer Groesse belassen werden. (siehe B1).
+ A4. 
+     Release unter 16 Min./ueber 95 Min. duerfen in der Groesse frei gewaehlt
+     werden, sie sollten nach Moeglichkeit eine Bitrate von ca. 3000 Kbit haben.
+ A5. 
+     Bei digitalen HDTV Quellen muessen Sender-Logos NICHT ueberblendet werden, 
+     es ist lediglich die Werbung zu entfernen. 
+ A6. 
+     Dubbed Release sind an die Laufgeschwindigkeit des deutschen Tons, in der
+     Regel 25 FPS (25.000) anzupassen.
+ A7. 
+     BluRay und HDDVD sind gleichwertig.
+
+ Bild/AR/Ton:
+
+ B1.
+    -720p TV/Serien Release sind mit 2pass zu codieren.
+    -Release die als Source ein 720p Bild haben, sind nicht zu croppen, um eine
+     Skalierung und Verschlechterung des verkleinerten Bildes zu verhindern,
+     das heisst sie muessen NICHT neu codiert werden da eventuell vorhandene
+     Senderlogos NICHT entfernt werden muessen (zb. US-HDTV/US-BluRay),
+     nur die Framerate muss dem deutschen Ton angepasst werden (25 FPS in der
+     Regel).
+    -Release die als Source ein 1080(+) Bild haben, sind zu croppen, d.h. neu 
+     zu encoden. (Deinterlacen, IVTC beachten!)
+    -Retail Release sind in original Abspielgeschwindigkeit zu erstellen. Bei 
+     BluRay/HDDVD in der Regel 24 FPS (23,976).
+
+    Command Line (Beispiel):
+ 
+    --pass 2 --bitrate x --stats "1.stats" --level 4.1 --threads auto 
+    --bframes 3 --b-pyramid --bime --weightb --b-rdo --me umh --ref 5 
+    --mixed-refs --subme 7 --trellis 1 --partitions p8x8,b8x8,i4x4,i8x8--8x8dct 
+    --no-fast-pskip --progress--no-psnr --no-ssim --output
+     "default.mp4" "default.avs"
+ 
+    Folgende Werte muessen beim encoden von 720p TV/Serien Releasen 
+    eingehalten werden: 
+
+    --level 4.1
+    --ref 4  (maximal bis 9) 
+    --no-fast-pskip
+    --subme 6 --b-rdo  (mindestens)
+    --partitions p8x8,b8x8,i4x4,i8x8 --8x8dct 
+    --bframes 3
+ B2.
+    720p TV/Serien Release muessen folgende Aspect Ratio aufweisen:
+           1280x720 bei 720p Widescreen
+            960x720 bei 720p Fullscreen
+    -Bei FS Sonderformaten ist eine Hoehe (Y) von 720 zu waehlen.
+    -Bei WS Sonderformaten ist eine Breite (X) von 1280 zu waehlen.
+ B3.
+    -Einzig erlaubtes Tonformat fuer 720p TV/Serien Release ist AC3. 
+    -Wahlweise Single Language (SL), oder Dual Language (DL). (siehe A2.). 
+     Erlaubte Bitraten:
+     384-640 KBit bei 5.1
+     192-384 KBit bei 2.0
+
+ Subbed/Custom Subbed:
+
+ C1.
+    -Custom Subbed 720p TV/Serien Release sind erlaubt. Das erste Regelkonforme 
+     Release gewinnt, ein zweites Pren einer hoeherwertigen Source ist nicht 
+     erlaubt.
+    -Deutsche 720p TV/Serien Subbed Retail Release, wo in der Source 
+     hartencodete Untertiteln eingebrannt wurden, sind erlaubt!
+    -Bei Retail 720p TV/Serien Releasen sind nur forced Subbtitel Pflicht.
+    -Die Subbtitel bzw. forced Subbtitel muessen bei 720p TV/Serien Releasen 
+     im Textformat (.srt) in die .mkv Datei gemuxt werden, extra 
+     Ordner (Subordner) sind nicht erlaubt.
+
+ TV Race:
+
+ D1.
+    -Dubbed.HDDVD/BluRay stehen immer ueber HDTV/Dubbed HDTV.
+    -HDTV und Dubbed HDTV sind gleichwertig.
+    -Dubbed.HDDVD und Dubbed.BluRay sind gleichwertig.
+    -Ein HDTV/Dubbed HDTV kann jederzeit mit einem auslaendischem Retail 
+     Dubbed.HDDVD/BluRay Release gepropert werden, die Staffel muss in diesem 
+     Fall nicht von neuem bei E01 begonnen werden. Das erste Regelkonforme 
+     Release zaehlt.
+
+ Fortfuehrung TV/Retail:
+
+ E1.
+    -Fuer das Releasen einer Retail Serie im 720p Format hat eine Group 24 Tage 
+     Zeit (24x24 Stunden), nach dieser Zeit kann eine andere Group diese Serie 
+     uebernehmen und die noch fehlenden Release pren.
+
+ Rar Files:
+
+ F1.
+    -Die Rar Files muessen eine Groesse von 50.000.000/100.000.000 Bytes haben. 
+
+ Proper Gruende:
+
+ G1.
+    -Die Groesse eines Releases das neu encodet wurde, (zb. Retail/
+     deutsches HDTV) ist 10.240 KB zu klein oder 10.240 KB zu gross.
+    -Verwendung anderer Tonformate als AC3.
+    -Es wurden andere Ton-Bitraten als in B3. angegeben verwendet.
+    -Das erste Release einer Staffel ist nicht Ruleskonform.
+
+
+ Diese Rules bauen auf den dstvr.08 auf, hier sind nur die spezifischen 
+ Abweichungen zum XviD Format aufgefuehrt. Fuer alle nicht beantworteten Fragen
+ (Sample, Fortfuehrung Tv/Retail, Dirnamen, Nfo-Datei, Propergruende), 
+ und nicht weiter ausgefuehrten Rules gelten die dstvr.08.
+
+    °
+ ± ± ± ±±±
+    °           Signed by:      CDDHD - euHD - iNSPiRED                °
+                                                                    ± ± ± ±
+    °                           ITG - MOViESTARS - SiGHT               °
+
+                                                                       °
+
+             [ Diese Rules gelten ab dem 01.06.2008
+                und finden Anwendung auf 720p Serien und 
+                  TV Sendungen die nach dem 01.06.2008 beginnen]
+
+                             UEBERGANGSREGELUNG: 
+                   bis zum 15.06.2008 kann nach den alten Rules 
+                   ODER nach den neuen Rules gearbeitet werden.
+                   Release aus laufenden Serien duerfen ab dem
+                   01.06.2008 nach den neuen Rules gemacht werden.
+

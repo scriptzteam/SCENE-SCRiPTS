@@ -1,0 +1,205 @@
++ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ+
+³                  The United Federation of                                    ³
+³                                                                              ³
+³                          :::    ::: :::    ::: :::    :::                    ³
+³                         :+:    :+: :+:    :+: :+:    :+:                     ³
+³                         +:+  +:+   +:+  +:+   +:+  +:+                       ³
+³                         +#++:+     +#++:+     +#++:+                         ³
+³                       +#+  +#+   +#+  +#+   +#+  +#+                         ³
+³                     #+#    #+# #+#    #+# #+#    #+#                         ³
+³                    ###    ### ###    ### ###    ###                          ³
+³                                                                              ³
+³                                      Release Groups Presents...              ³
+³                                                                              ³
+³                   The SD x264 XXX Releasing Standards 2012                   ³
+³                                                                              ³
+ÀÄÄÄÄÄÂÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÂÄÄÄÄÄÄÄÄÄÙ
+   ÚÄÄÁÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÁÄÄÄÄÄ¿    
+   ³  Requirements: Notepad with terminal font or any other ascii viewer.  ³    
++ÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄ+
+³                              ÄÄÄÄ[ INTRO ]ÄÄÄÄ                               ³
+³                                                                              ³
+³ In an unparalleled event of co-operation and innovation, the XXX scene       ³
+³ united to bring you the first ever XXX Releasing Guidelines. We thank        ³
+³ all of you who took time to express their ideas, shared experiences and      ³
+³ helped bring this document to life. This document will cover the rules and   ³
+³ guidelines for only SD resolution x264 XXX rips. So without further ado,     ³
+³ we present to you, h264 ripper/enthusiast, the 2012 XXX Releasing Standards. ³
+³                                                                              ³
+ÀÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÙ
+      ´ X X X Ã                    ´ X X X Ã                    ´ X X X Ã       
++ÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄ+
+³                          ÄÄÄÄ[ RELEASE RULES ]ÄÄÄÄ                           ³
+³                                                                              ³
+³ Video:                                                                       ³
+³  • Sources requiring resize are to be cropped and resized using sharp        ³
+³    resizers such as  Lanczos4, Spline36, or Blackman. Bicubic is banned.     ³
+³  • Deinterlace/ivtc as necessary                                             ³
+³  • Resolutions: 640-720                                                      ³
+³  • Width mod16 / Height mod2                                                 ³
+³  • Upscaling is forbidden                                                    ³
+³  • Max AR error 2%.                                                          ³
+³  • No watermarking, intros and etc.                                          ³
+³  • Warnings, Compliance Disclaimers, Advertisements, etc. MUST be removed    ³
+³  • Overcropping/undercropping the picture not allowed.                       ³
+³    - When cropping, remove everything that is not actual picture,            ³
+³      including black or other colored borders. Removing or retaining         ³
+³      fading edges is at capper's discretion and shall not be considered      ³
+³      undercropped or overcropped.                                            ³
+³    - Actual picture area may be over- or under-cropped by 1px maximum per    ³
+³      side. More than 1px on any side is considered a technical flaw.         ³
+³    - In the case of varying crops/mixed scenes, crop to largest image as     ³
+³      to not lose any pixels on any scene.                                    ³
+³  • Mixed frame rate: In the case of varying frame rates keep highest frame   ³
+³    rate. Improper IVTC methods that result in jerky playback are banned.     ³
+³    Ripper should mention any claim for ITVC or lack thereof in nfo.          ³
+³                                                                              ³
+³ Codec:                                                                       ³
+³  • Video codec must be H264 encoded with 8-bit depth x264.                   ³
+³  • Custom Matrices are allowed.                                              ³
+³  • Stripping or falsifying encode information in the file header is banned.  ³
+³  • Zones (--zones) are forbidden.                                            ³
+³  • Level 3.1 must be respected.                                              ³
+³  • No setting can go below what is specified by --preset slow                ³
+³  • Codec must be up to date. A maximum of 5 versions difference.             ³
+³  • Level 3.1                                                                 ³
+³  • Allowed CRF Values: 19-22                                                 ³
+³  • Suggested Constant Rate Factor (--crf) Values:                            ³
+³                                                                              ³
+³                +ÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ-+                        ³
+³                ³  CRF  ³ Run Time in Minutes        ³                        ³
+³                ÃÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´                        ³
+³                ³ 19-21 ³ 0:00-210                   ³                        ³
+³                ³ 22    ³ 211+  and for Extras/BTS   ³                        ³
+³                ÀÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                        ³
+³                                                                              ³
+³  • Suggested command line:                                                   ³
+³    x264.exe --level 3.1 --preset slow --crf [19-22]  --no-fast-pskip         ³
+³                                                                              ³
+³ Container:                                                                   ³
+³  • Container must be MP4.                                                    ³
+³  • Support for file streaming and playing from rars is strongly encouraged.  ³
+³  • Custom muxing tools are permitted; however, output must be compatible     ³
+³    with standard demuxers.                                                   ³
+³                                                                              ³
+³ Samples:                                                                     ³
+³  • Required.                                                                 ³
+³  • 60-120 seconds in length and in a separate directory marked as Sample.    ³
+³  • Must be taken from the encoded movie, not encoded separately.             ³
+³  • Extra samples are recommended for any questionable issue with the         ³
+³    source, e.g. no IVTC possible.                                            ³
+³                                                                              ³
+³ Audio:                                                                       ³
+³  • Allowed audio format is VBR AAC LC (Low Complexity).                      ³
+³  • Average bitrate on AAC audio must be between 96 - <Source Bitrate> kbps.  ³
+³  • AAC audio must be normalized.                                             ³
+³  • Original samplerate/channels must be kept, up/down sampling is forbidden. ³
+³  • Nero and Apple encoders are recommended. FFmpeg and FAAC are banned.      ³
+³  • Multiple language audio tracks are forbidden.                             ³
+³                                                                              ³
+³ Packing:                                                                     ³
+³  • Release must not be split.                                                ³
+³  • Release must be packed in RAR file format.                                ³
+³  • Rars may be in multiples of 50 MB.                                        ³
+³    - Multiples of 50 MB must contain 10-101 files.                           ³
+³    - 1MB = 1,000,000 bytes.                                                  ³
+³  • RAR compression must not be used.                                         ³
+³  • Recovery record is optional but recommended. 2% max.                      ³
+³  • Encryption or password protection is forbidden.                           ³
+³  • Must have SFV and NFO.                                                    ³
+³  • RAR, SFV, and sample files must have unique, lowercase filenames with     ³
+³    the group tag.                                                            ³
+³  • NFO SHOULD INCLUDE:                                                       ³
+³    - Group Name                                                              ³
+³    - Title                                                                   ³
+³    - Release Date                                                            ³
+³    - DVD Release Date                                                        ³
+³    - CRF Value Used                                                          ³
+³    - Final Size                                                              ³
+³    - Resolution / Aspect Ratio                                               ³
+³    - Audio codec / Audio bitrate                                             ³
+³    - Movie runtime                                                           ³
+³    - DVD site info link                                                      ³
+³                                                                              ³
+³ Propers:                                                                     ³
+³  • Propers are only permitted in the case of a technical flaw in the         ³
+³    original release (e.g. Bad IVTC, Interlacing, missing footage, and        ³
+³    bad x264 settings used).                                                  ³
+³  • Propers MUST include a note in the NFO file detailing the reason.         ³
+³  • Sample of propered release is encouraged.                                 ³
+³  • Qualitative propers are not allowed.                                      ³
+³  • Releases may not be propered for bad tagging or missing nfo/sample.       ³
+³                                                                              ³
+³ Nukes:                                                                       ³
+³  • Releases must be nuked for any of the following reasons:                  ³
+³    - Any valid proper listed in the propers section.                         ³
+³    - Missing nfo or missing Sample.                                          ³
+³    - Mislabeled directory that could prevent finding the release in          ³
+³      a dupecheck, including incorrect Title or Date.                         ³
+³    - Dupe.                                                                   ³
+³  • Glitches/Drops must be at least 2 seconds long in any one instance        ³
+³    to be considered a technical flaw and can not be nuked/propered.          ³
+³    - Can be nuked if more than 3 glitches/drop of any length throughout      ³
+³      the film.                                                               ³
+³                                                                              ³
+³ Fixes:                                                                       ³
+³  • The following fixes are allowed: NFOFix, SampleFix, DirFix, SyncFix.      ³
+³  • DirFix requires NFO and NFO must state which release is being fixed.      ³
+³  • The original release shall be unnuked when a valid fix is released.       ³
+³  • A proper may not be released for an issue that was fixed, unless the      ³
+³    fix does not completely correct the issue.                                ³
+³                                                                              ³
+³ Tagging                                                                      ³
+³  • Encouraged Tagging:                                                       ³
+³    <Title>.XXX.<Source>.x264-Group                                           ³
+³  • <Title> should always be the same as on the physical disc, the cover or   ³
+³    the intro of the movie. Never take the name a Website provides you.       ³
+³  • <Year> can be added after <Title>, and should be added if a movie with    ³
+³    the same name was already pre'd before.                                   ³
+³  • <Language> should be added, for non english movies.                       ³
+³  • <Source> should indicate from what medium this movie is (DVDRip/BDRip)    ³
+³  • Acceptable characters in naming a directory include (NO spaces or         ³
+³    double dots - single dots or underscores ONLY):                           ³
+³                                                                              ³
+³      ABCDEFGHIJKLMNOPQRSTUVWXYZ                                              ³
+³      abcdefghijklmnopqrstuvwxyz                                              ³
+³      0123456789.-_                                                           ³
+³                                                                              ³
+³  • Other permitted tags are: PROPER, REPACK, RERIP, NFOFix, SampleFix,       ³
+³    DirFix, SyncFix, ProofFix.                                                ³
+³                                                                              ³
+ÀÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÙ
+      ´ X X X Ã                    ´ X X X Ã                    ´ X X X Ã       
++ÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄ+
+³                         ÄÄÄÄ[ NOTES TO RULES ]ÄÄÄÄ                           ³
+³                                                                              ³
+³  • Extras, Behind the Scenes and Bonus Scenes may be included in release.    ³
+³    - Must be unique material. DO NOT include previously or soon to be        ³
+³      released Bonus Scenes or Trailers. Discretion is strongly advised.      ³
+³    - Each extra must be tagged uniquely and based on the main release name.  ³
+³    - Each extra must be encoded seperately but packed together.              ³
+³    - Must be put in a separate directory marked as Extras and include sfv.   ³
+³    - Must use CRF 22                                                         ³
+³    - Nfo must have information on what is included in the Extras directory   ³
+³      eg. behind the scenes, bonus scene, etc. No other information needed.   ³
+³    - Releases may not be nuked/propered for the absence of Extras.           ³
+³  • Source related notes:                                                     ³
+³    - Source shall be DVD or BluRay Only, no exceptions!                      ³
+³    - Re-encoding material of any transcoded source is strictly forbidden!    ³
+³  • Propers/Nukes based upon the rules set forth here are allowed only on     ³
+³    releases that come after this document goes into effect.                  ³
+³                                                                              ³
+ÀÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂ-++-++ÄÂÄÄÄÄÄÄÙ
+      ´ X X X Ã                    ´ X X X Ã                    ´ X X X Ã       
++ÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁ-++-++ÄÁÄÄÄÄÄÄ+
+³                              ÄÄÄÄ[ GROUPS ]ÄÄÄÄ                              ³
+³                                                                              ³
+³           XXXRS12 rules created & approved by the following groups:          ³
+³       ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ      ³
+³                         Listed in Alphabetical order                         ³
+³                                                                              ³
+³     CiCXXX DivXfacTory FLESHLiGHT Jiggly NYMPHO PBU PORNOLATiON Pr0nStarS    ³
+³           SLiEZE STARLETS SWE6RUS TattooLovers UPPERCUT VBT XCiTE            ³
+³                                                                              ³
+³                                                                              ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

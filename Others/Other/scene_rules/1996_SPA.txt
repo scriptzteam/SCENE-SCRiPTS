@@ -1,0 +1,46 @@
+                        Standards of Piracy Association
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   Formed on 6 July 1996, the SPA is an agreement between the 5 top PC games
+ groups that lays down the official "rules of engagement" to be used in the
+ battle to release the most.  Here is a synopsis of the topics that were
+ discussed and voted on.  The 5 groups that met were Prestige, Razor 1911,
+ Mantis, Napalm, and Hybrid.  Each group had approximately 2 representatives,
+ and on the subject of voting, each group had one vote per issue.
+
+   1.  All 5 groups agreed that whatever was decided in the meeting would be
+       adhered to in the releasing process.
+
+   2.  The 5 groups compromised on a size limit for releases.  This limit is
+       now set at 50 1.44 meg files.  The previous limit was 40 1.44 meg
+       volumes.  In megs, this translates to approximately 72 megabytes max
+       per game.
+
+   3.  Groups now have the option of using 2.88 meg files instead of 1.44 meg
+       volumes should they choose to do so on a particular release.  The only
+       catch is that ALL disks of a release must be of one format or the other.
+       All releases must be in either 1.44 meg or 2.88 meg format.  Any games
+       released that do not adhere to this format, or exceed the size limit
+       (50 for 1.44's and 25 for 2.88's), will be nuked for 5x credits off of
+       all sites in the SPA.
+       
+   4.  The groups voted unanimously to ban all ROR releases from all sites
+       participating in the SPA.  This means that ROR releases will be nuked
+       for 5x credits on all sites/boards in the SPA.  This ban is subject
+       to a monthly review.
+
+   5.  The 5 groups decided on the name (SPA), and that meetings would be
+       held once a month by the leaders of the 5 groups in the SPA.  At
+       these meetings issues such as volume size, group bans, and even the
+       size limit can be discussed.
+
+ The SPA exists primarily to enforce fair play on the groups in the scene.  The
+ disk limit is part of it, and banning groups like ROR that release nothing but
+ fakes and betas (and worse package them as finals) is also a part of it.  If
+ you run a site and would like to be SPA certified, email chemist@laker.net for
+ more information on what you can do to help.  The SPA is interested only in
+ fair competition for all groups big and small, and in working releases for all
+ users regardless of what group they download.  Think of us as quality control.
+
+                                   SPA Staff
+ 
+

@@ -1,0 +1,171 @@
+The.2010.German.COMPLETE.BLURAY.and.BDR.Releasing.Standards.v1.0
+
+
+
+General (COMPLETE/BDR):
+----------------------
+
+1.1)  Kopierschutz wie AACS, BD+ muss entfernt werden, dies gilt auch fuer nachtraeglich modifizierte Ordner wie ANY!
+1.2)  Die Releases muessen als .iso mit UDF2.5 vorliegen.
+1.3)  Rar/Sfv/Nfo/Sample sind zwingend erforderlich.
+1.4)  Das Release muss Region Free sein.
+1.5)  BD-Live muss deaktiviert werden.
+1.6)  Standalone (SAP) und PS3 Kompatibilitaet ist zu gewährleisten, d.h. unter anderem die original Verzeichnisstruktur muss erhalten bleiben. Verzeichnisse wie AUXDATA, BDJO, JAR, META 
+      sind, falls nicht vorhanden, manuell hinzufuegen.
+1.7)  Ein Sample von etwa 60 Sek., das aus dem finalen Release herausgeschnitten wird, ist im Unterordner /Sample beizulegen.
+
+
+Nfo:
+----
+
+1.8)  In der Nfo muessen mindestens folgende Informationen enthalten sein:
+
+      - Titel
+      - Release date
+      - Source (BD25/BD50)
+      - Rar Groesse und Anzahl
+      - German Cine Date bzw. STV
+      - Runtime
+      - Genre
+      - imdb.com Link
+      - imdb Rating
+      - Resolution
+      - Video Bitrate (fuer Complete gilt UNTOUCHED, bei encoded BDR muessen Codec/Bitrate/Pass angegeben werden)
+      - alle vorhandenen Audiosprachen/Audiokanaele müssen angegeben werden und bei encoded BDR zusätzlich noch die Bitrate.
+      - alle vorhandenen Untertitel (Angaben wie "all included" oder Aehnliches sind nicht erlaubt)    
+
+      
+COMPLETE BLURAY:
+----------------
+
+General:
+
+2.1)  Es darf nichts gestripped werden.
+
+Tagging:
+
+2.2)  Titel.{Sxx.DISCx.}JAHR{.DOCU}{.DISCx}<.DUAL|.MULTi|.German>.COMPLETE.BLURAY{.PROPER|.iNTERNAL|.READNFO|.REPACK|.RERiP}-GROUP    
+      Syntax: {optional}
+2.3)  Die Jahresangabe ist das Produktionsjahr und muss von imdb uebernommen werden.
+
+Packaging:
+
+2.4)  Als Volumengroesse sind folgende Groessen zulaessig:
+      100 - 150 - 200 - 250 - 300 - 350 - 400 - 450 - 500 MB
+2.5)  Maximal 101 Dateien. (rar-r99) im Classic Style
+2.6)  Wiederherstellungsinformation von 1% ist Pflicht.
+2.7)  Kompressionsverfahren M1 ist Entscheidung des Rippers. (M0 hat weiterhin Bestand)
+
+German BDr:
+-----------
+
+General:
+
+3.1)  Die Blu-Ray darf die maximale Groesse eines Single Layers nicht ueberschreiten. (max. 25.025.314.816 bytes)
+3.2)  Warnings und Trailer beim Starten des Filmes sind aus der Playlist zu isolieren. 
+
+Tagging:
+
+3.3)  Titel.{Sxx.DISCx.}JAHR{.DOCU}{.DISCx}<.MULTi|.German|.DL>.COMPLETE.BDR{.PROPER|.iNTERNAL|.READNFO|.REPACK|.RERiP}-GROUP
+      Syntax: {optional}
+      Die Jahresangabe ist das Produktionsjahr und muss von imdb uebernommen werden.
+3.4)  Complete ist nur erlaubt, wenn die Quelle BD 25 ist und dabei nichts entfernt werden musste.
+
+Packaging:
+
+3.5)  Als Volumengroesse sind folgende Groessen zulaessig:
+      100 - 150 - 200 - 250 - 300 MB
+3.6)  Maximal 101 Dateien. (rar-r99) im Classic Style    
+3.7)  Wiederherstellungsinformation von 1% ist Pflicht.
+3.8)  Kompressionsverfahren M1 ist Entscheidung des Rippers. (M0 hat weiterhin Bestand)
+
+Menu:
+
+3.9)  Das Top/Pop-Up Menu darf nicht entfernt werden.
+3.10) Introsequenzen (basierend auf dem Menu) sind entsprechend den vorhanden Audiosprachen anzupassen. Alle anderen sind zu entfernen und remappen.
+3.11) Buttons bei entfernten Material muessen bei nicht Java/oder teils Java Menu zurueck zum Menu verlinkt werden. (bdedit PLAY PL)
+3.12) Menu Videos mit aufeinander folgender Videosequenz (2 oder mehr Dateien) darf bei Neuberechnung in 1 Videosequenz zusammengefasst werden.
+
+
+Extras:
+
+3.13) Extras sind nur erlaubt, wenn der Hauptfilm dabei nicht encoded werden muss.
+3.14) Bei entfernen von Extras muessen diese durch Dummy Dateien ausgetauscht, ordentlich verlinkt (MPLS, M2TS, CLPI) oder sogar falls moeglich komplett aus des dem Menu isloliert werden. (siehe auch 3.11)
+
+Video:
+
+3.15) Erstes Ziel ist, ein encode zu vermeiden.
+3.16) Alle Filme unterliegen der Originalframerate.
+3.17) Picture in Picture Inhalte sind erlaubt. (siehe auch Punkt 4.6)
+3.18) Das Zusammenfassen von mehreren M2TS Dateien, beispielsweise bei vorhandener Cinema/Extended Version ist erlaubt.
+
+Audio:
+
+3.19) Standard Audio Formate wie Dolby Digital, True-HD, DTS, DTS-HD sind erlaubt.
+3.20) German HD Audio hat Prioritaet. Sollte jedoch daraus resultieren, dass ein encode noetig ist, so darf nur der Audio Core Stream verwendet werden. (siehe auch 5.4)
+3.21) Beim Entfernen von Audiospuren sind diese auf die deutsche Spur zu remappen.
+      Entfernt man z.B. french Audio, so muss auf diesen Channel die deutsche Spur gemapped werden 
+
+Untertitel:
+
+3.22) Entsprechend den Audiospuren muss der passende Untertitel vorhanden sein. (Standard/forced)
+3.23) Audio Kommentar Untertitel sind nur bei vorhandensein der entsprechenden Audiospur zulaessig.
+
+Encoding settings:
+------------------
+
+General:
+
+4.1)  Darf nur angewandt werden, wenn es nicht moeglich ist, den Hauptfilm ohne encode auf einem Blu-Ray Single Layer unterzubringen.
+4.2)  Die maximale Kapazitaet eines Blu-Ray Single Layers sollte ausgenutzt werden und darf max. um 200 MB unterschritten werden. (min. 24.815.599.616 bytes)
+4.3)  Extras und Trailer sind bei einem encode grundsaetzlich zu entfernen. (Ausnahme siehe ab 3.13)
+4.4)  Die verwendete x264 Version darf max. 25 Builds von der derzeit aktuellen Version zurückliegen.
+4.5)  1 Klick Tools sind untersagt.
+4.6)  Picture in Picture Inhalte sind bei Neuberechnung komplett zu entfernen.
+
+
+Video settings:
+
+4.7)  Croppen/Resizen ist aus Kompatibilitaetsgruenden nicht erlaubt.
+4.8)  2-Pass Encoding ist Pflicht, CRF encoding ist untersagt.
+4.9)  Interlaced Source muss bei einem encode deinterlaced werden.
+4.10) Menu encoden ist erlaubt, zu beachten ist jedoch ab 3.9).
+4.11) Hauptfilm: Encoding Bitrate, die als Durchschnitt (AVG) zu bezeichnen ist, haengt von der Laufzeit des Filmes ab.
+
+      90-120 min: minimum 20000 Kbps
+      120-150 min: minimum 19000 Kbps
+      ab 150 min: minimum 18000 Kbps
+
+      Sollte die vorgegebene minimale Bitrate unterschritten werden, muss dies in der NFO belegt werden. Als Ausnahme gueltig waere hierbei ein Film bei insgesamt max. einer Tonspur mit HD Audio.
+4.12) Extras encoden sind optional erlaubt wenn Fall 3.13) eintritt
+4.13) Um die maximale Kapazität ausnutzen zu koennen, sollte zur Berechnung der Videobitrate zwingend ein M2TS Container fähiger Bitrate Calculator benutzt werden.
+Pflicht settings:
+4.14) Reference Frames (--ref 4)
+4.15) (--b-pyramid normal) (--mbtree)
+4.16) Access Unit Delimiters (--aud)
+4.17) Square Pixels (--sar 1:1)
+4.18) Subpixel Refinement Level minimum 8 besser 9 (--subme 8)
+4.19) High Level Profile 4.1 (--level 4.1)
+4.20) Bitratenbeschraenkung bis max 40 Mbps (--vbv-bufsize 30000 --vbv-maxrate 40000)
+4.21) bframes level 3 (--bframes 3)
+4.22) Trellis rd Quantization Level 1 bei subme 8/9 (Level 2 bei subme 10 icore erforderlich) (--trellis 1)
+4.23) All Partition Search Types (--partitions all)
+4.24) Motion Estimation Method (--me umh)
+4.25) CABAC Pflicht
+
+
+Audio settings:
+
+5.1)  PCM Audio ist bei einem encode strengstens untersagt. Sollte jedoch nur PCM Audio auf der Disc verfuegbar sein, so muss dieser in AC3 (mind.640kps) oder DTS(mind.768kpbs) encoded werden
+5.2)  Audio Kommentare/Sehbehindertenfassung/Instrumental sind nur erlaubt wenn die minimale Videobitrate nicht unterschritten wird.
+5.3)  Wenn 2 oder mehrmals die selbe Audio Sprache als Standard Audio und als HD Audio vorliegt, bekommt HD Audio den Vorzug und
+      muss als einzigste Audio Spur benutzt werden. Alle anderen sind dann zu entfernen und zu remappen.
+5.4)  Weicht die minmale Video Bitrate stark ab, so muss bei HD Audio der Core extrahiert werden. (eac3to -core)
+      Typische Core Bitrates:
+      AC3 : 640 / 448 kbps     DTS: 768 / 1536
+      Verfuegt die Disc nur ueber eine andere Bitrate so ist dies in der nfo explizit zu erwaehnen.
+
+
+      Originally written and organized by: (listed alphabetically)
+                
+              DARM HDi HDPLANET JPS OldsMan RedRay SLM TRexHD

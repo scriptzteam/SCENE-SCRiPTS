@@ -1,0 +1,143 @@
+Ok so u wanna run more than 1 glftpd server on a single machine ?
+and you'r wondering how might you do it ?
+
+if you answered yes to both of these questions you'r reading the right (fucking) manual...
+
+The 2nd glftpd server must differ from the first one by at least three things:
+a) ipc_key - what is that ? (i'd tell you to RTFM but u'r already reading one so... ill just quote)
+	"....
+	Glftpd uses shared memory, so it needs to use an ipc_key.  The default
+	key that glftpd uses is "0x0000DEAD".  If you want to run another
+	glftpd server, you need to define a different key for it in its own
+	config file.  The key can be any 8-digit hexadecimal string, like:
+	0x01234567, 0xDEADBABE, 0xBEEFBABE, 0xBADC0FEE, etc.
+
+	If you're using ftpwho.c, it's ipc key will also need to be modified.
+	..."
+
+yup that came from glftpd.docs
+in plain english, you gotta have two different ipc keys, one is for the first glftpd
+(if not set default = 0x0000DEAD) and one for the second one, 
+we'll use 0xBADC0FEE for this example.
+
+b) the glftpd port.
+
+c) a new definition in your inetd/xinetd for each server
+
+
+of course, the second server can share the user database, or not.
+it can also share the /site data, a part of it, or not.
+it can share the binaries in /glftpd/bin, or not.
+etc...
+but it cannot share the glftpd.conf, so u'll have to copy/write a new one for the second server.
+
+I'll show an example of 2 servers on one machine with few configurations, i think its the best way 
+to explain howto install them:
+
+.--------------------------------------------------------------.
+| The Example: a server with the same userdb, datapath (/site) |
+|              and everything, just a different port and conf. |
+|______________________________________________________________|
+
+    .-----------------------------------------
+    | ....glftpd #1....
+    | port:     8000
+    | dir:      /glftpd
+    | conf:     /etc/glftpd.conf
+    | datapath: /ftp-data (in /glftpd)
+    | pwd_path: /etc/passwd (in /glftpd)
+    | grp_path: /etc/group (in /glftpd)
+    |_____________________________________________
+
+
+    .-----------------------------------------
+    | ....glftpd #2....
+    | port:     9000
+    | dir:      /glftpd
+    | conf:     /etc/glftpd2.conf
+    | datapath: /ftp-data (in /glftpd)
+    | pwd_path: /etc/passwd (in /glftpd)
+    | grp_path: /etc/group (in /glftpd)
+    |_____________________________________________
+
+--== All your config ==--
+
+ok first, cp /etc/glftpd.conf /etc/glftpd2.conf
+then edit /etc/glftpd.conf
+add this line to the file:
+ipc_key 0xBADC0FEE
+make the chages you want for the second server
+
+[Note] more advacned users can write a common "glftpd.conf.common" file and then have
+glftpd.conf use the include directive, same with glftpd2.conf
+so that in the future changes which should apply to both servers will be edited in
+glftpd.conf.common file, and changes for each server separately can be done in each
+server's config
+
+
+--== Are belong to inetd/xinetd ==--
+
+edit your inetd, it should have something like this (if using tcpd..)
+...
+glftpd stream tcp nowait root /usr/sbin/tcpd /glftpd/bin/glftpd -l -o -i
+...
+add the following line:
+glftpd2 stream tcp nowait root /usr/sbin/tcpd /glftpd/bin/glftpd -l -o -i -r /etc/glftpd2.conf
+
+note the -r addon for glftpd2.conf
+
+if you have xinetd, in /etc/xinetd.d, copy the glftpd file to glftpd2, and edit it
+change the name to glftpd2 and add a switch -r /etc/glftpd2.conf
+
+--== Set up us the port ==--
+
+edit /etc/services
+(go to the bottom of the file, usually...)
+you should see glftpd 8000/tcp
+(assuming 8000 is your current port)
+now in this example we'll be adding port 9000 to glftpd2, so guess how the following line should look like:
+glftpd2 9000/tcp
+
+yup, thats it.
+
+--== Main screen turn on ==--
+
+Ok, all you have to do now is rehash your inetd
+inetd users  -> killall -HUP inetd
+xinetd users -> you'r screwed
+just kidding, /etc/init.d/xinetd restart (or something similar...)
+
+Now it should work if i havent forgotten anything :P
+
+in case you want a completely two different servers with nothing shared (no binary no nothing...)
+just install a new glftpd to another dir, say /glftpd2 (original eh ?)
+and make sure it doesnt overwrite your current glftpd.conf... (just back it up)
+
+simply add to inetd/xinetd the previous line
+glftpd2 stream tcp nowait root /usr/sbin/tcpd /glftpd2/bin/glftpd -l -o -i -r /etc/glftpd2.conf
+with the correct path to glftpd binary (you see here /\ glftpd2...)
+
+the rest should be the same.
+
+same goes for binary + site shared, but ftp-data passwd and group not shared, just set up the
+correct directives (datapath, pwd_path, grp_path) just make sure they point to something whithin
+the chrooted path (/glftpd/soemthing)
+
+oh i almost forgot, since you've changed the ipc_key, programs which rely on it (usually C based
+programs which rely on real-time communication with the server, not by connecting to the server
+itself, like ftp-who and gl_spy) will not "work", they will probably work but will show the data
+relevant for the original server whose ipc_key you didnt change... just recomiple them according
+to the server ipc_key.
+
+Thats all, i hope it helped you a bit and saved you some trouble in asking questions in #glftpd :)
+
+
+-----------------------------------
+About the "Document"
+-----------------------------------
+Author:  [Jedi] 
+         mail: jedi_il@hotmail.com
+         www : http://jedi.says.no
+Version: 0.1
+Date:    2/5/2003
+-----------------------------------

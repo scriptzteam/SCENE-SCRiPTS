@@ -1,0 +1,106 @@
+                                                                                
+                              ммлллллм           ммлллллм                       
+                         ммлллллллллллл     ммлллллллллллл                      
+                       мллллллллллллллп   мллллллллллллллп                      
+                      олВлллллллллллп    олВлллллллллллп                        
+                       пллллллллллн       пллллллллллн                          
+                           плллллл            плллллл                           
+                            оллллл             оллллл                           
+                             ллллл              ллллл                           
+                             ллллл              ллллл                           
+                             ллллн              ллллн                           
+                             лллл               лллл                            
+           мллм              плп                плп              мллм           
+          п  ллн                                                олл  п          
+              лл              TranceTraffic Presents            лл              
+  млллм       олнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФолн       млллм  
+ оллллллм     лл                      iNFO                      лл     мллллллн 
+ ллп пллллм мллн                                                оллм мллллп плл 
+ лВ    плллВллп                                                  пллВлллп    Вл 
+ олн     пппп                                                      пппп     олн 
+  плммп                                                                  пммлп  
+    п                                                                      п    
+
+                            TT LOSSLESS-Releaser 1.03
+
+
+         ChangeLog:
+		 
+		 1.03:  UTF-8 support.
+
+         1.02:  Added LOG-check.
+
+         1.01:  Added FLAC CUESHEET METABLOCK support
+                (internal change, only affects mixed cds)
+
+
+         ATTENTION! PLEASE READ OUR NOTES BELOW BEFORE USING
+         TT LOSSLESS-Releaser 1.03:
+
+         1. Flac.exe must be installed in path! For Example C:\Windows\
+            You can test it, by opening a console and type "flac".
+            If it's runinng, you're fine.
+
+         2. Lossless-Releaser is made for EAC! Fill out the fields in
+            EAC such as:
+
+              - ARTIST          (can be done in EAC)
+              - ALBUM           (can be done in EAC)
+              - GENRE           (can be done in EAC)
+              - YEAR            (can be done in EAC)
+              - TRACK TITLE     (can be done in EAC)
+
+              - COMPOSER        (can be added in foobar2000 as new tag)
+
+            Those fields will be used to set proper FLAC tags.
+
+         3. If it's a VA album, then put on the select box
+            "Various Artists".
+
+         4. If you use a LOG file do NOT change the log file
+            before using TT LOSSLESS-Releaser 1.03.
+
+         5. Do NOT run this program from your windows desktop it
+            wont work. Install it in a proper directory on your
+            C: drive.
+
+
+         HOW TO USE IT:
+
+         1. Put the ripped and tagged flacs in a directory i.e.
+            c:\music optionally also put a LOG, CUE, JPG, PNG or ITC
+
+            c:\music\va-top100hits.cue
+            c:\music\va-top100hits.log
+            c:\music\artwork.jpg
+            c:\music\track1.flac
+            c:\music\track2.flac
+            c:\music\track3.flac
+            ...
+
+            note: naming does not matter!
+                  (Only tracks have to be in order)
+
+         2. Start TT LOSSLESS-Releaser 1.03, fill out the fields and
+            press "Convert"
+
+         3. If you have a 2-CD or 3-CD release put the files in:
+
+            c:\music\cd1
+            c:\music\cd2
+            c:\music\cd3
+            ...
+
+            Each directory must have its own LOG, CUE and JPG file.
+
+
+           мллм                                                  мллм          
+          п  ллн                                                олл  п         
+              лл                                                лл             
+  млллм       олнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФолн       млллм 
+ оллллллм     лл                                                лл     мллллллн
+ ллп пллллм мллн                                                оллм мллллп плл
+ лВ    плллВллп                                                  пллВлллп    Вл
+ олн     пппп                                                      пппп     олн
+  плммп                                                                  пммлп 
+    п                                                                      п   

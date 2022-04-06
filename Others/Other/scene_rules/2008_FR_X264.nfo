@@ -1,0 +1,140 @@
+        Ü         Ü                 Ü          Ü           ÜÜÜÜÜÜÜ    ÜÜÜÜÜÜÜÜ
+       Þ²±°      Þ²±°              Þ²±°       Þ²±°        Þ²±°  Û²±° Þ²±°   Þ²±
+       Û±°°      Û±°°              Û±°°°      Û±°         Û±°° Þ²±°  Û±°°   Û±°°
+      Þ²±°      Þ²±°              Þ²±°±°°    Þ²±°  Þ     Þ²±°   ß²±°Þ²±°   Þ²±°
+      Û±°°      Û±°°              Û±°° ±°    Û±°   ±°    Û±°°       Û±°°   Û±°°
+     Þ²±°      Þ²±°              Þ²±° ²±°°  Þ²±°  Þ²±   Þ²±°       Þ²±°   Þ²±°
+     Û±°°      Û±°°              Û±°° ß²±°°Ü²±°   ²±°°  Û±°°       Û±°°  Ü²±°
+    Þ²±°±²ßßßßÞ²±°  ÜÜ±°°±²ßßßßßÞ²±°    Ü²±±°°    Þ²±  Þ²±°±²ßß   Þ²±° ß²±Ü
+    Û±°°      Û±°° Û²±°°        Û±°° Ü²±°°  ß²±°   ±°  Û±°°       Û±°°   ²±°
+   Þ²±°      Þ²±° Þ²±°°        Þ²±° Þ²±°°    Þ²±°  Þ  Þ²±°       Þ²±°    Þ²±°
+   ²±°° °°   ²±°° ²±°°ÜÜÜÜÜÜÜÜ ²±°° ²±°° °°   ²±°°    ²±°° °°°   ²±°° °   ²±°° yL
+
+       .X.x.  H i g h   D e f i n i t i o n   X 2 6 4   F R e n c h  .x.X.
+                       m o v i e     s t a n d a r d s
+                          D e c e m b e r,  2 o o 8
+
+
+ [ Intro ]
+
+ Nous n'avons pas la prétention d'avoir créé des nouvelles règles mais seulement d'avoir adapté celles liées à la
+ scène américaine en y ajoutant quelques spécificités liées à notre scène.
+ Avec la démocratisation des rips HD, il faut que la qualité prime sur la quantité.
+ Ces rules signées par les teams présentes apporteront de l'homogénéité et un gage de qualité.
+
+
+ [ Général ]
+
+ 1.1) La release doit être pack en RAR. Sfv,Nfo et sample sont obligatoires.
+ 1.2) Les rars doivent être en multiple de 50 ou 100 MiB, pas plus de 99 fichiers.
+ 1.3) La release doit être muxée dans un container MKV.
+ 1.4) Le nfo doit inclure le bitrate vidéo, audio ainsi que le format et les sous-titres.
+ 1.5) Les Bluray dupe HDDVD et vice versa.
+ 1.6) Les sous-titres FRENCH FORCED sont obligatoires quand ils sont présent sur le media original.
+ 1.6.1) Les sous-titres FRENCH sont obligatoires pour les releases MULTi.
+ 1.7) La piste audio Française doit impérativement provenir du media "pas de son DVD ou autre",
+      sinon le nom du dossier contenant la release devra avoir la mention < CUSTOM >.
+ 1.7.1) Le bitrate audio doit être le bitrate de l'audio présent sur le media.
+ 1.8) Suggestion de dirname:
+      Titre.Du.Film.ANNEE.<FRENCH/MULTi>.<720p/1080p>.BluRay.x264.<PROPER/READ.NFO/REPACK>-GROUP
+      Titre.De.La.Serie.SxxExx.<FRENCH/MULTi>.<720p/1080p>.BluRay.x264.<PROPER/READ.NFO/REPACK>-GROUP
+ 1.9) Le générique de fin "crédit" doit être présent.
+ 1.10) Le sample doit représenter 60 secondes du film au minimum.
+ 1.10.1) Ce dernier doit provenir de la release finale.
+
+
+ [ Audio ]
+
+ 2.1) L'audio doit être AC3 ou DTS, (FLAC interdit)
+      Le core doit être converti, en cas de DTS-HD ou TRUE-HD
+ 2.2) Le bitrate de l'audio ne doit jamais être en dessous de 640 kbit, sauf si la source média est en dessous.
+      "ex: true-hd core 448kb/s ou moin".
+ 2.3) L'audio doit être en 5.1, sauf si la source est stéréo ou mono.
+ 2.4) Pour les 720p un seul audio est autorisé (Français), pour les 1080p 2 pistes sons : version
+      Française et originale sont autorisées
+ 2.4.1) La langue principale doit être le Français.
+ 2.4.1.1) Pour une release multi-langues, il est nécéssaire d'inclure la Version originale et Française.
+ 2.4.1.2) Si la langue originale n'est pas Française, les sous-titres sont obligatoires
+
+
+ [ Vidéo ]
+
+ 3.1) Si nécessaire le désentrelacement ou l'ivtc doivent être utilisés.
+ 3.2) L'encodage doit se faire en 2 passes minimum.
+ 3.3) La largeur de la release doit être en mod 16. La longueur de la release doit être en mod 8.
+ 3.4) Le crop des bandes noires est obligatoire.
+ 3.5) L'aspect ratio original du media est obligatoire, les annonces d'aspect ratio de la pochette ou d'imdb ne sont
+      pas valables.
+ 3.6) Les custom matrices sont autorisées.
+ 3.7) VfW (Video for Windows), est interdit.
+ 3.8) La version de x264 qui doit être utilisé est au minimum la 999, avec au minimum 50 mises à jour depuis la dernière.
+ 3.9) Le level 4.1 doit être respecté.
+ 3.10) --deblock doit être activé.
+       --aq-mode doit être activé.
+       --bframes 3 ou plus doit être respecté.
+       --ref 5 ou plus sauf si la résolution dépasse 864, dans ce cas ref 4 doit être utilisé pour respecter le
+         level L4.1 et sa compatibilité.
+       --me umh ou plus est obligatoire.
+       --subme 7 ou plus est obligatoire.
+       --trellis 1 ou plus est obligatoire.
+
+ 3.11) Pour les releases en 720p, la résolution est au maximum de 1280x720.
+ 3.11.1) Pour un aspect ratio équivalent ou supérieur à 1.78 horizontal la résolution doit être de 1280.
+	 e.g. AR de 2.35:1 doit être 1280x544.
+ 3.11.2) Pour un aspect ratio équivalent ou inférieur à 1.78 vertical la résolution doit être de 720.
+	 e.g. AR of 1.33:1 doit être 960x720.
+ 3.12) Pour les releases en 1080p,la résolution maximum doit être de 1920x1080.
+ 3.12.1) Pour un aspect ratio équivalent ou supérieur à 1.78 horizontal la résolution doit être de 1920.
+	 e.g. AR of 2.35:1 doit être 1920x816.
+ 3.12.2) Pour un aspect ratio equivalent ou inférieur à 1.78 vertical la résolution doit être de 1080.
+	 e.g. AR of 1.33:1 doit être 1440x1080.
+ 3.13) Bitrate video:
+ 3.13.1) 720p - Minimum 4000 kbit, maximum 8000 kbit. le bitrate minimum pour un anime est de 2300 kbit.
+ 3.13.2) 1080p - Minimum 8000 kbit, maximum 14000 kbit. le bitrate minimum pour un anime est de 5000 kbit.
+
+
+ [ Sous-titres ]
+
+ 4.1) Les Sous-titres doivent être en format texte, de préférence .srt.
+ 4.2) Les Sous-titres doivent être muxés dans le container .mkv
+
+
+ [ Total Size ]
+
+ 5.1) Le Mkv final doit être de taille : 1xdvd5, 1.5xdvd5, 2xdvd5, 1xdvd9, 1.5xdvd9, 2xdvd9 ou plus si réellement
+      nécessaire.
+ 5.2) Le niveau de tolérance pour un rip undersize est de 80 MiB.
+
+
+ [ Suggestions de paramètres pour l'encodage en 720p ]
+
+ 6.1) Première passe :
+
+x264.exe --pass 1 --level 4.1 --stats .stats --bitrate 4000 --threads auto --bframes 3 --me dia --ref 1
+--subme 1 --no-dct-decimate --partitions none --progress --no-psnr --no-ssim --output NUL movie.avs
+
+ 6.2) Deuxième passe :
+
+x264.exe --pass 2 --level 4.1 --stats .stats --bitrate 4000 --threads auto --bframes 3 --b-pyramid
+--weightb --me umh --ref 5 --mixed-refs --subme 7 --trellis 1 --analyse all --8x8dct --no-fast-pskip
+--progress --no-psnr --no-ssim --output movie.mkv movie.avs
+
+ [ Suggestions de paramètres pour l'encodage en 1080p]
+
+ 7.1) Première passe :
+
+x264.exe --pass 1 --level 4.1 --stats .stats --bitrate 8000 --threads auto --bframes 3 --me dia --ref 1
+--subme 1 --no-dct-decimate --partitions none --progress --no-psnr --no-ssim --output NUL movie.avs
+
+ 7.2) Deuxième passe :
+
+x264.exe --pass 2 --level 4.1 --stats .stats --bitrate 8000 --threads auto --bframes 3 --b-pyramid
+--weightb --me umh --ref 5 --mixed-refs --subme 7 --trellis 1 --analyse all --8x8dct --no-fast-pskip
+--progress --no-psnr --no-ssim --output movie.mkv movie.avs
+
+ [ Signé et Approuvé par les groupes suivants , dans l'ordre alphabétique ]
+
+              - CREEP - FACEHD - FHD - ForceBleue - PtS -
+
+
+

@@ -1,0 +1,156 @@
+Mini-HOWTO: Making /glftpd inaccessible for shell users. By Hoopy, March 2001
+=============================================================================
+
+
+SYNOPSIS:
+
+This HOWTO describes how to keep shell users out of the /glftpd directory on
+your site. In general, setting /glftpd to 750 will cause problems with logging
+into the site ("can't change directory to /site."), so here's the trick.
+
+Usually it is easier to have /glftpd (or whichever directory you installed
+glFTPd into) 777 and only give trustworthy people shell access to your site 
+box. You shouldn't do otherwise unless you really need to.
+
+
+There are two different methods you can use.
+
+For new sites, this is the best way to do this:
+Create /jail (or whatever you wanna name it), install glftpd in there (so it
+will be /jail/glftpd), and chmod 700 /jail. Make sure your set your rootpath
+in glftpd.conf to /jail/glftpd, and make sure you add -s/path/to/glstrings.bin
+to your glftpd options in inetd.conf or xinetd. This is it, you shouldn't need
+to do anything else.
+
+However, this might mess up custom scripts and symbolic links for sites
+already established, so the second method, described below, might be easier
+for those siteops.
+
+NOTES:
+
+The workaround described here has been tested on only one site and I have no
+intentions of developing it further. Make sure you understand how this works
+before using it on your site. Use it at your own risc. Don't blame me if
+anything goes wrong. I assume basic unix/linux knowledge here. If you don't
+know what UID/GID means or what chmod 750 does, better get someone to help
+you.
+
+
+DESCRIPTION:
+
+We'll assume your glFTPd is installed in /glftpd in this text. You can change
+this path in the shellscript below if needed. By default, /glftpd has a mode
+755 (rwxr-xr-x), which means everyone who has shell access on your site will
+be able to browse your site's content. 
+
+One easy solution to that, making it 750 (rwxr-x---), works as far as the 
+shell users are concerned... they can't "cd /glftpd" anymore due to lacking
+permissions. The problem however is that your users can't login to the site
+anymore, they'll get an error "User xxxxx: can't change directory to /site.".
+That's because glFTPd tries to chroot to /glftpd/site with the user's internal
+UID and GID (from /glftpd/etc/passwd and /glftpd/etc/group) and bang, that
+UID/GID doesn't have access to /glftpd...
+
+The solution to this problem is quite simple, though it might not be obvious
+for most siteops. Here we go:
+
+1. Create a new group on your box where every user with shell access is in
+   who should be allowed to cd into /glftpd. To do so, edit /etc/group on
+   your box and add a line like:
+   
+   user:x:8080:root,yourname,user1,user2,user3
+   
+   Remember the groupname ("user" in the example) and group ID (8080) for
+   the following steps.
+   
+2. Chown your /glftpd directory to root.<newgroup> :
+   
+   chown root.8080 /glftpd
+   
+3. Chmod /glftpd to the value you want, 750 might be a good choice:
+
+   chmod 750 /glftpd
+
+4. Shell users which were added to the new group must re-login before they
+   are able to access /glftpd. That's simply because most unix systems 
+   determine which groups you are in only once, at login time. Most
+   likely you at least will have to restart your sitebot from shell
+   because it crashes when it can't read /glftpd/ftp-data/logs/glftpd.log
+   anymore. A ".restart" in the bot's party line won't do, you have to
+   re-login to the shell and restart the bot.
+
+
+From now on, only shell users which are added to the special group you created
+can access /glftpd, as wanted. After the first three steps, currently noone 
+can login to your site, the next steps fix that:
+
+5. The idea is that you have to create a new group entry in /glftpd/etc/group 
+   as well, with the same name / group ID as the group you created on the 
+   system itself. In our example, if you add the following line to 
+   /glftpd/etc/group:
+
+   user:x:8080:yourname,lamer1,lamer2
+   
+   Then the users yourname, lamer1 and lamer2 will be able to log into the 
+   site again.    
+
+6. As you can guess, the deal now is to add every user on your site to that
+   new group in /glftpd/etc/group . That's quite a lot of work when done
+   manually, so here's a shellscript for that purpose. Copy & paste it
+   to a textfile "update.sh" on your box and "chmod +x update.sh" afterwards.
+   
+#!/bin/sh
+
+GLPATH=/glftpd
+GROUPID=8080
+GROUPNAME=user
+
+# ===========
+
+TEMPFILE=tmp.pw
+
+cd ${GLPATH}/etc
+
+egrep -v "${GROUPNAME}:x:${GROUPID}" group > ${TEMPFILE}
+echo ${GROUPNAME}:x:${GROUPID}:`cat passwd | cut -f 1 -d ':' | awk '{ printf $1 "," }'`dummy >> ${TEMPFILE}
+
+rm group
+mv ${TEMPFILE} group
+
+exit 0
+
+   Make sure to change GLPATH, GROUPID and GROUPNAME to the values you used
+   above (GLPATH is the directory where you installed glFTPd into).
+   
+   What does it do? It updates the "group" file in /glftpd/etc with an entry
+   like
+   
+   user:x:8080:user1,user2,user3,user4,.....
+   
+   where "user" is the group name you used, "8080" is the group id, and the
+   usernames (user1,user2,user3,...) are fetched from /glftpd/etc/passwd, 
+   which makes sure that all users on your site are added to that group
+   as needed.
+   
+   Before executing update.sh for the first time you should make a backup
+   of "passwd" and "group" in your /glftpd/etc directory, in case anything
+   goes wrong. Execute it manually a couple of times and check whether the
+   "group" file looks like expected and try whether you and your users
+   can login properly.
+   
+   Once you are sure everything is working fine, put update.sh into root's
+   crontab, for example:
+   
+-* * * * * /path/to/update.sh > /dev/null 2>&1
+
+   This will execute update.sh every minute. Be aware that after adding a
+   new user it may take up to a minute before the new user can login
+   properly.
+   
+
+After performing these steps, your /glftpd dir should be inaccessible for
+untrusted shell users and your ftp users should be able to login normally.
+Congratulations, that's it!
+
+
+-- Hoopy

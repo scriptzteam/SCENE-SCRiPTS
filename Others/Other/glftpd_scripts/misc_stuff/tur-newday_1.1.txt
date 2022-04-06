@@ -1,0 +1,9 @@
+NewDay (GL1&2)
+
+Description: Tur-NewDay. A script for dated sections to make either daily, weekly 
+or montly dirs. Can also close the "old" dated dir for uploading with another 
+argument. Announce to IRC included of course.
+
+Author:   Turranius
+Version:  1.1
+Added on: 18-May-2003

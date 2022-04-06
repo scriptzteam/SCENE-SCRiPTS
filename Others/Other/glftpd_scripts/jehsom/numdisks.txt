@@ -1,0 +1,49 @@
+#!/bin/bash
+# -------------------------------------------------------------------------
+# Jehsom's disks.sh v1.2 - Shows the nubmer of data files in a release dir.
+# Copyright (C) 2001 jehsom@jehsom.com
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# -------------------------------------------------------------------------
+#
+# Shows the # of datafiles in the current rls based on the contents
+#   of the .sfv or .diz, or 0 if a definitive number cannot be found.
+# This will not extract the diz from the zipfile, so it must be extracted.
+#
+#######################
+### Nothing to edit ###
+#######################
+
+diz=$(\ls | grep -i "\.diz$" | head -1)
+sfv=$(\ls | grep -i "\.sfv$" | head -1)
+
+disks=0
+if [ -f "$sfv" ]; then
+    # Count number of files listed in sfv
+    disks=$[$(grep -Ei "^[^;][^ ]* [0-9A-F]{8}\b" $sfv | wc -l)]
+elif [ -f "$diz" ]; then
+    # "xx/01" style
+    diskline="$(sed 's/^[   ]*//' $diz | tr -d '\r' | tr '\n' ' ')"
+        disks=$(echo "$diskline" |
+        sed -ne 's/^.*[^/.]\b[0-9Xxo]\{1,2\}[ ]\{0,1\}[/\\][ ]\{0,1\}[o]\{0,1\}\([0-9]\{1,2\}\)\b[^/.].*$/\1/
+            t cont; q; :cont p')
+    # "01 x 1.44" style
+    [ -z "$disks" ] && disks=$(echo "$diskline" |
+        sed -n 's/^.*\b\([0-9]\{1,3\}\)[ ]\{0,1\}[xX][ ]\{0,1\}[12]\.[48]\{2\}\b.*$/\1/
+            t cont; q; :cont p')
+fi
+# If $disks is not a number, $[ ] will evaluate to 0.
+echo "$[$disks]"
+exit 0

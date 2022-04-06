@@ -1,0 +1,11 @@
+Public Rescan (GL1&2)
+
+Description: Like eur0dance's Public Undupe, but for rescanning folders. Uses 
+Dark0n3s rescan, so thats a requirement before using this (zipscript-c). !rescan 
+works for everyone in your sitechan. Only 1 person can run it at a time. Works from
+/msg to the bot too incase some affils needs to do it in private. See 
+public_rescan.sh for documentation.
+
+Author:   Turranius
+Version:  1.1
+Added on: 23-Apr-2003

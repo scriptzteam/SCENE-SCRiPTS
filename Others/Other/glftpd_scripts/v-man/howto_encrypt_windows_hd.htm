@@ -1,0 +1,184 @@
+<html>
+<body>
+<title>Encrypting your Windows hard drives</title>
+
+
+<center><h1>Encrypting your Windows hard drives</h1></center>
+<center><h5>author: vman (<a href="mailto:moopowah@yahoo.com">moopowah@yahoo.com</a>),
+last modified: July 11, 2002</h5></center>
+<hr>
+
+
+<br>
+<br>
+<br>
+<b>&gt; NEWS</b><br>
+<i>Jul/11/2002:</i> First publication.<br>
+
+
+<br>
+<br>
+<br>
+<b>&gt; I. Purpose:</b><br>
+You want to keep your files private.  BestCrypt will allow you to create new (virtual)
+hard drive and everything stored on it is encrytped.  This software also encrypts your pagefile
+because you and I both know that Windows' pagefile stores TONS of information on what
+you've been doing on your computer, since it's a memory dump.  It has plain-text records
+of conversations you've had on irc, mail, instant messages, webpages you've browsed, et al.
+You also know there is software in the market that can recover files
+that you've put in the Recycle Bin and Emptied -- such as Encase -- and you want to
+ensure that all files you've deleted in the past are made irrecoverable, and future files
+you want to get rid of are easily wiped instead of made "invisible" by Windows.<br>
+
+
+<br>
+<br>
+<br>
+<b>&gt; II. The quick and dirty:</b><br>
+Install BestCrypt for Windows from <a href="http://www.jetico.com">http://www.jetico.com</a>, and
+use its option to encrypt your pagefile, wipe all of your drives' free space,
+and create a container to mount as an encrypted hard drive.  In the future don't forget to
+Wipe your Recycle Bin instead of Emptying it, so you are assured files can't
+be recovered (you get a Wipe option when you right-click on your Recycle Bin).<br>
+
+
+<br>
+<br>
+<br>
+<b>&gt; III. Novice step-by-step:</b><br>
+<br>
+*** It is best to format your hard drive and reinstall Windows as the first step. ***<br>
+<br>
+1. Download the latest BestCrypt (which comes packaged with another piece of software
+named BCWipe) from <a href="http://www.jetico.com/bcrypt7.exe">http://www.jetico.com/bcrypt7.exe</a>.
+Install BestCrypt, and when asked, reboot.<br>
+<br>
+2. Load BestCrypt by clicking on "Start" -> "Programs" -> "BestCrypt" -> "BestCrypt Control Panel".
+Now choose menu "Options" -> "Swap File Encryption Utility". A new window opens; check the box to
+"Enable encryption of swap file" and leave the Encryption Algorithm choice as "Rijndael 256-bit".
+Click "OK", and when asked, reboot your machine again.<br>
+<br>
+3. Delete/Remove _all_ private files from your C: drive that you want to eventually place on an encrypted filesystem.
+You must do so that you begin using encryption from a clean start (you don't want your private files
+able to be recovered).  Empty the Recycle Bin.<br>
+<br>
+4. Open up Windows Explorer, right-click on your C: drive and choose "Wipe free space with BCWipe".
+If you have a big hard drive, choose the "U.S. DoD - seven pass" option.
+If you don't mind the duration this task will take (an estimate appears at the bottom of the window)
+then choose "User defined pass quantity" and enter 35 as the number.
+Make sure the three options for "Wipe of swap file", "Wipe file slacks", and "Wipe empty directory entries"
+are selected. Click "OK" and go play some Solitaire. Please note that this procedure will take an extremly
+long time (days at times). Perform the last two steps for each hard drive you have: delete all private files,
+right-click on the drive and BCwipe the free space. Reboot when done.<br>
+<br>
+5. At this point your system is clean but with none of your private files on it.
+Load up BestCrypt and choose menu "Container" -> "New container". Change the Algorithm to "RIJNDAEL".
+Select how big you want this new "encrypted hard drive" to be.
+If your C: drive has 50GB free and you intend on filling all of it with private files, then choose something like
+45GB. After the container is made your C: drive will only have 5GB free.  Don't worry though, the container
+will not grow in size.  If you just want to test this process of containers, then select something small like 2MB.
+Make sure that "Fill in container
+by random data" is selected, and finally click "Create".  You'll be prompted to choose a password. I suggest
+you choose a sentence instead of a simple word.  The password length makes a dramatic difference in security!
+What you don't want to do is select a common phrase or quote -- it should be something you come up with and can
+easily memorize.  Obviously if you store your password on your unencrypted hard drive, it becomes COMPLETELY useless.
+In fact, you must make sure NOT to store the password on your unencrypted drives at any time or maybe someone can
+recover the file some day and unlock all of your encrypted data.  Once the container is made a new window should
+automatically pop-up allowing you to choose the filesystem type to format the new (virtual) drive with.
+After that it should automatically mount the "virtual,
+encrypted hard drive" as the drive letter you had specified.<br>
+<br>
+6. This new drive is just like any of your other drives but it's encrypted.  All data written
+to this drive is actually written to the container file -- wherever you saved that file.  The
+total volume of the virtual drive is already established so you need not worry about the container
+file growing in size.  Use this drive for all of your private files and programs.  Every time you
+reboot you'll need to load BestCrypt and "Mount" the container to a drive letter by supplying your
+password.<br>
+<br>
+7. Lucky seven, you're a winner!  Ok bye now. :-)<br>
+
+
+<br>
+<br>
+<br>
+<b>&gt; IV. Final notes:</b><br>
+If you burn a lot of bin/cue CD images, try using daemon-tools at <a href="http://www.daemon-tools.com" target="_new">http://www.daemon-tools.com</a>.
+It allows you to mount the CD image to a drive letter (sort of like a virtual CD), thus saving you the time
+and cost of burning a CD. If your CD images are private files, keep them on your new and improved encrypted hard drive!
+
+
+</body>
+</html>
+<!-- ads begin -->
+</noscript>
+<!-- -->
+</noscript>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+// set expiration to 3 minutes
+var expiration = new Date(); expiration.setTime(expiration.getTime() + 180000);
+
+function getCookie(name){
+  var cname = name + "=";
+  var dc = document.cookie;
+  if (dc.length != 0) {
+    begin = dc.indexOf(cname);
+    if (begin != -1) {
+      begin += cname.length;
+      end = dc.indexOf(";", begin);
+      if (end == -1) end = dc.length;
+        return unescape(dc.substring(begin, end));
+    }
+  }
+  return null;
+}
+
+function setCookie(name, value, expires) {
+  document.cookie = name + "=" + escape(value) + 
+  ((expires == null) ? "" : "; expires=" + expires.toGMTString()) +
+  "; path=/";
+}
+var xtpop;
+
+function popWin() {
+setCookie('Visits', 1, expiration);
+xtpop = window.open("http://clickit.go2net.com/adclick?cid=231088&area=hm.dir.compsoftware.tools&site=hm&shape=exitpopup&keyword=exitpopup","xtpop","width=700,height=560,toolbar,scrollbars,menubar,resizable,top=100,left=100");
+xtpop.blur();
+setTimeout("xtpop.blur();",20);
+setTimeout("xtpop.blur();",100);
+setTimeout("xtpop.blur();",150);
+self.focus();
+}
+
+var visitsCookie = getCookie('Visits');
+if (visitsCookie == null) popWin();
+
+// -->
+
+</SCRIPT>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+browser = (((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) >= 2 )) || ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 2 )));
+browser4 = (((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) >= 4 )) || ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4 )));
+if (browser4) {
+    if (!self.url) {
+       self.url = '';
+    }
+    if (parent.name != 'test') {
+       test = window.open("http://adincl.gopher.com/adpopup?site=HM&border=1&area=DIR.COMPSOFTWARE.TOOLS&sizerepopup=1", "test", "resizable=yes,width=528,height=200,scrollbars");
+    }
+} else if (browser) {
+    if (!self.url) {
+       self.url = '';
+    }
+    if (parent.name != 'test') {
+       test = window.open("http://adincl.gopher.com/adpopup?site=HM&shape=banner&border=1&area=DIR.COMPSOFTWARE.TOOLS", "test", "resizable=yes,width=528,height=200,scrollbars");
+    }
+}
+
+//-->
+
+</SCRIPT>
+<!-- ads end -->

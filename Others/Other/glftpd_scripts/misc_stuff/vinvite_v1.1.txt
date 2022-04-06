@@ -1,0 +1,42 @@
+############################################################################
+#                  Mr V SecureInvite (vInvite v1.1)                        #
+############################################################################
+# Whats that.. is an advanced invite control script that can be included   #
+# in the glftpd.                                                           #
+# Features:                                                                #
+# - 100% Realtime control of users-Channels                                #
+# - 100% Security into the siteChannels                                    #
+#         You know always who is user/pass etc.                            #
+# - 100% Jailed channel                                                    #
+# - glftpd site commands compatible                                        #
+############################################################################
+# Needs:                                                                   #
+#                                                                          #
+# TCL8.4 atleast                                                           #
+# TCL-SQL                                                                  #
+# SQL (MySQL, Postgres, Oracle..)                                          #
+#                                                                          #
+############################################################################
+# SQL Table:                                                               #
+#                                                                          #
+# create table inviteControl (                                             #
+#   inviteId INT UNSIGNED NULL AUTO_INCREMENT,                             #
+#   userName VARCHAR(50) NOT NULL,                                         #
+#   groupName VARCHAR(50) NOT NULL,                                        #
+#   userHost VARCHAR(255) NOT NULL,                                        #
+#   userNick VARCHAR(255) NOT NULL,                                        #
+#   staff VARCHAR(5) NOT NULL,                                             #
+#   chan VARCHAR(25) NOT NULL,                                             #
+#   PRIMARY KEY (inviteId)                                                 #
+# );                                                                       #
+#                                                                          #
+############################################################################
+# Installation:                                                            #
+# Configure all correctly..                                                #
+# Load this tcl on the eggdrop.                                            #
+# add the Site Command configurations to glftpd.conf (sInvite.tcl)         #
+# Configure the SQL STUFF (FORCED)                                         #
+# All should work correctly..                                              #
+############################################################################
+# Author:                                    MrV <vampirito@vampirito.com> #
+############################################################################

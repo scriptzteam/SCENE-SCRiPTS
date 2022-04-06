@@ -1,0 +1,19 @@
+## pDayUp.pl
+##
+## This little script logs dayup to glftpd.log file
+## so you can set your bot to output it. Its a good idea to run
+## this script everyday round midnight, so that your users can enjoy
+## watching stats everyday!
+##
+## Crontab example:
+## 30 23 * * * /glftpd/bin/pdayup.pl
+## 
+## Example bot edit:
+## Add DAYUP to msgtypes(DEFAULT)
+## Add set disable(DAYUP)           0
+## Add set variables(DAYUP)       "%psec %auser %amb %buser %bmb %cuser %cmb %duser %dmb %euser %emb"
+## Add set announce(DAYUP)        ":%sitename proudly presents:: %boldTodays top uploaders%bold(%psec)|%bold1.%bold %auser          %amb|%bold2.%bold %buser          %bmb|%bold3.%bold %cuser          %cmb|%bold4.%bold %duser          %dmb|%bold5.%bold %euser          %emb"
+##
+## Enjoy! 
+##
+## // pnG

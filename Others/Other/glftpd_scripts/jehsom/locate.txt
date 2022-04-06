@@ -1,0 +1,88 @@
+#!/bin/bash
+# -------------------------------------------------------------------------
+# Jehsom's SITE LOCATE script v1.22 - Updates/Searches a DB of files on site
+# Copyright (C) 2001 jehsom@jehsom.com
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# -------------------------------------------------------------------------
+#
+# This script should be run nightly in root's crontab, with the -u option.
+#   this will make sure that the list of files on your site is always up-
+#   to date. An example crontab entry would be:
+#
+#       15 04 * * *     /usr/sbin/chroot /glftpd /bin/locate -u
+#
+# This script should also be implemented as "SITE LOCATE" on your ftp site,
+#   by placing the following lines in your glftpd.conf:
+#   
+#       site_cmd LOCATE         EXEC    /bin/locate
+#       custom-locate           *
+#
+# The SITE LOCATE command must be followed by a regular expression to
+#   match. Filenames matching this regex will be shown.
+#
+# The name of the file to use as our locate database
+DBFILE="/etc/locate.db"
+# This is the location (relative to rootpath) that should appear
+#  as the root path when returning search results. Usually /site.
+SITEROOT="/site"
+# Extended Regular expression that matches all dirs to exclude.
+# THIS MUST BE AN EXTENDED REGULAR EXPRESSION, not wildcards, etc!
+EXCLUDE_REGEX="^/Requests_Filled/(Jehsom|Blah)"
+# Put "-type f" to index only files, "-type d" to index only dirs, or
+# comment out the line altogether to find dirs AND files.
+TYPE="-type f"
+
+
+#######################
+### Ignore the rest ###
+#######################
+
+[ -z "$1" ] && {
+    echo ',-----------------------------------='
+	echo '| Usage: SITE LOCATE <regexp>'
+	echo '|'
+	echo '| Shows a list of files containing the regular'
+	echo '| expression specified. If you do not know how to'
+    echo '| use regexes, start out by replacing "*" with ".*"'
+    echo '| and "?" with ".". Then go to a unix box and type'
+    echo '| "man 7 regex". Multiple search terms are ignored.'
+    echo '| Instead, use an "or" in your regex: "(term1|term2)"'
+    echo '| or match one after the other with: "(term1.*term2)"'
+	echo '`---------------------------------------------------='
+	exit 0
+}
+
+[ "$1" = "-u" ] && {
+	[ -w "$DBFILE" ] || { 
+        > "$DBFILE" 2>/dev/null || {
+            echo "Cannot write to $DBFILE."
+            exit 1
+        }
+    }
+	cd "$SITEROOT"
+	echo "Updating locate database . . ." 1>&2
+	find . $TYPE | cut -c2- | {
+        if [ -n "$EXCLUDE_REGEX" ]; then
+            grep -vE "$EXCLUDE_REGEX"
+        else
+            cat
+        fi
+    } > "$DBFILE"
+	exit 0
+}
+
+grep -Ei "$*" $DBFILE
+exit 0

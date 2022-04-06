@@ -1,0 +1,130 @@
+Music Video Sources 1.0 (October 4, 2008)
+-----------------------------------------
+
+Why a scene for the sources ?
+
+ - After years trying to stop the source re-compression in the mv scene,
+we have decided to start a new independent section in the scene, where what
+matters is the quality.
+
+ - In the past, source re-compression could have been justified due to
+slow connections and lower storage space, but not today.
+
+ - The main target of this section, is to release the sources with the highest as possible 
+quality while trying to release only the performances from the best artists.
+
+ - With these intentions, we intend to save storage space by releasing only the
+most important artists freeing the users from the pain of looking for sources outside the scene, 
+or asking the rippers in private.
+
+
+1.1 - Containers
+
+- Allowed containers are: MPEG/TS/VOB
+
+
+1.2 - Audio
+
+- No recompression for the audio tracks is allowed.
+- You can keep all the audio tracks of the source.
+- Or you can keep just the best track (rippers decission).
+- You can do audio replacement if you keep the original audio tracks too.
+- Audio must be synced.
+- Allowed audio formats: MP2/AC3/LPCM.
+
+
+1.3 - Video Formats
+
+- No recompression is allowed.
+- Video source must be DVB.
+- Allowed formats: MPEG-2/H264.
+
+
+1.4 - Quality Of The Source And Priority
+
+- This is the most complicated part so we'll give you just some tips:
+
++ Ripper can choose the best source for the rip, based on his experience.
++ In general, the higher the bitrate the better is the source.
++ If it possible your source should be fullres.
++ Source with widescreen AR is preferred.
++ Progressive source is preferred.
+
+- In case of dupes using different origins:
+
++ HD doesn't proper SD, but SD will be nuked if the HD version
+has already been pred before.
++ If you rel SD & HD from the same show, your SD rels
+will be nuked. You can only pre the HD version if it's
+broadcasted later than the SD.
+
++ A FEED won't proper an existing rel, but a normal rel will be
+nuked if the FEED has already been pred before.
++ If you pre normal & feeds rels from the same
+show, your normal rels will be nuked. You can only pre the
+FEED if it is broadcasted later than the lower quality stream.
+
++ In general: FEEDHD > HD > FEEDSD > SD
+
++ You can proper if your source image quality is really higher.
++ This is really subjective, so we can just propose some guidelines:
+
+· For SD, more than 4mbit of difference in bitrate.
+· For HD, more than 8mbit of difference in bitrate.
+
+
+2.1 - Directory & File Namig
+
+- For Directory:
+
+Artist-Title_(Event_Decription)-SOURCE-SD/HD/FEEDSD/FEEDHD-<LANG>-YEAR-GROUP
+
+- For Filenames:
+
++ Like the Directory, but lower case & with the allowed extensions (mpg, vob, ts).
+
+
+2.2 - Concerts
+
+- You can release as multiple tracks or as a single big track.
+- You can include little interviews.
+
+
+2.3 - NFO File
+
+- Must include:
+
++ Artist name & Title.
++ Video & Audio formats with bitrates (estimated).
++ Container Format (MPEG/TS/VOB).
++ Video resolution, FPS & AR.
++ TV Station name (or FEED).
++ Genre.
++ Air date (can be avoided if included in the title).
+
+- Optional:
+
++ Filesize.
++ Playtime.
++ Ripper's comments.
+
+
+3 - Dupes / Propers / Nukes
+
+- Check source origins dupes section (1.4)
+
+- Bad AR is proper nuke.
+
+- A little glitch won't be a nuke reason, but a lot of glitches then yes.
+
+- Native source is a reason to proper.
+
+- Improper naming could be a reason to nuke.
+
+- Any re-encoded crap is auto-nuked.
+
+- Out of sync audio is a reason to nuke.
+
+- Incomplete or missing audio/video is a reason to nuke.
+
+- Too much spam is a reason to nuke too.

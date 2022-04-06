@@ -1,0 +1,15 @@
+This script makes users (usually siteops and/or nukers) able to make an 
+"Approved_by_$nick"-dir in a release, from irc. You can edit approve.tcl to
+match some special flag the user must have to be able to use the script.
+
+SETUP:
+1. Edit approve.sh and approve.tcl to your liking.
+2. Put approve.sh in /glftpd/bin/, load approve.tcl into your eggdrop, rehash,
+   and you're all set
+
+Questions etc : msg ragu @EFnet
+
+---------------------------------------------------
+New fatures:
+-added support for dated dirs by QwErTy256, all info 
+ about this in .sh file :) 

@@ -1,0 +1,219 @@
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                           The Sports Release Council Presents                          บ
+บ                   The 2010 XviD Sports Releasing Standards [TXSRS10]                   บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+ 
+ 
+The Sports Release Council was formed to separate sports releases from the ruleless world
+of TV-XVID. This standard aims to improve the overall quality of our sports releases while
+retaining the compatibility we have enjoyed for so long. We hope to bring standardization
+to our scene and rid ourselves of some of the archaic quality-hampering restrictions that
+the sports scene has had to put up with based on the preferences/assumptions of nukers.
+
+Under exceptional circumstances, the council has the power to override a global nuke put
+in place by a nukenet. Such a circumstance would occur for example if a release is being
+contested within a nuke war. The release in question may be brought to the attention of
+the council who may then decide on the validity of the release. If the council does decide
+on the matter, that decision is final and should be treated as if it were written within
+the standard itself. If a council decision is made, the release shall be nuked or unnuked
+with "council.decision_reason" as the reason.
+
+
+  [ Sizing ]
+    - 17:00  -  23:29   : 186MiB
+    - 21:00  -  34:59   : 279MiB
+    - 29:00  -  46:59   : 373MiB
+    - 42:00  -  69:59   : 559MiB
+    - 59:00  -  95:59   : 746MiB
+    - 90:00  -  130:59  : 1119MiB
+    - 115:00 -  189:59  : 1493MiB
+ 
+    - For other runtimes, valid sizes are 93MiB, 139MiB, 2239MiB, 2986MiB, 3358MiB, and
+      4479MiB. Other sizes must have a video bitrate of 950-2000kbps.
+    - If the length of the release is nearing the recommended maximum length,
+      the ripper can opt to use the next recommended size in the interests of quality.
+    - CD sizes are long since obsolete and are forbidden.
+    - Splitting a release into multiple files is forbidden except for releases exceeding
+      4479MiB. These releases must be split into multiple files and packaged separately
+      within directories named DVD1, DVD2, etc. All disks except the last disk must use
+      the full 4479MiB disk capacity, however the last disk must conform to the previously
+      mentioned sizing regulations. 
+    - A release may be a maximum of 2MiB oversized.
+    - A release may be a maximum of 4MiB undersized when the target size is less than
+      559MiB, or a maximum of 8MiB when the target size is 559MiB or above.
+ 
+  [ Packaging and Naming ]
+    - All releases must use AVI as the container.
+    - Releases must be packaged within a RAR archive using M0 (store) compression.
+    - RAR archives must be split into 15 or 20MB parts (where 1MB is defined as
+      1,000,000 bytes). 50MB and 100MB parts are allowed when packaging files larger than
+      1119MiB. RAR sets may not be larger than 101 RARs when using old-style volume names.
+    - Inclusion of RAR recovery records is recommended.
+    - An SFV is required for each set of RAR files.
+    - All filenames must be unique to avoid dupes.
+    - An NFO file is required and should contain the following: 
+        - Release Name
+        - Group Name
+        - Release Date
+        - Competition
+        - Competitors
+        - Event Date
+        - Video Information (Codec, Bitrate, Resolution, etc)
+        - Audio Information (Codec, Bitrate, Channels, etc)
+    - Release directories should generally be named like the following example
+      in order to maintain consistency within the scene:
+        - League.YYYY.MM.DD.Event.EXTRA.TAGS.SOURCE.XviD-GRP
+        - Competition.YYYY-YY.Event.EXTRA.TAGS.SOURCE.XviD-GRP
+      Using just the year is only permitted if the event is once per year (e.g. a WWE
+	  PPV). In the case of leagues which have seasons that span multiple years, it is
+      permissible to tag the release with just the years of the season. Inclusion of MM
+      and DD is mandatory for all constantly running shows (e.g. WWE).
+      The following are some examples of correct directory names:
+        - EPL.2010.01.01.Manchester.United.vs.Arsenal.HDTV.XviD-GRP
+        - UEFA.Champions.League.2009-10.Round.2.First.Leg.Chelsea.vs.Liverpool.HDTV.XviD-GRP
+        - TNA.Impact.2010.03.02.HDTV.XviD-GRP
+        - WWE.WrestleMania.2010.PPV.HDTV.XviD-GRP
+    - Releases may not use tagging such as "COMPLETE.EVENT" based on network-specific
+      footage (e.g. pre-/post-game footage, half-time interviews, etc). Use internal.
+    - Releases may use the PREAIR tag if they are pred before the airdate in the country
+      of origin, but may not be nuked for missing it. Nukers should use discretion before
+      nuking a release that appears to have the wrong date as many taped shows are pred in
+      advance of airing in the country of their origin.
+    - Releases must contain a sample between 40-90 seconds long taken directly from
+      the complete release content. The sample must have a unique filename and must
+      be placed within the "Sample" directory.
+    - Using a renamed RAR as a Sample is forbidden.
+    - The following additional tags are considered valid: PROPER, REPACK, RERIP, REAL,
+      READNFO, INTERNAL, UNCUT, PPV, SUBBED, PREAIR, DIRFIX, LIVE.AUDIO.
+ 
+ 
+  [ Video ]
+    - Must be XviD.
+    - Encoding must be 2-pass. Bits must be correctly distributed across the entire
+      encode as determined by a stats file referencing the entire length. Encoding the
+      second pass using a guessed bitrate is forbidden.
+    - Target video bitrate must be a minimum of 950kbps. If for whatever reason this 
+      cannot be achieved then a valid reason why must be included in the NFO and
+      a source sample must be placed in the Sample directory for issues relating
+      to the source.
+    - The appropriate deinterlace and IVTC methods must be used when necessary.
+    - 50/60fps sources must be dropped to 25/30fps.
+    - NTSC/PAL material that has been broadcast in another region may be converted back
+      to the original frame rate if there is no quality loss suffered as a result (e.g.
+      a 60fps NTSC source of a video broadcast filmed at 50fps may be converted back to
+      25fps with a filter such as rePal). Use of blending is forbidden.
+    - Deinterlacers that produce bad quality results (e.g. FieldDeinterlace) are
+      banned. Filters such as Yadif or LeakKernelDeint are recommended.
+    - Resizers that produce bad quality results (e.g. BicubicResize) are banned.
+      A sharp resizer must be used (e.g. Lanczos/4, Spline36, etc).
+    - Group watermarks are banned.
+    - Any modification of the original content prior to or after encoding (with
+      the exception of removing commercials) is strictly forbidden.
+    - Quantization Matrix must be H.263 when the video bitrate is less than 1400. 
+      MPEG is recommended for higher bitrates. Custom Matrices are forbidden.
+    - VHQ mode must be 2 or higher.
+    - Motion Search Precision must be 6.
+    - Maximum I-frame interval must be 10 * FPS.
+    - BVOPs must be used.
+    - QPel is forbidden.
+    - GMC is forbidden.
+    - Packed Bitstream is forbidden.
+    - Pixel shape must be square.
+ 
+ 
+  [ Video Dimensions ]
+    - Width: 576 - 672 pixels for sources with an AR of 1.70-3.00  
+             512 - 672 pixels for sources with an AR of 1.00-1.69 
+    - Resolutions with a width of 672 must meet a minimum bitrate of 1200.
+    - Upscaling must be kept at a minimum for low resolution sources (typically 480i)
+      and is banned for all higher resolution sources.
+    - Height and Width must be MOD16.
+    - Black borders must be cropped to their maximum. In the event of changing aspect 
+      ratios, the cropping must be tailored towards the aspect ratio used by the
+      majority of scenes (e.g. pitch view in a football game) or to the widest frame
+      within the release.
+    - SD sources may be overcropped by a maximum of 2px. HD sources may be overcropped by
+      a maximum of 4px.
+    - The aspect ratio must be within 3% of the source aspect ratio.
+    
+ 
+  [ Audio ]
+    - Must be AC3 or VBR MP3.
+    - AC3 should be used at the ripper's discretion, and must provide a valid reason
+      for use within the NFO.
+    - AC3 must be the original stream obtained by demuxing the source. Modification
+      of the stream in any way is forbidden.
+    - MP3 must be LAME encoded VBR/ABR with a target of between 96kbps and 192kbps for 
+      stereo sources and between 64kbps and 128kbps for mono sources. "--alt-preset 128"
+      is recommended for most encodes. If the source bitrate is lower than 96kbps (stereo)
+      or 64kbps (mono), the target bitrate must be the highest possible bitrate and a
+      notice should be placed in the NFO file.
+    - Audio that is more than 100ms out of sync is considered technically flawed.
+    - Multi language audio tracks are forbidden.
+    - Encoding a stereo source to mono or a mono source to stereo is forbidden.
+    - Resampling audio is forbidden.
+
+
+  [ Source notes ]
+    - Source definitions are as follows:
+        - DSR      - Standard Definition stream that does not meet the PDTV criteria.
+        - PDTV     - Standard Definition stream with a resolution of 704/720x480/576
+                     and a video bitrate of >= 1.5mbps for MPEG4 or >= 3mbps for MPEG2.
+        - WS       - Standard Definition stream with an aspect ratio > 1.70.
+        - HDTV     - High Definition non-upscaled 720p/1080i/p stream.
+    - Non-HD and upscaled content that airs on an HD channel is considered PDTV/WS.PDTV.
+    - Releases that are of lower quality than an already available release are
+      considered dupes (e.g. PDTV dupes WS.PDTV, but HDTV does not).
+    - Live events may only use the PPV tag if they are from an uninterrupted (e.g.
+      commercial-free) source. If a previous release has pred from an interrupted source,
+      the previous release may not be nuked or propered unless it is tagged as PPV.
+    - If a live event is interrupted, the ripper must include the approximate total length
+      of the removed interruptions within the NFO.
+    - Releases that do not use the raw transport stream from the provider are considered
+      ANALOG and must not use the DSR, PDTV, or HDTV tags.
+    - Releases with a questionable source may be pre-nuked for up to 48 hours after pre
+      with the reason "source.sample.requested" if there is legitimate reason to do so
+      (e.g. suspicion of mislabelled source). The release group then has 48 hours to
+      provide a sample (at least 10 seconds in length) of the source before the release
+      becomes properable.
+    - Releases with non-English audio must be tagged with the language used.
+    - Releases can only dupe or proper releases of the same language (e.g. a DUTCH
+      release will not dupe an existing English release and cannot proper it).
+    - Releases with no commentary track must be tagged as LIVE.AUDIO and can only dupe or
+      proper other LIVE.AUDIO releases.
+
+
+  [ Propers ]
+    - Propers are permitted in the case of previous technical flaws.
+    - Propers must state the proper reason and which release is being propered within the 
+      release NFO.
+    - Propers must provide proof of technical flaws within the Sample directory if the
+      release being propered has not already been nuked.
+    - Propers are not allowed after a repack has been released; however flawed repacks may
+      be propered.
+    - Propers based on audio codec are forbidden.
+    - Propers based on ripper decisions (e.g removal of pre-/post-event footage,
+      network-specific footage, etc) are forbidden. Use internal.
+    - Propers based on source parameters (e.g. number of commercials, frame rate, audio
+      channels or bitrate, etc) are forbidden.
+ 
+
+  [ Internals ]
+    - All internals must conform to TXSRS10 rules, with the exception of minor known 
+      technical issues and non-conforming sizes or audio codecs. Using the INTERNAL tag to
+      try and protect a severely flawed release from nukes is forbidden.
+    - The following audio codecs may be used for internals: AC3, MP2, MP3. Releases using
+      other codecs are not protected from nukes by the INTERNAL tag.     
+    - Using INTERNAL.DIRFIX as a cheap attempt at avoiding a nuke is forbidden. If the
+      release is technically flawed, it is still deemed nukable both before and after an
+      attempted INTERNAL.DIRFIX and the DIRFIX shall be nuked for fix.for.nuke.
+ 
+ 
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                        TXSRS10 v1 signed by the following groups                       บ
+บ                   ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ                   บ
+บ                              433 aAF CiRCLE DVSKY ESPN FQM                             บ
+บ                             GORE KAFFEREP KYR OTV T0nK4 W4F                            บ
+บ                   ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ                   บ
+บ          These rules are in effect as of 2010-03-15 00:00:00 GMT (1268611200)          บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ

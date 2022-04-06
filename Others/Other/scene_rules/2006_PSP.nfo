@@ -1,0 +1,157 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                            ³
+³                The of PSP Movie Releasing Groups Presents                  ³
+³                                                                            ³
+³                  The PSP Movie Releasing Standards 2006                    ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                         ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                          ³
+³                                                                            ³
+³  SOURCE:                                                                   ³
+³                                                                            ³
+³ - DVDR SVCD VCD and XviD source allowed.                                   ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  VIDEO:                                                                    ³
+³                                                                            ³
+³ - Averaged Variable Bitrate (A-VBR) technique must be used.                ³
+³ - At least 2pass rips are required.                                        ³
+³ - 97-110 Min/CARD Minimum bitrate of 438kb                                 ³
+³ - 00-97  Min/CARD Minimum bitrate of 512kb                                 ³
+³ - Releases must be maximum 458mb per disc to fit in a 512mb CARD.          ³
+³ - Minimum 110 min/card.                                                    ³
+³   i.e. 2 Card movie minimum 110 x (2-1) = 110 minutes                      ³
+³   i.e. 3 Card movie minimum 110 x (3-1) = 220 minutes                      ³
+³ - .THM must be included.                                                   ³
+³ - Cropping is required to the maximum possible.                            ³
+³ - Movie encode must be within 5% of original aspect ratio.                 ³
+³ - Burned subtitles are ONLY allowed for non english releases.              ³
+³                                                                            ³
+³                                                                            ³
+³ 112 Min movie On two Cards                                                 ³
+³ 112/2 = 56 Min on each card = Minimum bitrate of 512kb                     ³
+³                                                                            ³
+³ 196 Min movie on two cards                                                 ³
+³ 196/2 = 98 min on each card = Minimum bitrate of 438kb                     ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  TV RULES:                                                                 ³
+³                                                                            ³
+³ - 1 Card = 458mb                                                           ³
+³ - Episodes shall not overlap on Cards (i.e. 2eps/Card, 4eps/Card           ³
+³   is allowed, 1.5eps/Card is NOT).                                         ³
+³ - Episodes are not subject to the same scaling rules as cinematic          ³
+³   features and must obey forementioned rule.                               ³
+³ - 5x 15-20min = 1Card, Releases shall not be over  91mb.                   ³
+³ - 4x 20-23min = 1Card, Releases shall not be over 114mb.                   ³
+³ - 3x 23-35min = 1Card, Releases shall not be over 152mb.                   ³
+³ - 2x 35-50min = 1Card, Releases shall not be over 229mb.                   ³
+³ - Episodes longer than 50 minutes, will follow the length rules            ³
+³   of cinematic.                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³   NOTE: Runtimes not mentioned above should fit on 1 Card i.e. 6x76mb,     ³
+³   7x65mb etc.                                                              ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  FRAMERATE:                                                                ³
+³                                                                            ³
+³ - MUST be closest possible to the original source framerate                ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  AUDIO:                                                                    ³
+³                                                                            ³
+³ - CBR technique must be used.                                              ³
+³ - Minimum 128kbit @ 24.0khz                                                ³
+³ - MUST be STEREO for STEREO sources, MONO for MONO sources                 ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  SAMPLE:                                                                   ³
+³                                                                            ³
+³ - REQUIRED                                                                 ³
+³ - 1 minute in length                                                       ³
+³ - Must have .THM.                                                          ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  PACKAGING:                                                                ³
+³                                                                            ³
+³ - All releases must be MP4/THM.                                            ³
+³ - Must be packed with RAR into 15mb volumes ,compression is NOT ALLOWED    ³
+³ - Recovery record recommended.                                             ³
+³ - Must have SFV                                                            ³
+³ - Must have NFO                                                            ³
+³ - NFO MUST INCLUDE:                                                        ³
+³        Group name                                                          ³
+³        Title                                                               ³
+³        DVD release date                                                    ³
+³        Source release                                                      ³
+³        Audio bitrate                                                       ³
+³        Framesize/aspect ratio                                              ³
+³        Video bitrate                                                       ³
+³        Source used (Xvid/DVDR) and (TC/TS/DVD/DVDSCR/HDTV/PDTV)            ³
+³        Movie runtime/length                                                ³
+³        IMDB/adultdvdempire link                                            ³
+³        Number of rars per CARD (eg. 31x15MB)                               ³
+³ - Releases that are more than 1 CARD will follow these specs:              ³
+³ - MUST be named CARD1, CARD2 and so on.                                    ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  DIRECTORY NAMING:                                                         ³
+³                                                                            ³
+³ - Directory names shall NOT exceed 64 characters.                          ³
+³ - Including production year is at groups discretion, but encouraged.       ³
+³ - Indicate source quality in dirname (TS/TC/DVDRiP/DVDSCR)                 ³
+³ - Acceptable characters in naming a directory include (NO spaces or        ³
+³   double dots - single dots or underscores ONLY):                          ³
+³                                                                            ³
+³                       ABCDEFGHIJKLMNOPQRSTUVWXYZ                           ³
+³                       abcdefghijklmnopqrstuvwxyz                           ³
+³                       0123456789 . -_                                      ³
+³                                                                            ³
+³ - All Release directories, shall be named according to :                   ³
+³   Movie.Name.Year.Source.Codec.PSP-Group,                                  ³
+³   (i.e. Seven.1995.DVDRiP.MP4.PSP-General)                                 ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  PROPERS:                                                                  ³
+³                                                                            ³
+³ - No previous releases may be propered based on quality. That means no     ³
+³   propers based on what source used, xvid/dvdr                             ³
+³   For quality reasons you can use INTERNAL.                                ³
+³ - Propers will be allowed in the case of technical problems, bad aspect    ³
+³   ratio, sync problems, skipping/freezing, interlaced, bad ivtc, etc       ³
+³ - Sample of the propered release should be included for proof.             ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                       ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³
+³                                                                            ³
+³                                                                            ³
+³ - Group Watermarks WILL NOT BE ALLOWED IN ANY CASE.                        ³
+³ - NO intros, outros, betweenos, or any other form of defacement of the     ³
+³    movie is accepted.                                                      ³
+³                                                                            ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        ÀÄÄÄÄÄÄÄÄ[ GROUPS ]ÄÄÄÄÄÄÄÄÙ                        ³
+³                                                                            ³
+³                     PSP 2006 revision was organized by:                    ³
+³                                                                            ³
+³             KMS - OMG - CI - CcR - EwDp - UKPsP - PSPTV - FUCT             ³
+³                                                                            ³
+³                                                                            ³
+³              Respects to the original PSP council organizers:              ³
+³                                                                            ³
+³                        MTG - MmM - SbN - iRGUN - PmG                       ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

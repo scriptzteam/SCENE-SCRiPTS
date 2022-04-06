@@ -1,0 +1,26 @@
+                                          logtrimmer_pack_v1.0 by eur0dance
+                                          =================================
+Introduction
+~~~~~~~~~~~~
+This is my public release of the logtrimmer script. I just documented what I use myself on sites with a small
+root partition which can get filled quickly by glftpd logs and released it as v1.0. The pack consists of two 
+"modules": 
+ 1. logtrimmer.sh  --> takes care of glftpd & zipscript logs, apart from "dirlog and "dupelog"
+ 2. dirlogtrimmer --> A binary which takes care of the dirlog by rotating it, in order words it
+                      keeps it limited by a defined file size by removing the oldest entries.
+
+Installation
+~~~~~~~~~~~~
+The whole documentation for "logtrimmer.sh" inside the file itself. Just copy it to your glftpd bin dir
+and read carefully the comments in it.
+In order to install "dirlogtrimmer" do:
+ 1. "make"
+ 2. If your glftpd bin dir is a standard one, do "make install", if not just copy the "dirlogtrimmer"
+    binary to your glftpd bin dir.
+ 3. In order to use it, crontab it like this: 30 7 * * * /usr/sbin/chroot /glftpd /bin/dirlogtrimmer 5000
+    Where "30 7" means it will run at 7:30 each day and "5000" is the number of records (entries) to leave
+   (if there are more records than this, the oldest will be deleted in order to make it 5000 again).
+
+Enjoy!
+---------------------------------------------------------------------------------------------------------------------
+                                                     by eur0dance from EFNet

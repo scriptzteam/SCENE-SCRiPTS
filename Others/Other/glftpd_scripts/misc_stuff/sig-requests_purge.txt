@@ -1,0 +1,4 @@
+###############################################################################
+
+crontab the purge script to run twice a day
+00 20,8 * * * /glftpd/bin/sig-requests_purge.sh >/dev/null 2>&1

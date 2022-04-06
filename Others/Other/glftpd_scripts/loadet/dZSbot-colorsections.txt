@@ -1,0 +1,31 @@
+#################################################################################
+# CONVERT BASIC COOKIES TO DATA                                                 #
+#################################################################################
+proc basicreplace {strin section} {
+ global sitename
+
+ set output [replacevar $strin "%sitename" $sitename]
+ set output [replacevar $output "%bold" "\002"]
+ set output [replacevar $output "%uline" "\037"]
+ set output [replacevar $output "%section" $section]
+
+ return "$output"
+}
+
+#Change it to something like
+
+proc basicreplace {strin section} {
+global sitename
+set output [replacevar "$strin" "%sitename" "$sitename"]
+set output [replacevar "$output" "%bold" "\002"]
+set output [replacevar "$output" "%uline" "\037"]
+if { [string match $section "APPS"] } { set section \0034$section\003 }
+if { [string match $section "GAMES"] } { set section \0036$section\003 }
+if { [string match $section "MV"] } { set section \0033$section\003 }
+if { [string match $section "VCD"] } { set section \0037$section\003 }
+if { [string match $section "SVCD"] } { set section \0031$section\003 }
+if { [string match $section "DOX"] } { set section \00314$section\003 }
+set output [replacevar "$output" "%section" "$section"]
+return "$output"
+}
+

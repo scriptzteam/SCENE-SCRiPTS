@@ -1,0 +1,229 @@
+                                                          ÜÜßßßÜ    ÛßßÛ
+    ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ ÛÛÛÛÛŞÛÛÛÛÛ                     ÜÜÜÜÜÛ      Û  Û   İ
+    Û             Û Û   ŞÛİ   Û      ÜÜÜÜÜÜÜÜÜÜÜ ÜÛßß   Şİ  Û   ŞİÛ  Üß
+    Û             Û Û   ŞÛİ   Û      Û    Û    ÛÛ        İ Ş ÛÜÜÜÛ  Şİ   Rules
+    ßÛÛÛÛ     ÛÛÛÛß Û    Û    Û ÛßßÛ  Û       Û Û  ÜÛ   Û  Û ÜÜÜÜÛ ŞİÜÜÜ
+        Û     Û     Ûİ   Û   ŞÛ ÛÜÜÛ   Û     Û   ßßÛ   Û İ ŞÛß  Şİ ÛÜÛ  Û
+        Û     Û     ŞÛ       Ûİ       Û       Û ÜÛß  ÜÛÜÜÛÜ ß    Û      ßßİ
+        Û     Û      Şİ     Şİ       Û    Û    Ûß          Û  Û  ÛßßÛ  ÜÜÜİ
+        ßÛÛÛÛÛß       ßÛÛÛÛÛß        ßßßßßßßßßßÛÜÜÜÜÜ      Û     Û Şİ Şİ
+                                                    ßßßßÜÜÜßÜÜÜßß  Û  Û
+                               prehun 2009                          ßß
+     ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+     ³                                                                     ³
+     ³Mivel hazankban elegge csekely a HD sugarzas es ennek kovetkezteben  ³
+     ³a felvetel is, igy nem minden pontra ter ki a szabalyzat.            ³
+     ³                                                                     ³
+     ³ Epizod meretezesek: (23.976fps)                                     ³
+     ³  (Sajat kodolas)                                                    ³
+     ³ - 12:15 - 16:30 = 373MB                                             ³
+     ³ - 16:30 - 24:45 = 559MB                                             ³
+     ³ - 24:45 - 33:00 = 746MB                                             ³
+     ³ - 33:31 - 49:00 = 1119MB                                            ³
+     ³ - 49:45 - 66:15 = 1493MB                                            ³
+     ³ - 66:15 - 99:30 = 2239MB                                            ³
+     ³Ha a video nem sajat kodolasu a meret a kovetkezo keppen valtozik:   ³
+     ³HDTV DUBBED eseteben: 150mb-al lehet kevesebb a megadott meretnel.   ³
+     ³BluRay DUBBED eseteben: 250mb-al lehet kevesebb a megadott meretnel. ³
+     ³                                                                     ³
+     ³ - Egyeb hosszusagu videokat meretezzuk ugy, hogy a minimum          ³
+     ³   2700kbit/s-et elerje vagy tobbszorose legyen 559 vagy 746MB-nak!  ³
+     ³ - A releasek a megadott meretektol 5MB-al lefele es 0.5MB-al felfele³
+     ³   terhetnek el!                                                     ³
+     ³ - Ha a forras nem sajat kodolasu DUBBED tag hasznalata kotelezo.    ³
+     ³   A kulonbozo hangok megfelelo jelolese az ELNEVEZESEK reszben      ³
+     ³   talalhato.                                                        ³
+     ³ - A BluRayrol rippelt :                                             ³
+     ³                                                                     ³
+     ³    720p  maximum merete 1/2 DVD5 = 2239MB                          ³
+     ³    1080p maximum merete   DVD5   = 4479MB                          ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³AUDiO                                                                ³
+     ÃÄÄÄÄÄÙ                                                               ³
+     ³ - Ketnyelvu releasek csak BluRay forrasra engedettek.               ³
+     ³   (mkv-ba muxolas engedelyezett)                                    ³
+     ³ - A HDTV csak 1 hangsavot tartalmazhat, masodik hangsav muxolasa    ³
+     ³   mkv-ba tiltott! (Mellekelni a kulfoldi hangsavot lehet kulon      ³
+     ³   mappaba de .mkvba muxolva tilos)                                  ³
+     ³ - Azon (sajat) HD felvetelek eseten amelyek mpa hangsavval rendel-  ³
+     ³   keznek, kodolhatoak azonos bitrataval ac3-ba.                     ³
+     ³ - Azon hangsavok amelyek analog forrasrol szarmaznak                ³
+     ³   (atestek digital->analog->digital atalakitason), ac3-ba kodol-    ³
+     ³   andok, maximum 192 kbps bitsegesseggel.                           ³
+     ³ - Audio downsample TILTOTT!                                         ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³ViDEO                                                                ³
+     ÃÄÄÄÄÄÙ                                                               ³
+     ³ - Minimum febontas: 1280x720. Ezen valtoztatni tilos.               ³
+     ³ - Valtottsoros HD forras eseteben DEINTERLANCER hasznalata kotelezo.³
+     ³ - 1080i forrasokat croppolni es atmeretezni kell. Elfogadott        ³
+     ³  "Resize" metodusok: Lanczos/Lanczos4, Spline36 es Blackman.        ³
+     ³   BicubicResize tiltott.                                            ³
+     ³ - Az elfogadott fps: 25.000 es 23.976.                              ³
+     ³ - FieldDeinterlace hasznalata tiltott.                              ³
+     ³ - Reklamok kivagasa kotelezo. "Kovetkezo resz tartalmabol" megtarta-³
+     ³   sa a ripper belatasa szerint.                                     ³
+     ³ - BluRay eseteben is kotelezo megtartani az eredeti felbontast      ³
+     ³   (Pl: 1280x720,1920x1080),                                         ³
+     ³   tovabba kotelezo megtartani a forras eredeti fps-et BluRay        ³
+     ³   eseteben.                                                         ³
+     ³ - HDTV forrasokat lehet kodolni 25 fps-re.                          ³
+     ³ - MPEG2 forrasoknal ColorMatrix hansznalata kotelezo, a helyes      ³
+     ³   beallitasokkal.                                                   ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ
+     ³                                                                     ³
+     ³Kodek/Kontener                                                       ³
+     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                                      ³
+     ³ - Elfogadott encoder: x264.                                         ³
+     ³ - Matroska < .mkv > kontener az elfogadot.                          ³
+     ³ - Custom Matrix engedelyezett.                                      ³
+     ³ - 2 pass-os kodolas kotelezo.                                       ³
+     ³ - deblock hasznalata nem kotelezo csak ha szuksegesnek erzed        ³
+     ³ - A minimum beallitasi parameterek: --me uhm, --subme 6 vagy 7,     ³
+     ³   --ref 4, --keyint(PAL=250,NTSC300),                               ³
+     ³   --min-keyint(PAL=25,NTSC=30), --trellis(1 vagy magasabb),         ³
+     ³   --ref(3 vagy magasabb), p8x8,b8x8,i4x4,i8x8,                      ³
+     ³   --bframes(3 vagy magasabb), --b-psyramid, --bime                  ³
+     ³ - Tovabbi beallitasok HDTV 720p-hez:                                ³
+     ³   x264.exe --pass1 --bitrate #### --stats "series.stats"            ³
+     ³   --threads auto --keyint 240 --min keyint 24                       ³
+     ³   --bframes 3  --b-pyramid --mi dia --subme 1 --partitiions none    ³
+     ³   --progress --no-psnr --no-ssim --output NUL                       ³
+     ³   "series.avs"                                                      ³
+     ³                                                                     ³
+     ³   x264.exe --pass2 --bitrate #### --stats "series.stats"            ³
+     ³   --threads auto --keyint 240 --min keyint 24                       ³
+     ³   --ref 3 --bframes 3  --b-pyramid --bime --weight                  ³
+     ³   --subme 6 p8x8,b8x8,i4x4,i8x8, --progress --no-psnr               ³
+     ³   --no-ssim --output "series.mkv" "series.avs"                      ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³FELBONTAS                                                            ³
+     ÃÄÄÄÄÄÄÄÄÄÙ                                                           ³
+     ³ - 1280x720                                                          ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³NFO                                                                  ³
+     ÃÄÄÄÙÿÿÿÿÿÿÿÿÿÿÿ                                                      ³
+     ³ - Tartalmaznia kell:                                                ³
+     ³    minden hangsavot, bitsebesseggel es forras megejelolessel       ³
+     ³    video felbontasat, bitsuruseget, forrasat, fps-t                ³
+     ³    felirat savokat                                                 ³
+     ³    sorozat hosszat                                                 ³
+     ³    release meretet                                                 ³
+     ³    ha elerheto, air date-t (hazait)                                ³
+     ³    release teljes nevet                                            ³
+     ³    release datumot                                                 ³
+     ³    imDB / TvRage / port.hu link kotelezo                           ³
+     ³    internal / proper / repack eseteen indoklast                    ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³RAR / SFV                                                            ³
+     ÃÄÄÄÄÄÄÄÄÄÙ                                                           ³
+     ³ - Minden release-t csomagolni kell Store/raktaroz modban.           ³
+     ³   Tomorites tilos! Elfogadott rar meretek: 50 000 000 byte, illetve ³
+     ³   100,000,000 byte, ha a release merete nagyobb mint 2200MB.        ³
+     ³ - Encrypt vagy jelszavas vedettseg hasznalata tilos.                ³
+     ³ - Csak old style volume names (regi stilusu kotetnevek) elfogadott! ³
+     ³ - Az sfv-nek tartalmaznia kell az osszes RAR fajlt.                 ³
+     ³   Nfot, Sample-t nem!                                               ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³SAMPLE                                                               ³
+     ÃÄÄÄÄÄÄÙ                                                              ³
+     ³ - Kulon mappaban, "Sample" konyvtarnevvel. Egyeb elnevezes tiltott. ³
+     ³ - Sample fajl merete nem haladhatja meg az 50MB-ot vagy az 1 percet ³
+     ³   720p eseteben. 1080p  eseteben 100MB a legfelso hatar.            ³
+     ³ - A sample fajlnak tartalmaznia kell a sample szot az eredeti fajl- ³
+     ³   strukturan kivul. Minta, izelito vagy egyeb otletes megoldas nem! ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³MAPPA ELNEVEZES                                                      ³
+     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                                     ³
+     ³ - Itthoni HD adorol vett HD anyagnak kulon tagje nincs,             ³
+     ³   NFO-ban jelolendo                                                 ³
+     ³   PL.: Tuzvonalban.S04E01.HUN.720p.HDTV.x264-GROUP|                 ³
+     ³                                                                     ³
+     ³ - Sajat kodolas eseten:                                             ³
+     ³    TV-bol felvett hang jelolese "LD" (line dub) tag-el kotelezo.   ³
+     ³     Pl.: Sorozat.S22E58.HUN.LD.720p.HDTV/BluRay.x264-GROUP          ³
+     ³                                                                     ³
+     ³    DVDrol szarmazo hang eseteben nincs jeloles.                    ³
+     ³     Pl.: Sorozat.S22E58.HUN.720p.HDTV/BluRay.x264-GROUP             ³
+     ³                                                                     ³
+     ³    Hazai BluRay megjelenese eseten RETAiL tag hasznalata Kotelezo. ³
+     ³     Pl.: Sorozat.S22E58.RETAiL.HUN.720p.HDTV/BluRay.x264-GROUP      ³
+     ³                                                                     ³
+     ³ - Kulfoldi forras eseteben:                                         ³
+     ³    Minden esetben kotelezo hasznalni a DUBBED taget.               ³
+     ³    TVbol felvett hang eseteben LD (line dub)                       ³
+     ³     DUBBED jelolese kotelezo.                                       ³
+     ³     Pl.: Sorozat.S22E58.HUN.LD.DUBBED.720p.HDTV/BluRay.x264-GROUP   ³
+     ³                                                                     ³
+     ³    DVDrol szarmazo hang eseteben siman DUBBED.                     ³
+     ³     Pl.: Sorozat.S22E58.HUN.DUBBED.720p.HDTV/BluRay.x264-GROUP      ³
+     ³                                                                     ³
+     ³    Hazai BluRay megjelenese eseten RETAiL DUBBED.                  ³
+     ³     Pl.: Sorozat.S22E58.HUN.RETAiL.DUBBED.720p.BluRay.x264-GROUP    ³
+     ³                                                                     ³
+     ³                                                                     ³
+     ³ - Az epizodszamozas SxxExx egyeb megoldas nem megengedett!          ³
+     ³ - Az epizodcim opcionalisan jelolheto az epizod es a forras kozott. ³
+     ³ - Nem epizodikus releaseknel datum tag-et kell hasznalni            ³
+     ³   (Sportmusorok, talkshowk).   Formatuma: YYYY.MM.DD                ³
+     ³ - Az ettol eltero szamozasok                                        ³
+     ³   pl. S00.E00, 0x00, DD.MM.YY vagy MM.DD.YY tiltottak.              ³
+     ³ - Olyan sorozatoknal amikbol korabban mar futott ilyen neven        ³
+     ³   sorozat, evszammal jelolni kell. pl. BSG.2003                     ³
+     ³ - "Mini" sorozatok a jelolesi modja:                                ³
+     ³   TV.Show.Part1.HUN.LD.(DUBBED).720p.HDTV/BluRay.x264-GROUP         ³
+     ³   TV.Show.E01.HUN.LD.(DUBBED).720p.HDTV/BluRay.x264-GROUP           ³
+     ³ - Tilos feltuntetni a DIR-be a hangsav tipusat es savjat (AC3.2.0)  ³
+     ³ - PROPER.READ.NFO es INTERNAL.PROPER tag tiltott                    ³
+     ³ - Engedelyezett tagek: HUN, Hungarian, RETAIL, PROPER, REPACK,      ³
+     ³   RERIP, REAL, UNCUT, DUBBED, LD, INTERNAL, SUBBED, DIRFIX,         ³
+     ³   SAMPLEFIX, NFOFIX vagy READ.NFO                                   ³
+     ³ - Az INTERNAL tag eseten indokolni kell hasznalatanak okat!         ³
+     ³ - Engedelyezett karakterek:                                         ³
+     ³                                                                     ³
+     ³   ABCDEFGHIJKLMNOPQRSTUVWXYZ                                        ³
+     ³   abcdefghijklmnopqrstuvwxyz                                        ³
+     ³   0123456789._-                                                     ³
+     ³                                                                     ³
+     ³ - Duplapont (..) nem megengedett                                    ³
+     ³ - A Sample, NFO, SFV es a RAR fajlnevek kisbetusek kell legyenek.   ³
+     ³ - A rarokon belul talalhato MKV fajl tartalmazhat nagybetuket.      ³
+     ³                                                                     ³
+     ÆÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄµ 
+     ³                                                                     ³
+     ³PROPER / REPACK                                                      ³
+     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ                                                     ³
+     ³ - Minden proper es repack releasenek tartalmaznia kell az           ³
+     ³   NFO-ban az elozo release hibajat, ahol szukseges timecode         ³
+     ³   megjelolesevel.                                                   ³
+     ³ - Hibak properelheto egy release:                                   ³
+     ³    200ms-nel tobb hangcsuszas.                                     ³
+     ³    hangsav kihagyas, erthetetlen parbeszedek                       ³
+     ³    hibas normalizalas, tulvezerelt hangsav, tul halk hangsav       ³
+     ³    Hibas cropolas, pixelhalmaz, zaj a kep szelein                  ³
+     ³    Hianyzik az adasbol                                             ³
+     ³    Termeszetes adashibak miatt, hullamzo kep, dropframe, glitch    ³
+     ³    Ha 2sec vagy annal tobb reklam marad a releaseben               ³
+     ³    Ha tulmeretezett a release.                                     ³
+     ³                                                                     ³
+     ÀÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÙ
+       ³             Akik elfogadtak a szabalyzatot:                     ³
+       ³                                                                 ³
+       ³ TvTiME, PRECOGNiTiON, TRiNiTY                                   ³
+       ³                                                                 ³
+       ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

@@ -1,0 +1,11 @@
+DisableUser (GL1&2)
+
+Description: This is a rewrite of my ooold enable/disable script. It allows you to 
+deny a user access to logon to your site from irc, shell or inside glftpd, without 
+the risk of him being purged (which he can be if he's delled). You can then allow 
+the user login when you wish as well as print a list of all disabled users.
+From a users perspective, it will seem as the ftp is shut down.
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Apr-2003

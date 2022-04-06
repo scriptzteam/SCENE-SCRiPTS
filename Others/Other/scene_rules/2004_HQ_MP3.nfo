@@ -1,0 +1,76 @@
+                          ___         ___
+                        __)  |_____ __)  |_____           .
+                        |_   |    /__    |    /__     . ..:.. .
+           _ _____ _  _ _//  _     _|_   |     _|         :
+       : ::::::::::::: )|    |    \\_//  |    \\_ _  _ _____ _     __
+                       //____|      |____|      |(        .         .|
+                    +--------|______\\--|_______\\        :         _|
+          ___  y yyy  ___    .    ____ | ... ___ | pO/iMP____      \\_
+        __) _|_____ __) _|_____ __) _/____ __)  |_____ __) _/____   .|
+        |_ _____  /__   \     /__  _|    /__    |    /__  _|    /__ :|
+        _// |  /   _|_  |      _|_ |      _|_   /     _|_ |      _| :|
+       )|   | /   \\_// |     \\_//|     \\_//  |    \\_//|     \\_ :|
+       //___|/      |___|       |__|       |____|      |__|       |(:|
+    +-------|_______\\--|_______\\-|_______\\---|______\\-|_______\\-+
+        … H Q S C E N E …    ._        . ....::: .        .          |
+                _ _____ _  _ _//       | ::::::: |        :          |
+                             |:.       | ::::::: |        :        .:|
+                             +---------| ::::::: |-------------------+
+                                       +---------+        :
+                                                          .
+------------------------------------------------------------------------------
+
+           those signed herein propose that a quality standard of
+
+                            --alt-preset standard
+
+using the currently recommended lame compile (by developers/hydrogenaudio.org)
+become the new high-quality  standard of the  mp3 scene.  the benefits of  vbr
+over cbr regarding  the ratio of quality  to size are now  abundant using this
+compile.  this benefits both  the end user  and  the siteop.  since it  is now
+commonly known that vbr far outweighs cbr regarding disk usage, bandwidth, and
+quality, vbr uses a sites resources to its fullest potential. the end user who
+uses a portable device or a personal  computer also benefits  from having  the
+smallest possible file size (given the sample complexity) at the highest 
+possible quality.  the only true concern regarding  vbr  was the  lack of 
+zipscripts  that support it, but this is no longer  the case since  zip scripts 
+have been created that fully support vbr.  note that  vbr is _STILL_  a .mp3 
+file, it just uses different settings than the previous standard.
+
+this current recommended compile of lame can be obtained at the following url:
+
+    * http://rarewares.hydrogenaudio.org/files/lame-3.90.3modified.zip
+      (this zip includes both lame.exe and lame_enc.dll)
+
+while eac remains  the recommended ripping software, we do not propose that it
+become a  standard due to hardware  conflicts and  limitations of some drives.
+
+    * http://www.exactaudiocopy.de
+    * http://hqscene.fatty.dk/eaclame1.html
+
+for those that wish to encode to mp3 after ripping the entire cd, razorlame is
+recommended.  razorlame is a gui  front-end  for  lame that  works  on windows
+platforms.
+
+    * http://www.dors.de/razorlame/download.php
+    * http://hqscene.fatty.dk/razorlame.htm
+
+for a  complete guide  on the encoding with  the alt-presets and  VBR overview
+peep the following url:
+
+    * http://hqscene.fatty.dk
+
+the public modification/addon for project-zs is available here
+
+    * http://www.glftpd.at
+    * http://zs.fatty.dk
+
+signed by important people of the following groups
+
+ 0MNi AMOK APC ATM ATR BLA BOS BOSS BPM CHR CMC CMS CR DPS DRUM FKK FNT FSP 
+  FuFFeNS gEm gF gTi HiT2000 hXc iTS JAH JUST KrbZ mbs MIL MiM MnD MNS NVS OSC    
+   pH PMS PsyCZ RAGEMP3 RKS RNS RSD sb SER SiRiON SMS soup SSR TGX TWCMP3 uF 
+     WLM XXL YARD
+
+-------------------------------------------------------------------------------
+                                                             hqscene:01/14/2004

@@ -1,0 +1,73 @@
+Once you've run MSS for a while and have more then one slave, upgrading versions can be a pain.
+Especially when it comes to logging in to each slave to upgrade the config files for new options.
+
+However, why not use the replication system?
+
+* Create one directory per slave in your mssrepl dir (/glftpd/etc/mssrepl by default)
+  naming them after the slavenames.
+* Put each slaves mss-slave.conf in their respective directories.
+  To copy from the slave directly: 
+  cp /glftpd/bin/mss-slave.conf /glftpd/etc.ext/mssrepl/Slave1
+  or if you have the RUNCMD enabled, from the hub, run, for each slave:
+  site mss runcmd Slave1 cp /glftpd/bin/mss-slave.conf /glftpd/etc.ext/mssrepl/Slave1
+  
+* Now, when upgrading, edit the files on the hub and replicate them out. 
+* Be careful when replicating. If one slave is called Slave1, you should use
+  site mss replicate Slave1 Slave1/mss-slave.conf
+
+Also, put generic files in here, like mss-core.sh. However, those files are the
+same on all slaves, so put them directly in the mssrepl dir and replicate.
+First sync out the new configs (incase of new options in them), then do:
+site mss replicate -all mss-core.sh
+
+A good hint on replicating is the following order:
+* site mss delreports
+* site mss replicate whatever you need
+Wait atleast one minute for the slaves to process their actionfiles
+* site mss readreports
+You'll then see that each slave took the script as it should.
+
+The nice thing about the replication system is that its written to the actionfile.
+If the slave is currently down, it will replicate the scripts when it comes back up.
+
+A general rule when replicating scripts is to always check the permissions on the script
+BEFORE replicating them out. If you replicate a script without execute permissions (755 or so)
+the slave wont be able to run it.
+Excluded from this is mss-core.sh. When replicating that one out, it will always check that
+its permissions are 700.
+
+------------------------------------------------------------------------------------------------
+
+Why is NFS so sloooow?
+
+Well, NFS is rather slow under heavy load. I've found that especially true when using UDP.
+Try switching to TCP instead. 
+
+Only your hub might needs modifying for it to support this. To check if it already does and also
+see which NFS versions it supports, issue from the hub: rpcinfo -p localhost
+If it looks like this:
+    100003    2   udp   2049  nfs
+    100003    3   udp   2049  nfs
+    100003    2   tcp   2049  nfs
+    100003    3   tcp   2049  nfs
+It supports NFS version 2 and 3, both over TCP and UDP.
+
+If it only shows "udp", you need to modify your kernel to include support for NFS over TCP.
+Read more on that on the nfs homepage. If you can recompile a kernel, I guess you can use
+google.
+
+Now that we have tcp (and version3) support on the hub, the options to mount etc.ext and ftp-data.ext
+in the fstab on the slave should look something like this:
+tcp,rw,soft,nfsvers=3,rsize=8192,wsize=8192
+
+As you can see, we've added tcp and nfsvers=3 here. 
+I am no NFS guru so the other values is just what I found worked best for me. Without soft (hard), the
+slave hung for too long to be acceptable IMO. The rsize and wsize is what I found worked the fastest
+when modifying/reading userfiles. Might have to play with those values. Lots of guides on the net for
+those two.
+
+After that is fixed, remount etc.ext and ftp-data.ext to enable the new options and hit it with a full
+sync for fun.
+
+Expert users shouls probably give a higher priority to their NFS ports in their firewalls so it dosnt
+lag down on syncing just because theres a race on any of the sites. Wont go into that here though.

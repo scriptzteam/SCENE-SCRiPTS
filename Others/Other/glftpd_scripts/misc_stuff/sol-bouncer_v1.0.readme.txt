@@ -1,0 +1,38 @@
+sol-bouncer v1.0 - FTP bouncer for Solaris Sparc and Solaris Intel by eur0dance <eur0dance@lithium.moods.be>
+Based on foo.Bouncer v1.22 source code by Tanesha, all credits go to Tanesha Team <tanesha@tanesha.net>
+
+
+Features of the original bouncer:
+	* Very stable, tested/fixed for over a year on high-usage-
+	  ftps.
+	* Allows easy distributing of traffic to multiple IPs
+	  without use of slow databouncing.
+	* Only works with glftpd, uncomment the ident stuff
+	  if you want a generic bouncer.
+	* Comes with source, you can change as you like :)
+
+Features of the sol-bouncer:
+	* Slght code changes
+	* Makefile
+	* Compiles fine on Solaris (SunOS)
+
+A few hints on usage are:
+
+Compiling:
+	make
+
+Setting up configuration:
+	vi sol-bouncer.conf
+
+Running for the first time (to test things):
+	./sol-bouncer sol-bouncer.conf
+
+Setting up crontab-check script:
+	vi sol-bouncer.sh
+
+Running crontabbed (permanently):
+	crontab -e
+	Add something like this line (change the path to crontab-check script): 
+		0,10,20,30,40,50 * * * *   /export/home/eur0dance/sol-bouncer/sol-bouncer.sh >/dev/null 2>&1
+
+Enjoy!

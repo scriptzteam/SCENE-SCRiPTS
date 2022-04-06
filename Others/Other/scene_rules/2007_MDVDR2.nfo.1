@@ -1,0 +1,206 @@
+                       THE 2007 MDVDR RELEASING STANDARDS                      
+
+_______________________________________________________________________________
+
+ GENERAL:
+
+        . Downsampled DVD-9 release size must be at 4.3-4.37GB,
+          unless source is DVD5.
+        . PAL after NTSC and NTSC after PAL is always allowed, 
+          and DVD9 after DVD5 and DVD5 after DVD9 is allowed.
+        . If DVD5 is pred by another group AFTER the DVD9,
+          then proof MUST be included of the source. 
+        . Boxset = More than one disc. ALL discs in one release 
+          separated by subdirectories (DISC1, DISC2, etc.)
+
+_______________________________________________________________________________
+
+ VIDEO:
+
+ . Re-encoding:
+
+        . CCE version 2.50+ or newer must be used in all
+          circumstances where transcoding (re-encoding) of the 
+          video stream is required. REmpeg and TMPGenc are NOT
+          allowed period.
+          New unknown or unreleased encoders are not strictly
+          forbidden, however use at your own risk.
+        . Automated Programs that perform DVD9>DVD5 rips are
+          FORBIDDEN, i.e. DVDShrink, DVDXCopy, InstantCopy, etc.
+        . Minimum average bitrate allowed is 3000kbps. If the
+          minimum average bitrate cannot be achieved, a valid 
+          explanation is required in the NFO.
+
+ . Quality Settings:
+
+        . No CBR. A variable bitrate MUST be used.
+        . The initial first pass that encodes the .vaf file 
+          in CCE is NOT considered within the multipass set.
+        . The number of passes required for a movie is to be
+          determined by the final average bitrate. Under 
+          4000kbps 6+ passes required, over 4000kbps
+          5+ passes are required.
+
+ . Extras:
+
+        . Extras are an added value but are not needed. Extras are 
+          allowed to be downsampled/stripped/left-untouched at the
+          rippers discretion. 
+        . A minimum of 5+ passes and 1900kbps average bitrate for 
+          extras is required if downsampled.
+
+ . Splitting: 
+
+	. In extreme cases where even if minimum bitrate is reached but
+          video quality remains low (such as live concerts with lots of 
+          flash and moving) the decision to split release into 2 or more
+          discs is left to the ripper's discrection. Also acceptable if
+          the bitrate is way below the minimum. (DON'T ABUSE)
+
+ AUDIO: 
+
+        . Audio Priority is: DD5.1 > LPCM > DD2.0 > DTS
+        . If space is needed to reach the minimum bitrate, it's a rippers 
+          choice on what streams should be stripped. DD5.1 should always 
+          be favored over DD2.0.
+        . In extreme cases, where source has ONLY LPCM audio stream 
+          (most Promo's), and video average bitrate is too low for being 
+          re-encoded, ripper can re-encode audio to fit into DVD5. AC3
+          MUST be used in this case.
+        . In cases where audio streams are stripped, IFOEdit is suggested
+          to strip the streams and VOB ID's.
+
+        . DTS is an issue that cannot be ignored. However, it is not 
+          up to us to decide whether they should be allowed or not. 
+          Rather, it's up to the SITES that will determine their own 
+          appropriate rules. However, those groups that wish to release 
+          should name their directory clearly with the appropriate tag
+          of DTS or DTS-ONLY.
+
+ MENUS: 
+
+        . Menus MUST be included. In extreme cases where the retail does 
+ 	  not contain a menu, it must be mentioned in the NFO.
+	. Removing useless links within the menu is required. If you 
+          remove something, disable or remove the button. 
+        . If all else is stripped and still can't get a 3000kbps average 
+          bitrate, then the menu may be re-encoded at a minimum of 3000kbps
+          average.
+
+_______________________________________________________________________________
+
+ DVD LIMITATIONS:
+
+        . All user limitations and restrictions must be removed.
+        . Antipiracy warnings and dummies are preferred to be removed.
+        . Any new unmentioned copy protection that comes out 
+          (i.e. ARcoSS) must be stripped.
+        . Macro vision must be removed.
+        . Releases must be made region free.
+        . RipIt4Me along with DVD Decrypter is a good suggestion
+          to remove all above.
+
+ PACKAGING:
+
+        . All releases must either use .IMG or .ISO. Other formats
+          are NOT allowed.
+        . An SFV and NFO MUST be included.
+        . Compression method must be store.
+        . DVD5 Releases must be broken up into rars of 50,000,000 bytes.
+        . DVD9 Releases must be broken up into rars of 100,000,000 bytes.
+        . Recovery Record MUST be used (1-5%).
+        . NFO must include the following:
+          . Audio streams and subtitles included.
+          . Number of Passes and Bitrate used when re-encoding 
+            main movie (if needed).
+          . Number of Passes and Bitrate used when re-encoding 
+            extras (if needed).
+          . IMDB, or any link to the DVD itself will suffice.
+          . Number of archive files.
+          . Region, NTSC or PAL (Also R0-R8 is suggested).
+          . Title of the DVD.
+          . What has been stripped, audio, extras, menu, etc.
+          . All other information such as track lists, or any other
+            info is at rippers discretion. 
+
+ SAMPLES:
+
+        . Samples are required. Minimum size shall be 30mb, but must be
+          no more than 100mb.
+        . Samples must be from the actual packed DVD. Seperate encodes or
+          using original source (if re-encoded) are not allowed.
+        . Samples must be put in a separate sub directory, labeled
+          "Sample".
+        . VOBSplitter or ChopperXP are recommended for making samples.
+ 
+ DIRECTORY NAMING:
+        
+        . Acceptable characters are as follows:
+
+             ABCDEFGHIJKLMNOPQRSTUVWXYZ
+             abcdefghijklmnopqrstuvwxyz
+             0123456789 . - _
+
+        . ALL releases are to include production year. Since Music DVD's
+          are considered STV, this would be the DVD release year.
+        . Directory name MUST include REGION (NTSC or PAL).
+
+        . Complete DVD-5 releases should be named as:
+          MOVIE.TITLE.YEAR.REGION.FULL.MDVDR-GROUP or 
+          MOVIE.TITLE.YEAR.REGION.COMPLETE.MDVDR-GROUP
+          
+
+        . Non-complete DVD-5 releases should be named as:
+          MOVIE.TITLE.YEAR.REGION.MDVDR-GROUP
+
+        . Untouched DVD-9 releases should be named either:
+          MOVIE.TITLE.YEAR.REGION.MDVD9-GROUP or 
+          MOVIE.TITLE.YEAR.REGION.DVD9.MDVDR-GROUP
+
+        . Bonuses: 
+          . A release MUST be pred as BONUS when the dvd disc isn't sold 
+            alone (i.e. CD+DVD combo).
+ 
+        . Customs: 
+          . A custom is a homemade dvd made from non-dvd sources 
+            (DVB, VHS and so on) in that case the source MUST be specified. 
+
+        . Tags that can and should be used when needed: 
+          # of DISCS BONUS BOOTLEG DIRFIX DVB PROMO PROPER REPACK 
+  
+        . Sub directories are to be labeled as DISC1, DISC2,
+          etc. CD1, CD2, EXTRA directories are NOT allowed.
+
+_______________________________________________________________________________
+
+ PROPERS:
+
+        . Propers will ONLY be released if previous had technical flaws
+          such as menu errors, bad quality, etc.
+          PPF patch cant fix such things. 
+        . Just because a previous release was not COMPLETE does not
+          provide a legitimate reason to PROPER/DUPE.
+        . Propers based on previous releases having improper dir names
+          or missing information in the .nfo will not be tolerated.
+        . PPF patches should be used for fixing releases with simple
+          problems such as RCE/Region coding, VTS sectors, P-Ups and
+          so forth. REPACKS/PROPERS should be avoided if a PPF patch is
+          a possible fix.
+
+_______________________________________________________________________________
+
+       The DVDR Releasing Standards Originally Written and Organized By:
+
+                      AUK . SOUL . JR . MAH . PURP . CONE
+
+
+   The 2007 Music DVDR Releasing Standards Organized, Revised and Signed By:
+
+                 C4DVD . CMS . DHI . FKKDVDR . GT4DVD . OSCDVD
+
+                         RAGEDVD . SDRDVD . T3RR0R1STS
+
+     The Music DVDR Releasing Standards are revised from the original DVDR 
+     Releasing Standards to include standards for the Music DVDR Releases.
+
+_______________________________________________________________________________

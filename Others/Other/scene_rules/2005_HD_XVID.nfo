@@ -1,0 +1,186 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                            ³
+³                The federation of releasing groups presents                 ³
+³                                                                            ³
+³                 The HighDef XViD Releasing Standards 2005                  ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³      Requirements: Notepad with terminal font or other ascii viewer        ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                              ÀÄÄÄ[ INTRO ]ÄÄÄÙ                             ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Why HighDef XViD? Isn't DVD-R good enough? No.                            ³
+³  XViD is superior to MPEG-2 by a lot. At some bitrate (e.g. 4 mbit/s)      ³
+³  MPEG-2 can let 720x576/720x480 look good. XViD can let 1280x720 look      ³
+³  good at the very same video bitrate.                                      ³
+³  Compatibility is a lot smaller problem by now thanks to XBMC and modern   ³
+³  standalone players ... so why not let everyone enjoy true HDTV?           ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                         ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                          ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Runtime:                                                                  ³
+³                                                                            ³
+³      0 to  30 min:   1 CD    (  734,000,000 byte)                          ³
+³     25 to  60 min: 1/3 DVD-5 (1,560,000,000 byte)                          ³
+³     55 to  85 min: 1/2 DVD-5 (2,340,000,000 byte)                          ³
+³     80 to 170 min:   1 DVD-5 (4,680,000,000 byte)                          ³
+³    160 to   * min:   1 DVD-9 (8,450,000,000 byte)                          ³
+³                                                                            ³
+³    Releases must utilize 97 to 100% of the target file size.               ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Audio:                                                                    ³
+³                                                                            ³
+³    AC3 5.1 is to be used.                                                  ³
+³    Source can be from the HDTV airing and/or from a foreign DVD.           ³
+³    Muxing a different audio language to an existing release's video is     ³
+³    welcome if allowed by the video source group and mentioned in the nfo.  ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Video:                                                                    ³
+³                                                                            ³
+³    Framerate:                                                              ³
+³      Must be as close to original source framerate as possible.            ³
+³                                                                            ³
+³    Codec:                                                                  ³
+³      Must be XviD.                                                         ³
+³      Must not be singlepass encoding technique.                            ³
+³                                                                            ³
+³    Resolution:                                                             ³
+³      Must be 1280x720 progressive.                                         ³
+³                                                                            ³
+³    Credits:                                                                ³
+³      Full Credits must be included.                                        ³
+³      Credits must not be encoded separately at a lower bitrate if they     ³
+³      contain video footage, ie bloopers.                                   ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Packaging:                                                                ³
+³                                                                            ³
+³    Must be .avi, not bin/cue, iso or img.                                  ³
+³    Must be packed with .rar, compression is not allowed.                   ³
+³    Must be broken into 15MB (CD), 50MB (DVD-5) or 100MB (DVD-9) volumes.   ³
+³    Must include recovery record.                                           ³
+³    Must have .sfv.                                                         ³
+³    Must have .nfo including:                                               ³
+³      group name                                                            ³
+³      title                                                                 ³
+³      release date                                                          ³
+³      theatrical relase date (movies)                                       ³
+³      original air date (TV episodes)                                       ³
+³      file size                                                             ³
+³      number and size of volumes                                            ³
+³      audio source, format and bitrate                                      ³
+³      video bitrate                                                         ³
+³      runtime                                                               ³
+³      iMDB-link or similar                                                  ³
+³    All .nfos have to include the maximum information possible. Lack of     ³
+³    info or smartass comments such as "good size" or "nice audio" will not  ³
+³    be tolerated.                                                           ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Samples:                                                                  ³
+³                                                                            ³
+³    A 15 to 30MB Sample must be included.                                   ³
+³    Must be taken from the release - not encoded separately.                ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Propers:                                                                  ³
+³                                                                            ³
+³    Propers are only permitted in the case of a technical flaw with the     ³
+³    original release (i.e. sync problems, bad choice of file size, ...).    ³
+³    Propers must state the proper reason and include proof.                 ³
+³    Qualitative propers are not allowed.                                    ³
+³    Propers based upon the compliance with new instances of THX             ³
+³    guidelines are not allowed.                                             ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Directory Naming:                                                         ³
+³                                                                            ³
+³    All releasenames must include:                                          ³
+³      TV: Show name, season & episode number (S??E??), episode title,       ³
+³          language, source (720p.HDTV), codec (XVID), groupname.            ³
+³      Movies: Title, production year, language, source (720p.HDTV),         ³
+³              codec (XVID), groupname.                                      ³
+³      English language does not need to be tagged.                          ³
+³      No FESTIVAL/STV/LIMITED/READ.NFO in dirnames.                         ³
+³      Permited tags are: PROPER, REPACK, RERIP, INTERNAL, DC, EXTENDED,     ³
+³      REMASTERED, UNRATED.                                                  ³
+³                                                                            ³
+³    Acceptable characters in the directory name are:                        ³
+³      ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ³
+³      abcdefghijklmnopqrstuvwxyz                                            ³
+³      0123456789.-_                                                         ³
+³      No spaces or double dots.                                             ³
+³                                                                            ³
+³    Examples:                                                               ³
+³      Funky.Show.S93E72.Groovy.Title.720p.HDTV.XVID-CoolGroup               ³
+³      Great.Movie.2007.Chinese.UNRATED.720p.HDTV.XVID-BigGroup              ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                       ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Source related notes:                                                     ³
+³                                                                            ³
+³    For now the only source to be used is 720p HDTV.                        ³
+³    THX will be updated when we will be blessed with HD-DVDs.               ³
+³    Re-encoding HDWMV to XVID will not be tolerated.                        ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Ripping related notes:                                                    ³
+³                                                                            ³
+³    Group watermarks are not allowed.                                       ³
+³    No intros, outros, betweenos, or any other form of defacement of the    ³
+³    movie will be tolerated.                                                ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  Filesystem related notes:                                                 ³
+³                                                                            ³
+³    ISO9660 craps out above 2GB files, so in order to burn 1/2 DVD-5 or     ³
+³    larger releases you will have to use UDF.                               ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                Thx to TDX2k4, we kinda stole their design :)               ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                       ÀÄÄÄÄÄÄÄÄ[ GROUPS ]ÄÄÄÄÄÄÄÄÙ                         ³
+³                   THX2K5 signed by the following Groups:                   ³
+³                   ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ                   ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+ÀÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÙ
+  ÀÄÄ[ v0.3 created by the Union of Themepark Zombies in September 2005 ]ÄÄÙ

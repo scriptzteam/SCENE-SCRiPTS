@@ -1,0 +1,25 @@
+Ok, so you are getting "Failed to perform chroot()". 
+This is the information Dark0n3 gave me, which helped me, and others
+who had the same problem.
+
+Edit /etc/group ( not /glftpd/etc/group ).
+Find the Wheel group. If it is not there, it wont work.
+
+Add the user who runs the bot there, as if it looked like:
+wheel:x:10:root
+change it to
+wheel:x:10:root,UserWhoRunsTheBot
+
+Then save it.
+
+Now do
+chown root:wheel /glftpd/bin/nuker
+chmod 777 /glftpd/bin/nuker
+chmod +s /glftpd/bin/nuker
+
+And it should work. If it does not, check this link:
+http://www.courtesan.com/sudo/intro.html
+
+Basically, you need to make the binary run as root for the user running the bot.
+
+/Turranius

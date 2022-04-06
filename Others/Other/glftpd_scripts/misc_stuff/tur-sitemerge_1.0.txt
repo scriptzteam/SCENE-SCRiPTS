@@ -1,0 +1,11 @@
+SiteMerge (GL1)
+
+Description: A script for those who wish to merge the userbase from two (or more) 
+different sites into one, for example in preparation for MSS on two already 
+established sites.
+Doing this manually is problematic because of conflicting uids/gids but this script
+takes care of that.
+
+Author:   Turranius
+Version:  1.0
+Added on: 02-Sep-2004

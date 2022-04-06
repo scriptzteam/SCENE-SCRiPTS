@@ -1,0 +1,13 @@
+Another nifty script for the public :)
+This one shows the newest dirs in a specified section in an irchannel.
+Edit both the .sh and .tcl and change "XXX" to whatever you like
+
+Many thanks to WHiTECaT for the suggestion for this script :)
+
+CHANGELOG:
+1.0 Initial release
+1.1 Fixed so you can use !xxxnew divx for a sectionname like dIVx, DIVX, Divx etc
+1.2 Dunno...
+1.3 Added a function to show newest pres as well
+
+/ragusallad

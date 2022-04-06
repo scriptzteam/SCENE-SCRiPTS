@@ -1,0 +1,50 @@
+README for ugly-latepre-1.0
+
+ * ABOUT
+
+Latepre is a simple script (and a dirty hack) for catching affils that skip pre
+on your site.  It uses pre_dir_check in glftpd.conf to check if a newdir matches
+one of your affils and, if so, logs the date and dirname to a database that can
+be viewed with the 'latepre' command.  The latepre script itself only takes one
+argument, 'clean', which erases the database.
+
+ * INSTALLATION AND CONFIGURATION
+
+Copy latepre.sh to your glftpd/bin dir and 'chmod 755' it.  Set up the latepre
+database like so:
+
+ 'touch /jail/glftpd/ftp-data/misc/latepres'
+ 'chmod 666 /jail/glftpd/ftp-data/misc/latepres'
+
+If you do not currently have a pre_dir_check defined in glftpd.conf, copy
+lpdirscript.sh to glftpd/bin and 'chmod 755' it.  Then change this line in
+glftpd.conf:
+
+ #pre_dir_check  /bin/dirscript
+
+to
+
+ pre_dir_check  /bin/lpdirscript.sh
+
+If you currently have a (non-binary) pre_dir_check, then just add the contents
+of lpdirscript.sh to it (excluding the '#!/bin/bash' and 'exit 0' parts).  If
+your pre_dir_check is a binary, check its configuration file for a way to
+execute a script after the pre_dir_check has been run.
+
+Lastly, add these lines to glftpd.conf:
+
+ site_cmd LATEPRE        EXEC    /bin/latepre.sh
+ 
+ custom-latepre          !8 *
+
+Change the permissions on "custom-latepre" if you don't want everyone on your
+site to be able to view the latepres.
+
+Use 'site latepre' to view the database, and 'site latepre clean' to clear it.
+
+ * CONTACT
+
+Please report bugs to:
+ 
+ - ugly on EFNet
+

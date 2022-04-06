@@ -1,0 +1,17 @@
+-----------
+SEARCH v1.0
+-----------
+
+### Installation ###
+Edit search.tcl and change it to fit your needs.
+Do the same with search.sh.
+Copy the search.tcl to your eggdrop's script directory.
+Add "source scripts/search.tcl" to your eggdrop config file.
+If you are going to use dcc send result you will need 
+have the transfer module loaded in your eggdrop.conf.. 
+Copy search.sh to your glftpd bin directory and chmod a+x.
+make the dir where you will save the result file 777.
+Then it's done. If your bot was running rehash it.
+
+SEARCH (C)  wh3e@hugbox.net / vip3r@i386.net
+ 

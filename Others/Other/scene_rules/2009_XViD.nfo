@@ -1,0 +1,363 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                             ³
+³                 The federation of releasing groups presents                 ³
+³                                                                             ³
+³                      The XviD Releasing Standards 2009                      ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³     Requirements: Notepad with terminal font or any other ascii viewer.     ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                              ÀÄÄÄ[ INTRO ]ÄÄÄÙ                              ³
+³                                                                             ³
+³ These rules take effect March 5, 2009 (2009-03-05) at 00:00 UTC. Thanks to  ³
+³ all groups who participated.                                                ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                          ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                          ³
+³                                                                             ³
+³                                                                             ³
+³  Movie Length:                                                              ³
+³   - Allowed sizes are 175MB, 350MB and multiples of 1 CD (700MB).           ³
+³   - The following formula will guide you to get the appropriate size:       ³
+³             target-size = VIDEO-FPS * VIDEO-RUNTIME(in mins) * 0.28         ³
+³     Use the target-size value to index the MAXIMUM allowed size, examples:  ³
+³        target-size = 25.000fps * 98min * 0.28 = 686, MAX size is 1 CD       ³
+³        target-size = 23.976fps * 49min * 0.28 = 329, MAX size is 1/2 CD     ³
+³        target-size = 18.000fps * 65min * 0.28 = 328, MAX size is 1/2 CD     ³
+³     VIDEO-RUNTIME is in minutes only, no fractions, and rounded up to the   ³
+³     next full minute, e.g. 104 min and 5 secs = put 105 min inside the      ³
+³     formula. The following table describes the MAXIMUM size allowed for     ³
+³     each runtime in minutes:                                                ³
+³                                                                             ³
+³         FPS   ³ 175MB ³   350MB  ³   700MB   ³   1400MB   ³  2100MB         ³
+³        23.976 ³  -26  ³ 26:01-52 ³ 52:01-104 ³ 104:01-208 ³ 208:01-312      ³
+³        25.000 ³  -25  ³ 25:01-50 ³ 50:01-100 ³ 100:01-200 ³ 200:01-300      ³
+³        29.970 ³  -20  ³ 20:01-41 ³ 41:01-83  ³  83:01-166 ³ 166:01-250      ³
+³                                                                             ³
+³   - The above table indicates the MAXIMUM size allowed to encode at, but    ³
+³     it is ripper's discretion to use smaller values, e.g. 110 min PAL movie ³
+³     can use AT MOST 1400MB but can also use lower sizes such as 700MB.      ³
+³   - If at the lowest resolution allowed and MP3 audio bitrate of 128 kbps   ³
+³     average I/P quant is above 4.5, releases may jump 1 size up (e.g. 2 CDs ³
+³     may be used instead of 1). Such cases MUST provide proper proof and     ³
+³     explanation in the nfo.                                                 ³
+³   - If the formula gives a value below 100MB, sizes smaller than 175MB are  ³
+³     allowed, at ripper's discretion.                                        ³
+³   - MAXIMUM CD media capacity value is 736966656 bytes = 719694 KB = 702 MB ³
+³   - MINIMUM CD media capacity value is 723517440 bytes = 706560 KB = 690 MB ³
+³   - When using multiple CD releases, releases MUST utilize the full         ³
+³     burnable media capacity for each CD used (each CD must conform to the   ³
+³     690MB minimum).                                                         ³
+³                                                                             ³
+³                                                                             ³
+³  TV Length:                                                                 ³
+³   - All Episodes <RETAIL rips> are obligated to follow these rules.         ³
+³   - Allowed sizes in MB are 175, 233, 350 and multiples of 700 (an extra    ³
+³     OPTIONAL size is 550MB, see below).                                     ³
+³   - Use the same target-size formula listed above to determine appropriate  ³
+³     sizing. Some examples are:                                              ³
+³        target-size = 25.000fps * 20min * 0.28 = 140, MAX size is 175 MB     ³
+³        target-size = 23.976fps * 60min * 0.28 = 403, MAX size is 700 MB     ³
+³        target-size = 29.970fps * 25min * 0.28 = 210, MAX size is 233 MB     ³
+³     * VIDEO-RUNTIME is in minutes only, no fractions, and rounded up to     ³
+³       the next full minute, e.g. 41 min and 5 secs = put 42 min inside the  ³
+³       formula.                                                              ³
+³   - 550MB may be used at ripper's discretion when target-size is above      ³
+³     260MB.                                                                  ³
+³   - If the formula gives a value below 100MB, sizes smaller than 175MB are  ³
+³     allowed, at ripper's discretion. It is also ripper's discretion to use  ³
+³     smaller sizes than those targeted by the formula for each specific      ³
+³     runtime and framerate (e.g. a release that should be 350MB according to ³
+³     the formula may also be released at 233MB).                             ³
+³                                                                             ³
+³                                                                             ³
+³  AUDIO:                                                                     ³
+³   - MUST be VBR MP3 or Studio AC3.                                          ³
+³   - ABR is considered a VBR technique.                                      ³
+³   - MUST be STEREO for STEREO sources, MONO for MONO sources                ³
+³     (Any audio track with identical channels is considered a MONO source).  ³
+³   - MP3 tracks must keep the original frequency as it was on the source's   ³
+³     audio: e.g. 48khz for 48khz and 44.1khz for 44.1khz.                    ³
+³   - Mono or Dual Mono (1+1) AC3 is forbidden; use mono MP3.                 ³
+³   - MP3 audio must be normalized. Stereo sources must use stereo or         ³
+³     joint-stereo encoding mode. Mono sources must use mono encoding mode;   ³
+³     dual-mono is forbidden.                                                 ³
+³   - Encoding or re-encoding audio to AC3 is strictly forbidden, except in   ³
+³     in the case of HD retail source (see Source related notes).             ³
+³   - Use of AC3 is at the ripper's discretion, but should be used wisely.    ³
+³     Choice of AC3 or MP3 is not a technical flaw except as otherwise noted. ³
+³   - Multi-language audio tracks are FORBIDDEN! (Use INTERNAL)               ³
+³                                                                             ³
+³                                                                             ³
+³  VIDEO:                                                                     ³
+³   - Keyframe:                                                               ³
+³     MUST be <=20 seconds and MUST be inserted according to scene changes    ³
+³     and framesizes as determined by the codec or encoding application.      ³
+³   - Group watermarks of any kind on the video are forbidden.                ³
+³   - English retail releases may not contain foreign language text overlays  ³
+³     from localized versions.                                                ³
+³                                                                             ³
+³                                                                             ³
+³  Framerate:                                                                 ³
+³   - MUST be as close to original source framerate as possible.              ³
+³   - In some cases PAL movies need to be IVTC'd (e.g. to 24fps). Therefore   ³
+³     using a PAL source is not an excuse for lack of IVTC.                   ³
+³   - Hybrid sources are left at ripper's discretion if to IVTC or not.       ³
+³     Ripper should mention and provide proof to any claim for ITVC or lack   ³
+³     thereof.                                                                ³
+³                                                                             ³
+³                                                                             ³
+³  Codec:                                                                     ³
+³   - MUST BE XviD (all DivX codecs are banned).                              ³
+³   - MUST use 2 pass technique during encoding.                              ³
+³   - No dupes based on codec type, use INTERNAL!                             ³
+³                                                                             ³
+³                                                                             ³
+³  Resolution and Aspect Ratio:                                               ³
+³   - Width: 576 - 640 pixels for movies with an AR of 1.70-3.00              ³
+³            512 - 640 pixels for movies with an AR of 1.00-1.69              ³
+³   - Width and Height must be multiples of 16.                               ³
+³   - Cropping is required such that black borders are cropped to their       ³
+³     maximum. In the case that the video presents changing ARs, the video    ³
+³     must be cropped such that no frame is overcropped.                      ³
+³     * Over- or undercropping by more than 1 pixel is considered a technical ³
+³       flaw, although it is preferable to crop the 1 pixel out.              ³
+³   - Video encodes must be within 4% of the original aspect ratio.           ³
+³     Calculating AR % error: (Original AR - Release AR)/Original AR x 100    ³
+³   - Non-retail video sources may not have the usual retail aspect ratio     ³
+³     due to different processing. All releases should be based on the actual ³
+³     source AR, not on retail AR listed on IMDB or other sources.            ³
+³                                                                             ³
+³                                                                             ³
+³  Subtitles:                                                                 ³
+³   - OPTIONAL (ONLY if all other requirements have been met).                ³
+³   - Subtitles MUST be packed in a RAR file with the most compression        ³
+³     available. This RAR file shall be placed in a directory named 'Subs'    ³
+³     along with an SFV file containing standard checksum information for     ³
+³     that RAR. The subtitles must not be packaged in the main RARs for the   ³
+³     release and the RAR file containing the subtitles must not be listed in ³
+³     main SFV for the release.                                               ³
+³   - Vobsub packs must have the .sub file packed with the MOST compression:  ³
+³     subs.rar = [ <avi-name>.idx + <avi-name>.rar = (<avi-name>.sub) ]       ³
+³   - Burned subtitles are only permissible when present in the source. If    ³
+³     the subtitles overlay both active video and matting (black bars),       ³
+³     cropping to the bottom of the subtitles is permissible, and an equal    ³
+³     amount of matting shall be left at the top. If the burned subtitles     ³
+³     overlay only matting, they must be OCR'ed and cropped out.              ³
+³   - English subs on non-English releases MUST fit in the standard size      ³
+³     with the rest of the release. All other subs are considered optional    ³
+³     and are not required to fit in the standard release size.               ³
+³   - English subs on non-English releases must be synced with the video.     ³
+³   - Foreign releases (non-English spoken) lacking English subtitles MUST be ³
+³     tagged with the spoken language. Releases with English subtitles MUST   ³
+³     NOT be tagged with the spoken language. A release containing English    ³
+³     subtitles after a foreign-tagged release is not considered a dupe,      ³
+³     regardless of whether or not the foreign-tagged release has English     ³
+³     subs.                                                                   ³
+³   - Subtitles on multiple-CD releases must be split. Inclusion of non-split ³
+³     subtitles in addition to the split subtitles is encouraged.             ³
+³   - Custom subtitles are not allowed on retail sources. They may be used    ³
+³     only with non-retail sources. Propers for incorrect or missing dialogue ³
+³     on custom subtitles are not allowed; release a subpack!                 ³
+³   - Multi-language subtitles cannot be used as a basis for a dupe.          ³
+³   - English subbed (with original spoken language) may follow a dubbed      ³
+³     release (in any language); use SUBBED tag.                              ³
+³                                                                             ³
+³                                                                             ³
+³  Packaging:                                                                 ³
+³   - All releases MUST be AVI.                                               ³
+³   - Must be packed with RAR and broken into 15 or 20 MB volumes.            ³
+³     Each AVI for a multiple-CD release must be packaged into separate RAR   ³
+³     volumes.                                                                ³
+³   - Filenames (even subpack rar file) MUST be unique (to avoid dupe).       ³
+³   - Compression is not allowed.                                             ³
+³   - Recovery and MD5 record are recommended.                                ³
+³   - Must have an SFV included for each CD.                                  ³
+³   - Must have an NFO.                                                       ³
+³   - NFO SHOULD INCLUDE:                                                     ³
+³       Group name                                                            ³
+³       Title                                                                 ³
+³       Actual XviD release date                                              ³
+³       DVD release date                                                      ³
+³       Theatrical release date (US preferably)                               ³
+³       Video size                                                            ³
+³       Resolution / Aspect Ratio                                             ³
+³       Audio codec / Audio bitrate                                           ³
+³       Video bitrate                                                         ³
+³       Movie runtime                                                         ³
+³       IMDB / Amazon / Any other DVD site info link                          ³
+³       Number of rars per CD (e.g. 50x15MB)                                  ³
+³       XviD build                                                            ³
+³       Packed Bitstream                                                      ³
+³       Maximum consecutive B-frames                                          ³
+³                                                                             ³
+³                                                                             ³
+³  Credits:                                                                   ³
+³   - Credits may be encoded at a lower bitrate unless they contain scenes    ³
+³     like bloopers or continuation of story.                                 ³
+³   - Cutting credits on RETAIL sources is not allowed.                       ³
+³                                                                             ³
+³                                                                             ³
+³  Samples:                                                                   ³
+³   - Sample is required and must have a unique name for each release.        ³
+³   - 1 full minute in length and in a separate folder marked as 'Sample'.    ³
+³   - MUST be taken from the video, NOT encoded separately.                   ³
+³   - Source samples are recommended for any rip that is deemed questionable: ³
+³     no IVTC possible on source, IVTC to 24.975fps, etc.                     ³
+³                                                                             ³
+³                                                                             ³
+³  Propers:                                                                   ³
+³   - Propers are only permitted in the case of a technical flaw in the       ³
+³     original release (e.g. bad.ivtc, interlacing, oversized).               ³
+³   - Propers MUST include a note in the NFO file detailing the reason.       ³
+³   - Releases not nuked on release lists and/or sites MUST include           ³
+³     original sample of the technical flaw in the release sample dir.        ³
+³   - Qualitative propers are not allowed, nor are propers based on           ³
+³     decisions made by a ripper (e.g. AC3 or MP3).                           ³
+³   - Propering a release done under a previous ruleset timeline is allowed   ³
+³     if it has a technical flaw, such as bad.ar, bad.ivtc, over.cropping.    ³
+³     Other propers acceptable are propers based on releases that did not     ³
+³     follow previous guidelines at the time they were pred.                  ³
+³   - Releases containing hardcoded subs may be propered by non-hardsubbed    ³
+³     video. Original release SHALL NOT be nuked.                             ³
+³   - Propering a release when a working fix is released is not allowed.      ³
+³   - Sizefixes are not allowed.                                              ³
+³   - Propers based upon the compliance with new instances of TXD2K9 are      ³
+³     allowed only for releases after 2009-03-05.                             ³
+³                                                                             ³
+³                                                                             ³
+³  WS vs. FS:                                                                 ³
+³   - WS or FS name tags on the release name are allowed.                     ³
+³   - A WS release after an FS release (and vice versa) requires proof that   ³
+³     the new release contains more picture area than the original release    ³
+³     (provide sample from the original release or JPG screenshot of the same ³
+³     frame in both releases showing additional area). A release not          ³
+³     documenting additional picture area is considered a DUPE.               ³
+³   - Wider wide screen where more of the original source is visible is valid ³
+³     & not considered a dupe but should be tagged as WS not PROPER. Original ³
+³     release should not be nuked. Provide proof as listed above.             ³
+³   - Letterboxed DVDs are not considered FS even if the aspect ratio flagged ³
+³     on the disc is 4:3; only active picture area should be considered.      ³
+³                                                                             ³
+³                                                                             ³
+³  Special Movie Editions:                                                    ³
+³   - Allowed: DC, EXTENDED, UNCUT, REMASTERED, UNRATED, THEATRICAL, CHRONO,  ³
+³     SE (or any other special edition, e.g. AE).                             ³
+³   - Special Edition releases with same time length as previous released     ³
+³     versions of the movie shall be considered dupes.                        ³
+³   - Shorter cut version of a movie after a longer version was released is   ³
+³     allowed (e.g. THEATRICAL), and MUST be mentioned in the dirname.        ³
+³   - Remastered movies after the original have been released are allowed     ³
+³     only if one of the releases is BLACK AND WHITE and the other is colour. ³
+³     Everything else use INTERNAL! (Remastered DVD releases that were nuked  ³
+³     in the past and were colour after black&white and vice versa, shall not ³
+³     be unnuked and shall not be duped!)                                     ³
+³   - Extras released in a special movie edition can not be used as a basis   ³
+³     for a dupe, unless released separately (and are not dupes of previous   ³
+³     releases).                                                              ³
+³   - Homemade rips are not allowed (Use INTERNAL!).                          ³
+³   - NOTE: PAL - NTSC length difference comes from the no. of frames per     ³
+³     second and not extra footage.                                           ³
+³                                                                             ³
+³                                                                             ³
+³  Directory and File Naming:                                                 ³
+³   - All releases need to include production year.                           ³
+³   - DO NOT indicate ripping method, DVD/XviD release date, genre, audio     ³
+³     which was used (no AC3) or anything else! (ONLY WITHIN THE NFO)         ³
+³   - Movie distribution tags e.g. FESTIVAL, STV, LIMITED or TV (TV tag       ³
+³     is used for TV movies only) are allowed and shall be used wisely and    ³
+³     correctly.                                                              ³
+³   - READ.NFO tag is allowed, but shall not be abused.                       ³
+³   - Other permitted tags are: WS/FS (rules above), PROPER, REPACK, RERIP,   ³
+³     REAL, RETAIL, EXTENDED, REMASTERED, RATED, UNRATED, CHRONO, THEATRICAL, ³
+³     DC, SE, UNCUT, INTERNAL, DUBBED, SUBBED, FINAL, COLORIZED.              ³
+³     * Use RERIP for ripping issues and REPACK for packing issues.           ³
+³     * RERIPs/REPACKs must use different file names from previous release.   ³
+³   - Acceptable characters in naming a directory include (NO spaces or       ³
+³     double dots - single dots or underscores ONLY):                         ³
+³                                                                             ³
+³       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ³
+³       abcdefghijklmnopqrstuvwxyz                                            ³
+³       0123456789.-_                                                         ³
+³                                                                             ³
+³   - Releases that are more than 1 CD MUST be named CD1, CD2, CD3 and so     ³
+³     on ('disc1' and others are NOT allowed).                                ³
+³                                                                             ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³
+³                                                                             ³
+³                                                                             ³
+³  Source related notes:                                                      ³
+³   - HD retail may be used as source only if no DVDRip has already been      ³
+³     released (and vice versa). Such releases must be tagged accordingly     ³
+³     (e.g. BDRip, HDDVDRip).                                                 ³
+³   - When using AC3 on a rip from HD retail source, re-encoding DTS, LPCM,   ³
+³     TrueHD, DTS-HD and 640kbit/s AC3 to 448kbit/s AC3 is mandatory.         ³
+³   - Re-encoding material of any transcoded source is strictly forbidden!    ³
+³   - HD retail rip released after 1080p/720p needs source proof (a raw m2ts  ³
+³     sample including all audio/subtitles tracks) in sample dir.             ³
+³   - R5 is not considered retail.                                            ³
+³   - Non-studio audio must be tagged accordingly, e.g. LINE audio.           ³
+³     * Releases provided with studio audio do not dupe releases with non-    ³
+³       studio audio. The reverse does not apply!                             ³
+³   - The use of sources like CAM, TS, TC, Workprint, SCREENER, Laserdisc     ³
+³     etc. MUST be tagged with source in the dirname and must adhere to ALL   ³
+³     TXD2K9 rules!                                                           ³
+³   - DVD Screeners shall be clearly marked in the directory name and the     ³
+³     nfo shall contain presence of studio watermarking, black&white scenes   ³
+³     and counters or lack thereof.                                           ³
+³                                                                             ³
+³                                                                             ³
+³  Internals:                                                                 ³
+³   - INTERNALS should follow all TXD2K9 rules and are exempt from the time   ³
+³     length rules.                                                           ³
+³   - Multi-language audio tracks are allowed. Multiple languages should be   ³
+³     interleaved into the AVI, with a graphedit filter for each appropriate  ³
+³     audio stream.                                                           ³
+³   - Other codecs and containers are allowed for experimental purposes.      ³
+³   - INTERNAL dirfix should not be used as a basis of avoiding a nuke.       ³
+³                                                                             ³
+³                                                                             ³
+³  Ripping related notes:                                                     ³
+³   - MAXIMUM bitrate must not exceed 4854 for more than a second and must    ³
+³     not exceed 8000 kbps ever. DivX Home Theatre and MTK (not 6000)         ³
+³     profiles follow these guidelines.                                       ³
+³   - Quantizer matrix MUST be H.263 or MPEG. Custom matrices are forbidden   ³
+³     due to lack of standalone support.                                      ³
+³   - Pixel shape MUST be square.                                             ³
+³   - Quarterpixel/GMC are forbidden due to lack of hardware support.         ³
+³   - The use of ITU-R (Gknot function) is not recommended.                   ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³            The Tradition Continues: TXD RULES 2K9 (2009-03-05)              ³
+³ TXD2K5 (2005-09-25) 2K2 (2002-07-12) 2K1 (2001-04-22) Original (2000-04-26) ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        À--------[ GROUPS ]--------Ù                         ³
+³                 TXD2K9 signed by the following XviD Groups:                 ³
+³                 ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ                  ³
+³       ALLiANCE DMT DoNE NeDiVX ViTE iMBT COCAIN PUKKA Larceny AMIABLE       ³
+³                                                                             ³
+³       HLS LMG ARROW COALiTiON SAPHiRE MOTION BeStDivX NEPTUNE iNTiMiD       ³
+³                                                                             ³
+³       HEFTY BaLD mVs OPTiC VoMiT ESPiSE TWiST EPiSODE FRAGMENT ARiSCO       ³
+³                                                                             ³
+³       FFNDVD SAiNTS TVA iNFiNiTE FoV ORPHEUS TOPAZ REWARD WAT NODLABS       ³
+³                                                                             ³
+³       PHASE HAGGiS aAF OSiTV RiVER REMAX MACRO FQM SFM WPi DOMiNO DvF       ³
+³                                                                             ³
+³       5MeOAMT ELiA ARTHOUSE BETAMAX EPiC iLS BrG DnB REACTOR DOCUMENT       ³
+³                                                                             ³
+³       AEN FiCO BLooDWeiSeR TNAN CoWRY iGNiTE SSF D3Si ARiGOLD AsiSter       ³
+³                                                                             ³
+³       FLAiR WRD AFO SSB TheWretched LAJ KiNOBOX WiRA BiEN GAYGAY RUBY       ³
+³                                                                             ³
+³       MESS AEROHOLiCS VH-PROD iMMORTALs JFKXViD iFN MoH XanaX WaLMaRT       ³
+³                                                                             ³
+ÀÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÙ
+   À----[ Edited by tcj 2009. Respect goes to all TDX teams 2000-2009 ]----Ù

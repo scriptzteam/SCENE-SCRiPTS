@@ -1,0 +1,541 @@
+                        Official MP3 Release Rules 2.0
+        _______________________________________________________________
+
+ 1. No Dupes !
+    Complete albums/releases are checked, not single tracks. So a release is
+    not a dupe if it has different or more tracks.
+    
+    Exceptions:
+      1. It's also a dupe if the complete release is included in a previous
+         one. For example CDM is released, now someone releases the CDS and all
+         tracks of the CDS were already included on the CDM (excactly the same
+         tracks).
+      2. You are allowed to create a duplicate release from a release that has
+         a source of lower quality (a different source!).
+         Example: if vinyl is out then a CD-release is allowed.
+         If you do that then please add this info to NFO and dirname. For
+         online bought MP3s (-WEB-) we assume the best source quality (CDDA or
+         better).
+      3. All MIXED cds should be ripped as one track supplied with a .cue. If
+         they are not, they may be duped by another group that releases it as
+         one track with a .cue supplied.
+      4. If a WEB or FLASH version has been released then a CD RETAIL version
+         is allowed if the CD version has scans/photos.
+
+    For all LIVE sources:
+       + If a show has already been released (e.g. another name, but the mix is
+         the same), no dupe of that same show is allowed. If the show is
+         included in another release (for example, as a guest mix), then it is
+         not allowed either.
+       + If a show, containing a guest mix, is a partial dupe (either the
+         regular part of the show, or the guest mix), it is allowed to release
+         them both as a set. However, it is encouraged to release only the new
+         part if the other part is available in equal or better quality,
+         denoting in the nfo why the other part was omitted.
+       + If a show contains the broadcast of a commercially released CD, it may
+         not be released if the CD has already been released.
+         
+    Note: if you want to release an import-album or some "extendend edition"
+    then check rule 7 as well !
+    
+ 2. An .SFV and .NFO file must be included in every release.
+    CUE/M3U/JPG files are optional. If you release a CUE file for multitrack
+    mp3s then the CUE file must include artist and tracknames if they are
+    available on the cover or inlay.
+    If you want to release additional material (Videos, Lyrics, ...) from the
+    source medium then you must release that separately with dirname tag
+    -EXTRAS-.
+    
+ 3. Directoryname must at least contain:
+      1. Artist Name - Title - Published Year (decimal) - Group name
+         (extra info is allowed of course)
+      2. All bootleg releases must have the word BOOTLEG in dirname. (check
+         bootleg rule 14)
+      3. If you release magazine CDs then you must tag them as -MAG-. Don't tag
+         them -PROMO-, -ADVANCE- etc..
+      4. The directory name of an INTERNAL release must end with _INT. 
+         Example: Someone_Something-2007-GROUP_INT
+      5. For all LIVE sources:
+         It is not necessary to include the name of the station the show is
+         broadcasted on (if it is not included in the directory name, it is
+         strongly encouraged to include it in the nfo instead). The date must
+         be the date of the broadcast. Both USA (-MM/DD-) and EU (-DD/MM-) date
+         format are allowed.
+         
+    Exception:
+    If a vinyl/cd has no title then it's allowed to replace the title by
+    labelname+catnumber (both!). If there is only one artist on the vinyl/cd  
+    then you must add the artistname.
+    
+ 4. Filename must at least contain:
+    Track Number - Song Title
+    If it's an album with different artists (one artist per track) then you   
+    must add the artist name as well ("VA-tracks" like mixes don't need
+    artistnames).
+    The song title for the filename must include the full title as it's written
+    on the cover/cd/inlay with all additional infos like remixed/featured stuff
+    as long as it doesn't exceed the 128 char limit.
+    Make sure that your filename is unique otherwise some sites might dupeskip.
+    
+    Exception:
+    If no tracknames are supplied by the source (cd,vinyl,..) then you *must*  
+    provide proof that these tracks have no names. Either by a scan of the
+    original cover of the record company/label (no selfmade cdr or bootleg
+    covers) or a link to an official or trusted webpage with proofs. If these
+    "untitled tracks" are part of a big mix (no silence between the "tracks")
+    then it's considered as one track and you must rip it as one mp3/cue and  
+    give this track same name as the "album".
+    
+ 5. Files/directories must only contain characters a-z A-Z 0-9 _ . - () 
+    This is to avoid problems with windows/linux-filesystem and ftp-servers.
+    
+ 6. Self-made releases
+      1. Self-made compilations are not allowed !
+         A self-made compilation is when you select tracks from other sources,
+         put them together and release that as something new.
+      2. A self-made MIX or completely self-made music is not allowed either.
+         If you are releasing self-made stuff then that must be tagged as   
+         internal.
+         
+ 7. The entire CD,Vinyl,etc. must be released (not individual tracks)
+    If you think it's too much work to rip all tracks you better don't rip at
+    all. Releasing the complete CD/Vinyl/.. is necessary because otherwise it
+    would be possible to make several (different) releases of the same
+    cd/vinyl/etc..
+    
+    Exception for albums:
+    If a RETAIL album has been released and you have a different edition of the
+    same album (foreign/promo/advance/..) then it's allowed to release the 
+    new/bonus tracks only. But you may NOT re-release an entire inital edition
+    within the first three months except if ... :
+    ... it's a 1disc release and more than 30% of the tracks of your version
+        are not on the previous retail version.
+    ... it's a multi disc release and either more than 30% of the tracks or at
+        least 6 tracks of your version are not on the previous retail version.
+    
+    Moreover, it is NOT allowed to re-release a new edition of an retail album
+    EVER if the different/extra/bonus tracks are already included in one (!)
+    previous release. For example, USA album is released and four months later
+    japanese with simply a remix from an old CDM/CDS still wouldn't be allowed.
+    
+    Example1: album released in US with 10 tracks, japanese edition with 11
+    tracks (1 bonus track that is a new song) then you MUST release the jap
+    bonus track only (without including previously released tracks of the US
+    album) during the first three months after first full retail release. If  
+    it's more than 3 months later then you are allowed to do either the
+    bonustrack-only or the full album.
+    
+    Example2: After the retail you got a promo with 1 different track. Then
+    it's not allowed to release this full album within 3 months. If the bonus 
+    track was already out on a different release then it's not even allowed to
+    release it bonus-only.
+    
+    Example3: Your different edition has 13 tracks of which 9 were on the first
+    retail release and 4 (= more than 30%) are new. Then you are allowed to
+    release the full album even within first 3 months. Except when the 4 new
+    tracks were already all on ONE previous release. Then a release isn't
+    allowed at all.
+    
+    For DVD(A) releases check Rule 10.
+    
+ 8. Current maximum directory/filename-length is 128 characters
+    Exception: Dirfixes that reach the limit by adding "-DIRFIX-"
+    
+ 9. No fake-releases
+    It's a fake release when artist, title, group or source is incorrect
+    (different).
+    
+    examples:
+    - Some_Artist-Crappy_Music-2004-GRP not released by GRP
+    - Another_Artist-Lots_of_Noise-CDM-2004-GRP was ripped from TV or
+      downloaded from a paysite
+    - Madonna-Something_New-2004-GRP really containing some tracks by Marilyn
+      Manson
+    
+10. DVD/DVDA Ripping
+    A DVD/DVDA release must contain all music tracks. Additional tracks
+    (interviews etc.) are optional. If those extra tracks are not included then
+    a proper (with ALL tracks) or an additional release (extra tracks only) is
+    not allowed.
+    If tracks are available in several audio formats then you must use the   
+    "best" version.
+    Priority is:
+    - PCM stereo (doesn't matter if DVDA or CDDA quality)
+    - PCM 3+ channels
+    - AC3 (dolby digital) stereo or DTS stereo
+    - AC3 (dolby digital) 3+ channels or DTS 3+ channels
+    - MPG
+    Examples:
+    - DVD contains AC3 5.1 and AC3 2.0 => you must rip the AC3 2.0 tracks   
+    - DVD contains PCM and AC3 2.0 => you must rip the PCM tracks
+    - DVD contains MPG and AC3 2.0 => you must rip the AC3 2.0 version
+    Normalizing the sound volume is allowed but optional.
+    
+11. Encoding Quality
+      1. For releases made from MP3s (online bought or from FLASH medium) and
+         which are not SBD:
+         VBR (all combinations, but no maximum bitrate limit) and CBR is
+         allowed. The minimum bitrate for CBR is 192kbit.
+         => You release the MP3 as is. It is NOT allowed to re-encode! If the
+         source is below 192 kbit CBR it's not allowed to release it. Release
+         the MP3 unmodifed as you downloaded/copied it. Only adding/changing  
+         ID3 tag is allowed.
+         If you want to release a -WEB- mp3 file with constant bitrate (CBR)
+         then you must choose the best version (320->256->224->192 kbit)   
+         available at the shop.
+         If the FLASH medium contains both WAV and MP3 then you must choose   
+         WAV.
+      2. For ALL other sources (CD, Vinyl, DVD, SBD, CABLE, LINE, etc.):
+         You must use:
+         LAME 3.97 (final version!) with preset V2 and VBRNEW ("-V2 --vbr-new")
+         Additional switches which would affect the mp3 quality are forbidden,
+         especially no minimum or maximum bitrate limits.
+      3. The sampling rate must be either 44.1khz or 48khz. 32khz is not
+         allowed. Downsampling to 44.1 or 48khz is allowed (if source is
+         better), upsampling to 44.1 or 48khz is not allowed.
+      4. For all LIVE sources: Straight-to-mp3 encoding is allowed, but
+         discouraged. The header of the mp3 file must be correct at all times.
+         
+12. Promos
+    If a release is considered not to have every track from the source then it
+    must be labeled as a promo and can be duped by any legitimate retail
+    release that DOES contain all tracks. The legitimate release can be
+    identified by the CAT number, or more suitable proof.
+    Promos do not have to contain track listings, they are promotional
+    material, they are not considered legitimate releases, and are still
+    governed by quality rules.
+    If you release a promo when the retail is already out then you must provide
+    proof that this promo is real to make sure this is not a selfmade "promo". 
+    
+13. Re-encodes are not allowed.
+    Exception: releases of following sources are currently allowed if they are
+    tagged correctly:
+    DVD, DAB, DVBC/DVBS/DVBT/SAT (compressed digital tv/radio
+    sat,cable,terrestrial), MD (live)
+    
+14. All bootleg releases must have the word BOOTLEG in dirname
+    A bootleg recording is a cd/vinyl/dvd that was not officially released by
+    the person/company owning the rights to do that (for example streetmixes,
+    pirate live cds, etc).
+    
+    Because very often it's not 100% clear if something is bootleg there are
+    conditions when we assume something is or isn't bootleg. This is not a
+    defnition of "bootleg" and if a condition is not true then it does not mean
+    the opposite is true. This only helps nukers and groups to decide if a
+    bootleg tag is needed and hopefully leads to more fair nuking.
+    
+    conditions for:
+    [records done completely by the artist] (no samples from other artists)
+    It's bootleg if ...
+    - there are no signs that the label really released this
+    - the "label" has no connection to the artist
+      (independent releases (no label, own label) are allowed and don't need a
+      bootleg tag)
+      
+    even if the conditions above are true it is NOT bootleg if:
+    - the record is available at at least 3 major retail shops
+    
+    conditions for:
+    [mixes] (samples of other artists included)
+    It's not bootleg if ...
+    - the record is available at at least 3 major retail shops
+    - the label exists and lists the record and the label never released any  
+       bootlegs and released stuff that was available at major retail shops
+    - the artist or label of the samples confirms this release is valid (on
+      their webpage or some other trusted place)
+      
+    "major retail shops" currently are:
+    www.amazon.com (.de, .fr ...)
+    www.bestbuy.com
+    www.walmart.com
+    www.cduniverse.com
+    www.virginmegastores.co.uk (.gr, .fr, .jp) (US shop excluded)
+    www.sonymusicstore.com
+    www.juno.co.uk
+    www.deejay.de
+    www.ukdancerecords.com
+    www.dancegrooves.com
+    www.decks.de
+    www.4djsonly.com
+    
+    The shop itself must sell the record (no private sellers).
+    
+15. FREE MP3s
+    If music in mp3 format in acceptable quality (CBR 192kbit minimum) or files
+    in a lossless format (wav/flac/...) are legally available for download on  
+    the net at no cost (artist / record company allows it) then it's NOT
+    allowed to release those files or mp3s made from them.
+    However a physical RETAIL release is allowed even if a free version is
+    available when a proof photo/scan is included.
+    
+16. SOURCE
+    The tracks of a release must all be from the same source and have the same
+    quality/cbr-bitrate/vbr-setting/encoder/setting (Exception: FLASH
+    releases). Taking tracks from other scene releases or internal group
+    releases of other groups is strictly forbidden.
+    If the source is not a pressed CDDA then the directory name needs a valid
+    source tag. Valid tags are listed below.
+
+    =RETAIL SOURCES=
+     [CD SINGLE] (pressed CDDA)
+     dirtag needed: -CDS- or -CDM-
+     
+     [CD ALBUM] (pressed CDDA)
+     dirtag needed: none
+     dirtag suggested: -CDA- (-2CDA- -3CDA- etc.)
+
+     [CD OTHER] (pressed CDDA)
+     dirtag needed: none
+     dirtag suggested: -CD- (-2CD- -3CD- etc.), -CDEP-
+     
+     [VINYL SINGLE]
+     dirtag needed: -VLS- or -VINYL-
+     dirtag suggested: -VLS-
+
+     [VINYL ALBUM]
+     dirtag needed: -LP- or -VINYL-
+     dirtag suggested: -LP-
+     
+     [VINYL OTHER]
+     dirtag needed: -VINYL-
+     
+     [DVD] (pressed video DVD)
+     dirtag needed: -DVD- (-2DVD- -3DVD- etc.)
+     extra nfo info needed: 
+      - codec of source (AC3, PCM, MPG, DTS),
+      - number of channels of source (stereo, 5.1, ...)
+
+     [DVD SINGLE] (pressed video DVD)]
+     dirtag needed: -DVDS- or -DVD- 
+     dirtag suggested: -DVDS- 
+     extra nfo info needed:
+      - codec of source (AC3, PCM, MPG, DTS),
+      - number of channels of source (stereo, 5.1, ...)
+     
+     [DVDA] (PCM data of a pressed DVDA, not audio of a video DVD!) 
+     dirtag needed: -DVDA- (-2DVDA- -3DVDA- etc.)
+     extra nfo info needed:
+      - number of channels of source (stereo, 5.1, ...)
+
+     [SACD]
+     dirtag needed: -SACD- (-2SACD- -3SACD- etc.)
+
+     [HD DVD] (pressed) 
+     dirtag needed: -HDDVD- (-2HDDVD- -3HDDVD- etc.)
+     extra nfo info needed:
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [BLU-RAY DISC] (pressed) 
+     dirtag needed: -BD- (-2BD- -3BD- etc.)
+     extra nfo info needed:
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [FLASH medium] (SlotMusic, CompactStick, ...)
+     dirtag needed: -FLASH-
+     extra nfo info needed:
+      - codec of source (MP3, PCM (WAV), ...)
+      - proof photo of medium+cover
+      
+    =LIVE SOURCES=
+     [ANALOG RADIO] (terrestrial)
+     dirtag needed: -FM-
+     
+     [ANALOG CABLE] 
+     dirtag needed: -CABLE-
+
+     [ANALOG OR DIGITAL SAT]
+     dirtag needed: -SAT-
+     
+     [DIGITAL VIDEO BROADCAST SAT]
+     dirtag needed: -DVBS-
+     
+     [DIGITAL VIDEO BROADCAST CABLE]
+     dirtag needed: -DVBC-
+     
+     [DIGITAL VIDEO BROADCAST TERRESTRIAL]
+     dirtag needed: -DVBT-
+     
+     [DIGITAL AUDIO BROADCAST]
+     dirtag needed: -DAB-
+     
+     [MD] (MiniDisc)
+     dirtag needed: -MD-
+     
+     [direct live recording from the audience]
+     dirtag needed: -AUD-
+     
+     [direct recording by the ripper from soundboard/mixer through the 
+      LINE-in interface]
+     dirtag needed: -LINE-
+
+     [MP3 FILE supplied by a radio station or DJ] (and not recorded from 
+      a webstream)
+     dirtag needed: -SBD-
+
+     [WEBSTREAM] (not allowed, so must be released internally)
+     dirtag needed: -STREAM-
+
+    =OTHER SOURCES=
+     [WEB] - audio files legally available on the net and not free 
+     dirtag needed: -WEB-
+     extra nfo info needed:
+      - codec of source (MP3, PCM, ...),
+      - bitrate of source file (if not PCM/WAV),
+      - URL to some shop where it's available in that format
+     
+     [CDR] (small label/artist releasing CDDA on CDR pr LIVE set supplied 
+            on CDR)
+     dirtag needed: -CDR- (-2CDR- -3CDR- etc.)
+     
+     [DVDR] (small label/artist releasing on DVDR)
+     dirtag needed: -DVDR- (-2DVDR- -3DVDR- etc.)
+     extra nfo info needed:
+      - codec of source (AC3, PCM, MPG, DTS),
+      - number of channels of source (stereo, 5.1, ...)
+
+     [HD DVD RECORDABLE]
+     dirtag needed: -HDDVDR- (-2HDDVDR- -3HDDVDR- etc.)
+     extra nfo info needed:
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [BLU-RAY DISC RECORDABLE]
+     dirtag needed: -BDR- (-2BDR- -3BDR- etc.)
+     extra nfo info needed:
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [DAT TAPE] 
+     dirtag needed: -DAT-
+     
+     [ANALOG TAPE] 
+     dirtag needed: -TAPE-
+          
+     [UNKNOWN]
+     dirtag needed: -BOOTLEG-
+
+    All other "sources" are invalid source tags (-LIVE- , -EP-, ...). Which
+    means you need a second tag for the source if you use those tags (except
+    for CDs which don't need a source tag).
+    A SBD release is not allowed if it could be a re-encode/repack of the same
+    show streamed or downloaded free from inet. If a free broadcast or download
+    is/was available with 160kbit CBR or better then it's not allowed to do a
+    SBD release.
+    
+17. Fixes
+      1. Trackfixes
+         Only one trackfix per release is allowed. If the release needs a
+         second trackfix or more than 50% of the tracks need a fix then you
+         must re-rip the whole release and all previous releases+dir/nfofixes
+         getting nuked.
+         A 1-track fix for a 2-track release is allowed (=50% and not "more
+         than 50%").
+      2. Dirname/ID3 Fixes
+         If you release a DIRFIX then the dirname of the problematic release
+         must be listed in your NFO file.
+         If a release gets nuked for BAD DIRNAME or BAD ID3 then the
+         releasegroup has 72 hours to release a DIR/ID3FIX. If they don't do it
+         within the 72 hours then any other group is allowed to release a fix
+         or re-release.
+         The 72 hours start when the release gets nuked.
+         
+18. ID3 Tags
+    All mp3 files need an ID3 v1.1 and ID3 v2 tag. This tag must include
+    Artist, Title and Album (see Note #3). The fields Year, Genre and   
+    Tracknumber must be present but may not be nuked if incorrect.
+    
+19. LIVE release quality
+      1. The set must be complete. This means that every part of the show must
+         be released, and the beginning and end must be included in their
+         entirety. A set may not miss more than 1 minute from begin or end.
+      2. All commercials must be edited out.
+      3. DJ talk can be included to a certain extent: track announcements and
+         short lines from the DJ should not be removed; interviews and other
+         long talk should be removed (or included in a separate file if it's
+         special).
+      4. It is encouraged to fade-in and fade-out the set. However, lack of
+         fades constitutes no proper reason.
+         
+20. Scans/Photos
+      1. All one track promo single releases must include scans/photos.
+      2. A release might get "pre-nuked" if the source of the release is
+         questionable. You are able to identify such a nuke by the string
+         "SCANS.REQUESTED" in nukereason. The releasegroup then has 72 hours
+         (starting when it gets nuked) to supply/release scans/photos which 
+         prove that the source is real. If useable scans/photos are supplied
+         then the release gets unnuked. If no scans/photos are provided it
+         remains nuked and then every other group is allowed to release it if
+         scans/photos are included.
+      3. "scans/photos" means a scan or photo of either the disc (CD, vinyl,
+         ..) or the cover. Make sure that the quality of a photo is not too
+         bad. A photo that doesn't show anything because of terrible quality
+         does not count. And make sure that your "scan" doesn't look like a
+         picture that you downloaded from a webshop (e.g. put more than the
+         cd/cover on the scan).
+         
+21. FLASH medium ripping
+      1. A FLASH release must contain all music tracks. For additional stuff
+         (videos, pictures etc.) see rule 2.
+      2. If the FLASH medium contains WAV files you must encode them with scene
+         standards.
+      3. If the FLASH medium contains multiple formats (e.g. 10 tracks WAV and
+         a DJ MIX MP3) it is allowed to release it with mixed VBR/CBR and
+         multiple encoders.
+
+Notes:
+
+ 1. Releases with an apparently incorrect year may not be nuked. However the
+    year should be correct of course. Keep in mind that a lot of sites nuke for
+    fake year when it's incorrect. (The Year in dirname is not the year when
+    you released it but when the record company/artist published it!)
+ 2. If a release labeled as "advance" is identical to the retail version then
+    the advance turns into a retail release. This means then it is not allowed
+    to dupe it and it counts as retail for ALL rules. If the retail is
+    different then of course it's allowed to release it.
+ 3. Typos (in dirname, trackname, id3, etc ...) are tolerated if it still is
+    readable and either artist or title is 100% correct.
+ 4. The audio of a normal video DVD is *NOT* DVDA ! The audio of a DVD usually
+    is MP2/AC3/DTS compressed (lossy) while the audio of a real DVDA is high
+    quality PCM (lossless, e.g. 24bit/192khz). Tagging a normal DVD release as
+    -DVDA- will get nuked.
+
+change-log:
+2007-01-15 first version (v1.0)
+2007-06-01 rule 1: live sources addition
+2007-06-01 1.4 added (CD after WEB allowed)
+2007-06-01 3.4 added (INT tagging)
+2007-06-01 3.5 added (live sources)
+2007-06-01 rule 4 addition (remix info in filenames)
+2007-06-01 rule 7 reworded to make clear it's for promos/advances too and to
+           allow full re-releases within 3 months more than 30% is new.
+2007-06-01 rule 11 addition: best CBR must be released for WEB releases 
+2007-06-01 11.3 added (minimum sampling rate)
+2007-06-01 11.4 added + rewordings for live sources
+2007-06-01 rule 13 adjusted for live sources
+2007-06-01 rule 16 reworded to forbid different encoders in one release  
+2007-06-01 rule 16 new sources HD DVD and BLU RAY added
+2007-06-01 rule 16 "CDDA" added to all CD-sources
+2007-06-01 rule 16 all live sources adjusted, "SBD" rips limited
+2007-06-01 rule 19 added (LIVE release quality)
+2009-09-01 rule 1.4 CD after FLASH allowed
+2009-09-01 rule 2 addition (additional material must be released separately
+           with tag -EXTRAS-)
+2009-09-01 rule 6.2 reworded to forbid homemade releases
+2009-09-01 rule 11 lame 3.90.3 removed
+2009-09-01 rule 12 last paragraph moved to rule 20
+2009-09-01 rule 15 addition (physical retail release allowed even if free   
+           version available)
+2009-09-01 rule 16 source AUD re-added and HOMEMADE source removed
+2009-09-01 17.2 added (Dirname/ID3 Fixes)
+2009-09-01 rule 18 addition (ID3 v2)
+2009-09-01 20 added (Scans/Photos)
+2009-09-01 21 added (FLASH medium ripping)
+
+                      V2.0 active since 2009-09-01, signed by:
+1way 404 AMRC BF BFHMP3 BOSS CMG CMS CR D2H dh DJ EGO EMP FKK FNT FTD FWYH gEm
+  GRAVEWISH HQEM i8 iPC JAH JFK KzT MNS MOD NBD OBC PMS PsyCZ pyt QMI r35 rH   
+                      SHELTER TCLUB TGX UKi WAV wAx WiTF
+
+

@@ -1,0 +1,439 @@
+| The x264 Sports Releasing Standards 2009 (a.k.a TXSRS2K9)                                            |
+| Version: 1.0                                                                                         |
+| Release Date: 2009-06-21                                                                             |
+|                                                                                                      |
+| Requirements: Notepad with terminal font or any other ascii viewer.                                  |
+|                                                                                                      |
+| [ Introduction ]                                                                                     |
+|                                                                                                      |
+| x264 has become the best video codec over the past 2yrs or so, giving higher quality video than xvid |
+| and at lower filesizes. AAC has become the best audio codec over the past few years and gives the    |
+| same quality as mp3 but at a lower bitrate which allows for higher video bitrate for release sizes.  |
+| Sports have high motion which xvid is unable to adequately compress to a good enough standard and is |
+| no longer being developed, so x264 with AAC audio is the best option for us to use. Sports have been |
+| hard to regulate as they need different rules due to their duration, content type and what should be |
+| included in the encode and how to tag releases, these rules will address these issues.               |
+|                                                                                                      |
+| There are many standalone players like TviX, Popcorn Hour, WD TV HD Media Player, MVIX, mini iSTAR   |
+| etc that can play back x264 (.mkv) and aac audio, PS3 and Xbox 360 will likely add support for .mkv  |
+| files in the future. Windows7 has h264 and aac codecs built in, haali splitter will allow you to     |
+| play the .mkv files in Windows Media Player on windows7, we recommend VLC player or MPC-HC.          |
+|                                                                                                      |
+| These rules are for DSR, PDTV, WS.PDTV and HDTV sources ONLY, analog is forbidden. Releases will be  |
+| DSR.x264, WS.DSR.x264, PDTV.x264, WS.PDTV.x264 and HDTV.x264. DSRip, WS.DSRip, FS.DSR, FS.PDTV and   |
+| WS.HDTV tags are NOT allowed. These rules apply for ALL sports e.g Football (aka soccer), NFL, NBA,  |
+| Formula 1, WWE, MMA (e.g UFC), Tennis, NHL, MotoGP etc. Reality tv shows that include only some      |
+| sport should use xvid rules e.g The.Ultimate.Fighter, The.Contender, Gladiators etc.                 |
+|                                                                                                      |
+| These rules are ONLY for english audio releases, swedish, dutch etc will have to create their own    |
+| sports rules if they want to use x264 for sports.                                                    |
+|                                                                                                      |
+|                                                                                                      |
+| [ Previous Releases ]                                                                                |
+|                                                                                                      |
+| These rules do not apply to previous releases, and propering for those reasons will not be tolerated |
+|                                                                                                      |
+|                                                                                                      |
+| [ General ]                                                                                          |
+|                                                                                                      |
+| 1.1)  Release must be packed in RAR. SFV and NFO must be included.                                   |
+| 1.2)  Rars should be in multiples of 50 MiB, no more than 99 files, compression forbidden, use       |
+|       "store". Recovery record/recovery rars are optional.                                           |
+| 1.3)  Release must be muxed into mkv container.                                                      |
+| 1.4)  DSR dupes WS.DSR, PDTV, WS.PDTV and HDTV Source. WS.DSR dupes PDTV, WS.PDTV, HDTV. PDTV dupes  |
+|       WS.PDTV and HDTV source, WS.PDTV dupes HDTV source.                                            |
+| 1.5)  Suggested directory format (unless your sport is covered later in the rules):                  |
+|       Sport.YEAR.Event.SOURCE.x264-GROUP.                                                            |
+| 1.6)  No intros, outros, betweenos, or any other form of defacement of the show will be tolerated.   |
+| 1.7)  Credits must not be removed but can be encoded at a lower bitrate, minimum of 300kbps.         |
+| 1.8)  A sample MUST be 50-70 seconds in length, preferably not of intro or closing trailers.         |
+|       1.8.1)  It must be cut from the final release and not encoded separately (use mkvtoolnix or    |
+|               similar).                                                                              |
+|       1.8.2)  It must be put within a directory named "Sample".                                      |
+|       1.8.3)  Sample must be a .mkv file. You cannot use .mp4, .avi etc.                             |
+| 1.9)  x264 dupes xvid, use internal. Xvid doesn't dupe x264, hopefully all groups will move to x264  |
+|       for sports then we can ban xvid for sports as it cannot cope with high motion sports, however  |
+|       better sources dont dupe xvid eg hdtv.x264 doesnt dupe ws.pdtv.xvid etc.                       |
+| 1.10) Groups are to state any known problems in the nfo, minor problems like 1 video glitch for 1sec |
+|       can be just written in nfo, more severe should use READ.NFO tag. If a group has a copy         |
+|       without problems they can issue a proper. See proper section for more details.                 |
+| 1.11) NO spoilers allowed e.g "Well done lewis hamilton" or "Man United deserved the win". However,  |
+|       groups are allowed to say things like "this was a great final" or "this was a great race" etc. |
+| 1.12) Scrolling or stationary ticker-tape text bars at top or bottom of shows MUST be cropped out if |
+|       they are present for 100% of the show and are not to do with the sport being aired.            |
+| 1.13) Groups can use any size under 175mb for short sporting events e.g single boxing or mma fights  |
+|       as long as it has a MINIMUM bitrate 950.                                                       |
+| 1.14) SEGMENTING IS BANNED!                                                                          |
+|                                                                                                      |
+|                                                                                                      |
+| [ Audio ]                                                                                            |
+|                                                                                                      |
+| 2.1)  Audio must be AAC (NDAAC-HE) or AC3. (NDAAC-HE codec is free and available at nero.com).       |
+| 2.2)  AC3 must be original untouched/untranscoded AC3.                                               |
+| 2.3)  AAC must be Nero AAC 1.3.3.0 or newer with profile NDAAC-HE-64kbps with MP4-AAC extension and  |
+|       Adaptive bitrate changed to 80 or higher in config. This gives same quality as 128bit mp3 but  |
+|       at only 60% of the filesize.                                                                   |
+| 2.4)  Release must only contain 1 audio track muxed into the mkv container.                          |
+| 2.5)  Dupes based on audio format are forbidden and should be tagged iNTERNAL.                       |
+| 2.6)  Sources with clipping audio will be considered a nuke.                                         |
+| 2.7)  Audio that is 120ms or more out of sync or drifts more than 120ms between any two points (e.g. |
+|       needing -80 at one and +40 at another) is considered to be technically flawed and may be       |
+|       propered.                                                                                      |
+| 2.8)  Original frequency of 48Khz or 44.1Khz must be maintained.                                     |
+|                                                                                                      |
+|                                                                                                      |
+| [ Video ]                                                                                            |
+|                                                                                                      |
+| 3.1)  If needed, appropriate de-interlacing and ivtc must be applied.                                |
+| 3.2)  Must use a minimum encode of 2 passes.                                                         |
+| 3.3)  Height and width of release must be mod 16.                                                    |
+| 3.4)  50/60fps video must be dropped to 25/30fps use SelectEven() or similar.                        |
+| 3.5)  Crop the black borders from the source. Crop to the picture that presents the most pixels even |
+|       if this means some parts of the release has black bars. Releases that are uncropped on 1 or    |
+|       more sides for 100% duration of the show are to be nuked and can be propered. 1px MINIMUM      |
+|       needed to proper for a release being uncropped for 100% duration on 1 or more sides.           |
+| 3.6)  Releases are not to be overcropped, they will be nuked and can be propered. 1px is the MINIMUM |
+|       needed to proper.                                                                              |
+| 3.7)  Aspect Ratio must be within +-1.5% of original AFTER cropping. Resolution should be chosen to  |
+|       keep the Aspect Ratio within +-1.5%. MeGUI has an option to only show resolutions within a     |
+|       specified percentage, you can type "1.5", this is in Options-Settings-Acceptable Aspect Error" |
+| 3.8)  Custom Matrices are allowed.                                                                   |
+| 3.9)  VfW (Video for Windows) is not allowed.                                                        |
+| 3.10) Stripping or falsifying encode information in the file header is banned.                       |
+| 3.11) Must be Level 4.1 High Profile (MeGUI requires this to select some options).                   |
+| 3.12) x264 version used must be at least v1162 and no older than 30 revisions. See www.x264.nl       |
+| 3.13) --deblock must be enabled. Must be the same on each pass.                                      |
+|       --aq-mode must be enabled.                                                                     |
+|       --bframes 3 or higher is required and must be same in both passes.                             |
+|       --subme 7 or higher is required.                                                               |
+|       --ref 5 or higher is required.                                                                 |
+|       --me umh or higher is required (a.k.a multi-hex).                                              |
+|       --trellis 1 or higher is required.                                                             |
+|       --b-pyramid must be used in both passes (B-Pyramid).                                           |
+|       --weightb must be used (Weighted B-Prediction).                                                |
+|       --bime must be used (Bidirectional M.E).                                                       |
+|       * Chroma M.E. must be used (enabled by default).                                               |
+|       * Keyframe interval (--keyint) must be at least 200 and at most 300. It is recommended to be   |
+|         10*framerate (PAL=250, NTSC=300).                                                            |
+|       * Min GOP Size (--min-keyint) must be at least 20 and at most 30. It is recommended to be      |
+|         equal to the framerate (PAL=25, NTSC=30).                                                    |
+|       * CABAC must be used (enabled by default).                                                     |
+|       * Macroblock options (--partitions) must be default: "p8x8,b8x8,i8x8,i4x4" or higher "all".    |
+|       * Adaptive DCT (--8x8dct) must be used.                                                        |
+|       * Adaptive B-Frames must be used (enabled by default).                                         |
+|       * B Frame mode (--direct) must be set to Spatial (default) or Auto and  must be the same for   |
+|         both passes.                                                                                 |
+| 3.14) The final pass must be done as one continuous encode spanning the entire episode, i.e. may not |
+|       be segmented.                                                                                  |
+| 3.15) Video bitrate must be a MINIMUM of 950.                                                        |
+|                                                                                                      |
+|                                                                                                      |
+| [ Video Resolutions ]                                                                                |
+|                                                                                                      |
+| 3.16) Width: 608 - 720 pixels for Widescreen (16:9).                                                 |
+|              544 - 720 pixels for Fullscreen (4:3).                                                  |
+| 3.17) Video should not be upscaled unless the vertical resolution would be reduced if a lower        |
+|       resolution was used e.g some channels are 544*576 or 544*512, encodes can be done as 720*400   |
+|       or 640*352 or similar as reducing the horizontal would mean halving the vertical to just       |
+|       544*288 which would be much lower quality than upscaling the horizontal. 720/704px must ONLY   |
+|       be used for releases with 1200+ bitrate. Use a lower horizontal resolution for releases that   |
+|       dont make the minimum 1200 bitrate allowed.                                                    |
+|                                                                                                      |
+|                                                                                                      |
+| [ Total Size ]                                                                                       |
+|                                                                                                      |
+| 4.1)  Final mkv file size in MiB (1048576 bytes) must be 1 of the following unless the runtime is    |
+|       too short then any filesize lower than 175mb may be used but must still maintain a minimum of  |
+|       950 bitrate:                                                                                   |
+|                                                                                                      |
+|       * 175mb                                                                                        |
+|       * 233mb                                                                                        |
+|       * 350mb                                                                                        |
+|       * 440mb                                                                                        |
+|       * 550mb                                                                                        |
+|       * 700mb                                                                                        |
+|       * 746mb  (1/6 dvdr)                                                                            |
+|       * 1119mb (1/4 dvdr)                                                                            |
+|       * 1493mb (1/3 dvdr)                                                                            |
+|       * 2239mb (1/2 dvdr)                                                                            |
+|       * 4479mb (1 dvdr)                                                                              |
+|                                                                                                      |
+| 4.2)  Multiples of dvd5 must be used for longer releases, not dvd9.                                  |
+| 4.3)  2mb undersize and 2mb oversize are the maximum tolerated.                                      |
+| 4.4)  Releases are NOT to be split, single .mkv files only.                                          |
+| 4.5)  950 minimum bitrate must obeyed at all times unless stated otherwise in a rule specific to a   |
+|       sport in the next section of the rules.                                                        |
+|                                                                                                      |
+|                                                                                                      |
+| [ NFO's ]                                                                                            |
+|                                                                                                      |
+| 5.1)  NFO as a minimum MUST contain the following information:                                       |
+|       * Release name                                                                                 |
+|       * Audio Codec                                                                                  |
+|       * Audio Bitrate                                                                                |
+|       * Audio Channels (if its AC3)                                                                  |
+|       * Video Bitrate                                                                                |
+|       * Video Codec and number of passes                                                             |
+|       * Runtime (HH:MM OR HH:MM:SS)                                                                  |
+|       * Resolution                                                                                   |
+|       * Framerate                                                                                    |
+|       * Filesize of .mkv file (to the nearest MB).                                                   |
+| 5.2)  The following are recommended: Description of the sporting event, release date, air date and   |
+|       fight line-ups for boxing and MMA events.                                                      |
+|                                                                                                      |
+|                                                                                                      |
+|------------------------------------------------------------------------------------------------------|
+|                                                                                                      |
+|                                                                                                      |
+| [ Rules Specific To Each Sport ]                                                                     |
+|                                                                                                      |
+| 6.1) WWE (World Wrestling Entertainment) - All in show material is to be left in including adverts   |
+|      of forthcoming events or WWE cd's/dvds. All regular adverts that dont air as part of the WWE    |
+|      broadcast must be removed.                                                                      |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      WWE.Friday.Night.Smackdown.YYYY.MM.DD.SOURCE.x264-GROUP                                         |
+|      WWE.Friday.Night.Smackdown.International.YYYY.MM.DD.SOURCE.x264-GROUP                           |
+|      WWE.Monday.Night.RAW.YYYY.MM.DD.SOURCE.x264-GROUP                                               |
+|      WWE.Bottom.Line.YYYY.MM.DD.SOURCE.x264-GROUP                                                    |
+|      WWE.Afterburn.YYYY.MM.DD.SOURCE.x264-GROUP                                                      |
+|      WWE.EVENT.YEAR.PPV.SOURCE.x264-GROUP for PPV releases like Wrestlemania, Backlash etc.          |
+|                                                                                                      |
+|      Use discretion for other releases like induction ceremonies, wwe diva shows and similar         |
+|      releases. Groups cannot proper for different countries having longer runtimes and               |
+|      censored/uncensored footage, use internal.                                                      |
+|                                                                                                      |
+|                                                                                                      |
+| 6.2) TNA (Total Nonestop Action Wrestling) - All in show material is to be left in including adverts |
+|      of forthcoming events or TNA cd's/dvds. All regular adverts that dont air as part of the TNA    |
+|      broadcast must be removed.                                                                      |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      TNA.Impact.YYYY.MM.DD.SOURCE.x264-GROUP                                                         |
+|      TNA.EVENT.YEAR.PPV.SOURCE.x264-GROUP for PPV releases like Hard.Justice, No.Surrender etc.      |
+|                                                                                                      |
+|      Use discretion for other releases like induction ceremonies and similar releases. Groups        |
+|      cannot proper for different countries having longer runtimes and censored/uncensored footage,   |
+|      use internal.                                                                                   |
+|                                                                                                      |
+|                                                                                                      |
+| 6.3) Football (a.k.a soccer) - Normal football matches (approx 95mins) are to be a MINIMUM of 700mb, |
+|      any unusually long matches due to broken legs that require match to be postponed for a few      |
+|      minutes, powercuts, crowd trouble, extra time, penalties that make a make go over approx 95mins |
+|      MUST use a higher filesize. Normal matches that are long that run 96mins or longer are valid at |
+|      700mb. Releases must include the full match. Half-time studio talk, pre-match and post-match    |
+|      footage are optional, these dupe each other, use internal if we wish to pre a release which has |
+|      different types of footage in. FULL team names must be used e.g Manchester.United, not Man.U or |
+|      Man.United etc. Leg.1 and Leg.2 tags are allowed for cup matches, .Final. and .Semifinal.       |
+|      .Quarterfinal. tags should be used.                                                             |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      EPL.YEAR.Home.Team.Vs.Away.Team.SOURCE.x264-GROUP                                               |
+|      SPL.YEAR.Home.Team.Vs.Away.Team.SOURCE.x264-GROUP                                               |
+|      La.Liga.YEAR.Home.Team.Vs.Away.Team.SOURCE.x264-GROUP                                           |
+|      Serie.A.YEAR.Home.Team.Vs.Away.Team.SOURCE.x264-GROUP                                           |
+|      UCL.YEAR.Group.Home.Team.Vs.Away.Team.SOURCE.x264-GROUP                                         |
+|      UEFA.World.Cup.YEAR.Group.Home.Team.Vs.Away.Team.SOURCE.x264-GROUP                              |
+|      FA.Community.Shield.YEAR.Team.1.Vs.Team.2.SOURCE.x264-GROUP                                     |
+|      FA.Cup.YEAR.Round.Home.Team.Vs.Away.Team.SOURCE.x264-GROUP                                      |
+|                                                                                                      |
+|      e.g EPL.2009.Manchester.United.Vs.Liverpool.WS.PDTV.x264-GROUP                                  |
+|                                                                                                      |
+|                                                                                                      |
+| 6.4) Boxing - Main.Event.Only releases and Fight.Only releases are to include walk-ins and fight,    |
+|      post-fight interviews are optional. Complete.Event releases should include all broadcasted      |
+|      footage. Fight.Only should only be used if you are to release 2 or less fights, if you want to  |
+|      release all fights then release a Complete.Event release. If the fight you are releasing is the |
+|      main event then use Main.Event.Only tag. Names for events like                                  |
+|      Kelly.Pavlik.Vs.Bernard.Hopkins.2 are allowed, however full names must be used. HBO.Boxing tag  |
+|      is also allowed. If the boxing is a Pay Per View event then add a PPV tag.                      |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      Boxing.opponent.1.Vs.opponent.2.Main.Event.Only.SOURCE.x264-GROUP                               |
+|      Boxing.opponent.1.Vs.opponent.2.Complete.Event.SOURCE.x264-GROUP                                |
+|      Boxing.opponent.1.Vs.opponent.2.Fight.Only.SOURCE.x264-GROUP                                    |
+|                                                                                                      |
+|                                                                                                      |
+| 6.5) UFC - Main.Event.Only releases and Fight.Only releases are to include walk-ins, fight and       |
+|      post-fight interviews. Complete UFC releases should include all broadcasted footage. Fight.Only |
+|      must only be used if you are to release 2 or less fights, if you want to release all fights     |
+|      then release the whole event. If the fight you are releasing is the main event then use         |
+|      Main.Event.Only tag. Names for events like Randy.Couture.Vs.Brock.Lesnar are allowed, however   |
+|      full names must be used. Most UFC events are Pay Per View so ALWAYS use PPV for UFC numbered    |
+|      events, dont use PPV tag for UFC.Ultimate.Fight.Night events.                                   |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      UFC.Number.Name.opponent.1.Vs.opponent.2.Main.Event.Only.PPV.SOURCE.x264-GROUP                  |
+|      UFC.Number.Name.opponent.1.Vs.opponent.2.Fight.Only.PPV.SOURCE.x264-GROUP                       |
+|      UFC.Number.Name.PPV.SOURCE.x264-GROUP                                                           |
+|                                                                                                      |
+|      e.g UFC.98.Evans.vs.Machida.PPV.HDTV.x264-GROUP                                                 |
+|      e.g UFC.98.Evans.vs.Machida.Main.Event.Only.PPV.HDTV.x264-GROUP                                 |
+|      e.g UFC.90.Undisputed.Randy.Couture.Vs.Mirko.Cro.Cop.Fight.Only.PPV.HDTV.x264-GROUP             |
+|                                                                                                      |
+|                                                                                                      |
+| 6.6) Formula 1 - Qualifying should be tagged Qualifying.Only or Complete.Qualifying. Races should be |
+|      tagged Race.Only or Complete.Event. Race.Only and Qualfying.Only must contain ALL of the racing |
+|      broadcast on the channel capped from. Complete.Qualifying and Complete.Event must contain all   |
+|      of the tv show broadcast on the channel capped from.                                            |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      Formula1.YEAR.Event.Grand.Prix.Complete.Event.SOURCE.x264-GROUP                                 |
+|      Formula1.YEAR.Event.Grand.Prix.Race.Only.SOURCE.x264-GROUP                                      |
+|      Formula1.YEAR.Event.Grand.Prix.Complete.Qualifying.SOURCE.x264-GROUP                            |
+|      Formula1.YEAR.Event.Grand.Prix.Qualifying.Only.SOURCE.x264-GROUP                                |
+|                                                                                                      |
+|      e.g Formula1.2009.Chinese.Grand.Prix.Complete.Event.WS.PDTV.x264-GROUP                          |
+|                                                                                                      |
+|                                                                                                      |
+| 6.7) Tennis - Several hours in a row is allowed to be released as a part number e.g                  |
+|      Tennis.Wimbledon.Day.2.Part.2.SOURCE.x264-GROUP. Releases missing some of the end or beginning  |
+|      are allowed as matches dont often fully air as tv channels change the match being shown to the  |
+|      most important matches, READNFO tag must be used if the whole match isn't aired.                |
+|                                                                                                      |
+|      Pre-match build-up and after match interviews are encouraged to be included but not required    |
+|      no dupes based on this, use internal. Full names of players must be used. Countries must be     |
+|      used in cup competitions like the Davis Cup tournament.                                         |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      Tennis.Event.YEAR.GENDER.Round.opponent.A.Vs.opponent.B.SOURCE.x264-GROUP                       |
+|      Tennis.Davis.Cup.YEAR.Round.Country.1.Vs.Country.2.SOURCE.x264-GROUP                            |
+|                                                                                                      |
+|      e.g Tennis.US.Open.2009.Mens.Semifinal.Roger.Federer.Vs.Rafael.Nadal.WS.PDTV.x264-GROUP         |
+|      e.g Tennis.Davis.Cup.2009.1st.Round.England.Vs.Russia.WS.PDTV.x264-GROUP                        |
+|                                                                                                      |
+|                                                                                                      |
+| 6.8) NHL - National Hockey League - Games that are 1h30m - 1h40m should be done with a minimum of    |
+|      700MB. Longer games due to various reasons such as penalties or fighting etc, should be done    |
+|      at a higher filesize. Pre-season games are to be tagged with Pre.Season tag. DATE (YYYY.MM.DD)  |
+|      must be used to define when the game was aired and should be tagged after the 2 team's names.   |
+|      Team tags should be done as the following: NHL.Away.Team.Vs.Home.Team. The team's "nickname"    |
+|      must be used when defining the home and away team. I.e. the following tag isn't allowed:        |
+|      NHL.Colorado.Vs.Anaheim.2008.10.31.WS.PDTV.x264-GROUP. All hockey games should follow this kind |
+|      of tagging, obviously dont tag NHL for non-NHL games. Round and game should be used for stanley |
+|      cup for non-finals games e.g .R1G1.                                                             |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      NHL.Away.Team.Vs.Home.Team.DATE.SOURCE.x264-GROUP                                               |
+|      NHL.Stanley.Cup.Finals.Game.NUMBER.Away.Team.Vs.Home.Team.YEAR.SOURCE.x264-GROUP                |
+|      NHL.Stanley.Cup.R.Number+G.Number.Away.Team.Vs.Home.Team.YEAR.SOURCE.x264-GROUP                 |
+|                                                                                                      |
+|      e.g. NHL.Hurricanes.Vs.Ducks.2009.10.21.WS.PDTV.x264-GROUP                                      |
+|           NHL.Stanley.Cup.Finals.Game.6.Edmonton.Oilers.Vs.Carolina.Hurricanes.2008.HDTV.x264-GROUP  |
+|           NHL.Stanley.Cup.R1G1.Edmonton.Oilers.Vs.Carolina.Hurricanes.2008.HDTV.x264-GROUP           |
+|                                                                                                      |
+|                                                                                                      |
+| 6.9) NFL - National Football League - These games are often 2 hours or more, and should therefore be |
+|      at a minimum size of 1193MB. Pre-season games are to be tagged with Pre.Season tag. DATE        |
+|      (YYYY.MM.DD) must be used and should be tagged after the two teams. Team tags should be done as |
+|      NFL.Away.Team.Vs.Home.Team. The team's "nickname" must be used when defining the away team and  |
+|      home team. I.e. the following tag isn't allowed:                                                |
+|      NFL.Chicago.Vs.Washington.2008.10.31.PDTV.x264-GROUP. All football games should follow this     |
+|      kind of tagging, of course NFL shouldn't be tagged for non-NFL games.                           |
+|                                                                                                      |
+|      Tagging to be used:                                                                             |
+|                                                                                                      |
+|      NFL.Away.Team.Vs.Home.Team.DATE.SOURCE.x264-GROUP                                               |
+|                                                                                                      |
+|      e.g. NFL.Hurricanes.Vs.Ducks.2009.10.21.WS.PDTV.x264-GROUP                                      |
+|                                                                                                      |
+|                                                                                                      |
+| 6.10) MLB - Major League Baseball - These games are often 2 hours or more, and should like NFL have  |
+|       a minimum size of 1193MB. Pre-season games are to be tagged with Pre.Season tag. Release must  |
+|       use the DATE tag e.g 2008.10.31 to define when the game was aired, .YEAR. tag isn't allowed.   |
+|       These taggings go for any kind of baseball games. Each release must be tagged with the team    |
+|       nicknames i.e. MLB.Baltimore.Vs.Texas.2009.10.31.PDTV.x264-GROUP is not allowed.               |
+|                                                                                                      |
+|       Tagging to be used:                                                                            |
+|                                                                                                      |
+|       MLB.Away.Team.Vs.Home.Team.DATE.SOURCE.x264-GROUP                                              |
+|       MLB.Pre.Season.Away.Team.Vs.Home.Team.DATE.SOURCE.x264-GROUP                                   |
+|                                                                                                      |
+|       e.g. MLB.Red.Sox.Vs.White.Sox.2009.10.31.WS.PDTV.x264-GROUP                                    |
+|                                                                                                      |
+|------------------------------------------------------------------------------------------------------|
+|                                                                                                      |
+| [ PROPERS ]                                                                                          |
+|                                                                                                      |
+| 7.1)  PROPERS are valid in the case of a technical flaw in the original release i.e. bad IVTC,       | 
+|       interlacing, audio glitches, out of sync, missing footage, aspect ratio, overcropped by 1px or |
+|       more, uncropped on 1 or more sides for 100% of the release, video bitrate is under 950, aac    |
+|       audio bitrate is under 80kbps, bad x264 settings, video glitches in 2 or more areas or if the  |
+|       video glitch has an audio glitch at the glitch too.                                            |
+| 7.2)  Samples (.mkv) or screenshots (.png) are encouraged to prove previous release was faulty.      |
+| 7.3)  Releases that were nuked at the time of releasing a proper dont require proof, however proof   |
+|       is encouraged.                                                                                 |
+| 7.4)  Samples and screenshots are preferred to be put in Sample dir or Proof dir, however a url to a |
+|       image sharing site or filesharing site is allowed in the nfo or in a nuke/unnuke reason.       |
+| 7.5)  Groups should give full reasons not just bad.crop. Please state which side(s) and whether it   |
+|       is uncropped, undercropped or overcropped. Preferably state timecodes if possible for glitches |
+|       or missing footage or ads left in etc.                                                         |
+| 7.6)  Qualitative propers are not allowed e.g your channel has higher bitrate and/or resolution,     |
+|       better x264 settings used etc, nor are propers based on decisions made by a ripper (i.e.       |
+|       filesize, AC3 or AAC etc).                                                                     |
+| 7.7)  Nfofix must be issued if a group forgets to put proper reason in nfo if previous release was   |
+|       not nuked at time of releasing proper. Release will be nuked but will be unnuked when nfofix   |
+|       is released.                                                                                   |
+| 7.8)  Propers are permitted if there are broadcast or signal glitches in a previous release, however |
+|       if a group uses READ.NFO tag explaining the problems in the release it shouldn't be nuked      |
+|       unless a group can proper it with a release without those problems. If you think the problem   |
+|       might be your signal and you dont want to risk being propered then use iNTERNAL.               |
+| 7.9)  READ.NFO tag is NOT to be used with a PROPER tag, proper notes are required so read.nfo tag    |
+|       is obselete when a PROPER or REAL.PROPER tag is used.                                          |
+| 7.10) PROPER tag is not needed for releases tagged iNTERNAL which have problems, tag normally.       |
+| 7.11) If you release an encode without watching and it has broadcast glitches and not signal         |
+|       glitches and can prove it either via 2 original .mpg, .ts or similar files or an online        |
+|       streaming link then the release is to be unnuked as it isn't the group's fault. Proof can be   |
+|       submitted in an unnuke with links to tv channel streaming site or free filesharing urls e.g    |
+|       sendspace.com, rapidshare etc OR the group can release an nfofix with the proof and url links. |
+|       Naming another scene release such as a 720p or xvid version with the same broadcast errors is  |
+|       also fine, preferably state the timecodes of the broadcast problems in the release. Group can  |
+|       tag READ.NFO at risk of being propered or can use iNTERNAL if they cant prove it was the       |
+|       broadcast that was at fault.                                                                   |
+|                                                                                                      |
+|                                                                                                      |
+| [ REPACKS ]                                                                                          |
+|                                                                                                      |
+| 8.1)  REPACKS MUST contain a full reason of what was wrong with previous release e.g                 |
+|       commercials.not.removed.at.6m12s.to.11m03s, missing.5mins.footage.at.12m15s, out.of.sync etc.  |
+| 8.2)  Nfofix must be issued if a group forgets to put repack reason in nfo or release will be nuked, |
+|       it will be unnuked once nfofix has been released.                                              |
+| 8.3)  Groups must use REPACK, not PROPER if their own previous release was faulty, self propers are  |
+|       not allowed.                                                                                   |
+| 8.4)  Use REPACK tag instead of RERIP.                                                               |
+|                                                                                                      |
+|                                                                                                      |
+| [ DiRFiXES ]                                                                                         |
+|                                                                                                      |
+| 9.1)  If releases are mislabeled e.g wrong year, event, date, spelling mistake etc, then a dirfix is |
+|       a valid way of fixing and original release is to be UNNUKED. Dirfix to internal before a nuke  |
+|       to avoid a nuke is allowed but dirfix after a nuke is not permitted.                           |
+| 9.2)  Dirfixes to iNTERNAL are not allowed if release has technical flaws e.g missing footage,       |
+|       video glitches, audio glitches, low audio bitrate, low video bitrate, overcropped, uncropped   |
+|       or any other technical flaw.                                                                   |
+|                                                                                                      |
+|------------------------------------------------------------------------------------------------------|
+
+
+  [ Suggested encode settings ]
+
+ 10.1)  First pass:
+       x264.exe --pass 1 --level 4.1 --stats .stats --bitrate 950 --threads auto --bframes 3 --me dia --ref 1 --subme 3 --no-dct-decimate --partitions none --progress --no-psnr --no-ssim --output NUL sport.avs
+
+ 10.2)  Second pass:
+       x264.exe --pass 2 --level 4.1 --stats .stats --bitrate 950 --threads auto --bframes 3 --b-pyramid --weightb --me umh --ref 5 --mixed-refs --subme 7 --trellis 1 --analyse all --8x8dct --no-fast-pskip --progress --no-psnr --no-ssim --output sport.mkv sport.avs
+
+
+ [ Signed By (in alphabetic order) ]
+
+ GORE JETSET KICKOFF NOsegmenT T0nk4
+
+ [ These rules apply from 2009-06-22 00:00:01 GMT ]

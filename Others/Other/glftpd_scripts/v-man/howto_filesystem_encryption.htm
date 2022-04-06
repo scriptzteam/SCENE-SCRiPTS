@@ -1,0 +1,736 @@
+<html>
+<body>
+<title>Encrypting your linux hard drives</title>
+
+
+<center><h1>Encrypting your linux hard drives</h1></center>
+<center><h5>author: vman (<a
+href="mailto:moopowah@yahoo.com">moopowah@yahoo.com</a>), last modified:
+August 1, 2002</h5></center>
+<hr>
+<br>
+<br>
+<br>
+<b>&gt; NEWS</b><br>
+<i>Jan/8/2002:</i> First publication.<br>
+<i>Jul/8/2002:</i> Updated sections IV and V with a complete example (actual commands) of setting up loop-aes/glftpd.<br>
+<i>Jul/8/2002:</i> Updated section VI with information on why GPG keyfiles lower security.<br>
+<i>Jul/19/2002:</i> Updated section VI with correction in Step 6 (no
+commands were written to fill /usr/cryptofs container while in mapped
+encryption).  also a few random seeds were shorter than intended, no
+biggy.<br>
+<i>Aug/1/2002:</i> Updated section VI, steps 5 and 6 to use 'bcwipe'
+instead of 'dd' for "filling" (which should be treated as "wiping", or
+properly removing data).  Using 'dd' is somewhat useless to ensure all
+previous data is unrecoverable.<br>
+
+
+<br>
+<br>
+<br>
+<b>&gt; I. Purpose:</b><br>
+You're running some type of site (service) -- ftp (glftpd), http, smtp -- and you'd like
+to encrypt your important files in case your machine is ever
+comprimised.  This means that no one can get access to your private
+files without knowing your password.  Technically
+speaking the following encryption schemes work with container files; a physical file on
+a disk which can be mounted as a file system provided a password.  You also have the option
+to encrypt an entire partition, in this case you don't create a container since the partition
+is a file itself.  You have certain governmental restrictions on which encryption algorithms
+you may use, if any, depending on where you live.  On with the show!<br>
+
+
+
+<br>
+<br>
+<br>
+<b>&gt; II. The quick and dirty:</b><br>
+Use loop-AES with AES256 encryption!  If you are worried about the speed loss due to encryption, have a script
+copy files from an unencrypted area to an encrypted area after they have been "worked on"
+(this may depend on the time of day for email, http, or an /incoming/ directory for ftp sites).  Once copied
+you should bcwipe them (<a href="http://www.jetico.com">http://www.jetico.com</a>) to ensure they are properly
+deleted.<br>
+
+
+
+<br>
+<br>
+<br>
+<b>&gt; III. International Kernel Patch (kerneli):</b><br>
+Homepage: <a href="http://www.kerneli.org">http://www.kerneli.org</a><br>
+HowTo: <a href="http://encryptionhowto.sourceforge.net">http://encryptionhowto.sourceforge.net</a><br>
+<br>
+I began with this scheme to test various algorithm performances.  AES256 is definately
+my algorithm and keysize of choice.  The following results are from bonnie++ v1.02
+(<a href="http://www.coker.com.au/bonnie++/">http://www.coker.com.au/bonnie++/</a>).
+The numbers you should be most concerned about are sequential block output/input (the values in bold print).  Output is the
+hd write speed, and input is its read speed (in kB/s) -- this is somewhat similar to 'hdparm -t', but much
+more accurate obviously.  See <a href="http://www.coker.com.au/bonnie++/readme.html">http://www.coker.com.au/bonnie++/readme.html</a>
+for an explaination of all values.  The digest-md5 and digest-sha1 modules were loaded into
+the kernel for these tests.  I also performed a few tests without these modules (which means each
+algorithm used its own hashing code) and the values did not significantly differ.  Each test was performed twice
+to sanity check the results.<br>
+<pre>
+System specifications:
+  CPU: Pentium III (Coppermine) 800MHz
+  RAM: 385348KB
+  Kernel: 2.4.17
+  HD: 60030432 sectors (30736 MB) w/2048KiB Cache, CHS=59554/16/63, UDMA(66)
+    format command: mke2fs -b 4096 &lt;device&gt;
+</pre>
+
+<h3><u><b>Unencrypted</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  8611  74 <b>23943</b>  13 11612  13 10715  92 <b>25278</b>   8 126.2   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   710  99 +++++ +++ +++++ +++   778  99 +++++ +++  2527  99
+m00,1G,8611,74,23943,13,11612,13,10715,92,25278,8,126.2,0,16,710,99,+++++,+++,+++++,+++,778,99,+++++,+++,2527,99
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  8279  73 <b>25294</b>  13 11508  12 10297  91 <b>25268</b>   8 123.9   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   689  99 +++++ +++ +++++ +++   751  99 +++++ +++  2574  99
+m00,1G,8279,73,25294,13,11508,12,10297,91,25268,8,123.9,0,16,689,99,+++++,+++,+++++,+++,751,99,+++++,+++,2574,99
+</pre>
+
+<h3><u><b>AES-128bit</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7523  64 <b>20883</b>   9  5391   2  7278  63  <b>8058</b>   2 120.3   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   752  99 +++++ +++ +++++ +++   785  99 +++++ +++  2626  99
+m00,1G,7523,64,20883,9,5391,2,7278,63,8058,2,120.3,0,16,752,99,+++++,+++,+++++,+++,785,99,+++++,+++,2626,99
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7427  65 <b>20876</b>   9  5500   2  6946  63  <b>8049</b>   2 123.3   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   713  99 +++++ +++ +++++ +++   728  99 +++++ +++  2508  99
+m00,1G,7427,65,20876,9,5500,2,6946,63,8049,2,123.3,0,16,713,99,+++++,+++,+++++,+++,728,99,+++++,+++,2508,99
+</pre>
+
+<h3><u><b>AES-256bit</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  6937  59 <b>17700</b>   4  5235   2  6241  54  <b>8028</b>   2 126.0   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   756  99 +++++ +++ +++++ +++   761  99 +++++ +++  2631  99
+m00,1G,6937,59,17700,4,5235,2,6241,54,8028,2,126.0,0,16,756,99,+++++,+++,+++++,+++,761,99,+++++,+++,2631,99
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  6882  59 <b>17697</b>   5  5202   2  6295  55  <b>8033</b>   2 126.9   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   741  99 +++++ +++ +++++ +++   813  99 +++++ +++  2628  99
+m00,1G,6882,59,17697,5,5202,2,6295,55,8033,2,126.9,0,16,741,99,+++++,+++,+++++,+++,813,99,+++++,+++,2628,99
+</pre>
+
+<h3><u><b>3DES-64bit</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  3435  29  <b>4845</b>   0  1725   0  2781  21  <b>3334</b>   1 120.3   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   648  97 +++++ +++ +++++ +++   798  97 +++++ +++  2662  99
+m00,1G,3435,29,4845,0,1725,0,2781,21,3334,1,120.3,0,16,648,97,+++++,+++,+++++,+++,798,97,+++++,+++,2662,99
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  3464  29  <b>4846</b>   0  1724   0  2786  21  <b>3334</b>   1 122.8   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   747  99 +++++ +++ +++++ +++   778  97 +++++ +++  2578  99
+m00,1G,3464,29,4846,0,1724,0,2786,21,3334,1,122.8,0,16,747,99,+++++,+++,+++++,+++,778,97,+++++,+++,2578,99
+</pre>
+
+<h3><u><b>3DES-192bit</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  3456  29  <b>4845</b>   0  1725   0  2786  21  <b>3333</b>   1 119.5   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   714  97 +++++ +++ +++++ +++   721  97 +++++ +++  2617  99
+m00,1G,3456,29,4845,0,1725,0,2786,21,3333,1,119.5,0,16,714,97,+++++,+++,+++++,+++,721,97,+++++,+++,2617,99
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  3487  28  <b>4892</b>   0  1726   0  2768  21  <b>3334</b>   1 118.2   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   648  99 +++++ +++ +++++ +++   733  97 +++++ +++  2523  99
+m00,1G,3487,28,4892,0,1726,0,2768,21,3334,1,118.2,0,16,648,99,+++++,+++,+++++,+++,733,97,+++++,+++,2523,99
+</pre>
+
+<h3><u><b>BLOWFISH-128bit</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7100  61 <b>19783</b>   9  5448   2  6615  58  <b>8048</b>   2 123.3   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   731  99 +++++ +++ +++++ +++   739  99 +++++ +++  2613  99
+m00,1G,7100,61,19783,9,5448,2,6615,58,8048,2,123.3,0,16,731,99,+++++,+++,+++++,+++,739,99,+++++,+++,2613,99
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7079  61 <b>19809</b>   9  5417   2  6670  58  <b>8010</b>   2 126.4   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   774  99 +++++ +++ +++++ +++   769  99 +++++ +++  2726  99
+m00,1G,7079,61,19809,9,5417,2,6670,58,8010,2,126.4,0,16,774,99,+++++,+++,+++++,+++,769,99,+++++,+++,2726,99
+</pre>
+
+<h3><u><b>BLOWFISH-256bit</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7302  62 <b>19755</b>   9  5409   2  6716  58  <b>8047</b>   2 123.9   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   772  99 +++++ +++ +++++ +++   700  99 +++++ +++  2558  99
+m00,1G,7302,62,19755,9,5409,2,6716,58,8047,2,123.9,0,16,772,99,+++++,+++,+++++,+++,700,99,+++++,+++,2558,99
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7205  62 <b>19754</b>   9  5354   2  6763  59  <b>8046</b>   2 119.3   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   742  99 +++++ +++ +++++ +++   765  99 +++++ +++  2548  99
+m00,1G,7205,62,19754,9,5354,2,6763,59,8046,2,119.3,0,16,742,99,+++++,+++,+++++,+++,765,99,+++++,+++,2548,99
+</pre>
+
+Summary and averages:<br>
+<table border="1" cellpadding="3%">
+  <tr>
+    <td><center><b>crypto</b></center></td>
+    <td><center><b>write speed</b></center></td>
+    <td><center><b>read speed</b></center></td>
+  </tr>
+  <tr>
+    <td>Unencrypted</td>
+    <td>24619 kB/s</td>
+    <td>25273 kB/s</td>
+  </tr>
+  <tr>
+    <td>AES-128bit</td>
+    <td>20880 kB/s</td>
+    <td>8054 kB/s</td>
+  </tr>
+  <tr>
+    <td>AES-256bit</td>
+    <td>17699 kB/s</td>
+    <td>8031 kB/s</td>
+  </tr>
+  <tr>
+    <td>3DES-64bit</td>
+    <td>4846 kB/s</td>
+    <td>3334 kB/s</td>
+  </tr>
+  <tr>
+    <td>3DES-192bit</td>
+    <td>4869 kB/s</td>
+    <td>3334 kB/s</td>
+  </tr>
+  <tr>
+    <td>BLOWFISH-128bit</td>
+    <td>19769 kB/s</td>
+    <td>8029 kB/s</td>
+  </tr>
+  <tr>
+    <td>BLOWFISH-256bit</td>
+    <td>19755 kB/s</td>
+    <td>8047 kB/s</td>
+  </tr>
+</table>
+
+<br>
+Conclusion:<br>
+If you don't mind the slight write decrease of speed over BLOWFISH, use AES256.  I've heard good things
+about AES (aka Rijndael).  I used the maximum
+and minumum keysize available for the chosen algorithms to give perspective.  If you do plan to use AES,
+look below at loop-AES which has an even faster
+performance over the kerneli approach and it's not dependent on kernel patches!  <br>
+
+
+
+<br>
+<br>
+<br>
+<b>&gt; IV. loop-AES:</b><br>
+Homepage: <a href="http://sourceforge.net/projects/loop-aes">http://sourceforge.net/projects/loop-aes</a><br>
+HowTo: see the README file inside the package.  <a href="loop-aes_readme.txt">click here for a local v1.5b copy</a><br>
+<br>
+As mentioned above, this technique is faster than kerneli and it's not dependent on kernel patching -- so
+you have more freedom.  Additionally, it allows you to seed (salt) your password to help against dictionary
+attacks; you can encrypt the swap partition; and you can encrypt the root partition.  The README
+in the package helped me a lot.  It provides the howto for different approaches without the long babble like
+this page.<br>
+<pre>
+System specifications:
+  same as the machine above
+</pre>
+
+<h3><u><b>Unencrypted</b></u></h3>
+<pre>same results as above
+</pre>
+
+
+<h3><u><b>AES-256bit</b></u></h3>
+<pre>Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7543  65 <b>22111</b>   9  5630   2  7144  62  <b>8038</b>   3 117.6   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   750  98 +++++ +++ +++++ +++   781  99 +++++ +++  2630 100
+m00,1G,7543,65,22111,9,5630,2,7144,62,8038,3,117.6,0,16,750,98,+++++,+++,+++++,+++,781,99,+++++,+++,2630,100
+
+Version  1.02       ------Sequential Output------ --Sequential Input- --Random-
+                    -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Machine        Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP  /sec %CP
+m00              1G  7437  64 <b>22134</b>   9  5642   2  6947  60  <b>8005</b>   3 119.5   0
+                    ------Sequential Create------ --------Random Create--------
+                    -Create-- --Read--- -Delete-- -Create-- --Read--- -Delete--
+              files  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP  /sec %CP
+                 16   733  99 +++++ +++ +++++ +++   713  98 +++++ +++  2547  99
+m00,1G,7437,64,22134,9,5642,2,6947,60,8005,3,119.5,0,16,733,99,+++++,+++,+++++,+++,713,98,+++++,+++,2547,99
+</pre>
+
+Summary and averages:<br>
+<table border="1" cellpadding="3%">
+  <tr>
+    <td><center><b>crypto</b></center></td>
+    <td><center><b>write speed</b></center></td>
+    <td><center><b>read speed</b></center></td>
+  </tr>
+  <tr>
+    <td>Unencrypted</td>
+    <td>24619 kB/s</td>
+    <td>25273 kB/s</td>
+  </tr>
+  <tr>
+    <td>AES-256bit</td>
+    <td>22123 kB/s</td>
+    <td>8022 kB/s</td>
+  </tr>
+</table>
+
+<br>
+Conclusion:<br>
+Use this package with AES256 (this AES256 is faster than kerneli's).  More reasons were actually mentioned above. :-)<br>
+
+
+
+<br>
+<br>
+<br>
+<b>&gt; V. Wiping the drive:</b><br>
+The media you plan on encrypting should first be wiped properly with
+bcwipe's U.S. DoD 5200.28 (Department of Defence), 7-pass secure
+deletion.  Do this for devices you plan on performing volume encryption
+for, as well as container files (once you've mapped it to a loop
+device).  This ensures us that what ever data was on this disk
+previously is completely removed and unrecoverable (you may have had
+private files on the device before, for example, and that data is still
+recoverable).  The point is to begin using encryption on a safe, clean
+media.<br>
+
+
+
+<br>
+<br>
+<br>
+<b>&gt; VI. Example with glFtpD</b><br>
+Let's say you are running an ftp service, specifically glftpd (<a href="http://www.glftpd.com">http://www.glftpd.com</a>).
+Areas you might want to encrypt include: swap partition, ftp user data, ftp logs, ssl certificates and the contents of your /site.  It may also
+be a good idea to encrypt /var/log/ (system logs).  If you use the 'locate' command, make sure you know where your
+database is holding its file.  It is usually in /var/spool/locate/, so encrypt that too.  Let's not forget about
+our tmp dirs (/tmp, /var/tmp, /usr/tmp, /usr/local/tmp, ...).  Further,
+i suggest you symlinks your crontabs, /var/spool/cron/ (or whatever you
+use for timed/periodic command execution).  A simple way to encrypt all these various directories
+is to symlink them to some encrypted file system.<br>
+<br>
+For example, you're using /dev/hda4 for the above mentioned paths and you use /dev/loop0 as the loop device (using loop-AES).
+You'll mount /dev/loop0 to /glftpd/ and you should have paths such as: /glftpd/var/log/, /glftpd/var/spool/locate/,
+/glftpd/tmp/.  Symlink /var/log/ -> /glftpd/var/log/, /tmp/ -> /glftpd/tmp/, and so on.  Make sure you make your
+directory permissions correct (tmp is 1777).  So even if you have glftpd in inetd, your site won't go "online" with
+a bootup -- you need to supply a password and mount the encrypted file system, redirect all these paths to
+secure locations in this newly mounted area, and finally restart inetd.  You might want to make everything as it was when you go "offline".  A script to perform these tasks would be useful. :-)<br>
+<br>
+What you have done now is encrypt most of the vital areas on your system.  Your data in /glftpd/etc/ and /glftpd/ftp-data/
+are obviously in this encrypted area.  Actually everything in /glftpd/ is now encrypted. If you use glftpd-tls, place
+your certificate inside this area also; so add -z cert=/glftpd/etc/mycert.pem.  Now you can mount additional partitions
+under /glftpd/site/.<br>
+<br>
+If you are worried about the performance loss in reading/writing with encrypted media, you may want to setup
+an unencrypted /incoming/ path and copy files to an encrypted area when you know they won't be needed as much.
+After you copy the data you should wipe the unencrypted files -- I suggest you grab bcwipe from
+<a href="http://www.jetico.com">http://www.jetico.com</a>.  Simply moving the files will not ensure
+proper deletion (i.e., your files are recoverable)!  Again, a script to
+automate this would be useful and one if available on my website named
+v_sim.tcl.<br>
+<br>
+If you want to be sly you can create fake, unencrypted files.  Rather than have /glftpd/ with nothing in it
+(i.e., just a mount point), you can create a user base in it and make it look like a valid site.  You can have
+logs in /var/log/ and a locate database in /var/spool/locate/.  This may be useful to confuse hackers and the like.
+Beyond this, you may want to look into encrypting network transmission (both control and data streams).
+Look at kerneli's howto section 5 (URL is noted above), and hoe's glftpd-tls (<a href="http://pftp.suxx.sk/">http://pftp.suxx.sk/</a>).<br>
+<br>
+NEW: Here is an example of what I normally do for a glftpd setup.
+Please note that every system has its own design and the idea is to
+customize and work around that design.  Nevertheless I know it is
+informative to some people to see it being done.<br>
+<br>
+<pre>
+# I just popped in my Maxtor 160GB into my cool ATA133 card and it's
+# booted as /dev/hde.  Cautionary note: any deleting you perform on
+# unencrypted filesystems should be done with 'bcwipe' instead of
+# 'rm' to guarantee disk removal.
+
+
+# 1.
+# Download and install 'bcwipe' from http://www.jetico.com/.  You can
+# also find it on my website, though i suggest you get the latest
+# version from the developers.
+
+# 2.
+# Download and install GNU sharutils if you don't have the utility
+# 'uuencode'.  Try ftp://ftp.gnu.org/.
+
+# 3.
+# Download Loop-AES and the matching version of util-linux
+# that loop-aes has supplied patches for.  Install a full and plain
+# version of util-linux (i.e., don't loop-aes patch it, we want to
+# actually upgrade our 'fdisk' version).  Get loop-aes at sourceforge:
+# http://sourceforge.net/projects/loop-aes/.  Get util-linux from public
+# kernel sites: ftp://www.us.kernel.org//pub/linux/utils/util-linux/.
+
+# 4.
+# Now install loop-aes by following its README instructions.  It will
+# require you to patch and install part of the util-linux package.
+# Perform 'make tests' so you know loop-aes works.
+
+# 5. (UPDATED: uses bcwipe instead of dd)
+# Wipe the entire new drive.  This will properly wipe all contents of the
+# device (hd) with U.S. DoD 5200.28 (Department of Defence).  You may
+# substitute the '-q' with '-n 35' for Secure Deletion of Data from
+# Magnetic and Solid-State Memory which can be researched at
+# http://www.cs.auckland.ac.nz/~pgut001/pubs/secure_del.html.
+# Please note that the 35-pass method will take a substantial amount of
+# time depending on the drive size.  The point of this step is to ensure
+# what ever was previously on these hard drive is no longer recoverable,
+# thus, we're going to use encryption on a safe, secure, and clean
+# media.
+bcwipe -Iqvb /dev/hde
+
+# 6. (UPDATED: uses bcwipe instead of dd)
+# While the big drive is in use, let's create the /glftpd/ crypto
+# container and wipe it.  I'll just make it 1GB because I can accomdate
+# that space in my /usr/ branch and I don't think I'll need a whole lot
+# of space for glftpd and related files (this is actually a very big
+# container, you'd be fine with 250MB if that's all you have).
+dd if=/dev/zero of=/usr/cryptofs bs=1024k count=1000
+# Now we map the file with a random seed and password.
+dd if=/dev/urandom bs=45 count=1 2>/dev/null | uuencode -m - | \
+head -2 | tail -1 | losetup -e AES256 -S `dd if=/dev/urandom bs=45 \
+count=1 2>/dev/null | uuencode -m - | head -2 | tail -1` -p 0 \
+/dev/loop1 /usr/cryptofs
+# This next line does the actual wiping, give it some time to
+# complete.
+bcwipe -Iqvb /dev/loop1
+# Done wiping, disconnect map.
+losetup -d /dev/loop1
+
+# 7.
+# Now let's map it to an encrypted loop device.  Let's create a
+# permenant seed and store it somewhere.  We need this seed every time
+# we want to mount this loop device (which will become our /glftpd/
+# mount point).
+dd if=/dev/urandom bs=45 count=1 2>/dev/null | uuencode -m - | \
+head -2 | tail -1 > /root/my.root.glftpd.seed
+# You'll be asked to enter a password after this statement.  This will
+# be your primary password so don't forget it and make sure you type it
+# correctly.  Also, please make sure you use over 32 total characters
+# (think of a phrase, but not a popular quote -- maybe in another
+# language than your primary one?).  MAKE SURE YOU NEVER STORE THIS
+# PASSWORD IN A FILE ON YOUR UNENCRYPTED FILESYSTEM.  Don't write it
+# down at all if you really want to be safe; just memorize it!  Deleted
+# files can always be recovered, this password's secrecy is vital.
+losetup -e AES256 -S `cat /root/my.root.glftpd.seed` -T /dev/loop1 /usr/cryptofs
+# Format the new device.  Use the filesystem type of your choice.
+mkfs -t jfs /dev/loop1
+# And let's mount it.
+mkdir /glftpd
+mount /dev/loop1 /glftpd
+
+# 8.
+# Now install glftpd into /glftpd/.
+
+# 9.
+# Redirect vital files to be contained inside /glftpd/.  First you'll
+# need to kill crond and syslogd.  Note that these paths vary from
+# system to system, this example is for Slackware 8.0.  Redhat differs
+# only slightly.  For Redhat users, the 'locate' database is generally
+# stored in /var/lib/slocate (so use this rather than /var/spool/locate
+# if it applies to you).
+# Create our new dirs.
+mkdir /glftpd/tmp
+mkdir /glftpd/var
+mkdir /glftpd/var/tmp
+mkdir /glftpd/var/spool
+chmod 1777 /glftpd/tmp /glftpd/var/tmp
+# Save our old files.
+cp -a /var/spool/locate /var/spool/cron /glftpd/var/spool/
+cp -a /var/log /glftpd/var/
+# Securely delete our old files.
+bcwipe -qvr /var/log
+bcwipe -qvr /var/adm
+bcwipe -qvr /var/tmp
+bcwipe -qvr /var/spool/cron
+bcwipe -qvr /var/spool/locate
+bcwipe -qvr /tmp
+# Link to the new locations.
+ln -s /glftpd/var/log /var/log
+ln -s log /var/adm
+ln -s /glftpd/var/tmp /var/tmp
+ln -s /glftpd/var/spool/cron /var/spool/cron
+ln -s /glftpd/var/spool/locate /var/spool/locate
+ln -s /glftpd/tmp /tmp
+
+# 10.
+# If you use vcheck with mysql, make sure you either install mysql
+# inside --prefix=/glftpd/mysql, or you locate the 'var' dir of mysql
+# and copy over the database to /glftpd/, then bcwipe the original and
+# symlink it just as we did above.  I recommend reinstalling it by
+# hand into /glftpd/mysql/, however.  Let's say you had mysql already
+# installed in /usr/mysql/.
+mkdir /glftpd/usr
+mkdir /glftpd/usr/mysql
+cp -a /usr/mysql/var /glftpd/usr/mysql/
+bcwipe -qvr /usr/mysql/var
+ln -s /glftpd/usr/mysql/var /usr/mysql/var
+
+# 11.
+# Wait until the big 160GB drive is done being wiped.  Now that we have
+# glftpd online, we want mount our application and television dirs for
+# ftp use.
+# Close the loop device on the 160GB so we can partition the drive.
+losetup -d /dev/loop0
+# Create hde1 and hde2.
+fdisk /dev/hde
+# Just as we did above, let's create unique seeds for each partition,
+# and thereby each encrypted loopback device.
+dd if=/dev/urandom bs=45 count=1 2>/dev/null | uuencode -m - | \
+head -2 | tail -1 > /root/my.apps.seed
+dd if=/dev/urandom bs=45 count=1 2>/dev/null | uuencode -m - | \
+head -2 | tail -1 > /root/my.tv.seed
+# At this point you can type the following to verify that only loop1 is
+# in use.  By default we have loop0 -> loop7 for use.
+losetup -a
+# Map the partitions to encrypted loopback devices.  It's easier if you
+# use the same password for all of your loopback devices (plus, the
+# start/stop script I provide depends on it).  So enter the same
+# password you did above for the /usr/cryptofs container.
+losetup -e AES256 -S `cat /root/my.apps.seed` -T /dev/loop0 /dev/hde1
+losetup -e AES256 -S `cat /root/my.tv.seed` -T /dev/loop2 /dev/hde2
+# Format.
+mkfs -t jfs /dev/loop0
+mkfs -t jfs /dev/loop2
+# Mount.
+mkdir /glftpd/site/apps
+mkdir /glftpd/site/tv
+mount /dev/loop0 /glftpd/site/apps
+mount /dev/loop2 /glftpd/site/tv
+
+# 12.
+# Now you should see loop0 -> loop2 in use and mounted.
+losetup -a
+df -h
+# At this point you can edit v_cryptofs.sh and design your site so that
+# you can simply run:
+./v_cryptofs.sh start
+# Then you enter the password and the script fsck's each loopback device
+# (i.e., all encrypted filesystems), mounts them for you, and starts any
+# necessary services like syslogd, crond, mysqld (remember that the
+# whole idea is NOT to have syslogd running by default but load it once
+# our encrypted filesystem is ready for it to have logs written).  It's
+# alright, however, to have crond/syslogd loaded on bootup because they
+# want write any logs anyhow.  Why?  Because we created symlinks where
+# they usually write to.  They may be loaded but they don't do anything.
+# My script will also re-HUP the processes so the logging and cron job
+# begin.  If you wish to be clean about it then edit your rc scripts so
+# these processes do not load.  Slackware would have them in
+# /etc/rc.d/rc.S|M, redhat has it scattered, just convert the
+# S??syslogd/S??crond symlinks to K??syslogd/K??crond at these
+# locations:
+ls /etc/rc.d/rc?.d/*syslog*
+ls /etc/rc.d/rc?.d/*cron*
+# Add a call to 'v_cryptofs.sh stop' in you reboot/halt scripts as the
+# first kill to perform.  This will kill any processes keeping the
+# loopback devices busy (like glftpd users currently logged in, although
+# sometimes a shell user idling inside /glftpd/ may deceive the script)
+# and dismounts/disconnects all of them.  Of course this script is
+# available on my website.
+
+# 13.
+# Ooh, just had to put the evil thirteen here. ;)
+</pre>
+
+
+
+
+<br>
+<br>
+<br>
+<b>&gt; VII. Final notes:</b><br>
+I recommend you use loop-AES with AES256.  You can encrypt hard/soft raids as well (like /dev/md0).  This technique is
+very robust!  Wipe your containers before you begin to use them (this helps against attacks) and seed (salt) your password.
+Make sure you use a password of correct size for the keysize you are using.  32 * 8 = 256.  So your password should be
+at least 32 characters in length, and it should not consist of words (use the loop-AES suggestions).
+If you use kernel 2.4, look at the lo_prealloc options loop-AES provides for performance tuning.<br>
+<br>
+Example 4 in the loop-AES README raises a good setup.  Use GnuGP (gpg) to encrypt a random password
+for your containers.  Put to memory only your keyfile passphrase (the one made by gpg).  Store your
+keyfile on a media that may be physically removed from your system (like a diskette, smartcard, cd, etc.).
+Now you'll never be able to mount your file systems unless you have this private key and you supply the
+password to unencrypt the keyfile.  You can go "online" with your system and put the removable media
+in a safe place. ;)<br>
+<br>
+<b>NOTICE:</b> if you don't plan on using the above scheme but intend on using
+GnuPG/PGP keyfile to hold a long, random password, think again.  Take a
+look at http://kulichki-win.rambler.ru/cryptology/rsa.html, it talks
+about RSA (which is what the gpg key uses) and the runtime (big-O) to
+factor out the primes and break the encryption.  To date, the best
+runtime is exp(O(log^{1/3} n log^{2/3} log n)).  Whereas with loop-AES
+you have O(C*2^256), where C is some constant set of code, with its own
+runtime, which is used to crack AES/rijndael.  Not to mention that
+you're adding another dependency to the design of the system: you have
+to worry about gpg and loop-aes.  Complexity should be avoided when
+possible, and this is such a case.  I pointed this out because I noticed
+a few users designing their systems with a keyfile sitting on the root
+(/) mount -- it's lowering your security and adding complexity.  A final
+note, I'm not a crypto specialist by any means so my claims may be
+completely wrong.  Some feedback in this vague area would help.
+Thanks.<br>
+<br>
+If you want an overview of all this security stuff then take a look at <a href="http://www.abisoft.net/howsafe.rtf">http://www.abisoft.net/howsafe.rtf</a>.
+It provides a non-tech explaination of attacks like dictionary, brute force, and choices you make on algorithms/keysizes.<br>
+<br>
+Lastly, make sure you are famililar with your local crypto laws (or wherever your server is).  Here's an excerpt
+from kerneli's howto section 1:
+<pre>
+The Crypto Law Survey web page by Bert-Jaap Koops at <a href="http://cwis.kub.nl/~frw/people/koops/lawsurvy.htm">http://cwis.kub.nl/~frw/people/koops/lawsurvy.htm</a>. 
+The RSA crypto FAQ at <a href="http://www.rsasecurity.com/rsalabs/faq/">http://www.rsasecurity.com/rsalabs/faq/</a>.
+The alt.security.*, alt.privacy.* newsgroups.
+The Department of Justice or lawyers if in doubt (likely only interesting for commercial applications).
+</pre>
+
+
+</body>
+</html>
+<!-- ads begin -->
+</noscript>
+<!-- -->
+</noscript>
+<SCRIPT TYPE="text/javascript" LANGUAGE="JavaScript">
+<!--
+// set expiration to 3 minutes
+var expiration = new Date(); expiration.setTime(expiration.getTime() + 180000);
+
+function getCookie(name){
+  var cname = name + "=";
+  var dc = document.cookie;
+  if (dc.length != 0) {
+    begin = dc.indexOf(cname);
+    if (begin != -1) {
+      begin += cname.length;
+      end = dc.indexOf(";", begin);
+      if (end == -1) end = dc.length;
+        return unescape(dc.substring(begin, end));
+    }
+  }
+  return null;
+}
+
+function setCookie(name, value, expires) {
+  document.cookie = name + "=" + escape(value) + 
+  ((expires == null) ? "" : "; expires=" + expires.toGMTString()) +
+  "; path=/";
+}
+var xtpop;
+
+function popWin() {
+setCookie('Visits', 1, expiration);
+xtpop = window.open("http://clickit.go2net.com/adclick?cid=186727&area=hm.dir.compsoftware.tools&site=hm&shape=exitpopup&keyword=exitpopup","xtpop","width=700,height=560,toolbar,scrollbars,menubar,resizable,top=100,left=100");
+xtpop.blur();
+setTimeout("xtpop.blur();",20);
+setTimeout("xtpop.blur();",100);
+self.focus();
+}
+
+var visitsCookie = getCookie('Visits');
+if (visitsCookie == null) popWin();
+
+// -->
+
+</SCRIPT>
+<SCRIPT LANGUAGE="JavaScript">
+
+<!--
+browser = (((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) >= 2 )) || ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 2 )));
+browser4 = (((navigator.appName == "Netscape") && (parseInt(navigator.appVersion) >= 4 )) || ((navigator.appName == "Microsoft Internet Explorer") && (parseInt(navigator.appVersion) >= 4 )));
+if (browser4) {
+    if (!self.url) {
+       self.url = '';
+    }
+    if (parent.name != 'test') {
+       test = window.open("http://adincl.gopher.com/adpopup?site=HM&border=1&area=DIR.COMPSOFTWARE.TOOLS&sizerepopup=1", "test", "resizable=yes,width=528,height=200,scrollbars");
+    }
+} else if (browser) {
+    if (!self.url) {
+       self.url = '';
+    }
+    if (parent.name != 'test') {
+       test = window.open("http://adincl.gopher.com/adpopup?site=HM&shape=banner&border=1&area=DIR.COMPSOFTWARE.TOOLS", "test", "resizable=yes,width=528,height=200,scrollbars");
+    }
+}
+
+//-->
+
+</SCRIPT>
+<!-- ads end -->

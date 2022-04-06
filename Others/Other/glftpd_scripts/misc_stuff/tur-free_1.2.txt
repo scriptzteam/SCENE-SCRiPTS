@@ -1,0 +1,9 @@
+Free (GL1&2)
+
+Description: Standalone/replacement "show total/used/free" space on site for irc. 
+Can merge multiple drives under the same name if you, for instance, have DIVX's 
+split up over multiple drives as well as give you a total count on the whole site.
+
+Author:   Turranius
+Version:  1.2
+Added on: 23-Apr-2003

@@ -1,0 +1,21 @@
+AutoNuke (GL1&2)
+
+Description: An autonuker script for multiple sections.
+Will nuke not only empty dirs, but also look for incomplete symlinks and nuke 
+anything not completed within the set time.
+It can also pick up banned words in a release, as well as look for folders that 
+does NOT contain any of the files you specify should be there.
+You can also define sections where every release MUST include one of the words 
+(Reversed Banned Words).
+It will also remove symlinks that have no destination (cleanup from old nukes), as 
+well as delete old nuked folders.
+Run this with test mode to make sure it does what you want it to do.
+It also has the option to send a pre-nuke warning from all 4 modules of the script,
+to your glftpd.log file so the sitebot can pick it up and announce it.
+Approved for RedHat, Mandrake, Debian, Slackware and FBSD (with included fbsd_ls.sh
+script).
+Check out the README in the package for full set of options. 
+
+Author:   Turranius
+Version:  1.8.2
+Added on: 23-Apr-2003

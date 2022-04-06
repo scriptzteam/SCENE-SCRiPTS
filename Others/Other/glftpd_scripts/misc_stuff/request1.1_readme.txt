@@ -1,0 +1,7 @@
+This is a small script that make users able to make a requestdir
+by a command in the sitechan. Just follow the directions in 
+request.sh and request.tcl and you'll be all set.
+
+Have fun!
+
+/ragusallad

@@ -1,0 +1,684 @@
+Readme for Tur-Autonuke
+
+Introduction.
+
+Getting tired of nuking people who leave empty folders? How about folders where there
+are one or two files missing from the release? How about those folders that only
+contains a .nfo because its a dupe from yesterday, or already nuked and someone tried upping again?
+No wait, how about those german 0days releases that are not allowed? (or movies for that matter.)
+Or perhaps you have a section where only certain group releases are allowed?
+
+This script can take care of that.
+
+This script can autonuke when it finds one of five things in a folder (release).
+
+1: The folder is totally empty. It can use glftpd.log to log an early warning 
+   after a couple of predefined minutes to warn people in your irc channel about 
+   the upcoming nuke. If its not corrected, and it reaches the second defined time,
+   the folder will be nuked, using a multiplier you select.
+   Folders containing certain words can be excluded.
+
+2: The folder is not empty, but it does not contain any of the files you have predefined.
+   For example, someone makes a folder and starts uploading. But its a dupe or already nuked
+   so the rar files are stopped by dupelog. The .nfo or .diz is not however, so the folder is
+   not totally empty. As such, #1 here does not catch it. But #2 will.
+   You define what files must be included in each folder for it to count as "not empty".
+   If you set it to only count .rar files for instance, any folder not containing atleast one
+   .rar file will be nuked. It will look through all subfolders of the release to make sure the
+   files are not hidden deeper (multiple CD's releases perhaps).
+   This is as foolproof as you set it to be. 
+   As with #1, if it finds a certain word in a foldername, it will not be nuked (such as nfo.fix),
+   and this also has the ability to send a pre-nuke warning to glftpd.log to warn users on irc about
+   the upcoming nuke. Once it reaches stage 2, it is automatically nuked.
+   I call this function "Halfempty" in the script.
+   
+3: It finds the symlink, pointing to an incomplete release. Once the folder the symlink points to
+   is older then a number or predefined minutes, a pre-nuke warning can be sent (as with #1 and #2).
+   Once it passes timelimit 2, its nuked. 
+   (This takes care of the common rule, "all uploads must be finished within soandso hours".)
+   If it finds a symlink, and the folder it points to does not exist anymore, it can delete the symlink.
+   Has the ability to "jump" up and nuke the parents folder instead of the folder that the symlink
+   points too. Most useful incase of multi CD releases, where the symlink points to an individual
+   CD and you want to nuke the whole release rather then just the CD.
+
+4: It finds a banned word in a release, such as .german. or .french. 
+   Or perhaps .SWESUB.? Totally configurable. Once it finds a release with a banned word, it 
+   can send a pre-nuke warning when the folder is soandso minutes old. Then after its soandso minutes
+   old, it simply nukes it.
+   If you have releases from certain groups that are banned, just add -GROUPNAME as a banned word.
+   Also comes with its own exclude section, so you can exclude your affils from this module, if they
+   pre german stuff and you have that as a banned word, for instance.
+   Different words can be set up with its own nuke multiplier, so you can nuke folders containing
+   .german x5 and -FTF x3.
+
+5: It finds a folder whos name does not match anything you have set as "allowed". This could be
+   used for MP3 sections where you only allow certain groups etc.
+
+
+#3 only works if your zipscript actually creates symlinks as incomplete pointers, since this script
+follows the symlink to what its pointing at before it checks how old the folder is.
+
+You can execute the script with the parameter test (tur-autonuke.sh test) and it will only show 
+you what it would have done. It will NOT nuke or send pre-nuke warnings in this mode. Use this 
+a few times over the course of a few hours or something to make sure it does not behave badly
+to your setup. 
+
+Any of the above 4 can be turned off entirely if you do not like that feature.
+
+You can always create a folder in the release if its about to be nuked for something, but it
+shouldnt. Good for siteops without shell access. See ALLOWED= in the setup below.
+
+Apart for #2, this script will only go 1 directory deep into the sections that you define. It does 
+this to ensure that it does not count any [Sitename]-Complete folders as empty or otherwise.
+As with #2, it goes through all subdirectories to find any of the files that must be there for it
+to not be defined as empty.
+#3 also does a variation of this, since it will follow the symlink to where ever it points to find
+the folder, but it will not go deeper then 1 step into that folder.
+
+For #2, you might expect this to take some time. I mean, it does go through every folder for every
+section you have defined, looking for the files. YES, this takes a while, but only the first time.
+It creates an index file with all the folders that checked out ok, so the next time it runs, it 
+first looks into that file. If the folder its about to check is in there, it will not check it again.
+In short, it only takes time the first time its run. After that its lightning fast!.. almost.
+The index file is called tur-autonuke.index and will be located in whatever you set your temp folder
+to be. There is a setting to clean the file out after its a number of hours old, so it does not 
+grow too big.
+The above also applies to the banned words module. It has its own index file for what it already
+checked and approved.
+
+Please read through the Installation section for more detailed features. It can do a few fun things :)
+
+This script has been tested on Mandrake, Debian and RedHat. It does work for FBSD as well but then
+it requires the extra script included, called fbsd_ls.sh. See options below, specifically the LSM
+setting.
+
+Installation:
+
+To install this script, simply copy tur-autonuke.sh to any location you like, preferebly /glftpd/bin.
+Make it executable.
+
+Copy tur-autonuke.conf, preferebly to /glftpd/bin too. If its elsewhere, edit tur-autonuke.sh and
+change its location (only setting in the .sh file).
+
+Edit tur-autonuke.conf and you will find a few (lol) options. There are quick explanations of all the 
+settings but I do suggest you read the following too !! (highly recomend it, infact).
+Be sure to read the section about SHWING= at the bottom.
+At the bottom you will also find instruction for how to get it working with Dark0n3s zipscript-c, if
+you want pre nuke warnings.
+
+Try doing a 'ls -m' from shell. It should output all the files in the folder on one line with a ', '
+in between. If it does not, copy fbsd_ls.sh to /glftpd/bin as well and take an extra look at the 
+LSM setting in the config. Normally you should not need to change the LSM variable or use the 
+fbsd_ls.sh script though.
+
+Settings:
+
+today=
+yesterday=   
+daysago2=
+daysago3=
+daysago4=
+daysago5=
+daysago6=
+daysago7=    If you run dated dirs, it would (most likely) take too long to go through the entire 
+             structure of it. That is why I put these 7 here. With these, you can check dated folders
+             up to a week old. Unless your dated dir structure differs from normal and
+             your date binary works like on Mandrake/Redhat you dont have to change this. 
+             By "normal", I mean 0527 for 27th of May. More on how to use them later.
+             today referes to todays dated folder and daysago7 is the dated folder from 7 days ago.
+
+GLROOT=      The root of your glftpd setup. Usually just /glftpd
+
+GLCONF=      The full path to your glftpd.conf. I will read this to check how your nuked folders
+             look, and automatically exclude any of them if I find them. They have already been
+             nuked, so no need to do it agan :) The nuke program also wants this.
+             Usually just /etc/glftpd.conf (not /glftpd/glftpd.conf).
+
+GLLOG=       The path to glftpd.log. If you have pre-nuke warning on in either of the four
+             modules, I will write to this file so your sitebot can pick it up and announce it
+             in your sitechan. Basically, all bot output goes to this file.
+
+LOG=         When I nuke or send pre-nuke warnings, and I am not in test mode, I will log it 
+             to this file. (The nuke will be announced normally in irc too, if they normally are, so 
+             do not set this to glftpd.log).
+             Any errors while not in test mode will go here too.
+
+TEMPDIR=     The index file and various other files will be kept in this folder. Everything I 
+             store in here can safely be removed. Usually /glftpd/tmp
+
+NUKEPROG=    Full path to "nuker", the program you use to nuke folders from shell. This comes
+             with glftpd and must function from the shell for it to work in here. Try running it.
+
+NUKEUSER=    What username shall I use when nuking? This user must exist and have the rights to nuke
+             (flag A). This is case sensitive and should only contain the users name.
+
+DIRS=        These are the folders I will check in, relative to GLROOT= above. 
+             As you can see from the example, I have included $today and $yesterday in a 0DAYS 
+             section, so it will check todays and yesterdays dated folder. Add all 7 of them
+             if you want to check dated folders up to a week old.
+             NOTE: Module 4 (Banned Words) and 5 (Allowed Words) has its own list of folders.
+             Dont ruin the structure :) It should start with DIRS=" and end with another ".
+
+EXCLUDE=     If, in any of the 5 modules, I find a folder that contains any of this, it will NOT
+             be nuked. Some releases are considered incomplete, and will leave an incomplete
+             symlink, or only a .nfo file. Can be something like blabla.NFO.FIX-sukagroup.
+             You might want to add the name of any pre folders for you affils here too, incase 
+             they are empty (lousy affils then. Should be nuked dammit).
+             The script never goes deeper then 1 folder to what you set in DIRS, but it never
+             hurts to be extra careful.
+             Separate what you want it to ignore with a space.
+             This is not case sensitive. NFO.FIX is the same as Nfo.Fix etc.
+
+ALLOWED=     This should be one word. If it finds something to nuke in any module, it will
+             first check in the folder. If there is a folder with this word in here, it will
+             NOT be nuked. Say you really want that internal movie, but the script will nuke it
+             cause you have that as a banword. Then just make a folder in here with this name
+             and the script wont touch it. Usually its "Allowed".
+             It is not case sensitive, but make sure you spell it right :)
+
+
+-[ Totally empty module ]-
+
+TOTALLYEMPTY=  Do you wish to use the module that checks for totally empty folders? 
+               If you dont, set this to FALSE and it will not run. You may then ignore
+               any of the settings that deals with this module below.
+
+PRENUKEEMPTY=  Should it send a pre-nuke warning to GLLOG, when a release is old enough?
+
+EARLYEMPTY=    If above is TRUE, how old, in minutes, must the folder be, before it sends the pre-nuke
+               warning. A good number here might be something like 7 minutes or so.
+
+TIMEEMPTY=     How old, in minutes, must the empty folder be before I actually nuke it?
+               This should ofcourse be higher then the one above (if you have pre-nuke warnings on).
+               Also note. Say you have EARLYEMPTY on 7, and set this one to 20. But you have crontabbed
+               this script to run every 21 minutes. If the script runs, and within 1 minute after that
+               someone uploads an empty folder, the script will not have enough time to send a pre-nuke
+               warning, since the next time it runs, the empty folder will be older then 20 minutes 
+               already, and is nuked instead.
+
+EMPTYNUKEMULTIPLIER=  What multiplier should be used when nuking totally empty folders?
+
+EMBARRESEMPTY= The normal nuke output only shows how much they uploaded from the nuked release. 
+               If you set this one to TRUE, it will parse the nuke output and find how much 
+               they lost. Then send an "Loosers" line to GLLOG, so the bot can pick it up and 
+               announce it just after the normal nuke announce. Pretty funny :)
+               Note that if the user has leech, it will say "Lost 0.0Mb". This is as it should be.
+
+EMPTYHOURS=    If you set your EARLYEMPTY and TIMEEMPTY to higher then 60 minutes, you can set
+               this one to TRUE and it will show hours instead of minutes in the logfile and during
+               pre-nuke warnings to the bot. This does NOT change how you write it in those settings.
+               They should still be in minutes in EARLYEMPTY and TIMEEMPTY.
+               It will round downwards to the extreme, meaning, if you set TIMEEMPTY to 179 minutes,
+               it will say 2 hours. If you set it to 180, it will say 3 hours and so on.
+
+-[ Half empty module ]-
+
+HALFEMPTY=         Do you wish to use the half empty module at all? If not, set this to FALSE and ignore
+                   any settings concerning this module.
+
+PRENUKEHALFEMPTY=  Send a pre-nuke warning when I found a folder I consider empty, thats is old enough?
+                   TRUE/FALSE.
+
+EARLYHALFEMPTY=    How old, in minutes, must the folder be, before I send the pre-nuke warning?
+
+TIMEHALFEMPTY=     How old, in minutes, must the folder be, before I actually nuke it?
+                   Please read TIMEEMPTY= in the above module.
+
+HALFEMPTYMULTIPLIER=  What multiplier to use to nuke these half empty folders?
+
+EMBARRESHALF=      The normal nuke output only shows how much they uploaded from the nuked release. 
+                   If you set this one to TRUE, it will parse the nuke output and find how much 
+                   they lost. Then send an "Loosers" line to GLLOG, so the bot can pick it up and 
+                   announce it just after the normal nuke announce.
+                   Note that if the user has leech, it will say "Lost 0.0Mb". This is as it should be.
+
+EMPTYEXCLUDE=      Now then, here is the core of this module. As default, this one contains some file
+                   extensions, like ".zip .rar .mp3" and so on. This is what the script looks for to
+                   consider it "not empty, I wont touch it". 
+                   If the folder contains none of these extensions, it is considered empty and will
+                   be nuked. 
+                   .nfo and .diz is a bad thing to add here, since those can almost always be uploaded
+                   without the dupechecker reacting to them. If its just a .nfo that should be in the 
+                   folder, the general exclude (EXCLUDE=) will make it ok anyway (nfo.fix), or its 
+                   a mislabeled release.
+                   Setting this to "" would be BAD, mmkay. It would think all the folders are empty.
+                   Better to have too much then too little in this one.
+                   It has been tested on a site with "normal" sections and it should be sufficient 
+                   with its default settings.  Seperate extensions with a space.
+                   If you're on a rather slow line, you might want to add a few .r05 and similar here
+                   too, or raise the time til it warns/nukes. .r* does NOT work.
+                   NOTE: When someone uploads a new file in the folder the date/time on the folder is
+                         updated. So if you have EARLYHALFEMPTY set to 5 minutes, nobody must have 
+                         uploaded for 5 minutes in it before it warns. It does NOT go by created time
+                         but by modified time, so you do not need to add every .r15 file etc here.
+
+CLEANHOURS=        How old must the index file be, in hours, before I clean it out? The default 
+                   value is 24 (every 24 hours) the script will totally rebuild the index file. 
+                   This takes some time, so dont set it too low.
+                   If you never want to clear it out, set this to "" to disable the function.
+                   Do not be afraid to raise this quite a bit, since it does save time, but takes
+                   some space.
+
+HALFHOURS=     If you set your EARLYHALFEMPTY and TIMEHALFEMPTY to higher then 60 minutes, you can set
+               this one to TRUE and it will show hours instead of minutes in the logfile and during
+               pre-nuke warnings to the bot. This does NOT change how you write it in those settings.
+               They should still be in minutes in EARLYHALFEMPTY and TIMEHALFEMPTY.
+               It will round downwards to the extreme, meaning, if you set TIMEHALFEMPTY to 179 minutes,
+               it will say 2 hours. If you set it to 180, it will say 3 hours and so on.
+
+
+-[ Incomplete module ]-
+
+INCOMPLETE=        Do you want to use this module at all? If your zipscript does not create symlinks
+                   to show which releases are incomplete, it wont work anyway. TRUE/FALSE.
+                   If FALSE, then ignore all the options related to this module below.
+
+PRENUKEINCOM=      Send a pre-nuke warning to GLLOG ? TRUE/FALSE.
+
+EARLYINCOM=        Once I find an incomplete symlink and follow it to its folder, how old must that
+                   folder be, before I send an pre-nuke warning? You might want to set this a lot 
+                   higher then the other 2 modules, since it might still be raced to the site when 
+                   its older then what you put here. It all depends on how fast you require your 
+                   releases to be finished.
+
+TIMEINCOM=         How old, in minutes, must the incompleted release be, before I actually nuke it?
+                   See TIMEEMPTY= in the first module a bit up.
+
+INCOMMULTIPLIER=   What multipler to use when nuking it ?
+
+EMBARRESINCOM=     The normal nuke output only shows how much they uploaded from the nuked release. 
+                   If you set this one to TRUE, it will parse the nuke output and find how much 
+                   they lost. Then send an "Loosers" line to GLLOG, so the bot can pick it up and 
+                   announce it just after the normal nuke announce.
+                   Note that if the user has leech, it will say "Lost 0.0Mb". This is as it should be.
+
+SYMLINKNAMES=      This is a important one. What does your zipscript add to the symlink?
+                   This can be anything in the symlinks name. For zipscript-c 0.6.0a its 
+                   [incomplete]- and that is also the default in this script. If this one is not
+                   set correctly, it will not find any symlinks.
+
+                   If your zipscript adds multiple types of symlinks, add each one here, seperated
+                   with a space ( jzsipscript does this for missing sfv and missing nfo ) and they
+                   will be checked and nuked for those reasons as well.
+    
+                   If you are in doubt, just set it to the word, like "incomplete" without any 
+                   special chars. -> Remember that is is case sensitive. <-
+
+CLEANSYMLINKS=     If it finds an incomplete symlink, but the folder it points to is no longer there,
+                   should it remove the symlink? This usually happens if you manually nuke a release
+                   that is not completed. The incomplete symlink is left behind. TRUE/FALSE.
+
+CLEANMESSAGE=      If your zipscript also creates a .message file with all the incomplete releases 
+                   in the root of that section, I can remove the line about the release I just nuked.
+                   I know jzipscript does this, thanks to soehest, who also suggested this idea.
+                   TRUE/FALSE. Disabled by default.
+
+JUMPON=            This is a neat one. Normally, if I find a symlink pointing to an individual CD
+                   or something inside a release, I can jump up one folder to its parent, and nuke 
+                   that one instead of only the CD folder.
+                   I like to nuke the entire release if its incomplete, rather then just the CD.
+                   So, set it here what it should jump back on, if it finds it incomplete. 
+                   Separate them with a space. It is not case sensitive (since 1.6.5).
+
+INCOMHOURS=    If you set your EARLYINCOM and TIMEINCOM to higher then 60 minutes, you can set
+               this one to TRUE and it will show hours instead of minutes in the logfile and during
+               pre-nuke warnings to the bot. This does NOT change how you write it in those settings.
+               They should still be in minutes in EARLYINCOM and TIMEINCOM.
+               It will round downwards to the extreme, meaning, if you set TIMEINCOM to 179 minutes,
+               it will say 2 hours. If you set it to 180, it will say 3 hours and so on.
+
+
+-[ Banned words module ]-
+
+BANNEDWORDS=       Use the banned words module at all? If not, set it to FALSE to disable it.
+
+BANDIRS=           This module has its own list of folders to check for banned words. 
+                   It has nothing to do with DIRS, and can be a bit tricky to understand. I'll do my best.
+                   Lets pretend the following is true. In todays 0DAYS folder, you want to ban folders
+                   that include the words "german" or "french". In your SVCD folder, you want to ban "Internal".
+                   This is how it should be set up:
+                   BANDIRS="
+                   /site/0DAYS/$today~german:french 
+                   /site/SVCD~Internal
+                   "
+
+                   As you can see, after each path (section), there is a ~ that seperates the path
+                   to the folder from what you want it to look for in that path.
+                   so "/site/SVCD~Internal" means it will look for folders containing Internal in the
+                   folder /site/SVCD, got it?
+                   As with 0DAYS, you can see a : between the different words that it should check for.
+                   You can add how many words as you like to a section. In short:
+                   Separate the section and the banned words with a ~
+                   Separate the banned words with a :
+                   Seperate different folders&banned_words with a space.
+
+                   Heres a longer example:
+                   BANDIR="
+                   /site/DIVX~Internal:1998 
+                   /site/0DAYS/$today~German:French:Ebook
+                   /site/SVCD~SWESUB:Internal:Limited
+                   /site/XXX~-Mirage:-NovaVCD
+                   "
+ 
+                   In the above example;
+                   In /site/DIVX, it will look for folders containing Internal and 1998.
+                   In /site/0DAYS/$today, it will look for German, French and Ebook.
+                   in /site/SVCD, it will looks for SWESUB, Internal and Limited.
+                   in /site/XXX, it will look for -Mirage and -NovaVCD (not allowed groups).
+
+                   The banned words are not case sensitive, but the sections are. 
+                   It will look better with -NovaVCD rather than -novavcd, because it will use
+                   what you enter here as the nuke reason but either way will work.
+                   Using dots (release standard) will make it more secure. If you for instance add
+                   SUBBED as a banned word, it will react on UNSUBBED too. If, however, you add
+                   .SUBBED it will not.
+
+                   Update: Since 1.4.2, you may also specify a different nuke multipler per each
+                   banned word. If you do not, it will use the default multiplier that you set
+                   BANMULTIPLIER below. To set a special multiplier to a banned word, add a 
+                   * followed by the number to use. For instance:
+                   /site/0DAYS/$today~German*1:French:Ebook*2
+                   German will be nuked x1.
+                   French will be nuked using the default multiplier set below.
+                   Ebook will be nuked x2.
+
+BANEXCLUDE=        Special excludes for this section. If you have affils that pres german 0days or 
+                   something, just add theyre names here, seperated with a space. See example.
+                   Anything other that might be in the foldername that you dont want nuked cause of 
+                   a banned word can be added too. For instance, you really like VCDVaULT's internals
+                   (who dosnt) and you have internals as a bad word. Add -VCDVaULT here and every 
+                   internal except VCDVaULT's will be nuked. Again, the - in -VCDVaULT is just to make
+                   it a bit more secure.
+
+BANPRENUKE=        Send a pre-nuke warning when the release is old enough? As with the other modules
+                   this will only be sent once, and will simply log it in glftpd.log. TRUE/FALSE.
+
+EARLYBANPRENUKE=   How old, in minutes, must the release be before I send the pre-nuke warning?
+                   Requires that BANPRENUKE above is TRUE.
+
+TIMEBANNUKE=       How old, in minutes, must the release be before its actually nuked?
+
+BANMULTIPLIER=     Default multiplier to use when banning in this module. If the banned word does
+                   not have an individual multiplier, this is what I will use when nuking.
+
+EMBARRESBAN=       The normal nuke output only shows how much they uploaded from the nuked release. 
+                   If you set this one to TRUE, it will parse the nuke output and find how much 
+                   they lost. Then send an "Loosers" line to GLLOG, so the bot can pick it up and 
+                   announce it just after the normal nuke announce.
+                   Note that if the user has leech, it will say "Lost 0.0Mb". This is as it should be.
+
+CLEANBANHOURS=     The banned words module has its own index file for which release it has already 
+                   checked, so it does not check them again. This is the time, in hours, before it cleans
+                   out that index file and builds a new one, thus checking all releases for banned words
+                   again. The default is "", which means that is will never clean it out. Why? Well, say
+                   you have tons of german 0days on your site, but now you decide not to allow them anymore
+                   so you add german as a banned word. If the index file is cleaned out, all releases 
+                   with german in them will be nuked, even though they were allowed at the time of creation.
+                   If you set this to "" to disable it, only new releases will be checked for the banned word.
+                   Otherwise, if you want it to recheck all releases every 24 hours, set this to 24.
+
+BANHOURS=      If you set your EARLYBANPRENUKE and TIMEBANNUKE to higher then 60 minutes, you can set
+               this one to TRUE and it will show hours instead of minutes in the logfile and during
+               pre-nuke warnings to the bot. This does NOT change how you write it in those settings.
+               They should still be in minutes for EARLYBANPRENUKE and TIMEBANNUKE.
+               It will round downwards to the extreme, meaning, if you set TIMEBANNUKE to 179 minutes,
+               it will say 2 hours. If you set it to 180, it will say 3 hours and so on.
+
+
+-[ Allowed words module ]-
+
+ALLOWPRENUKE=      Use the Allowed Words module at all? If FALSE, then skip the rest of the settings
+                   for this module.
+ 
+ALLOWDIRS=         Same as for Banned Words, except that you can NOT set a special nuke multiplier.
+                   Example:
+                   ALLOWDIRS="
+                   /site/MP3~-WiCKED:-TNT:-OGH
+                   /site/VCD~-SMB:STV
+                   "
+                   This means that in /site/MP3, it will nuke any folder that does NOT contain
+                   either -WiCKED, -TNT or -OGH.
+                   In /site/VCD, it will nuke any folder that does not contain -FTF or STV.
+                   In short: Section~AllowedWord1:AllowedWord2:etc
+
+ALLOWPRENUKE=      TRUE/FALSE. Send a prenuke warning for the bot to pick up?
+
+EARLYALLOWPRENUKE= If above is TRUE, how old, in minutes, must the folder be, before I send 
+                   the prenuke warning?
+
+TIMEALLOWNUKE=     How old, in minutes, must the folder be, before I actually nuke it?
+                   Set this higher then EARLYALLOWPRENUKE, if that is TRUE.
+
+ALLOWMULTIPLIER=   Anything nuked will be so using this multiplier.
+
+EMBARRESSALLOW=    The normal nuke output only shows how much they uploaded from the nuked release. 
+                   If you set this one to TRUE, it will parse the nuke output and find how much 
+                   they lost. Then send an "Loosers" line to GLLOG, so the bot can pick it up and 
+                   announce it just after the normal nuke announce.
+                   Note that if the user has leech, it will say "Lost 0.0Mb". This is as it should be.
+
+ALLOWHOURS=    If you set your EARLYALLOWPRENUKE and TIMEALLOWNUKE to higher then 60 minutes, you can set
+               this one to TRUE and it will show hours instead of minutes in the logfile and during
+               pre-nuke warnings to the bot. This does NOT change how you write it in those settings.
+               They should still be in minutes for EARLYALLOWPRENUKE and TIMEALLOWNUKE.
+               It will round downwards to the extreme, meaning, if you set TIMEALLOWNUKE to 179 minutes,
+               it will say 2 hours. If you set it to 180, it will say 3 hours and so on.
+
+
+-[ Other }-
+
+DELETENUKES=       TRUE/FALSE. With this on TRUE, it will look for nuked folders in the DIRS and 
+                   delete them after they are a number of hours old.
+                   Please note. The script will look for nuked folders based on your nukedir_syntax
+                   string in glftpd.conf. If your nuked folders contains
+                   any [ or ( characters, it will just look for the word NUKED. So, if you do have
+                   those chars in your nuked syntax, it can potentially delete a folder that is 
+                   not really nuked, but contains the word NUKED. Guess it shouldnt happen, but now
+                   you are aware of it.
+
+TIMETODELEM=       After this many hours, the nuked folders above will be removed, if above is TRUE.
+
+USEREXCLUDE=       This is only used for the EMBARRES parts of each module. If, for some reason,
+                   you do not want someone to be showed in the loosers list when a nuke occurs
+                   you can add their name here. One name only. Default is UNKNOWN since thats
+                   what zipscript-c outputs sometimes.
+
+MATCHUSER=         If you have pre-nuke warnings enabled in any of the modules, setting this to 
+                   TRUE will make the script figure out who created the folder by reading the 
+                   glftpd.log file and grepping NEWDIR on the folder. It can say the wrong user
+                   if the exact same folder in that section has been uploaded before, but that
+                   should only happen while testing it. This only works for those sections that
+                   NEWDIR is being logged to. See below.
+
+NOUSERFOUND=       If you have MATCHUSER on TRUE, and you create a folder from shell or that folder
+                   is not logging NEWDIR to glftpd.log (pre perhaps?), it will by default say 
+                   "Blabla/release-group created by someone unknown, is empty...."
+                   With this setting, you can change "someone unknown," to something else for fun.
+
+FORCENUKESYNTAX=   By default, I check glftpd.conf for your nukedir_syntax, but with some syntaxes
+                   I might run into problems (having -- in it for instance). If you get grep errors
+                   or similar when running this script then change this to something else that only
+                   your nuked folders contains. "NUKED" is a good one. Leave this blank and I will
+                   check it myself. Most people will not have to change this one.
+
+USESPACES=         The nuker program can nuke by encapsuling the release in {} if they have spaces
+                   or something in them. Some people reported that this did not work on their system
+                   for some reason and some systems dosnt work with it off, so I added this switch.
+                 ->If it does not actually nuke any releases, try changing this setting.
+
+LSM=               Certain functions use 'ls -m' to build lists. This function normally outputs
+                   each file on one line with a ', ' inbetween. I was informed that this is not
+                   how it works in FBSD (Might be others too) so avizion made a small script to emulate
+                   the 'ls -m' function. If you are using FBSD, change this one to the full path
+                   to the included script; fbsd_ls.sh
+                   fbsd_ls.sh will probably work for other distros as well, if ls -m does not
+                   produce the desired result. It needs perl installed though. Edit the script
+                   for more info.
+
+SHWING=            This one you must set to FALSE or removed totally for the script to run. 
+                   Its just a test to see if you actually read instructions. For this script, you have
+                   to (Tihi, cought someone today with this one =).
+                   Update: Cought 3 more people since last update. rtfm ! =))
+
+
+-[ Getting the sitebot to talk ]-
+
+This is only needed if any of the 4 prenuke warning are TRUE or any of the EMBARESS settings
+are TRUE. Basically, if you want to to announce anything other then the actual nuke (which will
+be announced automatically as if it was nuked on site), follow this.
+
+Here are the instructions for Dark0n3s Zipscript-c. If you have a working setup for another
+sitebot, please send the the config and I'll include it here, with your credits.
+
+Edit dZSbot.tcl
+
+Add the following to "set msgtypes(DEFAULT)"
+ ANUKEL ANUKEEMPTY ANUKEHEMPTY ANUKEINC ANUKEBAN ANUKEALLOW
+
+Add the following beneith the existing "set chanlist(..)"
+ set chanlist(ANUKEL)      "#Sitechan"
+ set chanlist(ANUKEEMPTY)  "#Sitechan"
+ set chanlist(ANUKEHEMPTY) "#Sitechan"
+ set chanlist(ANUKEINC)    "#Sitechan"
+ set chanlist(ANUKEBAN)    "#Sitechan"
+ set chanlist(ANUKEALLOW)  "#Sitechan"
+Replace Sitechan with your channel name.
+
+Add the following beneith the existing "set disable(..)"
+ set disable(ANUKEL)          0
+ set disable(ANUKEEMPTY)      0
+ set disable(ANUKEHEMPTY)     0
+ set disable(ANUKEINC)        0
+ set disable(ANUKEBAN)        0
+ set disable(ANUKEALLOW)      0
+
+Add the following beneith the existing "set variables(..)"
+  set variables(ANUKEL)      "%users"
+  set variables(ANUKEEMPTY)  "%release %timenow %nuketime"
+  set variables(ANUKEHEMPTY) "%release %timenow %nuketime"
+  set variables(ANUKEINC)    "%release %timenow %nuketime"
+  set variables(ANUKEBAN)    "%release %banword %timenow %nuketime"
+  set variables(ANUKEALLOW)  "%release %timenow %nuketime"
+
+Add the following beneith the existing "set announce(..)"
+ set announce(ANUKEL)       "%bold-\[AutoNuke\]-%bold Losers: %users"
+ set announce(ANUKEEMPTY)   "%bold-\[AutoNuke\]-%bold %release is still empty after %timenow. Will be nuked when its %nuketime old"
+ set announce(ANUKEHEMPTY)  "%bold-\[AutoNuke\]-%bold %release, empty or incomplete after %timenow. Will be nuked when its %nuketime old"
+ set announce(ANUKEINC)     "%bold-\[AutoNuke\]-%bold %release has not been completed within %timenow. Will be nuked when its %nuketime old."
+ set announce(ANUKEBAN)     "%bold-\[AutoNuke\]-%bold %release, %banword not allowed. Will be nuked once its %nuketime old."
+ set announce(ANUKEALLOW)   "%bold-\[AutoNuke\]-%bold %release is not from an allowed group. Will be nuked once its %nuketime old."
+
+
+Change the outputs as your like. These are just the default ones. If you want your sitename first, make it:
+"-%sitename- %bold-\[AutoNuke\]-%bold ..."
+
+Dont forget to rehash the bot.
+
+Now then, there are 2 ways of disabling/enabling bot output. You can either set the "set disable" to 1 and it
+wont be announced, OR you can set it in the script, as I am sure you have read above. I recomend you set
+all the "set disable" in dZSbot.tcl to 0, then decide how you want it in the script. Its easier to change in
+the script, cause you dont have to rehash the bot and it also saves logspace by not writing it at all. 
+This is all up to you of course.
+
+Trigger explanation:
+ANUKEL      = Loosers line after a nuke (EMBARRES).
+ANUKEEMPTY  = Totally Empty module pre nuke warning.
+ANUKEHEMPTY = Halt Empty module pre nuke warning.
+ANUKEINC    = Incomplete module pre nuke warning.
+ANUKEBAN    = Banned Word Module pre nuke warning.
+ANUKEALLOW  = Allowed Words Module pre nuke warning.
+
+I received some info from kentaur. Thanks! :
+To use tur-autonuke with ss5 (sitestat) one needs to replace some lines in 
+the script (tur-autonuke.sh) and then announce works. Search for the original line
+and replace it.
+
+ANUKEEMPTY
+
+Original Line:
+echo `date "+%a %b %e %T %Y"` ANUKEEMPTY: \"$lastfolder/$REALEMPTY$uname\" \"$ETIME\" \"$NTIME\" >> $GLLOG
+
+Replace with :
+echo `date "+%a %b %e %T %Y"` "RAW: $folders/ \"\002-\[AutoNuke\]-\002 $lastfolder/$REALEMPTY$uname is still empty after $ETIME. Will be nuked when its $NTIME old\"" >> $GLLOG 
+
+PRENUKEHALFEMPTY
+Original Line:
+echo `date "+%a %b %e %T %Y"` ANUKEHEMPTY: \"$lastfolder/$them$uname\" \"$ETIME\" \"$NTIME\" >> $GLLOG
+
+Replace with :
+echo `date "+%a %b %e %T %Y"` "RAW: $folders/ \"\002-\[AutoNuke\]-\002 $folders/$them$uname, empty or incomplete after $ETIME. Will be nuked when its $NTIME old.\"" >> $GLLOG
+
+ANUKEINC
+Original Line:
+echo `date "+%a %b %e %T %Y"` ANUKEINC: \"$lastfolder/$REALNAME$uname\" \"$ETIME\" \"$NTIME\" >> $GLLOG
+
+Replace with :
+echo `date "+%a %b %e %T %Y"` "RAW: $folders/ \"\002-\[AutoNuke\]-\002 $REALNAME$uname has not been completed within $ETIME. Will be nuked when its $NTIME old.\"" >> $GLLOG
+
+ANUKEBAN
+Original Line:
+echo `date "+%a %b %e %T %Y"` ANUKEBAN: \"$lastfolder/$them$uname\" \"$banword\" \"$ETIME\" \"$NTIME\" >> $GLLOG
+
+Replace with :
+echo `date "+%a %b %e %T %Y"` "RAW: $folders/ \"\002-\[AutoNuke\]-\002 $lastfolder/$them$uname, $banword not allowed. Will be nuked once its $NTIME old.\"" >> $GLLOG
+
+ANUKEALLOW
+Original Line:
+echo `date "+%a %b %e %T %Y"` ANUKEALLOW: \"$lastfolder/$them$uname\" \"$ETIME\" \"$NTIME\" >> $GLLOG
+
+Replace with :
+echo `date "+%a %b %e %T %Y"` "RAW: $folders/ \"\002-\[AutoNuke\]-\002 $lastfolder/$them$uname, $banword not allowed. Will be nuked once its $NTIME old.\"" >> $GLLOG
+
+
+-[ Testing ]-
+
+To test if this script works as it should, create;
+1: One totaly empty folder somewhere in the sections you defined it to search in.
+2: One empty folder and drag a .nfo file info it (so its not totally empty).
+3: One empty folder and upload a .sfv file into it so it becomes incomplete.
+   Also put a zip or something in it so the Half Empty folder dosnt react on it.
+4: One folder containing one of the banned words you have set. Upload a .zip or
+   something in it so neither the empty nor halfempty module catches it.
+3: One folder that does not contain any of the allowed words. Upload a zip or
+   something in it, and make sure its not incomplete.
+
+Now run the script from shell with the parameter test (tur-autonuke.sh test) and watch what its doing.
+If you created the folders from shell, it will say "Created by someone unknown", since no NEWDIR for
+that folder exists in glftpd.log.
+
+IT WONT SAY OR DO MUCH UNTIL EITHER THE PRE-NUKE WARNING TIME OR ACTUAL NUKE TIME IS REACHED ON THE FOLDERS
+so set them low during this test. Dont worry about nuking your entire site when you run with test mode.
+If, during test mode, it says that its sending a pre-nuke warning, it will actually create the file that
+tells this script that it has already sent this warning. This means that once you run it without test
+mode, it will not send a prewarning again. To reset prewarnings, simply delete all files starting with
+"prewarned" in the tempfolder specified ( rm -f /glftpd/tmp/prewarned* )
+
+It will say some dumb stuff, like "bla bla, nuking it 3x" and afterwards, "Sending pre nuke warning".
+That is just because it does never actually nuke it. It it was a live run, it would have nuked it
+and a prenuke warning would not be sent, since we exclude all nuked releases.
+
+To test bot output, paste the following in your shell, providing the path to glftpd.log is correct.
+Do it one line at a time.
+ echo `date "+%a %b %e %T %Y"` ANUKEL: \"Test lost 50 megs, lamo!\" >> /glftpd/ftp-data/logs/glftpd.log
+ echo `date "+%a %b %e %T %Y"` ANUKEMPTY: \"Test\" \"10 secs\" \"20 secs\" >> /glftpd/ftp-data/logs/glftpd.log
+ echo `date "+%a %b %e %T %Y"` ANUKEHEMPTY: \"Test\" \"10 secs\" \"20 secs\" >> /glftpd/ftp-data/logs/glftpd.log
+ echo `date "+%a %b %e %T %Y"` ANUKEINC: \"Test\" \"10 secs\" \"20 secs\" >> /glftpd/ftp-data/logs/glftpd.log
+ echo `date "+%a %b %e %T %Y"` ANUKEBAN: \"Test\" \"word\" \"10 secs\" \"20 secs\" >> /glftpd/ftp-data/logs/glftpd.log
+ echo `date "+%a %b %e %T %Y"` ANUKEALLOW: \"Test\" \"10 secs\" \"20 secs\" >> /glftpd/ftp-data/logs/glftpd.log
+If you get a [DEFAULT] output in irc chan, you didnt set it up as instructed above, or you forgot
+to rehash the bot =) Atleast with zipscript-c.
+
+I recomend you run it manually in test mode for a few hours (or days) to see if it does anything
+stupid that I did not anticipate. Once you think it looks good, run it manually without test mode
+and finally crontab it to run as often as you like. If you think it looks crap, tell me why or 
+dont use it :)
+
+If it craps out for some reason, only enable one module at a time to see which one it craps out on.
+Then report to me with which module crapped out, and gimme your settings.
+
+If the script craps out, make sure all the parameters are enclosed in either "" or '' (some are different,
+and should stay that way). Be extra careful when editing options that uses several lines, like DIRS.
+
+More scripts from me can be found at http://www.grandis.nu/glftpd/ <-> http://grandis.mine.nu/glftpd/
+
+/Turranius 2002-2003

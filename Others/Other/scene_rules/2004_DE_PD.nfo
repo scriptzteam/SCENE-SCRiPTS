@@ -1,0 +1,34 @@
+2004-12-14 DPDR
+Deutsche Pirate-Dub-Regeln
+
+01. Ein PD ist nur dann valid, wenn er innerhalb von 4 Wochen nach 
+    .DE-Kinostart kommt.
+02. Ein SVCD-PD ist Dupe, sofern ein VCD-PD existiert und vice versa.
+03. Das Quellmaterial darf nur mit expliziter Erlaubnis der Gruppe verwendet
+    werden. Die Gruppe muss in der NFO angegeben werden.
+
+    NOTE: Every Group is allowed to forbid the pirate-dubbing of their 
+          releases. Our nukers will respect that and strictly nuke all of 
+          those releases.
+
+04. Die Bildquelle muss vollstaendig sein.
+05. Die Tonspur darf nicht per Mikrophon abgegriffen worden sein.
+06. PDs von CAMs sind nicht zulaessig.
+07. Sofern die deutsche Kinoversion eines Filmes laenger als das Quellvideo 
+    ist, ist ein PD nicht zulaessig.
+08. Sofern ein PD valid war, duerfen keine Proper-PDs kommen, die sich 
+    primaer durch qualitativ hoeherwertige Quellen rechtfertigen.
+09. Ansonsten gelten die ueblichen technischen Standards fuer VCD und SVCD -
+    Standalone-Player gelten dabei als Referenz fuer Mangelfreiheit.
+10. Benennung:
+
+    <Deutscher*Titel>*<QUELLE>*PD*German*<FORMAT>-<GRUPPE>
+
+    *  = . oder _
+    PD = Pirate Dub
+
+    Der.Stadtneurotiker.TS.PD.German.SVCD-GRP
+    Der_Stadtneurotiker_SCREENER-PD-GERMAN.VCD-GRP
+    ...
+
+[DPDR-20020804a]

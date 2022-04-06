@@ -1,0 +1,307 @@
+-¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¬
+-                                                                             -
+-                  The SD x264 TV Releasing Standards 2012                    -
+L¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦-
+-¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¬
+-                              L¦¦¦[ INTRO ]¦¦¦-                              -
+-                                                                             -
+- x264 has become the most advanced video codec over the past few years.      -
+- Compared to XviD, it is able to provide higher quality and compression at   -
+- greater SD resolutions. It also allows better control and transparency over -
+- encoding settings. With CRF in the mix, we can also ensure that a diverse   -
+- array of material will get the most appropriate bitrate for them and not    -
+- arbitrary and fixed sizes. This standard aims to bring quality control back -
+- to SD releases. There are many standalone players/streamers such as TviX,   -
+- Popcorn Hour, WDTV HD Media Player, Boxee, Xtreamer, PS3, XBOX 360, iPad, & -
+- HDTVs that can playback H264 and AAC encapsulated in MP4.                   -
+-                                                                             -
+- The SD x264 TV section was formed to separate releases from the ruleless    -
+- world of TV-XviD. This document will cover the rules and guidelines for     -
+- only SD resolution x264 television rips.                                    -
+-                                                                             -
+L¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦-
+-¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¬
+-                          L¦¦¦[ RELEASE RULES ]¦¦¦-                          -
+-                                                                             -
+-  Compliance with this document is optional as of its pre date, and          -
+-  mandatory as of 2012-02-22 16:00 UTC.                                      -
+-                                                                             -
+-  Video:                                                                     -
+-   - Sources requiring resize are to be cropped and resized using sharp      -
+-     resizers such as  Lanczos/Lanczos4, Spline36, or Blackman. Bicubic is   -
+-     banned.                                                                 -
+-   - HD video taken from the decoded HD output of a set-top box (e.g.        -
+-     component, DVI, HDMI) may be used as a source; source must be tagged    -
+-     in dirname as AHDTV. Decoded output of PDTV or DSR sources is banned.   -
+-     Releases taken from a natively recorded transport stream shall be tagged-
+-     as HDTV, PDTV, or DSR. Dupes are as follows: HDTV > AHDTV > PDTV > DSR. -
+-     AHDTV captures must be done at the native format of the channel, e.g.   -
+-     720p or 1080i.                                                          -
+-   - Sources that sideconvert 1080i to 720p (such as BellTV) are allowed but -
+-     must be tagged as PDTV or DSR.                                          -
+-   - If there is a question as to the validity of a source, the release      -
+-     may be nuked source.sample.requested_<reason.for.nuke> (e.g.            -
+-     source.sample.requested_suspicion.of.analog.source) within 24 hours of  -
+-     pre. The group has 24 hours from the nuke to pre a RARed SOURCE.SAMPLE  -
+-     that is at least 10 seconds in length in order to document that the     -
+-     source is valid. Failure to provide source proof or providing bad       -
+-     source proof shall result in the release remaining nuked, and it may    -
+-     then be propered.                                                       -
+-   - Improper IVTC methods that result in jerky playback, such as Force      -
+-     Film, are banned                                                        -
+-   - Interlaced video sources must be deinterlaced with a smart deinterlacer -
+-     such as Yadif. FieldDeinterlace is banned.                              -
+-   - Group watermarks of any kind on the video are banned                    -
+-   - Intros, outros, betweenos, or any other form of defacement of the       -
+-     episode are banned                                                      -
+-   - "Native" refers to the standard in which the video was produced (e.g.   -
+-     NTSC or PAL). NTSC produced video is native to NTSC, PAL produced video -
+-     is native to PAL. PAL produced video that is broadcast in NTSC is       -
+-     converted. NTSC produced video that is broadcast in PAL is converted.   -
+-   - Converted video that has significant artifacting (e.g. blended frames)  -
+-     and cannot be reversed to native must use CONVERT tag                   -
+-   - Converted video that does not have significant artifacts does not need  -
+-     convert tags and may not be nuked for the conversion                    -
+-   - Native releases are allowed after those tagged CONVERT. Use NATIVE tag. -
+-                                                                             -
+-  Audio:                                                                     -
+-   - Allowed audio formats are VBR AAC LC (Low Complexity).                  -
+-   - Average bitrate on AAC audio must be 96 - 160 kbps.                     -
+-   - AAC audio must be normalized and downconverted to stereo.               -
+-   - Nero and Apple encoders are recommended. FFmpeg is banned.              -
+-   - Dupes  based  on audio format are forbidden and must be tagged INTERNAL -
+-   - Multiple language audio tracks are allowed and must be listed in NFO    -
+-   - Dupes are not allowed based on multiple audio tracks                    -
+-   - Severe audio drops resulting in one full missing word or otherwise the  -
+-     inability to  understand material dialogue is considered to be a        -
+-     technical flaw and may be propered                                      -
+-   - Audio that is 120ms or more out of sync or drifts more than 120ms       -
+-     between any two points (e.g. needing -80 at one and +40 at another) is  -
+-     considered to be technically flawed and may be propered                 -
+-                                                                             -
+-  Framerate:                                                                 -
+-   - IVTC or deinterlacing must be applied as needed                         -
+-   - 50/60fps video may be released at 50/60fps or 25/30fps. Releasing true  -
+-     25/30fps video at 50/60 is considered a technical flaw.                 -
+-   - In rare cases, 25/50Hz sources should be IVTC'd to 24 or 30 fps.        -
+-   - In rare cases, 30/60Hz sources should be IVTC'd to 25fps.               -
+-     Failure to apply IVTC when needed is a technical flaw.                  -
+-                                                                             -
+-  Codec/Container:                                                           -
+-   - Video codec must be x264 (8-bit depth).                                 -
+-   - Container must be MP4.                                                  -
+-   - You will have 30 days from latest  x264  rev date to update in order to -
+-     maintain all bug fixes and improvements in the x264 codec               -
+-   - Stripping or falsifying encode information in the file header is banned -
+-   - Custom  muxing  tools are permitted; however, output must be compatible -
+-     with standard demuxers.                                                 -
+-   - Custom Matrices are allowed                                             -
+-   - Encoded colorspace must be 4:2:0.                                       -
+-   - Deblocking  must  be  used;  values are at the discretion of the group. -
+-     (default is enabled, 0:0 settings)                                      -
+-   - No setting can go below what is specified by --preset slow.             -
+-   - Keyframe  interval  (--keyint) must be at least 200 and at most 300. It -
+-     is  recommended  to  be  10*framerate  (film=240,  PAL=250,  NTSC=300). -
+-   - Minkeyint must be 30 or less                                            -
+-   - Colormatrix must be set to source specification. If not specified by    -
+-     source, bt709 must be used for sources with resolution greater than or  -
+-     equal to 1280x720 (e.g. HDTV and some PDTV) and sources with lower      -
+-     resolutions must use bt601 (e.g. DSR and some PDTV).                    -
+-   - Constant Rate Factor (--crf) must be as follows:                        -
+-     -¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦¦¦¦¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¬ -
+-     - Compressibility -  CRF  - General Examples                          - -
+-     +¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦+¦¦¦¦¦¦¦+¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦+ -
+-     - High            - 19-20 - Scripted, Talk Shows, Poker, Animation    - -
+-     - Medium          - 21-22 - Documentary, Reality, Variety             - -
+-     - Low             - 23-24 - Sports, Awards, Live Events, Competitive- - -
+-     -                 -       - Reality                                   - -
+-     L¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦+¦¦¦¦¦¦¦+¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦- -
+-   - x264 parameters shall not vary within a release                         -
+-   - Zones (--zones) are forbidden.                                          -
+-   - Any deviation in CRF from given examples must be specifically justified -
+-     in the NFO. Use discretion when deviating CRF by matching the           -
+-     compressibility of the show to a corresponding CRF value. CRF values    -
+-     below 19 and above 24 are never permitted.                              -
+-   - As a general suggestion, average video bitrate in excess of 1500kb/s    -
+-     is a sign that a higher CRF value should be chosen, when possible       -
+-   - Allowed parameters for --tune (optional) are film/grain/animation       -
+-   - Level 3.1 must be respected.                                            -
+-   - Suggested command line:                                                 -
+-     x264.exe --crf ## --preset slow --level 3.1 --colormatrix bt709 -o      -
+-     out.h264 in.avs                                                         -
+-                                                                             -
+-  Resolution:                                                                -
+-   - WS HDTV and WS PDTV sources with greater than 720px horizontal res must -
+-     be cropped as needed and resized to 720px width and mod2 height to      -
+-     maintain proper AR.                                                     -
+-   - WS PDTV sources with horizontal source res of 720-704px must be cropped -
+-     as needed and only height must be resized to the proper anamorphic AR   -
+-     using mod2. Upscaling/downscaling is forbidden.                         -
+-   - All other sources, including FS HDTV, must be cropped as needed and     -
+-     resized to 640px width and mod2 height to maintain proper AR.           -
+-   - When cropping, remove everything that is not actual picture, including  -
+-     black or other colored borders, duplicate lines, and full-time tickers. -
+-     Removing or retaining fading edges is at capper's discretion and shall  -
+-     not be considered undercropped or overcropped.                          -
+-   - In the case of varying crops, crop to the most common frame size (e.g.  -
+-     pitch/primary view in sports).                                          -
+-   - Actual picture area may be over- or under-cropped by 1px maximum per    -
+-     side. More than 1px on any side is considered a technical flaw.         -
+-   - Encoded Video resolution must be within 2% of the original aspect ratio -
+-     To calculate AR error (%): (Original AR - Release AR)/Original AR * 100 -
+-     OAR = (SourceWidth-CropLeft-CropRight)/(SourceHeight-CropTop-CropBottom)-
+-     Release AR  = EncodedWidth / EncodedHeight                              -
+-                                                                             -
+-  Subs:                                                                      -
+-   - Optional, but encouraged                                                -
+-   - Text based format is preferred (e.g. SubRip, SubStation Alpha, etc).    -
+-   - Subtitles must be in "Subs" directory.                                  -
+-   - Burned subtitles will only be allowed when the source exhibits such     -
+-     subtitles in the picture itself                                         -
+-   - Subtitles cannot be used as a basis for a dupe                          -
+-   - Group marks in subtitles are banned                                     -
+-                                                                             -
+-  Packaging:                                                                 -
+-   - Releases must be packed in RAR file format.                             -
+-   - Rars may be in 15, 20, or multiples of 50 MB. 15 and 20 MB sizes must   -
+-     contain 1-101 files. Multiples of 50 MB must contain 10-101 files.      -
+-     1MB = 1,000,000 bytes.                                                  -
+-   - Multi-episode  releases  with no clear delineation such as credits must -
+-     not be split                                                            -
+-   - RAR compression must not be used                                        -
+-   - Recovery and MD5 record are optional                                    -
+-   - Encryption or password protection is forbidden                          -
+-   - Must have SFV and NFO                                                   -
+-   - RAR, SFV, and sample files must have unique, lowercase filenames with   -
+-     the group tag.                                                          -
+-   - Missing SFV or RAR(s) on all sites is considered a technical flaw.      -
+-     Corrupt RARs (errors on extraction) are considered technical flaws.     -
+-     SFVFix and RARFix are not permitted. Uploading a missing SFV or RAR to  -
+-     all presites after pre is not permitted. Release REPACK.                -
+-                                                                             -
+-  Credits/Previously On:                                                     -
+-   - Previously on footage is optional, but suggested to be included         -
+-   - Full end credits must be included if they contain show content or       -
+-     outtakes/bloopers. End credits are optional and suggested if they are   -
+-     clean, and purely optional in other cases.                              -
+-                                                                             -
+-  Samples:                                                                   -
+-   - REQUIRED!                                                               -
+-   - 50-70 seconds in length and  in  a  separate  folder  marked  as Sample -
+-   - Must be taken from the episode, not encoded separately                  -
+-   - Stream samples are recommended for any questionable issue with the      -
+-     source, e.g. no IVTC possible                                           -
+-                                                                             -
+-  Propers:                                                                   -
+-   - Propers are only permitted in the case of a technical flaw in the       -
+-     original release (e.g. Bad IVTC, Interlacing, missing footage, bad crop,-
+-     commercials, bad x264 settings used, bad source, etc.)                  -
+-   - Scrolling or other alert messages added by a station (e.g. weather,     -
+-     Amber alerts) must be at least 30 seconds in length in order to         -
+-     nuke/proper                                                             -
+-   - Drops with missing footage but no missing dialog must be at least 2     -
+-     seconds long in any one instance to be considered a technical flaw      -
+-   - Proper  reason  must  be clearly stated in nfo, including timecodes and -
+-     extent of the flaw when appropriate                                     -
+-   - Sample of propered release is encouraged                                -
+-   - Qualitative propers are not allowed                                     -
+-   - Flaws  (such  as  drops) present in any optional content are not a flaw -
+-     and shall not be nuked or propered.                                     -
+-   - Propers based upon the rules set forth here are allowed only on         -
+-     releases that come after this document goes into effect                 -
+-                                                                             -
+-  Internals:                                                                 -
+-   - Internals are allowed to be pred for any reason, including releases     -
+-     with technical flaws or those done with alternate codecs, containers,   -
+-     or settings for experimental purposes                                   -
+-   - Any severe technical flaws or deviations must be mentioned in the NFO   -
+-   - With the exception of the following rule, internal releases may only be -
+-     nuked for severe technical flaws or deviations that are not mentioned   -
+-     in the NFO                                                              -
+-   - Using  DIRFIX.iNTERNAL to avoid a dupe nuke is banned, and such         -
+-     dirfixes shall be nuked fix.for.nuke                                    -
+-                                                                             -
+-  Directory Naming:                                                          -
+-   - Show.Name.SXXEXX.Episode.Title.HDTV.x264-GROUP                          -
+-   - Show.Name.YYYY.MM.DD.Guest.Name.HDTV.x264-GROUP for daily or other      -
+-     dated shows                                                             -
+-   - Episode title and guest name are optional                               -
+-   - Show.Name.PartXX.HDTV.x264-GROUP for miniseries                         -
+-   - ALL others are FORBIDDEN. (e.g 0x00 000 EXX.EP.TITLE PART.VI)           -
+-     Sport:                                                                  -
+-     - League.YYYY.MM.DD.Event.EXTRA.TAGS.HDTV.x264-GROUP                    -
+-     - Competition.YYYY-MM.Event.EXTRA.TAGS.HDTV.x264-GROUP                  -
+-     Using just the year is only permitted if the event is once per year     -
+-     (e.g. a WWE PPV). In the case of leagues which have seasons that span   -
+-     multiple years, it is permissible to tag the release with just the years-
+-     of the season. Inclusion of MM and DD is mandatory for all constantly   -
+-     running shows (e.g. WWE).                                               -
+-     If there is no league, the sport needs to be used instead               -
+-     The following are some examples of correct directory names:             -
+-     - EPL.2010.01.01.Manchester.United.vs.Arsenal.HDTV.x264-GROUP           -
+-     - TNA.Impact.2010.03.02.HDTV.x264-GROUP                                 -
+-     - WWE.WrestleMania.2010.PPV.HDTV.x264-GROUP                             -
+-     - Tennis.US.Open.2011.Final.Player1.vs.Player2.HDTV.x264-GROUP          -
+-   - Different  shows  that have the same title in different countries (e.g. -
+-     The Marriage Ref) must have the ISO 3166-1 alpha 2 country code in the  -
+-     directory name, except for UK shows (e.g. The.Marriage.Ref.UK not       -
+-     The.Marriage.Ref.GB). ISO country code is not needed for the original   -
+-     show (e.g. The.Marriage.Ref.US is forbidden).                           -
+-   - Different shows with the same name in the same country produced in      -
+-     different years must have the year of the first season in the directory -
+-     name, e.g. Human.Target.2010 and Doctor.Who.2005. Year is not needed    -
+-     for the first show with a particular name.                              -
+-   - Channel name (e.g. National.Geographic, History.Channel) shall not be   -
+-     tagged on any normal series starting after this ruleset's effective     -
+-     date. Miniseries and single-episode docus may optionally be tagged with -
+-     the channel name.                                                       -
+-   - The use of audio format tags such as AAC, and AAC.x.x is FORBIDDEN      -
+-   - READ.NFO tag is allowed; however, discretion is recommended             -
+-   - PROPER.READ.NFO is NOT allowed. The NFO is REQUIRED to have a reason;   -
+-     therefore, the tag is redundant.                                        -
+-   - All repacks must include detailed reason as to why it's being repacked  -
+-     in the nfo                                                              -
+-   - Other  permitted  tags are: PROPER, REPACK, RERIP, REAL, UNCUT, DUBBED, -
+-     SUBBED, iNTERNAL, OAR, PPV, CONVERT, NATiVE                             -
+-   - Acceptable  characters  in  naming  a  directory  include (NO spaces or -
+-     double dots - single dots ONLY):                                        -
+-                                                                             -
+-       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            -
+-       abcdefghijklmnopqrstuvwxyz                                            -
+-       0123456789._-                                                         -
+-                                                                             -
+-  Nukes:                                                                     -
+-   Releases must be nuked for any of the following reasons:                  -
+-   - Any valid proper listed in the propers section                          -
+-   - Missing nfo, or missing Sample                                          -
+-   - Invalid directory naming format                                         -
+-   - Mislabeled  directory  that  could  prevent  finding  the  release in a -
+-     dupecheck,  including  incorrect season/episode/date or incorrect title -
+-   - Dupe                                                                    -
+-   - Releases may not be propered for bad tagging or missing nfo/sample      -
+-                                                                             -
+-   Fixes:                                                                    -
+-   - The  following  fixes are  allowed: NFOFix, SampleFix, DirFix, SyncFix, -
+-     ProofFix                                                                -
+-   - DirFix requires NFO and NFO must state which release is being fixed     -
+-   - The original release shall be unnuked when a valid fix is released      -
+-   - A proper may not be released for an issue that was fixed, unless the    -
+-     fix does not completely correct the issue                               -
+-                                                                             -
+L¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦-
+-¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¬
+-             The SD x264 TV Releasing Standards 2012 (2012-02-22)            -
+-                                                                             -
+L¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦TT¦¦¦¦¦¦¦-
+-¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦++¦¦¦¦¦¦¦¬
+-                        L¦¦¦¦¦¦¦¦[ GROUPS ]¦¦¦¦¦¦¦¦-                         -
+-                                                                             -
+-              TVx2642012 rules created by the following groups:              -
+-              ¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦              -
+-                   ASAP BAJSKORV C4TV D2V DiVERGE FTP KYR                    -
+-                       LMAO LOL MOMENTUM SYS TLA YesTV                       -
+-                                                                             -
+L¦¦T¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦¦T¦¦-
+   LT¦¦¦\   Thanks to the x264 developers for their assistance in     /¦¦¦T-
+    LT¦¦¦\      determining assistance in determining the best       /¦¦¦T-
+     L¦¦¦¦\                mix of encode settings.                  /¦¦¦¦-

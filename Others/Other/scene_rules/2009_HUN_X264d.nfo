@@ -1,0 +1,162 @@
+                   _______                _______ _____       
+                  |   |   |.--.--.-----. |   |   |     \          
+                  |       ||  |  |     | |       |  --  |         
+                  |___|___||_____|__|__| |___|___|_____/          
+           ______         __                     __               
+          |   __ \.-----.|  |.-----.---.-.-----.|__|.-----.-----. 
+          |      <|  -__||  ||  -__|  _  |__ --||  ||     |  _  | 
+          |___|__||_____||__||_____|___._|_____||__||__|__|___  | 
+                                                          |_____| 
+          _______ __                  __                __        
+         |     __|  |_.---.-.-----.--|  |.---.-.----.--|  |.-----.
+         |__     |   _|  _  |     |  _  ||  _  |   _|  _  ||__ --|
+         |_______|____|___._|__|__|_____||___._|__| |_____||_____|
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ HD movies kategoriara vonatkozo szabalyok ervenyesek 2009.04.15.-tol          บ 
+บ  Kategoriak                                                                   บ 
+บ  lejatszasi formatum szerint                                                  บ 
+บ  -1.mkv                                                                       บ 
+บ  -2.bd strukturak                                                             บ 
+บ                                                                               บ  
+บ  1.1.MKV videok:                                                              บ 
+บ  -   720p min. 4000Kb/s kivetel anime                                         บ             
+บ  -   1080p min. 8000 kbps kivetel anime,                                      บ               
+บ -   Minden filmnel kotelezo megtartani sajat fps erteket                      บ              
+บ -   Level 4.1-be kell konvertalni (--level 4.1)                               บ                       
+บ -   Kotelezo a b fremek hasznalata kotelezo                                   บ     
+บ -   Minimum 2 pass-t kell hasznalni                                           บ 
+บ -   Maximum bitrata 38 Mbit lehet (--vbv-maxrate 38000)                       บ 
+บ -   VfW (Video for Windows) tiltott                                           บ 
+บ -   --me=> umh--subme=>7 (masodik passnal min. ertek)--bime --partitions p8x8,บ 
+บ  b8x8,i4x4,i8x8 --8x8dc hasznalata kotelezo a masodik menetben                บ 
+บ                                                                               บ
+บ -   Referencia frame -k a kovetkezo tablazat alapjan allitando be :           บ      
+บ      1920x1088: 4 (--ref 4)                                                   บ
+บ      1920x864: 5 (--ref 5)                                                    บ
+บ      1920x720: 6 (--ref 6)                                                    บ 
+บ                                                                               บ
+บ      1280x720: 9 (--ref 9)                                                    บ
+บ      1280x648: 10 (--ref 10)                                                  บ
+บ      1280x588: 11 (--ref 11)                                                  บ
+บ      1280x540: 12 (--ref 12)                                                  บ 
+บ      1280x498: 13 (--ref 13)                                                  บ
+บ      1280x462: 14 (--ref 14)                                                  บ 
+บ      1280x432: 15 (--ref 15)                                                  บ
+บ      1280x405: 16 (--ref 16)                                                  บ
+บ-   Minimum 721 verzioju x264.exe -t kotelezo hasznalni ill. legfrissebbet     บ
+บ-   Ha retail blurayrol van szo arrol kotelezo rippelni a feliratot            บ
+บ                                                                               บ
+บ1.2. mkv audio                                                                 บ 
+บ                                                                               บ                                               
+บ-  Az eredeti 24fps->PAL konverzionak megfelelo nyujtast kell alkalmazni,      บ
+บ ugy, hogy a nyujtott hang hangmagassaga megegyezzen a hd-s eredeti hangeval   บ
+บ (resample vagy time stretch, compare-vel vagy hallas utan eldontheto)         บ
+บ- resample eseten csak jo minosegu (SINC algoritmus) nyujto program            บ
+บ alkalmazhato, pl: soundforge, Audacity, hdaudio-tools (besweet TILOS!)        บ
+บ- time stretch eseten csak MPEX algoritmus alkalmazhato                        บ
+บ pl: prosoniq timefactory, hdaudio-tools, cakewalk sonar (soundforge TILOS!)   บ
+บ- upscale (az forrasnal magasabb bitratara konvertalas) tilos!                 บ
+บ- a megengedett max elcsuszas (desync) az eredeti hangtol max +-20ms           บ
+บ                                                                               บ
+บ- FONTOS: ha potolni kellett az eredeti hangbol, akkor kotelezo a              บ
+บ forced sub ezekhez a reszekhez!                                               บ
+บ                                                                               บ
+บ- ha meret miatt az angol hangsav nem fert bele az mkv-ba, vagy butitani       บ
+บ kellett, akkor kotelezo mellekelni az eredetit!                               บ
+บ- a magyar hangsavot ajanlott kulon is mellekelni, vagy a HDAUDIO              บ        
+บ szekcioba kulon predb addolni, nfo-ban megjelolve a release-t amihez keszult  บ
+บ -Amennyiben van RETAiL hang mar (rls.elkeszitesekor) akkor azt a hangot       บ
+บ k๖telez๖ felhasznalni                                                         บ
+บ                                                                               บ
+บ                                                                               บ
+บ    2.1.bd video strukturajaban (mkv+bd creator)                               บ
+บ     VIDEO:                                                                    บ
+บ Minimum bitrata                                                               บ
+บ-   bd5 ill bd9 BD-CRETOR mappa hasznalata kotelezo rarolva sfv-vel            บ                                      
+บ-   720p=3800 kbps kivetel anime  2800 kbps                                    บ
+บ-   1080p=7000 kbps kivetel anime 4400 kbps                                    บ
+บ-   Minden filmnel kotelezo megtartani sajat fps erteket                       บ        
+บ-   Level 4.1-be kell konvertalni (--level 4.1)                                บ                       
+บ-   Kotelezo a b fremek hasznalata                                             บ
+บ-   Minimum 2 pass-t kell hasznalni (tobb ertelmetlen)                         บ                             
+บ-   Maximum bitrata 38 Mbit lehet (--vbv-maxrate 38000)                        บ               
+บ-   VfW (Video for Windows) tiltott                                            บ                               
+บ-   --me=>hex --subme=>7 (masodik passnal min. ertek) --bime --partitions      บ 
+บ p8x8,b8x8,i4x4,i8x8                                                           บ  
+บ    --8x8dc hasznalata kotelezo a masodik menetben (subme min ertek)           บ
+บ-   Referencia frame -k a kovetkezo tablazat alapjan allitando be :            บ
+บ      1920x1088: 4 (--ref 4)                                                   บ
+บ                                                                               บ
+บ     1280x720: 9 (--ref 9)                                                     บ 
+บ-   Minimum 721 verzioju x264.exe -t kotelezo hasznalni                        บ
+บ-   croppolas utan (ha szukseges) addborder hasznalata                         บ
+บ-  A film felbontasanak vagy 1920*1080 vagy 1280*720 -nak kell lennie KึTELEZึ!บ
+บ   2.2. bd audio                                                               บ
+บ hasonlo mkv-nal                                                               บ
+บ                                                                               บ
+บ HDTV re vonatkozo szabalyok:                                                  บ
+บ alapvetoen 2.1 pontban leirta DE:                                             บ
+บ                                                                               บ
+บ- 29.976 fps interlaces filmeknel (video felvetel kivetelevel pl koncertek     บ
+บ es tv-re keszult dokumentumfilmek)  kotelezo az inverse telecine!             บ
+บ- fps modosithato, es a minoseg erdekeben altalaban modositani is kell,        บ
+บ lehetoleg helyre kell allitani az eredeti (altalaban 23.976) fps-t            บ
+บ- nem kotelezo (es nem ajanlott!) a forrason talalhato eredeti (angol)         บ
+บ hangsav megtartasa, ha mas forrasbol (pl. dvd) jobb hang beszerezheto         บ
+บ (pl. 384k ac3 vs. 768 dts) ha letezik                                         บ
+บ- beegetett felirat illetve logo vagy egyeb overlay csak akkor megengedett,    บ
+บ ha nincs jobb elerheto forras                                                 บ
+บ                                                                               บ
+บ NEV dirname                                                                   บ
+บ KOTELEZO                                                                      บ
+บ ENG tag nem kell bele sorrend nem felcserelheto!!DUAL tag azonnal NUKED!!!    บ
+บ                                                                               บ
+บ film orig cime (imdb.cime nem magyar cime).megjelenes eve.forras(bluray hddvd บ
+บ hdtv) bdnel nem kell megjelolni) .                                            บ
+บ BD ha az.HUN-tag.1080p avagy 720p ill 1080i.(DTS).RETAiL ha az /illetve       บ
+บ HDTV nel DUBBED tag/ a hang.codec.majd a vegen grp neve                       บ
+บ pl.Doom.2005.BD9.1080p.DTS.HUN.RETAiL.x264-kancsoka ha bd                     บ
+บ    Doom.2005.Bluray.1080p.DTS.HUN.RETAiL.x264-kancsoka ha mkv                 บ
+บ ill.                                                                          บ
+บ Doom.2005.HDTV.1080i.DTS.HUN.DUBBED.x264-kancsoka  ha HDTV                    บ
+บ                                                                               บ
+บ                                   FIGYELEM!                                   บ
+บ kulfoldi rls-re retail tag NUKED!!                                            บ
+บ Ha egy film sok vagason ment at keretik READ.NFO tag el jelolni               บ
+บ                                                                               บ
+บ                                                                               บ
+บ Meret                                                                         บ
+บ                                                                               บ
+บ mkv meretei                                                                   บ
+บ                                                                               บ
+บ- dvd5  dvd5+1/2dvd5 2dvd5 dvd9 dvd9+dvd5 2xdvd9                               บ
+บ- max. 100 rarbol allhat                                                       บ
+บ- ha a meret nagyobb mint dvd5 vagy dvd9 split hasznalata kotelezo             บ
+บ(a filmel egyutt rarozva)                                                      บ
+บ                                                                               บ
+บ bd meretei                                                                    บ
+บ                                                                               บ
+บbd5 4gb bd9 7.3gb elfogadott bd5 bd9 bd5+bd9 2xbd5                             บ
+บ                                                                               บ
+บNFO:                                                                           บ                                                
+บ-   Forras, hang forrasa megjelolese KOTELEZO                                  บ                                       
+บ-   Video audio kbps erteke, nyelvek !!!                                       บ             
+บ-   qp ertekek ( csak ajanlott)                                                บ
+บ-   imdb link                                                                  บ
+บ-   hazai megjelenes (CEE) idopontja (csak ajanlott)                           บ
+บ-------------------------------------------------------------------------------บ
+บ                                                                               บ
+บ                                                                               บ                                                     
+บ HDAudio rules                                                                 บ
+บ- dirname sorrend nem felcserelheto                                            บ                                             
+บ -   Csak igazitott hangok kerulhetnek fel (wavokra bontott majd igazitott)    บ
+บ -   besweet hasznalata tilos                                                  บ                                
+บ                                                                               บ                                           
+บ - csak rarolva 50mb osak                                                      บ                                     
+บ -   Mihez igazitottad ha tudod nfoba legyen benne                             บ                
+บ - mappa dirname--->nev,kiadas datuma(imdb),blu avagy hddvdrol                 บ         
+บ  keszult,dts avagy ac3, szama 448 640 768 1,5 es keszito neve                 บ     
+บ - sfv kotelezo                                                                บ                                      
+บ - nfo kotelezo                                                                บ                                                    
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ

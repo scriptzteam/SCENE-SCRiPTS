@@ -1,0 +1,79 @@
+README for ugly-autodelete 1.0.2
+
+ * ABOUT
+
+Autodelete is a shell script for use with crontab.  It allows the user several
+ways of deleting within specified paths: by date, by size, and by percentage
+of space used.  In addition to these basic functions, it has the following
+features:
+ 
+ -debug mode: prints the 'rm' commands that the script would normally execute
+              had debug mode been disabled
+ -free limit: allows the user to set a minimum amount of free space that should
+              be available on the site's device(s) before the script executes
+              anything else - this keeps disk usage low so that the script can
+              be frequently run
+ -exceptions: list of patterns in file/dirnames that, if matched, will not be
+              deleted under any circumstances
+ -dated-dir
+  detection:  after defining the format that dated (by week or day) dirs are
+              set up, the script will change behavior if a path is found to
+              contain dated dirs - it will delete in an ascending order, rather
+              than by modification time, the latter of which can vary when an
+              old dated dir's contents are modified in some way (nuking a rel
+              after day has ended, etc.)
+ -FreeBSD
+  support:    as this script was written for a FreeBSD box, it will work on both
+              FreeBSD and Linux - it should work on Open/NetBSD as well, but it
+              hasn't been tested
+
+Description of the various delete functions:
+
+ -----------------
+  DYNAMIC DELETE:
+ -----------------
+   In this function, the user specifies a maximum percentage of space that can
+ be used by a path on a device.  To calculate this percentage correctly, the
+ user will also add a list of any paths that also reside on the device, but are
+ not within the dynamic path itself.
+
+ ----------------
+  STATIC DELETE:
+ ----------------
+   Static delete simply deletes the oldest directory in a path until a specified
+ size is attained.
+
+ ---------------
+  DATED DELETE:
+ ---------------
+   The third and final delete function of this script will delete dirs within
+ a path after they've gone beyond a defined age limit (in days).
+
+
+ * INSTALLATION AND CONFIGURATION
+
+Copy autodelete.sh to a directory and 'chmod 755' it.  Open the script in an
+editor and set up the paths as described within it.  Verify that the shabang
+(the '#!/bin/bash' statement) at the top matches the path to bash on your
+system.  This script will not work with any shell except bash.
+
+It's *HIGHLY* recommended that you set "debug" to "YES" the first time you run
+the script, as well as every time that you change its configuration.
+
+Next edit crontab ('crontab -e') and add a line similar to this:
+
+ */20 * * * *   /jail/glftpd/bin/autodelete.sh
+
+The above line will run the script every 20 minutes.  Running the script this
+frequently is only recommended if free_mode is NOT set to "".
+
+If you're a FreeBSD user, you will need to install shellutils and fileutils.
+They are available in the ports tree as misc/sh-utils and sysutils/fileutils
+respectively.
+
+ * CONTACT
+
+Please report bugs to:
+
+ - ugly on EFNet
+

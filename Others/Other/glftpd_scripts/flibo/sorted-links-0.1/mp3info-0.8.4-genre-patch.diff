@@ -1,0 +1,61 @@
+diff -Naur mp3info-0.8.4/mp3info.h mp3info-0.8.4-fli/mp3info.h
+--- mp3info-0.8.4/mp3info.h	2001-07-17 08:29:56.000000000 +0300
++++ mp3info-0.8.4-fli/mp3info.h	2002-09-17 16:45:34.000000000 +0300
+@@ -46,33 +46,33 @@
+ 
+ #ifdef __MAIN
+ char *typegenre [MAXGENRE+2] = {
+-   "Blues","Classic Rock","Country","Dance","Disco","Funk","Grunge",
+-   "Hip-Hop","Jazz","Metal","New Age","Oldies","Other","Pop","R&B",
++   "Blues","Classic_Rock","Country","Dance","Disco","Funk","Grunge",
++   "Hip-Hop","Jazz","Metal","New_Age","Oldies","Other","Pop","R_n_B",
+    "Rap","Reggae","Rock","Techno","Industrial","Alternative","Ska",
+-   "Death Metal","Pranks","Soundtrack","Euro-Techno","Ambient",
+-   "Trip-Hop","Vocal","Jazz+Funk","Fusion","Trance","Classical",
+-   "Instrumental","Acid","House","Game","Sound Clip","Gospel","Noise",
+-   "Alt. Rock","Bass","Soul","Punk","Space","Meditative",
+-   "Instrumental Pop","Instrumental Rock","Ethnic","Gothic",
++   "Death_Metal","Pranks","Soundtrack","Euro-Techno","Ambient",
++   "Trip-Hop","Vocal","Jazz_and_Funk","Fusion","Trance","Classical",
++   "Instrumental","Acid","House","Game","Sound_Clip","Gospel","Noise",
++   "Alternative_Rock","Bass","Soul","Punk","Space","Meditative",
++   "Instrumental_Pop","Instrumental_Rock","Ethnic","Gothic",
+    "Darkwave","Techno-Industrial","Electronic","Pop-Folk","Eurodance",
+-   "Dream","Southern Rock","Comedy","Cult","Gangsta Rap","Top 40",
+-   "Christian Rap","Pop/Funk","Jungle","Native American","Cabaret",
+-   "New Wave","Psychedelic","Rave","Showtunes","Trailer","Lo-Fi",
+-   "Tribal","Acid Punk","Acid Jazz","Polka","Retro","Musical",
+-   "Rock & Roll","Hard Rock","Folk","Folk/Rock","National Folk",
++   "Dream","Southern_Rock","Comedy","Cult","Gangsta_Rap","Top_40",
++   "Christian_Rap","Pop_Funk","Jungle","Native_American","Cabaret",
++   "New_Wave","Psychedelic","Rave","Showtunes","Trailer","Lo-Fi",
++   "Tribal","Acid_Punk","Acid_Jazz","Polka","Retro","Musical",
++   "Rock_n_Roll","Hard_Rock","Folk","Folk_Rock","National_Folk",
+    "Swing","Fast-Fusion","Bebob","Latin","Revival","Celtic",
+-   "Bluegrass","Avantgarde","Gothic Rock","Progressive Rock",
+-   "Psychedelic Rock","Symphonic Rock","Slow Rock","Big Band",
+-   "Chorus","Easy Listening","Acoustic","Humour","Speech","Chanson",
+-   "Opera","Chamber Music","Sonata","Symphony","Booty Bass","Primus",
+-   "Porn Groove","Satire","Slow Jam","Club","Tango","Samba",
+-   "Folklore","Ballad","Power Ballad","Rhythmic Soul","Freestyle",
+-   "Duet","Punk Rock","Drum Solo","A Cappella","Euro-House",
+-   "Dance Hall","Goa","Drum & Bass","Club-House","Hardcore","Terror",
+-   "Indie","BritPop","Negerpunk","Polsk Punk","Beat",
+-   "Christian Gangsta Rap","Heavy Metal","Black Metal","Crossover",
+-   "Contemporary Christian","Christian Rock","Merengue","Salsa",
+-   "Thrash Metal","Anime","JPop","Synthpop",""
++   "Bluegrass","Avantgarde","Gothic_Rock","Progressive_Rock",
++   "Psychedelic_Rock","Symphonic_Rock","Slow_Rock","Big_Band",
++   "Chorus","Easy_Listening","Acoustic","Humour","Speech","Chanson",
++   "Opera","Chamber_Music","Sonata","Symphony","Booty_Bass","Primus",
++   "Porn_Groove","Satire","Slow_Jam","Club","Tango","Samba",
++   "Folklore","Ballad","Power_Ballad","Rhythmic_Soul","Freestyle",
++   "Duet","Punk_Rock","Drum_Solo","A_Cappella","Euro-House",
++   "Dance_Hall","Goa","Drum_n_Bass","Club-House","Hardcore","Terror",
++   "Indie","BritPop","Negerpunk","Polsk_Punk","Beat",
++   "Christian_Gangsta_Rap","Heavy_Metal","Black_Metal","Crossover",
++   "Contemporary_Christian","Christian_Rock","Merengue","Salsa",
++   "Thrash_Metal","Anime","JPop","Synthpop",""
+ };
+ 
+ int galphagenreindex[MAXGENRE+2] = {

@@ -1,0 +1,44 @@
+Version 1.05.2
+FXP-Trader-Script by Xtreame
+
+This Script shows IPs from Sites to those or of those fxp transfer.
+
+####################################################################
+###                         ATTENTION                            ###
+####################################################################
+###             When you start the script it logs                ###
+###            all IP´s from Sites and your users                ###
+####################################################################
+
+So we disabled other syslog´s, for example
+
+/var/log/messages and /var/log/secure
+
+Recommended the Script only run as test and then stop immediately.
+
+If you forget to stop the script, every hour we will clean the logs.
+
+Run the script fxp-setup.sh outside from glftpd,
+
+recommend place the script in your root folder.
+
+You must only change the files in your pzs-ng folder.
+
+dzsbot.conf
+add to msgtypes(DEFAULT) "FXPIN FXPOUT FXPBAD"
+set disable(FXPIN)            0
+set disable(FXPOUT)           0
+set disable(FXPBAD)           0
+
+dzsbot.vars
+set variables(FXPIN)              "%u_name %g_name %ip"
+set variables(FXPOUT)             "%u_name %g_name %ip"
+set variables(FXPBAD)             "%u_name %g_name %ip"
+
+vampire.zst
+announce.FXPIN				= "%c1{%u_name} %c1{/} %c1{%g_name} %c1{:} %c1{incoming transfer} %c1{%ip} %c1{.}"
+announce.FXPOUT				= "%c1{%u_name} %c1{/} %c1{%g_name} %c1{:} %c1{outgoing transfer} %c1{%ip} %c1{.}"
+announce.FXPBAD				= "%c1{%u_name} %c1{/} %c1{%g_name} %c1{:} %c1{BAD IP} %c1{%ip} %c1{.}"
+
+###########################################################################################
+

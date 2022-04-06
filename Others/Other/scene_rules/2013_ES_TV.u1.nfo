@@ -1,0 +1,218 @@
+	
+ The.Spanish.TV.Releasing.Standards.2013.Update.1-ESCOUNCiL (2014-01-07)
+
+ --------------------------------------------------------------
+ 
+ Ruleset x264 para releases de TV (SD y HD) en Español (Castellano). Todo lo
+ especificado aquí solo se aplica para las releases preadas después de que este
+ documento entre en funcionamiento (2013-12-03).
+
+
+ 1) General:
+
+  - 1.1) SEASON BELONGS: Las temporadas de series guionizadas pertenecen al grupo
+    que pree el primer capítulo de esa misma temporada. Se excluye todo lo
+    demás. El grupo tiene 48h después de la emisión para prear su capítulo de
+    una temporada que le pertenece, siendo este un límite. Si se sobrepasa ese
+    limite, otro grupo puede prear tal capitulo y lo que resta de temporada.
+ 
+
+ 2) Video:
+
+  - 2.1) HD y SD: Fuentes 1080i/576i deben ser redimensionadas y cropeadas utilizando
+    herramientas como Lanczos/Lanczos4, Spline36, o Blackman. Bicubic 
+    esta baneado. Estas mismas fuentes SE DEBEN desentrelazar con alguna
+    tool inteligente como Yadif. No desentrelazar provoca artefactos y
+    dientes de sierra, puede ser propereado.
+
+  - 2.2) HD: Fuentes 720p pueden ser cropeadas y redimensionadas (Resolución de emisión -
+    Crop) o se pueden dejar tal cual se emiten para rls 720p.HDTV. Para rls SD 
+    cropear y redimensionar.
+
+  - 2.3) HD y SD: Se permite el uso de video Itunes. Eliminar protecciones. Para rls
+    HD no se permite reencodear. Para rls SD es obligatorio reencodear y cumplir
+    los estandares de las rls SD. También se permite el uso de video de otra rls.
+
+  - 2.4) HD y SD: Redimensionar a 1280x720 (HD) o 720x404 (SD) despues de cropear.
+    Se permite un 2% de error en el aspecto de ratio, pero se recomienda usar
+    mod2 para calcular la altura apropiada y así mantener el aspecto de ratio
+    correcto. Si es PDTV, dejar al ancho más apropiado y mod2 para la altura.
+
+  - 2.5) HD y SD: No se permiten ningun tipo de marcas de agua, del grupo, intros, 
+    outros o "cortinillas" en el video. Cualquier cosa añadida está baneado.
+
+  - 2.6) HD: Las releases de fuentes HD pero que sean emitidas en reescalado SD
+    se permiten prear como 720p.HDTV o como HR.WS.PDTV, a gusto del grupo y
+    NO se dupean entre ellas.
+
+  - 2.7) HD y SD: Los créditos y previos son opcionales, pero recomendado que sean
+    incluidos.
+
+  - 2.8) HD y SD: Se permite un margen de 2px de error sobre el cropeo para nukear
+    una rls, exceptuando aquellas de fuentes 720p que pueden ser dejadas tal
+    cual. Bordes sin cropear = Video en negro = Megas innecesarios en la rls.
+
+
+ 3) Audio:
+
+  - 3.1) HD y SD: Español Castellano. Estas rules no afectan al LATiN.SPANiSH.
+
+  - 3.2) HD: Puede ser el original de la fuente (MP2, AC3, etc...) o se puede
+    reencodear por motivos de compatibilidad. EAC3 está banneado y debe
+    ser reconvertido.
+
+  - 3.3) SD: Debe ser AAC LC (Low Complexity) de bitrate variable (VBR). Debe ser
+    normalizado y reconvertido a stereo y de entre 96 y 160kbps.
+
+  - 3.4) SD y HD: El audio que tenga caidas o esté fuera de sincronización durante
+    diálogo se considera fallo tecnico y puede ser propereado. Se permiten
+    ajustes menores en las pistas para evitar esto.
+
+
+ 4) FPS:
+
+  - 4.1) SD y HD: Las FPS deben ser constantes. FPS variables estan baneadas ya que
+    no funcionan correctamente en muchos reproductores.
+
+  - 4.2) SD y HD: Las fuentes que emiten a 50/60fps pueden ser bajadas a 25/30fps a
+    gusto del ripper.
+
+
+ 5) Codec:
+
+  - 5.1) XVID no permitido.
+
+  - 5.2) SD y HD: Debe ser H264 encodeado con 8-bit depth x264. Level 3.1 para SD
+    y Level 4.1 para HD. x264 10-bit está baneado.
+  
+  - 5.3) SD y HD: Mantener x264 actualizado. Hay muchas formas de actualización, 
+    incluso automáticas. Matrices y deblocking a gusto del grupo. Por defecto
+    vienen configurados.
+
+  - 5.4) SD y HD: Ninguna opción puede estar por debajo de lo especificado por preset
+    --medium, aun que se recomienda el uso de --slow o --slower para respetar
+    la mejor proporción calidad/peso.
+
+  - 5.5) SD: El colormatrix puede ser usado (bt709) para las rls SD de fuentes 720p
+    o de mayor resolución.
+
+  - 5.6) SD y HD: Las zonas (--zones) no se permiten.
+
+  - 5.7) SD y HD: CRF
+       - SD: 19 o 20 - HD: 18 o 19 - Series, guionizado, talk, poker, animacion.
+       - SD: 21 o 22 - HD: 20 o 21 - Docs, realities, variedad.
+       - SD: 23 o 24 - HD: 22 o 23 - Deportes, espectaculos, directos, competicion.
+
+  - 5.8) Linea de comando sugerida:
+       - SD: x264.exe --crf ## --preset slow --level 3.1 <--colormatrix bt709> -o out.264 in.avs
+       - HD: x264.exe --crf ## --preset slow --level 4.1 -o out.mkv in.avs
+
+
+ 6) Contenedores:
+
+  - 6.1) Debe ser MP4 para SD y Matroska (MKV) para HD.
+
+  - 6.2) Se recomienda muxear con MP4Box (SD) y mkvmerge (HD), aun que se permiten tools
+    personalizadas. El resultado debe ser compatible con lo que los demuxeadores 
+    estandares (MP4Box, mkvmerge, etc...).
+
+
+ 7) Sample (esta seccion es para ambas HD y SD):
+
+  - 7.1) Obligatorio, debe estar en una carpeta separada llamada "Sample", ser 
+    de entre 40-80 segundos y ser de la rls, no encodeado por separado.
+
+
+ 8) Empaquetamiento (esta seccion es para ambas HD y SD): 
+
+  - 8.1) La rls debe ser empaquetada en RAR. Para SD partes de 15, 20 o 50 MB (mínimo 10
+    partes de 50 MB). Para HD 50 o múltiples de 50 MB. No se permite la compresión.
+    1 MB = 1,000,000 bytes.
+
+  - 8.2) NFO y SFV obligatorios. Los archivos Sample, RAR y SFV deben tener el mismo nombre,
+    en minusculas y con la tag del grupo.
+
+  - 8.3) RAR's o SFV corruptos u olvidados despues de prear = REPACK o PROPER.
+
+
+ 9) Propers (esta seccion es para ambas HD y SD):
+
+  - 9.1) Properear solo se permite si la release original tiene un fallo tecnico.
+    ejemplos: entrelazado, falta contenido, mal cropeo, contiene anuncios, 
+    parametros x264 erroneos, etc.
+
+  - 9.2) Se debe explicar y justificar la razon de PROPER en el NFO de la rls PROPER.
+    Se recomienda adjuntar sample/s o captura/s para demostrar.
+
+  - 9.3) Los propers basados en las reglas aquí explicadas solo se permiten para las
+    rls que se prearan despues de que este documento entre en efecto.
+
+  - 9.4) Una rls con fallos tecnicos o experimental puede ser preada como INTERNAL.
+    Explicar el porqué en el NFO se sugiere.
+
+
+ 10) Nombre de los directorios (esta seccion es para ambas HD y SD):
+
+  - 10.1) Tags de fuentes: 1080p.HDTV, 720p.HDTV, HDTV, PDTV, HR.PDTV y HR.WS.PDTV.
+
+  - 10.2) Nombre.Serie.SXXEXX.<Nombre.Capitulo>.SPANiSH.<720p/1080p>.HDTV.x264-GRUPO.
+
+  - 10.3) Nombre.Serie.DD.MM.AAAA.<Nombre.Invitado>.SPANiSH.<720p/1080p>.HDTV.x264-GRUPO para
+    series o programas diarios o fechados.
+
+  - 10.4) El nombre del capitulo y el nombre de invitado son opcionales. Se recomienda 
+    taggear el año si una serie ya se ha emitido con el mismo nombre años atras
+    para evitar problemas de dupe. Este debe ir entre el nombre de la serie y
+    SXXEXX.
+
+  - 10.5) Nombre.Documental.<SXXEXX>.<Nombre.Capitulo>.Año.SPANiSH.DOC.<720p/1080p>.HDTV.x264-GRUPO
+    para documentales.
+
+  - 10.6) El nombre del capitulo para documentales, si se tiene, debe ser incluido si el 
+    documental no es suelto y único. Se puede obviar SXXEXX dependiendo del formato del 
+    documental/programa. Por año se puede usar el año de emisión o el año de emisión/producción
+    original.
+
+  - 10.7) Nombre.Miniserie.<ParteXX/EXX>.<Nombre.Capitulo>.SPANiSH.<720p/1080p>.HDTV.x264-GRUPO para miniseries.
+
+  - 10.8) Seguir las mismas estructuras de fecha para los deportes (dependiendo de
+    si es una temporada, liga o un evento suelto). AAAA o DD.MM.AAAA. Para 
+    eventos recurrentes (MotoGP, Formula1, Champions League) usar el año en
+    el que se produce el evento, aun que finalicen en el siguiente año. Para eventos
+    que se celebran excepcionalmente usar también el año en que se produce el evento
+    si finaliza ese mismo año (Confederaciones). Si no finaliza ese año, usar el año
+    de cuando finaliza (Mundial) aun que el evento se celebre en el año anterior.
+
+  - 10.9) Se permite el uso de la tags: FINAL, REAL, PROPER, INTERNAL, READ.NFO, REPACK y UNCUT.
+    Deben ir antes de SPANiSH.
+
+  - 10.10) Los carácteres aceptables en los nombres de directorio son:
+
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ
+      abcdefghijklmnopqrstuvwxyz
+      0123456789._-
+
+      Sin espacios o dobles puntos, puntos únicos exclusivamente.
+
+
+   [Changelog]
+
+   2014-01-07 - Update 1. Numerados los puntos del ruleset. 
+                8.2) Actualizados nombres de Sample, SFV y NFO 
+                10.1) y 10.9) Añadidos nuevos tags aceptados
+
+   2013-12-03 - Primera versión.
+
+
+   Ruleset x264 para releases de TV (SD y HD) en Español (Castellano)
+
+   -> Firmado por los siguientes grupos: ASS - FCC - LPH - MAHOU - sPHD - XPERT - XPERT_HD
+
+   -> Declinado por los siguientes grupos:
+
+   Cualquier otro grupo deberá contactar para su adhesión en la scene española de tv
+   pudiendo ser rechazado si tiene cualquier vinculación con el P2P.
+
+ --------------------------------------------------------------
+ 
+ The.Spanish.TV.Releasing.Standards.2013.Update.1-ESCOUNCiL (2014-01-07)

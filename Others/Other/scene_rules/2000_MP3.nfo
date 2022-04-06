@@ -1,0 +1,116 @@
+MP3 Council (un)Official Scene Releasing Standards 2000 
+
+1. An .SFV file must be produced for verifying every release. 
+2. An .NFO file must be produced for every release. 
+
+The NFO file must feature at least: 
+- Title 
+- Artist Name 
+- Label 
+- Release Date 
+- Tracks 
+- Genre 
+- Encode Bit rate 
+- Source 
+- Encoder 
+
+Nfo must contain as much information about the release as possible, 
+a recommendation is that you place a release notes section in the NFO 
+
+3. Directory standard 
+
+The following are the standards for directory naming: 
+Directories must only contain characters; a-z A-Z 0-9 _ . - ( ) 
+
+The filenames cannot contain () through artist neither in dir nor in filename 
+
+All release data will be held within one release directory; no CD1, CD2 directories 
+
+Various Artist releases must start with "VA", soundtracks with "OST". 
+
+Underscores and singular periods will be used. No double periods, i.e. ".." 
+
+Length of ALL directories/filenames must no exceed 64 characters. 
+
+Directory naming will follow this format (spaces are used to better display the format): 
+Artist Name- Title - Additional Information - Published Year - Group name 
+i.e. "artist_-_title-4cd-2000-group" 
+
+Additional information tags are (suggestions): 
+VLS - vinyl single (1-2 tracks) 
+EP - vinyl maxi-single (2-5+ tracks) 
+LP - vinyl full-length album 
+CDS - cd single (1-2 tracks) 
+CDM - cd maxi-single (2-5+ tracks) 
+MD - minidisk 
+Promo - promotional 
+XX-import 
+RETAIL - retail 
+... 
+etc. 
+
+
+
+4. Filename standard 
+
+Files must only contain characters; a-z A-Z 0-9 _ . - () 
+
+Dots are not allowed as replacement for spaces in filenames because it slows down windows 
+
+File naming will follow this format (spaces are used to better display the format): 
+Track Number - Artist - Song Title - Additional Info - Group.mp3 
+
+
+Track numbering example: 
+Single CD Release, or non CD and less than 2 sides, cds, etc... 
+01-... (track 1) 
+02-... (track 2) 
+etc. 
+
+Multi CD Releaes, or non CD and more than 1 side, cd, etc... 
+101-... (track 1 from cd 1) 
+102-... (track 2 from cd 1) 
+201-... (track 1 from cd 2) 
+202-... (track 2 from cd 2) 
+etc. 
+
+
+For vinyl releases you may also use the naming scheme a1, a2, b1, b2, etc... 
+
+5. Encoding 
+
+One of the following encoders MUST be used: 
+- Fraunhofer HQ 
+- LAME - http://www.sulaco.org/mp3/ 
+
+
+Encode Bit rate: 
+Only 160JS or 192FS (Not 160FS or 192JS). For comedy or lower quality sources 160JS. 
+Encode Bit rate from a quality source 192FS should be used. 
+
+6. No dupes! 
+
+You are not allowed to create a duplicate release from any other source if the original CD 
+has already been released. 
+You are allowed to create a duplicate release from a source of lower quality. 
+(not allowed: vinyl after CD release - allowed: CD after vinyl release) 
+
+A release is a dupe if the complete release (all tracks) is included in ONE previous release. 
+Futhermore if a release is different because it has less tracks it is not allowed to be 
+released when a release previous to it contained all the tracks from this release. 
+
+7. Mixes must include track listing (in NFO) and a .CUE file if possible (N/A for live mixes). 
+8. No self made compilations. (YES DJ Mixes r still allowed) 
+9. All ID3 tags must be generated correctly (appropriate information in the correct fields). 
+10.The entire CD,Vinyl,etc. must be released (not individual tracks). 
+11.Live recordings (from radio) must contain a date when they were broadcast. 
+12.Including covers or CD-Extra tracks (videos, etc...) in a release is optional. 
+
+
+This Document was signed & approved in August, 2000 by the following individuals, 
+representing their respective groups: 
+
+crayfish(CMG) fido(AMOK) deepdown(NBD) azmd(MOD) wonder(UBE) fastjack(STAR) luna6(NuHS) 
+karmacoma(kW) hopkin(sb) xtream(SS) uforia(eMission) atg(ATR) wezel(HS) eminenz(cnmc) 
+trax(trbmp3) trancer(tclub) stryker(OZM)
+

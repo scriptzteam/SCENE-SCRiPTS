@@ -1,0 +1,181 @@
+  In 1998, three people decided the future of how the scene should shape
+  itself and released a 10-point information document stating how a game
+  release should be conducted. In the past year, many of these rules have
+  been broken by its founding members and other groups have purposely
+  broken the agreement. In lieu of recent events, the deciding figures
+  of three groups, Class, Myth & Divine, have converged and agreed upon
+  a new set of rules based on the original Faction rules and Myth's
+  recent proposal and have been updated, modified and agreed upon by a
+  consensus to a new standard to better suit the scene in this millenium.
+  These groups have been active participants in shaping the scene in the last
+  6 months, and were given active participation in voicing their point of
+  view. These new rules will allow for a more fair and competitive scene
+  while ensuring a quality-minded environment for the scene. These deciding
+  figures have bestowed themselves to be called the N.S.A., Network Software
+  Association. These rules have been ratified and approved among the three
+  groups and will be recognized and followed immediately on this date,
+  March 26th, 2000.
+
+  1.  The disk  limit  is as of  now  65 x 2,915,000 bytes. This equates  to a
+      total  of 189,495,000 bytes of compressed data. Groups may not go over
+      the total size to prevent any future cheating. Acceptable compression
+      formats at this  time are ACE or RAR or any future compression that
+      supports multiple volumes and long file names, followed by the
+      traditional PKZIPing.
+
+      The limit for standard game add-ons is 35 x 2,915,000 bytes for any add-
+      on that includes Music, Speech, Commentary or Play By Play for the
+      original release. Any add-on that does not fit this criteria will be
+      restricted to 25 x 2,915,000 bytes. Only the group that won a game
+      release is allowed to release the add-ons for the game.
+ 
+  2.  To prevent sloppy rips, a re-release of a game is allowed to make groups
+      release proper and respectable releases. The following provisions
+      include:
+
+      a) it can be ripped in >=10 disks less than the previous release by us-
+         ing only lossless compression methods. Lossy compression will not be
+         permitted to compromise the release to fit under this condition.
+
+      b) it can be ripped in >=15 disks less of the size of the previous
+         release by using mp3-compression while not downgrading any wavs
+         or mp3's sound quality using lossy compression.
+
+      That means all the essential gamedata must be still included in the re-
+      release. No essential data is allowed to be removed to be considered a
+      valid re-release. A re-release from a competing group may not use tools,
+      original crack or any other files from the previous release that were
+      modified for the original game rip.
+
+      The re-release of a rip can be done by any group and must be done in
+      at most 48 hours after the release of the original rip, as possibly
+      every game is rippable in a smaller size if enough time is spent.
+
+  3.  Every release  under  this  limit MUST be  a functionally  and  playable
+      complete  game with no essential data missing to complete the game.
+      This  means  that  included  will  be  every  component necessary for
+      the successful completion of the game e.g.:
+
+      - all game executables that are needed,
+      - every level (single AND multiplayer),
+      - every track (including practice),
+      - all actor graphics & models etc,
+      - sound effects
+      - registry settings to play on the Internet (e.g. Zone/DirectPlay)
+
+  4.  Any lossless compression method to reduce the size of selected game data
+      is ALLOWED (e.g. uharc).
+
+  5.  Lossy compression is ALLOWED for  sound, videos and non-texture graphics
+      (e.g. jpeging of menu screens) but lossless compression is encouraged
+      before using lossy compression.  Lossy compression of textures is expli-
+      citly FORBIDDEN to  prevent the  many  problems inherent to that.
+
+  6.  Sound effects WILL and MUST be included. To reduce the size of rips when
+      possible, standard waveformat files (PCM) should be mp3-compressed
+      if possible in a reasonable state of time and is over the size of 20
+      disks. If the soundfiles exist inside a bigfile its highly regarded
+      when time is invested to extract those files to compress them.  Groups
+      are not to required to index bigfiles though. Downgrade of sound quality
+      to sound files to allow the game to fit the limit will not be permitted.
+
+      It is allowed to rip music, commentary/speech and ambience files as long
+      as the game remains playable.  Speech files  MUST be  included if  there
+      exist no on-screen subtitles. It is okay to remove commentary from a
+      release if size does not permit it.
+
+      It is highly regarded when all sounds, speech and music are included in
+      a rip and not intentionally put out as addons.
+
+  7.  It is allowed to remove gamedata that exists in multiple resolutions or
+      formats as long as the  game remains playable on a typical system  which
+      is defined by a PII-300 with a D3D-card and soundcard.
+
+      - high-resolution textures for highend systems.
+      - low-resolution textures for low-end systems if there is no
+        possible options to include the high-resolutions in the release.
+        If size permits, it is expected that high resolution be released
+        as an add-on.
+      - high-screen resolution graphics data standard of 800x600 (or 640x480
+        if other than 800x600 is not applicable)
+      - at least one hardware-dependent data must be included, and must be
+        in Direct3D mode or any other hardware data modes that are accepta-
+        ble (e.g. Glide textures). A release of software mode only with all
+        hardware-dependent data and textures removed will not be allowed in
+        future releases.
+
+  8.  Movies (intros, cutscenes) should be removed if they aren't game-related.
+      Movies must be  ripped in a  way so that the  gameplay experience is  not
+      compromised, e.g. framing of movies is highly regarded.  It should always
+      be avoided  to  create  situations in  which  user-input is  necessary on 
+      black screens because the video normally shown has been blacked out.
+
+  9.  Other allowed add-ons for games include:
+
+      - cutscenes/movies
+      - commentary/speech
+      - music
+      - manual/documentation
+      - editor
+
+      Intro and Outro add-ons are EXPLICITLY FORBIDDEN.  Not more than 2 add-ons
+      should be released for a game release.
+
+  10. Children's games (aka  Kiddie  games) and  Edutainment  software  do not
+      qualify  under these rules  guidelines for acceptable  releases.  Kiddie
+      games are usually defined via the game target audience of  '5-12 years'
+      as stated by the game's producer.  Common  sense should  be based on
+      common sense  by  all groups to identify what really is a kiddie game.
+      Platform games are not to be considered kiddie games.
+
+  11. Levelpacks, game add-ons etc. for rips are only allowed if they are offi-
+      cially released/authorized by the  same company/developer/publisher that
+      put out the original game. If possible by its size, the add-on should be
+      made as a standalone and not needing the original game release. The
+      original missions may be removed to allow the game add-on to become
+      standalone if not size can not permit the original game. It should be
+      explained in the NFO if and why a game add-on isn't made to be standalone.
+
+  12. In regard  to games  distributed  in the  United States  that are  LATER
+      distributed in Europe  or vice versa under  the same or different name /
+      publisher.  These games  if released  AFTER another group's  release are
+      counted  as DUPES  unless  it can  be  proven that  there  is  a clearly
+      noticeable  PLAYABLE  difference in the  latter release  (more than just
+      tiny differences in graphics or sound). Differences in filedates and
+      Game Titles between Euro and US releases are NOT a good enough reason to
+      re-release the game.
+
+  13. A brief  outline  of what  has been  stripped from the  game  should  be
+      clearly stated in  the  game-release .NFO, as  well as information as to
+      whether or not Add-Ons can be expected.
+
+  14. Fully cracked Update Patches and Trainers are highly  regarded, though
+      they are not  the responsibility  of any group (including  that of which
+      released the original game).  If 2 trainers from the same  or  different
+      groups are released  for 1 game, this  does NOT qualify as a dupe unless
+      the latter trainer provides no new features over the prior trainer. Beta
+      update patches will not considered a valid release among any game group.
+      No group shall release a cracked patch for a game if a generic patch
+      exists for a particular game in the scene. If a generic crack exists, a
+      new patch-release must specify that the generic crack does not work
+      anymore.
+
+  15. If two or more rips of the same game get released, the first working rip
+      wins.  Sites should not nuke any  release until the winning rip has been
+      proven to work correctly and follows the above ruleset.
+
+  16. No group shall do a rip using another's groups work, be it an iso crack
+      or tools written by another competing group. Any third party tools shall
+      be acceptable. A crack from an ISO or past release (even in other
+      languages) shall not be used unless permission is given from the
+      cracker/creator of the original release group.
+
+      All appointed HQ (Headquarters) should abide by these rules to the
+      fullest extent permutable. Any group that competes in the gaming rip
+      scene will and must abide by the above rules to allow fair competition
+      among all competitors.
+
+      Signed,
+      Leaders, Council Members and Seniors of Class, Myth & Divine.
+
+

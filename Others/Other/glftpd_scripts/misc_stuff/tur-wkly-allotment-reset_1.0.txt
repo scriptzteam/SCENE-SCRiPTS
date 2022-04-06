@@ -1,0 +1,27 @@
+Wkly-Allotment-Reset (GL1&2)
+
+Description: A script to make sure the users does not have more credits then what 
+is specified at the start of each week. 
+
+Sometime in glftpd life, the reset binary changed so that if you have MORE credits 
+than your wkly allotment if would allow you to keep it. Previously it would have 
+reset it to the allotment value anyway. I have been told this will be fixed in 
+glftpd 2.0 or atleast so you can specify the reset binaries behaviour. This script 
+should therefor only be needed for glftpd 1.3+ 
+
+Now, for MSS in particular, this new way of reseting credits is NO GOOD, since the 
+user can just transfer credits to the slaves above his allotment value and simply 
+build the credits up more and more each week. 
+
+Hence this script. It will check if its the correct day to reset and if any user 
+has more credits then his allotment value specifies, it will reset him down to that
+value. 
+
+It is a COMPLEMENT to the reset binary and not a replacement in any kind. reset 
+still handles the stats and in some occations, the wkly_allotment. 
+
+In case you use MSS, it should be loaded on both the hub and all the slaves.
+
+Author:   Turranius
+Version:  1.0
+Added on: 02-Aug-2004

@@ -1,0 +1,67 @@
+Much has changed in the mp3 "scene" lately, but lets skip the intro and
+  history of the music/mp3scene of the internet. Those of u who have
+  been here since it all started in 1995/96 know that there has been much
+  chaos, and there still is. Any previous attempts (mp3spa)at bringing in
+  some organization and guidelines into the scene have failed. The scene has
+  always worked as every group by it self. That might have worked fine,
+  but we now want to move on and start appreciating other groups
+  releases/rip, and save our own time for ripping more. This means we have
+  to be able to trust each other rips. For this purpose, and nothing else,
+  a council was set up and a name was chosen: RIAA. The participants agreed
+  on some easy to understand rules about how to release music on the internet!
+  This was done by a few big mp3 release groups, but it is the hope of
+  everyone that all groups and independent suppliers will use them as well.
+  We expect top groups like MGC, UBE, NBD, BF, TFA, WLWMP3, MS, IMPG, IDM
+  (and others we forgot) to be joining this council soon!
+
+  The program is as follows:
+
+  1) The scene will benefit from this effort, and we will respect the
+     agreed rules. The council name is RIAA.
+
+  2) The members are councils of the chosen groups and a few more
+     selected people.
+
+  3) New members of this council can join on Invite / Vote-in.
+
+  4) Rippers/groups must produce .SFV files for crc'ing every release.
+
+  5) Rippers/groups must produce .NFO files for every release, and the .nfo
+     file must feature at least:
+
+           ARTIST NAME - TITLE - GROUP RELEASE DATE - GROUPNAME
+
+     A release without proper .nfo AND .sfv file is a nuke on all big sites.
+
+  6) Files and directories must only contain a-z A-Z 0-9 _ - () and
+     no other characters. Underscores will be used for spaces, and
+     double dots wont be used. i.e ..
+
+  7) The length of filenames and directorynames must not exceed 64 chars.
+
+  8) Directory names must at minimum include "Artist-Album-GROUPINITIALS"
+
+  9) Filenames must at minimum include "Tracknumber-Songtitle-GROUPINITIALS"
+
+ 10) The music format is MP3 until MP4 format is out, and AAC and VFQ
+     are ignored.
+
+ 11) The following encoders are banned because of their inability to
+     produce good sounding mp3s.
+
+     Xing Encoder, BladeEnc, AudioActive Po -lq mode
+
+     These encoders are banned at the moment, but it might change soon. Stay
+     tuned...
+
+
+   ***** We Also Agreed That These Changes Will Be In Effect    *****
+   ***** No Later Than FEBRUARY 1ST 1999. So Pls Be Ready With  *****
+   ***** Your Sfv/Nfo Tools.. And The Characters..              *****
+   ***** Happy Mp3'Ing To Us All.. Lets Make 1999 A Better Year *****
+
+            This Document Was Signed & Approved On
+             December 17Th, 1998 By The Following
+      Individuals, Representing Their Respective Groups:
+
+    Vega[aPC] Aeonizer(Kain)[ATM] AlCapone[RnS] EXx[UMA] Fido[AMOK]

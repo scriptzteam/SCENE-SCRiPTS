@@ -1,0 +1,13 @@
+PreDirCheck (GL1&2)
+
+Description: This script should be executed as a pre_dir_check script in 
+glftpd.conf. It will prevent users from creating a dir where one already exists 
+with a different case structure (Cd1/CD1).
+If enabled, it will also check that the release was not previously uploaded (in 
+another dir) or it was nuked.
+Highly recomended for sites with dated dirs so users cant create a dir thats 
+already in another dated dir.
+
+Author:   Turranius
+Version:  1.4.1
+Added on: 14-Nov-2003

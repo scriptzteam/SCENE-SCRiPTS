@@ -1,0 +1,128 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                            ³
+³            The Council of PSP Movie Releasing Groups Presents              ³
+³                                                                            ³
+³                  The PSP Movie Releasing Standards 2005                    ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³      Requirements: Notepad with terminal font or other ascii viewer        ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                       ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                            ³
+³                                                                            ³
+³  SOURCE:                                                                   ³
+³                                                                            ³
+³  - DVDR and XviD source allowed and source grp should be mentioned in nfo. ³
+³  - Source Quality (DVD/DVDSCR/TS/TC) should be mentioned in dirname.       ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  VIDEO:                                                                    ³
+³                                                                            ³
+³  - CBR technique must be used.                                             ³
+³  - Minimum bitrate of 384kbps. Maximum of 768kbps.                         ³
+³  - Releases must be maximum 458mb per disc to fit in a 512mb CARD.         ³
+³  - Movies over 110 mins can go to 2 discs.                                 ³
+³  - .THM must be included.                                                  ³
+³  - Cropping is required to the maximum possible.                           ³
+³  - Movie encode must be within 5% of original aspect ratio.                ³
+³  - At least 2pass rips are required.                                       ³
+³  - Burned subtitles are ONLY needed for foreign releases.                  ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  FRAMERATE:                                                                ³
+³                                                                            ³
+³  - MUST be closest possible to the original source framerate               ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  AUDIO:                                                                    ³
+³                                                                            ³
+³  - CBR technique must be used.                                             ³
+³  - Minimum 128kbit @ 44.1khz                                               ³
+³  - MUST be STEREO for STEREO sources, MONO for MONO sources                ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  SAMPLE:                                                                   ³
+³                                                                            ³
+³  - REQUIRED                                                                ³
+³  - Minimum 1 minute in length or about 5mb.                                ³
+³  - Must be in folder marked sample rarred with .sfv                        ³
+³  - MUST be taken from the movie - NOT encoded separately.                  ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  PACKAGING:                                                                ³
+³                                                                            ³
+³  - All releases must be MP4/THM.                                           ³
+³  - Must be packed with RAR into 15mb volumes ,compression is NOT ALLOWED   ³
+³  - Recovery record recommended.                                            ³
+³  - Must have SFV                                                           ³
+³  - Must have NFO                                                           ³
+³  - NFO MUST INCLUDE:                                                       ³
+³        Group name                                                          ³
+³        Title                                                               ³
+³        Actual PSP release date                                             ³
+³        DVD release date                                                    ³
+³        Audio bitrate                                                       ³
+³        Video bitrate                                                       ³
+³        Source used (Xvid/DVDR) and (TC/TS/DVD/DVDSCR)                      ³
+³        Movie runtime/length                                                ³
+³        IMDB/adultdvdempire link                                            ³
+³        Number of rars per CARD (eg. 31x15MB)                               ³
+³  - Releases that are more than 1 CARD will follow these specs:             ³
+³  - MUST be named CARD1, CARD2 and so on.                                   ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  DIRECTORY NAMING:                                                         ³
+³                                                                            ³
+³    - Directory names shall NOT exceed 64 characters.                       ³
+³    - Including production year is at groups discretion, but encouraged.    ³
+³    - Indicate source quality in dirname (TS/TC/DVDRiP/DVDSCR)              ³
+³    - Acceptable characters in naming a directory include (NO spaces or     ³
+³      double dots - single dots or underscores ONLY):                       ³
+³                                                                            ³
+³        ABCDEFGHIJKLMNOPQRSTUVWXYZ                                          ³
+³        abcdefghijklmnopqrstuvwxyz                                          ³
+³        0123456789 . -_                                                     ³
+³                                                                            ³
+³    - All Release directories, shall be named according to :                ³
+³      Movie.Name.Year.Source.Codec.PSP-Group,                               ³
+³      (i.e. Matrix.1997.DVDRiP.MP4.PSP-Homo)                                ³
+³                                                                            ³
+³                                                                            ³
+³                                                                            ³
+³  PROPERS:                                                                  ³
+³                                                                            ³
+³  - No previous releases may be propered based on quality. That means no    ³
+³    propers based on audio or video bitrate, and/or, divx/dvdr source used  ³
+³    For quality reasons you can use INTERNAL.                               ³
+³  - Propers will be allowed in the case of technical problems, bad aspect   ³
+³    ratio, sync problems, skipping/freezing, interlaced, bad ivtc, etc      ³
+³  - Sample of the propered release should be included for proof.            ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                     ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                         ³
+³                                                                            ³
+³                                                                            ³
+³    - Group Watermarks WILL NOT BE ALLOWED IN ANY CASE.                     ³
+³    - NO intros, outros, betweenos, or any other form of defacement of the  ³
+³      movie is accepted.                                                    ³
+³                                                                            ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        À-------Ä[ GROUPS ]--------Ù                        ³
+³                                                                            ³
+³ The PSP Releasing Standards 2005 decided and signed by the following groups³
+³                                                                            ³
+³              ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ             ³
+³                                                                            ³
+³                        MTG - MmM - SbN - iRGUN - PmG                       ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

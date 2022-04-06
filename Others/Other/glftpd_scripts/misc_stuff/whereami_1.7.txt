@@ -1,0 +1,14 @@
+WhereAmI (GL1&2)
+
+Description: Ment to be used with irc. Fun little thing that shows where you are in
+the weektops/monthtops etc.
+Works for groups too.
+Also has a "wall of shame" for nuketop.
+Example:
+11:16 !alup turranius
+11:16 turranius is 1st with 5,618 files and 47234MB, followed by ostnisse with 
+5,044 files and 36613MB
+
+Author:   Turranius
+Version:  1.7
+Added on: 23-Apr-2003

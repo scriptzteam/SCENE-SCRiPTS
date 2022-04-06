@@ -1,0 +1,27 @@
+#########################################
+# Mr V Bouncer/FTP Tester v1.0 (Public) #
+#########################################
+# Simple ftp checker..                  #
+# reports stuff to irc                  #
+# set topic & msg users                 #
+# easy configuration, very customizable #
+#########################################
+# Installation:                         #
+# load this tcl on your eggie config..  #
+# rehash/restart/start the bot...       #
+# do !bncchk (you must be owner)        #
+# and after that.. !bnc                 #
+# You need THE FTP-LIB.TCL (included)   #
+#########################################
+# Features:                             #
+# -Informs on channels the change-Status#
+#  ..of a bouncer (DOWN<->UP)           #
+# -Auto-Updates the channels Topic for  #
+#  ..the bouncer Info                   #
+#########################################
+# Expected stuff for v3.0..             #
+# -MRTG Support                         #
+# -SQL Support                          #
+#########################################
+# Author:       vampirito@vampirito.com #
+#########################################

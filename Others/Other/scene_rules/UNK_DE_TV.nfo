@@ -1,0 +1,81 @@
+Also diese Rules sollen keine Eigenständigen sein, vielmehr sind Sie als eine Ergänzung der ODDR anzusehen.
+Einige Rules mögen etwas hart klingen am Anfang, Sie machen bei näherer Betrachtung aber durchaus Sinn, jeder
+von uns der Serien macht weiß bestimmt was in der englischen Serien Szene abgeht. Da wird mit Absicht mit
+Settings gerippt die inkompatibel zu nem Release der selben Serie einer anderen Group sind. Da werden dann
+von einer Group 2 Folgen auf für eine CD gerippt und eine andere Group die bei einer Folge schneller war macht es
+für 3 Folgen pro CD oder encoded gar auf 400mb damit das ja nicht passt 
+
+1.) Als Source zulässig sind nur DVDs und dTV Streams. Bei dTV sollte nach Möglichkeit eine Nachtwiederholung als
+Quelle genommen werden, Warum? Ganz einfach: Auf Premiere werden Folgen nachts größtenteils mit einer höheren
+Auflösung und/oder höheren Bitrates ausgestrahlt. Wer die Rules weiterliest versteht auch das es machbar ist eine
+Nachtwiederholung zu nehmen. Der Rip darf kein Logo/Watermark enthalten.
+
+2.) Sollte zu einer Serien die im dTV läuft innerhalb der nächsten 8 Wochen eine DVD erscheinen ist auf die DVD zu
+warten.
+
+3.) Eine Serie die von einer Group angefangen wurde, sollte bei der Group bleiben, aber mit gewissen Einschränkungen:
+
+-> Fängt eine Group eine Serie an, muss Sie diese auch konsequent zu Ende rippen. Sollte bei einer täglich
+ausgestrahlten Serie innerhalb von 7 Tagen und einer wöchentlichen ausgestrahlten Serie innerhalb von
+14 Tagen kein Rip der zugehörigen Group vorhanden sein, kann die Serie automatisch von einer anderen
+Group weiter gemacht werden, hier greift diese Rule dann auch wieder.
+-> Bei einer Serie auf DVD sollte innerhalb von 7 Tagen eine Episode released werden. Ist die erste Episode
+released hat automatisch die Group den Zuschlag für die ganze Serie  muss aber innerhalb der nächsten
+7 Tage jeweils eine Folge der DVD Box releasen, ansonsten greift hier Rule 3.1.
+-> Die Nummerierung muss immer von der Group übernommen werden, welche die Serie begonnen hat. Es gibt
+viele Episodenguides mit vielen verschiedenen Nummerierungen und alle meinen Sie seien korrekt.
+-> Sollte einer Group ein Stream fehlen, weil defekt oder sonst irgendwelcher Problemchen, bedeutet dies NICHT
+das die Serie an eine andere Group fällt, erst wenn auch die Folgen danach nicht mehr kommen ist davon
+auszugehen das die Group hier grobe Fehler gemacht hat.
+
+4.) Bei den Episodennummerierungen ist ein Blick auf http://www.epguides.de/ hilfreich. Diese Adresse hat sich als
+korrekt für nahezu jede Serie erwiesen und enthält neben einer simplen Episodenbeschreibung nützliche
+Hintergrundinfos zu fast jeder Serie. Die Nummerierung ist NICHT fortlaufend zu wählen.
+
+-> Richtig: S01E01
+S01E02
+S02E01
+...
+-> Falsch: S01E01
+S01E02
+S02E03
+...
+
+5.) Die Dirnamen sind den ODDR zu entnehmen es kommt lediglich eine eindeutige Seriennummerierung hinzu.
+
+Serientitel-S01E01-Episodentitel-German-DVDRiP-DivX-MMP
+Serientitel.S01E01.Episodentitel.German.DVDRiP.DivX-MMP
+
+-> Sollte eine Serie nur eine Staffel haben oder keine Staffelnummerierung, so kann die Staffelbezeichnung
+unerwähnt bleiben.
+
+Serientitel-E01-Episodentitel-German-DVDRiP-DivX-MMP
+Serientitel.E01.Episodentitel.German.DVDRiP.DivX-MMP
+
+-> Um eine einheitliche Nummerierung zu gewährleisten, muss eine Staffel-/Episodennummerierung immer zweistellig
+formatiert sein. Auch wenn die Serie weniger als 10 Staffeln/Episoden enthält. Dies schließt auch Anime Serien
+ein.
+
+Richtig: S0xE0x
+Falsch: SxEx
+
+6.) Bei 4:3 Serien sollte generell eine Auflösung von 512x384 Pixeln gewählt werden. Serien die nicht 4:3 sind sollten
+je nach Source entschieden werden, Bei dTV streams sollte eine Auflösung von 576xXXX nicht überschritten werden.
+Bei DVD sollten 640xXXX nicht überschritten werden.
+
+7.) Kommen wir nun zur Dateigröße: Bei 20-25 Minuten Kurzserien sollten 3 Folgen auf eine Gesamtgröße von 700 MB
+encoded werden. Bei einer Länge von 45 Minuten sollten 2 Folgen auf 700 MB encoded werden.
+
+8.) Dies ist keine richtige Rule nur ein Hinweis: Jede Serien Group sollte hin und wieder mal einen Blick auf
+http://www.wunschliste.de/ werfen. Dort stehen viele zukünftige Serienstarts, man kann für Serien wöchentlich
+voten und es gibt ein Serien Rating System.
+
+Wir hoffe vorallem das mit diesen Rules der Massenpre der Serien aufhört, denn im Moment geht das fast nicht anders, sowie
+eine Group eine Serie anfängt, stürzen sich andere Groups mit drauf, obwohl Sie von alleine niemals darauf gekommen wären
+diese Serie zu encoden, es bleibt einen also im Moment nix anderes übrig als eine Serie fast komplett in einem Ruck zu pren.
+Auch wird mit den Einschränkungen zur Rule 3 kein Ausruhrecht für eine Group definiert. Für die obigen Rules gibt es genug
+Beispiele wieso so etwas langsam nötig wird, noch vor einem Jahr hätten wir keine eigenständigen Serien Rules gebraucht. Ich
+weiß Rule 3 klingt etwas hart, aber damit wird einmal unnötiger Traffic vermieden, weil nicht mehr nach Group Internal Rips
+gefragt werden muss (viele Groups verwenden nunmal andere Auflösungen und Settings, jedem sein gutes Recht.) und die Spannungen
+werden damit hoffentlich endlich mal beendet. Wer natürlich die 7 Tage verpennt ist selber Schuld, ich denk mit 7 Tagen ist die
+Rule recht annehmbar.

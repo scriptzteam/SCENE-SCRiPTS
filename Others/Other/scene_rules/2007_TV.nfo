@@ -1,0 +1,264 @@
++-----------------------------------------------------------------------------+
+¬                                                                             ¬
+¬                    The TV XviD Releasing Standards 2007                     ¬
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¬     Requirements Notepad with terminal font or any other ascii viewer.      ¬
++-----------------------------------------------------------------------------¬
+¬                              +---[ INTRO ]---+                              ¬
+¬  Thanks to those who came before with TVx2642K7, TDX2K2, and TXD2K5.        ¬
+¬                                                                             ¬
+¬  These standards are intended to bring a level playing field to the TV-XviD ¬
+¬  scene and attempt to put down some rules to end some of the controversy    ¬
+¬  that has plagued us in recent years.                                       ¬
+¬                                                                             ¬
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¬                          +---[ RELEASE RULES ]---+                          ¬
+¬                                                                             ¬
+¬  Release sizing:                                                            ¬
+¬  - Shows 18:00-23:59 shall be 175MB                                         ¬
+¬  - Shows 24:00-34:59 shall be 233MB                                         ¬
+¬  - Shows 35:00-52:59 shall be 350MB                                         ¬
+¬  - Shows 53:00-59:59 shall be 440MB                                         ¬
+¬  - Shows 60:00-64:59 shall be 525MB                                         ¬
+¬  - Shows 65:00-95:00 Shall be 700MB                                         ¬
+¬     *NOTE: Shows 60:00-64:59 may be sized at either 525 or 700MB at the     ¬
+¬     capper's discretion based on show framerate and content.                ¬
+¬                                                                             ¬
+¬  - Best effort should be made to release all episodes of a given series     ¬
+¬    at the same size. If one episode runs slightly over or under the size    ¬
+¬    lines, it should still be done at the same size as other episodes in     ¬
+¬    order to maintain consistency.                                           ¬
+¬                                                                             ¬
+¬  - 2CD releases may be optionally split into separate discs, but this is    ¬
+¬    not required. 3CD or more releases must be split to prevent issues with  ¬
+¬    2GB files. If releases are split into multiple discs, they must be       ¬
+¬    placed in directories named CD1, CD2, CD3, etc. (No Disc1, cd1, or other ¬
+¬    naming styles).                                                          ¬
+¬                                                                             ¬
+¬  - Episodes that air back-to-back without a natural break such as full      ¬
+¬    credits or commercials in between must be encoded as a single release.   ¬
+¬    Directory naming for this will be in the following format                ¬
+¬    TV.Show.S03E04-E05.HDTV.XviD-Group.                                      ¬
+¬                                                                             ¬
+¬  - Releases must be within the range of 5.0MB under to 3.0 MB over the      ¬
+¬    target size.                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬  Previously on/Credits:                                                     ¬
+¬  - It is suggested that any previously on footage be included in the        ¬
+¬    release, but it is not required. No release may be propered for glitches ¬
+¬    in or missing portions of previously on footage.                         ¬
+¬                                                                             ¬
+¬  - Credits that are overlayed on actual show content are required to be     ¬
+¬    included                                                                 ¬
+¬                                                                             ¬
+¬  - Credits that are run cleanly, i.e. with no modifications such as         ¬
+¬    promos for upcoming shows, are encouraged but not required               ¬
+¬                                                                             ¬
+¬  - Credits run with promos for other shows are not recommended, but may     ¬
+¬    optionally be included                                                   ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬  Video:                                                                     ¬
+¬  - 2-pass variable bitrate XviD must be used                                ¬
+¬                                                                             ¬
+¬  - Quantization type must be either MPEG or H.263. Custom quantization      ¬
+¬    matrices are not allowed.                                                ¬
+¬                                                                             ¬
+¬  - QPel and GMC are not allowed                                             ¬
+¬                                                                             ¬
+¬  - B Frames                                                                 ¬
+¬    - The use of B frames is required                                        ¬
+¬    - A maximum of 2 consecutive B frames may be used                        ¬
+¬    - This document gives no preference to packed vs. unpacked bitstreams    ¬
+¬      as there are benefits to each format, and it is trivial to convert     ¬
+¬      between them using MPEG4 Modifier.                                     ¬
+¬                                                                             ¬
+¬  - Framerates must be in relation to the original source. Valid             ¬
+¬    framerates for releases are FILM (23.976 fps), PAL (25.000 fps), and     ¬
+¬    NTSC (29.970 fps).                                                       ¬
+¬                                                                             ¬
+¬  - Valid resolutions are 512x384 or 576x432 for 43; 624x352, 640x352,       ¬
+¬    or 640x368 for 169; and 544x352 or 576x368 for 149. NTSC Video           ¬
+¬    (29.970 fps) may also be released at 608x336.                            ¬
+¬                                                                             ¬
+¬  - Releases shall be cropped so that all blacknoise on the edges is         ¬
+¬    removed. In the case of changing crops, cropping should be done so that  ¬
+¬    no part of the release is overcropped. Portions of a channel logo        ¬
+¬    extending into black areas must be cropped.                              ¬
+¬                                                                             ¬
+¬  - Video defacement such as intros, outros, and group watermarks is         ¬
+¬    forbidden.                                                               ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬  Audio:                                                                     ¬
+¬  - Allowed audio formats are VBR MP3 and original AC3. ABR is considered a  ¬
+¬    VBR technique.                                                           ¬
+¬                                                                             ¬
+¬  - MP3 audio should be encoded using standard LAME presets such as          ¬
+¬    '--preset 128' or '-m s -V 5 -b 32'                                      ¬
+¬                                                                             ¬
+¬  - Average bitrate on MP3 audio may not exceed 192kbps                      ¬
+¬                                                                             ¬
+¬  - MP3 audio must be normalized                                             ¬
+¬                                                                             ¬
+¬  - Audio frequency must be maintained at 48kHz                              ¬
+¬                                                                             ¬
+¬  - Original AC3 audio may be used at the discretion of the capper.          ¬
+¬    However, transcoding to AC3 is forbidden.                                ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬  Release Naming\Packaging:                                                  ¬
+¬  - Directory Naming                                                         ¬
+¬    - Numbering for episodic programming shall be in the format S00E00 or    ¬
+¬      0x00 (or S00E0000x000 for series with more than 99 episodes per        ¬
+¬      season)                                                                ¬
+¬    - Number for date-based programming including sports and variety shows   ¬
+¬      shall be in the format YYYY.MM.DD                                      ¬
+¬    - Other numbering formats such as S00.E00, DD.MM.YY, and MM.DD.YY are    ¬
+¬      not permitted                                                          ¬
+¬    - For variety shows, it is strongly recommended that the primary         ¬
+¬      guest's name be included in the directory name                         ¬
+¬    - Different shows that have the same name in different countries should  ¬
+¬      be tagged with the ISO country code for the country of airing          ¬
+¬      - example Big.Brother.US.S01E01.PDTV.XviD-Group                        ¬
+¬    - Different shows with the same name produced in different years should  ¬
+¬      be tagged with the year of airing of the first season                  ¬
+¬      - example Battlestar.Galactica.2003.S03E01.HDTV.XviD-Group             ¬
+¬    - Releases are to be named in the format                                 ¬
+¬      Show.Name.S00E00.HDTV.XviD-Group                                       ¬
+¬      Show.Name.2007.08.10.Guest.HDTV.XviD-Group                             ¬
+¬      Show_Name.0x00.HDTV_XviD-Group                                         ¬
+¬    - The episode title may optionally be included between the episode       ¬
+¬      number and the source                                                  ¬
+¬                                                                             ¬
+¬  - Additional Tagging:                                                      ¬
+¬    - PROPER, REPACK, RERIP, REAL, UNCUT, SUBBED, iNTERNAL, DIRFIX,          ¬
+¬      SAMPLEFIX, NFOFIX, or Read.NFO are allowed (discretion is recommended) ¬
+¬    - All releases tagged PROPER, REPACK, RERIP, REAL, and Read.NFO must     ¬
+¬      include notes in the NFO as to why the release was tagged that way.    ¬
+¬      PROPER.Read.NFO is therefore redundant and should not be used.         ¬
+¬    - Additional tagging should be placed directly before the source, i.e.   ¬
+¬      Show.Name.S00E00.PROPER.HDTV.XviD-Group                                ¬
+¬                                                                             ¬
+¬  - Source Naming:                                                           ¬
+¬    - Valid source names are DSR, WS.DSR, PDTV, WS.PDTV, HDTV, and no tag    ¬
+¬      - Analog source will have no tag other than WS if appropriate.         ¬
+¬    - Source Definitons:                                                     ¬
+¬      - 480i\576i\576p shall be tagged DSR when horizontal resolution is     ¬
+¬        less than 704px                                                      ¬
+¬      - 480i\576i\576p shall be tagged PDTV when horizontal resolution is    ¬
+¬        greater than or equal to 704px                                       ¬
+¬      - 720p\1080i\1080p shall be tagged HDTV                                ¬
+¬        - 4:3 content broadcast at HDTV resolutions shall be tagged PDTV     ¬
+¬      - Windowboxed (16:9 with black on all sides)\Letterboxed (16:9 with    ¬
+¬        black on the top and bottom)\Native 16:9 content shall be labeled as ¬
+¬        Widescreen (WS.DSR or WS.PDTV)                                       ¬
+¬      - The use of the HDTV tag implies widescreen, so WS.HDTV shall not     ¬
+¬        be used                                                              ¬
+¬    - All sources listed must be 100% digital. S-Video, composite, or RF     ¬
+¬      from a digital receiver to a tuner card is analog. Valid DSR, PDTV,    ¬
+¬      and HDTV sources will be received via a digital connection such as     ¬
+¬      USB, Firewire, or Ethernet from a receiver, or using an ATSC, QAM, or  ¬
+¬      DVB tuner.                                                             ¬
+¬                                                                             ¬
+¬  - AVI:                                                                     ¬
+¬    - Container must be AVI                                                  ¬
+¬    - The AVI itself should be named like the release and include some       ¬
+¬      format of episode number (show initials are fine, as is shortening the ¬
+¬      episode number)                                                        ¬
+¬                                                                             ¬
+¬  - RAR\SFV:                                                                 ¬
+¬    - Releases shall be packed into 15,000,000 or 20,000,000 byte rars       ¬
+¬      using store compression                                                ¬
+¬    - An SFV must be created for all RAR files in the release                ¬
+¬                                                                             ¬
+¬  - Sample:                                                                  ¬
+¬    - All releases must include a sample of length :50-1:10, cut directly    ¬
+¬      from the release                                                       ¬
+¬    - The sample must be placed in a directory named Sample (SAMPLE and      ¬
+¬      sample are not permitted)                                              ¬
+¬    - The file itself should be named uniquely, preferably containing the    ¬
+¬      name of the release as well as the word sample                         ¬
+¬                                                                             ¬
+¬  - NFO:                                                                     ¬
+¬    - An NFO must be included in the release and, at a minimum, must         ¬
+¬      contain release name, episode number (or title), and date of           ¬
+¬      airing/release                                                         ¬
+¬    - The NFO must be named uniquely based on the name of the release        ¬
+¬                                                                             ¬
+¬  - Allowed Characters:                                                      ¬
+¬    - abcdefghijklmnopqrstuvwxyz                                             ¬
+¬    - ABCDEFGHIJKLMNOPQRSTUVWXYZ                                             ¬
+¬    - 0123456789                                                             ¬
+¬    - ._-                                                                    ¬
+¬    - All Sample, NFO, SFV, and RAR names MUST be in all lowercase           ¬
+¬      letters. The name of AVI inside the RARs is permitted to contain       ¬
+¬      capital letters                                                        ¬
+¬    - Double dots (..) are not allowed                                       ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬                                                                             ¬
+¬  Propers:                                                                   ¬
+¬  - Propers are only permitted in the case of technical flaws with the       ¬
+¬    original release or violations of applicable rules                       ¬
+¬                                                                             ¬
+¬  - All propers must include a note in the NFO detailing the flaw in the     ¬
+¬    original release, including timecodes if relevant                        ¬
+¬                                                                             ¬
+¬  - Including a sample of the flaw is suggested but not required             ¬
+¬                                                                             ¬
+¬  - Propers are expressly permitted in cases of any of the following flaws   ¬
+¬    in a release:                                                            ¬
+¬    - Audio 150ms or more out of sync                                        ¬
+¬    - Severe audio drops resulting in the inability to understand material   ¬
+¬      dialogue                                                               ¬
+¬    - Improper audio normalization, including audio with levels that vary    ¬
+¬      widely between parts, very quiet audio, or audio with excessive        ¬
+¬      clipping                                                               ¬
+¬    - Bad cropping resulting in a line of black pixels or noise along an     ¬
+¬      edge for the entire episode                                            ¬
+¬    - Releases missing a significant portion of video, either in duration    ¬
+¬      or content                                                             ¬
+¬      - Loss of 2 seconds of fade in after a break, with no lost dialogue,   ¬
+¬        is considered bad form, but is not a valid proper reason             ¬
+¬    - Change in video format (i.e. PDTV on an HDTV release) exceeding five   ¬
+¬      seconds or causing loss of dialogue.                                   ¬
+¬    - Local overlays such as weather, breaking news, or Amber Alerts that    ¬
+¬      exceed five minutes in length, cause a change in video format (i.e.    ¬
+¬      drop to PDTV on an HDTV release), or cause loss of dialogue or video   ¬
+¬      - The proper release must be completely free of overlays to be         ¬
+¬        considered valid; merely having less spam is not enough              ¬
+¬    - Inclusion of 2 or more seconds of commercials over an entire release   ¬
+¬    - Releases with sizing outside the allowed range. 3.01MB oversize is a   ¬
+¬      valid proper reason.                                                   ¬
+¬                                                                             ¬
+¬                                                                             ¬
++-----------------------------------------------------------------------------+
+¬              The TV XviD Releasing Standards 2007 (2007-09-12)              ¬
+¬                                                                             ¬
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¬                        +  ------[ GROUPS ]  ------+                         ¬
+¬                                                                             ¬
+¬                TVX2K7 rules created by the following Groups:                ¬
+¬              ------------------------------------------------               ¬
+¬                           DIMENSION LOL FQM XOR                             ¬
+¬                                                                             ¬
+¬                TVX2K7 rules signed by the following Groups:                 ¬
+¬              ------------------------------------------------               ¬
+¬              2HD aAF AFFiNiTY BiA CAPH CaRaT CRiMSON FoV FUtV               ¬
+¬              GOTHiC hV iNGOT KYR NODLABS NoTV OMiCRON ORENJi                ¬
+¬                          RiVER SSTV SYS TBS YesTV                           ¬
+¬                                                                             ¬
++-----------------------------------------------------------------------------+

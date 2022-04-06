@@ -1,0 +1,19 @@
+-------------
+IDLEKICK v1.0
+-------------
+
+
+###   Requierd   ###
+You will need to have ftpwho by Turranius installed.
+You can get it at "http://www.glftpd.at/modules.php?name=Downloads&d_op=getit&lid=340"
+
+### Installation ###
+Edit idelkick.tcl and change it to fit your needs.
+Do the same with idlekick.sh.
+Copy the idlekick.tcl to your eggdrop's script directory.
+Add "source scripts/idelkick.tcl" to your eggdrop config file.
+Copy idlekick.sh to your glftpd bin directory and chmod a+x.
+Then it's done. If your bot was running rehash it.
+
+IDLEKICK (C)  wh3e@hugbox.net / vip3r@i386.net
+ 

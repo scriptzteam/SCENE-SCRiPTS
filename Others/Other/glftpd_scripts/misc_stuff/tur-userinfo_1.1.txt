@@ -1,0 +1,10 @@
+UserInfo (GL1)
+
+Description: Script for showing various information about a user in shell or irc. 
+Very configurable. Can show almost all there is about a user. Also has !ginfo 
+output for displaying stats about everyone in a certain group. This output can be 
+configured to be displayed differently then from !userinfo.
+
+Author:   Turranius
+Version:  0
+Added on: 30-Nov-1999

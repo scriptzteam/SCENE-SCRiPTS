@@ -1,0 +1,56 @@
+xL-ipchanger v1.3 README
+------------------------
+I was tired of adding and deleting ip's all the time so i wrote a script for it. 
+
+CHANGELOG
+---------
+1.0
+Added !delip
+
+1.1
+Added !listip
+
+1.2
+Now the script won't do anything unless the IP to add/del contains a "@"
+It will still report the addip/delip to the user though
+This is just to avoid abusing from idiots who want to rearrange their userfile :P
+
+1.3
+Changed lots of things in both .tcl and .sh
+Added some new features
+* Force users to add an ident.
+* Limit the number of IP's that the users are allowed to add.
+* IP won't be added unless it contains the correct amount of numbers.
+  For example you can't add 192.168.* or *@192.168.
+* You can decide how many IP numbers the users have to specify
+* It will tell you if the ip you want to delete doesn't exist or if 
+  the ip you want to add already exists.
+
+DESCRIPTION
+-----------
+This script will allow the users to addip and delip on their own by using
+  /msg <botnick> !addip/!delip <username> <password> <ident@ip>
+The users are also able to view their current IP's by using 
+  /msg <botnick> !listip <username> <password>
+Everything will be logged and you are able to read the last 10 (change this if you want :P) 
+changes of that log by using 
+  /msg sitebot !ipchanges (for ops only)
+Of course you can read it manually too.
+The bot's shell account has to have write permission on every user file.
+
+INSTALLATION
+------------
+* Extract the file ( gzip -dc xl-ipchanger_v1.3.tar.gz | tar -xof- ) 
+* Edit and copy xl-ipchanger.sh to /glftpd/bin and chmod a+x
+* Copy xl-ipchanger.tcl to your eggdrop script dir and add it to your eggdrop.conf
+* touch /glftpd/ftp-data/logs/xl-ipchanger.log and chmod 777
+* Make the bot owner of the user files by putting something like this in your crontab ( crontab -e ):
+0,10,20,30,40,50 * * * * chown <bot's shell user> /glftpd/ftp-data/users/* > /dev/null 2>&1
+
+CONTACT
+-------
+Please contact me if u have any questions about this script or if you experience any bugs.
+
+email: xolax@home.se
+IRC:   xoLax@EFnet
+

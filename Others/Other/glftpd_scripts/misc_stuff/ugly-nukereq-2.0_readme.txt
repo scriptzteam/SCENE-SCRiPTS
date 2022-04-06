@@ -1,0 +1,55 @@
+README for ugly-nukereq 2.0
+
+ * ABOUT
+
+Nukereq allows users to request nukes in a similar fashion to 'site request'.
+It contains a shell script for use on the site itself and/or by an eggdrop
+(through nukereq.tcl).  It allows all users on a chan in which a sitebot resides
+to add a nuke request using the "!nukereq <rel> <reason>" command.  Users can
+also list active requests with the "!nukereqls" command, or delete a request
+(can be disabled) with the "!nukereq del <#>" or "!nukereq del <name>" commands.
+Note that the nukereq script can NOT actually nuke a release, rather it provides
+an easy way for nukers to find rels to nuke.
+
+ * INSTALLATION AND CONFIGURATION
+
+Copy the nukereq.sh script to your glftpd/bin dir and 'chmod 755' it.  Copy the
+nukereq.tcl script to your sitebot's scripts dir and add it to the config.  Copy
+the nukerequests.* files to your glftpd/ftp-data/misc/ dir.  Finally, create
+and set the proper permissions for the nukereq database file:
+
+ 'touch /path/to/glftpd/ftp-data/misc/nukerequests'
+ 'chmod 666 /path/to/glftpd/ftp-data/misc/nukerequests'
+
+If you won't be running the script as a site command, you can 'chmod 600' the
+nukerequests file instead.  Ensure that the file is owned by the same user
+that is running your eggdrop.
+
+As for configuration, edit the nukereq.sh file and change the top five variables
+as needed.  If you set del_pub to "YES", then users will be able to issue the 
+'!nukereq del ...' command in the channel(s) that your sitebot resides.  If set
+to "NO", deletion will only be possible when using the script as a site command.
+(The script detects whether it's run through the site or not).  Note that this
+deletes the nuke request from the database, NOT the actual release.
+
+You will also need to modify "nukereq.tcl" if your glftpd root path is not
+"/glftpd".
+
+If you set del_pub="NO", and wish to only allow only certain users or groups to
+delete a request from the database, then add these two lines to your
+glftpd.conf:
+
+  site_cmd NUKEREQ        EXEC    /bin/nukereq.sh
+
+  custom-nukereq          1 A B
+  (the above line will allow only nukers, unnukers, and siteops to execute the 
+  script from the site)
+
+For more information about the syntax of the script, issue '!nukereq help' from
+a channel, or 'site nukereq help' from the site.
+
+ * CONTACT
+
+Please report bugs to:
+ 
+ - ugly on EFNet

@@ -1,0 +1,37 @@
+###################################################################
+#   (newdate.sh) MP3/0DAY Auto Date Creator v1.3 by kulgan        #
+#             							   #
+#    CRONTAB Entry:							   #
+#    0 24 * * * root /glftpd/bin/newdate.sh >> /dev/null 2>&1	   #
+#    									   #
+#    Instructions:				   			   #
+#    									   #
+#  1. Put this file in your bin for glftpd (/glftpd/bin/ usually) #
+#  2. Set variables for your glftpd system                        #
+#  3. Make the file executable by doing chmod +x newdate.sh.      #
+#  4. Add crontab entry, and let it run. :)			   #
+#  5. To zipscript-c add:						   #
+#     -> To set msgtypes(DEFAULT) add KULSCRIPT                   # 
+#     -> set chanlist(KULSCRIPT) "#chan"	  			   #
+#     -> set disable(KULSCRIPT) 0 					   #
+#     -> set variables(KULSCRIPT) "%msg"				   #
+#     -> set announce(KULSCRIPT) "%msg"			 	   #
+#									   #
+#									   #
+#  CHANGELOG:								   #
+#									   #
+#  2004-11-15: - Fix: stupidly put, 0DAYLINK= to    		   #
+#	                0DAYLINK=0day_yesterday fixed now     	   #
+#	   - Add: Option to enable/disable 0DAYOLDLINK &		   #
+#		    MP3OLDLINK					   # 	
+#	   - Add: Config file for easier updates without           #
+#		    having to keep adjusting your settings here	   # 	
+#  2004-10-11: - Forgot to add the Crontab entry for prev rls     #
+#	         - Adjusted some of the code that wasn't needed    #
+#									   #
+#  2004-10-04: - Created choice to have either mp3/0day creation  #
+#              - Editable output for both mp3/0day                # 
+#									   #
+#  2004-10-03: - Start of the script, only allowing mp3           #
+#							                 #
+###################################################################

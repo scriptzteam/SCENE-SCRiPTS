@@ -1,0 +1,18 @@
+A simple tool for scan share folders for Nuked releases!
+Tested on windows 7 and win2008 server!.
+
+Based on orlydb.org.....
+
+Releasedate  :   22.04.2012
+Files        :   1 file
+Version      :   v1.1 Fix
+
+Note         :  Might be bugs or other unseen qualitys, report them to us!
+				
+Changelog:
+----------------------------------------------------------------------------
+
+1.1:
+	Fixed - Repacks / Propers, does not show as nuked!
+	Fixed - Bad spellings
+	Fixed - Crash when run application for secound scan!

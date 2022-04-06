@@ -1,0 +1,50 @@
+<<- -- ----------------------------------------------------------------- -- ->>
+|            d a r k s h a d o w   p r o u d l y   p r e s e n t s            |
+<<- -- ----------------------------------------------------------------- -- ->>
+|                                                                             |
+|  PROGRAM NAME: Prebot v0.1                                                  |
+|                                                                             |
+|  RELEASE DATE: 09/05/05                 RELEASE SiZE: 01 X 1.44MB           |
+|  SYSTEM REQS : Linux                    RELEASE TYPE: Prebot                |
+|                                                                             |
+|        __               _     __  _                                         |
+|    ___/ /__ ___________(_)__ / /_(_)__  ___                                 |
+<<- / _  / -_|_-< __/ __/ / _ Y __/ / _ \/ _ \ - -- -------------------- -- ->>
+|   \_,_/\__/___|__/_/ /_/ .__|__/_/\___/_//_/  d e s c r i p t i o n         |
+|                       /_/                                                   |
+|                                                                             |
+|  This is my first version of my prebot. There maybe a fews bugs in it.      |
+|  I wanted to get this release out so I could get feedback from users        |
+|                                                                             |
+|  Features:                                                                  |
+|  * Auto TLS Support                                                         |
+|  * Multi Bouncer Support                                                    |
+|  * Blowfish Crypt via TCL                                                   |
+|  * Logging of FTP information to file                                       |
+|                                                                             |
+|  Todo:                                                                      |
+|  Abort code for upload, pre                                                 |
+|  100% check pre sync code                                                   |
+|                                                                             |
+|     _         __       ____     __  _                                       |
+|    (_)__  ___/ /____ _/ / /__ _/ /_(_)__  ___                               |
+<<- / / _ \(_-< __/ _ `/ / / _ `/ __/ / _ \/ _ \ - -- ------------------ -- ->|
+|  /_/_//_/___|__/\_,_/_/_/\_,_/\__/_/\___/_//_/  i n s t a l l a t i o n     |
+|                                                                             |
+|  Unzip to a dir, chmod binarys and install .tcl in eggdrop and run.         |
+|  Edit sites.dat with your site information                                  |
+|                                                                             |
+|  !pretest <sitename/or leave blank for all> - test connect to sites         |
+|  !prehqs - listed hqs with status                                           |
+|  !preupload - upload release (release in same dir as prebot)                |
+|  !pre - pre release                                                         |
+|  !prestatus - shows what the prebot is doing                                |
+|                                                                             |
+|                  __           __                                            |
+|    _______  ___ / /____ _____/ /_                                           |
+<<- / __/ _ \/ _ Y __/ _ `/ __/ __/ - -- ------------------------------- -- ->|
+|   \__/\___/_//_|__/\_,_/\__/\__/  c o n t a c t                             |
+|                                                                             |
+|  you can contact me via email @ silentanddeadly@gmail.com :D                |
+|                                                                             |
+<<- -- ----------------------------------------------------------------- -- ->|

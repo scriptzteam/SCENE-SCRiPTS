@@ -1,0 +1,11 @@
+FolderLimit (GL1&2)
+
+Description: This script will make sure there are only a predefined number of 
+folders in a section of your choise. Once there are more folders then you defined,
+it will move the oldest ones to a second folder. If you want a nice clean incoming
+section, or just want to limit the amount of, say, dated folders in a section, use
+me!
+
+Author:   Turranius
+Version:  1.2
+Added on: 23-Apr-2003

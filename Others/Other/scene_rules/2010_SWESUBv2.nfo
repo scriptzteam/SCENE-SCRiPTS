@@ -1,0 +1,95 @@
+
+
+
+CUSTOM.SWESUB.2K10.V2 REGLER GฤLLER FRลN 2010-03-16
+
+
+
+
+  ษอออออออออป                                                                   
+ษอผ GENERAL ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                                                                                บ
+บ 1.0 CUSTOM SWESUB skall preas 10 dagar innan retail datum.(Ex pๅ Discshop.se)  บ
+บ 1.1 Kไllreleasen mๅste uppges i releasens nfo.                                 บ
+บ 1.2 Subtitles pๅ releasen ska finnas angivna i NFO. Vilken som ไr CUSTOM ska   บ
+บ     tydligt mไrkas ut.                                                         บ
+บ 1.3 Anvไndning av andra gruppers ๖versไttningar ไr strikt f๖rbjuden, med       บ
+บ     undantag av tillๅtelse. Anvไndning av sๅ kallade "www-subbar" ไr tillๅtet. บ
+บ 1.4 Endast WS-releaser tillๅtna. Undantag om releasen bara kommer i FS. Detta  บ
+บ     gไller sๅvไl retail som TC och DVDscr.                                     บ
+บ 1.5 F๖ljande sources ไr tillๅtna till custom-releaser: R5, DVDScr, Retail och  บ
+บ     x264 (Bluray, HDDVD). Ej tillๅtna sources: xvid, Screener, TS, CAM.        บ
+บ 1.6 HDTV-x264 ไr tillๅts som source f๖r TV-DVDR, men endast som internalreleaseบ
+บ                                                                                บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+                                                                                
+  ษออออออป                                                                      
+ษอผ DVDR ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                                                                                บ
+บ 2.0 Videoformatet (NTSC/PAL) ska anges i NFO. Frivilligt i release-namnet.     บ
+บ 2.1 Releasen ska taggas korrekt med LiMiTED / STV / dylikt om sๅ ไr fallet.    บ
+บ 2.2 Subtitle-str๖mmarna ska vara komplett synliga pๅ TV-skไrm, och absolut     บ
+บ     inte gๅ utanf๖r skไrmens kant.                                             บ
+บ 2.3 Subtitle-str๖mmarna ska vara fullt lไsliga. Typsnitt Arial, minst stl 18,  บ
+บ     fetstil, med svart outline border rekommenderas. Vit fไrg pๅ texten.       บ
+บ 2.4 Menyer skall finnas pๅ samtliga CUSTOM SWESUB-releaser. Retail struktur skaบ
+บ     i st๖rsta m๖jliga mๅn behๅllas intakt.Annars ไr custom okej.               บ
+บ 2.5 Filmens huvudspๅr frๅn source-releasen ska finnas med. Med huvudspๅr menas บ
+บ     filmens originalsprๅk i bไsta version, rangordning: DD5.1, DTS, DD2.0,     บ
+บ     Stereo, Mono. ึvriga spๅr f๖rutom huvudspๅret ไr frivilliga.               บ
+บ 2.6 Pๅ custom-releaser med source som levereras med engelsk subtitle, ska den  บ
+บ     engelska subben ไven vara med i custom-releasen. ึvriga subtitles frๅn     บ
+บ     sourcen ไr frivilliga att inkludera.                                       บ
+บ 2.7 CUSTOM SWESUB-release fๅr ej slไppas utan existerande scenrelease.         บ
+บ                                                                                บ
+บ                                                                                บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+                                                                                
+                                                                                
+  ษอออออออออออออออออป                                                       
+ษอผ SUBTITLE RULES  ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                                                                                บ
+บ                                                                                บ
+บ                                                                                บ
+บ                                                                                บ
+บ 3.0 Aldrig mer ไn max tvๅ (2) rader pๅ en insไttning.                          บ
+บ 3.1 Max antal tillๅtna fel i en text ไr 5% av insไttningarna.                  บ
+บ                                                                                บ
+บ      Till fel rไknas f๖ljande:                                                 บ
+บ                                                                                บ
+บ 3.11 Hๅll antalet tecken per rad till 40, aldrig mer ไn 45.                    บ
+บ      Avvikelser ska rymmas inom regel 3.1                                      บ
+บ 3.12 Insไttningstider delas in enligt fไljande:                                บ
+บ                                                                                บ
+บ      Rader innehๅllande ett ord (max 8 tecken) min. 1.4 sekunder.              บ
+บ                                                                                บ
+บ       9-15 tecken min. 1.7 sekunder                                            บ
+บ      16-40 tecken min. 2.0 sekunder                                            บ
+บ      41-60 tecken min. 3.2 sekunder                                            บ
+บ      61-80 tecken min. 3.7 sekunder                                            บ
+บ                                                                                บ
+บ      Maxtiden styrs inte genom regler men b๖r hๅllas till max 10 sekunder.     บ
+บ                                                                                บ
+บ      De hไr tiderna b๖r hๅllas f๖r att fๅ en lไsbar text.                      บ
+บ      Sjไlvklart finns det undantag som g๖r att man mๅste gๅ utanf๖r            บ
+บ      de utsatt tiderna. Det betyder inte att texten ไr dๅlig.                  บ
+บ      Avvikelser med +/- 0.100 sekund ไr acceptabelt.                           บ
+บ      Felen skall rymmas inom regel 3.1                                         บ
+บ                                                                                บ
+บ                                                                                บ
+บ 3.2 Texten SKALL vara rไttstavningskontrollerad.                               บ
+บ 3.3 ึverlappningar ไr f๖rbjudna.                                               บ
+บ                                                                                บ
+บ            Alla grupper som har skrivit under dessa regler kan                 บ
+บ           i sin nfo ange att de f๖ljer CUSTOM SWESUB RULES 2K10                บ
+บ    Grupper som vill skriva under dessa regler kan kontakta grupperna nedan.    บ
+บ                                                                                บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+                                                                                
+  ษออออออออออออออออออออออออออออออออออออออออป                                    
+ษอผ FRAMTAGNA AV FึLJANDE GRUPPER I SAMRลD ศอออออออออออออออออออออออออออออออออออออป
+บ                                                                                บ
+บ                 CiKDVDR     WhoKnow    iNjECT                                  บ
+บ                                                                                บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+

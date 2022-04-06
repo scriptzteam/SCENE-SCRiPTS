@@ -1,0 +1,352 @@
+Music Video Council 4.0 (Aug. 31, 2007)
+----------------------------------------------------
+EFFECTIVE DATE:  Sept. 15, 2007
+
+This rule set has been approved by the following music video groups:
+CMS DYNASTY HHE MV mV4U mVz PmV SE SRP UVZ VFi vme
+
+These rules have been established in an effort to maintain quality
+releases and order in the MV scene.
+
+Many of the changes being introduced in MVC 4.0 are intended to
+simplify and correct current problems as well as allow the MV scene
+to take advantage of newer codecs/containers/etc.
+
+A few of the highlighted changes include:
+
+        - Support for the MKV (Matroska) container, eventually
+          intended to replace AVI.
+        - Support for the H.264 codec (which is well suited for
+          HD content).
+        - Dropped support for standalone dvd player compatibility.
+          Standalone dvd player limitations should not dictate MVC
+          rules.  If you're using an incapable standalone unit, it's
+          your responsibility to convert videos to a format compatible
+          with your players playback capabilities.  There are many
+          howtos, guides, and software available to assist people.
+        - Dropped DivX codec since it's practically never used.
+        - Dropped VCD/SVCD completely as they are obsolete.
+
+Clarification about some terms used throughout this ruleset:
+
+    - "source" is used as a reference to the actual source material (ie: vob, dvb stream, whatever)
+    - "replacement" is used as a reference to material used to REPLACE something from the source
+
+
+#########################    SECTION 1  -  ENCODING    #########################
+
+
+1.1 - CONTAINERS
+
+        - Allowed containers are: AVI and MKV.
+
+        - AVI container:
+
+                - Pixel shape must be square.
+                - Upsampling the horizontal resolution to maintain the vertical
+                  resolution is allowed.
+                - Upsampling both the horizontal and vertical resolution from
+                  the source video is not allowed.
+                - Encodes must be within 5% of the original aspect ratio.  To calculate
+                  the AR % error use: (Release - Original AR)/Original AR x 100
+                - MP2/MP3 audio must be preloaded 500ms and interleaved every frame.
+                - AC3 audio must be preloaded 64/96ms and interleaved every 64/96ms.
+
+        - MKV container:
+
+                - mkvmerge MUST BE USED to mux.
+                - Aspect Ratio:
+
+                        normal method:  Crop according to the rules in section 1.3 and
+                                        resize to a multiple of 16 (mod16) for both the horizontal
+                                        and vertical resolutions to maintain 1:1 pixel shape.
+
+                        mkvmerge method:  Crop according to the rules in section 1.3 and to a multiple
+                                          of 16 (mod16) for both the horizontal and vertical resolutions
+                                          and define the correct AR when muxing with mkvmerge.
+
+                - Including soft-sub lyrics in the MKV container is allowed but not required.
+                - Hard subbed lyrics are not allowed.
+                - Xvid encodings must be saved directly to the mkv container (ie: do not save
+                  them as avi and then remux).
+
+1.2 - AUDIO
+
+        - Allowed audio formats are: MP2, MP3, and AC3.
+        - All audio must have a minimum sample rate of 44.1kHz.
+        - Audio MUST BE FULLY SYNCED.
+        - When no lip-sync is present in the video, you must use audio which matches the source.
+          If you're unsure about this, put an alternative version as a 2nd track.
+        - Retail CD audio, if available, must be used as a replacement for TV and DVD audio.  If
+          proper replacement audio * DOES NOT EXIST * then you may use the best quality alternative
+          available (by this we dont condone p2p/torrent/etc use).
+
+          NOTE: Audio used for bootlegs, mixtapes, promos, etc. are commonly NOT the final mastered
+                retail audio.  Releases using audio from these sources MAY BE PROPERED if/when
+                final retail audio becomes available UNLESS the audio is of nearly the same quality.
+
+        - Source mp3 has got to be encoded with at least 192kbit CBR or with the V2 profile with lame.
+        - Audio from a vinyl source is not allowed under any circumstances.
+        - If part of the source audio is only available from the source itself, it must be inserted
+          into the replacement audio.
+        - MP2 is allowed only from live sources and must remain untouched.  Re-encoding MP2 -> MP3
+          will NOT increase quality in ANY way so "untouched" also means NO RE-ENCODING!
+        - Live performance audio must remain untouched.  This means you may use MP2 or AC3 if that's
+          what the live performance was broadcast with.
+        - MP3 encoding must be VBR using the LAME encoder.
+          Minimum required settings: --vbr-new and -V1 (~210kbps) or -V2 (~190kbps).
+        - If no editing is required, the replacement MP3 must be directly
+          inserted with no re-encoding.
+        - ALL sound effects in the source audio must be inserted into the
+          replacement audio.
+        - If AC3 5.1 audio is available from the source, it may be included as an extra audio track.
+        - Multiple audio streams are allowed at the rippers discretion.  For example,
+          including both censored and uncensored audio.
+
+1.3 - VIDEO FORMATS
+
+        - Allowed codecs: XviD 1.1+ and x264
+        - Video source MUST BE digital and may NOT be passed thru any analog
+          equipment (svideo output, analog capture card, etc).
+        - Telecined video MUST have inverse telecine (IVTC) applied.
+
+        PAL : This means inverse 2:2 pulldown (ie: 10 pattern in TMPGEnc), manually,
+              if possible.
+
+        NTSC: This means either inverse 3:2 pulldown (ie: 10010 pattern in TMPGEnc)
+              or inverse 2:2 pulldown (ie: 10 pattern in TMPGEnc), manually, if possible.
+
+          * If a proper IVTC is not possible, the reason must be stated in your nfo.
+
+        - For non-telecined interlaced video, a deinterlacer must be applied before
+          compression.  The choice of deinterlacer is up to the ripper, and must be
+          mentioned in the NFO.
+
+          * It's STRONGLY RECOMMENDED you DO NOT use the following deinterlacers/filters
+            due to poor quality output:
+
+                - fielddeinterlace
+                - dgbob
+                - decomb/telecide
+
+        - Interlaced videos will not be allowed.
+        - Letterboxed videos should be cropped to remove the black bars.
+                - If a logo overlaps onto the letterbox area (such as a TV station logo)
+                  the ripper may opt to keep the logo intact and crop only part of the
+                  letterbox.
+        - Videos with only partial cropping of the letterbox must use equal crop values
+          for top/bottom.
+        - Cropping out the picture should be avoided if possible.
+        - The use of Vfapi is NOT recommended but currently still allowed.  Using Vfapi
+          creates unnecessary colorspace conversions resulting in degraded color quality.
+
+                To avoid this if using TMPGEnc for manual IVTC, use "tprivtc" to import your
+                .tpr project file into avisynth.  In VirtualDubMod, set the video processing
+                mode to "fast recompress".
+
+          CAUTION: Propering for a noticable quality increase IS allowed!  If there's a noticable
+                   difference when using vfapi vs. not, your vfapi rip will be at risk of proper.
+
+        - Videos containing mixed-fps/vfr (variable frame rate) must be packaged in the MKV container
+          and must be IVTC'ed to preserve the vfr if IVTC'ing them normally causes jumpy/choppy playback.
+        - Deinterlacing the entire video is not permitted on IVTC'able sources.
+        - Bootleg's shall be defined as any self-made or live-filmed works that are not a product
+          of the artists record label and are not intended for network broadcast or commercial sales.
+
+1.4 - XviD 1.1+
+
+        - Both the AVI and MKV containers are allowed.
+        - Only MPEG and H.263 quantization matrices are allowed.
+        - Key frames must be inserted every 10 seconds or less.
+        - CBR encoding is not allowed (use single or multiple pass vbr).
+        - The average DRF (detail removal factor) of the video should not exceed 8.
+
+1.5 - x264
+
+        - Use ONLY the MKV container for x264 releases.
+        - Codecs supporting VFW are NOT permitted.  Please use the newest
+          available from:  http://x264.nl
+        - Allowed profiles:
+
+                - main profile (use for non-HDTV)
+                - high profile (use for HDTV)
+
+        - Cabac and inloop filtering must be ENABLED as they directly
+          affect output quality.
+        - Average quantizer should be below 24 and HAS TO be below 28.
+
+1.6 - SDTV (Standard Definition TV)
+
+        - The width and the height of the video must be a multiple of 16 (mod16).
+        - Maximum (PAL) resolution is 720x576 @ 25fps.
+        - Maximum (NTSC) resolution is 720x480 @ 29.97fps.
+        - Maximum allowed average bitrate is 4000 kbps.
+
+1.7 - HDTV (High Definition TV)
+
+        - Only the x264 codec is allowed for HDTV rips.
+        - Only the MKV container is allowed for HDTV rips.
+        - Source horizontal resolution must be greater than or equal to 720.
+        - Maximum frame rate is 29.97fps.
+          * 50fps/59.94fps is allowed only from progressive sources with no duplicate frames.
+
+        - The minimum allowed resolution for HD rips is 1280x720.
+        - For converts, same rules apply as for Standard Definition.
+        - Upscaled sources are NOT true High Definiton and are not allowed for
+          HD releases.  These must be ripped according to Standard Definition.
+        - Rips from upconverted/upscaled sources must be kept internal.
+
+#########################    SECTION 2  -  PACKAGING    ########################
+
+
+2.1 - DIRECTORY & FILE NAMING
+
+        - The directory naming scheme is now REQUIRED and enforced to maintain consistancy
+          in the scene.
+        - SFV and NFO are required.
+        - HDTV and DVD rips must be specified as such.
+        - Live performances must include the show name and original air date.
+        - Award shows must include the show name and year OR the edition/series number.
+        - PROPERS must be specified as such.
+        - BOOTLEGS must be specified as such.
+
+        The following are examples of the REQUIRED naming scheme:
+
+          ArtistName-SongTitle-FORMAT-YEAR-GROUP
+          ArtistName-SongTitle-HDTV-FORMAT-YEAR-GROUP
+          ArtistName-SongTitle-DVDRIP-FORMAT-YEAR-GROUP
+          ArtistName-SongTitle_(Tonight_Show_01-01-07)-FORMAT-YEAR-GROUP
+          ArtistName-SongTitle_(49th_Annual_Grammys)-FORMAT-YEAR-GROUP
+          ArtistName-SongTitle_(2007_MTV_Music_Awards)-FORMAT-YEAR-GROUP
+          ArtistName-SongTitle-PROPER-FORMAT-YEAR-GROUP
+          ArtistName-SongTitle-BOOTLEG-FORMAT-YEAR-GROUP
+
+        - RAR'ing is at the rippers discretion but recommended for large releases (>175mb).
+          Packaging: 15mb, 20mb or 50mb rars, and a 1 minute sample.
+
+2.2 - CONCERTS, LIVE PERFORMANCES, FREESTYLES, ETC.
+
+        - If ripped in their entirety (introductions & breaks included), you have to
+          encode at the closest DVD/x size (i.e. 275MB, 550MB, 1100MB, 1466MB, 2200MB).
+          Multi-pass vbr encoding must be used for these. You may also split into
+          separate tracks (NOT separate releases).
+        - Single-track ripped concerts have to be packaged in ONE release,
+          similar to a mp3 album:
+
+          Artist-concert_title-x264-2007-group/00-artist-concert_title.nfo
+          Artist-concert_title-x264-2007-group/00-artist-concert_title.sfv
+          Artist-concert_title-x264-2007-group/01-artist-introduction.mkv
+          Artist-concert_title-x264-2007-group/02-artist-song1.mkv
+          Artist-concert_title-x264-2007-group/03-artist-song2.mkv
+
+        - Non-concert live performances with more than one song (such as award
+          show performances) should be released as individual releases with any
+          intermediate footage (interviews, presentations, etc.) removed.
+        - Third party videos (commercials, karaoke, etc) are not music videos
+          and are not permitted.
+
+2.3 - NFO FILE
+
+        - NFO's must contain:
+                - artist name and song title
+                - format (XviD/x264)
+                - resolution and aspect ratio
+                - video source (DVD, DVB, ..)
+                - audio source (CD, MP3, ..)
+                - deinterlace/IVTC method used
+                - genre
+                - year of video release
+
+                * Live performances MUST include the show it aired on and original air date.
+
+        - Other recommended (but not required) information to include:
+                - filesize
+                - video playtime (min:sec)
+                - audio/video bitrate
+                - album name (if available)
+                - (release)name of mp3 used
+
+2.4 - LOGOS / WATERMARKS
+
+        - Adding an intro/outro, or watermark is NOT PERMITTED.
+
+
+##################    SECTION 3  -  PROPERS, DUPES, NUKING    ##################
+
+
+3.1 - DUPES
+
+        - avi/mkv dupe each other.
+        - xvid/x264 dupe each other.
+        - x264/xvid dupe all releases prior to the date of this ruleset.
+        - High Definition releases will NOT dupe Standard Definition.
+        - Releasing a lower quality video when a higher quality version
+          exists is NOT allowed.  The following quality order shall be
+          used (from higher to lower):
+                - Standard Definition:
+
+                        NATIVE DVD rip
+                        NATIVE TV rip
+                        CONVERT DVD rip
+                        CONVERT TV rip
+
+                - High Definiton:
+
+                        BluRay/HD DVD rip
+                        HDTV rip
+
+        - "Native" refers to the standard in which the video was
+          produced, eg. NTSC or PAL.
+        - NTSC produced video is native to NTSC broadcasts.
+          Native NTSC may be either IVTC'able or progressive.
+        - PAL produced video is native to PAL broadcasts.
+          Native PAL may be either IVTC'able or progressive.
+        - PAL produced video that is broadcast in NTSC is
+          converted.  NTSC produced video that is broadcast
+          in PAL is converted.  These converts cannot be reversed
+          to progressive and must be deinterlaced.
+        - Convert releases should be avoided as native versions are
+          usually ripped.
+
+3.2 - PROPERS / NUKES
+
+        - PROPER / NUKE reasons are as follows:
+                - out-of-sync audio
+                - user-encoded AC3/MP2
+                - incomplete or missing audio/video
+                - improper or no IVTC when applicable
+                - 1 or more interlaced frames
+                - incorrect aspect ratio
+                - out-of-spec encodes
+                - very bad audio/video quality (including low bitrate on high motion videos)
+                - improper audio replacement (excluding concerts/live performances)
+                - lip-sync or audio sync to source is broken
+                - missing 1 or more sound effects (profanity is NOT a sound effect!)
+                - bad cropping
+                - one-click tool (such as GordianKnot) was used for encoding
+                - disabled cabac or inloop filtering for x264 encodes.
+                - improper naming/tagging
+                - unnecessarily re-encoded audio
+
+                * Your nfo MUST contain the name of the release you're propering
+                  and the reason(s)!  "PROPER" MUST appear in your naming scheme.
+
+                * These proper reasons apply ONLY to releases dated AFTER this
+                  ruleset.
+
+                * YOU MAY NOT PROPER / NUKE FOR THE FOLLOWING REASONS:
+                        - anything related to subtitles (missing, incorrect, bad sync, etc.)
+                        - only a SLIGHT increase in quality.
+
+        * NOTE TO NON-MVNUKE NUKERS:
+
+          If you don't know how to determine things like progressive ghosting vs. a bad ivtc, or a
+          bad ivtc in general, you should NOT be nuking music videos.  We'll be more than happy to
+          explain anything regarding our rules to eliminate any confusion so please don't hesitate
+          to ask!
+
+
+****  ANY RELEASES NOT FOLLOWING THESE RULES SHOULD BE KEPT INTERNAL OR RISK NUKE/PROPER!  ****
+
+aa3a1c554cf9596c315bf7ad2df5e5c7
+eof

@@ -1,0 +1,9 @@
+CreditReset (GL1)
+
+Description: A script to reset credits for specific groups/flags as they get above 
+a defined number. Made from request by BoGuS. Options for what to set credits to 
+etc etc. Guess someone might need this as well.
+
+Author:   Turranius
+Version:  1.0
+Added on: 27-Dec-2003

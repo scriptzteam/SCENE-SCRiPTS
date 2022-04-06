@@ -1,0 +1,433 @@
+         ÉÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍ»
+         º                              Animes Rules 2011                             º
+         ÈÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍ¼
+    ÉÍÄÍÍÍÍÍÍÍÍÍÄÍ»         ÉÄËÄÄËÄÄÄËÄÄÄÄËÍÄÄÄÍËÍÄÄÄÍËÄÄÄÄËÄÄÄËÄÄËÄ»         ÉÍÄÍÍÍÍÍÍÍÍÍÄÍ»
+    ÈÎ            ÈÍÄÍÍÍÍÍÄÍ¼ÍÊÍÍÊÍÍÍÊÍÍÍÍÊÍÍÍÍÍÊÍÍÍÍÍÊÍÍÍÍÊÍÍÍÊÍÍÊÍÈÍÄÍÍÍÍÍÄÍ¼            Î¼
+    ²³   Chers membres de la scène française,                                              ³±
+    ²³                                                                                     ³±
+    ²³   Suite à la rencontre des différentes teams anime et dvdr-anime, nous avons donc   ³±
+    ²³   décidés de mettre à jours / rappeler les rules concernant ces sections.           ³±
+    ²³                                                                                     ³±
+    É¼ËÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍËÈ»
+    ÈÎ¼ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ ÈÎ¼
+     ÈÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ»                                             ÉÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ¼
+    ÉÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ¼              Animes Rules 2011              ÈÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ»
+    ÈÎ                                                                                     Î¼
+    ²³                                                                                     ³±
+    ²³   Les différentes dénominations possible pour une release Anime:                    ³±
+    ²³                                                                                     ³±
+    ²³   BDRIP:                                                                            ³±
+    ²³   Sources vidéo et audio provenant d'un Bluray (Z,1, 2, 3)                          ³±
+    ²³                                                                                     ³±
+    ²³   DVDRIP:                                                                           ³±
+    ²³   Sources vidéo et audio provenant d'un DVD (Z1, Z2 PAL/UK/JAP, Z3 coréen)          ³±
+    ²³                                                                                     ³±
+    ²³   DVDSCR:                                                                           ³±
+    ²³   Source vidéo provenant d'un DVD (Z1, Z2 PAL/UK/JAP, Z3 coréen)                    ³±
+    ²³   Source audio provenant d'un Broadcast / TV                                        ³±
+    ²³                                                                                     ³±
+    ²³   HKDVDRIP / HDTV:                                                                  ³±
+    ²³   Source vidéo HD et audio capturé via une carte DVB où une carte HDTV              ³±
+    ²³                                                                                     ³±
+    ²³   Note: Depuis 2003 les DVDHK ont pour vidéo une source HDTV Japonaise              ³±
+    ²³   La dénomination sera donc commune à ces 2 sources et devra porter le nom HDTV     ³±
+    ²³                                                                                     ³±
+    ²³   PDTV:                                                                             ³±
+    ²³   Source vidéo et audio capture via une carte DVB (S ou C) (capture numérique)      ³±
+    ²³                                                                                     ³±
+    ²³   CUSTOM:                                                                           ³±
+    ²³   Le tag CUSTOM doit être utilisé dans le cas où la vidéo et l'audio n'ont pas      ³±
+    ²³   la même source (ex: TITRE.DE.LA.série.VOLX.LANGUAGE.CUSTOM.BDRIP.CODEC-TEAM).     ³±
+    ²³                                                                                     ³±
+    ²³   Note sur le FANSUB:                                                               ³±
+    ²³   Le FANSUB n'est plus autorisé, par respect envers les teams de FANSUB et          ³±
+    ²³   afin d'éviter les "guerres" (voir le stolen) entre teams (pour savoir qui a       ³±
+    ²³   les droits et qui ne les a pas), ce type de releases n'est donc plus autorisé.    ³±
+    ²³   Il en résulte donc que le tagg RAWRIP n'est plus autorisé également.              ³±
+    ²³   Merci aux Siteops ainsi que aux Nukeurs de faire appliquer cette rules.           ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Les dénominations possibles sont donc:                                            ³±
+    ²³                                                                                     ³±
+    ²³   BDRIP - DVDRIP - DVDRSCR - HDTV - PDTV - CUSTOM.*                                 ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   L'utilisation de VOBSUB est obligatoire pour toute release XVID/X264 simple audio.³±
+    ²³   L'utilisation de VOBSUB où SUBRIP (voir équivalent OCR) est autorisé pour toute   ³±
+    ²³   release MULTI.X264.                                                               ³±
+    ²³   Il faudra vérifier la hauteur des sous-titres afin de les ajuster au mieux        ³±
+    ²³   afin que ceux-ci soient visibles sur une TV 16/9 ou 4/3                           ³±
+    ²³   A noter que les génériques doivent être intégrés dans l'épisode à l'identique du  ³±
+    ²³   DVD d'origine (sauf en cas d'un DVD avec 2 génériques différents ou là ils peuvent³±
+    ²³   être séparés et donc release à part de l'épisode)                                 ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Notion d'exclusivité pour PRE une box Z2 série anime :                            ³±
+    ²³   La team qui sort le premier VOLUME, a l'exclusivité pour pre la box entière.      ³±
+    ²³   Cependant si dans les 3 jours le VOLUME 2 n'est pas sorti, une autre team peut    ³±
+    ²³   RACE la série.                                                                    ³±
+    ²³   Cependant, les séries anime dont les DVDs sont vendus à l'unité ne disposent pas  ³±
+    ²³   de cette notion d'exclusivité. Chaque DVD pourra être release par différentes     ³±
+    ²³   teams.                                                                            ³±
+    ²³                                                                                     ³±
+    ²³   Cas du HENTAI / SENTAI / KIDDIES / MARVEL / DC COMICS                             ³±
+    ²³   Ces 5 types de série bénéficient des mêmes règles.                                ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Les Formats Vidéo:                                                                ³±
+    ²³                                                                                     ³±
+    ²³   - Le SBC ainsi que le DIVX ne sont pas autorisés.                                 ³±
+    ²³   - XVID Minimum 1.0 en 2 pass 29fps ou 23.9fps (source NTSC) OU 25fps (source PAL) ³±
+    ²³   - X264 Minimum 2 pass 29fps ou 23.9fps (source NTSC) OU 25fps (source PAL)        ³±
+    ²³   - La version de x264 qui doit être utilisée est au minimum la 999, avec au        ³±
+    ²³     minimum 50 mises à jour depuis la dernière.                                     ³±
+    ²³   - La diminution du FPS de 29.9 à 23.9 doit être faite uniquement via tdeint.dll,  ³±
+    ²³     decomb.dll, ou une autre méthode de qualité équivalente mais n'est pas          ³±
+    ²³     obligatoire.                                                                    ³±
+    ²³                                                                                     ³±
+    ²³   Note: Toute série / box (coffret) commencée dans un codec doit-être terminée      ³±
+    ²³         dans celui-ci.                                                              ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Le Format des Sous-Titres:                                                        ³±
+    ²³                                                                                     ³±
+    ²³   - Pour une release MULTI X264: .SRT ou .SUB sont autorisés.                       ³±
+    ²³   - Pour une release XVID/X264 simple audio: .SUB uniquement intégrés à l'image.    ³±
+    ²³                                                                                     ³±
+    ²³   Note: Toute série / box (coffret) MULTI commencée avec un type de sous-titre      ³±
+    ²³         doit être finie dans celui-ci.                                              ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Les Formats Audio:                                                                ³±
+    ²³                                                                                     ³±
+    ²³   - Pour le XVID: MP3 ABR, VBR, CBR avec un minimum/moyenne de 128kbps              ³±
+    ²³	                 avec une fréquence de 44.1khz/48khz.   		           ³±
+    ²³                   AC3 (cf X264) si la vidéo et le bitrate sont correct              ³±
+    ²³                                                                                     ³±
+    ²³   - Pour le X264: AC3 minimum 160kbps avec une fréquence de 44.1khz/48khz           ³±
+    ²³                   2.0 ou 5.1 (sauf si source inferieur à 160Kbps).                  ³±
+    ²³                   MP3 autorisé si l'audio source est un AC3 2.0 (voir Audio XVID)   ³±
+    ²³                                                                                     ³±
+    ²³   Note: Le MULTI en XVID n'est pas autorisé, celui-ci n'est possible que en X264    ³±
+    ²³         avec conteneur MKV et audio AC3/MP3.                                        ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   La Résolution:                                                                    ³±
+    ²³                                                                                     ³±
+    ²³   Celle-ci doit respecter l'aspect ratio (AR) original                              ³±
+    ²³                                                                                     ³±
+    ²³   - 1.33 (4/3)        minimum 576 x * - maximum 720 x *                             ³±
+    ²³   - 1.66 (16/9)       minimum 576 x * - maximum 720 x *                             ³±
+    ²³   - 1.77 (16/9)       minimum 576 x * - maximum 720 x *                             ³±
+    ²³   - 1.85 (WS 16/9)    minimum 576 x * - maximum 720 x *                             ³±
+    ²³   - 2.35 (CS 16/9)    minimum 576 x * - maximum 720 x *                             ³±
+    ²³                                                                                     ³±
+    ²³   Le cropping est obligatoire (gain de qualité)                                     ³±
+    ²³                                                                                     ³±
+    ²³   Note sur l'AR: Vérifier l'AR de la source, l'AR choisi devra avoir une marge      ³±
+    ²³                  d'erreur pouvant aller jusqu'à plus ou moins 4%.                   ³±
+    ²³                                                                                     ³±
+    ²³   Taille pour 1 épisode XVID et X264 (1 seul audio):                                ³±
+    ²³   - 20-25min   = minimum 175 Mo                                                     ³±
+    ²³   - 25-35min   = minimum 230 Mo                                                     ³±
+    ²³   - 35min et + = minimum 350 à 700 Mo voir plus si nécessaire                       ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Taille pour 1 épisode X264 MULTI:                                                 ³±
+    ²³   - 20-35min   = minimum 230 à 350 Mo (suivant la durée et le nombre d'audio)       ³±
+    ²³   - 35min et + = minimum 350 à 700 Mo voir plus si nécessaire (suivant la durée et  ³±
+    ²³                  le nombre d'audio)                                                 ³±
+    ²³                                                                                     ³±
+    ²³   Note: Le Bitrate minimum pour une release MULTI X264 doit être de 1000 kbit       ³±
+    ²³         afin de conserver une qualité optimum                                       ³±
+    ²³                                                                                     ³±
+    ²³   Package:                                                                          ³±
+    ²³                                                                                     ³±
+    ²³   Dirname série par VOL: TITRE.DE.LA.SERIE.VOLX.LANGAGE.SOURCE.CODEC-TEAM           ³±
+    ²³   Dirname série Saison par VOL: TITRE.DE.LA.SERIE.SX.VOLX.LANGAGE.SOURCE.CODEC-TEAM ³±
+    ²³   Dirname long métrage (OAV - Film): TITRE.DE.LA.SERIE.LANGAGE.SOURCE.CODEC-TEAM    ³±
+    ²³                                    TITRE.DE.LA.SERIE.OAVX.LANGAGE.SOURCE.CODEC-TEAM ³±
+    ²³                                                                                     ³±
+    ²³   Note: La Pre épisode par épisode est possible dans deux cas:                      ³±
+    ²³                                                                                     ³±
+    ²³         - L'anime contient un ou plusieurs OAV                                      ³±
+    ²³         - L'anime à une provenance broadcast (HDTV PDTV etc...)                     ³±
+    ²³                                                                                     ³±
+    ²³         Les seuls exceptions concernant les animes sont les séries tel que:         ³±
+    ²³         Les Simpsons, Family Guy, South Park sur lesquels les rules TV sont         ³±
+    ²³         appliquées ou encore Asterix, Lucky Luke, Films d'animation etc...          ³±
+    ²³         avec les rules XVID ou ANIMES.                                              ³±
+    ²³                                                                                     ³±
+    ²³   Rars: 15mb/50mb par fichiers                                                      ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Qualité:                                                                          ³±
+    ²³                                                                                     ³±
+    ²³   Les teams doivent se rappeler que la qualité de leurs releases doit être optimale ³±
+    ²³   par respect des amateurs et pour elles-mêmes.                                     ³±
+    ²³                                                                                     ³±
+    ²³   Nfo :                                                                             ³±
+    ²³                                                                                     ³±
+    ²³   - Merci aux teams de mettre un minimum d'infos tel que :                          ³±
+    ²³     Type du codec, Nombres de passes, Langue / Type audio, Sous-titres              ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Le Nuke en Anime:                                                                 ³±
+    ²³                                                                                     ³±
+    ²³   - Pour un dirname incorrect où incomplet                                          ³±
+    ²³   - Pour bad aspect ratio                                                           ³±
+    ²³   - Pour une mauvaise résolution                                                    ³±
+    ²³   - Pour un mauvais package (VOL / EPS)                                             ³±
+    ²³   - Pour un mauvais codec vidéo / audio                                             ³±
+    ²³   - Pour une mauvaise qualité d'image                                               ³±
+    ²³   - Pour desynchro audio / sub                                                      ³±
+    ²³   - Pour une image entrelacée                                                       ³±
+    ²³   - Pour le steal (source DVD d'une team dvdr sans accord)                          ³±
+    ²³   - Pour Dupe:                                                                      ³±
+    ²³     - Une série déjà commencée en XVID ne peut être refaite en X264 mono audio      ³±
+    ²³       (sauf en internal) donc le X264 dupe XVID mais l'inverse est aussi vrai.      ³±
+    ²³       autrement dit une série commencée en X264 ne peut être refaite en XVID.       ³±
+    ²³     - Une série déjà faites où commencée en XVID peut être refaites en X264 MULTI.  ³±
+    ²³     - Une série déjà faites où commencée en X264 MULTI peut être refaites en XVID.  ³±
+    ²³     - Une série commencée au format BDRIP ne peut être refaites en DVDRIP et        ³±
+    ²³       l'inverse est aussi vrai.                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Rappel sur le INTERNAL:                                                           ³±
+    ²³                                                                                     ³±
+    ²³   - Le internal ne protège que du dupe, tout manquement aux rules pourra            ³±
+    ²³     entrainer un nuke de la dites release.                                          ³±
+    ²³                                                                                     ³±
+    É¼ËÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍËÈ»
+    ÈÎ¼ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ ÈÎ¼
+     ÈÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ»                                             ÉÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ¼
+    ÉÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ¼       Bluray Animes Rules 2011              ÈÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ»
+    ÈÎ                                                                                     Î¼
+    ²³                                                                                     ³±
+    ²³   La team qui sort le premier EPISODE, a l'exclusivité pour pre la box entière.     ³±
+    ²³   Cependant si dans les 3 jours l'EPISODE suivant n'est pas sorti, une autre team   ³±
+    ²³   peut RACE la série.                                                               ³±
+    ²³   A noter, les séries anime dont les Bluray sont vendu à l'unité disposent de cette ³±
+    ²³   notion d'exclusivité. Chaque Bluray pourra être release par différentes teams     ³±
+    ²³                                                                                     ³±
+    ²³   Cas du HENTAI / SENTAI / KIDDIES                                                  ³±
+    ²³   Ces 3 types de série bénéficient des mêmes règles.                                ³±
+    ²³                                                                                     ³±
+    ²³   Note sur le CUSTOM:                                                               ³±
+    ²³   Le tag CUSTOM doit être utilisé dans le cas où la vidéo et l'audio n'ont pas      ³±
+    ²³   la même source (ex: TITRE.DE.LA.série.EPX.LANGUAGE.CUSTOM.720p.BLURAY.X264-TEAM)  ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Le Format Vidéo:                                                                  ³±
+    ²³                                                                                     ³±
+    ²³   - X264 Minimum 2 pass 23.976fps ou 25fps (si source 29.97fps, il faut ivtc)       ³±
+    ²³   - La largeur de la release doit être en mod 16. La longueur de la release         ³±
+    ²³     doit être en mod 8.                                                             ³±
+    ²³   - L'AR de la source doit être respecté                                            ³±
+    ²³   - Le crop des bandes noires est obligatoire.                                      ³±
+    ²³   - Les custom matrices sont autorisées.                                            ³±
+    ²³   - VfW (Video for Windows), est interdit.                                          ³±
+    ²³   - La version de x264 qui doit être utilisée est au minimum la 999, avec au        ³±
+    ²³     minimum 50 mises à jour depuis la dernière.                                     ³±
+    ²³   - Le level 4.1 ou supérieur doit être respecté. A titre d'exemple le level 3.1    ³±
+    ²³     est supérieur au level 4.1 (voir le tableau http://fr.wikipedia.org/wiki/H.264 )³±
+    ²³   - Options:                                                                        ³±
+    ²³          --deblock doit être activé.                                                ³±
+    ²³          --aq-mode doit être activé.                                                ³±
+    ²³          --bframes 3 ou plus doit être respecté.                                    ³±
+    ²³          --ref 5 ou plus sauf si la résolution dépasse 864, dans ce cas ref 4       ³±
+    ²³		  doit être utilisé pour respecter le level L4.1 et sa compatibilité.      ³±
+    ²³       	--me umh ou plus est obligatoire.                                          ³±
+    ²³          --subme 7 ou plus est obligatoire.                                         ³±
+    ²³          --trellis 1 ou plus est obligatoire.                                       ³± 
+    ²³                                                                                     ³±
+    ²³   - Pour le 720p, la résolution doit être au maximum 1280x720                       ³±
+    ²³   - Pour le 1080p, la résolution doit être au maximum 1920x1080                     ³±
+    ²³   - Le bitrate vidéo:                                                               ³±
+    ²³          - 720p: Minimum 2300 kbit, maximum 8000 kbit                           	   ³±
+    ²³          - 1080p: Minimum 5000 kbit, maximum 14000 kbit                             ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Les Formats Audio:                                                                ³±
+    ²³                                                                                     ³±
+    ²³   - L'audio doit être AC3 ou DTS, (FLAC interdit)                                   ³±
+    ²³   - Le core doit être converti, en cas de DTS-HD ou TRUE-HD                         ³±
+    ²³   - Le bitrate de l'audio ne doit jamais être en dessous de 640 kbit,               ³±
+    ²³     sauf si la source média est en dessous. (ex: true-hd core 448kb/s ou moins).    ³±
+    ²³   - L'audio doit être en 5.1, sauf si la source est stéréo ou mono.                 ³±
+    ²³   - Pour le 720p un seul audio est autorisé.                                        ³±
+    ²³   - Pour le 1080p le multi est autorisé (Japonais et Français voir plus).           ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³    Les Sous-Titres:                                                                 ³±
+    ²³                                                                                     ³±
+    ²³    - Les Sous-Titres doivent être en format texte, de préférence .SRT               ³±
+    ²³    - Les Sous-titres doivent être muxés dans le container .MKV                      ³±
+    ²³    - Pour des raisons d'incompatibilité, le format idx/sub n'est pas autorisé.      ³±
+    ²³    - Les Sous-Titres FRENCH et FRENCH FORCED sont obligatoires (si présent sur la   ³±
+    ²³      source).                                                                       ³±
+    ²³                                                                                     ³±
+    ²³    La Taille 720p et 1080p mesurée en MiB (1048576 bytes) :                         ³±
+    ²³                                                                                     ³±
+    ²³    - Multiple de 1120                                                               ³±
+    ²³    - DVD5/x (896 1493 2240 4480)                                                    ³±
+    ²³    - Egalement autorisé, 2713, 8140 pour toutes les releases ainsi que 4070         ³±
+    ²³      pour les 1080p des rip tv.                                                     ³±
+    ²³                                                                                     ³±
+    ²³    Oversized : La release ne peut être oversized                                    ³±
+    ²³    Undersized: La release peut être undersized de -40 MiB max                       ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Package:                                                                          ³±
+    ²³                                                                                     ³±
+    ²³   Dirname série par EPS: TITRE.DE.LA.SERIE.EXX.LANGAGE.720p.BLURAY.X264-TEAM        ³±
+    ²³                          TITRE.DE.LA.SERIE.EXX.LANGAGE.1080p.BLURAY.X264-TEAM       ³±
+    ²³   Dirname série Saison par EPS:                                                     ³±
+    ²³                          TITRE.DE.LA.SERIE.SXXEXX.LANGAGE.720p.BLURAY.X264-TEAM     ³±
+    ²³                          TITRE.DE.LA.SERIE.SXXEXX.LANGAGE.1080p.BLURAY.X264-TEAM    ³±
+    ²³   Dirname long métrage (OAV - Film):                                                ³±
+    ²³                               TITRE.DE.LA.SERIE.LANGAGE.720p.BLURAY.X264-TEAM       ³±
+    ²³                               TITRE.DE.LA.SERIE.LANGAGE.1080p.BLURAY.X264-TEAM      ³±
+    ²³                               TITRE.DE.LA.SERIE.OAVX.LANGAGE.720p.BLURAY.X264-TEAM  ³±
+    ²³                               TITRE.DE.LA.SERIE.OAVX.LANGAGE.1080p.BLURAY.X264-TEAM ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Rars : Doivent être en multiple de 50 ou 100 MiB, pas plus de 99 fichiers.        ³±
+    ²³                                                                                     ³±
+    ²³   Nfo :                                                                             ³±
+    ²³                                                                                     ³±
+    ²³   - Merci aux teams de mettre un minimum d'infos tel que :                          ³±
+    ²³     Type du codec, Nombres de passes, Langue / Type audio, Sous-titres              ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Le Nuke en Anime:                                                                 ³±
+    ²³                                                                                     ³±
+    ²³   - Pour un dirname incorrect ou incomplet                                          ³±
+    ²³   - Pour bad aspect ratio                                                           ³±
+    ²³   - Pour une mauvaise résolution                                                    ³±
+    ²³   - Pour un mauvais package (VOL / EPS)                                             ³±
+    ²³   - Pour un mauvais codec vidéo / audio                                             ³±
+    ²³   - Pour une mauvaise qualité d'image                                               ³±
+    ²³   - Pour desynchro audio / sub                                                      ³±
+    ²³   - Pour une image entrelacée                                                       ³±
+    ²³   - Pour le steal (source BLURAY d'une team BLURAY sans accord)                     ³±
+    ²³   - Pour Dupe                                                                       ³±
+    ²³                                                                                     ³±
+    ²³   Rappel sur le INTERNAL:                                                           ³±
+    ²³                                                                                     ³±
+    ²³   - Le internal ne protège que du dupe, tout manquement aux rules pourra            ³±
+    ²³     entrainer un nuke de la dites release.                                          ³±
+    ²³                                                                                     ³±
+    É¼ËÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÍËÈ»
+    ÈÎ¼ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ ÈÎ¼
+     ÈÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ»                                             ÉÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ¼
+    ÉÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ¼            DVDR Animes Rules 2011           ÈÍÄÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÄÍ»
+    ÈÎ                                                                                     Î¼
+    ²³   - Pour commencer une saison, la team doit release le VOL01/DVD1                   ³±
+    ²³                                                                                     ³±
+    ²³   - Les DVDs suivants doivent être PRE dans l'ordre chronologique                   ³±
+    ²³                                                                                     ³±
+    ²³   - Pour sortir la saison suivante une team n'est pas obligée                       ³±
+    ²³     d'attendre la fin de la précédente.                                             ³±
+    ²³                                                                                     ³±
+    ²³   - Le DVD9 FULL ainsi que le DVD5 FULL est autorisé.                               ³±
+    ²³                                                                                     ³±
+    ²³   - Notion d'exclusivité pour PRE une box Z2 série anime :                          ³±
+    ²³     La team qui sort le premier DVDR, a l'exclusivité pour pre la box entière.      ³±
+    ²³     Cependant la team a 3 jours pour Pre le VOL / DVD suivant.                      ³±
+    ²³                                                                                     ³±
+    ²³   Attention les séries animes dont les DVDS sont vendus à l'unités n'ont pas        ³±
+    ²³   cette notion d'exclusivité. Chaque DVD pouvant être rlz par une team différente.  ³±
+    ²³                                                                                     ³±
+    ²³   Dans le cas de DVD9, DVDSHRINK , DVDSTRIPPER, CLONEDVD et autres similaires       ³±
+    ²³   ne sont pas acceptés.                                                             ³±
+    ²³                                                                                     ³±
+    ²³   Les fichiers de dummy ne sont pas tolérés dans l'arborescence du DVD.             ³±
+    ²³   Les warnings doivent être retirés dans le cas d'un DVD réencodé.                  ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Cas du HENTAI / SENTAI / KIDDIES                                                  ³±
+    ²³   Ces 3 types de série bénéficient des mêmes règles.                                ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Format :                                                                          ³±
+    ²³                                                                                     ³±
+    ²³   - Vidéo : CCE 6 a 9 pass                                                          ³±
+    ²³   - Audio : Original du DVD source                                                  ³±
+    ²³   - Résolution: doit respecter l'aspect ration (AR) original de la source dvd       ³±
+    ²³                 ainsi que la résolution.                                            ³±
+    ²³   - Bonus : Les bonus sont autorisés dans le cas d'un DVD5 / DVD9                   ³±
+    ²³             ou tant que le bitrate (et donc la qualité de la release)               ³±
+    ²³             n'en pâtissent pas.                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Note sur la Vidéo: Un anime commencer en X pass doit être fini avec le même       ³±
+    ²³                      nombres de pass (ex: Vol01 en 9 pass, le Vol06 qui clôture     ³±
+    ²³                      la série doit être également en 9 pass) afin de bénéficier     ³±
+    ²³                      d'une qualité similaire sur tous les volumes.                  ³±
+    ²³                                                                                     ³±
+    ²³   Package :                                                                         ³±
+    ²³                                                                                     ³±
+    ²³   Dirname série par VOL : TITRE.DE.LA.SERIE.VOLX.LANGAGE.ZONE.DVDR-TEAM             ³±
+    ²³   Dirname série par VOL : TITRE.DE.LA.SERIE.SX.VOLX.LANGAGE.ZONE.DVDR-TEAM          ³±
+    ²³   Dirname série par OAV : TITRE.DE.LA.SERIE.OAVX.LANGAGE.ZONE.DVDR-TEAM             ³±
+    ²³                                                                                     ³±
+    ²³   LANGUAGE: FRENCH, SUBFRENCH, MULTI (mini 2 langues dont le FR)                    ³±
+    ²³   ZONE: PAL ou NTSC                                                                 ³±
+    ²³                                                                                     ³±
+    ²³   S'il n'y a pas de saison juste mettre DVDX ou VOLX (X étant le numéro du          ³±
+    ²³   volume DVD)                                                                       ³±
+    ²³                                                                                     ³±
+    ²³   Note : Possibilité de rajouter 5.1 dans le dirname si la release                  ³±
+    ²³          dispose de cet audio                                                       ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Rars : Doivent être en multiple de 50 ou 100 MiB, pas plus de 99 fichiers.        ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Fansub :                                                                          ³±
+    ²³                                                                                     ³±
+    ²³   - Le Fansub est autorisé s'il s'agit d'un DVD Z1, Z3, Z2UK/JAP (allowed           ³±
+    ²³     selon les sites)                                                                ³±
+    ²³   - FANSUB de DVD HK non autorisé.                                                  ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Qualité :                                                                         ³±
+    ²³                                                                                     ³±
+    ²³   - Les teams doivent se rappeler que la qualité de leurs séries devraient          ³±
+    ²³     être optimale par respect pour les amateurs et pour elles-mêmes, de ce fait,    ³±
+    ²³     toute méthode permettant d'obtenir une bonne qualité est acceptée.              ³±
+    ²³                                                                                     ³±
+    ²³   Nfo :                                                                             ³±
+    ²³                                                                                     ³±
+    ²³   - Merci aux teams de mettre un minimum d'infos tel que :                          ³±
+    ²³     Nombres de passe CCE ou Untouched, Langue audio, Sous-titres                    ³±
+    ²³                                                                                     ³±
+    ²³                                                                                     ³±
+    ²³   Le Nuke en DVDR-ANIME :                                                           ³±
+    ²³                                                                                     ³±
+    ²³   - Pour un dirname incorrect ou incomplet                                          ³±
+    ²³   - Problème sur l'image, l'audio, les subs (desynchro)                             ³±
+    ²³   - Non utilisation de CCE avec un minimum de 6 Pass                                ³±
+    ²³   - Menu non reauthore (liens menant nul part)                                      ³±
+    ²³   - Pour présence de fichiers dummy                                                 ³±
+    ²³   - Pour Dupe                                                                       ³±
+    ²³                                                                                     ³±
+    ²³   Rappel sur le INTERNAL:                                                           ³±
+    ²³                                                                                     ³±
+    ²³   - Le internal ne protège que du dupe, tout manquement aux rules pourra            ³±
+    ²³     entrainer un nuke de la dites release.                                          ³±
+    ²³                                                                                     ³±
+    É¼ËÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍËÈ»
+    ÈÎ¼ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ Ğ ÈÎ¼
+    ²³                                                                                     ³±
+    ²³   Approuvé par les groupes suivants (par ordre alphabétique):                       ³±
+    ²³                                                                                     ³±
+    ²³           BOOLZ - CiNEPHiLE - COGiTO - CRuSaDe - GAIDEN - HEROiC - MANGACiTY        ³±
+    ²³           OOKAMI - REVOLTE - SLEEPINGFOREST                                         ³±
+    ²³                                                                                     ³±
+    ²³   N'ont pas pu être contactés ou n'ont pas souhaités répondre / participer:         ³±
+    ²³                                                                                     ³±
+    ²³           AKiNA - BANKAi - DEAL - KiTTy - NEECHAN - SaSHiMi                         ³±
+    ²³                                                                                     ³±
+     ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼

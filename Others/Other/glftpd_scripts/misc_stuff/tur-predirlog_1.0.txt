@@ -1,0 +1,13 @@
+PreDirLog (GL1&2)
+
+Description: A script that logs which users enters the affiliated groups predir. 
+Lists the last # of users.
+The file is put in the predir itself so you can add it to show_diz and have it 
+displayed when affils enter the predir.
+
+This is a NOSUPPORT script. Dont message me about it unless you found a real bug 
+(no "it dosnt work").
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Sep-2003

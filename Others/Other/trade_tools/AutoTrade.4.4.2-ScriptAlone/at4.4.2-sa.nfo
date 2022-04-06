@@ -1,0 +1,94 @@
+
+						ScriptAlone
+
+  €€ﬂ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹ﬂ€€  
+  €€                                                                       €€  
+  €≤                                                                       ≤€  
+	                            AutoTrade 4.4.2
+                                  
+	Release Date .....: 07/27/2012            
+	OS Type...........: Windows              
+	Application Type..: mIRC addon                     
+
+
+   €≤∞                                                                     ∞≤€  
+   €€≤±∞‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹   Summary   ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹∞±≤€€  
+ 
+	EN.
+
+	FR.
+	AutoRace pour mIRC + FTPRush
+	Connection automatique a tout vos ircd. 
+	Invitation automatique sur vos chan (site invite).
+	Authentification automatique a NickServ (Nick enregistrer).
+	Authentification automatique au SiteBot (Pour DrFTPD Principalement).
+	Gestion des SERIES avec TVRage par Categorie et pays.
+	Prebot interne ( peut utiliser le prebot de vos site aussi ).
+	Gestion des Request ( AutoRaceRequest )
+	Gestion des Rules/Allow/Affils et ... en Rexexp ( voir TEST1 ).
+	Panneau de test pour vos Regexp de rules/allow ...
+	Enregistrement de rules Preset pour utilisation sur plusieurs sites.
+	Affichage des info complete ( @race @tvRage @prebot ...... )
+	Switch On/Off separer pour chaque site.
+	et .........
+	
+
+   €≤∞                                                                     ∞≤€  
+   €€≤±∞‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹   ToDO/Bug    ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹∞±≤€€  
+	EN.
+
+	FR.
+		ToDO.
+			-Completer les fonctions innachever.
+			-Traduction complete ! ( he merde ... )
+			-Rediger un HELP. ( Pour les $null )
+			-Rules Share (AutoConfig a partir des rules du SiteBot )
+			-A suivre ...
+
+		BUG Connue.
+			-AutoRace Request bug sur certain site. Debug inclus dans
+			 la prochaine mise a jour. ( Merci Big_Z )
+			-Il y en a probablement d'autres ...
+			
+  
+   €≤∞                                                                     ∞≤€  
+   €€≤±∞‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹  Installation ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹∞±≤€€  
+
+	EN.
+
+	FR.
+	Garder le dossier AUTO pour eviter les erreur de dll et ...
+	Extraire le dossier /auto/ dans votre dossier mIRC.
+	Tappez: "//load -rs /auto/AutoV4.mrc"
+	Tappez: "//load -rs /auto/ModV4.mrc"
+	Appuyer sur F3 pour l'interface
+	
+
+   €≤∞                                                                     ∞≤€  
+   €€≤±∞‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹ NOTE IMPORTANTE ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹∞±≤€€
+
+	EN.
+
+	FR.
+	Bon voila, plusieurs me demande depuis longtemps de leurs filler mon
+	auto, eh bien voila apres quelques annees je me suis decider.
+
+	Cet Auto est celui que j'utilise et code et modifie depuis des annees,
+	il est 100% fonctionnel et fiable. Si ca ne fonctionne pas c'est que
+	vous	etes seulement incapable de le configurer ! J'ai laisser un TEST1
+	pour eviter les casse tete .. ou les atenuer :D
+
+	Pour les plus courageux, il y a des fonctions innachever ou non-incluse
+	dans l'interfaces qui traine dans le ModV4.mrc. Amusez-vous et envoyez
+	moi vos mod/debug/idee ;) 
+		EX: Rush2Auto / Auto2Rush / ......
+
+							-fl*****			
+   €≤∞                                                                     ∞≤€  
+   €€≤±∞‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹∞±≤€€
+
+	
+
+	
+
+

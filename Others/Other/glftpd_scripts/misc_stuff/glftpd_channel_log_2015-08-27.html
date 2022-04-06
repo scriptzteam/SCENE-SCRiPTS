@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+  <title>SSL-lbnc ECDSA patch - #glftpd chat log 2015-08-27</title>
+  <link rel="stylesheet" href="../../../styles.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+
+
+<h1>SSL-lbnc ECDSA patch</h1>
+#glftpd chat log 2015-08-27<br/>
+
+<br/>
+
+[18:25:56] &lt;crx_&gt; f-ftpbnc and ebbnc is also okay for just entry but yatb covers all :) <br/>
+[19:12:40] &lt;mr-b&gt; i've also fixed ssl-lbnc if anyone wants to use that <br/>
+[19:12:48] &lt;mr-b&gt; i find it a bit easier to use than yatb <br/>
+[19:16:06] &lt;kniffy&gt; fixed for new ssl? <br/>
+[19:16:35] &lt;mr-b&gt; yea for ecdsa <br/>
+[19:17:40] &lt;kniffy&gt; might be worth trying to use it over yatb - i've had issues with tls 1.2 on yatb sometimes <br/>
+[19:18:11] &lt;mr-b&gt; ill see if i can make a patch file or somth <br/>
+[19:31:20] &lt;mr-b&gt; <a href="tls.c_patch.txt">http://pastebin.ca/3176205</a> <br/>
+[19:37:05] &lt;tittof&gt; this does it <a target="_blank" rel="noopener noreferrer" href="https://github.com/glftpd/simpleentry">https://github.com/glftpd/simpleentry</a> <br/>
+[19:38:01] &lt;tittof&gt; ah the lundman things <br/>
+[19:38:08] &lt;tittof&gt; he also made a ftpd <br/>
+[19:38:12] &lt;tittof&gt; quite similar to gl <br/>
+[19:39:45] &lt;tittof&gt; to use his fxp one engine you would have to modify its sources, too - maybe someone could just msg him about it <br/>
+[19:40:19] &lt;tittof&gt; at least you had to the last time i checked it <br/>
+[19:42:06] &lt;mr-b&gt; i made the change to be able to use ssl-lbnc, i have only used lundftpd once or twice to check it out though <br/>
+[19:43:29] &lt;tittof&gt; what was your impression? <br/>
+[19:43:38] &lt;mr-b&gt; it's pretty quick <br/>
+[19:44:00] &lt;mr-b&gt; impressed me how fast it was compared to ioftpd when i tried it <br/>
+[19:44:15] &lt;tittof&gt; oh that thing is run on wintendo? <br/>
+[19:44:27] &lt;mr-b&gt; it works on both <br/>
+[19:44:32] &lt;mr-b&gt; i believe <br/>
+[19:44:55] &lt;tittof&gt; the developer also is involved in zfs stuff that's where I stumbled upon him in the first place <br/>
+[19:45:11] &lt;mr-b&gt; from the stuff he made, he's pretty talented imo <br/>
+[19:45:52] &lt;tittof&gt; that fxp.one thing was said to be too slow for tradin <br/>
+[19:46:31] &lt;mr-b&gt; ah. <br/>
+[19:46:37] &lt;mr-b&gt; never tried that <br/>
+[19:56:13] &lt;kniffy&gt; so, red is lines to remove, greens are adds? <br/>
+[19:56:38] &lt;kniffy&gt; i'll try building once i have time to sit down with it <br/>
+[20:05:25] &lt;BaToCarx&gt; man patch <br/>
+[20:15:52] &lt;tittof&gt; unless you want tbnc take simpleentry <br/>
+[20:22:06] &lt;kniffy&gt; bouncing traffic is what i'm going for <br/>
+[21:08:35] &lt;tittof&gt; kniffy: yatb has been updated to support all the tls needs <a target="_blank" rel="noopener noreferrer" href="https://github.com/glftpd/yatb">https://github.com/glftpd/yatb</a> <br/>
+[21:08:39] &lt;tittof&gt; i think &lt;&gt; <br/>
+[21:09:14] &lt;kniffy&gt; yeah, but i had weird issues where tlsv1 would work, but not others <br/>
+[21:09:20] &lt;kniffy&gt; and yet the same conf worked fine on another box <br/>
+[21:09:36] &lt;kniffy&gt; &#773; \(&deg;_o)/&#773;  <br/>
+[21:11:00] &lt;tittof&gt; as long as you link it against a normal openssl all should be fine <br/>
+[21:13:50] &lt;tittof&gt; not sure if we updated it after that logjam thing but yeah.. it's just R?cket science :) <br/>
+[21:15:55] &lt;kniffy&gt; i'm not using the machine i tried to do it on anymore, so i cant debug <br/>
+
+<br/>
+
+<a href="https://algorhythm.cc">Go back to main page</a> <br/>
+
+
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+Tur-RelSizeUpdate
+
+Description: This is a (small) script for storing release sizes into a MySQL 
+database.
+
+Author:   Turranius
+Version:  1.0
+Added on: 11-Jul-2005

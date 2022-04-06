@@ -1,0 +1,227 @@
+
+       пплпп л   л                                ппппл лпппл лпппл ппппл
+         л    л л    R E L E A S E    R U L E S   лпппп л   л л   л ппппл
+         л     л                                  лмммм лмммл лмммл ммммл
+
+                          л     v1.5 (11/16/02)                  м
+                           пм                                  мп
+                            пл                               мп
+                             плм                           мп
+                               лм                        млп
+                                лм                     млп
+                                 лл                  млл
+                                  плм              мллп
+                                   плм           мллп
+                                    пллм       млллп
+                                      ллллммммлллп
+            ммммллллллллллллмммммммммлллллллллллм
+    ммммллллллллллллллллллллллллллллллллллллллллллм
+  млллллллллллллллллллллллллллллллллллллллллллллллллллллллллммммммм
+  лллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллллмм
+  лллллп      пппппплллллллллллллллллллллллллллллллллллллллллллллллллллллллллл
+  ллллл                       пппппплллллллллллллллллллллллллллллллллллллллллл
+  ллллп                                      плллллллллллллллллллллллллллллллл
+  лллл                                         ллллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  лллл                                          лллллллллллллллллллллллллллллл
+  ллллм                                         лллллллллллллллллллллллллллллл
+  лллллм                                        лллллллллллллллллллллллллллллл
+  пллллллллмммммм                               лллллллллллллллллллллллллллллл
+    пппппллллллллллллллллмммммм                 лллллллллллллллллллллллллллллп
+          лллллллллллллллллллллллллллллммммммммллллллллллллллллллллллллллпп
+          плллллллллллллллллллллллллллллллллллллллллллллллллллллллллллп
+          лллллп       пппплллппллллллллллллллллллллллллллллллллпплллллм
+        мллллп             ллл      ппппппппплллллллллллллпппп     пллллм
+       млллп               лл                     пллллл             плллм
+      лллп                ллл                      плллл               пллл
+    мллп                  ппп                       лллл                 плл
+  мллп                                              плллм                  пп
+  пп                                                 лллл                     Г
+                                                      ллл                    оГ
+ Г                                                    ллл                    оГ
+ Гн    Nuking has always been an issue in the TV       ллл                   оГ
+ Гн    scene. So here is the ruleset that tries        плл                   оГ
+ Гн    to cover up the mess a little.                   пп                   оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    DIGITAL CAP:                                                          оГ
+ Гн    ФФФФФФФФФФФФ                                                          оГ
+ Гн    This includes any real digital source that didn't pass through any    оГ
+ Гн    analog interface between the source (Sat/Antenna/Cable) and the file  оГ
+ Гн    on your computer.                                                     оГ
+ Гн                                                                          оГ
+ Гн    This includes ATSC off-air antenna signals carrying MPEG2 Transport   оГ
+ Гн    Streams (using cards such as MyHD/Hipix/WinTV-HD), DirecTiVo MPEG2    оГ
+ Гн    Streams (not standard TiVo!) and DVB Stream Capture cards.            оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    *HDTV* (High Definition Televison): Digital recording from a source   оГ
+ Гн           stream at either 1080i or 720p at a bitrate from 19,39mbps or  оГ
+ Гн           higher.                                                        оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    *PDTV* (Pure Digital Television): Other resolution digital recor-     оГ
+ Гн           dings from source streams at a bitrate of 10+mbps or higher.   оГ
+ Гн           - This includes digital recordings from digital C-Band and     оГ
+ Гн             DVB.                                                         оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    *SDTV* (Standard Digital Television): Digital recording or capture    оГ
+ Гн           from a source stream at any resolution with bitrate under      оГ
+ Гн           10mbps.                                                        оГ
+ Гн           - This includes DirecTiVo but also captures from digisat or    оГ
+ Гн             digicable with analog capture cards.                         оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    note: For SVCD, analog cable and antenna caps are not allowed, so     оГ
+ Гн          SDTV is the lowest allowed source and will have no label. See   оГ
+ Гн          NAMING below.                                                   оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    note: HDTV and PDTV rips are digital recordings, although PDTV was    оГ
+ Гн          labeled wrongly in the past by some groups (TiVo is NOT PDTV).  оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    ANALOG CAP:                                                           оГ
+ Гн    ФФФФФФФФФФФ                                                           оГ
+ Гн    This includes any source that went through at least one Digital ->    оГ
+ Гн    Analog -> Digital process.                                            оГ
+ Гн                                                                          оГ
+ Гн    This includes Standard TiVo, any MPEG2 capture card, any DV source    оГ
+ Гн    (unless you're releasing your home videos that were actually shot on  оГ
+ Гн    a DV camera) or any other standard capture card.                      оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    PDVTV and HDTV is NEVER captured in analogue, on the other hand a     оГ
+ Гн    SDTV cap can be both.                                                 оГ
+ Гн                                                                          оГ
+ ГнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФоГ
+ Гн                                                                          оГ
+ Гн    COMMENTS:                                                             оГ
+ Гн    ФФФФФФФФФ                                                             оГ
+ Гн    For SVCD/DivX, any video, regardless of Analog or Digital should be   оГ
+ Гн    converted to 23.976fps (NTSC) or 25fps (PAL) "Progressive Film" for   оГ
+ Гн    correct encoding.                                                     оГ
+ Гн    A LOT of group don't bother with this step and thus their encoding    оГ
+ Гн    quality suffers, regardless of their source quality.                  оГ
+ Гн                                                                          оГ
+ Гн    Even if your source video comes as Progressive 59.976fps (as it can   оГ
+ Гн    with ATSC sources), you must still convert to the proper frame rate   оГ
+ Гн    or your video will be jerky or waste bits.                            оГ
+ Гн                                                                          оГ
+ Гн    For any NTSC encode (other than live shows like the "Tonight Show")   оГ
+ Гн    the video must be converted to 23.976fps through the use of IVTC or   оГ
+ Гн    duplicate frame elimination (for ATSC 59.976fps progressive sources)  оГ
+ Гн    prior to SVCD encoding. And once encoded, you must enable the 3:2     оГ
+ Гн    pulldown flag to enable playback at 29.976fps (even though the sour-  оГ
+ Гн    ce still remains at 23.976fps).                                       оГ
+ Гн                                                                          оГ
+ Гн    Analog Cable or Analog Antenna rips on SVCD are NOT allowed.          оГ
+ Гн                                                                          оГ
+ ГнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФоГ
+ Гн                                                                          оГ
+ Гн    DUPE RULES:                                                           оГ
+ Гн    ппппппппппп                                                           оГ
+ Гн                                                                          оГ
+ Гн    - SVCD Releases:                                                      оГ
+ Гн       . HDTV:                                                            оГ
+ Гн            - DUPE if there was a PDTV or a HDTV release.                 оГ
+ Гн            - NO DUPE if there was only a SDTV or a VCD version.          оГ
+ Гн                                                                          оГ
+ Гн       . PDTV:                                                            оГ
+ Гн            - DUPE if there was a PDTV or a HDTV release.                 оГ
+ Гн            - NO DUPE if there was only a SDTV or a VCD version.          оГ
+ Гн                                                                          оГ
+ Гн       . SDTV:                                                            оГ
+ Гн            - Obvious. DUPE if there was previous release without         оГ
+ Гн              technical issues.                                           оГ
+ Гн            - NO DUPE if there was only a VCD version.                    оГ
+ Гн                                                                          оГ
+ Гн       . Widescreen does NOT dupe Fullscreen and vice versa.              оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн    - VCD Releases:                                                       оГ
+ Гн       . No matter what source, the first release wins. Every             оГ
+ Гн         other VCD release is a dupe.                                     оГ
+ Гн                                                                          оГ
+ Гн    - DivX/Xvid Releases:                                                 оГ
+ Гн       . HDTV:                                                            оГ
+ Гн            - DUPE if there was a PDTV or a HDTV release.                 оГ
+ Гн            - NO DUPE if there was only a SDTV or an analog cap.          оГ
+ Гн                                                                          оГ
+ Гн       . PDTV:                                                            оГ
+ Гн            - DUPE if there was a PDTV or a HDTV release.                 оГ
+ Гн            - NO DUPE if there was only a SDTV or an analog cap.          оГ
+ Гн                                                                          оГ
+ Гн       . SDTV:                                                            оГ
+ Гн            - DUPE if there was already a analog cap.                     оГ
+ Гн              technical issues.                                           оГ
+ Гн                                                                          оГ
+ Гн       . Analog cap:                                                      оГ
+ Гн            - Obvious. DUPE if there was previous release without         оГ
+ Гн              technical issues.                                           оГ
+ Гн                                                                          оГ
+ Гн       . Widescreen does NOT dupe Fullscreen and vice versa.              оГ
+ Гн                                                                          оГ
+ ГнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФоГ
+ Гн                                                                          оГ
+ Гн    NUKE RULES:                                                           оГ
+ Гн    ппппппппппп                                                           оГ
+ Гн                                                                          оГ
+ Гн    - A release is considered as a NUKE, if:                              оГ
+ Гн        . It's a DUPE.                                                    оГ
+ Гн        . It has technical issues.                                        оГ
+ Гн        . Wrong or no source/cap information is specified in the .nfo.    оГ
+ Гн                                                                          оГ 
+ ГнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФоГ
+ Гн                                                                          оГ
+ Гн    NAMING RULES:                                                         оГ
+ Гн    ппппппппппппп                                                         оГ
+ Гн                                                                          оГ
+ Гн    The following tags are used for SVCD releases:                        оГ
+ Гн                                                                          оГ
+ Гн     - "HDTV" for HDTV caps.                                              оГ
+ Гн     - "PDTV" for PDTV caps.                                              оГ
+ Гн     - "SDTV" or nothing for SDTV caps.                                   оГ
+ Гн                                                                          оГ
+ Гн    . VCD releases don't need to be tagged.                               оГ
+ Гн    . Widescreen releases are tagged with "WS", otherwise they are        оГ
+ Гн      supposed to be fullscreen.                                          оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ ГнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФоГ
+ Гн                                                                          оГ
+ Гн    PROPER RULES:                                                         оГ
+ Гн    ппппппппппппп                                                         оГ
+ Гн                                                                          оГ
+ Гн    - A PROPER is only valid when the previous release has technical      оГ
+ Гн      issues. A HDTV after a PDTV rip is no reason to dupe and there-     оГ
+ Гн      fore no reason for a PROPER if the previous release was             оГ
+ Гн      ok.                                                                 оГ
+ Гн                                                                          оГ
+ ГнФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФоГ
+ Гн                                                                          оГ
+ Гн    GROUPS AND MEMBERS:                                                   оГ
+ Гн    ппппппппппппппппппп                                                   оГ
+ Гн                                                                          оГ
+ Гн                This ruleset was written and organized by:                оГ
+ Гн                                                                          оГ
+ Гн      ў  FoV  ў  SD-6  ў  PHRENiC  ў  FTV  ў  FFN  ў  SFM  ў  STN  ў      оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн                         Signed and approved by:                          оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ Гн                                                                          оГ
+ ГпммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммммпГ
+ РФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФФй

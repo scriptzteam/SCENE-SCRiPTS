@@ -1,0 +1,32 @@
+# sitedb.v1.0.tcl 2004/04/14 @ GnuMatiC
+# 
+#
+# CONTACT:
+# This is my first public release of a tcl that I have created. So please
+# feel free and contact me with suggestions and comments about this script
+#                          GnuMatiC on #efnet
+#
+#
+# DISCLAIMER:
+# - I TAKE NO RESPONSIBILTY IN WHAT THIS SCRIPT MAY OR MAY NOT DO TO YOUR
+# - SYSTEM, OR HOW YOU CHOOSE TO USE THIS SCRIPT. USE IT AT YOUR OWN RISK!
+#
+#
+# CHANGELOG:
+# v1.0 - initial release
+#
+#
+# DESCRIPTION:
+# This is a site database script to be ran with an eggdrop. It allows users of a channel 
+# to add and remove sites from the database. It also allows users to update various 
+# information to help keep track of sites. Almost every option allows the scripter to
+# fully customize which features they want to use.
+# This script ALSO can be used in multiple channels, allowing only one database to be used
+# but keeping that information private from the other channels, so each channel that the eggdrop
+# is running in with this script, can each have their own private lists of sites.
+# 
+#
+# REQUIREMENTS:
+# -mysql
+# -mysqltcl
+# -eggdrop

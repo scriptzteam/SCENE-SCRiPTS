@@ -1,0 +1,26 @@
+/* Modification of Captain's ftpwho by iono.
+ * NOTE: passwd file location is hardcoded, but isn't hard to change if you have any sort of brain.
+ *
+ * Exit codes:
+ * 2 - No users online (also prints "0" before it exits)
+ * 3 - SHMAT (Shared Memory Attach) Failed
+ * 4 - SHMDT (Shared Memory Detatch) Failed
+ * 0 - no problems, execution as usual
+ *
+ * Action codes:
+ * 0 - Idle ( >5 secs from last command)
+ * 1 - Active ( Setting up xfer / browsing....less than 5secs from last command)
+ * 2 - Uploading
+ * 3 - Downloading
+ *
+ * OLD FORMAT: "uid;username;action;filename;host;currentdir;groupid;speed(k/s);idletime;tagline"
+ *
+ * NEW FORMAT: "action;username;primgroup;uid;command;currentdir;filename;speed(kB/s);idletime;tagline;host"
+ * Last line is total bw stats.....
+ * NEW FORMAT: "uploads;uploadspeed(kB/s);downloads;downloadspeed(kB/s);totalxfers;totalspeed(kB/s);idlers;activeusers;totalusers"
+ * 
+ * CHANGES: Different output order, and outputs group as name rather than GID. status is now integer
+ *          rather than a string. Changed a few statements aswell.	
+ *          
+ * GID To Group Name code by Zio.
+ */

@@ -1,0 +1,36 @@
+#!/bin/bash
+
+RAPELIST="/glftpd/tmp/rapes.list" # Full path. Not chrooted.
+DATAPATH="/glftpd/ftp-data" # Full path. Not chrooted.
+VERBOSE="1"
+
+[ -f "$RAPELIST" ] || {
+    echo "Error: Rape list file '$RAPELIST' nonexistent." 1>&2
+    exit 1
+}
+
+[ -d "$DATAPATH" ] || {
+    echo "Error: Invalid DATAPATH '$DATAPATH'." 1>&2
+    exit 1
+}
+
+cut -f2 -d: "$RAPELIST" | sort | uniq -c | sort -rn | {
+    read count user || exit
+    [ -f "$DATAPATH/users/$user" ] || {
+        [ "$VERBOSE" = "1" ] && 
+            echo "User with most rapes, '$user' does not seem to exist." 1>&2
+        exit 1
+    }
+    [ -w "$DATAPATH/users" ] || {
+        [ "$VERBOSE" = "1" ] && 
+            echo "Error: $DATAPATH/users is not writable!" 1>&2
+        exit 1
+    }
+    mv -f "$DATAPATH/users/$user" "$DATAPATH/users/$user.old"
+    sed 's/^FLAGS .*$/&6/' "$DATAPATH/users/$user.old" > "$DATAPATH/users/$user"
+    echo "Deleted top rapee '$user' from site."
+}
+
+> "$RAPELIST"
+
+exit 0

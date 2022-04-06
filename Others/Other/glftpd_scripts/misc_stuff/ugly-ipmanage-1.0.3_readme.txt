@@ -1,0 +1,167 @@
+README for ugly-ipmanage 1.0
+
+ * ABOUT
+
+Ipmanage is an add/delip script that has a major fundamental difference to 
+similar scripts.  It uses a key and email based system for managing IPs.
+This greatly decreases the likelihood that someone will be able to impersonate
+another user simply because he has their username and password.  It works in the
+following way:  1.) a user sets his email address beforehand by using the
+'site email <email@address>' command from the site 2.) when a user wants to add,
+delete, or list his IP(s), he msgs the sitebot from IRC using the appropriate
+command 3.) a randomly generated key is emailed to the user with instructions
+4.) the user messages the sitebot the key 5.) the ipmanage script verifies the
+key and then proceeds to add, delete, or list the user's IP(s).
+
+In addition, the script has many error and syntax catching functions to ensure
+users cannot misuse the script either purposely or on accident.  This includes
+key expiration times, a list of users who cannot use the script (such as sitebot
+usernames), and more.
+
+For those users worried about a cleartext list of email addresses being stored
+on their site, the script supports encrypted files.
+
+Lastly, the script doesn't modify userfiles directly.  Instead, it uses an ftp
+client to log into the site and add/delip from there.
+
+ * INSTALLATION AND CONFIGURATION
+
+Ipmanage is comprised of three scripts: ipmanage.sh, email.sh, and ipmanage.tcl.
+Copy ipmanage.sh and email.sh to  your glftpd/bin dir and 'chmod 755' them.  The
+script makes use of a (preferably) dedicated siteop user, so add a user to the
+site with the siteop flag.  Copy ipmanage.tcl to your site bot's scripts dir,
+and add "source scripts/ipmanage.tcl" to your eggdrop config file.
+
+Edit the variables at the top of each script.  You will need the following
+binaries available to ipmanage.sh:
+
+ -passchk - found on http://glftpdscripts.com
+ -lftp (or ncftp3)
+ *BSD users:
+ -gdate - part of sh-utils and coreutils, which should be in your ports tree
+ -openssl (if you want an encrypted email database)
+
+The 'openssl' binary will also need to be placed in your glftpd/bin dir.  Use
+'ldd /path/to/openssl' to find the libraries it depends on.  Copy those
+libraries to glftpd/lib.
+
+Set up the email database and ip directory (for temporary storage of keys/IPs).
+
+ 'mkdir -m 700 /glftpd/ftp-data/misc/ip'
+ 'chown <user that eggdrop is running as> /glftpd/ftp-data/misc/ip'
+
+ 'touch /glftpd/ftp-data/misc/email.db'
+ 'chmod 666 /glftpd/ftp-data/misc/email.db'
+
+You will need a MTA (Mail Transfer Agent) such as sendmail, postfix, or qmail
+to send keys via email.  After setting one up, specify the path to its
+'sendmail' binary in ipmanage.sh's "sendmail_bin" variable.
+
+Lastly, add these lines to glftpd.conf:
+
+ site_cmd EMAIL          EXEC    /bin/email.sh
+ custom-email            !8 *
+
+Optionally, you can use the included chkemail.sh script to force users to set
+their email address.  Open up the script in an editor and set the appropriate
+options, then copy the script to your glftpd/bin dir and chmod 755 it.  Then
+add the following line to glftpd.conf:
+
+ cscript        CWD     pre     /bin/chkemail.sh
+
+The script will check if a user's email address is set before it lets them
+change directories.  It lets you specify exempt users, groups, and flags.  This
+will probably anger a number of your users, especially the ones with static IPs,
+but it's your site ;).  You can tell people who never will need an IP added or
+deleted to just set a fake email address.
+
+Sitebot syntax: !ip add|del|list <user> <pass> [<ident@ip1> <ident@ip2> ...]
+  EXAMPLE #1: !ip add myuser mypass myident@1.1.* *@127.0.0.*
+  EXAMPLE #2: !ip list myuser mypass
+
+Site email syntax: 'site email -clean|-unset|-pass <key>|<email@address>'
+  A user can issue the 'site email' command again if his email address has
+  changed.  The script will update the database.
+ 
+ * ENCRYPTING YOUR EMAIL.DB FILE
+
+There are a number of ways to do this:
+
+ -Placing your email.db file on an encrypted filesystem that requires a password
+  at mount time (or even on a loopback mounted file) would allow you to use
+  encryption without any extra configuration in ipmanage.  (set encrypted_db=NO
+  if you follow this route)
+
+ -Creating a memory-disk (filesystem on a small portion of your system RAM) and
+  storing the key to an encrypted email database on it.  You can use the
+  "-pass <key>" option in email.sh to store the key from glftpd.  When the box
+  is rebooted or powered off, the key file will be erased (since it's in RAM).
+
+The above options protect against people with physical access to the box, but
+not users with accounts.  If the box is rebooted or powered off, the email.db
+file will be protected from unauthorized users due to the fact that the password
+to email.db (or the filesystem it resides on) will not be stored anywhere.
+Considering the most likely reason an administrator would want the email.db 
+file to be encrypted, this should be sufficient.  If you have a better
+suggestion, please let me know.
+
+ENCRYPTED FILESYSTEMS:
+  -FreeBSD 5.x: GEOM Based Disk Encryption:
+                http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/disks-
+		encrypting.html
+  -FreeBSD 4.x: CFS:
+                http://www.freebsddiary.org/encrypted-fs.php
+  -Linux:       Disk Encryption HOWTO:
+                http://www.tldp.org/HOWTO/Disk-Encryption-HOWTO/index.html
+                
+ENCRYPTED FILE + MEMORY DISKS:
+
+ Encrypt your email database file (even if it's empty) with the following
+ command:
+
+  'openssl enc -<cipher> -salt -e -in email.db -out email.db.new'
+
+ You will be prompted for a pass key.  Use 'openssl list-cipher-commands' for a
+ list of ciphers.  You should use either AES (aes256) or Blowfish (bf).
+ 
+ Do not use "email.db" as both your INFILE and OUTFILE, or you will end up with
+ a blank file.
+
+ Set up a memory disk (MD) mounted to "/glftpd/ftp-data/keystore/".  Then create
+ a world-writable file for storing the key:
+
+  'touch /glftpd/ftp-data/keystore/key'
+  'chmod 666 /glftpd/ftp-data/keystore/key'
+
+ Store the password you used to encrypt your email.db file:
+   
+   'site email -pass <key>'
+
+ I suggest you make a script to automate the process of creating/mounting/etc.
+ the memory-disk at boot.  In FreeBSD, put the script in /usr/local/etc/rc.d.
+ Linux distros have several ways of creating startup scripts, so read your
+ distro's documentation.
+
+ Memory-Based File System under FreeBSD 4.x/5.x:
+  http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/disks-virtual.html
+
+ Memory-Based File System under Linux:
+  see "4) An Example of Creating a Compressed RAM Disk" in the Linux kernel
+  source documentation:
+  linux/Documentation/ramdisk.txt
+
+ * A NOTE ABOUT EMAIL ADDRESSES
+
+If your users feel uncomfortable about giving out their email addresses,
+suggest that they use hushmail.com.  Their privacy policy states the
+following:
+
+ "... Hushmail.com will never log your IP address in such a way that it can be
+ associated with your Hushmail email address or identity."
+
+ * CONTACT
+
+ Please report bugs to:
+
+ - ugly on EFNet
+

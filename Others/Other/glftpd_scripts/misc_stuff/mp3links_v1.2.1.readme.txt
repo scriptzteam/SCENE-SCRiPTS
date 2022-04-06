@@ -1,0 +1,25 @@
+Introduction
+~~~~~~~~~~~~
+This is a script by eur0dance to create links to MP3 releases according
+to genres, artist names and groups that made those release. This script
+is based on Jehsom's mp3 linker script called mp3links.cron. The new
+feature which was added is that it doesn't remove the contents of the
+link dirs anymore, it removes all the dead links and adds only the new links.
+This way the new release will have a correct date which is useful when you
+want to sort by date and see only the new releaseD. A great advantage of this
+script is that it doesn't rely on anything that you might do with your
+releases, such as moving them from place to place, preing and so on.
+
+Installation
+~~~~~~~~~~~~
+You need to run it from a crontab once a day (you can run it twice or more if you
+want, but generally once should be enough). I suggest to run it at 1:00 am during
+the midnight.
+
+Put the mp3links.sh file your glftpd's bin dir, edit the configuration section
+in it as it explained there through the comments.
+
+Add the following line to your crontab (edit your glftpd's bin path if needed) :
+0 1 * * *      /glftpd/bin/mp3links.sh >/dev/null 2>&1
+
+Enjoy!

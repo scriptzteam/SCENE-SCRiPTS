@@ -1,0 +1,49 @@
+#!/usr/bin/tclsh
+#(c) pull
+#imdb-dir 1.03
+#initial release: sometime 2003
+#last update 29/09/2004
+#
+#An IMDB script for those who like to keep things simple
+#
+#Features:
+#1) Create a directory with IMDB information in its name
+#2) Create a shorturl for quick access with IE/Mozilla/Netscape/Opera/Lynx....
+#3) Sends a for botoutput optimized string to the glftpd.log
+#4) Can be run from cron or zipscript
+#
+#Requirements:
+#1)Probably tcl 8.4+ I havent tried on earlier versions of tcl.
+#2)A working tclsh in /glftpd/bin/
+#
+#installation:
+#use your zipscript to execute readnfo.tcl on every nfo upload.
+#If you're using zipscript-c I recommend using the nfo patch from psxc.
+#zsconfig.h
+##define enable_nfo_script       TRUE
+##define nfo_script              "/bin/readnfo.tcl"
+#
+#The script is run from crontab
+#*/1 * * * *     /glftpd/bin/imdb-dir.tcl >/dev/null 2>&1
+#
+#
+#todo: 
+#do some documentation
+#clean up messy code
+#create a global config file
+#
+#changelog:
+#13/08/04 added browser identification
+#29/09/04 fixed a small bug in the imdb url grabber
+#29/09/04 adjusted script to an imdb layout change(genre)
+#29/09/04 option to run the script from the zipscript independent from cron.
+#
+#example:
+#<date> <trigger> <name of movie> <rating> <votes> <genre> <runtime in minutes>
+#Sun Jan 18 21:05:01 2004 IMDB: "Recruit, The (2003)" "http://german.imdb.com/title/tt0292506/" "6.6" "7,686" "Thriller" "115"
+#
+#for dark0n3's dZSbot.tcl
+#set msgtypes(DEFAULT) "IMDB"
+#set disable(IMDB)          0
+#set variables(IMDB) "%title %url %rating %votes %genre %length"
+#set announce(IMDB)  "\(%boldIMDB%bold\) %bold%title%bold has a rating of %bold%rating/10%bold with %bold%votes%bold votes"

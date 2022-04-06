@@ -1,0 +1,709 @@
+ 
+
+                                ±≤≤≤≤€≤≤≤≤±                                     
+
+                            ±≤€€€€€€€€€€€€€€≤±                                  
+
+                         ∞≤€€€€€≤≤≤≤≤≤≤≤±≤€€€€€±                                
+
+                       ∞€€€€€€€€€€€€€€€€€€€± ±≤€€                               
+
+                     ∞€€€≤€€€€€€€€≤≤±±          ±€≤                             
+
+                    €€≤≤€€€€€€€€≤≤≤€€€€€€≤±      ± ≤≤                           
+
+                  ≤€≤€€€€€€€€€€€€€€€€€€€€∞        €€∞€€∞                        
+
+                ∞€≤≤€€€€€€€€€€€€€€€€€€€            ≤€€±€€                       
+
+               €€≤€€€€€€€€€€€€€€€€€€€€±≤€€€€€€€≤±   ±€€≤€€≤                     
+
+             ∞€≤≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤±      ∞€€€€€€∞                   
+
+            ±€±€€€€€€€€€€€€€€€€≤∞ ≤€€€€€€€€≤           ≤€€€€€∞                  
+
+           ≤€≤€€€€€€€€€€€€€€€€€   ±€€€€€€€€   ∞±±±±±    ≤€€€€€∞                 
+
+          ≤€±€€€€€€€€€€€€€€€€€≤    ≤€€€€€€±±≤€€€€€€€€∞   ≤€€€€€                 
+
+         ≤€≤€€€€€€€€€€€€€€€€€€±    ≤€€€€€€€€€€€€€€≤±      ±€€€€≤                
+
+        ≤€±€€€€€€€€€€€€€€€€€€  ≤   ≤€€€€€€€€€€€€≤∞         ≤€€€€                
+
+       ±€±€€€€€±≤≤±±±±±≤€€€±   ≤± ∞€€€€€€€€€€€€±            ≤€€€±               
+
+      ∞€≤€€€€≤∞ ±       ±€∞   ≤€€€€€€€€€€€€€€€∞             ±€€€€               
+
+      ≤€±€€€≤            ≤± ±€€€€€€€€€€€€€€€€€≤€€€€€≤≤∞      €€€€∞              
+
+     ±€±€±≤€         ≤   ±€≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€±    ≤€€€≤              
+
+     €≤≤€± ≤ ±±   ±≤€€    €€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤∞   €€€≤              
+
+    ≤€≤€€€€± €€€€±€€€€∞   €€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€±  €€€≤              
+
+    €≤≤€€€€ ±€€€≤≤€€€€≤   €€€€€€€€€€€€€€€€€€€€€€€€€±          ≤€€≤              
+
+   ±€∞€€€€€ ≤€€€ €€€€€€   €€€€€€€€€€€€€€€€€€€€€€€±            ≤€€≤              
+
+   €≤≤€€€€€ €€€€ ∞€€€€≤   €€€€€€€€€€€€€€€€€€€€€€€€€€€€€±      ≤€≤≤              
+
+   €≤€€€€€€ ±≤±∞€ ∞€€€   ≤≤≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€€∞    ≤€€≤              
+
+  ±€≤€€€€±±≤   ≤≤       ±€  ±€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤   ±€€≤              
+
+  ≤≤≤€€€  ∞€≤±       ± ±€€±  ∞€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤  ≤€≤∞              
+
+  €±€€€±∞€€€€≤       ≤€€€€€≤∞    ±€€€€€€€€€€€€€€€€€€€€€€€≤≤±  ≤€±€€±            
+
+  €±€€€∞€€€€€≤      ≤€€€€€€€€∞    ≤€€€€€€€€€€€€€€€€€€€≤±      ≤€∞€€€≤           
+
+ ∞€≤€€≤€€€€€€≤ ± ±≤ ≤€€€€€€€€€    ≤€€€€€€€€€€€€€€€€€€∞       ≤€€ ±≤≤€≤          
+
+ ±€≤€ ±€€€€€€€±≤±≤≤∞≤€€€€€€€€€    ≤€€€€€€€€€€€€€€€€€±≤≤≤±±±±≤€€€ €€€±€∞         
+
+ ≤€€€±∞€€€€€€€€€€€€€€€€€€€€€€€≤  ≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€±€€€€≤€         
+
+ ≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤≤€€€€€≤∞        
+
+ ≤€€€€€€€€€€€€€€€€€€€€€€€€€≤≤€€€€€€€€€€€€€€€€€€€€€€€€€€€≤€€€€€€≤€€€€€€≤≤        
+
+ ≤€≤€€€€€€€€€€€€€€€€€€€€€≤∞≤€€€€€€€€€€€€€€€€€€€€€€€€€±±≤≤≤≤≤€€€€€€€€€€€€∞       
+
+ ≤€≤≤±±≤€€€€€€€€€€€€€€€€∞±≤±±∞  ∞±±≤€€€€€€€€€€€€€€€≤≤€€€€€€≤≤€€€€€€€€€€≤≤       
+
+ ±€∞ ±≤±±≤€€€€€€€€€€€€±   ∞±≤≤≤±∞    ±≤€€€€€€€€€€€≤≤€€€€€€€€≤€€≤±±±±≤€€≤€       
+
+ ∞€±≤€€€€≤±±≤€€€€€≤±±∞≤≤≤€€€€€€€€€€≤≤± ∞≤€€€€€€€€≤€€€€±   ∞€≤€∞ ±±±∞ ±€€€       
+
+  €€€≤±±≤€€€≤≤≤±±≤≤≤€€€€€€€€€€€€€€€€€€€≤±∞±€€€€€≤≤€€€∞     ∞€∞ ±€€€€€≤±€≤±      
+
+  €€€≤    ∞±±≤€€€€€€€€€€€€≤±±∞    ∞±±≤€€€€≤±±€€€±€€€    ±≤∞ €   €€€€€€€€≤€      
+
+   €€≤          ∞±≤≤≤±            ≤€€±   ±≤€€≤±±€€€±   €€   €  ≤±€€€€€€€€≤±     
+
+    ≤±                          ±€€€€€±        ≤€€≤   ≤€    €±€€±∞€€€€€±≤±≤     
+
+    ≤                ±         ≤€€€€€€€          ∞∞  ±€≤    ≤≤€€€€±€€€€ €€≤     
+
+    €                ≤∞∞      ≤€€€€€€€€≤             €€€€∞  ≤≤€€€€€€€€≤±€€≤     
+
+    € ±±           ± €±      €€€€€€€  ±€€           ±€€≤€€  ≤≤€€€€€€€€ ≤€€±     
+
+   ≤≤€€€€€∞        ∞±€      €€€€€€€€±   ±∞          ±€  ±€≤∞≤≤€€€€€€€∞ €€€      
+
+   ≤≤€€€€€€€±   ≤∞  €≤    ∞€€€€€€€€€€                    €≤±±∞€€€€€€ ∞€€±≤      
+
+   ±€≤≤ ≤≤€€€≤∞ ≤≤  €€   ±€€€€€€€€€€€                    ≤€±∞ €€€€≤∞≤€€±±       
+
+    ±±∞   €€€€€±€≤  ≤€±±≤€€€€€€€€€€€€∞                   ±€± ≤±≤≤±≤€€€±±±       
+
+          €€€€€€€≤  ±€€€€€€€∞€€€€€€€€                    ≤≤±∞€±≤€€€€≤∞±€±       
+
+          €€€€€€€±   €€€€€€± €€€€€€€€                    €±±±€€±±≤≤±≤€±≤€       
+
+        ∞±≤≤≤≤≤±±     €€€≤   ∞     ∞±∞≤≤±             ∞±≤≤ ±±€€€€€€€∞≤≤€≤≤      
+
+      ±∞               ±               ±              ≤≤≤  ±≤€€€€€€€≤∞€±≤€      
+
+      ≤±                                              ≤     ≤≤€€€€€€€∞≤≤€€≤     
+
+      ≤≤       ∞                                      ≤     ≤≤€€€€€€€≤∞€≤≤≤     
+
+      ≤≤                                              ∞ ∞≤∞ ≤≤€€€€€€€≤ €≤±€     
+
+      ≤≤      ±                  ≤≤≤≤∞                  ∞€€±∞€€€€€€€€≤ €≤±€     
+
+      ≤€      ≤                ±€€€€€€≤                  €€€∞€€€€€€€€€ €≤±€∞    
+
+      ≤€      €               ±€€€€€€€€€                 ∞€€≤±€€€€€€€€ ≤≤≤€±    
+
+      ±€     ±≤           ±  ±€€€€±∞±€€€€∞                 €€ €€€€€€€€ ≤≤±€±    
+
+       €±    ≤≤           ≤ ∞€€€≤  ≤€±≤€€€∞          ∞€€€€≤≤€≤€€€€€€€€ ≤≤±€±    
+
+       ≤≤    ≤≤          ≤≤±€€€±  ≤€€€∞≤€€€           €∞    €€≤€€€€€€≤ €≤ €     
+
+        €∞   ≤€         €±≤€€€± ∞≤ ≤€€€∞€€€€         ±€∞    €€≤€€€€€€≤ €≤∞€     
+
+        ≤€   ≤€≤     ∞€≤∞€€€€  ±±  ≤€€€≤±€€€€        ±€±    €€≤€€€€€€≤ €±≤€     
+
+         €±   €€€€€€€≤ ≤€€€€  ≤    ≤€€€€±≤€€€±        €≤   ∞€≤≤€€€€€€≤ € €≤±    
+
+          €∞   ±≤≤≤≤±€€€€€≤ ±±     ≤€€€€€≤€€€€        €≤   ≤€±€€€€€€€ ±€ €≤≤    
+
+          ±≤  ∞≤€€€€€€€€≤∞∞±∞   ∞±± ≤€€€€≤€€€€≤     ∞ ≤€∞±∞€€±€€€€€€€ ≤±≤€±     
+
+           ≤≤ €€≤≤≤≤≤≤≤∞±±±    ±≤    ±€€€≤±€€€≤     ≤≤ €€€≤€±€€€€€€€±∞€∞€€≤     
+
+            €≤€≤  ∞±±±±≤±     ±      ∞€€€± €€€€     €≤ ±€≤€€≤€€€€€€€ ≤€≤€±      
+
+             ≤€    €€€             ±≤€€≤   €€€€    ≤€±≤€€€≤≤≤€€€€€€≤∞€≤€€±      
+
+             ≤€     ±€≤±       ±±≤€≤≤∞     €€€€   ≤€±≤€€€€€€≤€€€€€€ €€€€±       
+
+             ≤€       ±≤€€≤≤€€€€≤±         €€€€  ±€±€€€€≤€€€≤€€€€€∞≤€€€∞        
+
+             €€±          ±±±∞             €€€€ ±€±€€€€€€≤≤≤€€€€€±≤€€€±         
+
+             €€€                          ±€€€€ ≤∞€€€€€€€€€€€€€€±≤€€€∞          
+
+             ≤€€≤   ≤±     ±€±            €€€€≤± €€€€€€€€€€€€€€±€€€≤            
+
+             ≤€€€≤  ≤€≤∞   ≤€€€∞         ≤€€€€≤ ≤€€€€€€€€€€€€≤≤€€≤∞             
+
+             ≤€€€€≤ €€€€€≤€€€€€€≤      ∞≤€€€€€  €€€€€€€€€€€€€€≤±                
+
+             ±€€€€€€€€€€€€€€€€€€€€≤±±≤≤€€€€€€∞ ≤€€€€€€€€€€€€≤±                  
+
+              €€€€€€€€€€€€€€€€€€€€€€€€€€€€€€±  €≤€€€≤€€€€€€∞                    
+
+              ≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€∞  ±€€€€€≤€€€€€                      
+
+               €€€€€€€€€€€€€€€€€€€€€€€€€€€    ≤€≤€€±€€€€€                       
+
+               €€€€€€€€€€€€€€€€€€€€€€€€€€∞    ≤≤≤€≤±€€€€                        
+
+               ∞€€€€€€€€€€€€€€€€€€€€€€€€±     ≤≤≤€∞≤€€€≤                        
+
+                ±€€€€€€€€€€€€€€€€€€€€€€≤      ≤∞≤€ €€€€±                        
+
+                 €€€€€€€€€€€€€€€€€€€€€≤       € ≤€ €€€€                         
+
+                 €€€€€€€€€€€€€€€€€€€€≤        €∞≤≤ €€€€                         
+
+                 ±€€€€€€€€€€€€€€€€€€≤         ≤≤±≤ €€€€                         
+
+                  ±€€€€€€€€€€€€€€€€±          ≤≤ € €€€€±                        
+
+                    ≤€€€€€€€€€€€€≤            ±€∞± ≤€€€≤                        
+
+                      ≤€€€€€€€€≤               €≤ ± €€€€±                       
+
+                        ±±±±±                  ∞€≤ ∞∞€€€€∞                      
+
+                                                ±€≤  ∞€€€€±       ∞∞±±≤≤€€€  
+
+                                                 ∞€€≤∞ ±≤€€≤∞             €    
+
+   ∞   GERMAN.RETAiL.XviD.RELEASiNG.RULES.2010.v2  ±≤€€€€€€≤±             € 
+
+   ±                                                                      ≤    
+
+   ≤                                                                      ±   
+
+   €  Requirements: Notepad with terminal font or any other ascii viewer. ∞  
+
+   €     
+
+   €€€≤≤±±∞∞
+
+
+
+
+
+
+
+
+
+
+
+
+
+ €€€≤≤±±∞∞ GENERAL:
+
+ €
+
+ € Jedes als deutsches Retail-DVDRiP/BDRiP getaggtes Release muss von einer
+
+ ≤ originalen, sich im Besitz der jeweiligen Group befindlichen DVD/BD stammen.
+
+ ± Dies impliziert, dass sowohl Video/Audio, als auch alle anderen fuer das
+
+ ∞ Release verwendeten Materialen (Subtitles), aus dem selben
+
+   Vobset/m2ts stammen und direkt von diesem encodiert oder extrahiert werden
+
+   muessen. Das Benutzen von DVDR-Releases, 720p oder 1080p bzw. das Klauen
+
+   einer fremden Source ist untersagt.
+
+   BDRiP und DVDRiP dupen sich gegenseitig
+
+                                                                               ∞
+
+   Als Compressor/Decompressor ist nur der XviD-Codec mit der Verwendung       ±
+
+   der 2pass oder CQ-Encodingmethode erlaubt.                                  ≤
+
+   Die Verwendung aktueller XviD-Binaries ist erlaubt.                         €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ VIDEO:
+
+ €
+
+ € Aufloesung und Seitenverhaeltnis:
+
+ ≤ - Breite: Es ist Min 512x Max 720X zu verwenden !!! 
+
+ ± - zu WS z‰hlt : 1:1,66 / 1:1,78 / 1:1,85 / 1:2,35 / 1:2,40         
+
+ ∞ - zu FS z‰hlt : 1:1,33                                                      ±
+
+   - Breite und Hoehe: Muessen ein Vielfaches von 16 sein (mod16)              €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+                                                             
+
+ €€€≤≤±±∞∞ Cropping:
+
+ € 
+
+ € - Das Bild muss komplett freigestellt sein, es duerfen keine schwarzen
+
+ ≤   Balken im XviD verbleiben
+
+ ± - Das Seitenverhaeltnis darf maximal 3% von dem des Input-ARs*
+
+ ∞   abweichen
+
+   - Das Input-AR sollte moeglichst exakt dem AR des freigestellten Videos
+
+     entsprechen; es sind maximal 4 weitere Pixelzeilen (jeweils oben+unten
+
+     oder links+rechts) als zusaetzlicher Overcrop erlaubt, um einen
+
+     niedrigeren AR-Error zu erhalten
+
+   - Grundsaetzlich gilt aber: Soviel Bild wie moeglich erhalten, wie es
+
+     innerhalb des AR-Error-Bereichs von 3% moeglich ist. Overcropping
+
+     gilt als technischer Mangel
+
+   - Der Zoomfaktor des Bildes darf 100% nicht ¸berschreiten (k¸nstliches
+
+     aufblasen des bildes nach dem croppen)
+
+
+
+   * Input-AR:
+
+     Beim Berechnen des AR-Errors wird stets vom Input-AR ausgegangen.
+
+     Das heisst, dass die endgueltige XviD-Aufloesung nicht mit dem
+
+     theoretischen, perfekten Seitenverhaeltnis, welches u.a. auf der
+
+     DVD-Huelle angegeben ist (z.B. exakt 1.85:1), verglichen wird,            ∞
+
+     sondern dem tatsaechlichen, also dem des freigestellten Bildes,           ±
+
+     das man nach dem Croppen erhaelt und erfahrungsgemaess in 95%             ≤
+
+     der Faelle von den theoretischen Werten leicht abweicht.                  €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ Size / Filmlaenge:
+
+ €   
+
+ € - 2pass Encodes muessen als Groesse das Vielfache von 50 MB (+/- 5 MB)
+
+ ≤   haben, und  mindest 50% und max 75% (+/- 3%) von der source an qualitaet 
+
+ ±   liefern, dieses ist durch ein compressionscheck festzustellen.
+
+ ∞   Ausnahmefaelle sind als Readnfo zu erklaeren.
+
+   - Video Bitraten CQ : 950 Kbps Min. und 1400 Kbps Max (+/- 20 Kbps),
+
+     Ausnahmefaelle sind auch hier als Readnfo zu erklaehren.
+
+   - Video Bitraten 2pass : keine , den dort gilt die qualitaets regelung.
+
+   - Bei CQ ist grundsaetzlich 2.40/2.60/2.80 zu verwenden.
+
+   - Sollte bei CQ 2.40 der Mindestdurchschnitt an Kbps unterschritten werden,
+
+     tritt die KBPS Regelung nicht in Kraft da diese als hoechste  
+
+     qualitaetsstufe gilt.
+
+   - Splitting auf eine bestimmte Size ist unnoetig.
+
+   - Die Maximalgroesse des avi ist 1,9GB = 2.040.109.465 Bytes und           
+
+     darf wegen Kompatibilitaet mit sap (ISO9660-Dateisystem) nicht 
+
+     ueberschritten werden.                                                    ∞
+
+   - Ein Encoding des Abspanns mit niedrigerer Bitrate als der Hauptfilm       ±
+
+     ist gestattet und erwuenscht, solange im Abspann keine nennenswerten      ≤
+
+     Bildinformationen enthalten sind.                                         €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ Deinterlacing:
+
+ €
+
+ € - Interlaced Sources muessen entsprechend deinterlaced werden               ∞
+
+ ≤ - NTSC -> PAL Normwandlungen muessen auf ihre urspruengliche Framerate      ±
+
+ ±   restored werden (hierfuer eignet sich besonders der "restore24" Filter)   ≤
+
+ ∞ - Progressives Encoden von interlaced Sources ist ein technischer Mangel    €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+  
+
+ €€€≤≤±±∞∞ Codec-Paramter:
+
+ €
+
+ € - Die Anwendung von QuarterPixel und GlobalMotionCompensation sind
+
+ ≤   aufgrund von diversen StandAlone-Inkompatibilitaeten ausdruecklich
+
+ ±   verboten
+
+ ∞ - Als Matrix muss MPEG oder H.263 verwendet werden; Custom Matrizen
+
+     sind verboten
+
+
+
+     Empfohlene Einstellungen XviD Codec CQ :
+
+
+
+     Profile @ Level : ASP@LVL5
+
+     Encoding Type Single Pass
+
+     Target Quantizer : (2.40/2.60/2.80)
+
+     Bvops : 2
+
+     Quantizer Ratio : 1.62
+
+     Quanitzer Offset 0.00
+
+     Adaptive Quantization : off     
+
+
+
+     Als Matrix fuer eine BluRay Source wird MPEG als Matrix empfohlen         ∞
+
+     und fuer DVD h.263 als Matrix.Als Resize Filter wird Lanczos empfohlen.   ±
+
+     Bei sehr schlechte Bildqualitaet z.B. starkes Filmkorn, Rauschen wird     ≤
+
+     Fluxsmooth als filter empfohlen um nicht das xvid unoetig aufzublaehen.   €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ AUDIO:
+
+ €
+
+ € - Als Audioformate ist nur AC3/MP3 erlaubt (DTS verboten). 
+
+ ≤ - Bei MP3-Audiospuren sind nur min 128 Kbps und max 160 Kbps vbr oder abr 
+
+ ±   (cbr verboten) erlaubt (+/- 5 Kbps).              
+
+ ∞ - Sollte die XviD aus einer Bluray encoded werden, ist die DTS oder AC3   
+
+     auf AC3 5.1 448/384 kbps zu konvertieren, ausser wenn die Ausgangsspur 
+
+     geringere kbps hat ist sie so zu belassen zb. AC3 5.1 224 oder 320kbps
+
+     oder eben direkt in mp3 zu wandeln.                                       ∞
+
+   - Dual Audio ist erlaubt aber kein technischer mangel wenn nicht vorhanden, ±
+
+     bei DL konnen die tonspuren verschiedene formate haben (MP3+AC3).         ≤
+
+   - AC3 Addons sind verboten, die group sollte sich vorher ueberlegen welches €
+
+     format sie fuer sinnvoll haelt im release.                                €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+
+
+ €€€≤≤±±∞∞ UNTERTITEL:
+
+ €
+
+ € - Deutsche und fremdsprachige Subtitles fuer den kompletten Film duerfen
+
+ ≤   im VobSub-Format beigelegt werden (Unterverzeichnis /Subs), sind aber
+
+ ±   keine Pflicht. Komplette Untertitelungen duerfen nicht hardcoded werden
+
+ ∞   (Ausnahmen sind Filme, in denen komplette Untertitelungen als
+
+     Forced.Subs* gezaehlt werden wie z.B. "Apocalypto")
+
+   - Forced.Subs* muessen im XviD-Release hardcoded enthalten sein, um Pro-
+
+     blemen mit den meisten DVD-Playern entgegenzuwirken (In manchen Filmen
+
+     wie z.B. "Apocalypto" gilt die komplette Untertitelung des Films als
+
+     Forced.Subtitle und muss somit ebenfalls hardcoded und als
+
+     German.Subbed getagged werden). Dies gilt auch fuer deutsch unter-
+
+     titelte Dokumentationen
+
+   - Das Fehlen von Forced Subs gilt als technischer Mangel
+
+
+
+   * Forced.Subs:                                                              ∞
+
+     Jene deutsche Subs, die auf der DVD/BluRay fuer das Untertiteln fremd-    ±
+
+     sprachiger, nicht deutsch synchronisierter Dialoge oder Aufschriften auf  ≤
+
+     Schildern/Papieren eingeblendet werden.                                   €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ PACKEN/WINRAR UND CO:
+
+ €
+
+ € - Die fertigen AVI-Container muessen in RAR-Archive (Kompressionsstufe
+
+ ≤   store/speichern) gepackt werde und auf 20.000.000/50.000.000 Byte grosse 
+
+ ±   Files gesplittet werden, *.r99 darf dabei nicht ueberschritten werden.
+
+ ∞ - Erwuenscht ist die Verwendung der Benennung von Teilarchiven im alten
+
+     Stil (*.rar und *.rxx). Das Einbetten von Wiederherstellungs-
+
+     informationen in die RAR-Archive wird ausdruecklich empfohlen
+
+   - Eine SFV muss beigelegt werden und Checksummen fuer
+
+     alle RAR-Archive des jeweiligen Releases enthalten
+
+   - Eine NFO-Datei muss sich im Hauptverzeichnis des Releases befinden
+
+   - Zu jedem Release muss ein Sample im AVI-Format beiliegen (/Sample),
+
+     welches zwischen 30 und 60 Sekunden lang sein kann und direkt aus der
+
+     Release-AVI extrahiert sein muss; seperates Encoden des Samples ist
+
+     verboten, da die Aussagekraft dadurch hinfaellig wird.
+
+   - Proof Picture der source bei pre retail (was frueher als 2 wochen vor 
+
+     dem deutschen retail date liegt)      
+
+   - Zu jedem Release muss ein m2ts raw sample oder vobsample, von zb. Extras
+
+     oder film (wen mehr sprachen in der source enthalten sind) der Bluray 
+
+     oder DVD, beiliegen wenn es schon ein deutsprachiges HD oder DVDR         ∞
+
+     Release gab.                                                              ±
+
+   - F¸r Proofs Seprates Folder und es muss auch mit rar gepackt und sfv       ≤
+
+     versehen sein                                                             €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ TAGGING:
+
+ €
+
+ € - Das Benennen der Dateien im Release bleibt den Groups selbst ueber-
+
+ ≤   lassen, sie sollte aber sinnvoll und ausreichend ausfuehrlich gewaehlt
+
+ ±   werden, um Dupefiles vorzubeugen
+
+ ∞ - Die Verzeichnisse sollten diesem Beispiel-Tag folgen, wobei
+
+     <*>-Ausdruecke editiert oder entfernt werden muessen, -Ausdruecke
+
+     sind optional und releaseabhaengig:
+
+  
+
+    <Film.Titel>.German.[SUBBED].[ANiME].[DOKU].[YEAR].[AC3].[PROPER].
+
+    DVDRiP.XviD.[iNTERNAL].[REPACK].[READ.NFO]-<GROUP>
+
+
+
+   - Das Einfuegen des YEAR-Tags nach der IMDB ist bei CineRetail/Major-
+
+     Releases optional, bei STV allerdings Pflicht                             ∞
+
+   - Weitere optionale Tags sind: CHRONO, DC, EXTENDED, REAL, REMASTERED,      ±
+
+     RERIP, RETAIL, SE, SUBBED, THEATRICAL, UNCUT, UNRATED                     ≤
+
+   - Das Einfuegen des YEAR-Tags bei XXX ist Optional                          €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ PROPER:
+
+ €
+
+ € - Ein Proper-Release ist notwendig und valid, wenn:
+
+ ≤ - Ein anderer Codec als XviD verwendet wurde (bad.Codec)
+
+ ± - Aufloesungen ausserhalb der gegebenen Grenzen verwendet wurden
+
+ ∞   (bad.resolution)
+
+   - Zoom Faktor hˆher als 100%
+
+   - X- und/oder Y-Aufloesung kein Vielfaches von 16 sind (!=mod16)
+
+     (bad.resolution)
+
+   - Ein groesserer AR-Error als 3% vorliegt (bad.ar)
+
+   - Unnoetig viel Bild an den Raendern gecropped wurde (overcropped)
+
+   - Nicht alle schwarzen Balken gecropped wurden (bad.crop)
+
+   - Interlaced Frames vorliegen (interlaced.frames)
+
+   - Ein anderes Audioformat als MP3 oder AC3 verwendet wurde
+
+     (bad.audio.Codec)
+
+   - Anstatt der Forced.Subs die kompletten Untertitel hardcoded wurden
+
+     (hardcoded.subs.throughout.whole.movie)
+
+   - Die Forced.Subs fehlen, nicht hardcoded oder out of sync sind
+
+     (missing.forced.subs bzw subs.out.of.sync)                                ∞
+
+   - Ein Proper ist max. bis 7 Tage nach offiziellem Store-Date moeglich       ±
+
+   - Bei einem Proper muss nicht die gleiche Source verwendet werden           ≤
+
+   - Kein Proof fuer eigene Source                                             €
+
+   - Min / Max qualitaet der source nicht eingehalten                          €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+ €€€≤≤±±∞∞ NFO:
+
+ €
+
+ € Fuer die NFO, die jedem Release pflichtmaessig beizulegen ist, gelten
+
+ ≤ folgende Minimalanforderungen:
+
+ ± - Releasedatum
+
+ ∞ - Kinostart oder STV
+
+   - IMDB-Rating + Votes und IMDB-URL zum Film
+
+   - Laufzeit
+
+   - Anzahl RARs oder Filesize
+
+   - Videoaufloesung
+
+   - Average Videobitrate
+
+   - Average Audiobitrate                                                
+
+   - Proper/Repack-Notes bei Proper/Repack-Release                             ∞
+
+   - Encodierverfahren  2pass oder CQ :                                        ±
+
+     bei CQ ebenfalls die CQ-Stufe und bei 2pass die % der qualitaet           ≤
+
+   - Forced Subs                                                               €
+
+                                                                               €
+
+                                                                       ∞∞±±≤≤€€€
+
+
+
+                                [ Signed By ]
+
+
+
+                  Empire GMA KiNOWELT NGX QoM SoW ViDEOWELT XF
+
+
+
+              [ Diese Rules gelten verbindlich ab dem 15.09.2010 ]
+
+                             
+
+
+
+                               [ Spezial Thx]
+
+
+
+                       Geht an XX^NFO fuer das ASCII !!!

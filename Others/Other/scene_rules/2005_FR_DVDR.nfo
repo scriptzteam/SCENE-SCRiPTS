@@ -1,0 +1,57 @@
+Rules DVDR-CLASSiQ ( 07.2005 )
+
+Apres la concertation de la plupart des teams DVDR-CLASSiK présentes sur la scène
+nous avons établis ces quelques regles :
+
+1. iMDB :
+   Les releases devront avoir une note au-dessus de 5.0 et un minimum de 1000 votes
+						 ou 6.0 et un minimum de 100 votes
+
+2. Les series de films ( ALiEN, RAMBO etc... ) :
+   La team qui release le premier film d'une serie de plusieurs a la priorite sur les 
+   films qui suivent l'ordre de la serie, sans periode de temps entre deux films de cette 
+   serie. Toutefois une team peut reprendre la suite de la serie apres accord avec la 
+   team prioriotaire. De plus les suites de films ne sont pas tenu de respecté la regle 1.
+
+3. CCE :
+   Si il ya reencodage de la vidéo, cela devra se faire avec CCE et un minimum de 5 pass.
+   La taille minimale d'une vidéo apres réencodage devra etre de 3.0Go.
+
+4. Reauthoring :
+   Le menu doit etre reauthored si il y a besoin ( suppression de boutons etc ... )
+   Les warnings, annonces FBi etc... devront etre retiré obligatoirement.
+
+5. Audio :
+   Audio FRENCH obligatoire et VO si présent, les autres audios ne sont pas obligatoire mais 
+   recommandés si il est possible de les mettres sans nuire a la qualité vidéo.
+
+6. Subs :
+   FRENCH, sous-titres de langue originale du film et US obligatoire si présent. Les autres
+   subs ne sont pas obligatoire mais recommandés.
+
+7. Format
+   Les releases devront etre mises en .img avant d'etre mise en .rar
+
+8. Dirtag
+   DVD5 : Nom.De.La.Rlz.Année.PAL/NTSC.FULL.FRENCH/MULTi.DVDR-TEAM
+   DVD FS: Nom.De.La.Rlz.Année.PAL/NTSC.FS.FRENCH/MULTi.DVDR-TEAM
+   sinon  Nom.De.La.Rlz.Année.PAL/NTSC.FRENCH/MULTi.DVDR-TEAM 
+
+9. Les All in one "dvdshrink" sont formellement interdit
+
+10. NFO
+    les informations suivantes doivent figurées dans la NFO
+    Release Name .:
+    Release Date .: 
+    Genre ........:
+    Bonus ........: yes ou no
+    Menu .........: Reauthored ou Untouched
+    video.........: Cce X pass ou untouched
+    Audio ........:
+    Subs .........:
+    Archives .....: 92*50mo
+    IMDB .........:
+    Allocine .....:
+
+
+Lu et approuvé par : CHOCAPiC - DREAMFORCE - FONDATION - HUNTER - iPoD - KzK - MFT - SDA - TEASPOON - WaDjeT - WiRE - Youppi

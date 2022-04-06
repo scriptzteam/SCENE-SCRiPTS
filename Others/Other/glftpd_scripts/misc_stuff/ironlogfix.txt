@@ -1,0 +1,19 @@
+/**********************************************************/
+/* logfix by IronMike 2005                                */
+/* Usage: ./logfix <logfile> <number_of_weeks_to_keep>    */
+/*                                                        */
+/* This sucker cleans your logs from a number of weeks    */
+/* which can be sent via commandline or the default       */
+/* number which is 2. The logs must have lines starting   */
+/* with a date, e.g glftpd.log. I guess this program is   */
+/* nice if u want a clean history. And in days like these */
+/* we all should have a clean history. I guess its also   */
+/* nice if u want to have smaller logfiles.               */
+/*                                                        */
+/* Compile: gcc logfix.c -o logfix                        */
+/* Maybe use it in a daily crontab                        */
+/*                                                        */
+/*                                                        */
+/*Have phun...                                            */
+/**********************************************************/
+

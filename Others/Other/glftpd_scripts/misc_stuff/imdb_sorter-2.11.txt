@@ -1,0 +1,28 @@
+IMDB Movie Sorter (rating) C-script
+
+Description: IMDB-sorter is a script that recursively travels trough all your 
+directories containing your movies (configurable).
+It looks for .nfo files and finds the IMDB url inside it. For each of them it'll 
+lookup the IMDB rating trough www.imdb.com and creates a link in a different 
+directory in the form: [x.x]-Orignial.realease.name-GROUP"
+
+The result will be a directory containing links to all your movies, sorted by IMDB 
+rating.
+
+Example:
+[6.4]-Jersy.Girl.DVDRiP.XViD-DEiTY
+[6.4]-Love.Actually.2003.NL.PAL.DVDR-AMSTEL
+[6.4]-New.York.Minute.DVDRiP.XViD-DvP
+[6.3]-13.Going.On.30.DVDRiP.XviD-BRUTUS
+[5.7]-Along.Came.Polly.2004.PAL.DVDR-AMSTEL
+[5.7]-Disney.Finding.Nemo.2003.PAL.DVDr-AMSTEL
+[5.7]-Disney.Snow.White.and.the.Seven.Dwarfs.1937.PAL.DUTCH.DVDR.FSN-EU
+[5.7]-Paycheck.2003.NL.PAL.DVDR-AMSTEL
+[5.7]-Runaway.Jury.2003.PAL.DVDr-FoA
+
+It's written in C for performance
+
+Author:   PalmOne
+Version:  2.11
+Filesize: 9.21 Kb
+Added on: 24-Aug-2004

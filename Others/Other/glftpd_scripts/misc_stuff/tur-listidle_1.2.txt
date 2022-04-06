@@ -1,0 +1,10 @@
+Tur-ListIdle (GL1&2)
+
+Description: A script to display all users and when they last logged on. Ment for 
+glftpd (not irc).
+Can also be configured so that someone can only see the users in the group in which
+they are gadmin, or with glftpd 2.+, all the groups in which they are gadmins.
+
+Author:   Turranius
+Version:  1.2
+Added on: 23-Jul-2004

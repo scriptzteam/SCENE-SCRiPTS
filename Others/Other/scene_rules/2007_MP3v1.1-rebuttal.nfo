@@ -1,0 +1,866 @@
+                    An Independent Critic presents                  
+                         A Rebuttal of......
+                    Official MP3 Release Rules 1.1
+
+       __________________________________________________________
+INTRO:
+-The rebuttal of TDX2K5 inspired me to take a look at the current MP3 rules
+ and scrutinize all the points I felt were inconcise and vague. The current
+ rules are adequate, though they could be much better. In no way is this
+ intended to disrespect or offend any of the honorable crews that signed the
+ current ruleset. With that said, some of the points I make may seem anal, but
+ I personally care about the future of the audio scene and would like to 
+ ensure its continued operation to provide HQ Audio to its members.
+-In contrast to the author of the TDX2K5 rebuttal, I am NOT a previous
+ signee of previous MP3 rulesets, nor am I part of an old and legendary crew.
+ Despite this, I fully understand why many of the rules were implemented in the
+ ruleset. I just felt that someone outside of the big groups should have the
+ opportunity to address any issues and concerns they may have. I hope this
+ will encourage anyone who agrees with my points to speak their mind and
+ cause much needed vigor in the MP3 scene. Any groups and all groups are welcomed
+ to include this in their .nfo, as well as make their own rebuttal. I also
+ dont want to make it seem I want the MP3 scene to be something extremely
+ difficult to be in, but many of the suggestions I make should
+ not be hard for most groups to integrate into their normal routine. I know MP3s
+ aren't as difficult to do as XviDs, DVDR re-encodes or X264 encodes, but
+ I feel they deserve a ruleset that's clear and eliminates any questions,
+ free of any grammatical errors and has a professional appearance.
+-Note: Yes I know the standard for nfos/txt is 80 char wide, but I'm doing this
+ late in the night since I have insomnia and have nothing else to do, so don't
+ dismiss this as pre spam/fake on those grounds. I wrote this article with
+ serious intentions.
+
+ Thanks for your time.
+
+       __________________________________________________________
+
+ 1. No Dupes !
+    Complete albums/releases are checked, not single tracks. So a release
+    is not a dupe if it has different or more tracks.
+
+    Exceptions:
+      1. It's also a dupe if the complete release is included in a
+         previous one. For example CDM is released, now someone releases
+         the CDS and all tracks of the CDS were already included on the
+         CDM (excactly the same tracks).
+      2. You are allowed to create a duplicate release from a release
+         that has a source of lower quality (a different source!).
+         Example: if vinyl is out then a CD-release is allowed.
+         If you do that then please add this info to NFO and dirname. For
+         online bought MP3s (-WEB-) we assume the best source quality
+         (CDDA or better).
+      3. All MIXED cds should be ripped as one track supplied with a
+         .cue. If they are not, they may be duped by another group that
+         releases it as one track with a .cue supplied.
+      4. If a WEB version has been released then a CD RETAIL version is
+         allowed if the CD version has scans/photos.
+
+    For all LIVE sources:
+       + If a show has already been released (e.g. another name, but the
+         mix is the same), no dupe of that same show is allowed. If the  
+         show is included in another release (for example, as a guest
+         mix), then it is not allowed either.
+       + If a show, containing a guest mix, is a partial dupe (either the
+         regular part of the show, or the guest mix), it is allowed to
+         release them both as a set. However, it is encouraged to release
+         only the new part if the other part is available in equal or  
+         better quality, denoting in the nfo why the other part was
+         omitted.
+       + If a show contains the broadcast of a commercially released CD,
+         it may not be released if the CD has already been released.
+
+    Note: if you want to release an import-album or some "extendend
+    edition" then check rule 7 as well !
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Point 1.1 contains a typographical error (excactly).
+-Point 1.2 is vague in respect to DVD, SACD, and DVD-A releases. What if
+ an album is released both in CDDA and DVD-A format? Could a proper rip
+ from a DVD-A disc dupe a CDDA one? Also, what exactly does the dupe
+ order look like? If I understand correctly, it should be as follows.
+
+Bootleg<Tape<Live<Vinyl<DAT<WEB<CDDA<DVD<SACD<DVDA<BD/HD DVD
+
+Correct? Y/N?
+
+-The Mixed CD rule should be tossed. Many devices, notably the iPod,
+ support gapless playback, along with many of the popular Media Players
+ these days. It's quite annoying to put a single .mp3 rip onto your
+ MP3 player or hard disk and not have direct access to the track you want,
+ isn't it? I have read many-a-NFOs from groups complaining about this rule ;P.
+-The note section contains a typographical error (extendend).
+-Another point that comes up are CDs that only have 1 track, and the entire
+ track is a mix. I recently heard someone say that all single mp3 rips require
+ a .cue file. The rules as they stand don't actually require this. Clarification
+ is needed for this type of CD. It should be noted in the rules that a tracklisting
+ for such rips would be very helpful, though not required.
+-Would a dupe of a previous release be allowed if the average bitrate was higher?
+ If seen a couple groups do this; A retail over a promo with the exact same
+ tracks, except the average bitrate is higher.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 2. An .SFV and .NFO file must be included in every release.
+    If you release a CUE file for multitrack mp3s then the CUE file must
+    include artist and tracknames if they are available on the cover or
+    inlay.
+
+ 3. Directoryname must at least contain:
+      1. Artist Name - Title - Published Year (decimal) - Group name
+         (extra info is allowed of course)
+      2. All bootleg releases must have the word BOOTLEG in dirname.
+         (check bootleg rule 14)
+      3. If you release magazine CDs then you must tag them as -MAG-.   
+         Don't tag them -PROMO-, -ADVANCE- etc..
+      4. The directory name of an INTERNAL release must end with _INT.
+         Example: Someone_Something-2007-GROUP_INT
+      5. For all LIVE sources:
+         It is not necessary to include the name of the station the show
+         is broadcasted on (if it is not included in the directory name, 
+         it is strongly encouraged to include it in the nfo instead). The
+         date must be the date of the broadcast. Both USA (-MM/DD-) and
+         EU (-DD/MM-) date format are allowed.
+
+    Exception:
+    If a vinyl/cd has no title then it's allowed to replace the title by
+    labelname+catnumber (both!). If there is only one artist on the
+    vinyl/cd then you must add the artistname.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Why should both USA and EU dating formats be allowed? Sounds like a
+ recipe for confusion. I'm not a Live ripper and most Live rippers/crews
+ probably already know who/what/where of a particular release, but since
+ the scene is based on standards, why not stick to a single standard dating
+ format to minimize confusion? Perhaps the ISO 8601 dating standard?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 4. Filename must at least contain:
+    Track Number - Song Title
+    If it's an album with different artists (one artist per track) then  
+    you must add the artist name as well ("VA-tracks" like mixes don't
+    need artistnames).
+    The song title for the filename must include the full title as it's  
+    written on the cover/cd/inlay with all additional infos like
+    remixed/featured stuff as long as it doesn't exceed the 128 char
+    limit.
+    Make sure that your filename is unique otherwise some sites might
+    dupeskip.
+
+    Exception:
+    If no tracknames are supplied by the source (cd,vinyl,..) then you
+    *must* provide proof that these tracks have no names. Either by a
+    scan of the original cover of the record company/label (no selfmade
+    cdr or bootleg covers) or a link to an official or trusted webpage
+    with proofs. If these "untitled tracks" are part of a big mix (no   
+    silence between the "tracks") then it's considered as one track and
+    you must rip it as one mp3/cue and give this track same name as the
+    "album".
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Reword 'Filename must at least contain' to sound less awkward.
+-"VA-tracks" like is grammatically incorrect.
+-Clarify the dupe filename rules. Does a release with duped filenames
+ get nuked and require a repack with unique filenames or a proper by
+ another group? Most veterans know about dupeskipping but I've seen
+ many of the new groups repack a release or release another rip of
+ an album and not take the time to make sure they have unique filenames.
+ Does this mean the release is wrong?
+-Does missing the extra info of features, remixed, etc. constitute a
+ nuke and a valid proper reason?
+-I've encountered some bootleg mixtapes without track names. The rules as
+ written state not to use bootleg covers. Does this mean it's not allowed
+ to release? Should a ripper attempt to name the tracks to his/her best
+ ability if a release has no track names?
+-See section 1 rebuttal regarding mp3/cue.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+
+ 5. Files/directories must only contain characters a-z A-Z 0-9 _ . - ()
+    This is to avoid problems with windows/linux-filesystem and
+    ftp-servers.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Some releases how trailing dots in their names. For example,
+ This Is Me...Then. Is it allowed to include the 3 trailing dots in the
+ dirname, or should they be replaced with 3 underscores or omitted entirely?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 6. Self-made releases
+      1. Self-made compilations are not allowed !
+         A self-made compilation is when you select tracks from other
+         sources, put them together and release that as something new.
+      2. A self-made MIX or completely self-made music is allowed if it's
+         good. Sites decide if it's shit by nuking it.
+         If you are releasing self-made stuff then that must be clearly 
+         visible in your nfo.
+         If it's not possible to see that it's self-made then it will get
+         nuked as bad pack.
+         Exception: if the selfmade release is free available at release
+         time or when you obviously know that it will be available soon
+         then it's not allowed to release it.
+
+    If it's not clear if it's selfmade or not and it's not possible to
+    find any information about the release/artist/label then it's up to
+    the group to prove that this release is not selfmade (coverscan, url,
+    ...). If they are not able to prove that it's real it will get nuked
+    as bad pack.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Clarify and re-write this entire section. When you make a homemade
+ mix/release of mainstream music, wouldn't you be taking tracks from
+ various sources? Or does this mean taking tracks from other scene releases?
+ I know what this section is trying to say, but it should be re-written
+ to omit all ambiguity.
+-'If it's not clear if it's selfmade...' should be re-worded to sound less
+ awkward. Try 'If it's not clear *that* it's selfmade...'
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 7. The entire CD,Vinyl,etc. must be released (not individual tracks) 
+    If you think it's too much work to rip all tracks you better don't
+    rip at all. Releasing the complete CD/Vinyl/.. is necessary because  
+    otherwise it would be possible to make several (different) releases
+    of the same cd/vinyl/etc..
+
+    Exception for albums:
+    If a RETAIL album has been released and you have a different edition
+    of the same album (foreign/promo/advance/..) then it's allowed to
+    release the new/bonus tracks only. But you may NOT re-release an
+    entire inital edition within the first three months except if ... :
+    ... it's a 1disc release and more than 30% of the tracks of your 
+        version are not on the previous retail version.
+    ... it's a multi disc release and either more than 30% of the tracks
+        or at least 6 tracks of your version are not on the previous 
+        retail version.
+
+    Moreover, it is NOT allowed to re-release a new edition of an retail
+    album EVER if the different/extra/bonus tracks are already included
+    in one (!) previous release. For example, USA album is released and
+    four months later japanese with simply a remix from an old CDM/CDS
+    still wouldn't be allowed.
+
+    Example1: album released in US with 10 tracks, japanese edition with
+    11 tracks (1 bonus track that is a new song) then you MUST release
+    the jap bonus track only (without including previously released  
+    tracks of the US album) during the first three months after first 
+    full retail release. If it's more than 3 months later then you are   
+    allowed to do either the bonustrack-only or the full album.
+
+    Example2: After the retail you got a promo with 1 different track.  
+    Then it's not allowed to release this full album within 3 months. If
+    the bonus track was already out on a different release then it's not
+    even allowed to release it bonus-only.
+
+    Example3: Your different edition has 13 tracks of which 9 were on the
+    first retail release and 4 (= more than 30%) are new. Then you are 
+    allowed to release the full album even within first 3 months. Except
+    when the 4 new tracks were already all on ONE previous release. Then
+    a release isn't allowed at all.
+
+    For DVD(A) releases check Rule 10.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Typographical error (inital).
+-'you better don't rip at all.' Try 'you should not rip it at all.'
+-Clarify this new edition rule. What if you have a new edition with of a
+ certain album and it's bonus tracks spread over 2 or more old releases,
+ CDM/CDS/etc. Would it be allowed to release it then? I know the 3rd example
+ says ONE, but I have my doubts about releasing bonus tracks of a particular
+ album when all of them are already out on older releases.
+-Have respect for the Japanese. All countries/nationalities should be
+ capitalized. My professors have given me -50 for each instance they are not.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 8. Current maximum directory/filename-length is 128 characters
+    Exception: Dirfixes that reach the limit by adding "-DIRFIX-"
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Speaking of dirfixes, they shouldn't be allowed in the MP3 scene because
+ MP3s have ID3 tags, and a dirfix does nothing to correct any mistakes there.
+ A dirfix may technically fix a misspelled Justin Timberlay in the db's,
+ but your media player/digital audio player is going file it under
+ Justin Timberlay, not Justin Timberlake. At this point could either edit
+ the tags, which will invalidate your .sfv, or keep 2 copies of it. One with
+ the typo, and one with proper tagging. Yes, dirfixes save space and credits,
+ but to me it's like a temporary fix that should be permanently fixed, which
+ is always better in the long run. Repack/Proper it instead. And don't be such
+ wuss to take the nuke for a repack :P. Dirfixing saves credits, bandwidth, and
+ a nuke, but do really want your files to be mistagged?
+ ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 9. No fake-releases
+    It's a fake release when artist, title, group or source is incorrect
+    (different).
+  
+    examples:
+    - Some_Artist-Crappy_Music-2004-GRP not released by GRP
+    - Another_Artist-Lots_of_Noise-CDM-2004-GRP was ripped from TV or
+      downloaded from a paysite
+    - Madonna-Something_New-2004-GRP really containing some tracks by
+      Marilyn Manson
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-In the html notes version of the rules, it says '...a release tagged DVD
+ and "source: CDDA" in NFO is not allowed).' There are quite a few
+ releases out now that have this error. Does this constitute a nuke? Would
+ group be able to proper for this reason?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+ 
+
+10. DVD/DVDA Ripping
+    A DVD/DVDA release must contain all music tracks. Additional tracks
+    (interviews etc.) are optional. If those extra tracks are not
+    included then a proper (with ALL tracks) or an additional release   
+    (extra tracks only) is not allowed.
+    
+    If tracks are available in several audio formats then you must use
+    the "best" version.
+    Priority is:
+    - PCM stereo (doesn't matter if DVDA or CDDA quality)
+    - PCM 3+ channels
+    - AC3 (dolby digital) stereo or DTS stereo
+    - AC3 (dolby digital) 3+ channels or DTS 3+ channels
+    - MPG
+    
+    Examples:
+    - DVD contains AC3 5.1 and AC3 2.0 => you must rip the AC3 2.0 tracks
+    - DVD contains PCM and AC3 2.0 => you must rip the PCM tracks
+    - DVD contains MPG and AC3 2.0 => you must rip the AC3 2.0 version
+    
+    Normalizing the sound volume is allowed but optional.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-See Section 1 rebuttal regarding the dupe rules.
+-I assume if a group doesn't choose the best soundtrack, a proper with the
+ best soundtrack is allowed?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+11. Encoding Quality
+      1. For releases made from MP3s (online bought) and which are not SBD:
+         VBR (all combinations, but no maximum bitrate limit) and CBR is 
+         allowed. The minumum bitrate for CBR is 192kbit.
+
+         => You release the MP3 as is. It is NOT allowed to re-encode! If
+         the source is below 192 kbit CBR it's not allowed to release it.
+         Release the MP3 unmodifed as you downloaded it. Only
+         adding/changing ID3 tag is allowed.
+
+         If you want to release a -WEB- mp3 file with constant bitrate
+         (CBR) then you must choose the best version (320->256->224->192
+         kbit) available at the shop.
+
+      2. For ALL other sources (CD, Vinyl, DVD, SBD, CABLE, LINE, etc.):
+         You must use either:
+         - LAME 3.97 (final version!) with preset V2 and VBRNEW 
+           ("-V2 --vbr-new") or
+         - LAME 3.90.3 (modified version preferred) with preset APS  
+           ("--alt-preset standard").
+         For both LAME versions additional switches which would affect
+         the mp3 quality are forbidden, especially no minimum or maximum
+         bitrate limits.
+  
+         If you use LAME 3.90.3: preset must either be stored in mp3   
+         header (= modified LAME version) or be part of info in your nfo
+         file.
+         (If you are going to change your encoder now then switch to
+         3.97. LAME 3.90.3 will probably be removed from this rule in 
+         next rules version)
+  
+      3. The sampling rate must be either 44.1khz or 48khz. 32khz is not
+         allowed. Downsampling to 44.1 or 48khz is allowed (if source is
+         better), upsampling to 44.1 or 48khz is not allowed.
+  
+      4. For all LIVE sources: Straight-to-mp3 encoding is allowed, but
+         discouraged. The header of the mp3 file must be correct at all
+         times.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Typographical error (minumum).
+-Point 11.1 should be re-written. I don't think -WEB- releases are made from
+ MP3s, are they? If so, that sounds like a re-encode, which would violate rule
+ 13 below as well as the note directly below 11.1. Section 1 had it right
+ assuming CDDA or better, or do you mean releases *consisting* of MP3s
+ purchased online?
+-Typographical error (unmodifed).
+-Lame 3.98 offers better encode quality over 3.97 (high bitrate too!). See:
+
+ http://www.hydrogenaudio.org/forums/index.php?showtopic=55767
+ http://www.hydrogenaudio.org/forums/index.php?showtopic=56778
+ http://www.hydrogenaudio.org/forums/index.php?showtopic=55697
+
+ When this encoder becomes final, rules should be re-written to allow it to be
+ used, in order to produce the best quality MP3s.
+ Lame 3.90 as much as it is historic and revolutionary, considering it allowed
+ us to utilize the -aps system, should be retired at this point. It's a dinosaur
+ in the land of encoders these days.
+-Point 11.2 would be a spot to emphasize rippers to check their encoding
+ parameters. Many people mess up in EAC by choosing LAME MP3 Encoder in the
+ encoder section, causing a minimum bitrate to be applied. It should be
+ User Defined Encoder.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+12. Promos   
+    If a release is considered not to have every track from the source   
+    then it must be labeled as a promo and can be duped by any legitimate
+    retail release that DOES contain all tracks. The legitimate release
+    can be identified by the CAT number, or more suitable proof.
+  
+    Promos do not have to contain track listings, they are promotional
+    material, they are not considered legitimate releases, and are still
+    governed by quality rules.
+  
+    If you release a promo when the retail is already out then you must  
+    provide proof that this promo is real to make sure this is not a
+    selfmade "promo".
+  
+    to reduce amount of fakes:
+    A one track promo single release must include cover scans/photos.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Clarify one track scan/photo rule. Does this apply to promos only?
+ What about one track retail releases or a single bonus track for
+ a retail album? I've seen some unnukes stating that the scan/photo
+ rule for a single track release only applies to Promo releases,
+ which shows the confusion regarding this rule. Also note this
+ scan rule is under the 'Promos' section, further causing
+ confusion.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+13. Re-encodes are not allowed.
+    Exception: releases of following sources are currently allowed if 
+    they are tagged correctly:
+    DVD, DAB, DVBC/DVBS/DVBT/SAT (compressed digital tv/radio
+    sat,cable,terrestrial), MD (live)
+
+14. All bootleg releases must have the word BOOTLEG in dirname
+    A bootleg recording is a cd/vinyl/dvd that was not officially
+    released by the person/company owning the rights to do that (for
+    example streetmixes, pirate live cds, etc).
+  
+    Because very often it's not 100% clear if something is bootleg there
+    are conditions when we assume something is or isn't bootleg. This is
+    not a defnition of "bootleg" and if a condition is not true then it 
+    does not mean the opposite is true. This only helps nukers and groups
+    to decide if a bootleg tag is needed and hopefully leads to more fair
+    nuking.
+  
+    conditions for:
+    [records done completely by the artist] (no samples from other  
+    artists)
+    It's bootleg if ...
+      - there are no signs that the label really released this
+      - the "label" has no connection to the artist
+    (independent releases (no label, own label) are allowed and don't
+    need a bootleg tag)
+    
+    even if the conditions above are true it is NOT bootleg if:
+    - the record is available at at least 3 major retail shops
+    
+    conditions for:
+    [mixes] (samples of other artists included)
+    It's not bootleg if ...
+      - the record is available at at least 3 major retail shops
+      - the label exists and lists the record and the label never released
+        any bootlegs and released stuff that was available at major retail
+        shops
+      - the artist or label of the samples confirms this release is valid
+        (on their webpage or some other trusted place)
+
+    "major retail shops" currently are:
+    www.amazon.com (.de, .fr ...)
+    www.bestbuy.com
+    www.walmart.com
+    www.cduniverse.com
+    www.virginmegastores.co.uk (.gr, .fr, .jp) (US shop excluded)
+    www.sonymusicstore.com
+    www.juno.co.uk
+    www.deejay.de
+    www.ukdancerecords.com
+    www.dancegrooves.com
+    www.threebeatrecords.co.uk
+    www.4djsonly.com
+
+    The shop itself must sell the record (no private sellers).
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-This section needs to be clarified so everyone understands what exactly
+ bootleg is. From what I understand, it's a cd/vinyl/dvd that was not
+ officially released by the person/company owning the rights, as stated
+ in the first paragraph. But many people just seem to skip over this
+ and go to the latter part of this section and check if it's available
+ at the listed http sites. If it is not, a release gets nuked as
+ mislabeled bootleg. Someone might want to highlight the indie
+ label/artist section in caps, bold, asterisks, etc.
+-The 2nd paragraph is a mess. '...if a condition is not true then it
+ does not mean the opposite is true.' Opposite of what? There are too many
+ pronouns causing ambiguity. Also, there is a typo (defnition).
+-Typographical error (available at at).
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+15. FREE MP3s
+    If music in mp3 format in acceptable quality (CBR 192kbit minimum) or
+    files in a lossless format (wav/flac/...) are legally available for  
+    download on the net at no cost (artist / record company allows it)   
+    then it's NOT allowed to release those files or mp3s of the same
+    tracks you made from this or other sources (cd/vinyl/...).
+
+16. SOURCE
+    The tracks of a release must all be from the same source and have the
+    same quality/cbr-bitrate/vbr-setting/encoder/setting. Taking tracks
+    from other scene releases or internal group releases of other groups
+    is strictly forbidden.
+    If the source is not a pressed CDDA then the directory name needs a
+    valid source tag. Valid tags are listed below.
+
+    =RETAIL SOURCES=
+     [CD SINGLE] (pressed CDDA)
+     dirtag needed: -CDS- or -CDM-
+     
+     [CD ALBUM] (pressed CDDA)
+     dirtag needed: none
+     dirtag suggested: -CDA- (-2CDA- -3CDA- etc.)
+
+     [CD OTHER] (pressed CDDA)
+     dirtag needed: none
+     dirtag suggested: -CD- (-2CD- -3CD- etc.), -CDEP-
+     
+     [VINYL SINGLE]
+     dirtag needed: -VLS- or -VINYL-
+     dirtag suggested: -VLS-
+
+     [VINYL ALBUM]
+     dirtag needed: -LP- or -VINYL-
+     dirtag suggested: -LP-
+     
+     [VINYL OTHER]
+     dirtag needed: -VINYL-
+     
+     [DVD] (pressed video DVD)
+     dirtag needed: -DVD- (-2DVD- -3DVD- etc.)
+     extra nfo info needed: 
+      - codec of source (AC3, PCM, MPG, DTS),
+      - number of channels of source (stereo, 5.1, ...)
+
+     [DVD SINGLE] (pressed video DVD)]
+     dirtag needed: -DVDS- or -DVD- 
+     dirtag suggested: -DVDS- 
+     extra nfo info needed:
+      - codec of source (AC3, PCM, MPG, DTS),
+      - number of channels of source (stereo, 5.1, ...)
+     
+     [DVDA] (PCM data of a pressed DVDA, not audio of a video DVD!) 
+     dirtag needed: -DVDA- (-2DVDA- -3DVDA- etc.)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [SACD]
+     dirtag needed: -SACD- (-2SACD- -3SACD- etc.)
+
+     [HD DVD] (pressed) 
+     dirtag needed: -HDDVD- (-2HDDVD- -3HDDVD- etc.)
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [BLU-RAY DISC] (pressed) 
+     dirtag needed: -BD- (-2BD- -3BD- etc.)
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+    =LIVE SOURCES=
+     [ANALOG RADIO] (terrestrial)
+     dirtag needed: -FM-
+     
+     [ANALOG CABLE] 
+     dirtag needed: -CABLE-
+
+     [ANALOG OR DIGITAL SAT]
+     dirtag needed: -SAT-
+     
+     [DIGITAL VIDEO BROADCAST SAT]
+     dirtag needed: -DVBS-
+     
+     [DIGITAL VIDEO BROADCAST CABLE]
+     dirtag needed: -DVBC-
+     
+     [DIGITAL VIDEO BROADCAST TERRESTRIAL]
+     dirtag needed: -DVBT-
+     
+     [DIGITAL AUDIO BROADCAST]
+     dirtag needed: -DAB-
+     
+     [MD] (MiniDisc)
+     dirtag needed: -MD-
+     
+     [direct recording by the ripper from soundboard/mixer through the 
+      LINE-in interface]
+     dirtag needed: -LINE-
+
+     [MP3 FILE supplied by a radio station or DJ] (and not recorded from 
+      a webstream)
+     dirtag needed: -SBD-
+
+     [WEBSTREAM] (not allowed, so must be released internally)
+     dirtag needed: -STREAM-
+
+    =OTHER SOURCES=
+     [WEB] - audio files legally available on the net and not free 
+     dirtag needed: -WEB-
+     extra nfo info needed:
+      - codec of source (MP3, PCM, ...),
+      - bitrate of source file (if not PCM/WAV),
+      - URL to some shop where it's available in that format
+     
+     [CDR] (small label/artist releasing CDDA on CDR pr LIVE set supplied 
+            on CDR)
+     dirtag needed: -CDR- (-2CDR- -3CDR- etc.)
+     
+     [DVDR] (small label/artist releasing on DVDR)
+     dirtag needed: -DVDR- (-2DVDR- -3DVDR- etc.)
+     extra nfo info needed:
+      - codec of source (AC3, PCM, MPG, DTS),
+      - number of channels of source (stereo, 5.1, ...)
+
+     [HD DVD RECORDABLE]
+     dirtag needed: -HDDVDR- (-2HDDVDR- -3HDDVDR- etc.)
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [BLU-RAY DISC RECORDABLE]
+     dirtag needed: -BDR- (-2BDR- -3BDR- etc.)
+      - codec of source (AC3, DD+, PCM, MPG, DTS, DTS-HD, Dolby TrueHD)
+      - number of channels of source (stereo, 5.1, ...)
+
+     [DAT TAPE] 
+     dirtag needed: -DAT-
+     
+     [ANALOG TAPE] 
+     dirtag needed: -TAPE-
+     
+     [HOMEMADE] (done by a groupmember or close friend)
+     dirtag needed: -HOMEMADE-
+     
+     [UNKNOWN]
+     dirtag needed: -BOOTLEG-
+
+
+    All other "sources" are invalid source tags (-LIVE- , -EP-, ...).
+    Which means you need a second tag for the source if you use those
+    tags (except for CDs which don't need a source tag).
+
+    A SBD release is not allowed if it could be a re-encode/repack of the
+    same show streamed or downloaded free from inet. If a free broadcast
+    or download is/was available with 160kbit CBR or better then it's not
+    allowed to do a SBD release.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-I know a few groups that miss some required information from the  
+ source. For example, they may list the codec of source, but omit the
+ number of channels of the source, or do the opposite. Some just
+ forget to include this info at all. I assume a proper release with
+ the correct info is allowed? What about -WEB- releases omitting the
+ webshop url?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+17. Trackfixes
+    Only one trackfix per release is allowed. If the release needs a
+    second trackfix or more than 50% of the tracks need a fix then you
+    must re-rip the whole release and all previous releases+dir/nfofixes
+    getting nuked.
+    A 1-track fix for a 2-track release is allowed (=50% and not "more  
+    than 50%").
+
+18. ID3 Tags
+    All mp3 files need an ID3 v1.1 tag. This tag must include Artist,
+    Title and Album (see Note #3). The fields Year, Genre and Tracknumber
+    must be present but may not be nuked if incorrect.
+    An additional ID3 v2 tag is allowed and recommended.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-I don't see a reason why ID3v2 tags should not be required? The standard
+ is almost 10 years old now. Virtually everything supports it. Don't
+ you find it annoying when a track name is cut short from the ID3 tags
+ because the release only has ID3v1 tags?
+-What if a release has the correct filenames, but the ID3 fields for
+ artist, tracknumber and title are all incorrect? An odd occurence since
+ most groups name their filenames as track-artist-title, but this recently
+ happened to a release, so this issue must be addressed.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+19. LIVE release quality
+      1. The set must be complete. This means that every part of the show
+         must be released, and the beginning and end must be included in
+         their entirety. A set may not miss more than 1 minute from begin
+         or end.
+      2. All commercials must be edited out.
+      3. DJ talk can be included to a certain extent: track announcements
+         and short lines from the DJ should not be removed; interviews
+         and other long talk should be removed (or included in a separate
+         file if it's special).
+      4. It is encouraged to fade-in and fade-out the set. However, lack
+         of fades constitutes no proper reason.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-I'm not a Live ripper, so I can't speak for any of the rules for that
+ segment. We'll leave it to those who specialize in them to debate the
+ rules.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+Notes:
+ 1. Releases with an apparently incorrect year may not be nuked. However
+    the year should be correct of course. Keep in mind that a lot of
+    sites nuke for fake year when it's incorrect. (The Year in dirname is
+    not the year when you released it but when the record company/artist
+    published it!)
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-It takes me less than 20 seconds on Google
+ to find the release year for many albums. Some groups will just tag
+ an incorrect year, most likely to the current year or something ahead
+ of its actual year so their stats look better/spreads more. Also, many
+ CDs/DVDs have a copyright year imprinted on them, which is something
+ to go by. I know some albums are impossible to find a release year
+ (I've been there), which is probably why this note exists, but I felt
+ it should be addressed so others can elaborate on it.
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 2. If a release labeled as "advance" is identical to the retail version
+    then the advance turns into a retail release. This means then it is
+    not allowed to dupe it and it counts as retail for ALL rules. If the
+    retail is different then of course it's allowed to release it.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-This note is vague. Different in what way? What if the retail has less
+ tracks than the advance and all the tracks in the retail version are
+ already included in the advance? What if it has more? What if the extra
+ tracks are already included in an old CDM/CDS. I understand that
+ rule 7 has been re-worded to include promo/advances, but they haven't
+ addressed the opposite situation of Promo/Advance vs. Retail. What if
+ the average bitrate of a retail is higher than an advance? Does this section
+ also apply to promos of upcoming retail albums?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 3. Typos (in dirname, trackname, id3, etc ...) are tolerated if it still
+    is readable and either artist or title is 100% correct.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Any typos/misspelling of the artist, song title or track number should
+ not be allowed at all. Yes, I know people are in a rush to release things
+ these days, but why should we should we sacrifice the accuracy of our
+ typing when we spend so much time focusing on proper encoding and
+ packing. Seems like a weak spot in the rules. Since late 2004, RNS hands
+ down had the best tagging of any group; very rarely did they have typos
+ in their tagging. Why can't others do the same? The rules for encoding
+ and filenaming are already strict, why be lax on the typing? I understand
+ that many people who rip stuff may not be familiar with the music they
+ are doing, or the covers have them wrong, which is probably why this note
+ is here, but I just find it unacceptable when a mainstream album,
+ which the ripper should know is a big release, has typos in them, when
+ it's almost certain the covers have them correctly.  This is especially
+ true for any album released on the big labels. Perhaps an exception
+ should if the covers themselves mess it up and the group can supply proof?
+ But seriously, I hate how some of the releases have obvious typos that
+ should have been corrected. A good example of this would be to do
+ !dupe form. Many of these releases actually mean from. Perhaps a way to
+ solve this issue is to allow a proper with the correct spelling and
+ supplied proof to make sure they didn't retag the old release and release
+ as their own?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+ 4. The audio of a normal video DVD is *NOT* DVDA ! The audio of a DVD
+    usually is MP2/AC3/DTS compressed (lossy) while the audio of a real
+    DVDA is high quality PCM (lossless, e.g. 24bit/192khz). Tagging a
+    normal DVD release as -DVDA- will get nuked.
+
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Rebuttal:
+-Technically speaking, LPCM 16bit/48 KHz is a valid mode for DVD-A, which
+ is a format also found on DVD Video. Refer to: http://en.wikipedia.org/wiki/DVD-A
+ Perhaps omitting the 2nd sentence and replacing it with something stating
+ any release sourced from a DVD Video Disc tagged as DVDA will get nuked?
+ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+Addendum:
+
+The ruleset should have a section describing Propers, similar to what the
+TXD2K5 and TDR2K5 rulesets have. What constitutes a valid proper? An
+invalid proper? What about regarding rips with flaws released under an
+older ruleset? Another issue on deck, what constitutes a valid nuke?
+I assume any violation of the ruleset? I know many groups get quite
+grouchy when they are nuked, so I feel it should be precisely explained
+what will get you nuked, and what will not get you nuked.
+
+I hope my points spark up talk and debate amongst the MP3 Scene so we all 
+can make the MP3 scene a better place to be and kick up the quality another notch.
+None of my points are meant to be the ultimate fixes or the final say of a point,
+but I do wish to encourage change and advancement in the ailing MP3 Scene. I
+probably left out a few points I wanted to mention, but considering the
+fact I wrote this entire article in one sitting, I guess that's just fine.
+This Took approximately 6.5 hours to complete. I believe
+I have typed more than 2,800 words, a little over 3/4 of what the current
+ruleset comprises of. My objective was to raise certain points and issues
+in the current ruleset. Since no one else seems to have the will to say
+anything and give the rules a good read, I feel that I have pointed out
+most issues in the current ruleset. Perhaps next revision will see
+some changes in the rules ;). May the audio scene prosper!
+Yes, MP3s are probably one of the easier releases to do on the scene, but
+if the MP3 scene is so easy, why is it on a daily
+basis people screw up releases? I tried to keep a NPOV and address issues
+as a whole, but I'm pretty sure I wandered off at a few points; for that
+I'm sorry. Compared to the rest of the sections in the warez scene, MP3s
+seem to hold a low quality point, which is ironic since they are quite simple
+to do and should be held to higher standards. I know some rules are carried
+over from tradition and old roots, kind of like how 0day still utilizes
+.diz files. But I feel that some of the rules (mp3/cue for example) are quite
+outdated and need to be removed. The MP3 scene also needs to keep pace with
+technology and encoder development (Hydrogen Audio is a good place to start)
+in order to keep our end releases at the very best quality they can be. C'mon
+guys, this is the scene! Let's keep our hobby alive and the quality up.
+But don't forget, nothing can replace the original!
+
+On a side note, there seems to be a lack of progress outside of the general
+audio scene other than MP3. There are other formats other than MP3, you know.
+Sooner or later, a successor to MP3 will emerge. Not in the near future, but
+MP3s will be surpassed by better lossy compression eventually. People should
+start to experiment and keep pace with the ever-changing encoding technology
+to ensure an HQ copy. As for lossless encoding, I'm surprised that FLAC hasn't
+gotten any rap at all. Most people could not tell the difference between
+a -V2 MP3 and a FLAC encode, but I believe the choice should be there for the
+taking. I personally have some nice gear (hts.jpg) where it is quite easy to
+distinguish a -V2 MP3 from it's CDDA original (I also base my quality claims
+of the Lame revisions through the headphones and system pictured).
+I know most people don't have such equipment, but I can compare compressed
+lossless audio to what the current X264 HD scene it, simple an awesome upgrade
+if you care for it. Plus, equipment gets better every year, soon today's
+current standard may feel inadequate a few years down the raod.
+I feel the audio scene should spread its wings and atleast
+start a FLAC section, as it seems to be the most dominant compressed lossless
+codec of choice. They certainly don't have to be pre-releases; just something
+that is available to us. FLAC contrasts with DVD9 releases as it is actually
+smaller than the original, but using lossless encoding methods it's just like
+a 1:1 copy. If DVD9s are regularly traded and released on the scene, why can't
+a 1:1 copy of an audio cd come out occasionally. Again, most people can't
+justify the 350+MB jump in space for a single release, but it should
+atleast be available for us. Let sites decide if they want to add that
+section. I hope this put ideas of the brains of many people. Maybe we can
+actually start to see some variety in audio choices, especially for the
+discerning audiophile. 
+
+            V1.1 Rebuttal active since 2007-09-21, signed by:
+
+                                  Me,
+                                Myself
+                                And I.

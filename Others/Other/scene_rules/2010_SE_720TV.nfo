@@ -1,0 +1,228 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿  
+³                                                                             ³  
+³             The SWEDiSH 720p x264 TV Releasing Standards 2010               ³  
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ  
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿  
+³     Requirements: Notepad with terminal font or any other ascii viewer.     ³  
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´  
+³                              ÀÄÄÄ[ INTRO ]ÄÄÄÙ                              ³
+³ This is a re-written version of the tvx2642k8.nfo                           ³
+³ from 'The.720p.x264.TV.Releasing.Standards.2008' to fit the shows on        ³
+³ Swedish television! The main reason why we need our own set of rules is     ³
+³ that our shows air with 640kbps ac3 audio, and with the runtime/sizes       ³
+³ from the other ruleset we often ended up with low video bitrates.           ³
+³                                                                             ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ  
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿  
+³                          ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                          ³  
+³                                                                             ³  
+³  This document takes effect starting with shows airing 2010-02-24.          ³  
+³                                                                             ³  
+³  Episode Sizing:                                                            ³  
+³   - 12:15 - 16:30 =  373MB                                                  ³  
+³   - 16:30 - 24:45 =  559MB                                                  ³  
+³   - 24:45 - 30:15 =  746MB                                                  ³  
+³   - 30:16 - 45:00 = 1119MB                                                  ³  
+³   - 45:01 - 60:30 = 1493MB                                                  ³  
+³   - 60:31 - 90:00 = 2239MB                                                  ³  
+³   - Other runtimes should be scaled to keep a minimum video bitrate of      ³  
+³     2800kbit/s at a multiple of 559 or 746MB.                               ³  
+³   - Releases must be no more than 2MB undersized and must be no more than   ³  
+³     the even division of a 4479MB DVDR. For example, a 44:00 release must   ³  
+³     be no more than 4479 * 1/4 = 1119.75 MB, and a 25:00 release must be    ³  
+³     no more than 4479 * 1/6 = 746.5 MB.                                     ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Audio:                                                                     ³  
+³   - Must be original source audio, AC3 if available                         ³  
+³   - Re-encoding/transcoding audio is forbidden                              ³  
+³   - Dupes based on audio format are forbidden and should be tagged INTERNAL ³  
+³   - Sources with clipping audio will be considered a nuke                   ³  
+³   - Multi-language audio tracks are allowed. Multiple languages must be     ³  
+³     muxed into the MKV. These languages must be identified in the container ³  
+³     when muxing.                                                            ³  
+³   - Audio that is 80ms or more out of sync or drifts more than 80ms         ³  
+³     between any two points (e.g. needing -60 at one and +20 at another) is  ³  
+³     considered to be technically flawed and may be propered                 ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Video:                                                                     ³  
+³   - 720p sources are not to be resized. In the event of imperfections       ³  
+³     lasting the majority of the episode, the release shall be cropped with  ³  
+³     borders added to retain 1280x720 resolution                             ³  
+³   - 50fps 720p video  must be dropped to 25fps using SelectEven()           ³  
+³   - 1080i sources are to be cropped and resized using Lanczos/Lanczos4.     ³  
+³   - 1080i video sources must be deinterlaced with LeakKernelDeint.          ³  
+³   - Group watermarks of any kind on the video will not be tolerated         ³  
+³   - Intros, outros, betweenos, or any other form of defacement of the       ³  
+³     episode will not be tolerated                                           ³  
+³   - Sources that sideconvert 1080i to 720p (such as Bell Expressvu) are     ³  
+³     banned                                                                  ³  
+³   - Upconverted sources must not be done as 720p.x264. See notes regarding  ³  
+³     HR.PDTV.x264.                                                           ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Codec/Container:                                                           ³  
+³   - Must be x264 revision: 1400 or higher must be used                      ³  
+³   - Must use Matroska (.mkv) for container                                  ³  
+³   - Stripping or falsifying encode information in the file header is banned ³  
+³   - Must be High Profile (MeGUI requires this to select some options)       ³  
+³   - Custom Matrices are allowed                                             ³  
+³   - Must be minimum 2 passes. The final pass must be done as one continuous ³  
+³     encode spanning the entire episode, i.e. may not be segmented.          ³  
+³   - Deblocking must be used; values are at the discretion of the group but  ³  
+³     must be the same between passes (default is enabled, 0:0 settings)      ³  
+³   - Adaptive quantization must be used (enabled by default in builds >=     ³  
+³     805 from x264.nl)                                                       ³  
+³   - Chroma M.E. must be used (enabled by default)                           ³  
+³   - M.E. Algorithm (--me) must be multi hexagon (umh) or better             ³  
+³   - Subpixel refinement (--subme) must be 6 or 7                            ³  
+³   - Trellis (--trellis) must be 1 or higher                                 ³  
+³   - Number of Reference Frames (--ref) must be 3 or higher                  ³  
+³   - CABAC must be used (enabled by default)                                 ³  
+³   - Macroblock options (--partitions) must be default                       ³  
+³     ("p8x8,b8x8,i8x8,i4x4") or higher ("all")                               ³  
+³   - Adaptive DCT (--8x8dct) must be used                                    ³  
+³   - Number of B-frames (--bframes) must be 3 or higher and must be the same ³  
+³     in both passes                                                          ³  
+³   - Adaptive B-Frames must be used (enabled by default)                     ³  
+³   - B-Pyramid (--b-pyramid) must be used in both passes                     ³  
+³   - Weighted B-Prediction (--weightb) must be used                          ³  
+³   - Bidirectional M.E. (--bime) must be used                                ³  
+³   - B Frame mode (--direct) must be set to Spatial (default) or Auto and    ³  
+³     must be the same for both passes                                        ³  
+³   - Suggested command lines:                                                ³  
+³     x264.exe --pass 1 --level 4.1 --stats x264.stats --bitrate 2800         ³
+³     --threads auto --bframes 3 --me dia --ref  1                            ³ 
+³     --no-mbtree --b-pyramid normal --subme 1 --no-dct-decimate              ³ 
+³     --partitions none --output NUL tv.avs                                   ³ 
+³                                                                             ³
+³     x264.exe --pass 2 --level 4.1 --stats .stats --bitrate 2800             ³
+³     --threads auto --bframes 3 --no-mbtree --b-pyramid normal               ³
+³     --weightb --me umh --ref 3 --mixed-refs --subme 6 --trellis 1           ³
+³     --analyse all --8x8dct --output tv.mkv tv.avs                           ³
+³                                                                             ³  
+³                                                                             ³
+³  Resolution:                                                                ³  
+³   - 1280 x 720                                                              ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Subs:                                                                      ³  
+³   - Optional                                                                ³  
+³   - VOBSUB is the preferred format                                          ³  
+³   - Subtitles must be muxed into the MKV. "Subs" directories are forbidden. ³  
+³   - Burned subtitles will only be allowed when the source exhibits          ³  
+³     such subtitles in the picture itself                                    ³  
+³   - Release muxed with subs must still adhere to the filesizes listed above ³  
+³   - Multi-language subtitles cannot be used as a basis for a dupe           ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Packaging:                                                                 ³  
+³   - All releases must be MKV                                                ³  
+³   - Releases must be packed with RAR and broken into 50,000,000 byte RARs;  ³  
+³     100MB RARs are allowed for releases 2200MB and larger.                  ³  
+³   - Multi-episode releases should not be split                              ³  
+³   - Compression must not be used                                            ³  
+³   - Recovery and MD5 record are optional                                    ³  
+³   - Encryption or password protection is forbidden                          ³  
+³   - Must have SFV and NFO                                                   ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Credits/Previously On:                                                     ³  
+³   - Not required. Ripper's discretion.                                      ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Samples:                                                                   ³  
+³   - REQUIRED!                                                               ³  
+³   - Roughly sixty seconds length and in a separate folder marked as Sample  ³  
+³   - Must be taken from the episode - not encoded separately                 ³  
+³   - Stream samples are recommended for any questionable issue with the      ³  
+³     source, e.g. no IVTC possible, IVTC to 24.975fps, etc.                  ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Propers:                                                                   ³  
+³   - Propers are only permitted in the case of a technical flaw in the       ³  
+³     original release (e.g. Bad IVTC, Interlacing, missing footage, resizing ³  
+³     720p source, bad crop, commercials, bad x264 settings used, bad source, ³  
+³     etc.)                                                                   ³  
+³   - Sample of propered release is encouraged                                ³  
+³   - Proper reason must be stated in nfo                                     ³  
+³   - Qualitative propers are not allowed                                     ³  
+³   - Propers based upon the rules set forth here are allowed only on         ³  
+³     releases that come after this document is made public                   ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Directory Naming:                                                          ³  
+³   - Show.Name.SXXEXX.720p.SWEDiSH.HDTV.x264-GROUP for normal series         ³  
+³   - Show.Name.YYYY-MM-DD.720p.SWEDiSH.HDTV.x264-GROUP for sports/daily shows³  
+³   - Show.Name.PartXX.720p.SWEDiSH.HDTV.x264-GROUP for miniseries            ³  
+³   - ALL others are FORBIDDEN. (e.g 0x00 000 EXX.EP.TITLE)                   ³  
+³   - The use of audio format tags such as AAC, AC3, and AC3.x.x is FORBIDDEN ³  
+³   - READ.NFO is allowed; however, discretion is recommended                 ³  
+³   - PROPER.READ.NFO is NOT allowed. The NFO is REQUIRED to have a reason;   ³  
+³     therefore, the tag is redundant.                                        ³  
+³   - Other permitted tags are: PROPER, REPACK, RERIP, REAL, UNCUT, SWESUB,   ³  
+³      INTERNAL                                                               ³  
+³   - Acceptable characters in naming a directory include (NO spaces or       ³  
+³     double dots - single dots ONLY):                                        ³  
+³                                                                             ³  
+³       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ³  
+³       abcdefghijklmnopqrstuvwxyz                                            ³  
+³       0123456789._-                                                         ³  
+³                                                                             ³  
+³                                                                             ³  
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ  
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿  
+³                        ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³  
+³                                                                             ³  
+³  HR.PDTV.x264:                                                              ³  
+³   - HR PDTV x264 encodes are allowed for shows airing on an HD channel but  ³  
+³     that do not air in HDTV                                                 ³  
+³   - 4:3 resolution is 720x544, 16:9 resolution is 960x544                   ³  
+³   - 16:9 shows must fill the screen on the source broadcast. Widescreen     ³  
+³     shows letterboxed within a 4:3 frame within a 16:9 frame (aka           ³  
+³     windowboxing or postage stamp) lack sufficient source resolution to     ³  
+³     warrant releasing in an HR format.                                      ³  
+³   - Releases must be cropped and resized as necessary                       ³  
+³   - Sizing is as follows:                                                   ³  
+³      Animation                                                              ³  
+³       12:15 - 16:30 =  139MB                                                ³  
+³       16:30 - 24:45 =  186MB                                                ³  
+³       24:45 - 33:00 =  279MB                                                ³  
+³       33:00 - 49:45 =  373MB                                                ³  
+³       49:45 - 66:15 =  559MB                                                ³  
+³       66:15 - 99:30 =  746MB                                                ³  
+³      Live action                                                            ³  
+³       12:15 - 16:30 =  186MB                                                ³  
+³       16:30 - 24:45 =  279MB                                                ³  
+³       24:45 - 33:00 =  373MB                                                ³  
+³       33:00 - 49:45 =  559MB                                                ³  
+³       49:45 - 66:15 =  746MB                                                ³  
+³       66:15 - 99:30 = 1119MB                                                ³  
+³   - All other standard rules apply                                          ³  
+³                                                                             ³  
+³                                                                             ³  
+³  Internals:                                                                 ³  
+³   - All INTERNALS must follow SWETVx2642k10 rules apart from the time length³  
+³     rules                                                                   ³  
+³   - NOTE: INTERNAL dirfix is allowed as a basis of avoiding a nuke          ³  
+³                                                                             ³  
+³                                                                             ³  
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ  
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿  
+³         The Swedish 720p x264 TV Releasing Standards 2010 (2010-02-23)      ³  
+³                                                                             ³  
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ  
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿  
+³                        À--------[ GROUPS ]--------Ù                         ³  
+³                                                                             ³  
+³              SWETVx2642k10 rules created by the following groups:           ³  
+³              ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ               ³  
+³                         HDR xD2V TELEFUNKEN sweHD                           ³  
+³                                                                             ³  
+³                                                                             ³  
+ÀÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÙ  
+     À----\  Thanks to the x264 developers for their assistance in  /----Ù       
+      À----\     determining the best mix of encode settings.      /----Ù        
+       À----\  Edited By n 2010. Respect goes to all x264 teams.  /----Ù       

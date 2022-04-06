@@ -1,0 +1,72 @@
+ - INTRO
+ 
+ These standards are designed to give the enduser more of a choice of where they play the release. The initial mkv is a quick and easy way to play on a computer. While the bluray image can be burned and played on bluray standalones and Playstation 3. 
+
+ - GENERAL
+ 
+ 1.1)  RAR/SFV/NFO needed.
+ 1.2)  Rar's must be 50, 100, or 150 mb. but no more than 100 rars per BD.
+ 1.3)  Releases must be an mkv container with tool(s) to convert it to a compliant bluray iso. (the UDF 2.5 image cannot be mounted with windows xp 64 bit and subs\chapters are only supported by powerdvd8 off the iso, which is why the initial mkv)
+ 1.4)  NFO must contain: Release Date, IMDB (or other site) url, Runtime, Audio and Video Bitrate.
+ 1.5)  Directory Format: Movie.Name.Year.<PROPER\READ.NFO\REPACK.(720p\1080p).(BD5\BD9).x264-GROUP
+ 1.6)  NO intros, outros, added watermarks, or any other form of defacement of the film will be tolerated.
+ 1.7)  Credits must not be removed (see also 1.11) but they may be encoded at a lower bitrate as long as they don't contain any footage (bloopers, story, etc).
+ 1.8)  A ~60 second sample cut from the release is required in a 'Sample' directory.
+ 1.9>  In the case that multiple BD5\9 are needed, each BD must be packed in its own directory (DISC#\DISK#)
+ 1.10> Homemade menus are not required but encouraged when more than one title is to fit on the bluray (eg tv series)
+ 1.11> In the case of a slight oversize of the bluray, tsmuxer may be set to cut off (split at 4481\8151MB) a maximum of 30 seconds of credits as long as there is no footage removed.
+ 1.12> In the case of TV episodes, 1 release per episode with a meta file in the last episode of the BD5\BD9 to create a BD of the set.
+ 1.13> TV episodes must not contain chapters in the BD to allow easy skipping between episodes, except if the BD has a menu with episode selection
+ 1.14> If for any reason any standards cannot be met it must be explained in the nfo.
+ 
+ - SIZES
+ 
+ 2.1>  The bluray iso must fit on its intended media (DVD+R or DVD+R DL)
+ 2.2)  Suggested 720P<iso>: 15-24 min = 746MB <6 per BD5) | 25-37 min = 1120MB (4 per BD5)  | 38-49 min = 1493MB (3 per BD5) | 50-74 min = 2240MB (2 per BD5) | 75-148 min = 4480MB (BD5) | 149min+ = 8150MB (BD9)
+ 2.3)  Suggested 1080P<iso>: 15-24 min = 1018MB <8 per BD9) | 25-49 min = 2037MB (4 per BD9) | 50-90 min = 4075MB (2 per BD9) OR 4480MB (BD5) | 91-105 min = 4480MB (BD5) OR 8150MB (BD9) | 106-197 = 8150MB (BD9) | 198+ = 2xBD5\9
+ 2.4)  A max undersize of 52 MB from media maximum is tolerated (4430 for BD5, 8100 for BD9)
+ 2.5>  An accurate bluray bitrate calculator such as RipBot264 should always be used to get the video bitrate.
+ 2.6>  In the case of a feature length movie it should at least fill a BD5
+  
+ - AUDIO
+ 
+ 3.1)  Only AC3 and DTS allowed
+ 3.2>  Use the core of DD+ EAC3 TRUE-HD DTS-HD when possible
+ 3.3>  If transoding is needed, DTS -> DTS 768kbps only, AC3 source may not be transoded, except DTS\AC3 -> AC3 448kbps is allowed only in cases where 640/768 kbps is under the minimum video bitrate but 448 kbps is over the miniumum
+ 3.4)  All audio should be proper 5.1, with correct channels, except in the case of stereo/mono only.
+ 3.5)  Only original language audio track may be muxed into the mkv except if the movie isn't English spoken and there is an English dubbed track in which case original language and English tracks are encouraged. 
+ 3.5)  Other language audio may be released as another release with a batch (.bat) file that will mux the audio into the mkv/bluray.
+ 3.6>  In the case of LPCM as the only available audio it should be encoded to DTS 1536/768 or AC3 448 depending on the video bitrate.
+ 
+ - VIDEO
+ 
+ 4.1>  x264 must be used to encode
+ 4.2)  Required average bitrate: 720P = 3500-8000 kbps | 1080P = 5000-12000 kbps
+ 4.3)  All movies must be at their original framerate
+ 4.4>  Must be compliant to level 4.1 high profile
+ 4.5>  3 reference frames must be used
+ 4.6)  Must use bframes 
+ 4.7>  Maximum of 3 consecutive bframes, setting 3, 2 or 1 max consecutive is encoder's discretion
+ 4.8)  Must use a minimum of 2 passes
+ 4.9>  Max bitrate must not exceed 38 mbps 
+ 4.10> A keyframe must be inserted at least every 24 frames
+ 4.11) Cropping, AddBorders is allowed when there is unwanted stuff in the borders but output resolution must be 1280x720 or 1920x1080
+ 4.12) Custom natrices not allowed
+ 4.13) x264 vfw (Video for Windows) not allowed
+ 4.14> Required settings during 2nd pass: --keyint 24 --ref 3 --bframes=<3 --me=>hex --subme=>6 --b-rdo --bime --partitions p8x8,b8x8,i4x4,i8x8 --8x8dct --mvrange 511 --aud --nal-hrd --vbv-bufsize 30000 --vbv-maxrate=<38000 --sar 1:1 and CABAC (--no-cabac is NOT allowed)
+ 4.15> Suggested settings
+ 
+ x264.exe --pass 1 --bitrate <bitrate> --stats "<statsfile>" --level 4.1 --keyint 24 --min-keyint 1 --ref 1 --bframes 3 --direct auto --subme 1 --partitions none --vbv-bufsize 30000 --vbv-maxrate 38000 --me dia --threads auto --thread-input --sar 1:1 --progress --no-psnr --no-ssim --output NUL "<input>" --mvrange 511 --aud --nal-hrd
+
+ x264.exe --pass 2 --bitrate <bitrate> --stats "<statsfile>" --level 4.1 --keyint 24 --min-keyint 1 --ref 3 --mixed-refs --bframes 3 --trellis 1 --b-pyramid --b-rdo --bime --weightb --direct auto --subme 7 --partitions p8x8,b8x8,i4x4,i8x8 --8x8dct --vbv-bufsize 30000 --vbv-maxrate 38000 --me umh --threads auto --thread-input --sar 1:1 --progress --no-psnr --no-ssim --output "<output>" "<input>" --mvrange 511 --aud --nal-hrd
+
+ - SUBTITLES
+ 
+ 5.1)  If english subtitles exist they must be ocr'd to srt, muxed into mkv and muxed in during the bluray imaging. This will also provide the overhead needed for endusers to mux in their preferred sub language without cutting or encoding.
+ 5.2)  For 720P all subtitle languages must be converted into vobsub format and merged into 1 idx\sub set and included in a Subs directory with the release. (2 idx\sub sets are allowed if more than 8 languages, 3 if more than 16, etc.)
+ 5.3>  For 1080P all original sup files must be compressed and included with the release inside the Subs directory, english sup may be used instead of the srt from the mkv for bluray image.
+ 5.4>  Bad subs are not a reason for proper\repack. A SUBFIX release with a batch file to replace the bad subs with good ones in mkvmerge is appropriate for such cases. 
+
+ - DIGITAL SIGNATURES (alphabetically)
+ 
+ Chakra DOWN HD1080 iNFAMOUS METiS REFiNED

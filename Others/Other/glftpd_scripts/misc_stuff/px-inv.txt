@@ -1,0 +1,42 @@
+# Secure invite script v0.9 by pexi
+# This script is in development stage.
+# USE AT OWN RISK.
+# Please report any bugs, ideas or comments!
+# irc: pexi @ efnet
+# mail: me@pexi.net 
+
+# PURPOSE:
+# Some sites have invite from irc disabled due to security reasons.
+# With this script users can add their irc bnc/host from site and get
+# invited from irc. The script checks if users host matches with the one he
+# has added if it does, the bot invites him.
+# The script can also announce invite messages to channel (also bad invites)
+# Allowed format for hosts is:
+# ident@*.domain.host.com ident@host.com ident@ip.ip.ip.*
+
+
+# INSTALLATION:
+# cp px-inv.tcl -> bot script folder and load it to your eggdrop
+# cp px-inv.sh /glftpd/bin
+# cp px-inv_verify.sh /glftpd/bin
+# IF YOU DONT HAVE PASSCHK IN YOUR GLFTPD BIN FOLDER THEN:
+# gcc -lcrypt -O2 -o passchk passchk.c
+# and cp passchk /glftpd/bin
+# the passchk binary that comes with darkon3's zs is ok. 
+# edit px-inv.sh, px-inv_verify.sh and px-inv.tcl
+# add 
+# site_cmd irc_inv         EXEC    /bin/px-inv.sh
+# custom-irc_inv           *
+# to glftpd.conf
+# make px-inv.sh px-inv_verify.sh px-inv.tcl executable (chmod +x)
+# touch /glftpd/ftp-data/misc/px-inv.data (this is the default path)
+# make sure px-inv.data can be read and write.
+# done.
+
+# USAGE:
+# From site:
+# site irc_inv (shows valid commands)
+# site irc_inv list (shows users currently added irc host)
+# site irc_inv add ident@host (adds users irc host)
+# From irc:
+# /msg botname !invite(or what your trigger is) user pass

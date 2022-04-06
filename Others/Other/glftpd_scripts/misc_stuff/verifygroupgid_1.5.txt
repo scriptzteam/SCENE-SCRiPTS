@@ -1,0 +1,11 @@
+VerifyGroupGID (GL1&2)
+
+Description: This is a small script that verifies (and fixes) that the users 
+primary group is the gid defined for that user in the passwd.
+Certain scripts forget to check this when adding or removing groups from userfiles 
+*cough* tur-trial It will also check that each user has an entry in the passwd and 
+that every line in the passwd matches a userfile.
+
+Author:   Turranius
+Version:  1.5
+Added on: 27-Sep-2003

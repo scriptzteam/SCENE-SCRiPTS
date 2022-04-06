@@ -1,0 +1,61 @@
+
+                                    public_undupe_v1.0.1 by eur0dance                                                     
+                                    =================================
+Introduction
+~~~~~~~~~~~~
+
+This is a public undupe script. By public I mean that anybody on the site channel can undupe
+any file. This is good if you want to enable your users to undupe files if no siteop or users with
+C flag are around. Due to the fact that the command is done on the channel - everybody can see it
+and report if there is an abuse. This script is meant for people who are experienced with Linux/Unix. 
+If you don't understand something about how to set it or why doesn't it work, try to understand the
+comments inside the "undupe.sh" file. I can't really help you beyond that. The script has been tested
+on RedHat and Debian. I am sure it works on Slackwere/Mandrake as well. About *BSD systems, it might not
+work there, if it does, let me know, if not and you fixed it, plz notify me about the fix so I could add
+it to the next version of this script.
+
+
+Installation
+~~~~~~~~~~~~
+
+1.
+  Copy the "undupe.sh" file to your glftpd bin dir and read VERY carefully to my comments inside,
+  especially the "Installation" section, everything is there.
+2.
+  The script isn't standalone one, it works together with the sitebot tcl. This means you need to
+  bind a function for it to pub "!<sitename>undupe" command for channel. For zipscript-c and project-zs
+  scripts by DarK0n3 this is done by adding the following line to dZSbot.tcl:
+
+  bind pub -|- [set cmdpre]undupe undupe
+
+  After adding it you need to add the actual undupe function which will invoke the
+  "undupe.sh" script and print its output to the channel. Again for Dark0n3 zipscripts
+  this is the function you need to add to dZSbot.tcl (if your glftpd bin path is not standard
+  you will need to edit it in this function):
+ 
+  #################################################################################
+  # UNDUPE A FILE                                                                 #
+  #################################################################################
+  proc undupe {nick uhost hand chan args} {
+   global cmdpre sitename
+    if {[lindex $args 0] != "" } {
+       set output [exec /glftpd/bin/undupe.sh [lindex $args 0]]
+    } else {
+       set output [exec /glftpd/bin/undupe.sh]
+    }   
+    putserv "PRIVMSG $chan :-$sitename- \[PUBLIC UNDUPE\] - $output"
+  }
+  #################################################################################
+
+  If you use a different sitebot tcl than the one supplied with zipscript-c/project-zs
+  then you need to do something very similar to what I wrote, of course with the needed
+  changes, according to your sitebot tcl script.
+
+Enjoy!
+
+P.S
+   I can only help you with this script if you find errors inside my documentation 
+   (which shouldn't happen) or find some bug (which shouldn't happen as well, since I've
+   tested the script on two sites for some time).
+--------------------------------------------------------------------------------------------------------------
+                                                             eur0dance from EfNet

@@ -1,0 +1,24 @@
+Tur-TopDown
+
+Description: This produces a file containing the most downloaded releases, to be 
+presented in the welcome message or wherever you like really.
+
+It does this by using the transfers and relsize MySQL databases, so make sure 
+you're running tur-xferlog_import and tur-relsizeupdate first !
+
++-----------------------------------------------------------+
++                Top downloaded since 2005-01-01 !          +
++-----------------------------------------------------------+
++ (# Of DL's) (size) (Total DL) (Release)
++ Section: KERNELS
+  5.56  4487MB   24987MB   BLABAL
+  3.02  4504MB   13604MB   FEKFEFE
+  2.98  4446MB   13265MB   fefefefefe
+  2.50  4363MB   10949MB   32425235
+  2.28  4554MB   10420MB   4324234
++ Section: SRPM
+....
+
+Author:   Turranius
+Version:  1.0
+Added on: 12-Jul-2005

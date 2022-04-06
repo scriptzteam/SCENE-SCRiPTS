@@ -1,0 +1,12 @@
+DatedDel (GL1&2)
+
+Description: A script to go through dated dirs and look for releases over a certain
+size. It can then automatically delete those based on searchwords or ask you what 
+to do as well as just log it.
+Made for the simple reason that I do not want to archive games over 50 meg in the 
+0DAY section. 
+Comes with a few more options / settings.
+
+Author:   Turranius
+Version:  1.2
+Added on: 26-Jun-2003

@@ -1,0 +1,66 @@
+-------------------------------HEADER------------------------------
+
+IRCnick: QwErTy256
+E-MAIL : qwerty@jelenia.pl
+URL    : http://www.grandis.nu/glftpd/
+FTP    : <none>
+
+-----------------------------Introduction--------------------------
+
+I was using many trialscript, but i didnt saw any good. So i write
+my own, and now i give this to your hands.
+
+--------------------------------NEEDED-----------------------------
+
+-Perl
+-Perl-Date-Calc module
+-eggdrop
+
+-----------------------------Installation--------------------------
+
+In Linux
+
+mv qtrial.1.0.1.tar.gz /glftpd/bin
+cd /glftpd/bin
+tar -zxvf qtrial.1.0.1.tar.gz
+rm -rf qtrial.1.0.1.tar.gz
+mv qtrial.tcl /glftpd/sitebot/scripts/
+chmod 755 qtrial*
+mkdir /glftpd/ftp-data/trial_users
+chmod 777 /glftpd/ftp-data/trial_users
+touch /glftpd/ftp-data/misc/botfile
+chmod 777 /glftpd/ftp-data/misc/botfile
+
+-edit your crontab (crontab -e):
+0 */1 * * * /glftpd/bin/qtrial_checker.pl > /dev/null 2>&1
+
+-edit conf (vi /glftpd/bin/qtrial_config.pl)
+-edit tcl (vi /gfltpd/sitebot/scripts/qtrial.tcl) and change name of chan
+-edit eggdrop config and add:
+source scripts/qtrial.tcl
+
+end ;> i didnt test on other OS.
+
+---------------------------------Using-----------------------------------
+
+all comands write on irc.
+
+!addtrial <user>    => this command add <user> to trial and now user 
+                       must up some mb in some days ;>
+
+!trial <user>       => test trial for user
+
+!trial              => show all users on trial
+
+-------------------------------ChangeLog---------------------------------
+
+1.0.2 -> fix: some lame bugs
+         new: !trial show all users on trial 
+
+1.0.1 -> frist version
+
+----------------------------------Gretz----------------------------------
+
+QwErTy256 merci: dark0n, eur0dance, GL TEAM, hyperpunk, kusiak, Turraniu
+          
+          and special thx for Monster -> betatester

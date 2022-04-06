@@ -1,0 +1,9 @@
+DupeCheck (GL1&2)
+
+Description: Dupechecker from irc using !dupe (release). Options to limit the 
+number of maximum hits etc.
+NOTE: Dupe is what WAS on site. search is for what IS.
+
+Author:   Turranius
+Version:  1.2
+Added on: 23-Apr-2003

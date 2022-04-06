@@ -1,0 +1,165 @@
+Music DVDR Rules - Draft 1.0 rev.c 
+
+General: 
+	. Release size must be at 4.3-4.37 Gb unless source is DVD5. 
+	. PAL after NTSC and NTSC after PAL is allowed. 
+	. DVD9 after DVD5 and DVD5 after DVD9 is allowed. 
+		If DVD5 is pred by another group AFTER the DVD9 then 
+		is suggested to include proofs of the source (scans or 
+		wathever). 
+	. Boxset = More than one disc. ALL discs in one release. ·separated by subdirectories 
+		Separated disc release forbidden 
+
+
+Video: 
+	. Re-encoding: 
+		. CCE version 2.50+ MUST be used in all circumstances 
+		  where transcoding (re-encoding) of the video stream 
+		  is required. REmpeg and TMPGenc are NOT allowed. 
+		  New unknown or unreleased encoders are not strictly 
+		  forbidden, however use at your own risk. 
+		. Automated Programs that perform DVD9>DVD5 rips are 
+		  FORBIDDEN, e.g. InstanCopy, DVDXCopy, DVDShrink etc. 
+		. Minimum average bitrate allowed is 3000 kbit/s 
+		  If minimum average bitrate cannot be achieved, 
+		  a valid explanation is required in the NFO. 
+		. If a release is reauthored then video MUST be 
+		  deinterlaced if needed. 
+	. Quality Settings: 
+		. CCE: 
+			. No CBR. Multipass is to be enforced. 
+			. The initial 1st pass that encodes the .vaf file 
+			  in CCE is NOT considered within the multipass set. 
+			. The number of passes required for main movie is to 
+			  be determined by the final avg bitrate. Under 
+			  4,000k/s 6+ passes required, over 4,000k/s 
+			  5 passes are required. 
+			. VTS Sectors must always be gotten. 
+	. Extras: 
+		. Extras are an added value but are not needed. Extras are 
+		  allowed to be transcoded/stripped/left-untouched 
+		  @ ripper's discretion. 
+		. A minimum of 5 passes for extras is required if transcoded 
+	. Menus: 
+		. Menus MUST be included. In extreme cases where the retail does 
+		  not contain a menu, it must be mentioned in the NFO. 
+		. Removing useless links within the menu is required. If you 
+		  remove something, disable or remove the button. 
+		. If all else is stripped and still can't get a 3000k/s avg 
+		  bitrate, then the menu may be reencoded at a minimum of 
+		  3000k/s avg. 
+		. Splitting: 
+		. In extreme cases where even if minum bitrate is reached but 
+		  video quality remains low (like live concerts with lots of 
+		  flash and moving) the decision to split release in more discs 
+		  is left @ ripper's discrection. (DON'T ABUSE) 
+		  Splitting releases aint cause for PROPER without tech failure 
+
+
+Audio: 
+	. Audio Priority is: DD 5.1 > LPCM 2.0 > DTS 
+	. First thing to strip off is DTS, then, if more space is needed 
+	  to reach the minimum bitrate, LPCM must be stripped. 
+	. In extreme cases, where source has ONLY LPCM audio stream 
+	  (most PROMOs), and video avg bitrate is too low for being re-encoded, 
+	  ripper can re-encode audio to fit into DVD5. AC3 MUST be used.
+
+DVD Limitations: 
+	. Macro vision MUST be removed. 
+	. All user limitations and restrictions MUST be removed. 
+	. Releases MUST be made region free. 
+	. Any new unmentioned copy protection that comes out MUST be stripped. 
+
+
+
+Packaging: 
+	. All releases MUST either use .IMG or .ISO. Other formats 
+	  are NOT allowed. 
+	. Releases must be broken up into rars of 50,000,000 bytes. 
+	. Recovery Record MUST be used. 
+	. Compression method must be store. 
+	. SFVs and NFOs MUST be included. 
+	. NFO MUST include the following: 
+	. Artist name. 
+	. Title. 
+	. Region, NTSC or PAL. 
+	. Number of Passes and Bitrate used when re-encoding 
+	  main movie. 
+	. Number of Passes and Bitrate used when re-encoding 
+	  extras. 
+	. Audio streams, and subtitles included. 
+	. What has been stripped, extras, menu, etc. 
+	. Number of archive files. 
+	. Url to a website with retail infos. 
+	. Tracklist. 
+	  For multi-discs releases technical infos like audio streams, 
+	  video bitrate, extras, etc., from ALL DISCS MUST be present. 
+	  For live shows is really appreceated the show's year at least 
+	  in rel notes. 
+
+
+Samples: 
+	. Samples are required. Minimum size shall be 30mb, but must be 
+	  no more than 50mb. 
+	. Samples must be put in a separate sub directory, labeled 
+	  'Sample'. 
+	. Samples MUST be from actual packed vob. Separate encodes are 
+	  not allowed. 
+	. Multi-discs / Boxsets: 
+	. 1 sample per disc no matter how many discs the release is. 
+	. That goes for splitted discs also. 
+
+Sources: 
+	. Bonuses: 
+		. A release MUST be pred as BONUS when the dvd disc isn't sold 
+		  alone (for example cd+dvd). 
+	. Bootlegs: 
+		. A bootleg recording is a dvd that was not officially released 
+		  by the person/company owning the rights to do that 
+		  (for example streetmixes, pirate live dvds, etc). 
+	. Customs: 
+		. A custom is an homemade dvd made from not-dvd sources 
+		  (DVB VHS and so on) in that case source MUST be specified. 
+
+
+Directory Naming: 
+	. ALL releases are to include production year. 
+	. Directory name MUST include REGION (NTSC or PAL). 
+	. Acceptable characters are as follows: 
+	  ABCDEFGHIJKLMNOPQRSTUVWXYZ 
+	  abcdefghijklmnopqrstuvwxyz 
+	  0123456789 . -_ 
+	. Non-Complete DVD-9 releases are to be named as: 
+	  MOVIE.TITLE.YEAR.OTHERS.SOURCES.REGION.MDVDR-GROUP 
+	. OTHERS are: 
+	  BONUS BOOTLEG PROMO PROPER DiRFiX 
+	  REPACK COMPLETE #DiSC 
+	  (COMPLETE tag isn't mandatory) 
+	. SOURCES are to be used if different from DVD so: 
+	  VHS DVB etc 
+	  those sources MUST be specified either in tag and nfo. 
+	. Sub directories are to be labeled as DISC1, DISC2, etc. 
+	. EXTRA and CD1, CD2 dirs are NOT allowed. 
+
+
+Propers: 
+	. Propers will ONLY be released if previous had technical flaws 
+	  such as menu errors, bad quality, etc. 
+	. Just because a previous release was not COMPLETE does not 
+	  provide a legitimate reason to PROPER/DUPE. 
+	. Propers based on previous releases having improper dir names 
+	  will not be tolerated. 
+	. PPF patches should be used for fixing releases with simple 
+	  problems such as RCE/Region coding, VTS sectors, P-Ups and 
+	  so forth. REPACKS/PROPERS should be avoided if a PPF patch is 
+	  possible. 
+
+Written and organized by (in alphabetical order):
+
+777 AMRCMPG gFViD HURRiCANE kHzViD KiSS MTDDVD mVm Oi
+
+Signed by:
+
+BERCViD BVD FKKDVDR FWYH H0T JRP JUSTDVD MUSiX nnDVD SDRDVD YARDViD 
+
+Rules starts on April 1st 2007 00:00:00 CET

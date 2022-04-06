@@ -1,0 +1,22 @@
+Mac OS X Releasing Rules
+------------------------
+Since Apple presented the first Intel-macs at MacWorld 2006, more and more developers release new versions of their software with support for PowerPC- and Intel-macs (technical note: this is possible due to the Mach-o-format for executables which is capable of including different code for each platform).
+To avoid confusion we encourage every other group releasing software for Mac OS X to apply the following tagging to their releases:
+Sample.Release.v3.<LANGUAGE>.<OS>.<CRACKTYPE>.<EXTRA>-<GROUP>
+where
+CRACKTYPE is Cracked/Regged/Incl.Keygen
+LANGUAGE is the language of the program, or, if it's available in multiple languages: Multilanguage
+EXTRA is Read.NFO/Repack/Proper/whatever
+and... now it gets special:
+OS is MacOSX.PPC for a "normal" program for PowerPC-macs
+OS is MacOSX.i386 for a program which only includes i386-code
+OS is MacOSX or MacOSX.UB for programs which include PowerPC- and i386-code
+Beware! MacOSX now says it's UniversalBinary!
+You can strip the version you did not crack due to no available hardware out of the release. Please specify in the NFO-file how you've done:
+Universal Binary Note..: i386-code stripped, only PPC included
+or
+Universal Binary Note..: PPC-code cracked, i386-code inside but uncracked
+Base of this rules are the standard 0day rules.
+Keep on enjoying Mac OS X releases
+Signed by: Team HS
+(Message Team HS to let them know you've accepted this rules)

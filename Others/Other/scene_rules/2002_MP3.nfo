@@ -1,0 +1,84 @@
+Release Rules
+1. No Dupes !
+We check complete albums/releases, not single tracks. So a release is not a
+dupe if it has different or more tracks.
+Exceptions:
+1. It's also a dupe if the complete release is included in a previous one.
+For example CDM is released, now someone releases the CDS and all
+tracks of the CDS were already included on the CDM (exactly the same).
+2. You are allowed to create a duplicate release from a release that has a
+source of lower quality (not lower bitrate! (see rule 11)).
+Example: if vinyl is out then a CD-release is allowed.
+If you do that then please add this info to NFO and dirname.
+3. All MIXED cds should be ripped as one track supplied with a .cue.
+If they are not, they may be duped by another group that releases it as
+one track with a .cue supplied.
+
+2. An .SFV and .NFO file must be included in every release.
+
+3. Directory name must at least contain:
+Artist Name - Title - Published Year - Group name
+(extra info is allowed of course)
+
+4. Filename must at least contain:
+Track Number - Song Title
+If it's an album with different artists then you must add the artist name as
+well.
+Make sure that your filename is unique otherwise some sites might dupeskip
+it. (You can search for filenames here as well)
+
+5. Files/directories must only contain characters; a-z A-Z 0-9 _ . - ()
+This is to avoid problems with windows/linux-filesystem and ftp-servers.
+
+6. No self made compilations
+A selfmade compilation is when you select tracks from other sources, put them
+together and release that as something new. A self-made MIX is allowed if it's
+good. Sites decide if it's shit by nuking it. We won't nuke/unnuke such a
+release.
+
+7. The entire CD,Vinyl,etc. must be released (not individual tracks)
+If you think it's too much work to rip all tracks you better don't rip at all.
+Releasing the complete CD/Vinyl is necessary because otherwise it would be
+possible to make several (different) releases of the same cd/vinyl/etc..
+Exception:
+If an album has been released in different editions and the only difference is
+one or more bonus tracks then it's allowed to release the bonustrack(s) only.
+For example album released in US with 10 tracks, Japanese edition with 11
+tracks (1 bonus track). then you can release the jap bonus track only (without
+including previously released tracks of the US album). Of course it's not
+allowed to re-release the full japanese edition then. You can do either the
+full album including the bonus track or only the bonus track, but not both.
+You must release ALL additional tracks in one release (not one release per
+track or side).
+
+8. Current maximum directory/filename-length is 128 characters
+because of limitations on windows cd-filesystem (linux has 256char-limit) and
+about 99% of the people here use either windows or linux.
+Directory names longer than 64 chars are marked to make it easier for people
+using joliet-filesystem which officially has a 64-char-limit (but most of the
+cd-writing-programs ignore that and windows is able to read it up to 128
+chars).
+
+9. No fake-releases
+
+10. A bad rip/release must be reported by either 3 independent people (from
+different groups) or the group which released it (release-comment or web
+board).
+If you re-release something that hasn't been nuked/marked yet then add this
+info to your nfo-file. Otherwise it will get nuked as dupe.
+
+11. Quality
+current minimum bitrate is 160kbit
+it's not allowed to re-release something in 192kbit (or higher) because a
+previous release was only 160kbit.
+
+12. Promos
+If a release is considered not to have every track from the source then it must
+be labelled as a promo and can be duped by any legitimate retail release that
+DOES contain all tracks. The legitimate release can be identified by the CAT
+number, or more suitable proof.
+Promos do not have to contain track listings, they are promotional material,
+they are not considered legitimate releases, and are still governed by quality
+rules.
+
+13. Re-encodes are strictly forbidden.

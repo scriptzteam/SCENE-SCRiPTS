@@ -1,0 +1,10 @@
+Reporter
+
+Description: This is a script ment to check logfiles. You specify the logfiles and 
+what to look for in them, individually. It will then announce those things to your 
+staff chan on IRC: Very handy for checking HD errors in /var/log/messages, but any 
+logfile can be checked, as long as they are in clear text.
+
+Author:   Turranius
+Version:  1.0
+Added on: 08-Jun-2004

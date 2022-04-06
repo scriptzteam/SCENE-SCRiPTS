@@ -1,0 +1,162 @@
+#!/bin/tclsh
+####################################################
+#                  Mr V vPath 2.0                  #
+####################################################
+# Requires TCL installed under glftpd..            #
+# download tcl. ./configure --prefix=/glftpd       #
+# Requires TCL-SQL                                 #
+# http://sourceforge.net/project/showfiles.php?group_id=39175&package_id=31338
+# if you are not able to compile it.. there is a   #
+# sql-redhat61.so that should works under linux    #
+# and one for solaris..                            #
+# Have Fun                                         #
+####################################################
+# siteName
+set siteName "MRV"
+# usersFolder
+set usersFolder "/ftp-data/users"
+# define Groups Dir (where groups folders are hosted) splitted by ":"
+set groupsDir "/site/Groups:/site/MovieS/Groups:/site/Console/Groups"
+# define working groups to analyze
+set groups "GRPA GRPB STAFF"
+set group(GRPA) "/site/Groups/442"
+set group(GRPB) "/site/Groups/CRAZYCUBE"
+set group(STAFF) "/site/Groups/STAFF"
+# log Staff logins ?
+set staffLog "1"
+# Output Lines
+set outLines "7"
+set sql(host) "127.0.0.1"
+set sql(login) "vpath"
+set sql(pass) "!path2004"
+set sql(table) "vPath"
+set sql(db) "vcheck"
+# Path of tcl-sql.so library
+set sql(lib) "/usr/lib/tcl-sql.so"
+# logo
+set logo "\(vPATH-$siteName\)"
+
+#>sql table:
+# create table vPath (
+#  logID INT UNSIGNED AUTO_INCREMENT,
+#  userName VARCHAR(50) NOT NULL,
+#  userGroup VARCHAR(50) NOT NULL,
+#  fullDir VARCHAR(50) NOT NULL,
+#  groupDir VARCHAR(50) NOT NULL,
+#  unixTime INT NOT NULL,
+#  PRIMARY KEY (logID)
+# );
+
+proc vpath:getGroup {path} { global group groups groupsDir
+    foreach dir [split $groupsDir ":"] {
+        if {[string match "$dir" $path]} {
+            return "GROUPSDiR"
+        }
+    }
+    foreach n $groups {
+        if {([string match "$group($n)/*" $path]) || ([string match "$group($n)" $path])} {
+            return "$n"
+        }
+    }
+    return "UNKNOWN"
+}
+
+proc vpath:isStaff {} { global usersFolder currUser isStaff
+    set of [open $usersFolder/$currUser r]
+    while {![eof $of]} {
+        set line [gets $of]
+        if {[lindex $line 0] == "FLAGS"} {
+            if {[string match "*1*" [lindex $line 1]]} {
+                close $of
+                set isStaff 1
+                return 1
+            }
+        }
+    }
+    close $of
+    set isStaff 0
+    return 0
+}
+
+proc vpath:log {} { global currUser currPath currGroup sql
+    set grp [vpath:getGroup $currPath]
+    sql exec $sql(conn) "INSERT INTO vPath VALUES ('NULL', '$currUser', '$currGroup', '$currPath/', '$grp', '[clock seconds]');"
+}
+
+proc vpath:getLog {} { global sql currUser currGroup currPath outLines logo isStaff siteName
+    set dirType [vpath:getGroup $currPath]
+    if {$dirType == "GROUPSDiR"} {
+        if {$isStaff == "1"} {
+            set qdir $currPath
+        } else {
+            return 0
+        }
+    } else {
+        set qdir $currPath/
+    }
+    set a $outLines
+    vpath:query "SELECT userName, userGroup, groupDir, unixTime FROM vPath WHERE fullDir LIKE '$qdir%' ORDER BY unixTime DESC LIMIT $outLines;"
+    set groupDir [lindex [join $rows] 2]
+    puts "$logo   >>   Last $outLines logs into $groupDir PREDiR.."
+    puts "$logo  >>--------------------------------- - --- ----- - -"
+    foreach {user group gdir time} [join $rows] {
+        puts "$logo  >> #$a  $user\($group\)  @  [clock format $time -format "%H:%M:%S %d-%m-%Y"]"
+        incr a -1
+    }
+    vpath:query "SELECT COUNT(logID), COUNT(DISTINCT(userName)), MIN(unixTime), COUNT(DISTINCT(userGroup)) FROM vPath WHERE groupDir='$groupDir';"
+    set logs [lindex $rows 0]
+    set users [lindex $rows 1]
+    set started [lindex $rows 2]
+    set groups [lindex $rows 3]
+    puts "$logo  >>--------------------------------- - --- ----- - -"
+    if {$started != ""} {
+        puts "$logo   >> Since [clock format $started -format "%H:%M:%S %d-%m-%Y"] there were $logs logs from $users user/s of $groups group/s"
+    } else {
+        puts "$logo   >> First log on the predir.. Welcome $dirType to $siteName"
+    }
+    puts "$logo"
+    return 1
+}
+
+proc vpath:main {} { global argv env sql currPath currUser currGroup usersFolder groups isStaff group groupsDir outLines siteName staffLog logo
+    puts "$logo   >>  vPath.. Ultimate security for your predirs!"
+    set currUser $env(USER)
+    set currGroup $env(GROUP)
+    set isStaff [vpath:isStaff]
+    set currPath [pwd]
+    vpath:getLog
+    if {($staffLog == "0") && ($isStaff == "1")} {
+        puts "$logo  >> skipping log routine.. staff excempt!"
+    } else {
+        vpath:log
+        puts "$logo  >> .. logged correctly .."
+    }
+    return 0
+}
+proc vpath:connect {} { global sql
+    load $sql(lib)
+    set sql(conn) [sql connect $sql(host) $sql(login) $sql(pass)]
+    sql selectdb $sql(conn) $sql(db)
+    set sql(action) [clock seconds]
+}
+
+proc vpath:query {myQuery} { global sql
+    sql query $sql(conn) $myQuery
+    upvar 1 rows rows
+    set rows ""
+    while {[set row [sql fetchrow $sql(conn)]] != ""} {
+        if {[llength $row] != 1} {
+            lappend rows $row
+        } else {
+            lappend rows [lindex $row 0]
+        }
+    }
+    catch {sql endquery $sql(conn)}
+    if {([string index $rows 0] == "\{") && ([llength $rows] == 1)} {
+        set rows [lindex $rows 0]
+    }
+    set sql(action) [clock seconds]
+    return 0
+} 
+vpath:connect
+vpath:main

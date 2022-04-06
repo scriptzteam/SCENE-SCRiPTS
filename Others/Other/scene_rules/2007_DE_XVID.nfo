@@ -1,0 +1,242 @@
+
+   ≤€‹  ‹‹ﬂﬂﬂ‹‹
+   €€€ ≤€›‹≤‹  ﬂ≤‹‹    ‹    ‹≤                                             ‹‹‹
+ﬂ€≤≤€€∞±≤€‹€‹‹‹€≤≤€€€€€‹‹‹€€€€≤≤€≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤≤±≤€≤€
+   ≤≤€                                                      ‹ﬂﬂﬂ≤‹  ﬂ≤ﬂﬁ€≤ ﬂﬂﬂ
+   ∞∞         GERMAN.RETAiL.XviD.RELEASiNG.GUiDELiNES             ﬂﬂ‹‹‹ﬂﬂ
+   ∞
+                           November 2007
+
+     Requirements: Notepad with terminal font or any other ascii viewer.
+
+
+  GENERAL:
+
+  Jedes als deutscher Retail-DVDRiP getaggtes Release muss von einer
+  originalen, sich im Besitz der jeweiligen Group befindlichen DVD stammen.
+  Dies impliziert, dass sowohl Video/Audio als auch alle anderen fuer das
+  Release verwendeten Materialen (AC3-Addons, Subtitles) aus dem selben
+  Vobset stammen und direkt von diesem encodiert oder extrahiert werden
+  muessen. Das Benutzen von DVDR-Releases bzw. das Klauen einer fremden
+  Source ist untersagt.
+
+
+  CODEC:
+
+  Als Compressor/Decompressor ist nur der XviD-Codec mit der Verwendung
+  der 2-pass-Encodingmethode und variabler Bitrate erlaubt. Die Verwendung
+  aktueller XviD-Binaries ist erlaubt.
+
+
+  VIDEO:
+
+   Aufloesung und Seitenverhaeltnis:
+    - Breite: 512 bis 576 Pixel bei FullScreen (1.33:1)
+              576 bis 672 Pixel bei WideScreen und LB (1.85:1 und 2,35:1)
+    - Breite und Hoehe: Muessen ein Vielfaches von 16 sein (mod16)
+
+   Cropping:
+    - Das Croppen und Resizen erfolgt nach dem ITU-R BT.601-Standard*
+    - Das Bild muss komplett freigestellt sein, es duerfen keine schwarzen
+      Balken im XviD verbleiben
+    - Das Seitenverhaeltnis darf maximal 3% von dem des Input-ARs**
+      abweichen
+    - Das Input-AR sollte moeglichst exakt dem AR des freigestellten Videos
+      entsprechen; es sind maximal 4 weitere Pixelzeilen (jeweils oben+unten
+      oder links+rechts) als zusaetzlicher Overcrop erlaubt, um einen
+      niedrigeren AR-Error zu erhalten
+    - Grundsaetzlich gilt aber: Soviel Bild wie moeglich erhalten, wie es
+      innerhalb des AR-Error-Bereichs von 3% moeglich ist. Overcropping
+      gilt als technischer Mangel
+
+     *ITU-R BT.601-Standard:
+      Der ITU-R BT.601-Standard wird als beste Resize-Methode  fuer DVDs
+      empfohlen, um dem Originalseitenverhaeltnis des Films moeglichst nahe
+      zu kommen.
+
+    **Input-AR:
+      Beim Berechnen des AR-Errors wird stets vom Input-AR ausgegangen.
+      Das heisst, dass die endgueltige XviD-Aufloesung nicht mit dem
+      theoretischen, perfekten Seitenverhaeltnis, welches u.a. auf der
+      DVD-Huelle angegeben ist (z.B. exakt 1.85:1), verglichen wird,
+      sondern dem tatsaechlichen, also dem des freigestellten Bildes,
+      das man nach dem Croppen erhaelt und erfahrungsgemaess in 95%
+      der Faelle von den theoretischen Werten leicht abweicht.
+
+   Size / Filmlaenge:
+    - Eine CD darf 695MB nicht unterschreiten und 735.600.000 Bytes nicht
+      ueberschreiten
+    - Die Entscheidung fuer die CD-Anzahl liegt im Ermessen des Rippers.
+      Orientierungswerte fuer einen Wechsel auf 2CDs:
+
+                        bei 1.33:1-AR ab ~095 Minuten
+                        bei 1.85:1-AR ab ~100 Minuten
+                        bei 2.35:1-AR ab ~105 Minuten
+
+    - Diese Werte sind ORIENTIERUNGSWERTE, koennen jedoch sowohl unter- als
+      auch ueberschritten werden
+    - Beispiel #1: Ein 90-minuetiger Film kann unter Umstaenden auf 2CDs
+      released werden (falls sehr, sehr schlecht komprimierbar)
+    - Beispiel #2: Ein 120-minuetiger Film kann unter Umstaenden auf 1CD
+      released werden (falls (sehr) gut komprimierbar)
+    - BITRATE != QUALITAET
+    - Zum Testen der Komprimierbarkeit ist ein Kompressionstest
+      durchzufuehren, mit dessen Hilfe man anschliessend die Aufloesung
+      und Size waehlt -> Rule Of Thumb: gut komprimierbar = hohe Aufloesung;
+      schlecht komprimierbar = niedrige Aufloesung
+    - Groessere Abweichungen von den Orientierungswerten sollten in der NFO
+      kurz erwaehnt und begruendet werden, die Entscheidung sollte je nach
+      Film und dessen Komprimierbarkeit sorgfaeltig ueberdacht werden
+
+   Deinterlacing:
+    - Interlaced Sources muessen entsprechend deinterlaced werden
+    - NTSC -> PAL Normwandlungen muessen auf ihre urspruengliche Framerate
+      restored werden (hierfuer eignet sich besonders der "restore24" Filter)
+
+    - Progressives Encoden von interlaced Sources ist ein technischer Mangel
+
+   Credits/Abspann:
+    - Ein Encoding des Abspanns mit niedrigerer Bitrate als der Hauptfilm
+      ist gestattet und erwuenscht, solange im Abspann keine nennenswerten
+      Bildinformationen enthalten sind. Bei einem 1 CD Release kann der
+      Abspann entfallen
+
+   Codec-Paramter:
+    - Die Anwendung von QuarterPixel und GlobalMotionCompensation sind
+      aufgrund von diversen StandAlone-Inkompatibilitaeten ausdruecklich
+      verboten
+    - Als Matrix muss MPEG oder H.263 verwendet werden; Custom Matrizen
+      sind verboten
+    - Packed Bitstream ist in Verbindung mit 1-BVOP erlaubt, da diese
+      Kombination DivX5 am naechsten kommt und so auf StandAlonePlayern
+      fuer die bestmoegliche Kompatibilitaet sorgt
+
+
+  AUDIO:
+
+   - Als Audioformate sind MP3 und AC3 erlaubt
+   - Dupes auf Basis von Audioformat sind iNTERNAL zu halten
+   - Die Verwendung von AC3 liegt in der Entscheidung des Rippers und
+     sollte je nach Komprimierbarkeit (siehe oben) eingesetzt werden.
+   - Transcoding/Downsampling von AC3-Spuren ist verboten
+   - MP3-Audiospuren muessen mit V- oder A-Bitrates encoded werden, wobei
+     die minimale durchschnittliche Bitrate bei 128kbps liegt. CBR ist
+     verboten
+   - MP3-Audiospuren muessen normalisiert werden
+   - MP3-Audiospuren muessen der Frequenz ihrer Source-AC3 entsprechen
+   - AC3-Addons sind keine Pflicht, aber erwuenscht. Die in einem Unterordner
+     als RAR-Archiv beigefuegten AC3-Streams sollten auf die AVI-Dateien des
+     Hauptreleases zugeschnitten sein (Split bei 2CDs, bereits integrierter
+     Delay)
+
+
+  UNTERTITEL:
+
+   - Deutsche und fremdsprachige Subtitles fuer den kompletten Film duerfen
+     im  VobSub-Format beigelegt werden (Unterverzeichnis /Subs), sind aber
+     keine Pflicht. Komplette Untertitelungen duerfen nicht hardcoded werden
+     (Ausnahmen sind Filme, in denen komplette Untertitelungen als
+     Forced.Subs* gezaehlt werden wie z.B. "Apocalypto")
+   - Forced.Subs* muessen im XviD-Release hardcoded enthalten sein, um Pro-
+     blemen mit den meisten DVD-Playern entgegenzuwirken (In manchen Filmen
+     wie z.B. "Apocalypto" gilt die komplette Untertitelung des Films als
+     Forced.Subtitle und muss somit ebenfalls hardcoded und als
+     German.Subbed getagged werden). Dies gilt auch fuer deutsch unter-
+     titelte Dokumentationen
+   - Das Fehlen von Forced Subs gilt als technischer Mangel
+
+    *Forced.Subs:
+     Jene deutsche Subs, die auf der DVD fuer das Untertiteln fremd-
+     sprachiger, nicht deutsch synchronisierter Dialoge oder Aufschriften auf
+     Schildern/Papieren eingeblendet werden.
+
+
+  PACKEN/WINRAR UND CO:
+
+   - Die fertigen AVI-Container muessen in RAR-Archive (Kompressionsstufe
+     store/speichern) gepackt werden und auf 15.000.000 oder 20.000.000
+     Byte grosse Files gesplittet werden
+   - Erwuenscht ist die Verwendung der Benennung von Teilarchiven im alten
+     Stil (*.rar und *.rxx). Das Einbetten von Wiederherstellungs-
+     informationen in die RAR-Archive wird ausdruecklich empfohlen
+   - Eine SFV muss fuer jede CD beigelegt werden und Checksummen fuer
+     alle RAR-Archive der jeweiligen CD enthalten
+   - Bei 2CD- oder 3CD-Releases muessen die einzelnen CDs in
+     Unterverzeichnisse gepackt werden (/CD1;/CD2;/...)
+   - Eine NFO-Datei muss sich im Hauptverzeichnis des Releases befinden
+   - Zu jedem Release muss ein Sample im AVI-Format beiliegen (/Sample),
+     welches zwischen 30 und 60 Sekunden lang sein kann und direkt aus der
+     Release-AVI extrahiert sein muss; seperates Encoden des Samples ist
+     verboten, da die Aussagekraft dadurch hinfaellig wird
+
+
+  TAGGING:
+
+   - Das Benennen der Dateien im Release bleibt den Groups selbst ueber-
+     lassen, sie sollte aber sinnvoll und ausreichend ausfuehrlich gewaehlt
+     werden, um Dupefiles vorzubeugen
+   - Die Verzeichnisse sollten diesem Beispiel-Tag folgen, wobei
+     <*>-Ausdruecke editiert oder entfernt werden muessen, [*]-Ausdruecke
+     sind optional und releaseabhaengig:
+
+    <Film.Titel>.German.[SUBBED].[ANiME].[DOKU].[YEAR].[AC3].[PROPER].
+    DVDRiP.XviD.[iNTERNAL].[REPACK].[READ.NFO]-<GROUP>
+
+   - Das Einfuegen des YEAR-Tags nach der IMDB ist bei CineRetail/Major-
+     Releases optional, bei STV allerdings Pflicht
+   - Weitere optionale Tags sind: CHRONO, DC, EXTENDED, REAL, REMASTERED,
+     RERIP, RETAIL, SE, SUBBED, THEATRICAL, UNCUT, UNRATED
+
+
+  PROPER:
+
+   Ein Proper-Release ist notwendig und valid, wenn:
+    - Ein anderer Codec als XviD verwendet wurde (bad.Codec)
+   - Aufloesungen ausserhalb der gegebenen Grenzen verwendet wurden
+      (bad.resolution)
+    - X- und/oder Y-Aufloesung kein Vielfaches von 16 sind (!=mod16)
+      (bad.resolution)
+    - Ein groesserer AR-Error als 3% vorliegt (bad.ar)
+    - Unnoetig viel Bild an den Raendern gecropped wurde (overcropped)
+    - Nicht alle schwarzen Balken gecropped wurden (bad.crop)
+    - Interlaced Frames vorliegen (interlaced.frames)
+    - QPel, GMC oder PB in Kombination mit mehr als 1 B-VOP verwendet
+      wurden (bad.Codec.parameters)
+    - Ein anderes Audioformat als MP3 oder AC3 verwendet wurde
+      (bad.audio.Codec)
+    - Die AC3-Audiospur downsampled/transcoded wurde (touched.AC3)
+    - Die durchschnittliche MP3-Bitrate unter 128kbps liegt
+      (low.audio.bitrate)
+    - Eine konstante MP3-Bitrate (CBR) statt einer variablen verwendet
+      wurde (cbr.audio)
+    - Anstatt der Forced.Subs die kompletten Untertitel hardcoded wurden
+   (hardcoded.subs.throughout.whole.movie)
+    - Die Forced.Subs fehlen, nicht hardcoded oder out of sync sind
+      (missing.forced.subs bzw subs.out.of.sync)
+    - Ein Proper ist max. bis 7 Tage nach offiziellem Store-Date moeglich
+
+
+  NFO:
+
+   Fuer die NFO, die jedem Release pflichtmaessig beizulegen ist, gelten
+   folgende Minimalanforderungen:
+    - Releasedatum
+    - Kinostart oder STV
+    - IMDB-Rating + Votes und IMDB-URL zum Film
+    - Laufzeit
+    - Anzahl CDs/RARs
+    - Videoaufloesung
+    - Average Videobitrate
+    - Average Audiobitrate
+    - Proper/Repack-Notes bei Proper/Repack-Release
+
+
+                             [ Signed By ]                                 ∞
+
+                       CRiTiCAL   EMPiRE     JAM                           ∞
+                                                                           ∞
+      ‹‹ﬂﬂﬂ‹‹                                                             ±∞
+ ‹‹‹ ≤€›‹≤‹  ﬂ≤‹‹‹ﬂ                                                      €≤≤
+€≤€≤±≤≤€€€‹€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤€≤≤€€€€ﬂﬂﬂ€€€€€≤≤€ﬂﬂﬂ€ﬂ€≤±∞€€≤≤€‹
+ ﬂﬂﬂ                                             ≤ﬂ    ﬂ    ﬂﬂ≤‹  ﬂ≤ﬂﬁ€≤ €€€cpN
+                                                                ﬂﬂ‹‹‹ﬂﬂ  ﬂ€≤

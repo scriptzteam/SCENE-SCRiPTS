@@ -1,0 +1,8 @@
+LastUl (GL1&2)
+
+Description: Script to show last uploads. Works in both irc and glftpd. Definable 
+sections, excludes and output, etc.
+
+Author:   Turranius
+Version:  1.2.2
+Added on: 14-Oct-2003

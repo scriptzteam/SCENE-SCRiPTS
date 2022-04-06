@@ -1,0 +1,9 @@
+StatSectionSMerge (GL1&2)
+
+Description: A script for those who wish to dump their extra stat/credits sections 
+and go back to only using the DEFAULT stat section. This will merge the stats 
+and/or credits from those seperate sections into the first one.
+
+Author:   Turranius
+Version:  1.0
+Added on: 29-Jul-2003

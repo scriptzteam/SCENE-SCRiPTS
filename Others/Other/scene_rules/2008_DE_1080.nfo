@@ -1,0 +1,293 @@
+
+                                                     ‹≤‹ ˛ ‹≤‹    ˛
+                               ‹€ﬂﬂﬂﬂﬂﬂﬂ€‹         ˛  ﬂ   ‹‹ﬂ  ˛
+               HiGH DEFiNiTiON€ﬂ ‹€ﬂﬂﬂ€‹ ﬂ€RULES 2k8   ˛ €€≤≤  ‹≤‹  ˛
+              ‹€ﬂﬂﬂﬂﬂ€ﬂﬂﬂﬂﬂﬂﬂﬂ€ €€     €€ €ﬂﬂﬂﬂﬂﬂﬂﬂ€‹     ﬂﬂ    ﬂ   ‹€≤‹
+              € ‹€€€  ‹€€ﬂﬂ€€‹  ﬂ€€‹ ‹€€ﬂ  ‹€€ﬂﬂ€€‹ ﬂ€ﬂﬂﬂﬂﬂﬂﬂﬂ€‹  ˛ ﬂ≤≤ﬂ ˛
+ ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ€‹‹ €€ €€ﬂ    ﬂ€€  ‹€€€€€‹  €€ﬂ    ﬂ€€  ‹€€ﬂﬂ€€‹ ﬂ€ﬂﬂﬂﬂ  ﬂﬂﬂﬂﬂﬂﬂﬂ
+ ∞ ∞ ∞±±≤≤≤€€ ∞∞€∞∞€ €€      €€ €€ﬂ   ﬂ€€ €∞∞     €€ €€ﬂ    ﬂ€€∞€∞∞€€≤≤≤±±∞ ∞ ∞
+ ∞ ∞ ∞±±≤≤≤€€‹ ‹€ €€ €€‹    ‹€€ €€     €€ €€‹    ‹€€ €€‹    ‹€€ €∞€€€≤≤≤±±∞ ∞ ∞
+ ‹‹‹‹‹‹‹‹‹‹‹‹‹‹€ ‹€€‹ ﬂ€€‹‹€€ﬂ ‹ ﬂ€‹‹‹€ﬂ ‹ ﬂ€€‹‹€€ﬂ∞∞∞€€€‹‹€€ﬂ ‹€‹‹‹‹‹‹‹‹‹‹‹‹‹‹
+               €‹‹‹‹‹‹‹‹‹‹‹‹‹‹€€€‹‹‹‹‹‹‹€€€‹‹‹‹‹‹‹‹ﬂ €€€  ‹‹‹‹€ﬂ    ‹∞‹  ˛
+                                                  € €€€€€ €      ˛   ﬂ ˛
+                THE 1 0 8 0 p RELEASiNG STANDARDS∞€‹‹‹‹‹‹‹€   ˛  ‹≤‹ ˛
+                                                ∞∞∞∞        ˛  ˛  ﬂ
+
+
+               [GERMAN.HiGH.DEF.1080p.x264.RELEASiNG.STANDARDS.VER1]
+
+
+
+  [ANFORDERUNGEN]
+
+              Notepad mit der Schriftart Terminal oder einem anderen
+              ASCII-Betrachter.               
+
+
+  [VORWORT]
+
+              Kompatibilitaet mit den gaengigen SA Playern wie TViX und
+              Popcorn sowie qualitativ hochwertige Release sind das Ziel
+              dieses Releasing Standards. Um ein Optimum an Qualitaet zu 
+              erreichen, haben wir bewusst darauf verzichtet, bestimme 
+              Groessen fuer die Release festzulegen, statt dessen soll 
+              die Bitrate des Videos-Streams als Richtwert dienen. Das 
+              Benutzen von BluRay/HDDVD-Releases bzw. das Klauen einer 
+              fremden Source ist verboten. Diese Rules beziehen sich 
+              ausschliesslich auf 1080p Release.
+
+ 
+  [1. ANWENDUNG]
+  
+  [1.1]       Die Rules  gelten nicht fuer fruehere Release, und somit
+              ist es nicht erlaubt aeltere Release unter Anwendung
+              dieser Rules zu propern.
+
+
+  [2. ALLGEMEINES]
+ 
+  [2.1]       BluRay und HDDVD Sourcen dupen sich gegenseitig.
+  [2.2]       KEINE Intros, Outros, Betweenos (alles was nicht zum Film
+              gehoert).
+  [2.3]       Credits muessen nicht entfernt werden
+  [2.4]       Ein Release vor deutschem Store Date muss einen Unterordner
+              "Proof" mit mindestens 20 Sekunden der m2ts beinhalten.
+
+
+  [3. AUDIO]
+
+  [3.1]       Erlaubte Audiospuren:
+  [3.1.1]     untouched AC3(DD5.1/DD2.0/DD1.0) (bevorzugt) oder erzeugt aus
+              DTS, EAC3(DD+), LPCM, TrueHD.
+  [3.1.2]     untouched DTS (bevorzugt) oder erzeugt aus DTS-HD, FLAC, LPCM,
+              TrueHD.
+  [3.1.3]     Alle AC3 Spuren sollten 640kbps(6ch) aufweisen, ausser die Source
+              kommt mit geringerer Bitrate oder weniger Channels (stereo|mono)
+              daher.
+  [3.1.4]     Die Bitrate von DTS muss 1536 kbit betragen, es sei denn die
+              Bitrate der Source ist niedriger.
+  [3.1.5]     DTS / AC3 dupen sich gegenseitig.
+  [3.2]       Nicht erlaubte Audiospuren:
+  [3.2.1]     EAC3(DD+), DTS-HD, TRUEHD, LPCM, FLAC.
+  [3.2.2]     Bei Konzerten MHDDVD/MBLURAY ist FLAC als zusaetzlicher
+              Audio-Stream erlaubt.
+  [3.3]       Erlaubte Spachen:
+  [3.3.1]     German
+  [3.3.2]     Releases mit mehr als einer Audiospur sind erlaubt (DL/ML).
+  [3.4]       Versuche ein Release mit einer Tonspur mit einem DL oder ML
+              Release zu propern sind ungueltig.
+
+
+  [4. VIDEO]
+
+  [4.1]       Release muessen im MKV Container vorliegen.
+  [4.2]       Codec:
+  [4.2.1]     Als Compressor/Decompressor ist nur der x264-Codec unter
+              Verwendung der 2-pass-Encodingmethode erlaubt.
+  [4.2.2]     Die Verwendung aktueller x264-Binaries ist erlaubt.
+  [4.3]       Bitrate:
+  [4.3.1]     Es ist eine Bitrate von ca. 10250 kbps zu verwenden,
+              Abweichungen  von +500 kbps / -250 kbps sind moeglich.
+  [4.3.2]     Bei animierten Filmen darf davon abgewichen werden; eine 
+              Bitrate von 7000 kbps darf aber nicht unterschritten werden.
+              (Bsp. Simpsons der Film)
+  [4.3.3]     Bei Filmen wie z. B. Beowulf ist eine  Bitrate, wie
+              unter Punkt 4.3.1 festgelegt, zu verwenden.
+  [4.4]       Alle Filme muessen in ihrer urspruenglichen Framerate
+              bleiben (fast immer 23.976fps).
+  [4.5]       Schwarze Balken sind wegzucroppen.
+  [4.6]       Folgende Aufloesungen sind zulaessig:
+                - 1920 x 800  = 2.40 AR
+                - 1920 x 816  = 2.35 AR
+                - 1920 x 1040 = 1.85 AR
+                - 1920 x 1080 = 1.78 AR
+              Was zaehlt, ist die AR der Source, und nicht was
+              beispielsweise auf IMDB zu lesen ist.
+   [4.7]       --deblock kann je nach Source variiert werden.
+
+
+  [5. GROESSE]
+
+  [5.1]       Um ein Mindestmass an Uebersichtlichkeit zu waren duerfen die
+              Groessen ausschliesslich ein Vielfaches von 0,5GB betragen.
+              
+              
+  [6. ENCODING]
+              
+  [6.1]       Folgende Settings sind minimal zu verwenden:
+  
+  [6.1.1]     Minimale Settings:
+              
+              Pass 1:
+
+              x264.exe --pass 1 --bitrate x --threads auto --thread-input 
+              --level 4.1 --bframes 3 --me dia --ref 1 --subme 1 
+              --no-dct-decimate --partitions none --progress --no-psnr 
+              --no-ssim --output NUL
+
+  [6.1.2]     Pass 2:
+
+              x264.exe --pass 2 --bitrate x --threads auto --level 4.1 
+              --bframes 3 --b-pyramid --bime --weightb --b-rdo --me umh 
+              --ref 4 --mixed-refs --subme 7 --trellis 1 
+              --partitions p8x8,b8x8,i4x4,i8x8 --8x8dct --no-fast-pskip 
+              --progress --no-psnr --no-ssim --output x.mkv 
+              
+  [6.2]       Je nach Aufloesung ist in den Settings folgende 
+              Einstellung vorzunehmen:
+              1920 x 8xx  = ref 5
+              1920 x 10xx = ref 4     
+         
+              
+  [7. UNTERTITEL]
+              
+  [7.1]       Sind Deutsche forced Subs enthalten, so sind diese Pflicht.
+  [7.2]       Sonstige fehlende Subs koennen nicht als Propergrund dienen.
+  [7.3]       Subs anderer Sprachen sind moeglich.
+  [7.4]       Subs muessen in einem text-basierten Format vorliegen.
+  [7.5]       Subs muessen in den mkv container gemuxt werden.
+  [7.6]       Es sind keine "forced" Subtitles ins Bild zu encoden.
+  [7.7]       "Subs" Ordner sind verboten.
+  [7.8]       Subs sollten gut lesbar sein aber nicht riesig!
+
+
+  [8. Kapitel]
+
+  [8.1]       Kapitel sind erwuenscht aber keine Pflicht.
+              
+              
+  [9. DUBBED]
+              
+  [9.1]       Fuer Dubbed Releases gelten die selben Rules wie fuer
+              Retails, jedoch mit folgenden Ausnahmen:
+  [9.2]       Ein dubbed Release ist nur zulaessig, sofern keine Retail
+              Source mit deuschem Ton existiert. Sollte innerhalb der
+              naechsten 30 Tage eine Retail erscheinen ist ebenfalls
+              kein dubbed Release zulaessig.
+  [9.3]       Als Audiospuren sind AC3 und DTS erlaubt (von der Retail DVD),
+              aber KEINE Lines (Cinema).
+
+
+  [10. PACKEN & CO]
+
+  [10.1]      Die fertigen MKV-Container muessen in RAR-Archive
+              (Kompressionsstufe store/speichern) gepackt werden
+              und auf 100.000.000, 150.000.000 oder 200.000.000
+              Byte grosse Files gesplittet werden.
+  [10.2]      Erwuenscht ist die Verwendung der Benennung von
+              Teilarchiven im alten Stil (*.rar und *.rxx).
+  [10.3]      Das Einbetten von Wiederherstellungsinformationen
+              in die RAR-Archive wird ausdruecklich empfohlen.
+  [10.4]      Eine SFV muss dem Release im Hauptverzeichnis
+              beigelegt werden und Checksummen fuer alle RAR-Archive
+              enthalten.
+  [10.5]      Ein Sample mit einer Laenge von etwa 60 Sekunden 
+              muss beiliegen.
+  [10.5.1]    Es muss aus dem finalen Release herausgeschnitten werden.
+              und darf nicht separat encoded werden.
+  [10.5.2]    Es muss sich in einem Unterordner des eigentlichen
+              Releases mit dem Namen "Sample" befinden.
+  [10.6]      Eine NFO-Datei muss sich im Hauptverzeichnis des Releases
+              befinden.
+
+  
+  [11. TAGGING]
+
+  [11.1]      Verzeichnisnamen sind folgendermassen zu waehlen:
+  [11.1.1]    Retail:
+              Film.Name.Jahr.German.<AC3|DTS>.<DL|ML>.1080p.
+              <HDDVD|BluRay>.x264.{PROPER|READ.NFO|REPACK}-GROUP
+  [11.1.1]    Dubbed:
+              Film.Name.Jahr.German.<AC3|DTS>.DUBBED.<DL|ML>.1080p.
+              <HDDVD|BluRay>.x264.{PROPER|READ.NFO|REPACK}-GROUP
+              Syntax:
+              <entweder|oder> {optional}
+  [11.2]      Name des Films:
+  [11.2.1]    Im Tag ist, soweit vorhanden, der deutsche Titel
+              zu verwenden.
+  [11.2.2]    Sollte kein deutscher Titel vorhanden sein, ist der 
+              Originaltitel zu verwenden.
+  [11.3]      "RETAIL" und "DUBBED" innerhalb eines Tags sind um
+              Irrtuemern vorzubeugen verboten.
+  [11.4]      Das benennen der Dateien im Release bleibt den Groups
+              selbst ueberlassen, sie sollte aber sinnvoll und 
+              ausreichend ausfuehrlich gewaehlt werden, um Dupefiles
+              vorzubeugen.
+  [11.5]      Weitere optionale Tags sind: 
+              DC, EXTENDED, MHDDVD, MBLURAY, REAL, REMASTERED, 
+              RETAIL, SE, SUBBED, THEATRICAL, UNCUT, UNRATED            
+
+
+  [12. NFO]
+
+  [12.1]      NFO muss folgende Informationen enthalten:
+  [12.1.1]    Releasedatum
+  [12.1.2]    Kinostart bzw. STV
+  [12.1.3]    IMDB-Rating  + Votes und IMDB-URL zum Film
+              (soweit vorhanden)
+  [12.1.4]    Laufzeit des Films
+  [12.1.5]    Anzahl der RARs
+  [12.1.6]    Source: Format / Aufloesung / Video Codec
+  [12.1.7]    Video:  Container / Codec / Bitrate / Aufloesung
+  [12.1.8]    Audio:  Sprache / Codec / Bitrate
+  [12.1.9]    Subs:   German force ja/nein / sonstige Subs
+  [12.1.10]   Proper/Repack-Notes bei Proper/Repack-Release
+
+
+  [13. PROPER]
+
+  [13.1]      Ein Proper-Release ist notwendig und valid wenn:
+  [13.1.1]    Ein anderer Codec als x264 verwendet wurde (bad.codec)
+  [13.1.2]    Ein anderer Container als MKV verwendet wurde (bad.container)
+  [13.1.3]    Wenn die Bitrate nicht entsprechend Punkt 4.3 gewaehlt wird.
+              (low.video.bitrate)
+  [13.1.4]    Aufloesungen ausserhalb der gegebenen Grenzen verwendet 
+              wurden (bad.resolution)
+  [13.5.5]    Die Bildqualitaet nicht akzeptabel bzw. das Release nicht
+              kompatibel mit den gaengigen SA Playern ist.
+              (bad.encoder.settings)
+  [13.5.6]    Die Reference Frames (ref) nicht der Aufloesung
+              entsprechend gewaehlt wurden. (bad.encoder.settings)
+  [13.1.7]    Wenn eine falsche Aufloesung gewaehlt wurde (siehe 4.6).
+              (bad.resolution)
+  [13.1.8]    Die Bitrate des Audio-Streams bei AC3 bzw. DTS geringer ist
+              als bei der Source. (bad.audio)
+  [13.1.9]    Einer der Audio-Streams folgende Formate hat
+              EAC3(DD+), DTS-HD, TRUEHD, LPCM, FLAC. Die Ausnahme
+              ist FLAC bei MHDDVD/MBLURAY. (bad.audio)
+  [13.1.10]   Unnoetig viel Bild an den Raendern gecropped wurde.
+              - Horizontal in der Summe mehr als 6 Zeilem vom Bild
+                cropped wurden. (overcropped)
+              - Vertikal in der Summe mehr als 6 Zeilem vom Bild
+                cropped wurden. (overcropped)
+  [13.1.11]   Nicht alle schwarzen Balken gecropped wurden (bad.crop)
+  [13.1.12]   Die Forced.Subs fehlen oder out of sync sind
+              (missing.forced.subs bzw subs.out.of.sync)
+  [13.1.13]   Die Subs bzw. Forced Subs hardcoded wurden.
+              (hardcoded.forced.subs bzw. hardcoded.subs)
+  [13.1.14]   Ein DUBBED-Release nicht als solches ausgewiesen wurde.
+              (dubbed)
+
+
+             Unser Dank geht an die Groups CRiTiCAL, EMPiRE, JAM
+             sowie an hV, PPQ, PROGRESS, REVEiLLE und SEPTiC, denn
+             Ihre grossartige Vorarbeit war uns bei der Erstellung
+                       dieses Standards eine enorme Hilfe!
+
+       THE 1080p RELEASiNG STANDARDS ORiGiNALLY WRiTTEN AND ORGANiZED BY:
+
+                          * AVG * DETAiLS * c0nFuSed *
+
+                      SiGNED, APPROVED AND ENFORCED BY:
+
+
+       * AVG * DETAiLS * c0nFuSed * GROUP * GROUP * GROUP * GROUP *
+
+              [ Diese Rules gelten ab 11.08.2008 00:00:00 MEZ+1 ]
+
+                          ____  _____  ______  _____
+ ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ/_   \/  _  \/  __  \/  _  \ﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂﬂ
+ ∞ ∞ ∞ ∞∞ ∞∞∞ ∞∞∞±±≤≤≤€€€‹|   /  / \  >      <  / \  \€€€€≤≤≤±±∞∞∞ ∞∞∞ ∞∞ ∞ ∞ ∞
+ ∞ ∞ ∞ ∞∞ ∞∞∞ ∞∞∞±±≤≤≤€€€€|   \  \_/ /   --   \ \_/  /€€€€≤≤≤±±∞∞∞ ∞∞∞ ∞∞ ∞ ∞ ∞
+ ‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹|___|\_____\________/_____/‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹‹
+                               !kb^faa JULY 2008

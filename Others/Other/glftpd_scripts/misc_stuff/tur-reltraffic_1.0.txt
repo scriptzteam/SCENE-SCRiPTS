@@ -1,0 +1,17 @@
+Tur-RelTraffic
+
+Description: !reltraffic script for irc/shell. Requires the MySQL scripts 
+tur-xferlog_import and tur-relsizeupdate.
+
+# ./tur-reltraffic.sh some-release
+Some-release stats so far: downloaded 24987 MB - 6 users from 6 groups downloaded 
+it
+
+# ./tur-reltraffic.sh
+Usage: !reltraffic . If only releasename is given, default is outgoing traffic for 
+unlimitied days in all sections. Sections are SEC1 SEC2 SEC3 or ALL (case 
+sensitive). Days can be ALL for alltime. Use % for partial hits, like %-Group
+
+Author:   Turranius
+Version:  1.0
+Added on: 12-Jul-2005

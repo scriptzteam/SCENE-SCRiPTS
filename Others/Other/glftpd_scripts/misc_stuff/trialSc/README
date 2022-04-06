@@ -1,0 +1,34 @@
+## Trial script made by pnG
+
+!! About
+Monitors new users and msg siteop/deletes them as they dont succeed. Its a good 
+idea to run this script crontabed to match the minimum setting. This script REQUIERS
+perl to run. Perl is almost default on most unix systems, so that wont be
+any problems
+
+!! Installation
+
+* Move trialSc.pl to your /glftpd/bin dir
+* edit your settings in trialSc.pl
+* setup a crontab for the script.
+
+For example:
+  If you have monthup as your setting, run this script once in the end of every month
+  If you have weekup as your setting, run this script once every sunday
+
+Some example crontab entrys:
+Crontab entry for running the script every month:
+0 0 30 * * /glftpd/bin/trialSc.pl > /dev/null
+
+Crontab entry for running the script every week:
+0 0 * * 0 /glftpd/bin/trialSc.pl > /dev/null
+
+Crontab entry for running the script every day:
+0 0 * * * /glftpd/bin/trialSc.pl > /dev/null
+
+
+!! Questions
+If you have any questions, ask pnG on efnet in #getnfoscript
+
+// pnG
+

@@ -1,0 +1,25 @@
+# goes with gft-stats.sh - add these to glftpd.conf
+
+############################################################################
+### GFT-STATS
+############################################################################
+site_cmd	DAYUP		EXEC		/bin/gft-stats.php -u-t
+site_cmd	WKUP		EXEC		/bin/gft-stats.php -u-w
+site_cmd	MONTHUP		EXEC		/bin/gft-stats.php -u-m
+site_cmd	ALUP		EXEC		/bin/gft-stats.php -u-a
+
+site_cmd	DAYDN		EXEC		/bin/gft-stats.php -d-t
+site_cmd	WKDN		EXEC		/bin/gft-stats.php -d-w
+site_cmd	MONTHDN		EXEC		/bin/gft-stats.php -d-m
+site_cmd	ALDN		EXEC		/bin/gft-stats.php -d-a
+
+# gl support default no GROUP day stats ?
+site_cmd	GPWK		EXEC		/bin/gft-stats.php -u-W
+site_cmd	GPMONTHUP	EXEC		/bin/gft-stats.php -u-M
+site_cmd	GPAL		EXEC		/bin/gft-stats.php -u-A
+
+# gl support default no GROUP day stats ?
+site_cmd	GPWD		EXEC		/bin/gft-stats.php -d-W
+site_cmd	GPMONTHDN	EXEC		/bin/gft-stats.php -d-M
+site_cmd	GPAD		EXEC		/bin/gft-stats.php -d-A
+

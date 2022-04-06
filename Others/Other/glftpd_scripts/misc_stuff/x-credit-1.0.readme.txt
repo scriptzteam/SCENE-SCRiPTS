@@ -1,0 +1,39 @@
+X-Credit-System 1.0
+
+########################################################
+###                                                  ###
+###           Creditsystem by Xtreame                ###
+### This Script gives you the folling commands in    ###
+### irc: !show, !give, !take and !transfer           ###
+### Put x-credit.sh in /glftpd/bin and chmod it 755  ###
+### Put x-credit.tcl in your bot dir, change your    ###
+### eggdrop.conf and rehash the bot                  ###
+### The dirs below in glftpd must world write able   ###
+### chmod 777 /glftpd/ftp-data/msgs                  ###
+### chmod 777 /glftpd/ftp-data/users and the         ###
+### chmod 666 /glftpd/ftp-data/users/*               ###
+### chmod 755 x-credit.tcl                           ###
+### to send Users a msg set sendmsg to 1             ###
+###                                                  ###
+### To give or take credits you must have the flags  ###
+### F = take                                         ###
+### G = give                                         ###
+### read glftpd.docs find out more info´s            ###
+###                                                  ###
+########################################################
+###                                                  ###
+### This script need´s tur-passchk to work correctly ###
+### so take a look at http://www.grandis.nu/glftpd/  ###
+### and search for passchk in the download section   ###
+###                                                  ###
+########################################################
+###                                                  ###
+### The Script check´s the users flag, available     ###
+### Credits and the users ratio                      ###
+###                                                  ###
+########################################################
+###                                                  ###
+###            Great thanks to turranius             ###
+###               for his tur-passchk                ###
+###                                                  ###
+########################################################

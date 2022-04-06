@@ -1,0 +1,106 @@
+AUTOTRADE_v4.2.8-EASY
+
+Upgrade v4.1.8 -> v4.2.8:
+Remplacer le dossier MySQL 
+
+Upgrade v4.1.7 -> v4.1.8:
+Remplacer les fichiers autotrade-config.mrc, autotrade-general.mrc et autotrade-request.mrc 
+
+Upgrade v4.1.6 -> v4.1.7:
+Remplacer les fichiers autotrade-config.mrc et autotrade-general.mrc
+Vous devez recréer les auto dans L'onglet : Créer les scripts d'autotrades 
+
+***** IMPORTANT A LIRE *****
+Pour upgradé de la v3 a la v4:
+Remplacer le Dossier MySQL
+Remplacer le Dossier AUTOTRADE
+Charger dans Mirc le script autotrade-tvrage.mrc
+Si vous voulez utiliser TVRAGE a PARTIR d'un auto deja existant vous devez regener
+les auto dans L'onglet : Créer les scripts d'autotrades 
+***** IMPORTANT A LIRE *****
+
+Faire F6 pour afficher le menu de configuration
+
+Changelog v1.0.0 au 09 Juillet 2012:
+Ajout du trigger 2 dans l'onglet Créer les scripts d'autotrades
+Ajout du bouton Charger le script dans l'onglet Créer les scripts d'autotrades
+Fix d'une couleur mal coder dans la fenêtre @Erreur_race sur la section qui peut tronquer par exemple 0DAY
+Ajout de l'onglet About
+
+Changelog v1.1.0 au 15 Juillet 2012:
+Suppression du bouton Finaliser le script dans L'onglet Créer les scripts d'autotrades
+Auto validation du script d'autotrades
+Ajout du bouton Supprimer la section dans le Script dans L'onglet Créer les scripts d'autotrades
+Ajout ou Suppression à la Volé d'une section a racer dans L'onglet Créer les scripts d'autotrades
+Ajout des trigger pour race affils dans L'onglet Créer les scripts d'autotrades
+Ajout de Plusieurs Message d'erreur
+Ajout dans Status (Bouton Droit Dans Mirc) de la liste des sections Activé
+
+Changelog v2.0.0 au 29 Juillet 2012:
+Suppression de l'autotrade de alandra et adaptation de l'autotrade de Jash Pour ce menu
+Gère les annonces suivante: !addpre, !sitepre, !newdir, !addold (Pretime 24h Max)
+Ajout de la listes des sections configuré site à site dans L'onglet Créer les scripts d'autotrades
+Fix du nombre de tours que fais l'auto en fonction des section, ne fonctionnais pas dans l'auto de jash
+Ajout des races sur les repertoires : Sample, Proof, Subs, Covers sur 20 tours
+Ajout du redémarrage des races sur le complete
+
+Changelog v2.1.0 au 30 Juillet 2012
+Ajout de l'option: Ajouter la date après le path dans L'onglet Configuration Rules
+Modification du nombre de tours sur les races affils: 300 tours
+
+Changelog v2.2.0 au 05 Aout 2012:
+Ajout de l'option: Racer que les releases du jour dans L'onglet Configuration Rules
+Ajout d'une Whitelist TEAM dans L'onglet Configuration Rules
+
+Changelog v2.3.1 au 12 Aout 2012:
+Ajout de Charger et Enregistrer la configuration du site source dans L'onglet Créer les scripts d'autotrades
+Fix sur le bouton Supprimer la section dans L'onglet Configuration sections, plus de section cible à sélectionner
+
+Changelog v2.4.1 au 13 Aout 2012:
+Deplacement du bouton Charger le script dans L'onglet Créer les scripts d'autotrades
+Ajout des boutons Décharger le Script et !!! Supprimer le Script !!! dans L'onglet Créer les scripts d'autotrades
+
+Changelog v3.0.0 au 18 Aout 2012:
+Ajout d'un Autorequest
+Changement de version de la dll Rushmirc.dll
+
+Changelog v4.0.0 au 21 Octobre 2012:
+Ajout D'un script TVRAGE
+Ajout de l'option: TVRAGE dans L'onglet Configuration Rules
+Ajout d'une Whitelist pour TVRAGE Classification et Date Premiered dans L'onglet Configuration Rules
+
+Changelog v4.0.1 au 24 Octobre 2012:
+Affichage Complets des Path dans la Fenetre AutoTrading
+Fix: Les informations tvrage n'étais pas affiché à la relance d'un REPRE dans la Fenetre AutoTrading
+
+Changelog v4.0.2 au 13 Janvier 2013:
+Fix: l'ajout d'une section dans L'onglet configuration Rules pouvait faire disparaitre la liste des affils ou team banned.
+
+Changelog v4.1.3 au 19 Janvier 2013:
+Ajout du check Country Pour TVRAGE dans L'onglet Configuration Rules
+L'option TVRAGE s'active ou ce desactive automatiquement si des informations sont entrées ou supprimer
+L'option RQM ne peut plus etre coché si aucune information TVRAGE n'est présent
+
+Changelog v4.1.4 au 14 Juin 2013:
+Fix sur les skin d'annonce qui utilisait des parenthèses
+
+Changelog v4.1.5 au 28 Juillet 2013:
+Fix: Erreur de code sur les parenthèses, il etais supprimer sur le nom des releases ce qui faisais des erreurs de races
+Ps: vous devez recrée les Scripts dans L'onglet Créer les scripts d'autotrades pour fixé le bug
+
+Changelog v4.1.6 au 10 Aout 2013:
+Fix: bug mineur sur les skin corrigé
+Ps: vous devez recrée les Scripts dans L'onglet Créer les scripts d'autotrades pour fixé le bug
+
+Changelog v4.1.7 au 29 Aout 2013:
+Fix: un bug pouvais empecher la race des oldies inferieur à 2000
+Ps: vous devez recrée les Scripts dans L'onglet Créer les scripts d'autotrades pour fixé le bug
+
+Changelog v4.1.8 au 30 Aout 2013:
+Suppression de la fermeture automatique de onglets (incompatible avec les version crack de FTPRUSH)
+Fix: l'autorequest cherche la release avec le nom exact est plus avec des jokers (*release*)
+
+Changelog v4.2.8 au 15 Septembre 2013:
+MAJ de MySQL en version 5.5.31
+
+

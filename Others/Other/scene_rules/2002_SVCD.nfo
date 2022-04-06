@@ -1,0 +1,116 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                            ³
+³                     The SVCD Releasing Standards 2002                      ³
+³                                                                            ³
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                            ³
+³                          ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                         ³
+³                                                                            ³
+³  PROPERS:                                                                  ³
+³                                                                            ³
+³  - No previous releases may be propered based on audio or video bitrate.   ³
+³  - Propers will be allowed in the case of technical problems, bad aspect   ³
+³    ratio, sync problems, skipping/freezing, interlaced, bad ivtc, etc      ³
+³                                                                            ³
+³  VIDEO:                                                                    ³
+³                                                                            ³
+³  - Must be at least 1750kbit average, with a maximum of 2450kbit.          ³
+³  - TMPGENC: 2 pass minimum                                                 ³
+³  - CCE: 4 pass minimum                                                     ³
+³  - Menus allowed. (see notes)                                              ³
+³  - Subtitles allowed (and encouraged for foreign releases)                 ³
+³                                                                            ³
+³  AUDIO:                                                                    ³
+³                                                                            ³
+³  - Minimum 224kbit @ 44.1khz (regardless of source)                        ³
+³  - Secondary tracks shall be 224 or LESS                                   ³
+³                                                                            ³
+³  PACKAGING:                                                                ³
+³                                                                            ³
+³    - All releases must be BIN/CUE. (remove path from cue files)            ³
+³    - Must be packed with RAR, compression is NOT ALLOWED                   ³
+³      and broken into 15 or 20 MB volumes                                   ³
+³    - Recovery record recommended.                                          ³
+³    - Must have SFV                                                         ³
+³    - Must have NFO                                                         ³
+³    - NFO MUST INCLUDE:                                                     ³
+³        Group name                                                          ³
+³        Title                                                               ³
+³        Actual SVCD release date                                            ³
+³        DVD release date                                                    ³
+³        US theater release date                                             ³
+³        Audio bitrate                                                       ³
+³        Video minimum/average/maximum bitrate                               ³
+³        Movie runtime/length                                                ³
+³        IMDB/adultdvdempire link                                            ³
+³        Number of rars per cd (eg. 44x15MB)                                 ³
+³                                                                            ³
+³  SAMPLES:                                                                  ³
+³                                                                            ³
+³    - REQUIRED                                                              ³
+³    - Minimum 30 seconds, maximum 1 full minute in length and in separate   ³
+³      folder marked 'SAMPLE'.                                               ³
+³    - MUST be taken from the movie - NOT encoded separately.                ³
+³                                                                            ³
+³  DIRECTORY NAMING:                                                         ³
+³                                                                            ³
+³    - Directory names shall NOT exceed 64 characters.                       ³
+³    - All releases are to include production year.                          ³
+³    - DO NOT indicate Ripping method (CBR/VBR/CCE/TMPGENC and so on),       ³
+³      WS (widescreen), DVD/SVCD release DATE, GENRE or anything else        ³
+³      in the directory name (ONLY within the NFO).                          ³
+³    - Acceptable characters in naming a directory include (NO spaces or     ³
+³      double dots - single dots or underscores ONLY):                       ³
+³                                                                            ³
+³        ABCDEFGHIJKLMNOPQRSTUVWXYZ                                          ³
+³        abcdefghijklmnopqrstuvwxyz                                          ³
+³        0123456789 . -_                                                     ³
+³                                                                            ³
+³    - All Release directories, regardless of year, shall be named           ³
+³      according to Movie.Name.Year.Source.Codec-Group                       ³
+³      (i.e. Movie.Name.Year.DVDRip.SVCD-Group)                              ³
+³                                                                            ³
+³    - Releases that are more than 1 CD will follow these specs:             ³
+³        - MUST be named CD1, CD2, CD3 and so on. ('disc1', etc will NOT     ³
+³          be allowed).                                                      ³
+³        - There MUST be a SFV included for each CD.                         ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+³                                                                            ³
+³                       ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³
+³                                                                            ³
+³    Source related notes:                                                   ³
+³    - Source shall be DVD Only, no exceptions!                              ³
+³    - DVD Screeners shall be clearly marked in the directory name and the   ³
+³      nfo shall contain presence of studio watermarking, or lack thereof.   ³
+³                                                                            ³
+³    Ripping related notes:                                                  ³
+³    - Movies should be ripped in their most widescreen format available.    ³
+³    - Group Watermarks WILL NOT BE ALLOWED IN ANY CASE.                     ³
+³    - NO intros, outros, betweenos, or any other form of defacement of the  ³
+³      movie including possible menus will be tolerated.                     ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+³                                                                            ³
+³                        ÀÄÄÄ[ GROUPS & MEMBERS ]ÄÄÄÙ                        ³
+³                                                                            ³
+³                    SVCD 2002 revision was organized by:                    ³
+³                           - vimVam - ne14a69 -                             ³
+³                                                                            ³
+³              Respects to the original SVCD council organizers:             ³
+³                                                                            ³
+³             iV - V4F - 4HM - XPD  - DvCS - PTi - TBH - TWiLiGHT            ³
+³                                                                            ³
+³             SVCD 2002 has been approved by the following groups:           ³
+³                                                                            ³
+³       EPiC  -  V4F  -  aNBc  -  DEiTY  -  TheWretched  -  iFO  -  WiDE     ³
+³                                                                            ³
+³             DvCS  -  PMM  -  TBH  -  SChiZO  -  ESVCD  -  PTi              ³
+³                                                                            ³
+³                              Also signed by:                               ³
+³                                                                            ³
+³     DMR  -  VCDWS  -  tNB  -  SportsVCD  -  iNFiNiTY  -  NAPALM  -  TmN    ³
+³                                                                            ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+³   Special thanks to the TDX 2002 rules for their layout and guidelines.    ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ

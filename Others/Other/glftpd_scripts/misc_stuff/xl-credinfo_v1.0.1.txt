@@ -1,0 +1,31 @@
+xL-credinfo v1.0.1 README
+-------------------------
+
+CHANGELOG
+---------
+1.0
+First public release
+
+1.0.1
+Replaced a $1 with a $2 to make total users correct in all cases. 
+Just forgot to change it. Sorry about that
+
+DESCRIPTION
+-----------
+Available commands: * !credinfo <all/normal> - displays total amount of credits, average amount of credits/user,
+                                               credits top3
+                    * !credpos <all/normal> <user> - displays credpos (duh! :P )
+
+INSTALLATION
+------------
+* Extract the file ( gzip -dc xl-credinfo_v1.0.1.tar.gz | tar -xof- )
+* Edit and copy xl-credinfo.sh and xl-credpos.sh to /glftpd/bin and chmod a+x
+* Copy xl-credinfo.tcl to your eggdrop script dir and add it to your eggdrop.conf
+
+CONTACT
+-------
+Please contact me if u have any questions about this script or if you experience any bugs.
+
+email: xolax@home.se
+IRC:   xoLax@EFnet
+

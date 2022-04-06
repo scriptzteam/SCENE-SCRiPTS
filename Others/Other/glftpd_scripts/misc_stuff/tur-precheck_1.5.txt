@@ -1,0 +1,16 @@
+PreCheck (GL1&2)
+
+Description: A pre check script for when users uploads files. Ment as a standalone 
+script OR a replacement for zipscript-c's precheck.sh
+It can:
+Only allow certain files to be uploaded. No more .imdb files, etc.
+Ban certain files. No more site nfos, etc.
+Block a user from uploading a .sfv file in a dir where there already is one. With 
+that, it can also announce to irc that the user is a moron (dZSbot.tcl default). 
+It can also check that all .rar/.mp3 files exists in sfv as well as preventing .zip
+filse from different releases to be uploaded to the same directory.
+Also, block those mornic nfo files that flashfxp makes, like blalba(9).nfo etc.
+
+Author:   Turranius
+Version:  1.5
+Added on: 28-Sep-2003

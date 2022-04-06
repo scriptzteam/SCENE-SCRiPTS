@@ -1,0 +1,113 @@
+The Dutch TV Releasing Standards 2006
+Revision 1.1 20 feb 2007
+
+Audio:
+- Must be VBR MP3 or AC3 (no transcoding on AC3)
+- Must be stereo when it's available
+- ABR is not VBR
+- 44.1 kHz or 48 kHz allowed
+- MP3 files must be normalized
+- No multi-language
+
+Video:
+- Must be 25 FPS
+- Keyframes must be inserted <= 20 seconds and must be inserted
+	according to scene changes and framesizes as determined by the
+	codec or encoding application
+
+Codec:
+- Only XviD 1.0 final+ and x264 allowed
+- 2 or more passes must be used
+- No dupes based on codec, use internal instead
+- Quartel Pixel not allowed due to incompatibility issues
+
+Resolution:
+- Width: 512 - 672 for WS/letterboxed, 448 - 640 for FS
+- Height and width must be a multiple of 16
+- Cropping is required. Over cropped releases are a technical flaw.
+- Changing ARs, in that case the cropping must be applied to the image that
+	presents more pixels
+- Subtitles must not be cropped
+- Aspect ratio must be within 5% of the original aspect ratio.
+
+Size:
+- Episodes shall not overlap on CDs
+- 20-23 min: 175 MB
+- 23-35 min: 233 MB
+- 35-50 min: 350 MB
+- 50+ min: 700 MB
+- 100+ min: 1400 MB (2 x 700MB)
+- 2% under the maximum size is allowed
+
+Packaging:
+- All releases must be AVI, MP4 or MKV.
+- Must be packed with RAR, no compression
+- 15.000.000 bytes or 20.000.000 bytes archives
+- Recovery record allowed
+- Must have SFV
+- Must have NFO
+- NFO must include:
+	* Group name
+	* Title
+	* Episode title (if any)
+	* Release date
+	* Air date
+	* Video resolution
+	* Video bitrate
+	* Video length
+	* Audio bitrate
+	* Number of RARs
+	* Source
+	
+Credits:
+- Cutting not allowed
+- Downsampling not allowed
+
+Sample:
+- Required +/- 1 min
+- In a seperate 'Sample' folder
+- Must be taken from the released material, not encoded separately
+- .ts on DSR/PDTV/HDTV sources with questionable quality
+
+Propers:
+- Only based on technical flaws, not on ripper's choice (like codec)
+- Proper reason must be mentioned in the .nfo
+
+Directory naming:
+- No indication of ripping methods
+- No genres or channel
+- Allowed characters are a-zA-Z0-9.-_
+- Session tags should be like SxxEyy, where xx is the season and yy is the episode number
+- Miniseries should be tagged without seasontag, only Eyy
+- Releases with more than 1 CD must be named CD1, CD2, etc. 
+	* Each directory should contain an SFV file
+	* Only 1 sample 
+- Dutch spoken series should be tagged accordingly with the tag 'DUTCH'
+- Flemish spoken series should be tagged 'FLEMISH'
+- Other languages and dutch subbed should be tagged 'NLSUBBED'
+- Must be tagged WS, if its letterboxed or widescreen. FS tag is not allowed.
+- READ.NFO tag is allowed if an important note is included in the .nfo
+
+Sources:
+- HDTV: 	Digital recording from a source stream at either 1080i or 720p at a bitrate from 19,39mbps or higher
+- PDTV: 	Other resolution digital recordings from source streams at a bitrate of 10+mbps or higher.
+- DSR: 		Other resolution digital recordings with a bitrate lower than 10 mbps
+- TVRip: 	Analog recordings or digital recordings that were converted from digital -> analog -> digital
+					( This includes DVD-recorders, boxes that have analog output, etc )
+
+Dupes:
+- FLEMISH doesn't dupe DUTCH, DUTCH doesn't dupe FLEMISH
+- HDTV dupes PDTV/DSR if resolution is not HR (760+ width) or full HDTV resolution
+- PDTV dupes DSR, DSR dupes PDTV
+- TVRip dupes PDTV/DSR/HDTV
+- FS dupes WS, WS doesn't dupe FS
+- FS doesn't dupe WS if it contains more picture (use proof .jpg sample)
+- Letterboxed is WS
+
+Quality control:
+- If a group releases PDTV/HDTV or DSR releases, and there are doubts if this is actually true, a
+	Transport Stream file (.ts) must be given by the group to prove it
+
+
+Signed by:
+MiSTAKE, DiFFERENT, STELLA, JUPiLER, TDF, RENTALTV

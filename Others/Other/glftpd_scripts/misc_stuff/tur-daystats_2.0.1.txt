@@ -1,0 +1,20 @@
+DayStats (GL2+)
+
+Description: Tur-DayStats is a script that displayes some "today" info right before
+midnight each day. By default it shows, amongst others, number of logins, logouts, 
+timeouts, nukes, deleted dirs.. Also, number of new dirs per section and number of 
+pres per section.
+
+Also shows the group(s) who pred the most.
+Of course, it shows the top uploaders, top downloaders, top downloading group and 
+top uploading group as well.
+
+It also has MSS support with a little extra script (in this package) so that it can
+display the today stats from all your slaves as well.
+
+Note: Users of glftpd 1.32 and older will need to use Tur-Daystats 1.4. Its 
+available in "Downloads Quick / Turranius / older_versions" to the left.
+
+Author:   Turranius
+Version:  2.0.1
+Added on: 15-Sep-2003

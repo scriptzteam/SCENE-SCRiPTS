@@ -1,0 +1,12 @@
+Tur-OneLine_Stats
+
+Description: This is an "addon" to glftpds stats binary. It outputs the 
+position/user/megs on ONE line instead of multiple. Lots of variations on how you 
+want the output. Works for both user and group stats.
+Good if you want periodic output of stats in your channel or just want to replace 
+your current !wkup commands (etc) with something that outputs the result on one 
+line.
+
+Author:   Turranius
+Version:  1.0
+Added on: 11-Jun-2005

@@ -1,0 +1,612 @@
+README: Do the steps in this file to upgrade your glftpd. If you're upgrading
+        more than one version up, upgrade one version, login to the site as
+        siteop, do "site change * max_ulspeed 0" (this is to force glftpd to
+        read and re-write each userfile, so that if format is slightly changed,
+        glftpd will update it. You can change a different value if you are
+        using upload speed restrictions), and then do the same for the next
+        version, until you get to the top.
+
+        You don't have to kick everyone off to upgrade, you can just copy the
+        new glftpd binary in place of the old one, and all new users will be
+        using the new version, while users already online will be able to
+        complete what they're doing.
+        Either first delete /glftpd/bin/glftpd and then copy the new one, or
+        use: cp -f glftpd /glftpd/bin
+
+--------------------------------------------------------------------------------
+2.00RC7->2.00
+REQUIRED:
+* Replace the glftpd binary.
+
+2.00RC6->2.00RC7
+REQUIRED:
+* Replace the glftpd binary and the glstrings.bin file.
+* Change your dl_sendfile 1 line to dl_sendfile 512
+RECOMMENDED:
+* replace your ginfo.foot from the ftp-data/text/ directory with the one from the package
+* replace your site.take and site.give from the ftp-data/help/ directory with the ones from the package
+
+2.00RC5->2.00RC6
+REQUIRED:
+* Replace all the binaries (glftpd, nuker, reset, stats, etc), including glstrings.bin
+RECOMMENDED:
+* add dl_sendfile 1 into your glftpd.conf, this will make sendfile work in 1mb blocks
+  (will call one sendfile call for each 1 mb, and will update the sharedmem etc before next
+  call)
+* replace your site.change from the ftp-data/help directory with the one from the package
+* replace your ginfo.foot from the ftp-data/text/ directory with the one from the package
+* replace your site.take and site.give from the ftp-data/help/ directory with the one from the package
+
+2.00RC4->2.00RC5
+REQUIRED:
+* Replace the glftpd binary.
+RECOMMENDED:
+* set site locate in your glftpd config to trusted people only, it allows people
+  to search private dirs
+* replace your ginfo.foot from the ftp-data/text/ directory with the one from
+  the package
+* dl_sendfile is now enabled by default, if you dont want to use this function
+  please disable it by adding "dl_sendfile 0" to your config
+  
+2.00RC3->2.00RC4
+REQUIRED:
+* Replace all the binaries (glftpd, nuker, reset, stats, etc), including glstrings.bin
+RECOMMENDED:
+* Replace your old ftp-data/help/site.change, site.grpren, site.help.all, site.help.siteop
+  and ftp-data/text/onel.body files with the ones from the package.
+
+2.00RC2->2.00RC3
+REQUIRED:
+* Replace all the binaries (glftpd, nuker, reset, stats, etc), including glstrings.bin
+RECOMMENDED:
+* Empty your $glftpd-root/ftp-data/logs/laston.log file.
+* Copy the gpm*.* files to the $glftpd-root/ftp-data/text/ directory.
+
+1.32->2.00
+REQUIRED:
+* You will need to do this upgrade with users logged off !
+* Replace all the binaries (glftpd, nuker, reset, stats, etc), including glstrings.bin
+* Make a $glftpd-root/ftp-data/groups directory.
+* Copy the default.group file to the $glftpd-root/ftp-data/groups directory.
+* Run the convert_to_2.0.pl script to convert all userfiles to the new format
+  and create the groupfiles.
+* Change the show_diz setting in the config to the new format.
+* Change all your hidden_files settings to the new format.
+* Change your oneliners settings to new format.
+* Add the new -grpchange, -changeallot, -groupcomment, -grp and -chgadmin rights
+  settings to your configuration file.
+  EXAMPLE:
+  -grpchange       1
+  -changeallot     1 2 7
+  -groupcomment    1
+  -grp            !8 *
+  -chgadmin        1 7
+
+* Empty your dirlog, the dirlog format changed a bit and it needs to completely
+  be in the new format.
+* Copy the onel.body, laston.body and laston.head file to the 
+  $glftpd-root/ftp-data/text/ directory.
+
+RECOMMENDED:
+* Add dl_sendfile 1 to your config if you dont use speed limits and your system supports it.
+* Copy site.chgadmin, site.grp, site.grpchange, site.laston and site.purge
+  files from the ftp-data/help dir in this package to your ftp-data/help dir.
+* Copy swho.body, swho.head, swho.foot, gpm*.*, group.comment and group.txt from the
+  ftp-data/text dir in this package to your ftp-data/text dir.
+* Replace your ftp-data/text/user.txt file with the one from this package.
+* Review your logging option in the inetd, the default for ip logging changed. (-x)
+* Add the -delownip rights setting to your configuration file.
+  EXAMPLE: -delownip       !8 *
+* Remove the old oneliners file from ftp-data/misc.
+* Review all your group slots afer running convert_to_2.0.pl.
+* Shared memory structure changed, check if your scripts that use it are updated.
+* NUKE/UNNUKE logging format has changed, upgrade your scripts that read this.
+* Replace your old ftp-data/help/site.change, site.grpren, site.help.all, site.help.siteop,
+  site.take, site.give and ftp-data/text/onel.body files with the ones from the package.
+* Replace your ginfo.foot from the ftp-data/text/ directory with the one from the package.
+* Recompile all extra tools from the bin/sources/ after updating the config path in 
+  the glconf.h file. To compile you can use the compile.sh script.
+* Update all external scripts that use the passwd file, userfiles and SHMEM.
+  Note: for password checking you can use the example code in bin/sources/PassChk/.
+
+
+1.31->1.32
+REQUIRED:
+* Replace "glftpd" binary
+
+1.30 -> 1.31
+REQUIRED:
+* Replace "glftpd" and "reset" binaries
+
+RECOMMENDED:
+* replace ftp-data/text/ginfo.* with new ones, adds wkly allotment and removes tagline
+
+1.29 -> 1.30
+REQUIRED:
+* Replace the glftpd binary
+* 1.30 include TLS version (there is no binary without TLS), so you have to 
+  generate a certificate and set your inetd commandline to point at it
+  you also should set permissions for your users, see README.TLS for more info
+  
+RECOMMENDED:
+* Add -seen,-laston,-userothers to your glftpd.conf, see changelog for info
+* Set -groups to 1 only (more secure)
+
+1.28 -> 1.29
+REQUIRED:
+* Replace the glftpd binary
+
+1.27 -> 1.28
+REQUIRED:
+* Replace all the binaries, including glstrings.bin
+* Add a first parameter to the show_totals setting(s) to reflect the max
+  number of lines it should show.
+
+1.26 -> 1.27
+REQUIRED:
+* Replace all the binaries, including glstrings.bin
+* If you use pasv_ports, put a dash between the two numeric arguments
+RECOMMENDED:
+* Add "-grpstats !8 *" and "-predupe C" at the bottom of glftpd.conf
+* Copy site.search and site.predupe to your ftp-data/help directory.
+* If you allow people to rename files, you might consider giving them the
+  filemove right, since moving files no longer obeys the rename right.
+* If you use 'creditcheck' in glftpd.conf, make sure it still works, modify
+  your paths if not (see changelog for more info)
+
+1.25 -> 1.26
+REQUIRED:
+* Shut down your site so that only siteops can log in
+  (put "shutdown 1" into glftpd.conf)
+* Kick all users currently connected (have to do it this time)
+* Replace glftpd, nuker, reset, stats, useredit, glstrings.bin in /glftpd/bin
+* Log in to the site as siteop and do: site change * idle_time -1
+  (if you get kicked for idling before you can perform this, try using an
+   account with the idler flag, or edit your userfile and change the second
+   option on the GENERAL line to -1)
+* Add a third parameter to the secure_ip settings (need ident) to reflect your
+  no_ident settings in glftpd.conf.
+* Remove the no_ident setting from glftpd.conf
+* Add "-stat !8 *" to the bottom of glftpd.conf
+* Re-open the site
+* Edit your default.* files in ftp-data/users and change the second option
+  on the GENERAL line to -1 (this is idle_time now). Options are separated by
+  space, first option is "#,#", that's one option, not two.
+* Replace olddirclean2.c and glupdate.c in glftpd/bin/sources, recompile them
+RECOMMENDED:
+* Replace the bin/sources/glstrings dir.
+* Replace your ftp-data/help/site.change and site.help.all files
+* Replace your ftp-data/text/user.txt (or just add the new I@ cookie)
+* Replace your glftpd/bin/sources/dirlogscanner.c and compile new dirlogscanner
+* If you want site ziplist, site nfo or site zipchk, use the scripts in from
+  the bin directory, add them as site_cmd in glftpd.conf.
+* If you use 'shutdown' in glftpd.conf, make sure you change it to new syntax
+* Go through your secure_ip and secure_pass settings, make sure they still
+  work the way they should - see changelog for info about changes
+
+1.24 -> 1.25
+REQUIRED:
+* Replace glftpd, gl_spy, nuker, reset in /glftpd/bin
+* Replace your glftpd.docs and glftpd.faq
+* Add /glftpd/bin/glstrings.bin to your /glftpd/bin directory   *IMPORTANT*
+  If your glftpd is not installed in /glftpd, you need to add the -s switch
+  to inetd.conf or xinetd, to specify location of glstrings.bin
+  Exmp: glftpd -l -o -i -s/home/glftpd/bin/glstrings.bin
+* Add ftp-data/text/flags.txt to your ftp-data/text directory
+* Add ftp-data/text/ginfo.* to your ftp-data/text dir
+* Replace 6 help files in ftp-data/help:
+  site.grpadd site.grpdel site.grpnfo site.grplog site.show site.reqfilled
+* Add "-requestadd !8 *" to the bottom of config file glftpd.conf
+* Add "-onel !8 *" and "-oneladd !8 *" too
+* Change "-uchanges" to "-syslog" in glftpd.conf
+* Replace your "freedl" lines in glftpd.conf with "creditloss"
+  (see changelog or glftpd.docs for syntax)
+* Copy new version of killghost.c to /glftpd/bin/sources and recompile it
+  (cd /glftpd/bin; cc -o killghost sources/killghost.c)
+* Replace (and recompile) your /glftpd/bin/sources/glupdate.c
+  (cd /glftpd/bin; cc -o glupdate sources/glupdate.c)
+RECOMMENDED:
+* Copy the bin/sources/glstrings directory to /glftpd/bin/sources
+* Copy the ftp-data/help/site.users file to your /glftpd/ftp-data/help dir.
+* Copy the ftp-data/help/site.help.siteop file to /glftpd/ftp-data/help
+* Remove "dividerline" and "-noaccess" from glftpd.conf, if you have those
+* To allow ftp clients to use the x-dupe feature, add this to your config file:
+  xdupe *.zip *.[Rr][0-9][0-9] *.[Rr][Aa][Rr]
+  (you can add other filemasks to enable this for other file types)
+
+1.23 -> 1.24
+REQUIRED:
+* Replace glftpd, nuker, stats, reset in /glftpd/bin
+* Check your zipscript to make sure you're not using $PWD still. Glftpd will
+  not delete incomplete files by default now, executing zipscript instead -
+  but zipscript doesn't work right if you use $PWD instead of $2 for directory.
+* Replace the "ignore_noop" setting in glftpd.conf with "idle_commands noop".
+RECOMMENDED:
+* Add ftp-data/help/site.adduser.banned
+* Copy bin/sources/killghost.c to /glftpd/bin/sources
+* Replace your ftp-data/text/who.foot and ftp-data/text/user.txt
+* Replace /glftpd/bin/sources/dirlogscanner.c and recompile it if you need it
+* Add "-errlog 1" to the bottom of config file
+
+1.22 -> 1.23
+REQUIRED:
+* Replace glftpd, gl_spy, nuker, reset, and useredit in /glftpd/bin
+* Add the line "LOGINS 2 0 -1 -1" to your default.* files in ftp-data/users
+* If you have any users with anonymous passwords, you need to reset the
+  passwords (see changelog for details)
+RECOMMENDED:
+* Replace your ftp-data/help/site.help.siteop file
+* Replace your ftp-data/help/site.change file
+* Replace your ftp-data/text/user.txt , it has been re-designed
+* Do "touch /glftpd/ftp-data/logs/error.log" to start the error log
+* If you use "site_cmd command is built_in_command" in your config file, you
+  need to give access to 'command' with "custom-command", just like for other
+  custom commands.
+* If you use the "use_dir_size" option, add a new argument, "/"
+  exmp: change "use_dir_size k" to "use_dir_size k /"
+
+1.21 -> 1.22
+REQUIRED:
+* Replace glftpd, gl_spy, useredit, stats, reset and nuker in /glftpd/bin
+* Add the line "HOMEDIR /site" to your default.user file in ftp-data/users.
+  (and to all other default.* files in that directory)
+RECOMMENDED:
+* Replace ftp-data/help/site.dupe (new syntax)
+* Replace ftp-data/help/site.undupe (old one gave false information)
+* Replace the dirlogscanner binary and dirlogscanner.c /glftpd/bin/sources
+* Add /glftpd/bin/olddirclean2, /glftpd/bin/sources/olddirclean2.c, and
+  change your maintenance scripts to use olddirclean2 instead of olddirclean.
+  Run olddirclean2 -h to see the new syntax.
+* Give nukers delete access to directories where they can nuke (this is
+  no longer the default; consult changelog)
+  exmp: delete /site/incoming/* 1 A
+* Add "-wipe 1" to the end of the config file. See changelog to see why.
+* Remove the "default_homedir" line from your config file. It is obsolete.
+
+1.20 -> 1.21
+REQUIRED:
+* Replace the glftpd, useredit, reset, stats and nuker binaries
+RECOMMENDED:
+* Put all your hideuser lines together in the new format.
+  exmp: hideuser -user1 -user2 =hiddengroup
+* Replace your dir_names and file_names lines in config file with new format
+  exmp: dir_names 1 lower [:space:]_
+* If you were using pasv_addr and it's not working anymore, add a 1 as a new
+  parameter. exmp: 'pasv_addr 1.2.3.4' becomes 'pasv_addr 1.2.3.4 1'
+* Replace ftp-data/text/nukes.*
+* Replace ftp-data/help/site.change
+
+1.19 -> 1.20
+REQUIRED:
+* Replace the glftpd, nuker, nukelogscanner and nukelogclean binaries
+* !!! REMOVE your ftp-data/logs/nukelog !!!
+RECOMMENDED:
+* Users of 1.20 beta: remove fast_dupelog from glftpd.conf, if you have it
+* Add "deleteown * !8 *" to the glftpd.conf in the rights section
+* Remove the "2" from the "-change" line in glftpd.conf, if you have it
+* To have glftpd work like before, add "secure_ip 1 1 *" to config file.
+  But to be more secure, try "secure_ip 1 1 1" and "secure_ip 2 0 *" underneath.
+* Replace the gl_spy and useredit binaries
+* Replace sources/nukelogscanner.c and nukelogclean.c
+* Replace /ftp-data/help/site.delip, site.addip and site.dupe
+* Replace /ftp-data/help/site.help and site.help.kick
+* Replace /ftp-data/text/statline.txt
+* Replace /ftp-data/text/who.foot
+* Rename /ftp-data/text/show_diz.head to show_totals.head, same
+  with show_diz.body and show_diz.foot.
+
+1.18 -> 1.19
+REQUIRED:
+* Replace the glftpd, reset, and nuker binaries
+* Change all grppath lines to new format.  Example:
+  (old) grppath /site/mydir STAFF
+  (new) privpath /site/mydir =STAFF
+* Change all lines from the "rights" section to new format.  Example:
+  (old) upload /site/* yes *
+  (new) upload /site/* *
+  (old) makedir /site/blah/*/ no LAMEGROUP
+  (new) makedir /site/blah/*/ !=LAMEGROUP *
+      (This also applies to overwrite, dirlog, and delete.
+       See glftpd.conf-EXAMPLES for more examples)
+* Change the secure_pass line's format.  Example:
+  (old) secure_pass aA1... 1
+  (new) secure_pass aA1... !1 *
+      (You can add more of these lines now)
+* Convert no_downloads to the download right format.  Example:
+  (old) no_downloads /site/private/*
+  (new) download /site/private/* !*
+* Add a rule to the rights section that lets everyone download.
+  Example: "download * *".
+* Convert all freedldir lines to new format.  Example:
+  (old) freedldir /site/privstaff/* STAFF
+  (new) freedl /site/privstaff/* =STAFF
+* Convert all freefile lines to new format.  Example:
+  (old) freefile *.nfo STAFF
+  (new) freefile *.nfo =STAFF
+* Convert all nostatdir lines to new format.  Example:
+  (old) nostatdir /site/free/*
+  (new) nostats /site/free/* *
+* Change all instances of "hidedir" to "hideinwho".
+* Add '*' as the last parameter to the "welcome", "goodbye"
+  and "newsfile" lines in your config file.  Example:
+  newsfile /ftp-data/misc/newsfile *
+* Change every group/flag for the "no_ident" setting to the opposite
+  (by adding a ! in front) and add a '*' at the end.  Example:
+  (old) no_ident 1 7
+  (new) no_ident !1 !7 *
+* Change every msgpath line to new format.  Example:
+  (old) msgpath /site /ftp-data/misc/sitemessage
+  (new) msgpath /site/ /ftp-data/misc/sitemessage *
+  (You NEED the trailing slash now)
+* Change calc_crc to new format.  Example:
+  (old) calc_crc 1
+  (new) calc_crc *.rar /site/Rars/* *.[Rr][0-9][0-9]
+RECOMMENDED:
+* Add "show_totals /site/*" to config file.
+  You may also want to add more lines for other directories.
+* If you have "tagline something 0" in config file, delete it.
+  If you have "tagline something 1", remove the " 1" part.
+* Edit ftp-data/text/user.txt and change "Unfo" to "Tagline"
+* Replace ftp-data/help/site.delip (there was a typo in it)
+* Replace bin/ftpwho, bin/gl_spy, bin/useredit and bin/sources/ftpwho.c
+
+1.17.2 -> 1.18
+REQUIRED:
+* Replace the glftpd, reset, nuker, and glupdate binaries
+* Change all occurrences of "exit 1" in dirscript, zipscript, and dupescript
+to "exit 2".
+* Read the file "newconfig.118" and do what it tells you.
+RECOMMENDED:
+* If you don't have "no_ident 1 7" in config file, you might want to add it.
+* Add "use_dir_size k" to config file
+* Add "secure_pass A1b... 1" to config file
+* Copy bin/flysfv and bin/sources/flysfv.c to your bin and sources dirs
+* In ftp-data/help, replace site.help.all and site.change
+* Replace sources/glupdate.c 
+* Enable your path-filter in config file (if it's commented out), make
+sure it looks like this:
+path-filter	*	/ftp-data/misc/pathmsg	^[-A-Za-z0-9_.()[:space:]]*$  ^\.  ^-  
+* Add all custom commands to your config file with appropriate permissions.
+  (All configurable site commands and custom commands are now disabled by default)
+  exmp: custom-rules *
+
+17.1 -> 17.2
+replace /glftpd/bin/glftpd
+replace /glftpd/bin/nuker
+replace /glftpd/bin/reset
+replace /glftpd/ftp-data/help/site.msg
+edit your config file and check if you need to change the order
+of some rules in the rights section (read changelog for more info).
+
+17.0 -> 17.1
+replace /glftpd/bin/glftpd
+
+16.9 -> 17.0
+replace ftp-data/text/gpw*.head and gpa*.* (small fix)
+replace ftp-data/help/site.change
+replace ftp-data/help/site.help.*
+replace ftp-data/help/site.unnuke
+replace /glftpd/bin/sources/ftpwho.c
+read sitecommands.txt and add the commands to your glftpd.conf file.
+add /glftpd/bin/dirscript and pre_dir_check to your config file.
+replace the following binaries: reset, glftpd, gl_spy, useredit
+_IMPORTANT_: convert your user files with the uconv program,
+             read uconv.txt for more info (make sure you kick all users first).
+
+16.8 -> 16.9
+replace the glftpd binary
+replace ftp-data/help/site.chgrp
+replace /glftpd/bin/zipscript and copy /usr/bin/wc to /glftpd/bin
+ ^(the above is optional, read changelog for more info)
+you might want to delete ftp-data/logs/login.log
+add ftp-data/text/traffic.head and traffic.foot
+replace ftp-data/help/site.help.all
+
+16.7 -> 16.8
+add ftp-data/help/site.msg
+replace ftp-data/help/site.change
+replace ftp-data/help/site.help.*
+replace the glftpd binary
+
+16.6 -> 16.7
+replace the glftpd binary
+replace ftp-data/help/site.help.user
+replace /glftpd/bin/stats
+add ftp-data/help/site.gadduser
+replace the reset binary
+
+16.5 -> 16.6
+replace the glftpd binary
+replace ftp-data/help/site.change
+copy shutdown to ftp-data/text
+add the max_ulspeed cookie to your user.text if you want
+
+1.16.4 -> 1.16.5
+replace /glftpd/bin/glftpd
+replace ftp-data/help/site.change
+copy user.comment to /glftpd/ftp-data/text
+*optional*: replace $PWD with $2 and $1 with $2/$1 in your
+ dupescript (also change "if ls |" to "if ls $2 |") or just
+ copy the new dupescript into /glftpd/bin
+add bouncer_ip to config file if you're using a bouncer
+copy sitefull to /glftpd/ftp-data/text
+add "site_cmd CHMOD blah" to the config file (see changelog).
+replace your gadmin slots cookie (%[%-5d]IX with %[%-5s]IX) in
+ ftp-data/user.txt (if you're using it) and other cookie files
+
+1.16.3 -> 1.16.4
+replace the following binaries:
+glftpd, nuker, dirlogscanner, gl_spy.
+replace (or modify) zipscript.
+add botscript_path to config file if using root_path /
+copy and use the olddirclean.c and nukelogclean.c
+
+1.16.2 -> 1.16.3
+simple glftpd bin replacement
+add pwd_path and grp_path to config file if using root_path /
+
+1.16.1 -> 1.16.2
+simple glftpd bin replacement.
+
+1.16.0 -> 1.16.1
+replace the glftpd and gl_spy bins.
+
+1.15.8 -> 1.16.0
+bin replacements:  ALL OF THEM.
+glftpd.conf will need the rights section to have its YES/NO and GROUP fields
+SWAPPED!!!   see changelog.
+New makedir variable in rights section of glftpd.conf NEEDED.
+The /ftp-data/pids dir is no longer used.  It can be removed.
+dirlog may also need to be reset.  rm /glftpd/ftp-data/logs/dirlog ; 
+touch /glftpd/ftp-data/logs/dirlog
+
+1.15.7 -> 1.15.8
+bin replacements: glftpd, stats, reset, useredit, nuker
+Crontab Entry: 
+0 0 * * *       /glftpd/bin/reset -r /etc/glftpd.conf
+
+1.15.6 -> 1.15.7
+bin replacement(s)
+user_cache 1   should now be working again.
+
+1.15.5 -> 1.15.6
+glftpd bin and nuker bin replacement.
+If you were running 1.15.5 you may also want to track down those unwanted
+leechers with an unusual large credit total.
+See changelog for information about the new flags and *IMPORTANT* changes.
+
+1.15.4 -> 1.15.5
+glftpd bin change only.
+
+1.15.3 -> 1.15.4
+glftpd bin change.  See changelog or sample glftpd.conf file for additional
+config variables.
+
+1.15.2 -> 1.15.3
+glftpd bin change.  Also be sure /glftpd/etc/group file contains only valid
+group style entries. No comments or blank lines allowed. Failure to remove
+these may prevent users from properly logging in.
+
+1.15.1 -> 1.15.2
+glftpd bin change, and glftpd.conf changes for 'pre_check' and 'post_check'
+
+1.15.0 -> 1.15.1
+glftpd bin change only.
+
+1.14.5 -> 1.15.0
+bin replacements only.  Nuker, glftpd, useredit.
+
+1.14.4 -> 1.14.5
+glftpd & useredit bin replacement.
+
+1.14.3 -> 1.14.4
+glftpd bin change only.
+
+1.14.2 -> 1.14.3
+glftpd bin change only.
+
+1.14.1 -> 1.14.2
+glftpd bin change only.
+
+1.14.0 -> 1.14.1
+glftpd bin change, surprise!
+
+1.13.6 -> 1.14.0
+Add the following line to glftpd.conf, if you don't - bad things WILL happen!
+stat_section 	DEFAULT		*		yes
+
+replace the glftpd bin.
+look over sample(s) glftpd.conf and the CHANGELOG.
+Few /ftp-data/text files were also changed, updated.
+
+1.13.5 -> 1.13.6
+bin changes.. glftpd, nukelogscanner, dirlogscanner, dupescript (grep), &
+/help/site.change
+glftpd.conf changes, see CHANGELOG
+
+1.13.4 -> 1.13.5
+glftpd bin change.
+
+1.13.3 -> 1.13.4
+glftpd bin change.  *MAJOR* glftpd.conf changes.  See changelog and sample 
+glftpd.conf file.
+
+1.13.2 -> 1.13.3
+glftpd bin change.  GLFTPD.CONF changes.. see changelog for details on those.
+rm -f /ftp-data/help/site.grplog   (not used)
+Copy over new site.help files if you want em.
+
+1.13.1 -> 1.13.2
+glftpd bin change only.
+
+1.13.0 -> 1.13.1
+Replace the glftpd, stats, and ftpwho bins.
+
+1.12.10 -> 1.13.0
+Recommend a total reinstallation.   
+Those already running a site should install this version on a separate port
+to test and get familiar with.  
+The new stats bin plus userfile converter
+will follow this release..
+This new version will most likely break many of the tcls, scripts, and whatever else is out
+there for glftpd.  This version is released now in hopes that those just 
+starting their setup of a ftp site can help myself locate (if any, HAH) bugs that 
+remain and recommend any changes that should be made.
+The many improvements made with regard to the userfile routines make 1.13.+ 
+far more superior than previous versions.  
+READ all text/help files if possible.  If something is missing,
+more than likely it is obsolete because of the flags, or just not
+implemented anymore.
+
+1.12.9 -> 1.12.10
+glftpd bin change only.
+
+1.12.8 -> 1.12.9
+glftpd bin change, new show_diz files in the text directory, new site.change
+help file, and modification to glftpd.conf.  (See changelog for details)
+
+1.12.7 -> 1.12.8
+glftpd bin change and addition of file_names to glftpd.conf.
+Rename default_restrict to default_homedir in glftpd.conf.
+
+1.12.6 -> 1.12.7
+Simple glftpd bin change.
+
+1.12.5 -> 1.12.6
+Simply replace the main glftpd binary and make any changes necessary to the
+glftpd.conf file..  (show_diz .message)
+
+1.12.4 -> 1.12.5
+Replace the /glftpd/bin/glftpd bin. and edit glftpd.conf for the new changes.
+*MUST*  Remove the old /glftpd/bin/sh that was provided in earlier versions.
+	Copy the sh used by the system into /glftpd/bin.  
+
+1.12.3 -> 1.12.4
+Replace the /glftpd/bin/glftpd & dirlogscanner files.
+
+1.12.2 -> 1.12.3
+Replace the /glftpd/bin/glftpd file.
+rm /glftpd/ftp-data/logs/dupefile
+touch /glftpd/ftp-data/logs/dupefile
+Modify glftpd.conf to cover your ASS now that restrict paths are history.
+ 
+1.12.1 -> 1.12.2
+Replace the /glftpd/bin/glftpd file.
+
+1.12.0 -> 1.12.1
+Replace the /glftpd/bin/glftpd file.
+
+1.11.0 -> 1.12.0
+Remove (rm -r /glftpd/ftp-data/dupes) the old dupe files.
+Touch (touch /glftpd/ftp-data/logs/dupefile) the new dupefile database.
+Look over glftpd.conf rights and use of wildcards for directory paths, and 
+	also the dupe_check_days setting.
+Replace the glftpd binary in /glftpd/bin.
+
+1.10.8 -> 1.11.0
+MAJOR changes in GLFTPD.CONF..  Look over CAREFULLY!!!!!!!!!!!!!!!
+MAJOR changes in all body text files under /glftpd/ftp-data/text
+glftpd binary was the only bin updated.
+
+SEE CHANGELOG for any other details.
+

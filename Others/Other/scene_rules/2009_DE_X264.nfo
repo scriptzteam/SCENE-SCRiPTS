@@ -1,0 +1,216 @@
+   ≤€‹  ‹‹ﬂﬂﬂ‹‹
+   €€€ ≤€›‹≤‹  ﬂ≤‹‹    ‹    ‹≤                                             ‹‹‹
+ﬂ€≤≤€€∞±≤€‹€‹‹‹€≤≤€€€€€‹‹‹€€€€≤≤€≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤≤±≤€≤€
+   ≤≤€                                                      ‹ﬂﬂﬂ≤‹  ﬂ≤ﬂﬁ€≤ ﬂﬂﬂ
+   ∞∞                                                             ﬂﬂ‹‹‹ﬂﬂ
+   ∞  High Def x264 German Movie Standards v2
+
+
+
+[ General ]                                                                     
+
+
+1.1)   Die Releases muessen im Matroska Container (mkv) vorliegen.
+1.2)   Der Abspann muss im vollen Umfang vorliegen und darf nicht gekuerzt
+       werden. Jedoch ist es erlaubt den Abspann mit einer niedrigeren Bitrate
+       zu encoden, sofern keine zum Film gehoerenden Szenen (Blooper, Story,
+       Outtakes, etc) enthalten sind.
+1.3)   Intros, Outros, Betweenos (alles was nicht zum Film gehoert) sind nicht
+       erlaubt.
+1.4)   RAR/SFV/NFO/SAMPLE sind notwendig.
+1.5)   Als Volumengroesse muss ein Vielfaches von 50 MB gewaehlt werden.
+       *.r99 darf nicht ueberschritten werden. Eine Komprimierung der RAR
+       Dateien ist nicht erlaubt.
+1.6)   Filmname.{JAHR}.German.{DL}.720p|1080p.<HDDVD|BluRay>.x264.{PROPER|
+       READ.NFO|REPACK|RERiP}-GROUP
+       Syntax: {optional}
+1.61)  Bei Filmen, deren Produktionsjahr laenger als 2 Kalenderjahre
+       zurueckliegt, enfaellt der optionale {JAHR} Tag und wird zur Pflicht.
+       Das Produktionsjahr ist von IMDB zu entnehmen.  
+1.7)   Ein Sample, das dem Release beiliegen muss, und aus dem finalen Release 
+       herausgeschnitten werden muss, sollte eine Laenge von circa 60 Sekunden
+       betragen und muss dem Release in einem Unterordner (./Sample) beiliegen.
+1.8)   Die NFO muss Informationen zu Video- und Audiobitrate, sowie zur
+       Aufloesung und zum Encodingverfahren (2-Pass / crf) enthalten.
+1.9)   BluRay und HDDVD Sourcen dupen sich gegenseitig.            
+1.10)  Es ist erwuenscht die originalen Kapitel der Source in den mkv
+       Container einzubetten, jedoch ist es keine Pflicht.
+
+
+[ Audio ]
+
+
+2.1)   Als Audiospuren zulaessig sind ausschliesslich AC3 und DTS. Falls beide
+       Tonformate vorliegen, so liegt es im persoenlichen Ermessen welche
+       Tonspur verwendet wird.
+2.2)   Die Audiobitrate muss mindestens 640 kbps betragen, es sei denn auf der
+       Source befinden sich nur Tracks mit einer niedrigeren Bitrate.
+2.3)   Fuer den Fall, dass ein 448 kbps AC3 Kern existiert, und beispielsweise
+       ein True-HD Track, so liegt es im persoenlichen Ermessen ob der AC3 Kern
+       verwendet wird oder aber aus dem True-HD Track zu 640 kbps AC3 encoded
+       wird.
+2.4)   Sofern ein DTS HR/HD MA Track vorhanden ist, muss der DTS Core/Kern aus
+       diesem extrahiert werden. 
+2.5)   Alle Tonspuren muessen sich im 5.1 Format mit korrekten Kanaelen
+       befinden, mit Ausnahme von Sources die lediglich in Stereo/Mono
+       vorliegen.
+2.6)   2 Kanal Mono muss zu AC3 1.0 zusammengefasst werden.
+2.7)   Optional darf eine zweite Tonspur (Originalton) in das Release gemuxt
+       werden. Dies ist allerdings keine Pflicht.
+
+
+[ Video ]
+
+
+3.1)   Falls erforderlich, muss das Video deinterlaced bzw ivtc'd werden.
+3.2)   Fuer 720p Releases sind mindestens 2 Passes erforderlich.
+3.2.1) Fuer 1080p Releases kann neben dem 2-Pass Modus der Constant Rate
+       Factor 22 (--crf 22) Modus gewaehlt werden. Hier liegt es im eigenen
+       Ermessen welcher Modus am meisten Sinn macht (bsp. aeltere Filmpro-
+       duktionen mit sehr viel Filmkorn verschlingen viel Bitrate, weshalb in
+       manchen Faellen der 2-Pass Modus zu bevorzugen ist, da ein crf 22
+       unter Umstaenden sehr gross werden koennte). 2-Pass und crf 22 Releases
+       dupen sich gegenseitig -- first Release wins.
+3.3)   Die Breite des Videos muss ein Vielfaches von 16 sein (mod16). Die Hoehe
+       des Videos muss ein Vielfaches von 8 sein (mod8).
+3.4)   Schwarze Balken sind bis zu dem Frame, der am meisten Bildinformationen
+       enthaelt, wegzucroppen. Overcroppen ist nicht erlaubt und wird als
+       technischer Mangel gewertet.
+3.4.1) Das Resizen von 1080p Releases ist nicht erlaubt. Es muss mod8/16
+       konform gecroppt werden, ohne zu overcroppen. Ein Undercropping (oder
+       Addborders) wird hierbei gegebenfalls in Kauf genommen.
+3.5)   Aufloesungen:
+3.5.1) 720p steht fuer eine maximale Aufloesung von 1280x720.
+       - Fuer Seitenverhaeltnisse von 1.78:1 oder hoeher muss die horizontale
+         Aufloesung 1280px betragen. Beispiel: 2.35:1 -> 1280x544.
+       - Fuer Seitenverhaeltnisse kleiner als 1.78:1 muss die vertikale
+         Aufloesung 720px betragen. Beispiel: 1.33:1 -> 960x720.
+3.5.2) 1080p steht fuer eine maximale Aufloesung von 1920x1080.
+       - Fuer Seitenverhaeltnisse von 1.78:1 oder hoeher muss die horizontale
+         Aufloesung 1920px betragen. Beispiel: 2.35:1 -> 1920x816.
+       - Fuer Seitenverhaeltnisse kleiner als 1.78:1 muss die vertikale
+         Aufloesung 1080px betragen. Beispiel: 1.33:1 -> 1440x1080.         
+3.6)   Es muss das Seitenverhaeltnis der Source verwendet werden und nicht das,
+       was auf einschlaegigen Seiten wie z.B. IMDB zu lesen ist.
+3.7)   Video Bitraten im 2-Pass Modus:
+3.7.1) 720p:  Minimum = 3700 kbps, Maximum = 7000  kbps.
+3.7.2) 1080p: Minimum = 7000 kbps, Maximum = 13000 kbps.
+3.7.3) Ausgeschlossen hiervon sind Animationsfilme und crf Releases.
+3.8)   Fuer 720p als auch fuer 1080p Releases muss Level 4.1 respektiert
+       werden.
+3.9)   Fuer vertikale Aufloesungen von => 864px muss --ref 4 verwendet werden,
+       um Level 4.1 zu respektieren.       
+3.10)  Custom Matrizen sind erlaubt.
+3.11)  VfW (Video fuer Windows) ist nicht erlaubt.
+3.12)  Es wird empfohlen immer die aktuellste x264 Version zu verwenden. Als
+       erste Anlaufstelle wird x264.nl empfohlen. Die verwendete Version darf
+       nicht mehr als 25 Builds von der bis dato aktuellsten Version
+       zurueckliegen.
+3.13)  Folgende Tabelle zeigt welche x264 Settings verwendet werden muessen:
+
+     .-----------------------------------------------------------------------.
+     | Setting        | benoetigte Einstellung        | x264 default         |
+     |----------------+-------------------------------+----------------------|
+     | 8x8dct         | an                            | nein                 |
+     | b-pyramid      | an                            | nein                 |
+     | bframes        | 3 oder hoeher                 | nein (default = 2)   |
+     | me             | umh, esa oder tesa            | nein (default = hex) |
+     | mixed-refs     | an                            | nein                 |
+     | no-fast-pskip  | benoetigt                     | nein                 |
+     | subme          | 7 oder hoeher                 | nein (default = 6)   |
+     | trellis        | 1 oder hoeher                 | nein                 |
+     | weightb        | an                            | nein                 |
+     |                |                               |                      |
+     | aq-mode        | an (ausser Animationsfilme)   | ja                   |
+     | b-adapt        | an                            | ja                   |
+     | deblock        | an                            | ja                   |
+     | direct         | darf nicht "none" sein        | ja                   |
+     | merange        | 16 oder hoeher                | ja                   |
+     | no-chroma-me   | darf nicht benutzt werden     | ja                   |
+     | partitions     | alle oder p8x8,b8x8,i8x8,i4x4 | ja                   |
+     | psy-rd         | an                            | ja                   |
+     `-----------------------------------------------------------------------'
+
+
+[ Groessen ]
+
+
+4.1)   Als Groessen fuer 720p Releases zulaessig sind:
+       - Vielfache von 2240 MB
+       - DVD5/x (z.B. DVD5 / 4 = 1120MB ; DVD5 / 3 = 1493MB ; etc)
+       - DVD5 (4480 MB)
+       - 5600 MB
+       - 6720 MB
+       - DVD9 (8140 MB)
+4.2)   Als Groessen fuer 1080p Releases zulaessig sind:
+       - Vielfache von 1000 MB
+       - DVD5 (4480 MB)
+       - DVD9 (8140 MB)
+       - Beispiele: 3000 MB, 7000 MB, 10000 MB, 12000 MB, etc.
+4.2.1) Hiervon ausgeschlossen sind crf Releases.
+4.2)   Diese Groessen duerfen maximal um 40MB unterschritten werden.
+4.3)   Ein Proper auf Basis einer groesseren Size ist nicht erlaubt, sofern die
+       minimum Bitrate respektiert wurde.
+
+
+[ Untertitel ]
+
+
+5.1)   Untertitel muessen in einem text-basierten Format vorliegen, das in den
+       mkv Container gemuxt wird.
+5.2)   Die Untertitel muessen als UTF-8 kodiert sein, um eine korrekte
+       Darstellung von Sonderzeichen zu gewaehrleisten.
+5.3)   Untertitel duerfen nicht hardcoded werden.
+5.4)   "Forced Untertitel" muessen dem Release beiliegen.
+5.5)   Multi-language Untertitel koennen nicht als Basis fuer einen Dupe
+       dienen.
+5.6)   "Subs" Ordner sind nicht erlaubt.
+
+
+[ Empfohlene Encoding Settings ]
+
+
+6.1)   720p 1st Pass:
+       x264.exe --pass 1 --stats .stats --bitrate 4000 --threads auto
+       --bframes 3 --me dia --ref 1 --subme 2 --no-dct-decimate --partitions
+       none --progress --no-psnr --no-ssim --output NUL movie.avs
+     
+6.2    720p 2nd Pass:
+       x264.exe --pass 2 --level 4.1 --stats .stats --bitrate 4000 --threads
+       auto --bframes 3 --b-pyramid --weightb --me umh --ref 5 --mixed-refs
+       --subme 7 --trellis 1 --analyse all --8x8dct --no-fast-pskip --progress
+       --no-psnr --no-ssim --output movie.mkv movie.avs
+
+6.3)   1080p crf 22:
+       x264.exe --crf 22 --level 4.1 --threads auto --bframes 3 --b-pyramid
+       --weightb --me umh --ref 5 --mixed-refs --subme 7 --trellis 1 --analyse
+       all --8x8dct --no-fast-pskip --progress --no-psnr --no-ssim --output
+       movie.mkv movie.avs
+       
+6.4)   1080p 1st Pass:
+       x264.exe --pass 1 --stats .stats --bitrate 8000 --threads auto
+       --bframes 3 --me dia --ref 1 --subme 2 --no-dct-decimate --partitions
+       none --progress --no-psnr --no-ssim --output NUL movie.avs     
+       
+6.5)   1080p 2nd Pass:               
+       x264.exe --pass 2 --level 4.1 --stats .stats --bitrate 8000 --threads
+       auto --bframes 3 --b-pyramid --weightb --me umh --ref 4 --mixed-refs
+       --subme 7 --trellis 1 --analyse all --8x8dct --no-fast-pskip --progress
+       --no-psnr --no-ssim --output movie.mkv movie.avs
+            
+      
+                                
+                                 [ Signed by ]
+
+
+             CDD DEFUSED DETAiLS EmpireHD NGXHD RSG SightHD UMF ZZG
+
+                                                            
+           [ Diese Standards gelten ab dem 01.05.2009 00:00:01 GMT+1 ]         
+                                                                           ∞
+                                                                           ∞
+      ‹‹ﬂﬂﬂ‹‹                                                             ±∞
+ ‹‹‹ ≤€›‹≤‹  ﬂ≤‹‹‹ﬂ                                                      €≤≤
+€≤€≤±≤≤€€€‹€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤€≤≤€€€€ﬂﬂﬂ€€€€€≤≤€ﬂﬂﬂ€ﬂ€≤±∞€€≤≤€‹
+ ﬂﬂﬂ                                             ≤ﬂ    ﬂ    ﬂﬂ≤‹  ﬂ≤ﬂﬁ€≤ €€€cpN
+                                                                ﬂﬂ‹‹‹ﬂﬂ  ﬂ€≤

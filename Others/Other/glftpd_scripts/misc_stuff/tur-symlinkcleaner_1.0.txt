@@ -1,0 +1,9 @@
+SymLinkCleaner (GL1&2)
+
+Description: A script that keeps track of your existing symlinks. Does not create 
+new ones. Good if you keep symlinks for something but the releases gets moved by 
+spacemaker scripts or similar and you want the symlink to point to the right place.
+
+Author:   Turranius
+Version:  1.0
+Added on: 15-Jul-2004

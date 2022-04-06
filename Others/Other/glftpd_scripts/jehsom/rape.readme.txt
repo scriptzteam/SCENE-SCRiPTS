@@ -1,0 +1,16 @@
+This script is a quick hack. Sorry if it's sparsely documented.
+Implement 'rape' as SITE RAPE.
+
+SITE RAPE <username>  
+    casts a vote against <username> to be deleted off the site.
+
+SITE RAPE
+    lists current standings
+
+Place the 'rape.cron' script in root's crontab (or anyone who has write
+privileges to your glftpd/ftp-data/users dir). It will automatically delete
+the user with most rapes at the end of the week.
+
+Enjoy!
+
+- Jehsom

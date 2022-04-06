@@ -1,0 +1,8 @@
+PreNuke (GL1&2)
+
+Description: Small script that prevents nuking of allowed releases. Set which 
+allowed folders you have and load it as a cscript to nuke (instructions in script).
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Apr-2003

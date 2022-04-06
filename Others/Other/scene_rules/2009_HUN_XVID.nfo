@@ -1,0 +1,202 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                             ³
+³                                                                             ³
+³                The Hungarian XviD Releasing Standards 2009                  ³
+³                                                                             ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                          ÀÄ[ RELEASE SZABALYZAT ]ÄÙ                         ³
+³                                                                             ³
+³                                                                             ³
+³  FiLM HOSSZA:                                                               ³
+³   - Engedelyezett meretek: CD (700MB,1400MB,2100MB), 1110MB (DVD5/4)        ³
+³   - CD meretezes 695-702MB, DVD5/4 meretezes: 1105-1113 MB                  ³
+³    - 100 perc felett hasznalhato 2 CD meretezes                             ³
+³    - 100 perc alatt CD (700MB) vagy 1110MB meretezes javasolt.              ³
+³                                                                             ³       
+³                                                                             ³
+³  AUDiO:                                                                     ³
+³   - VBR MP3 vagy Studio (Gyari) AC3.                                        ³
+³   - Az ABR a VBR technologianak felel meg.                                  ³
+³   - STEREO a STEREO forrashoz, MONO a MONO-hoz.                             ³
+³   - MP3 audionak frekvenciajat a forrasnak megfeleloen kell kodolni         ³
+³     tehat 48khz a 48khz-hez es 44.1khz a 44.1khz-hez.                       ³
+³   - Mono or Dual Mono (1+1) AC3 tiltott; hasznalj mono MP3-at.              ³
+³   - MP3 hangsavot normalizalni kell. Stereo forrasnal hasznalj stereo       ³
+³     kodolast. Mono forrasnal mono kodolast.                                 ³
+³   - AC3 kodolas vagy ujrakodolasa tiltott.                                  ³
+³   - AC3 alkalmazasa a ripper dontese, de 2CD-re vagy afelett mertezett      ³
+³     filmnel AC3 az elfogadott.                                              ³
+³   - Tobbnyelvu releasek tiltottak!                                          ³
+³                                                                             ³
+³                                                                             ³
+³  ViDEO:                                                                     ³
+³   - Csapat nevet tartalmazo vagy barminemu vizjel tiltott.                  ³
+³   - Minimum 20 masodpercenkent kotelezo keyframe hasznalata                 ³
+³                                                                             ³
+³  Framerate:                                                                 ³
+³   - Hasznald a forrashoz legkozelebb eso framerate-et (Hazankban: 25fps).   ³
+³                                                                             ³
+³                                                                             ³
+³  KodeK:                                                                     ³
+³   - Kizarolag XviD (az osszes DivX es x264 codec tiltott).                  ³
+³   - A kodolas soran 2 menetet kell alkalmazni.                              ³
+³   - Quant type: MPEG vagy H.263, custom quant matrix tiltott!               ³
+³   - Qpel/GMC TILTOTT.                                                       ³
+    - 1110MBos meretezesnel -noodml kapcsolo kotelezo mencodernel!            ³
+³                                                                             ³
+³  Felbontas es Keparany:                                                     ³
+³   - Szelesseg: 576 - 640 pixel azon filmekhez aminek keparanya 1.70-2.35    ³
+³                512 - 640 pixel azon filmekhez aminek keparanya 1.00-1.69    ³
+    - Kiegeszites: 2.45:1 keparanynal a megengedett szelesseg 672px           ³
+³   - A szelessegnek es magassagnak oszthatonak kell lennie 16-al.            ³
+³   - Croppolni addig kell amig a sallangok teljesen el nem tunnek.           ³
+³     Abban az esetben ha a film valtozo keparanyu, akkor addig kell          ³
+³     croppolni hogy egyik frame se legyen tulcroppolva.                      ³
+³     * 1 pixelnyi tul- vagy alulcroppolas meg belefer a hibafaktorba.        ³
+³   - A kodolt Video keparanyanak 4%-os hibahataron belul kell lennie.        ³
+³     AR hiba %: (Eredeti AR - Release AR)/Eredeti AR x 100                   ³
+³   - Tisztaban vagyunk vele hogy az R2-es kiadasok igen pontatlanok          ³
+³     keparany tekinteteben, tehat az eredeti AR-t nem imdb-rol, vagy egyeb   ³
+³     webstore-bol vett ertekbol szamoljuk, hanem a Forras AR-jahoz kepest.   ³
+³                                                                             ³
+³                                                                             ³
+³  FELiRATOK:                                                                 ³
+³   - Javasolt mellekelni a gyari magyar feliratot.                           ³
+³   - Forced subok mellekelese KOTELEZO .idx/sub formatumban.                 ³
+³   - Websub nem engedelyezett!                                               ³
+³   - Hianyzo feliratok eseten eleg SUBPACK-ot kiadni.                        ³
+³   - A feliratoknak egyeznie kell az avi nevevel.                            ³
+³   - Darabolt releasenel a feliratot is vagni kell!                          ³
+³                                                                             ³
+³                                                                             ³
+³  CSOMAGOLAS:                                                                ³
+³   - Minden releasnel AVI kontenert kell alkalmazni.                         ³
+³   - Csomagolas CD meretnel 15MB, 1110MBos meretnel 25MB-os kotetnagysagban  ³
+³     tortenhet.                                                              ³
+³     Tobb CD eseten CD1 v. CD2 mappaba tortenjen a rarozas.                  ³
+³   - Kotelezo az egyedi filenev dupe elkerulese vegett.                      ³
+³   - Tomorites nem megengedett.                                              ³
+³   - Recovery es MD5 record javasolt.                                        ³
+³   - SFV-t tartalmaznia kell minden CD-nek.                                  ³
+³   - RARozasnal az Old Style Volume Name az elfogadott.                      ³
+³   - Kotelezo az NFO.                                                        ³
+³   - Amit tartalmaznia kell:                                                 ³
+³     - Kimeneti video es audio bitrate,felbontas feltuntetese kotelezo       ³
+³     - Release neve                                                          ³
+³     - IMDB link kotelezo                                                    ³
+³     - Forras                                                                ³
+³     - Release date feltuntese kotelezo                                      ³
+³                                                                             ³
+³                                                                             ³
+³  STABLiSTA:                                                                 ³
+³   - Alacsonyabb bitratan valo kodolas engedelyezett, amennyiben nem         ³
+³     tartalmaz mas jeleneteket vagy a tortenet folytatasat.                  ³
+³   - RETAIL forrasnal a stablista vagasa tiltott.                            ³
+³                                                                             ³
+³                                                                             ³
+³  SAMPLE:                                                                    ³
+³   - Minden release-nel egyedi nev szuksegeltetik.                           ³
+³   - 1 teljes percet tartalmazzon a filmbol egy 'Sample' mappaban.           ³
+³   - CSAK videobol kivagott resz lehet, kulon kodolas TILOS.                 ³
+³   - Ketes release-eknel legyen a forrasbol is, a felreertesek elkerulese    ³
+³     vegett. (pl. bad.AR bad.res etc.)                                       ³
+³                                                                             ³
+³                                                                             ³
+³  PROPER:                                                                    ³
+³   - Proper csak technikai hiba eseten engedelyezett. (bad.AR, bad.ivtc)     ³
+³   - Az okot fel kell tuntetni az nfoban.                                    ³
+³   - Azoknal a releaseknel amik meg nincsennek nuke-olva de keszitesz        ³
+³     propert, akkor a technikai hibara ramutato bizonyitekot mellekelj.      ³
+³   - Minoseg miatti proper nem engedelyezettek.                              ³
+³   - Properelni egy release-t hamar van mukodo javitas hozza, nem engedett.  ³
+³   - Az uj szabalyok miatt nem megfelelo regebbi release-ek properelese      ³
+³     nem megengedett.                                                        ³
+³                                                                             ³
+³                                                                             ³
+³                                                                             ³
+³                                                                             ³
+³  SPECiALiS KiADASOK:                                                        ³
+³   - Engedelyezett: DC, EXTENDED, UNCUT, REMASTERED, UNRATED, THEATRICAL,    ³
+³     SE (vagy egyeb specialis kiadas, pl. EE).                               ³
+³   - Rovidebb vagott verzio egy filmbol, a hosszabb verzio utan engedett,    ³
+³     de a mappa neveben jelolni kell (THEATRiCAL).                           ³
+³   - Homemade rippek tilosak (Hasznalj INTERNAL!).                           ³
+³   - MEGJEGYZES: PAL - NTSC filmhossz kulonbseg a masodpercenkenti           ³
+³     kulonbozo mennyisegu framebol adodik es nem extra hossz!                ³
+³                                                                             ³
+³                                                                             ³
+³  MAPPA ES FiLE ELNEVEZESEK:                                                 ³
+³   - Minden release-nek tartalmaznia kell a kiadas evet.                     ³
+³   - A release neveben az angol cimet kell alkalmazni! (lasd lent)           ³
+³   - NE tuntess fel minden okorseget, AC3, TrueHD 7.1, kiskutyad nevet...    ³
+³     (EZEKET KIZAROLAG NFO-ban!)                                             ³
+³   - Film kiadasaval kapcsolatos taget okosan hasznaljatok.                  ³
+³     pl. FESTIVAL, STV, LiMiTED, TV (ez csak TV filmek eseteben)             ³
+³   - READ.NFO tag engedelyezett, de csak ha fontos technikai kozlemeny akad. ³
+³   - Egyeb lehetseges tag-ek: WS/FS (szabalyok fent), PROPER, REPACK, RERIP, ³
+³     REAL, RETAIL, EXTENDED, REMASTERED, RATED, UNRATED, THEATRICAL, DC, SE, ³
+³     UNCUT, INTERNAL, SUBBED, FINAL.                                         ³
+³     * RERIP rippelesi gondok, REPACK csomagolasi gondok eseten.             ³
+³     * RERIP/REPACK-nak kulonbozo filenevet adjatok mint az eredetinek.      ³
+³   - Elfogadott karakterek a release neveben (NINCS szokoz vagy dupla pont   ³
+³     - sima pont vagy alsovonal KIZAROLAG):                                  ³
+³                                                                             ³
+³       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ³
+³       abcdefghijklmnopqrstuvwxyz                                            ³
+³       0123456789.-_                                                         ³
+³                                                                             ³
+³     Lehetseges elnevezesek:  #1 Taking.Chance.2009.HUN.DVDRip.XviD-NUNi     ³
+³                              #2 Taking.Chance.2009.DVDRip.XviD.Hungarian-X  ³
+³                                                                             ³
+³   - Aki ezek utan sem fogta fel: DUAL, hundub, HunDub, dub.sub es egyeb     ³
+³     otletek bannolva/nukeolva lesznek.                                      ³
+³                                                                             ³
+³                                                                             ³
+³  Forrassal kapcsolatos megjegyzesek:                                        ³
+³   - Mindennemu BRRip/BDRip/HDRip NUKEot kap. Senkit nem erdekel mas         ³
+³     csapatok altal kiadott releasek 1 menetes ujrakodolasara.               ³                                                
+³   - Ujrakodolt forrasbol dolgozni tilos! Kizarolag DVD9, Retail DVD5        ³
+³   - R5 nem Retail.                                                          ³
+³   - A nem studio hanggal rendelkezo releasek neveben fel kell tuntetni a    ³
+³     hang minoseget:                                                         ³
+³     * LD - line dub, kozvetlenul vetitogeprol                               ³
+³       MD - microphone dub, diktafonnal, egyeb eszkozzel felvett hang        ³
+³       CUSTOM ? tvbol, vhsrol stb. felvett hang                              ³
+³   - Az olyan forrasokat mint CAM, TS, TC, Workprint, SCREENER,              ³
+³     stb. fel kell tuntetni a release neveben.                               ³
+³                                                                             ³
+³                                                                             ³
+³  iNTERNAL:                                                                  ³
+³   - INTERNAL taget csak indokolt esetben lehet hasznalni.                   ³
+³   - DUPE elkerulese miatt tilos!                                            ³
+³   - Elfogadott okok: MP3->AC3 es vicaversa                                  ³
+³     Minden mas okot fel kell tuntetni az nfo-ban es a nuker elbiralasan     ³
+³     mulik.                                                                  ³
+³   - INTERNAL dirfix TILOS nuke/dupe elkerulese miatt.                       ³
+³                                                                             ³
+³                                                                             ³
+³  DUPE/NUKE:                                                                 ³
+³   - Elso release nyert, a tobbi dupenukeot kap!                             ³
+³   - Tobbnyelvu felirat nem lehet undupe alapja.                             ³
+³   - MP3 hangal rendelkezo release utan AC3 DUPE!                            ³
+³   - Pixel shape MUST be square.                                             ³
+³   - Specialis kiadassal taggelt release, ugyanolyan jatekidovel mint        ³
+³     az elozo DUPE.                                                          ³
+³   - iNTERNAL tag indokolatlan hasznalata dupe elkerulese miatt DUPE!        ³
+³   - Minden, a fenti szabalyoknak nem eleget tevo release NUKE!              ³
+³   - Kulon figyelmet forditunk a hibasan elnevezett releasekre.              ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+³                        À--------[ GROUPS ]--------Ù                         ³
+³                   signed by the following XviD Groups:                      ³
+³                 ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ                   ³
+³                                                                             ³
+³        HSF - TvTiME - HASHiSH - seven - 1st - Legacy - Patriots             ³
+³                                                                             ³
+³                                                                             ³
+ÀÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÙ
+                          º ERVENYBEN: 2009.06.10º
+                          ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼

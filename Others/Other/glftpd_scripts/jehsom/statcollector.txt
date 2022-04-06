@@ -1,0 +1,69 @@
+#!/bin/bash
+# -------------------------------------------------------------------------
+# Jehsom's statcollector script v1.1 - Collects and stores site stats
+# Copyright (C) 2001 jehsom@jehsom.com
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# -------------------------------------------------------------------------
+#
+# statcollector is a crontabbed script that should be run right before mid-
+#   night. It collects all weektop and traffic stats for your site, and 
+#   neatly logs this information in a directory hierarchy of your choice.
+#   This is great for siteops who need end-of-week stats, etc., but fre-
+#   quently are not around at the end of the week to check stats manually.
+# This program requires that ncftp be on your computer. It uses it to log
+#   into the site to retrieve the site traffic statistics. The "stats" pro-
+#   gram is required to retrieve weektop stats. 
+# Place this script in your glftpd bin dir, and enter it into the crontab 
+#   of a user who has write access to your STATSDIR (preferrably root):
+#
+#       59 23 * * *     /glftpd/bin/statcollector
+#
+
+# Info on how to get into your ftp server
+HOSTNAME="localhost"
+PORT="666"
+LOGIN="jehsom"
+PASS="yomama123"
+
+# glftpd bin dir (where can I find the "stats" binary?)
+BINDIR="/glftpd/bin"
+
+# Where you want the stats tree placed. This dir must exist.
+STATSDIR="/glftpd/site/Stats"
+
+# Full path to your glftpd.conf. 
+CONF="/etc/glftpd.conf"
+
+#######################
+### Ignore the rest ###
+#######################
+
+date="$(date +%d-%m-%Y)"
+month="$(date +%m-%Y)"
+
+[ -d "$STATSDIR/$month" ] || mkdir -p "$STATSDIR/$month" || {
+    echo "Could not make dir $STATSDIR/$month"
+    exit 1
+}
+cd "$STATSDIR/$month"
+[ -d "$date" ] || mkdir "$date"
+cd "$date"
+
+${BINDIR}/stats -r "$CONF" -w -x20 > weektop.$date
+${BINDIR}/stats -r "$CONF" -t -x20 > daytop.$date
+${BINDIR}/stats -r "$CONF" -m -x20 > monthtop.$date
+${BINDIR}/stats -r "$CONF" -W -x20 > groupweek.$date
+echo "site traffic" | ncftp ftp://${LOGIN}:${PASS}@${HOSTNAME}:${PORT} | grep -B14 "Command successful" > traffic.$date

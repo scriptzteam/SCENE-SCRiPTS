@@ -1,0 +1,335 @@
+#
+# NOTE:
+# This 'config' file was not made to be used with glftpd,
+# it was made to show a lot of examples of what you can do
+#
+
+# Server shutdown: 0=server open, 1=deny all but siteops, !*=deny all, etc
+shutdown 1 =STAFF -Usurper
+
+sitename_long 	MY[:space:]SITE[:space:]NAME    
+sitename_short	MSN
+email		root@127.0.0.1
+
+rootpath 	/glftpd
+
+#Path relative to the ROOTPATH.
+datapath 	/ftp-data 
+
+welcome_msg	/ftp-data/misc/welcome.anon	8
+welcome_msg 	/ftp-data/misc/welcome.msg	*
+
+goodbye_msg	/ftp-data/misc/goodbye.special	1 =STAFF 7 -Usurper
+goodbye_msg	/ftp-data/misc/goodbye.msg	*
+
+# Note: All newsfile lines will be shown (if the user matches permissions),
+# but with welcome and goodbye messages, only the first match will be shown
+
+newsfile	/ftp-data/misc/newsfile.staff	=STAFF 1
+newsfile	/ftp-data/misc/newsfile		*
+
+banner		/ftp-data/misc/banner
+
+# Note: you NEED a trailing slash if you don't use a wildcard at the end
+msgpath		/site/admins/*		/ftp-data/misc/admins.msg	1 7 =STAFF
+msgpath		/site/incoming/		/ftp-data/misc/incoming.msg	*
+msgpath		/site/request/		/ftp-data/misc/reqs.msg		*
+
+# we will not show the dir/file listings in color
+color_mode 0
+
+##############################################################################
+# SECTION #     KEYWORD		DIRECTORY	SEPARATE CREDITS	     #
+##############################################################################
+stat_section    DEFAULT		*			yes
+stat_section	LINUX		/site/incoming/linux*	no
+
+##############################################################################
+##################     THE RIGHTS SECTION BEGINS HERE     ####################
+##############################################################################
+# (you can use a ! in front of any group/user/flag to negate it)             #
+# The default is no, you don't need to add "!*" at the end                   #
+#                                                                            #
+# Function       Path                   =GROUP or -username or X (flag)      #
+##############################################################################
+
+#Only siteops or people in group STAFF will be allowed to rename files
+rename		*				=STAFF 1
+
+#Allow everyone to rename their own files in /site/incoming
+renameown	/site/incoming/*		*
+
+#Allow siteops, nukers and people in STAFF to delete files
+#(the uploader will lose credits and stats)
+#Note: deleting your own files is not controlled by this setting
+delete		*				=STAFF 1 A
+
+#Allow everyone but anonymous users to delete their own files
+#(their stats and credits will be adjusted appropriately)
+deleteown	*				!8 *
+
+#Everyone can upload in /site/public, and everyone but anonymous users
+#can upload in other places
+upload		/site/public/*			*
+upload          *                       	!8 *
+
+#Everyone can resume uploads in /site/bigfiles and its subdirectories,
+#but nowhere else on the site.
+resume		/site/bigfiles/*		*
+
+#Only allow siteops and group STAFF to download from /site/private
+#Don't allow user 'viewer' to download
+download	/site/private/*			1 =STAFF
+download	*				!-viewer *
+
+#Only nukers, siteops or people in group STAFF can nuke in /site/incoming
+#Only siteops or people in group STAFF can nuke anywhere in /site
+nuke	        /site/incoming/* 		A 1 =STAFF
+nuke	        /site/*		 		1 =STAFF
+
+#Everyone but anonymous users can make dirs in /site/incoming
+#Only siteops, people in group STAFF or people in group CoSiteops
+#can make dirs elsewhere (user lamer will be denied even if he is a siteop)
+makedir		/site/incoming/*		!8 *
+makedir		/site/*				!-lamer 1 =STAFF =CoSiteops
+
+#No directories made in /site/requests will be logged.  Directories created in
+#/site/incoming will be logged, but not in their subdirectories. (so mkdir
+#/site/incoming/bleh will be added to dirlog, but mkdir /site/incoming/bleh/1
+#will not). All other directories will be added.
+
+dirlog		/site/requests/*		!*
+dirlog		/site/incoming/*/		*
+dirlog		/site/*				*
+
+#This will hide users who are transfering in this directory tree when a user
+#does a "site who" or "site swho", unless he/she is a siteop or in group STAFF
+hideinwho	/site/hiddendir/*		!1 !=STAFF *
+
+#Allow siteops and users from group STAFF to dowload for free
+#from the /site/admins/tools directory
+creditloss	0	yes	/site/admins/tools/*	1 =STAFF
+
+#Allow everyone to download readme files
+#Allow siteops ad people in group UnixUsers to dowload all gzipped files
+freefile	[Rr][Ee][Aa][Dd][Mm][Ee]*	*
+freefile	*.gz				=UnixUsers 1
+
+#Do not modify upload/download stats for the docs directory
+nostats		/site/docs/*			*
+
+##############################################################################
+###################     THE RIGHTS SECTION ENDS HERE     #####################
+##############################################################################
+
+##############################################################################
+# secure_pass	mask		users to whom this rule applies              #
+##############################################################################
+
+#If you trust siteops to pick secure passwords, give them small restrictions
+secure_pass	a2..		1 =STAFF
+
+#A little tighter restrictions for users in this group
+secure_pass	Aa2...		=SmartGroup
+
+#Very strict passwords for everyone
+secure_pass	AAbb11#..	*
+
+##############################################################################
+# secure_ip   min. fields   allow hostnames?   need ident?   users to whom this applies
+##############################################################################
+
+#Siteops and STAFF will be able to add hostnames and numeric IPs with
+#one or more fully numeric fields, and ident isn't necessary.
+secure_ip	1		1		0	1 =STAFF
+
+#People with useredit will be able to add IPs with 2 or more numeric fields
+#and no hostnames. Valid ident is necessary.
+secure_ip	2		0		1	7
+
+#Everyone else (like gadmins) need at least 3 numeric fields and a good ident.
+secure_ip	3		0		1	*
+
+
+		download upload logging permissions
+##############################################################################
+allow_fxp	yes	 yes	no	1 =STAFF =trusted
+allow_fxp	no	 no	no	8	#don't allow anonymous users
+allow_fxp	no	 yes	yes	*	#allow upload but not download for everyone else
+
+
+##############################################################################
+#path-filter    group	path/msgfile			filters
+##############################################################################
+path-filter     STAFF	/ftp-data/misc/pathmsg		^[-A-Za-z0-9_.()[:space:]]*$  ^-
+path-filter     *	/ftp-data/misc/pathmsg		^[-A-Za-z0-9_.()[:space:]]*$  ^\.  ^-
+
+#The following will display totals for directories like
+#/site/incoming/bleh, /site/oldstuff/glftpd
+#but not in their subdirectories.  For that, remove the
+#trailing /
+show_totals	/site/*/*/
+
+#The following will calculate the CRC code (used by SFV tools)
+#for all RARs, ARJs, and all files uploaded to /glftpd/site/sfv
+#(but not to its subdirectories; add a * at the end for that)
+calc_crc *.[Rr][Aa][Rr] *.[Rr][0-9][0-9] /site/sfv *.[Aa][Rr][Jj] *.[Aa][0-9][0-9]
+
+#This will list all zips, rars and gzips on the x-dupe line when a file
+#is duped and if the x-dupe option is activated.
+xdupe *.zip *.[Rr]?? *.gz
+
+show_diz	.message
+show_diz	FILE_ID.DIZ
+
+hidden_files .message .dirstatus private_directory
+
+free_space 20
+max_users 15 5
+total_users 300
+# dupecheck	how many days?	ignore file case like Windows?
+dupe_check 	7		no
+
+dl_incomplete 1
+noretrieve	passwd	passwd-	group	group-
+
+# cause commands "noop", "pwd", and "cwd" (followed by 0 or more characters) 
+# not to reset the idle timer (so users who use only those commands will get
+# kicked out)
+idle_commands noop pwd cwd*
+
+min_homedir		/site
+
+#############################################################################
+#        <cap 1st letter>   <lower/upper>	character conversions...
+file_names	0		lower		[:space:]. ,.
+dir_names	1		none		[:space:]_ [( ])
+#############################################################################
+
+tagline		No[:space:]Tagline[:space:]Set
+
+ignore_type  *.[tT][xX][tT] *.[nN][fF][oO] [rR][eE][aA][dD][mM][eE] .message
+ignore_type  *.[sS][fF][vV] *.[cC][rR][cC] *.[dD][iI][zZ]
+
+#############################################################################
+pre_dir_check   /bin/dirscript
+pre_check	/bin/dupescript
+post_check	/bin/zipscript
+#############################################################################
+
+############## Location #################### Max number of lines in Display #
+oneliners 	/ftp-data/misc/oneliners	7
+requests 	/ftp-data/misc/requests		10
+lastonline	/ftp-data/misc/lastonline	10
+#############################################################################
+
+############################################################################
+# Nukedir_Style:				
+# 1st. Option   [Format: %N = DIR]
+# 2nd. Option   0 = Delete ALL, 1 = Save main dir.,  2 = Save ALL (UNNUKE) 
+# 3rd. Option   [Byte Size] for nuker to discount.
+############################################################################
+nukedir_style 	NUKED-%N	2	50000
+
+empty_nuke	25000
+multiplier_max	20
+
+############################################################################
+# Private Groups:   privgroup GROUPNAME	GROUPDESC                          #
+############################################################################
+privgroup 	STAFF		 My[:space:]Private[:space:]Group
+
+############################################################################
+# PRIVPATHS:  Directories should be uniquely named (no wildcards)          #
+############################################################################
+privpath /site/admins			1 =STAFF
+privpath /site/friends			=Friends
+
+############################################################################
+# CUSTOM SITE COMMANDS                                                     #
+# site_cmd [CMD NAME] [EXEC/TEXT] [PATH TO FILE]		  	   #
+############################################################################		
+site_cmd RULES 		TEXT	/ftp-data/misc/site.rules
+site_cmd LOCATE		EXEC	/bin/locate.sh
+site_cmd NFO		EXEC	/bin/sitenfo.sh
+site_cmd ZIPCHK		EXEC	/bin/sitezipchk.sh
+site_cmd ZIPLIST	EXEC	/bin/siteziplist.sh
+
+# Custom commands must be bound to flags/groups/usernames in order to work.
+# Add "custom-" in front of command name
+# This will give everyone but anonymous users access to "site rules" and "site locate"
+custom-rules    !8 *
+custom-locate	!8 *
+custom-nfo	!8 *
+custom-zipchk	!8 *
+custom-ziplist	!8 *
+
+# custom scripts
+cscript pre site[:space:]deluser /bin/makeuserbackup.sh
+# this setting will force glftpd to execute /bin/makeuserbackup.sh every time
+# someone issues the "site deluser" command.
+
+# Read the docs for more info about thes
+
+-addip           1 2 7
+-adduser         1 2 7
+-change          1 7
+-changeflags     1
+-changeratio     1 2 7
+-changesratio    1 7
+-changehomedir   1
+-chmod           1
+-chgrp           1 7
+-chgrp-priv      1
+-chpass          1
+-delip           1 2 7
+-deluser         1 2 7
+-dirs		!8 *
+-emulate	-specialuser =specialgroup
+-errlog		1
+-flags		!8 *
+-gadduser        1 7
+-ginfo           2 H
+-give            G
+-group           !3 *
+-groups          !8 *
+-grpadd          1
+-grpdel          1
+-grplog          1
+-grpnfo          1 2
+-grpren          1
+-help		!8 *
+-info		!8 *
+-kick            D
+-kill            E
+-logins          1
+-misc		!8 *
+-msg             !8 *
+-msg*            1
+-msg=            1
+-msg{            !8 *
+-nuke            A
+-onel		!8 *
+-oneladd	!8 *
+-passwd          !8 *
+-purge           1
+-readd           1 2 7
+-renuser         1 7
+-reqlog          1 A B 7
+-request	!8 *
+-requestadd	!8 *
+-show            1
+-stat		!8 *
+-stats		!8 *
+-swho            =STAFF 1 E
+-take            F
+-syslog        1 =STAFF
+-undupe          C
+-unnuke          B
+-update          1
+-user		!8 *
+-users           H
+-usercomment     1 7
+-userextra       1 2 7
+-who             !8 *
+-wipe		 1 -trusteduser

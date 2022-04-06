@@ -1,0 +1,332 @@
+This document is designed to resolve problems with dupes, propers, REAL_PROPERS, etc.. 
+and to ensure that only quality releases are released to the MV scene. The following 
+groups have agreed to follow these guidelines:
+
+FSPViDZ GOD kvz MiLF mkv mv4U mv mVa mVi mVz pHViD rHViD SE wcs PmV
+
+
+Index
+1) Encoding
+
+2) Releasing
+      a) Dirname/Filename
+      b) Logos
+      c) Concerts & Live Performances
+      d) NFO
+
+3) Propers and dupes
+
+
+1) Encoding
+     Four formats will be allowed: XViD, DIVX, SVCD and VCD.
+     - This means that any other format, such as:
+     XVCD, XSVCD, nVCD, DVDR/DVDS
+     will not be allowed. If you must, keep them INTERNAL.
+
+VCD Audio:         MPEG-1 Layer 2 44.1KHz 224kbps
+                   Replacing audio on VCD rips is RECOMMENDED,
+                   but not required.
+
+
+VCD Video:         - PAL, 1150kbps CBR, 352x288, 25 fps.
+                   - NTSC, 1150kbps CBR, 352x240, 29.970 fps.
+                   - NTSC-FILM, 1150kbps CBR, 352x240, 23.967 fps. (via IVTC)
+
+
+
+
+SVCD Audio:          Audio must be replaced on all SVCD music videos.
+                     Replacement audio must be from a CD, or from a high
+                     bitrate MP3 (192kbps+) ripped from a CD. All
+                     video soundeffects must be inserted into the replac-
+                     ement audio
+
+                     - If replacement audio *DOES NOT EXIST* for videos older than 1998,
+                       then you can release with normalised tv audio, AND, IF
+                       REPLACEMENT AUDIO BECOMES AVAILABLE, it can be PROPERED.
+
+                     - Vinyl ripped MP3s are not to be used. Replacing
+                       less-than-cd-quality with less-than-cd-quality is
+                       pointless.
+
+                     - Use uncensored audio. If you use censored audio,
+                       prepare to be propered.
+
+                     - Live rips (concerts, performances) use normalised audio
+                       from source. If source is 48KHz, downsample to 44.1KHz.
+
+
+SVCD Video:          - PAL, Should be inverse 2:2 pulldown manually, if possible.
+                       (This is also known as manual-deinterlace). If this isn't
+                       possible on a regular vid the nfo MUST state why.
+
+                     - NTSC, Should be inverse 3:2 pulldown manually, if possible.
+                       (This is also known as IVTC).
+                       If 3:2 pulldown is not possible, then inverse 2:2 pulldown 
+                       manually, if possible.
+                       (This is also known as manual-deinterlace)
+                       If none of the above methods is possible the nfo MUST state why.
+
+                     - Interlaced videos will not be allowed.
+
+                     - Video and audio bitrate MUST be within SVCD standard.
+
+                     - For maximum player compatibility, it is STRONGLY
+                       RECOMMENDED that the video bitrate does not exceed
+                       2496 kbps. - SVCD rips must not be ripped from VHS or SVHS source,
+                       due to the sub-SVCD specs of both formats.
+ 
+                     - VHS resolution (analogue) approx 240 lines of resolution.
+                     - SVHS resolution (analogue) approx 400 lines of resolution.
+                     - VCD resolution = 352x240(NTSC), 352x288(PAL)
+                     - SVCD resolution = 480x480(NTSC), 480x576(PAL)
+
+                     - VHS/SVHS is only sufficient for VCD rips. SVCD rips
+                       from VHS/SVHS must be kept INTERNAL.
+  
+
+XViD Video:          [standard Video]
+                     - Allowed codecs: Xvid 1.1+ or Divx6.1 +
+                     - Upsampling the horizontal resolution to maintain the vertical 
+                       resolution is allowed.
+                     - Upsampling both the horizontal and vertical resolution from 
+                       the source video is not allowed.
+                     - The width and the height of the video have to be a multiple of 16.
+                     - Maximum (PAL ) resolution is 720x576 @ 25fps
+                     - Maximum (NTSC) resolution is 720x480 @ 30fps
+                     - All videos MUST be manually deinterlaced / ivtc'd (if possible).
+                     - Maximum allowed average bitrate is 4000 kbps.
+                     - Maximum peak bitrate during any 1 second of video is 8000 kbps.
+                     - Interlaced encoding is NOT allowed.
+                     - GMC and QPEL are NOT allowed.
+                     - AVI pixel shape must be square.
+                     - Only the MPEG and H.263 quantization matrices are alowed.
+                     - No packed bitstream.
+                     - Key frames must be inserted every 10 seconds or less.
+                     - It is strongly recommended videos should encoded with 1 pass using
+                       a target quantizer setting of between 3 and 4 inclusive.
+                     - The DRF of the video should be below 8 inclusive.
+                     - For concerts or other performances which are long enough, the 
+                       video must be made to fit on 1 or 2 cds (700meg) whilst still 
+                       obaying the rules above, except for the minimum DRF. 
+                       A 2 pass encode must always be used for this.
+
+                     [High Definition Video]
+                     - Source must have a horizontal resolution greater than 720 for 
+                       progressive video, and a horizontal resolution greater than 1440 
+                       for interlaced video.
+                     - Maximum resolution is 1280x720 @ 30fps
+                     - Progressive rips must be encoded at 1280x720 unless broadcast at
+                       a lower  resolution.
+                     - Interlaced sources must be encoded at half resolution and must be 
+                       deinterlaced by discarding the 2nd field (even/odd field deinterlace)
+                       (eg 1080i to be encoded at 960x544)
+                     - Maximum allowed bitrate is 4000kbps.
+                     - Maximum peak bitrate during any 1 second of video is 20000 kbps.
+
+
+                     Cropping and Aspect ratio 
+
+                     - Letterboxed videos should be cropped to remove the black bars.
+                     - There is one exception to this: when there's an overlaping logo common
+                       sense should be used to decide whether to crop the entire black bar 
+                       and thus cropping half of the logo, or cropping it completely. 
+                       Propering on no or half cropped overlapping logos is NOT allowed.
+                     - Some videos contain variable aspect ratios. Crop as to not remove any 
+                       of the picture throughout the video.
+                     - If black bars are still present in the video after cropping (due to 
+                       permanent logos etc) they must be of equal size.
+                     - Encodes must be within 5% of the original aspect ratio.
+                     - Calculating AR % error: (Release - Original AR)/Original AR x 100
+
+
+XViD Audio:          - Can be MP2, MP3 or AC3
+                     - MP2 must be used if no audio replacement exists and if the audio 
+                       source contains MP2 audio. The audio can be normalised if the 
+                       normalisation does not involve re-encoding the audio.
+                     - MP2 audio must be interleaved every frame with 500ms preloaded.
+                     - AC3 allowed only if it is 384 kbit+ and from a DVD/HDTV source.
+                     - AC3 must be untouched.
+                     - AC3 pre load 64/96ms of audio and interleave every 64/96ms.
+                     - MP3 audio must be used as audio replacement on normal videos. 
+                       It must have a average minimum bit rate of 160kbit and must be 
+                       either 44.1khz or 48khz.
+                     - CBR audio is prefered, however VBR audio will not be nuked. CBR audio 
+                       is required for maximum hardware and software player compatability.
+                     - MP3 encodes must always be done with LAME 
+                       (APS (--alt-preset standard) prefered for VBR)
+                     - MP3 audio must be interleaved every frame with 500ms preloaded.
+                     - Use uncensored audio
+                     - Sound effects contained in the source audio must be inserted into the 
+                       replacement audio if missing.
+                     - If replacement audio *DOES NOT EXIST* for videos older than 1998, then 
+                       you can release with normalised tv audio, AND, IF REPLACEMENT AUDIO 
+                       BECOMES AVAILABLE,it can be PROPERED.
+                     - Vinyl ripped MP3s are not to be used. Replacing less-than-cd-quality 
+                       with less-than-cd-quality is pointless.
+
+
+
+
+
+2) Releasing
+     2a) Dirname/filename
+
+          - Directory name is decided by the group. However, the following naming
+          scheme is STRONGLY RECOMMENDED:
+
+          Artist_name-Song_title-extra_info_here-FORMAT-YEAR-GRP
+
+     Example:
+
+          Britney_spears-Baby_one_more_time-Live_in_london_01_03-SVCD-2003-GRP
+
+
+          - SFV and NFO are required.
+
+          - The standard extension is .mpg for both VCD and SVCD releases. However,
+          it doesn't matter, so groups decide to use .mpg or .m2v as extension.
+
+
+
+     2b) Logos
+          - Including an intro/outro is NOT RECOMMENDED. Advertisements in your
+          videos is not what the MV scene is about... if you must spam, then
+          do it your NFO file. However, intro/outro will not be banned, and
+          propering a video with a logo will not be permitted.
+
+          - Watermarking on videos is NOT ALLOWED. This is the same situation as
+          intro/outro - nobody wants to stare at your spam while watching your
+          rips. It's already bad enough that tv stations do it. Videos with
+          watermarks can be propered.
+
+          - For letterboxed videos, covering a TV station logo that is entirely
+          in the letterbox is RECOMMENDED. However, propering because of
+          tv-station-not-covered will not be permitted.
+
+
+
+     2c) Concerts and Live Performances
+          - Concerts involving one artist must be released as one release.
+          This means, for example, that if you rip a concert of Linkin Park
+          at the Royal Albert Hall, you CANNOT release each song as a release.
+
+          - You should include the main introduction and any other introductions
+          between songs, as the point in ripping a concert is to have a COMPLETE
+          copy of the concert.
+
+          - The ripper decides to rip as separate tracks or as full CDs.
+
+          - If you rip as separate tracks, DO NOT PUT A LOGO ON EACH TRACK.
+          Single-tracks ripped concerts should be packaged in ONE release,
+          similar to a mp3 album:
+
+          Artist-concert_title-svcd-2002-group/00-artist-concert_title.nfo
+          Artist-concert_title-svcd-2002-group/00-artist-concert_title.sfv
+          Artist-concert_title-svcd-2002-group/01-artist-introduction.mpg
+          Artist-concert_title-svcd-2002-group/02-artist-song1.mpg
+          Artist-concert_title-svcd-2002-group/03-artist-song2.mpg
+
+          - If you rip as full CDs, it is recommended that you use multipass VBR
+          to make it fit evenly on one or more CDs. Also package it as a BIN/CUE,
+          and release it the same way VCDs are: 15mb rars, and a 1 minute sample:
+
+          Artist-concert_title-svcd-2002-group/CD1
+          Artist-concert_title-svcd-2002-group/CD2
+          Artist-concert_title-svcd-2002-group/Sample
+          Artist-concert_title-svcd-2002-group/nfo_file.nfo
+
+          - Non-concert live performances with more than one song, such as those
+          on TOTP, awards shows, etc. should be released as individual videos
+          with any intermediate footage (interviews, presentations, etc.) cut
+          out. Also, include the date and the name of the show in the dirname.
+
+          - COMMERCIALS (such as Britney Spears' Pepsi) are not music videos, so
+          they will not be allowed. Keep non music video rips INTERNAL.
+
+
+
+     2d) NFO
+          - Your NFO should contain:
+            - Artist and Title
+            - Format (VCD/SVCD, and PAL/NTSC/NTSC-FILM)
+            - Video source
+            - Audio source
+            - Deinterlace type
+            - Size
+            - Genre (This is nice for sites with scripts that search NFOs for genre)
+            - Video Year
+            - Live videos MUST include the show it is from and the date it was aired.
+            - If you are propering, you MUST include the reason for proper,
+            and the name/date of the release being propered.
+
+          - Other useful information to include in your NFO, optionally, is:
+            - Length in min:sec
+            - Bitrate of video and audio streams
+            - Album name
+            - Description of video
+            - Fullscreen or Letterbox (FS or WS)
+            - Source (Name of DVD or name of TV station)
+
+
+3) Propers and Dupes
+
+     - Propering because of SLIGHT quality increase is not acceptable. If the original
+       rip was very bad, then proper, but un-needed propers will be nuked!
+
+     - PAL & NTSC
+       - Releases of lower quality are dupes of higher quality, as decided by
+         the following list, which is in order of lowest quality to highest:
+
+            CONVERT TV-Rip, CONVERT DVD-Rip, NATIVE TV-Rip, NATIVE DVD-Rip
+
+       - Native: This means progressive.
+       - NTSC produced video is native to NTSC broadcasts, and PAL
+         produced video is native to PAL broadcasts. Native NTSC
+         broadcast means IVTC-able NTSC or progressive NTSC.
+         Native PAL means progressive PAL.
+
+
+       - Convert: This also means deinterlaced.
+       - A PAL produced video, broadcast in NTSC, is converted before
+         it's broadcasted. A NTSC produced video is converted to PAL
+         before it's broadcasted. These converts cannot be reversed
+         to progressive, and must be deinterlaced.
+
+
+         Hence, it is not a good idea to release pal-ntsc converts of top 50 videos,
+         because a native rip will be released.
+  
+       - Widescreen/fullscreen dupes will not be allowed. Keep WS/FS dupes INTERNAL.
+
+       - The following are reasons for you to release a PROPER:
+            - Desync
+            - Incomplete
+            - Improper inverse 3:2 or 2:2 pulldown
+            - Lack of inverse 3:2 or 2:2 pulldown (if possible)
+            - Incorrect Aspect Ratio
+            - Out-of-spec rips
+            - Massive frame drops
+            - Very bad quality (includes low bitrate on high motion videos)
+            - Rips without replaced audio (Concerts/performances excluded)
+            - Poor quality replacement audio
+            - Censored replacement audio
+            - Missing more than 1 SFX (propers due to 1 SFX missing not needed)
+            - Native video with correct picture aspect is broadcasted
+            - Logo included more than once in a concert release
+            - No manual deinterlacing/IVTC'ing when possible
+            - Watermarked video
+            - Bad cropping
+            - Improper multiplexing (such as underflowed audio)
+
+       - It is vitally important that you state which release you are propering
+         and your reasons in your nfo, and as well make sure to put -proper- in
+         your dirname.
+
+       - It is STRONGLY RECOMMENDED that you demux SVCD/VCD with M2 edit, and remux 
+         with bbmpeg, to avoid improper multiplexing errors.
+
+       - No propering of releases previous to MV COUNCIL will be allowed.
+         If you want to release a better version of an OLD video, keep it INTERNAL !
+
+       - No dupes based on resolution aspect ratio or video profile. 

@@ -1,0 +1,41 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                             ³
+³                       PS4 Release Standards v1.0 2018                       ³
+³                                                                             ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³ 1.1) Releases must be packed in RAR. SFV and NFO must be included.          ³
+³ 1.2) Rars must be in multiples of 50 000 000 bytes but no larger than       ³
+³      500 000 000 bytes.                                                     ³
+³ 1.3) Only PKG Format releases are acceptable.                               ³
+³    1.3.1) PKG trumps ISO releases.                                          ³
+³    1.3.2) PKG must be compressed with RAR4 using m1 compression.            ³
+³    1.3.3) All groups are encouraged to patch the PKG to the highest         ³
+³           compatible patchlevel. This is not mandatory.                     ³
+³ 1.4) All releases can include a proof picture with disc and a group tag     ³
+³    1.4.1) Proof picture can be scanned and must be in JPEG format.          ³
+³    1.4.2) Proof picture must not be blurry. Disc/Cart Code must be clearly  ³
+³           visible.                                                          ³
+³    1.4.3) If a release is suspicious, a proof can be requested and has to   ³
+³           be done within 24hrs.                                             ³
+³ 1.5) PSN releases must also be in PKG format.                               ³
+³ 1.6) If a game is re-released for having additional foreign languages, the  ³
+³      release must be tagged as MULTI and the nfo must specify which         ³
+³      additional languages are included.                                     ³
+³ 1.7) All previous ISO File Format releases can be re-released as PKG.       ³
+³ 1.8) The dirname should only contain the game name and tags.                ³
+³    1.8.1) The source region should be included in the nfo.                  ³
+³    1.8.2) The required firmware must be included in the nfo.                ³
+³    1.8.3) Patchlevel / Installed updates should be included in the nfo.     ³
+³                                                                             ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³                                   Signed                                    ³
+³                                                                             ³
+³    BlaZe, DUPLEX, GCMR, KOTF, LaKiTu, LiGHTFORCE,  PACT, PROTOCOL, TRSI     ³
+³                                                                             ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³  Compliance with this document is mandatory as of 2018-02-22 00:00:01 UTC   ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

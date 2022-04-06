@@ -1,0 +1,14 @@
+Tur-Search (GL1&2)
+
+Description: Gives !search function to irc and optionally replaces 'site search' in
+glftpd.
+Shows if the release still exists and if it does, show its size.
+Also, from glftpd, it has the ability to create symlinks to the stuff it finds 
+which is GREAT when searching for a few things. Can just tag all the symlinks 
+instead of manually going to each dir to download.
+
+Checks dirlog so use Tur-DirLogClean as well to keep dirlog updated.
+
+Author:   Turranius
+Version:  2.5.3
+Added on: 23-Apr-2003

@@ -1,0 +1,161 @@
+The Nintendo DS Release Standards v1.0
+
+The Nintendo DS scene started out as an extension of the Gameboy Advance scene,
+and carried forward with mostly the same set of rules.  However, as the years
+have progressed, it has become clear that a formal set of rules tailored
+specifically to the Nintendo DS console would be useful.  The goal of this
+document is to establish a clear and concise listing of what should be expected
+of a valid Nintendo DS release.  Having an official list to reference should
+prevent needless nuking, and clean up what is at present a cluttered and
+confused scene.
+
+
+I. Basic Release Requirements
+
+A release must consist of at least two things:
+
+1) A Nintendo DS title _OR_ a patch for a Nintendo DS title
+
+and
+
+2) An Information File (.NFO)
+
+
+II. Nintendo DS Title Specifics
+
+The title must be dumped from a retail cartridge, and the dump must be complete.
+It is essential that we define "complete", as this has lead to confusion in the
+past.  An NDS title is defined as being complete when all used assets and
+resources are included.
+
+This includes the ARM executable binaries and overlays, all files within the
+NitroFS, and the banner for the title.  The secure area must be decrypted.
+
+This excludes unnecessary padding.  Needless bytes of 00 or FF at the end of
+files serve no purpose and may be removed.  Header bytes with no game
+functionality are also unnecessary for a complete dump.
+
+The release must work.  If a title has protection, it must be cracked prior to
+release.  Non-working releases should be nuked.  If a title is non-obviously
+protected, and it is discovered to need a crack only after an uncracked version
+has been released, the uncracked release may be nuked.  A later _CRACKED_
+release will take precedence, and is a valid proper.  Groups are expected to
+release working content, and will be held liable as such.  Uncracked titles
+should be released as INTERNAL or _UNCRACKED_ or not at all.
+
+
+III.  Patch Specifics
+
+A patch may be either a trainer, crack, language selector, save fix, or some
+other modification or tool.  This definition is intentionally open-ended to
+leave open the possibility of new types of patches in the future.  While .BDF
+and .IPS are the most common formats, any format of patch is legal, so long as
+there is a working and publicly available patcher.  Including a patcher and
+.BAT file to automate the patching process is recommended, though not mandatory.
+
+Patches must not break game functionality.  The .NFO must include which cart(s)
+and relevant firmware the patch was tested on.  If it is later discovered that
+the patch does not work on the cart(s) listed, the patch may be nuked as broken.
+If the patch does not work on some cart, and it was not stated that the patch
+was tested on that cart, this is not grounds for nuke.  It is unrealistic to
+demand that groups purchase every variation of available cart to test their
+patches, and they should not be punished as if this were the expectation.
+
+1.  Trainers
+
+Trainers are still subject to dupe rules.  If a trainer has already been
+released, a trainer released afterwards with an equal or fewer number of
+options is a dupe and should be nuked.  A trainer released afterwards with more
+options is valid.  The exception is by game region.  If a patch works only with
+a particular region release of a game, a later patch that works with different
+regions of the game is valid.  Any subsequent trainers for the new region are
+subject to dupe.
+
+2.  Cracks
+
+If a crack only partially removes protection, it is incomplete and may be nuked
+as broken.  Cracks should be tested, and it should be stated within the .NFO
+which cart(s) the crack was tested on.  Cracks can not be nuked because some
+carts can't properly handle the save routines.
+
+
+IV.  .NFO Specifics
+
+The release must include a .NFO.  The file must be a plain-text document and at
+least include the name of the title (or the name of the title that the patch
+corresponds to).  Other suggested items to include are region, file size, file
+name, title description, and date which the release is pre'd.
+
+While it is not required, .NFO's for patches should include a full description
+of the function of the patch, and instructions on how it may be applied.  The
+.NFO should make reference to the directory name of the intended release to be
+patched.
+
+
+V.  Packing
+
+Releases must use compression.  While maximum compression is recommended, any
+level of compression higher than "Store" is acceptable.  The compressed archive
+must contain the Nintendo DS file or patch.  Passworded archives are forbidden.
+The .NFO must be included within the directory, outside of the archive(s).
+Releases may be packed in one of two ways:
+
+1) ZIP
+
+There must be a single .ZIP, and it must contain the entire game or patch file.
+The release must also include a .NFO and a FILE_ID.DIZ  The .DIZ file is a
+plain-text document that must contain at least the game name.
+
+2) RAR
+
+The .RAR must be split into 5,000,000 byte parts.  Included within the
+directory must be a .SFV file corresponding to the archive(s) and a .NFO file.
+
+
+VI.  Directory Naming
+
+The directory name must include the full name of the title, the text "NDS", and
+the group name.  As all Nintendo DS releases are region-free, region labelling
+for the first English release of a title is optional.  However, if a release
+does not contain English as a selectable language, or contains English but has
+been preceeded by another release that also contains English, the directory
+name must also specify the source region of the title.
+
+Directories may contain the following characters:
+
+ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-_.
+
+Sample directory names:
+
+Game_Name_NDS-GROUPNAME
+Game.Name.NDS-GROUPNAME
+Game_Name_USA_NDS-GROUPNAME
+Game_Name_USA_PROPER_NDS-GROUPNAME
+Game_Name_JAP_NDS-GROUPNAME
+Game_Name_JAP_CRACK_NDS-GROUPNAME
+Game_Name_FRA_PLUS5_TRAINER_NDS-GROUPNAME
+
+
+VII.  Valid and Invalid Releases
+
+This section should not be necessary, but the recent prevalence of many
+unnecessary nukes has made it clear that there is some confusion about what is
+and is not valid.  With the exception of flat-out dupes, anything that follows
+all the necessary clauses listed above is a valid release.  What this means is
+that anything that is not listed is not relevant to whether or not a release is
+valid.  The goal is to release working copies of Nintendo DS titles.  Intros
+and cracktros do not prevent a release from playing, and their inclusion is not
+a valid reason for a nuke.  The same goes for "inaccurate" headers, trimmed
+releases, remastered filesystems, and any other modification, intentional or
+not, that does not affect the functionality of the title.  Demanding 1:1 copies
+would lead to games being broken and unplayable.  As evidenced by recent
+movements to redump hundreds of titles to "correct" their headers, it would
+also lead to countless re-releases of already-working titles.  There is no need
+for this.  We hope that this document will make it clear what is expected of
+releases, and provide some much-needed structure to a disorganized scene.
+
+All releases released before this ruleset is not subjet to these rules.
+
+These rules have been agreed upon and will be followed by the following groups:
+
+DFG, PYRiDiA, SQUiRE, SUXXORS, SweeTnDs, VENOM, XPA

@@ -1,0 +1,92 @@
+
+
+                                 iono-shutdown v1.5
+----------------------------------------------------------------------------------
+				< iono@lycos.co.uk >
+
+
+( features )
+ ----------
+
+  * Can either open or shutdown glftpd.
+  * Can open/shutdown glftpd from either shell or irc.
+  * Can kick users from ftp if you want the change to happen immediately.
+  * Uses either kill or ncftpls to kick users from ftp, based on PID.
+  * Doesn't kick users with certain flags, definable.
+  * Can display status of server (shutdown/open).
+
+
+
+( changelog )
+ -----------
+
+key: + new feature, - removed feature, * modification/bug fix.
+
+Changes in v1.5
+
+  + added even more possible outputs.
+  * recoded almost all of the script, is now faster.
+  + added "status" command.
+
+Changes in v1.1
+
+  + added more possible outputs, such as no users online.
+  * couple of bugfixes
+  * changed to a single line output
+  + readme file changed a bit, missed some small details
+  + PREOUT setting added.
+
+Changes in v1.o
+
+  + first public release. Special thanks to Turranius for his help :)
+
+
+
+( requirements )
+ --------------
+
+  * ncftpls (optional, depending on your usage)
+  * tur-ftpwho (included)
+  * kill, cut, grep.
+
+ Note : ncftpls is only required if you are going to use the included tcl. If you 
+        simply want to use it with the root account, kill will be used instead of
+        ncftpls.
+
+
+
+( contents )
+ ----------
+
+  * o1. iono-shutdown.sh
+  * o2. iono-shutdown.tcl
+  * o3. README
+
+
+
+
+( installation )
+ --------------
+
+  * o1. untar to a temp directory and check all files are present.
+  * o2. cp iono-shutdown.sh /glftpd/bin
+  * o3. mkdir -m777 /glftpd/tmp (or the tempoary files location you want to use)
+  * o4. chmod a+x /glftpd/bin/iono-shutdown.sh
+  * o5. chown root:eggdrop /etc/glftpd.conf (replace eggdrop with your eggdrop 
+        accounts group, usually the same as its username)
+  * o6. chmod 770 /etc/glftpd.conf
+  * o7. edit your glftpd.conf, make sure it includes "shutdown 0", the default is 
+        hashed out.
+  * o8. if you don't have it already, put tur-ftpwho in /glftpd/bin (chmod +x).
+  
+ Sitebot support:
+  * o1. cp iono-shutdown.tcl /home/eggdrop/scripts (or your eggdrop scripts dir)
+  * o2. edit eggdrop.conf and add "source scripts/iono-shutdown.tcl" to it.
+  * o3. rehash your bot, killall -SIGHUP egggdrop.
+  * o4. create an account for the script to use on the ftp, the account needs the
+        +E flag (kill pids).
+        
+
+----------------------------------------------------------------------------------
+                                 iono-shutdown v1.5
+

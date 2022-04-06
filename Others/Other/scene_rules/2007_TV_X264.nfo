@@ -1,0 +1,175 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                             ³
+³                  The 720p x264 TV Releasing Standards 2007                  ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³     Requirements: Notepad with terminal font or any other ascii viewer.     ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                              ÀÄÄÄ[ INTRO ]ÄÄÄÙ                              ³
+³ We would like to start out by thanking those who have come before with      ³
+³ tdx2k2 and txd2k5, as well as everyone who worked hard to design this       ³
+³ ruleset. These standards were designed to allow some freedom in the eternal ³
+³ tradeoff between quality and speed, while preventing it from degrading to   ³
+³ crap like other TV scenes have tended to do over the years.                 ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                          ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                          ³
+³                                                                             ³
+³  Episode Length:                                                            ³
+³   - Shows 19:00-29:59 long shall be 550MB                                   ³
+³   - Shows 37:00-53:59 long shall be 1100MB                                  ³
+³   - Shows 54:00-69:59 long shall be 1466MB                                  ³
+³   - Shows of any other length can be sized at ripper's discretion,          ³
+³     provided the size is a multiple of 550 or 733 MB                        ³
+³                                                                             ³
+³                                                                             ³
+³  Audio:                                                                     ³
+³   - Must be Studio AC3 (AC3 transcoding forbidden)                          ³
+³   - Dupes based on audio format are forbidden. These should be INTERNAL     ³
+³     However it is encouraged not to release a 2.0 version of a show         ³
+³     when true 5.1 is available                                              ³
+³   - Sources with clipping audio will be considered a nuke                   ³
+³                                                                             ³
+³                                                                             ³
+³  Video:                                                                     ³
+³   - 720p sources are not to be resized. In the event of imperfections       ³
+³     lasting the majority of the episode, the release shall be cropped with  ³
+³     borders added to retain 1280x720 resolution                             ³
+³   - 1080i/p Sources are to be cropped and resized using Lanczos or Lanczos4 ³
+³   - Improper methods of IVTC that result in loss of half the fields         ³
+³     (SeparateFields.SelectEven, YV12InterlacedSelectTopFields) are banned   ³
+³   - Improper IVTC methods that result in jerky playback such as Force Film  ³
+³     are banned                                                              ³
+³   - Custom Matrices are allowed                                             ³
+³   - Group watermarks of any kind on the video will not be tolerated         ³
+³                                                                             ³
+³                                                                             ³
+³  Framerate:                                                                 ³
+³   - Must be as close to original source framerate as possible               ³
+³   - In some cases PAL shows should be IVTC'd (i.e. to 24fps). Therefore     ³
+³     using a PAL source is not an excuse for lack of IVTC                    ³
+³                                                                             ³
+³                                                                             ³
+³  Codec/Container:                                                           ³
+³   - Must be x264                                                            ³
+³   - Must use Matroska (.mkv) for container                                  ³
+³   - Must have a mininum of 3 B-frames                                       ³
+³   - Must be minimum 2 passes. The final pass must be done as one continuous ³
+³     encode spanning the entire episode, e.g. may not be segmented           ³
+³   - Subpixel refinement (subme) should be 5 or higher                       ³
+³   - M.E. Algorithm (me) should be Hexagon (hex) or better                   ³
+³                                                                             ³
+³                                                                             ³
+³  Resolution:                                                                ³
+³   - 1280 x 720                                                              ³
+³                                                                             ³
+³                                                                             ³
+³  Subs:                                                                      ³
+³   - Optional                                                                ³
+³   - VOBSUB is the preferred format                                          ³
+³   - Subtitles are to be muxed with video stream, but may not be burned      ³
+³     into the video stream. "Subs" directories are forbidden                 ³
+³   - Burned subtitles will only be allowed when the source exhibits          ³
+³     such subtitles in the picture itself                                    ³
+³   - Release muxed with subs must still adhere to the filesizes listed above ³
+³   - Multi-language subtitles cannot be used as a basis for a dupe           ³
+³                                                                             ³
+³                                                                             ³
+³  Packaging:                                                                 ³
+³   - All releases must be MKV, not BIN/CUE                                   ³
+³   - Must be packed with RAR and broken into 50MB or 20MB volumes            ³
+³   - Multi episode releases should not be split                              ³
+³   - Compression is not allowed                                              ³
+³   - Recovery and MD5 record are optional                                    ³
+³   - Encryption or password protection is forbidden                          ³
+³   - Must have SFV and NFO                                                   ³
+³                                                                             ³
+³                                                                             ³
+³  Credits/Previously On:                                                     ³
+³   - Not required. Ripper's discretion                                       ³
+³                                                                             ³
+³                                                                             ³
+³  Samples:                                                                   ³
+³   - REQUIRED!                                                               ³
+³   - Roughly sixty seconds length and in a separate folder marked as Sample  ³
+³   - Must be taken from the episode - not encoded separately                 ³
+³   - Stream samples are recommended for any rip that is deemed questionable: ³
+³     i.e. no IVTC possible on source, IVTC to 24.975fps etc                  ³
+³                                                                             ³
+³                                                                             ³
+³  Propers:                                                                   ³
+³   - Propers are only permitted in the case of a technical flaw in the       ³
+³     original release (i.e. Bad IVTC, Interlacing, missing footage, resizing ³
+³     720p source, bad crop, commercials, bad x264 settings used, etc)        ³
+³   - Sample of propered release is encouraged                                ³
+³   - Proper reason must be stated in nfo                                     ³
+³   - Qualitative propers are not allowed                                     ³
+³   - Propers based upon the rules set forth here are allowed only on         ³
+³     releases that come after this document is made public                   ³
+³                                                                             ³
+³                                                                             ³
+³  Directory Naming:                                                          ³
+³   - Show.Name.SXXEXX.720p.HDTV.x(X)264-GROUP                                ³
+³   - For daily shows or sports, Show.Name.YYYY-MM-DD.720p.HDTV.x(X)264-GROUP ³
+³   - ALL others are FORBIDDEN. (e.g 0x00 000 EXX.EP.TITLE)                   ³
+³   - The use of AC3 or AC3.X.X is FORBIDDEN.                                 ³
+³   - READ.NFO is allowed, however, discretion is recommended                 ³
+³     PROPER.READ.NFO is NOT needed. NFO is REQUIRED to have reason, and is   ³
+³     purely redundant                                                        ³
+³   - Other permitted tags are: PROPER, REPACK, RERIP, REAL, UNCUT, DUBBED,   ³
+³     SUBBED, INTERNAL                                                        ³
+³   - Acceptable characters in naming a directory include (NO spaces, double  ³
+³     dots or underscores - single dots ONLY):                                ³
+³                                                                             ³
+³       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ³
+³       abcdefghijklmnopqrstuvwxyz                                            ³
+³       0123456789 .-                                                         ³
+³                                                                             ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³
+³                                                                             ³
+³                                                                             ³
+³  Source related notes:                                                      ³
+³   - This ruleset only applies to episodes capped from HDTV sources,         ³
+³     not HDDVD and Bluray.                                                   ³
+³   - HD lite is allowed. HD lite is defined for our purposes as any 1080x    ³
+³     source that is not full 1920x1080                                       ³
+³   - Upconverted sources are not allowed                                     ³
+³                                                                             ³
+³                                                                             ³
+³  Internals:                                                                 ³
+³   - All INTERNALS must follow TX264E2K7 rules, apart from the time length   ³
+³     rules and multi-language audio tracks rule (and will not be considered  ³
+³     as dupes)                                                               ³
+³   - NOTE: INTERNAL dirfix is allowed as a basis of avoiding a nuke          ³
+³                                                                             ³
+³                                                                             ³
+³  Ripping related notes:                                                     ³
+³   - Multi-language audio tracks are allowed                                 ³
+³     Multiple languages should be muxed into the MKV. These languages must   ³
+³     be identified in the container when muxing                              ³
+³   - NO intros, outros, betweenos, or any other form of defacement of the    ³
+³     episode will be tolerated                                               ³
+³                                                                             ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³            The 720p x264 TV Releasing Standards 2007 (2007-05-08)           ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        À--------[ GROUPS ]--------Ù                         ³
+³                                                                             ³
+³              TVX2642K7 rules created by the following Groups:               ³
+³              ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ               ³
+³                 442 BiA BamHD CTU DIMENSION GOTHiC hV YesTV                 ³
+³                                                                             ³
+³              TVX2642K7 rules signed by the following Groups:                ³
+³              ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ               ³
+³                             aAF DHD NBS PiX SFM                             ³
+³                                                                             ³
+ÀÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÙ
+   À----[    Edited By dill 2007. Respect goes to all x264 teams.     ]----Ù

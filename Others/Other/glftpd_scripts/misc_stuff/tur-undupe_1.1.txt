@@ -1,0 +1,15 @@
+Tur-UnDupe
+
+Description: A public undupe script. Users can !undupe single files from irc. Works
+in basically the same way as Eur0danc3s "Pubic Undupe" but this has a few more 
+tricks like checking if it actually worked and more.
+It is also 100% standalone from your sitebot script.
+
+A note: Some versions of glftpd were releaed with a badly compiled undupe binary. 
+If you cant run it from shell and get the usage information, you'll need to 
+recompile it from undupe.c that comes with glftpd.
+Simply: gcc -o /glftpd/bin/undupe undupe.c
+
+Author:   Turranius
+Version:  1.1
+Added on: 02-Nov-2003

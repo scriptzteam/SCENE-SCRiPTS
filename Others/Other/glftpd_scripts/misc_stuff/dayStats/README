@@ -1,0 +1,25 @@
+INSTALLATION:
+
+1. Move dayStats.pl to your glftpd/bin dir
+2. Give dayStats.pl exec rights (chmod a+x dayStats.pl)
+3. Edit your dayStats.pl
+4. Add this to your sitebot.tcl config (this is dZBOT):
+
+- to your set msgtypes(DEFAULT) add DAYSTATS
+- set disable(DAYSTATS)        0
+- set variables(DAYSTATS)    "%logns %newdirs %pres %pregrps %newrels %nukes %nukees %incom %outgo %xpsec %topdn %topup %auser %amb %buser %bmb %cuser %cmb %duser %dmb %euser %emb"
+- set announce(DAYSTATS)     ":%sitename:: %boldDaily Statistics%bold (%sitename)|:%sitename:: We had %bold%logns%bold number of logins and %bold%incom mBs%bold up and %bold%outgo mBs%bold down|:%sitename:: Top Uploader was: %bold%topup%bold and Top Downloader was:%bold%topdn%bold|:%sitename:: %boldTodays top uploaders%bold(section: %xpsec)|:%sitename:: %bold1.%bold %auser          %amb|:%sitename:: %bold2.%bold %buser          %bmb|:%sitename:: %bold3.%bold %cuser          %cmb|:%sitename:: %bold4.%bold %duser          %dmb|:%sitename:: %bold5.%bold %euser          %emb|:%sitename:: Today we had %bold%pres PRES%bold. \[ %pregrps \]|:%sitename:: And a total of %bold%newdirs%bold new releases. \[ %newrels \]|:%sitename:: We allso had %bold%nukes nukes%bold, the nukees where: \[ %nukees \]"
+
+5. Dont forget to rehash your bot!
+
+// If you want to be able to use !sitedaystats
+
+6. Move dayStats.tcl to your eggdrops tcl directory
+7. chmod it a+x
+8. Configure it
+9. Add it to your eggdrop.conf
+10. Rehash your bot!
+
+Your done!
+
+// pnG

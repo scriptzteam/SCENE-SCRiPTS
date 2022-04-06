@@ -1,0 +1,46 @@
+###############################################################################
+
+put this in your glftpd.conf
+
+upload          /site/REQUESTS/*/*       *
+resume          /site/REQUESTS/*/*       *
+download        /site/REQUESTS/*/*       *            
+makedir         /site/REQUESTS/*/*       *               
+rename          /site/REQUESTS/*         1 =STAFF
+filemove        /site/REQUESTS/*         1 =STAFF
+delete          /site/REQUESTS/*         1 =STAFF
+deleteown       /site/REQUESTS/*         *
+nodupecheck     /site/REQUESTS/*
+
+site_cmd REQUEST	EXEC	/bin/sig-requests.sh REQHLP
+site_cmd REQUESTS	EXEC	/bin/sig-requests.sh REQHLP
+site_cmd REQADD		EXEC    /bin/sig-requests.sh REQADD
+site_cmd REQFIL		EXEC    /bin/sig-requests.sh REQFIL
+site_cmd REQSHO		EXEC    /bin/sig-requests.sh REQSHO
+site_cmd REQDEL		EXEC    /bin/sig-requests.sh REQDEL
+
+custom-request		!8 *
+custom-requests		!8 *
+custom-reqadd		!8 *
+custom-reqfil		!8 *
+custom-reqsho		!8 *
+custom-reqdel		!8 *
+
+###############################################################################
+
+put this in your pzs-ng bot conf/vars/theme (if you don't know how to configure
+your pzs-ng then RTFM!)
+
+set disable(REQADD) 0
+set disable(REQDEL) 0
+set disable(REQFIL) 0
+
+set variables(REQADD) "%r_name %u_name"
+set variables(REQDEL) "%r_name %u_name"
+set variables(REQFIL) "%r_name %u_name %u_req"   
+
+announce.REQADD = "%b{[%c4{REQUEST}]} %c4{ADDED} -> %b{%u_name} requests %b{%r_name}."
+announce.REQDEL = "%b{[%c4{REQUEST}]} %c4{DELETED} -> %b{%u_name} deleted %b{%r_name}."              
+announce.REQFIL = "%b{[%c4{REQUEST}]} %c4{FILLED} -> %b{%u_name} just filled %b{%r_name} for %b{%u_req}."
+
+###############################################################################

@@ -1,0 +1,9 @@
+# ----------------------------------------------------------------------------------
+#   iono-affils.pl v1.2
+#
+#   outputs an affil list based off contents of a "group/affils" directory in which
+#   group/pre dirs are sub-directories (so isn't suitable for all sites, designed
+#   for single affiled section sites, eg mp3)
+#
+#   args: none.
+# ----------------------------------------------------------------------------------

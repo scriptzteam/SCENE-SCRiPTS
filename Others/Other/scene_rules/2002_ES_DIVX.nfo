@@ -1,0 +1,244 @@
+REGLAS DivX. Ultima Actualizacion: Noviembre de 2002
+----------------------------------------------------
+
+Las reuniones llevadas a cabo entre los responsables de los
+grupos de la scene DivX española durante el mes de Noviembre
+de 2002 han dado como resultado las siguientes normas, de 
+obligado cumplimiento tanto por los grupos actuales como por
+los que se incorporen mas tarde, con el objetivo de asegurar
+un grado de calidad adecuado, considerandose como validas
+solo aquellas releases que se ajusten a las normas que se 
+citan a continuacion:
+
+1. ORIGEN: Se aceptan unicamente las codificaciones de fuentes
+DVD y DVB (Satelite, Cable, etc.), quedando prohibido el uso
+de VHSRip y TS como fuentes, con la excepcion de los 
+SCREENERS, en los que se debera utilizar siempre la mejor
+fuente de video disponible.
+
+2. CONTENEDOR: Se aceptan tanto contenedores AVI como OGM,
+quedando siempre en manos del ripper la decision de cual
+utilizar, debiendo siempre recaer la eleccion sobre aquel
+que proporcione unos mayores indices de calidad y de
+rendimiento en combinacion con los codecs de audio y
+video seleccionados.
+
+3. VIDEO: Se aceptan los códecs DivX5 y XviD basados en el
+Standard ISO MPEG-4, así como la utilización del SBC.
+La eleccion de cada uno está supeditado por la decisión 
+propia del ripper en función de la calidad. Eso si, la
+calidad resultante del video ha de ser buena, ya que una 
+mala calidad implicará con toda seguridad un NUKE.
+
+
++ El video debe llevar el cropping adecuado y debe ir 
+perfectamente sincronizado con el audio y con un 
+keyframe minimo entre 15 y 30. 
+
++ La resolucion horizontal podra estar comprendida entre 
+512 y 640, y el rango de error permitido es el siguiente:
+
+a) 4:3 error maximo 1% aproximadamente
+b) 16:9 error maximo 1,5% aproximadamente
+c) WS error maximo 2% aproximadamente
+
+
+Hay que tener en cuenta que estos porcentajes son 
+orientativos y que dependen de la resolucion original
+de la fuente y del grado de deformacion que un cambio
+en la misma pueda producir sobre el resultado final,
+pudiendose asi deducir los margenes de error para otras
+resoluciones siguiendo este mismo criterio.
+
++ La codificacion del video debera realizarse siempre sin
+seguir el estandar ITU para evitar obterner resoluciones
+no acordes al AR de la fuente. Ademas, deben utilizarse
+los complementos necesarios para garantizar la ausencia
+de ghosting y shit en dicho video, siendo este posible
+motivo de invalidacion de la release.
+
+4. AUDIO: El audio ha de proceder siempre de fuente DVD,
+con una unica excepcion: la de aquellas peliculas,
+series, etc. que no hayan sido editadas en castellano
+y cuya edicion sea poco factible a corto o medio plazo.
+Solo en este caso se aceptara la combinacion de video
+de fuente DVD y audio de fuente VHS.
+
+Se aceptarán los formatos MP3, OGG y AC3 para la(s)
+pista(s) de audio, escogiendo cada una a decisión del
+ripper. En relación con el bitrate, se usará un bitrate
+adecuado a la percepción del mismo y a la calidad final del
+video (112-128 CBR MP3 o sus equivalentes VBR, ABR u OGG).
+
++ En caso de ser una película antigua, se podrá escojer un
+bitrate adecuado a la calidad del audio original, sin dañar
+la reproducción del mismo por distorsiones. Todos los audios
+deberán ser normalizados antes de ser multiplexados con el
+video, para evitar saltos bruscos de volumen. Se recuerda
+que la combinacion de pelicula en MONO con audio AC3 no
+esta permitida ya que no supone mas que ocupar espacio
+sin aumentar la calidad de la release.
+
++ Para los MVs, se usará un bitrate más alto, debido al mayor
+interés que cobra la pista auditiva: 160 MP3 CBR o sus
+equivalentes en VBR, ABR u OGG.
+
+5. TAMAÑO: la película se ajustará en lo posible al espacio 
+correspondiene a la máxima capacidad de un CD de 80 minutos,
+evitando el overburning en todo caso, y sin ser un espacio
+que, por su reducido tamaño, reduzca notablemente la calidad.
+
+El numero de CDs queda a decision del ripper segun cada
+caso, siguiendo en principio las siguientes guias
+orientativas:
+
+< 110 minutos --> 1 CD
+110-120 minutos --> A decision del ripper
+120 minutos --> 2CDs
+
+En caso de que el video sea 4:3, el limite para pasar a
+2 CDs sera de 100 minutos, siempre y cuando la calidad 
+del DVD lo permita, intentando evitar siempre el despilfarro
+inutil de espacio innecesario.
+
+En casos concretos las guias puede NO seguirse si el aumento 
+de CDs no implica mejora de calidad, quedando esta decision 
+a criterio del ripper.
+
+6. SUBTITULOS: Las peliculas en las que aparezcan dialogos en
+lengua extranjera deberan venir acompañadas de los 
+correspondientes subtitulos en castellano, quedando la 
+inclusion de otros idiomas a gusto del riper, no 
+considerandose valida aquella release que incumpla este punto.
+Las peliculas con audio extranjero y subtitulos en castellano
+deben ir etiquetadas como SUBBED, siguiendo las normas indicadas
+en el apartado dedicado al formato de dichas etiquetas.
+
+7. SERIES: En el caso de que la release corresponda a una serie,
+el primer grupo que saque un volumen determinara el codec y 
+parametros a utilizar, para garantizar que la serie mantenga 
+una coherencia en sus caracteristicas sea cual sea el
+numero de grupos que la ripeen simultaneamente. Se entiende
+como volumen el equivalente a 1 DVD de la serie, y cada uno
+de los volumenes estara dividido en capitulos, los cuales
+deberan ajustarse al siguiente formato:
+
+- Capitulos de 60min --> 1 por CD
+- Capitulos de 45min --> 2 por CD
+- Capitulos de 23min --> de 3 a 5 por CD, intentando siempre
+mantener la maxima calidad. Se recomienda no incluir mas de
+4 por CD, aunque se pueden incluir 5 siempre que la 
+resolucion horizontal sea igual o superior a 480 y la 
+calidad del resultado sea decente.
+
+NOTA: Se recuerda que las series no estan exentas del
+cumplimiento del resto de reglas, tales como ajuste al
+tamaño del CD, resolucion, etc.
+
+8. DVB: En el caso de releases obtenidas de SAT o Cable, en
+ambos casos se marcaran como DVB y deberan seguir las
+siguientes normas extra:
+
+- Las capturas deben ser directamente MPEG-TS, sin que
+se considere valido cualquier otro sistema (analogico,
+por ejemplo), que degrade la calidad del video. El
+resto de releases quedarian enmarcadas como VHSRip.
+- Se debe incluir en el NFO el bitrate de emision original
+si se conoce, facilitando asi la aplicacion de criterios
+de validacion de la release.
+
+9. FORMATO: Toda release publicada debe llevar un nombre de 
+Carpeta adecuado y debe ir empaquetada segun se detalla a
+continuacion. 
+
+* Carpeta: el nombre de la carpeta donde se suba la pelicula
+ha de seguir las siguientes reglas:
+
+Titulo.Pelicula.FUENTE.VIDEO.AUDIO.TIPO.AÑO.IDIOMA-GRUPO
+
+- Titulo_Pelicula: Maximo 64 caracteres SIN ACENTOS NI EÑES,
+separando las palabras con puntos.
+- Fuente: DVD, DVB (para SATRip o CableRip), 
+VHS o TS (para SCREENERS), etc.
+- VIDEO: DivX3, DivX5 o XViD
+- AUDIO: MP3, AC3 u OGG.
+- TIPO: ANIME, DOCU, MV, SCREENER, XXX, etc.
+- AÑO: 4 digitos del año de produccion de la
+pelicula (el de IMDB, por ejemplo).
+- IDIOMA: 2 letras si es 1 solo idioma (ES,FR,GR,IT,JP),
+o MULTI si lleva mas (incluidos los MDVDs).
+
++ Las peliculas CON DOBLAJE EN SUDAMERICANO se
+marcaran como SA, no incluyendose en este punto
+aquellas peliculas que procedan de sudamerica
+y cuyo audio sea originalmente sudamericano.
+
++ Las releases inglesas se ajustaran, por sentido
+comun, al formato de las normas extranjeras.
+
+
++ En caso de que la carpeta incluya tags de READNFO, PROPER, SUBBED
+DIRFIX, REPACK, etc. estos iran colocados entre el año y el idioma.
+
++ En caso de tratarse de un SCREENER se distinguira el origen
+de la fuente de video mediante el campo FUENTE, usando DVD,
+VHS o TS si procede de una camara.
+
+* Empaquetado: cualquier divx debe ir empaquetado en RARs con un
+tamaño de 15.000.000 bytes, en modo store (SIN COMPRESION) y
+preferentemente SIN RECOVERY RECORD, con el fin de minimizar su
+tamaño y facilitar la correccion de posibles errrores en los
+ficheros, los cuales deben ajustarse al formato 8.3, tanto rars
+como info, sample, bmp, etc.
+
+Ademas, toda release debe incluir NFO, SAMPLE y BMP (este ultimo
+solo en caso de ser un PROPER), siguiendo los siguientes parametros,
+para ser considerada como valida:
+
+* NFO: El NFO que acompañe a la release debe incluir COMO MINIMO,
+los datos que se citan a continuacion. Se hace ESPECIAL hincapie
+en este punto, dada la importancia de una adecuada documentacion
+para conocer las caracteristicas de la release y si es valida o
+no, pudiendo ser nukeada sin mas aquella release que incluya un
+NFO incompleto:
+
+
+- Titulo completo de la pelicula para su distribucion en Espa±a.
+En caso de ser necesario se incluira el titulo original como
+medida aclaratoria.
+- Fecha CORRECTA de la release.
+- Codecs utilizados y Bitrates para Audio y Video
+- Dimensiones del video.
+- Numero de RARs por CD
+- Duracion REAL de la pelicula.
+- Argumento, tipo de Pelicula, listado de Actores, Director, etc
+- Link, preferiblemente de imdb.com por su estabilidad o bien de
+otra direcciona si no esta disponible alli. EL 99% DE LAS PELICULAS
+ESTAN REGISTRADAS EN INTERNET Y NO HAY EXCUSA PARA DEJAR EN BLANCO
+ESTE APARTADO.
+- Cualquier otra informacion que se considere necesaria sobre la
+pelicula o sobre la release.
+
+
+* SAMPLE: El SAMPLE debe contener aproximadamente 1 minuto de
+la pelicula "cortada" del video original. El sample sirve para
+poder decidir si la release es valida sin necesidad de bajarla y 
+visionarla entera. Es decir, un sample con errores implica una
+release con errores. Por ello, se recomienda la cuidadosa revision
+del sample para evitar problemas innecesarios.
+
+* BMP: En el caso de que una release salga como PROPER de otra, debera
+incluir obligatoriamente una carpeta BMP que incluya una captura del
+video del DVD en formato RAR + SFV. Este BMP permitira determinar la
+validez o no del proper y su no inclusion supondria la calificacion
+del proper como innecesario, dada la falta de pruebas.
+
+-------------------------------------------------------------------------
+
+Estas reglas fueron aprobadas por unanimidad el Miercoles, 11 de 
+Diciembre de 2002, por los grupos que se citan a continuacion en 
+orden alfabetico, entrando en funcionamiento a partir del dia 12
+de Diciembre del mismo año:
+
+aZTeK - BiNWaRe - CHiCNCREAM - DoNuT - EdeN - EiTheL - EviL - kRc
+LHOTSE - ONe - POiNT - SDA - SiRoKo - STReaM - VOTD - WHF

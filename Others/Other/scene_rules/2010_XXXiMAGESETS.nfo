@@ -1,0 +1,148 @@
+              ‹UUUUUU‹
+             UUUUUUUUU             ‹
+            UUUU   ﬂUUU‹         ‹UU
+           UUUU     ﬂUUU         UUU
+          ‹UUU       UUU         UUU
+          UUUU       UUU        ‹UUU
+          UUU        UUU        UUUﬂ                    ‹  ‹
+          UUU        UUU   ‹UUUUUUU      ‹UUUUUU‹     ‹UU  UU‹
+          UUU       UUUU ‹UUU  ‹UUU    ‹UUU  ‹UUﬂ    ‹UUﬂ ‹UUU
+          UUU       UUUﬂ UUU   UUU     UUUU  UUU     UUU  UUU
+          UUU      UUUU  UUU   UUU     UUUﬂ  UUU     UUU  UUU
+           UUU   ‹UUUUﬂ  UUU   UUU     UUU   UUU     UUU  UUU
+            UUUUUUUUU    UUUUUUUUU     UUUUUUUUU    UUUU  UUU
+             UUUUUUﬂ      UUUUUUUUUUUUUﬂUUUUUUUUUUUUﬂUUUUUUUU
+                                                     ‹‹‹ UUUﬂ
+                             Rules v0.1              UUﬂ UUU
+                    UUUU  UUU UUUU  UUU UUUU  UUU    UU UUUﬂ
+                     UUUUUUU   UUUUUUU   UUUUUUU     UUUUU
+                      UUUUU 28  UUUUU     UUUUU       UUUﬂ
+                      UUUU  01  UUUU      UUUU
+                     UUUUUU 10 UUUUUU    UUUUUU
+                    UUU UUUU  UUU UUUU  UUU UUUU
+                   UUU   UUUUUUU   UUUUUUU   UUUU
+
+
+
+
+1. Introduction
+2. Release Standards
+    2a) Dirnames
+    2b) Files
+    2c) DIZ File
+    2d) NFO File
+    2e) ZIP File Naming
+    2f) Quality
+
+
+1. Introduction
+
+   These rules will be official as of 28-01-2010.
+   Mandatory means you HAVE to do it, optional means you CAN do it if you fancy.
+
+
+2. Release Standards
+
+    2a) Dirnames
+
+          Note: Things between () are mandatory. Things within [] are optional.
+
+
+          (Web.Site)_(Date)[or.Set#].(Model.Name).(Set.Name).XXX.iMAGESET-GRP
+
+
+          Example : FemJoy.com_09.12.12.Luna.Your.Eyes.XXX.iMAGESET-EXAMPLE
+
+          Example : RonisParadise.com_Set.25.Waterhose.XXX.iMAGESET-EXAMPLE
+
+          Example : RonisParadise.com_E25.Waterhose.XXX.iMAGESET-EXAMPLE
+
+
+        !!  If the website does not list any dates or set numbers for the
+            imagesets, you may not make up a numbering system.
+            This to prevent accidental/incorrect dupes, or mistakes.
+
+        !!  WebSite must be the url to the site without 'www.' and including
+            the TLD. Ex: SuicideGirls.com, 1By-Day.com
+
+        !!  The date must be in format: YY.MM.DD. Year.Month.Day. Ex: 09.12.01 
+            YYYY.MM.DD or any other formats are not allowed.
+
+
+    2b) Files
+
+        1. The release must be packed into 5 000 000 bytes (5Mb) .zip files.
+           .diz and .nfo files must be packed into the zip.
+
+        2. DIZ File. (refer to rule 2c)
+
+        3. NFO File. (refer to rule 2d)
+
+        4. Sample dir, which includes 1 image of the set.
+
+
+    2c) DIZ File
+
+        The following information must be included within the file_id.diz:
+
+        1. [xx/**], where ** = number of zips.
+
+        2. Dirname
+
+
+    2d) NFO File
+
+        The NFO must contain the following elements:
+
+        1. Release name
+
+        2. Number of files
+
+        3. Pre/rip date
+
+        Optionally you may include extra information like:
+
+        - URL to imageset or site
+
+        - Site Date (if known)
+
+        - Set Name/Model Name
+
+        - Number of Pictures
+
+
+    2e) ZIP File Naming
+
+        Any common-sense filename is allowed, however it must be according to
+        the 12.3 naming convention. This means a maximum filename length of
+        12 characters plus 3 characters for the extension.
+
+           Examples:
+             123ABCD.zip
+             ABCDEFGHIJ12.zip
+
+    2f) Quality
+
+        The highest quality available on the site, at the time of the PRE, must
+        be ripped.
+
+
+        !! You may not alter the images. You're not allowed to add or remove
+           for instance watermarks or image errors. Aka, the images must be
+           pred 1:1 from the website.
+
+
+
+********************************************************************************
+
+                This ruleset defining rules for the 0DAY-XXX scene 
+
+                       are signed by the following groups:
+
+       iM4GES  *  FuGLi  *  OHRLY  *  RACiMAGE  *  hUSHhUSh  *  YAPG
+
+
+
+
+
+********************************************************************************

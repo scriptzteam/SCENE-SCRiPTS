@@ -1,0 +1,14 @@
+Vacation (GL1&2)
+
+Description: If you are tired of handling people on vacation all the time, let this
+script do it! Users issue a command on site which adds them to a group and 
+(optionally) disables their ability to upload and/or download A minumum time is 
+optional so they can not just change over night to pass any monthly quotas, etc. 
+Naturally, it also has support for Dark0n3's zipscript incase you want bot output 
+in irc. Siteops can also get a full list of everyone on vacation and for how long. 
+Can also work together with Tur-Trial 2.1+ to deduct quota limit if the user was on
+vacation this month.
+
+Author:   Turranius
+Version:  1.10
+Added on: 23-Apr-2003

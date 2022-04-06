@@ -1,0 +1,196 @@
+# Server shutdown: 0=server open, 1=deny all but siteops, !*=deny all, etc
+#shutdown 1
+
+sitename_long 	MY[:space:]SITE[:space:]NAME    
+sitename_short	MSN
+email		root@127.0.0.1
+
+# ROOTPATH
+# If using this variable you will need to edit the passwd file to reflect the new
+# homedir.
+# ex. glftpd:6uwHOjJ3grid6:0:100:06-14-98:/site:/bin/false
+# becomes: glftpd:6uwHOjJ3grid6:0:100:06-14-98:/glftpd/site:/bin/false
+rootpath 	/
+
+#Path relative to the ROOTPATH.
+datapath 	/glftpd/ftp-data 
+pwd_path	/glftpd/etc/passwd
+grp_path	/glftpd/etc/group
+
+welcome_msg 	/glftpd/ftp-data/misc/welcome.msg	*
+goodbye_msg	/glftpd/ftp-data/misc/goodbye.msg	*
+newsfile	/glftpd/ftp-data/misc/newsfile		*
+banner		/glftpd/ftp-data/misc/banner
+
+##############################################################################
+# SECTION #     KEYWORD                 DIRECTORY	SEPARATE CREDITS     #
+##############################################################################
+stat_section    DEFAULT                 *		yes
+
+##############################################################################
+##################     THE RIGHTS SECTION BEGINS HERE     ####################
+##############################################################################
+# (you can use a ! in front of any group/user/flag to negate it)             #
+# The default is no, you don't need to add "!*" at the end                   #
+#                                                                            #
+# Function       Path                   =GROUP or -username or X (flag)      #
+##############################################################################
+
+upload          *                       	*
+resume		*				*
+makedir		*				*
+download	*				*
+dirlog		*				*
+rename		*				1 =STAFF
+renameown	*				*
+nuke	        *				*
+delete		*				1
+deleteown	*				*
+
+##############################################################################
+###################     THE RIGHTS SECTION ENDS HERE     #####################
+##############################################################################
+
+##############################################################################
+# secure_pass	mask		users to whom this rule applies              #
+##############################################################################
+#secure_pass	a2..		*
+
+##############################################################################
+# secure_ip   min. fields   allow hostnames?   need ident?   users to whom this applies
+##############################################################################
+#secure_ip	1		1		1		*
+
+##############################################################################
+#path-filter    group	path/msgfile			filters
+path-filter     *	/glftpd/ftp-data/misc/pathmsg		^[-A-Za-z0-9_.()[:space:]]*$  ^\.  ^-  
+
+show_totals	*
+show_diz	.message
+
+free_space 20
+max_users 15 5
+total_users 300
+# dupecheck	how many days?	ignore file case like Windows?
+dupe_check 	7		no
+
+dl_incomplete 1
+noretrieve	passwd	passwd-	group	group-
+
+min_homedir	/glftpd/site
+
+#############################################################################
+#        <cap 1st letter>   <lower/upper>	character conversions...
+file_names	0		lower		[:space:]_
+dir_names	1		none		[:space:]_
+#############################################################################
+
+tagline		No[:space:]Tagline[:space:]Set
+
+ignore_type  *.[tT][xX][tT] *.[nN][fF][oO] [rR][eE][aA][dD][mM][eE] .message
+ignore_type  *.[sS][fF][vV] *.[cC][rR][cC] *.[dD][iI][zZ]
+
+#############################################################################
+#pre_dir_check  /glftpd/bin/dirscript
+#pre_check	/glftpd/bin/dupescript
+#post_check	/glftpd/bin/zipscript
+#############################################################################
+
+############## Location #################### Max number of lines in Display #
+oneliners 	/glftpd/ftp-data/misc/oneliners	7
+requests 	/glftpd/ftp-data/misc/requests		10
+lastonline	/glftpd/ftp-data/misc/lastonline	10
+#############################################################################
+
+############################################################################
+# Nukedir_Style:				
+# 1st. Option   [Format: %N = DIR]
+# 2nd. Option   0 = Delete ALL, 1 = Save main dir.,  2 = Save ALL (UNNUKE) 
+# 3rd. Option   [Byte Size] for nuker to discount.
+############################################################################
+nukedir_style 	NUKED-%N	2	50000
+
+empty_nuke	25000
+multiplier_max	20
+
+############################################################################
+# Private Groups:   privgroup GROUPNAME	GROUPDESC                          #
+############################################################################
+privgroup 	STAFF		 My[:space:]Private[:space:]Group
+
+############################################################################
+# PRIVPATHS:  Directories should be uniquely named (no wildcards)          #
+############################################################################
+#privpath /glftpd/site/privatedir	1 =STAFF
+
+############################################################################
+# CUSTOM SITE COMMANDS                                                     #
+# site_cmd [CMD NAME] [EXEC/TEXT] [PATH TO FILE]		  	   #
+############################################################################		
+site_cmd RULES 		TEXT	/glftpd/ftp-data/misc/site.rules
+site_cmd LOCATE		EXEC	/glftpd/bin/locate.sh
+
+custom-rules	!8 *
+custom-locate	!8 *
+
+-addip		 1 2 7
+-adduser         1 2 7
+-change          1 7
+-changeflags     1
+-changeratio     1 2 7
+-changesratio    1 7
+-changehomedir   1
+-chmod           1
+-chgrp           1 7
+-chgrp-priv      1
+-chpass          1
+-delip           1 2 7
+-deluser         1 2 7
+-dirs		!8 *
+-errlog		1
+-flags           !8 *
+-gadduser        1 7
+-ginfo           2 H
+-give            G
+-group           !3 *
+-groups          !8 *
+-grpadd          1
+-grpdel          1
+-grplog          1
+-grpnfo          1 2
+-grpren          1
+-help		!8 *
+-info		!8 *
+-kick            D
+-kill            E
+-logins          1
+-misc		!8 *
+-msg             !8 *
+-msg*            1
+-msg=            1
+-msg{            !8 *
+-nuke            A
+-onel		!8 *
+-oneladd	!8 *
+-passwd          !8 *
+-purge           1
+-readd           1 2 7
+-renuser         1 7
+-reqlog          1 A B 7
+-request	!8 *
+-requestadd	!8 *
+-show            1
+-stat		!8 *
+-stats		!8 *
+-swho            =STAFF 1 E
+-take            F
+-syslog        1 =STAFF
+-undupe          C
+-unnuke          B
+-update          1
+-user		!8 *
+-users           H
+-usercomment     1 7
+-userextra       1 2 7
+-who             !8 *
+-wipe		 1

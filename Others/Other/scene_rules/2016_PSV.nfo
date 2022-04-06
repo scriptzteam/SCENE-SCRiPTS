@@ -1,0 +1,104 @@
+                      [ PS VITA - Release Standards 2016 v1.0 ]
+_______________________________________________________________________________
+
+1.0) Initial Release Standards
+
+1.1) Releases must be packed in RAR. Proof, SFV and NFO must be included.
+     Proof is required for cartridges because of the amount of dumps out there.
+     Proof must be a subdirectory /Proof with a jpg of the cartridge and grp tag
+     EXIF Data on your pictures should be removed as usual.
+
+1.2) RAR's must be in multiples of 50.000.000 bytes, no more than 99 volumes.
+
+1.3) First working format that has English language wins; .VPK Format 
+     (compress the dumped game folder to .zip and rename to .vpk)
+
+     1.3.1) Best dumper that provides the most functionality / fully working game.
+     MaiDumpTool_V233.0/V233.1 or greater recommended / new dumper that is compatible
+     with the molecular shell and provides more options / compability.
+
+     * Currently only MaiDumpTool can create the required sce_module's however:
+
+     For special circumstances like games with GRE (updates on cartridge) which
+     are currently not fully supported by Mai, but can be dumped using Vitamin 2.0
+     you may use a combination of both dumpers to create a working .vpk
+     (Assuming this issue will be addressed in the next update to MaiDumpTool)
+
+     In that scenario you would dump gamedata with Vitamin 2.0 and replace the
+     eboot/modules you got via Mai (mai_moe/ + sce_module/ + eboot.bin)
+     Create a new working .vpk file and test accordingly (note in nfo)
+      
+     1.3.2) Release RAR's must be compressed w/ M1 (fastest) or better.
+
+     1.3.3) If another dumper comes out - the dumper with the best compability
+     should become the default tool.
+
+     1.3.4) All releases must be released including all sce_module/ files.
+
+     1.3.5) The NFO must indicate the version and name of the dumper used.
+
+1.4) The release structure must be in the following format:
+
+     DIRNAME/
+     DIRNAME/file.rar/file.vpk
+
+     1.4.1) Releases must not have any .RIF data included.
+	
+1.5) If a game is re-released because of the following reasons the tagging 
+     should change in the release name:
+
+     1.5.1) Re-release of blackfin dump, the dir must be tagged: 
+     WORKING.READNFO/WORKING_READNFO 
+     (nfo must specify that this is a re-release of a blackfin dump and that it
+     now aligns with current rules).
+
+     ** THIS IS NOT A PROPER, IT IS NOT A NUKE, NOW WORKING TO CURRENT STANDARDS!
+     THESE STILL CAN BE PROPERED AND/OR REPACKED FOR OTHER REASONS OF COURSE **
+
+     1.5.2) Prior releases in .vpk format (Vitamin 1.1) can be PROPER/REPACK only if
+     correct reason stated in nfo (i.e. game crashes at level 5).
+
+     1.5.3) If release has additional foreign languages, the dir should be tagged:
+     MULTI(NUMBER_OF_LANGS) and the nfo must specify what languages are included.
+     (optional on first release, mandatory on multi after english only)
+     DUPES from other regions without new languages or new content are NOT allowed.
+
+1.6) The directory name should NOT have a region tag such as: EUR, USA on first release.
+     The source region must be included in the nfo instead. 
+     Example: if EUR MULTI is first no USA after MULTI, but MULTI is allowed after USA.
+
+1.6.1) For non English releases (JAPANESE/KOREAN/etc.) the directory name MUST have a 
+       region tag (JPN/JAP/KOR ...)
+	
+       1.6.x) Directory Tagging Examples:
+              Game_Name_PSV-GRPNAME
+              Game_Name_WORKING/PROPER/READNFO/REPACK/TRAINER_PSV-GRPNAME
+              Game_name_MULTI4_WORKING/PROPER/READNFO/REPACK/TRAINER_PSV-GRPNAME
+
+1.7) There are digital downloads (PSN) for PSV such as old PSP/PSX titles and
+     full digital game versions.
+     The nfo must specify that it is a PSN or Prior Console release. 
+     This is on par with the WIIU standards for eShop/VC. 
+     Suggested Directory tagging would look like:
+
+     Game_Name_PSN_PSV-GRPNAME
+     Game_Name_PSN_ORIGINALCONSOLE_PSV-GRPNAME 
+     GAME_NAME_PSN_PSP_PSV-GRPNAME
+     GAME_NAME_PSN_PSX_PSV-GRPNAME
+     GAME_NAME_PSN_NEOGEO_PSV-GRPNAME
+
+1.7.1) ALL RIF DATA MUST BE REMOVED FROM PSN DOWNLOADS! 
+       We encourage people to double and triple check before releasing these.
+
+1.7.2) Currently we are deciding NOT to address the DLC/Updates that can be dumped. 
+       There are cases where there could be meaningful updates to cartridge games that
+       come out on PSN where these files could be packaged up and released much like
+       DOX in the pc-game world. Until such time this is happening and we know how 
+       this will be handled via the SDK we ask that people refrain from these releases
+       until a better understanding is reached.
+
+_______________________________________________________________________________
+
+These rules are signed by following groups in alphabetical order on 10/Sep/2016
+LiGHTFORCE - PACT - TRSI - VENOM
+

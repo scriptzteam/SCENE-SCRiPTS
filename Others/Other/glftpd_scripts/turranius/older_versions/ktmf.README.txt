@@ -1,0 +1,583 @@
+Welcome to KTMF. A multipurpose, rules follower script.
+
+What does it do, in short?
+It can do 6 things:
+1: It can check for people dual downloading.
+2: It can check for people uploading twice in the same dir.
+3: It can check for people that is idling.
+4: It can check for people that is downloading too slowly.
+5: It can check for people that is uploading too slowly.
+6: It can kick a user, a group or people with leech when there are a number
+   of users on the site.
+
+The above 6 are called different "modules" in the rest of this readme.
+
+Ok, sounds nice. But there are other scripts out there that does the same, right. Well... read on, rape me later.
+Note: All options specified below can be turned of or off as you desire, as well as full functions.
+      That is, you can turn off, for instance, the Idle Kill function totally if you wish.
+
+Excludes: 
+There is a general exclude for users and/or groups that will be used in all parts as well
+as excludes for the different modules. So for instance, you can have SiTEOPS generally
+excluded from all parts, and Friends just excluded from the Slow Download kicker part.
+Same thing goes for users.
+Folders (pre folders) can be excluded, so it dosnt do anything if they are in them.
+
+We will always kick the user for doing something that breaks the KTMF rules you set, but it can
+do so much more to make their life miserable. WHAT it can do depends pretty much on which module
+kicks the user;
+
+
+Dual downloading:
+Users and/or full groups can be excluded specifically for this function
+It will verify, after a time set by you, that they are still dual downloading.
+It can be set to not run unless there are a minimum number of people on the site.
+It can put a temporary ban on the user. The time the user is banned is set by you.
+With the tempban, it will also create a "bye" file for the user, so he sees why and
+for how long he is banned, when he tries to log in.
+It can take credits from a users for dual downloading.
+It can take -1 logins for a user dual downloading.
+it can remove -1 max_sim_down from a user dual downloading. If the user has unlimited 
+max_sim_down, it will be set to 1.
+
+
+Dual uploading:
+Checks for people dual uploading in the same folder. It will not kick for uploading
+to CD1 and CD2. That might be in later versions. For now, it only checks if he uploads
+twice to CD1 for example. In short, uploading to different CD's in the same release is
+ok. Uploading twice to the same one is not.
+Users and/or full groups can be excluded specifically for this function
+It has the same options as Dual downloading, except it can take 1 max_sim_up instead
+of 1 max_sim_down.
+This one will also see if the file still exists when the user is kicked, and if so, it
+will delete it and there is an option to undupe the file too.
+
+
+Idle Kick:
+Users and/or full groups can be excluded specifically for this function.
+It will verify, after a time set by you, that they are still idle.
+You can set how many users must be on the site before it starts kicking them for idle, so
+incase the site is getting full, it might be time to kick some 0days idlers or something.
+Users can loose credits if they idle. This can be set so they only loose credits after they
+have been idle for, say, 5 times in a row (you kick, they login, you kick, they login).
+As with credits, users can also get tempbanned if they keep idling. Kicks in after a number
+of concurrent times they have been idling. The tempban time can be specified ofcourse.
+With tempban, a bye file will be created, telling the user why he is banned when he tries
+to log in.
+
+
+Slow Download:
+Excludes, like the other functions.
+Verify after a certain time, like the other functions.
+You decide the speed limit, in kb/sec that they must be downloading at.
+It can ban the user for a specified time if they download too slow. If not, it will just kick him.
+A message will be shown to the user if he is tempbanned, when he tries to login again, telling him 
+why and how slow he was leeching etc.
+
+
+Slow Upload:
+Like Slow Download, with the exceptions that it can only kick and tempban users.
+I do not think anyone want to punish the users for it like with Slow Download.
+Let me know if you do =)
+This one will also see if the file still exists when the user is kicked, and if so, it
+will delete it and there is an option to undupe the file too.
+
+
+Generic Kick:
+Quite simply, you enter a number of users and/or groups and it will kick those users/people
+in those groups when the site is getting pretty full (number decided by you). It can also
+kick and possibly tempban users based on them having RATIO 0 (leech). Usernames can be 
+excluded (if they are part of a "kick" group), and it can also NOT kick them if they are
+uploading at the moment.
+
+
+It runs the modules in the order listed above, so it will first kick Dual Downloaders and
+lastly kick from the Generic Kick module. I think thats a good order. This means that
+if you set the userlimit to 18 users (out of 20 max or so) and the Slow Download module
+kicks two and the Idle Kick module kicks another, the Generic Kick module will not kick
+anyone, because there are no longer 18 users on site. 
+
+
+Generics:
+With all scripts, the logging to glftpd's logfile can be enabled/disabled.
+Choose to send an early warning in the irc channel before he is actually kicked
+(Good for dual downloading, not so good for idlers perhaps).
+
+Test mode can be enabled. Script will do everything like normal, but will not actually
+tempban/kick/remove credits/etc etc. Great for.. ehh, testing it, yeah.
+
+Debug mode. Shows everything it does in the shell. Also good for testing. This is how you
+should run it until you crontab it.
+
+Showexclude. If debug is on, will also show you who it is going to exclude. Another 
+testing thingie.
+
+NOTE: Running it with the argument "test" will set all the above to TRUE temporarily.
+Nice if you want to see if it still works, but are too lazy to change the script.
+
+
+Installation:
+Well, instead of using the normal sitewho, I edited the source for it a little. I only changed
+the output from it so I could read it more easely. Rather cheesy, but it saved a couple of lines in the
+script so.. I am including the source and the binary (compiled on Mandrake 8.1), incase you cant compile
+it yourself, or simply trust me :)
+If you are upgrading from 1.1.1 or earlier, you need the new tur-ftpwho included.
+
+So..
+If you wish to use my binary, copy everything but tur-ftpwho.c to /glftpd/bin or where ever you have it
+located on your system. 
+If you dont want to use my binary, unpack tur-ftpwho.c and: gcc -o /glftpd/bin/tur-ftpwho tur-ftpwho.c
+If you run glftpd at another ipc_key, check the first line in the source before compiling it.
+
+Copy kfmt.sh and ktmf.conf to /glftpd/bin, or anywhere really. If ktmf.conf is not in /glftpd/bin then
+change to path to it in ktmf.sh.
+
+Make ktmf.sh and tur-ftpwho executable. Try and run tur-ftpwho and marvel at the lovely output it makes. hehe.
+
+Edit ktmf.conf and change the settings as you please. They are fairly documented already, but I'll give it another
+go, just cause I'm so bloody nice, and want to bore you. Make sure you read it all, mauahhaha!
+
+
+WHOBIN=       Full path to where you put tur-ftpwho. 
+
+GLLOG=        Full path to the file you wish your bot announces to. Usually /glftpd/ftp-data/glftpd.log.
+            
+LOG=          KTMF's own logfile where all the kicks/bans/whatever are logged to. Set to "" to disable
+              logging. Do NOT set to glftpd.log as this is in another format.
+
+GLROOT=       The root dir of glftpd. Usually just /glftpd unless its in a jailed dir or similar.
+
+USERFOLDER=   Full path ( from / ) to the folder where your users are located.
+
+TEMPATH=      KTMF needs to store temp files to keep track of how many times a user has idled etc.
+              This is the path to that folder.
+
+BYEFOLDER=    Full path to glftpd's byefolder. I will store a message for the user in there if he 
+              should get tempbanned.
+
+KILLGHOST=    KTMF runs killghost before checking each function (3 times if they are all enabled).
+              This is so incase someone gets kicked for dual downloading, the chance that one of 
+              them was a ghost is minimal.
+              Set it to what you would type in the shell to kick ghosts, or set it it "" to turn
+              off this function totally.
+              If you have this one and ktmf is crontabbed, you do not need any normal crontabs 
+              for killghost since ktmf will do it.
+
+UNDUPE=       Full path to the binary "undupe" that comes with glftpd. This is used for the Dual
+              upload module and the Slow Upload module. To disable unduping, set this one to ""
+              Note that good zipscripts will automatically delete a file and undupe it when we kick
+              a user, but some zipscripts apparently dont, leaving us with a incomplete file and/or
+              a duped file. Thats why we have this option. It dosnt hurt to have it set, even though
+              your zipscript does the work for you.
+
+UNDUPEUSER=   If above is not "", which user should do the undupe? This user must exist and have
+              the flag "C". Default is "glftpd", but that user does not have the C flag per default.
+
+LOCKFILE=     Full path to a file that will be used to lock the script. Incase the script is running
+              and you run it again, it will not run. This is mostly a safety feature. 
+              Please note though, if a user is tempbanned, and you happen to run the script again,
+              they will not be deleted again. Userfiles should not get corrupted just cause you 
+              happened to run it when it was already runnning. So, no biggie.
+              You can set this one to "" if you REALLY dont like lockfiles. You can run it whenever
+              you like then. If you have long temp-ban periods, you should set this to "".
+
+FOLDEREX=     If you have folders in your users dir, add them here, | separated.
+              Not a big deal but it will remove some error messages that will pop up
+              otherwise if you have GEXCLUDEON to TRUE.
+
+PREFOLDERS=   A set of folders that users will not be checked in. Could be pre folders or something.
+              If you dont want users to be kicked from, for instance, /site/GROUPS, then add that
+              here. This function is new is ktmf 1.2 and requires the new tur-ftpwho that comes with
+              it. 
+              If all your pre folders are called the same, IE "GROUPS", then add that one so
+              its PREFOLDERS="GROUPS". It works too.
+              It is case sensitive.
+              Put one folder on each line, and dont break the " " structure. 
+              Set this one to "" if you want to disable the function entirely.
+
+EXCLUDE=      Usernames to exclude from all parts of this script. Separate them with a '|'.
+              (Without the '').
+
+GEXCLUDEON=   TRUE/FALSE. Shall we use group excludes at all in the script? If you are only going to
+              use usernames to exclude on, I recomend you set this to FALSE. It takes a little while
+              extra to check and build the exclude list if this is TRUE, but its a powerful feature.
+              Note: Since version 3.0, this hardly takes long anymore. I am keeping this here anyway
+              for those who wish to save an extra second or so =)
+              ( And I'm too lazy to remove it =) )
+
+GEXCLUDE=     Groups, separated by a |, that you wish to totally exclude from all parts of this
+              script. Only works if GEXCLUDEON is TRUE.
+
+PREEXCLUDE=   This is not like PREFOLDERS above. Here is where you define all your dirs containing
+              predirs. It will look at the foldernames and automatically exclude every user in that
+              group from all sections in this script. With this, every affil are totally excluded.
+              With PREFOLDERS above, they are only excluded IF they are in their predirs.
+              If you set this one so it excludes all your affils, PREFOLDERS does not do anything.
+              Use full path to the predirs ( /glftpd/site/... ). Seperate predirs with a space (new line).
+              Set it to "" to disable (default).
+              For instance, if you set this to /glftpd/site/DiVX/GROUPS, and you have 2 folders in 
+              there, say, BP and EPiSODE, then every user in the groups BP and EPiSODE will be 
+              excluded from all parts of KTMF.
+
+
+There. Thats the default setup. Now on to the different modules!
+
+
+Dual Downloading section:
+
+DUALDL=          TRUE/FALSE. Do you want Dual download checking at all? If not, set it to FALSE
+
+DELAYDUALDL=     Time in seconds to wait before verifying that those users it found dual downloading
+                 are still dual downloading. 10-30 seconds is a good value I think. Gives them time
+                 to download nfo's etc, but no big files.
+
+LIMITTODUALKICK= Minumum number of users that must be on the site before starting to check for
+                 users dual downloading. Set to 1 to always check.
+
+CREDITLOSSDD=    TRUE/FALSE. Should the user loose credits when it finds him dual downloading?
+
+CREDITLOSSDDMB=  If he should loose credits, how much, in MB, should he loose.
+
+TAKE1LOGIN=      TRUE/FALSE. If this is enabled, it will remove 1 login from the user. So, 
+                 if the user could log on twice before, he will now only be able to login once.
+                 If its 20, it will be 19. You get the point.
+                 KTMF will never set it to a value lower then 1.
+
+TAKE1DL=         TRUE/FALSE. If this is enabled, the user will loose one of his download slots.
+                 He can still log on as many times as before, but he wont be able to download
+                 with as many threads. Changes max_sim_down.
+                 Note: If the user has -1 max_sim_down (unlimited), it will be set to 1 instead.
+                 KTMF will never set it to a value lower then 1.
+
+DUALBAN=         TRUE/FALSE. Shall we put a temporary ban on users found dual downloading?
+                 NOTE: If the user is dual downloading AND doing something else on site, only
+                 the two sessions that dual downloads will be banned, and the user gets the 6
+                 flag. This means he can still do stuff with the 3rd login, but should he log
+                 out with that one, he can not log in again until the tempban time below has 
+                 passed.
+
+DUALBANTIME=     If above is TRUE, for how long, in seconds, should it wait before releasing the
+                 ban?
+
+BOTDUALDL=       TRUE/FALSE. Should the kicking of a user be writted to the logfile, and therefor
+                 easely picked up by your botscript? NOTE: As with v3.0, you can also turn this 
+                 off in the botscript. If you want it to announce, both this and the bot output
+                 must be enabled. See sitebot settings below for more info.
+
+BOTDUALDLW=      When it first finds a user dual downloading, before verifying it, should we give
+                 the user an early warning?
+
+DUALEXCLUDE=     Usernames to exclude from the Dual Download checking only. If you have a user in the 
+                 generic EXCLUDE at the top, there is no reason to put him here. 
+                 Separate users with a |
+
+DUALGEXCLUDE=    Groups to exclude from the Dual Download checking only. As above, no point in putting
+                 groups here, if they already in the GEXCLUDE part at the top.
+                 Separate groups with a |
+
+
+Dual Uploading section:
+
+DUALUP=          TRUE/FALSE. Do you want Dual upload checking at all? If not, set it to FALSE
+
+DELAYDUALUP=     Time in seconds to wait before verifying that those users it found dual uploading
+                 are still dual uploading. 10-30 seconds is a good value I think. Gives them time
+                 to download nfo's etc, but no big files. The faster your line is, the less you would
+                 set this too I guess.
+
+LIMITTODUALUPKICK= Minumum number of users that must be on the site before starting to check for
+                   users dual uploading. Set to 1 to always check.
+
+CREDITLOSSDU=    TRUE/FALSE. Should the user loose credits when it finds him dual uploading?
+
+CREDITLOSSDUMB=  If he should loose credits, how much, in MB, should he loose (heh, it says DUMB).
+
+TAKE1LOGINDU=    TRUE/FALSE. If this is enabled, it will remove 1 login from the user. So, 
+                 if the user could log on twice before, he will now only be able to login once.
+                 KTMF will never set it to a value lower then 1.
+
+TAKE1UP=         TRUE/FALSE. If this is enabled, the user will loose one of his upload slots.
+                 He can still log on as many times as before, but he wont be able to upload
+                 with as many threads. Changes max_sim_up.
+                 Note: If the user has -1 max_sim_up (unlimited), it will be set to 1 instead.
+                 KTMF will never set it to a value lower then 1.
+
+BANDUALUP=       TRUE/FALSE. Shall we put a temporary ban on users found dual uploading?
+
+DUALUPBANTIME=   If above is TRUE, for how long, in seconds, should it wait before releasing the
+                 ban?
+
+BOTDUALUP=       TRUE/FALSE. Should the kicking of a user be writted to the logfile, and therefor
+                 easely picked up by your botscript?
+
+BOTDUALUPW=      When it first finds a user dual uploading, before verifying it, should we give
+                 the user an early warning (write it to the logfile, like above) ?
+
+DUALUPEXCLUDE=   Usernames to exclude from the Dual uploading checking only. If you have a user in the 
+                 generic EXCLUDE at the top, there is no reason to put him here. 
+                 Separate users with a |
+
+DUALUPGEXCLUDE=  Groups to exclude from the Dual uploading checking only. As above, no point in putting
+                 groups here, if they already in the GEXCLUDE part at the top.
+                 Separate groups with a |
+
+
+Idle Kill section:
+
+IDLEKILL=        TRUE/FALSE. Do you want to check for users idling at all? If not, set it to FALSE.
+
+DELAYIDLEKILL=   Time in seconds to wait before checking that they are indeed idling.
+
+LIMITTOIDLEKICK= Number of users that must be on the site for the Idle Kill to kick in at all.
+                 If you set this to 10, and there are only 5 people online, nobody will get kicked
+                 for idling. If you dont like this function, set it to 1 and it will always kick em.
+
+CREDITLOSSIK=    TRUE/FALSE. Should users loose credits for being idle? They will always be kicked
+                 regardless, but this gives them an extra punch in the balls.
+
+TIMESBEFOREBANI= How many concurrent times must this script have found him idleing, before it 
+                 starts taking credits? The higher you set this, the higher the chance that this 
+                 script will run at the same time as his ftp client gives the anti-idle command,
+                 and KTMF wont think he idles anymore, and reset the counter.
+                 In other words, it is not 100% that KTMF will find him idling. There is a 2
+                 second window from the user issuing a anti-idle command until KTMF sees him
+                 as idle again.
+
+CREDITSLOSSIKMB= If you set it to take credits from users, how much should they loose, in MB ?
+
+BANIDLE=         TRUE/FALSE. Put a tempban on uses who idle too friggin much? 
+
+TIMESTOBAN=      How many concurrent times must KTMF have found him idling before temp banning him?
+                 Set to "0" to do it on the first occurance. See TIMESBEFOREBANI above.
+
+IDLEBANTIME=     If/When he DOES get banned, how long should it last, in seconds?
+
+BOTIDLE=         TRUE/FALSE. Announce kick to the logfile so your bot can pick it up?
+
+BOTIDLEW=        TRUE/FALSE. Announce an early warning for people idling. Not the best idea I guess :)
+
+IDLEEXCLUDE=     Usernames to exclude from the Idle Kill function only. If the user is in the EXCLUDE
+                 part at the top, there is no need to put him in here. Separete with |
+
+IDLEGEXCLUDE=    Groups to exclude from Idle killing. Like with users, if they are excluded with
+                 GEXCLUDE, dont put them in here. Well, you can, but there is no purpose :)
+                 Only works if GEXCLUDEON is TRUE at the top of the script.
+                 Separate groups with a |
+
+
+Slow Download section:
+
+SLOWDLKICK=      TRUE/FALSE. Totally turn on or off the Slow download checking.
+
+DELAYSLOWDL=     Time in seconds to wait before verifying that a user is still downloading too slow.
+
+SPEEDLIMIT=      The speedlimit, in kb/sec, that the user must download HIGHER then, to not get kicked.
+                 Do not use dots or so, just a clean old number.
+
+LIMITTOKICK=     How many users must be online before we start kicking people? If you set this to 10 and
+                 there are 9 people on, users can download how fricking slow they want. Set it to 1 to 
+                 always kick em.
+
+BAN=             TRUE/FALSE. Put a tempban on users downloading too slowly?
+                 NOTE: As with v3.0, we no longer kick ALL pids for the user that is
+                 downloading too slowly. Only the pids that IS downloading too slowly.
+                 So, if he is downloading too slow in one process, and uploading somewhere else, only
+                 the slow downloading pid will be kicked (yes, this is a good thing).
+
+BANTIME=         If they get a tempban, how many seconds before we relase the ban?
+
+BOTSLOW=         TRUE/FALSE. Announce kicks to the logfile so your bot can pick it up. Great joy
+                 when everyone laughs at the lamers with the slow lines :)
+
+BOTSLOWW=        TRUE/FALSE. Announce an early alert on users it finds? This happens when it finds
+                 a user downloading too slow, but before the delay til verify kicks in.
+
+SLOWEXLCUDE=     Usernames to exclude from the Slow Download function only. If the user is already in 
+                 EXCLUDE at the top, there is no need to put him in here. This is for slow downloading
+                 only. Separate users with a |
+
+SLOWGEXCLUDE=    Groups to exclude from the Slow Download function only. Like above, if they are already
+                 in GEXCLUDE, there is no need for them to be here. Separate them with a |
+
+
+Slow Upload section:
+
+SLOWULKICK=      TRUE/FALSE. Totally turn on or off the Slow upload checking.
+
+DELAYSLOWUL=     Time in seconds to wait before verifying that a user is still uploading too slow.
+
+SPEEDLIMITUL=    The speedlimit, in kb/sec, that the user must upload HIGHER then, to not get kicked.
+                 Do not use dots or so, just a clean old number.
+
+LIMITTOKICKUL=   How many users must be online before we start kicking people? If you set this to 10 and
+                 there are 9 people on, users can upload how fricking slow they want. Set it to 1 to 
+                 always kick slow uploaders.
+
+BANUL=           TRUE/FALSE. Put a tempban on users uploading too slowly?
+
+BANTIMEUL=       If they get a tempban, how many seconds before we relase the ban?
+
+BOTSLOWUL=       TRUE/FALSE. Announce kicks to the logfile so your bot can pick it up. Great joy
+                 when everyone laughs at the lamers with the lame source sites =)
+
+BOTSLOWWUL=      TRUE/FALSE. Announce an early alert on users it finds? This happens when it finds
+                 a user uploading too slow, but before the delay til verify kicks in.
+
+SLOWEXLCUDEUL=   Usernames to exclude from the Slow Uploading function only. If the user is already in 
+                 EXCLUDE at the top, there is no need to put him in here. This is for slow uploading
+                 only. Separate users with a |
+
+SLOWGEXCLUDEUL=  Groups to exclude from the Slow Upload function only. Like above, if they are already
+                 in GEXCLUDE, there is no need for them to be here. Separate them with a |
+
+
+Generic Kicker Section:
+
+GENKICK=         TRUE/FALSE. Totally turn on or off this function.
+
+LIMITTOGENKICK=  How many users must be on online before we start kicking?
+
+TEMPBANLEECH=    TRUE/FALSE. Put a temporary ban on the user before we kick their asses outta here?
+
+TEMPBANTIME=     How many seconds should the tempban last, if its TRUE above.
+
+RATIO0KICK=      TRUE/FALSE. Kick users with leech (RATIO 0)?
+
+UPEXCLUDE=       TRUE/FALSE. If they are uploading, do not kick them.
+
+KICKUSERS=	 Users to kick, | seperated.
+
+KICKGROUPS=      Users in these groups will be kicked if they are online when the LIMITTOGENKICK
+                 is reached, | Seperated.
+
+GENEXCLUDE=      If for some reason you wish to exclude a user, do it here. | Seperated.
+
+BOTGEN=		 TRUE/FALSE. Announce kick to glftpd's logfile? (No, there is no early warning
+                 for this one.)
+
+
+Others:
+
+DEBUG=           TRUE/FALSE. This will output what it does in the shell. Recomend you have this one
+                 on (and bot announces to FALSE) when you test the script). 
+
+TEST=            TEST/FALSE. Another feature so you can test it without giving your whole site a tempban. 
+                 With this on TRUE, it will NOT kick/ban/take creds,whatever. It will just pretend it 
+                 does.
+
+SHOWEXCLUDES=    If you run DEBUG on TRUE, then it will also display all the users, for each function, that
+                 it is going to exclude. For testing or for fun.
+
+
+
+-[ Getting it to talk in irc ]-
+Now then, I only have instructions for Dark0n3s Zipscript-c. If anyone want to paste me a working
+setup for another sitebot, please do and I'll add it here with your creds.
+
+Edit dZSbot.tcl. 
+
+Add to 'set msgtypes(DEFAULT)'
+ KTMFDLW KTMFDL KTMFULW KTMFUL KTMFIDW KTMFID KTMFSLDW KTMFSLD KTMFSLUW KTMFSLU KTMFG
+
+Add below the existing 'set chanlist'
+ set chanlist(KTMFDLW)  "#SiteChan"
+ set chanlist(KTMFDL)   "#SiteChan"
+ set chanlist(KTMFULW)  "#SiteChan"
+ set chanlist(KTMFIDW)  "#SiteChan"
+ set chanlist(KTMFID)   "#SiteChan"
+ set chanlist(KTMFSLDW) "#SiteChan"
+ set chanlist(KTMFSLD)  "#SiteChan"
+ set chanlist(KTMFSLUW) "#SiteChan"
+ set chanlist(KTMFSLU)  "#SiteChan"
+ set chanlist(KTMFG)    "#SiteChan"
+Of course, change SiteChan to your sitechan name =)
+
+Add below the existing 'set disable('
+ set disable(KTMFDLW)         0
+ set disable(KTMFDL)          0
+ set disable(KTMFULW)         0
+ set disable(KTMFUL)          0
+ set disable(KTMFIDW)         0
+ set disable(KTMFID)          0
+ set disable(KTMFSLDW)        0
+ set disable(KTMFSLD)         0
+ set disable(KTMFSLUW)        0
+ set disable(KTMFSLU)         0
+ set disable(KTMFG)           0
+
+Add below the existing 'set variables'
+ set variables(KTMFDLW)     "%user %delay"
+ set variables(KTMFDL)      "%user"
+ set variables(KTMFULW)     "%user %where %delay"
+ set variables(KTMFUL)      "%user %where"
+ set variables(KTMFIDW)     "%user %delay"
+ set variables(KTMFID)      "%user"
+ set variables(KTMFSLDW)    "%user %speed %delay"
+ set variables(KTMFSLD)     "%user %speed"
+ set variables(KTMFSLUW)    "%user %speed %delay"
+ set variables(KTMFSLU)     "%user %speed"
+ set variables(KTMFG)       "%users"
+
+Add below the existing 'set announce('
+
+set announce(KTMFDLW)      "%bold-\[DualDL\]-%bold %user early warning for dual download. Checking again in %delay seconds."
+set announce(KTMFDL)       "%bold-\[DualDL\]-%bold %user kicked for dual downloading."
+set announce(KTMFULW)      "%bold-\[DualUL\]-%bold %user early warning for dual upload in %where. Checking again in %delay seconds."
+set announce(KTMFUL)       "%bold-\[DualUL\]-%bold %user kicked for dual upload in %where."
+set announce(KTMFIDW)      "%bold-\[IdleKick\]-%bold %user early warning for idling. Checking again in %delay seconds."
+set announce(KTMFID)       "%bold-\[IdleKick\]-%bold %user kicked for idling."
+set announce(KTMFSLDW)     "%bold-\[SlowDownload\]-%bold %user early warning for slow dowload at %speed k/sec. Checking again in %delay seconds."
+set announce(KTMFSLD)      "%bold-\[SlowDownload\]-%bold %user kicked for slow download at %speed k/sec."
+set announce(KTMFSLUW)     "%bold-\[SlowUpload\]-%bold %user early warning for slow upload at %speed k/sec. Checking again in %delay seconds."
+set announce(KTMFSLU)      "%bold-\[SlowUpload\]-%bold %user kicked for slow upload at %speed k/sec."
+set announce(KTMFG)        "%bold-\[GenKick\]-%bold %users poofs as a race kicks in."
+
+
+Thats pretty much it. Change the text in the announces as you like. Dont forget to rehash the bot.
+
+NOTE: Announcers for the different modules can be turned off in 2 ways. The first is to set
+any of the 'set disable(' to 1 and it will not announce it.
+The other is in the script itself, as you must have read before. For Dual Dowload for instance, its
+ BOTDUALDL="TRUE"         # Announce kick in logfile? TRUE/FALSE
+ BOTDUALDLW="TRUE"        # Announce early warning on kick in logfile? TRUE/FALSE
+These must be TRUE for it to even write it to the logfile. 
+For it to announce, it must be TRUE in the script, and "set disable" must be 0 in dZSbot.tcl.
+
+Explanation of the triggers:
+KTMFDLW  = Dual Download early warning.
+KTMFDL   = Dual Download actual kick.
+KTMFULW  = Dual Uploading to the same release, early warning.
+KTMFUL   = Dual uploading to the same release, actual kick.
+KTMFIDW  = Early warning for Idle kick. (You probably want this off.)
+KTMFID   = Idle kick. Actual kick. (You probably want this off too.)
+KTMFSLDW = Slow Download, early warning.
+KTMFSLD) = Slow Download, actual kick.
+KTMFSLUW = Slow Upload, early warning.
+KTMFSLU  = Slow Upload, actual kick.
+KTMFG    = Users kicked from Generic Kicker (this has no early warning).
+
+
+-[ Autorun it ]-
+
+Crontab the script to run as often as you like, as root. Something like
+*/2 * * * * /glftpd/bin/ktmf.sh >/dev/null 2>&1
+will make it run every 2 minutes.
+
+( The ">/dev/null 2>&1" part is needed. If there are no users on site when it runs, then
+  tur-ftpwho will give an error and that will be mailed to you if you dont use the pipe. )
+
+-[ Bla bla text }-
+
+You can run ktmf with 'ktmf.sh test' and it will temporarily set DEBUG, TEST and SHOWEXCLUDES to TRUE 
+no matter how they are set in the script. Used for testing it from shell but without having to 
+change those to TRUE manually in the script.
+
+Questions, bug reports or suggestions? Message Turranius on Efnet (Turranius/Turran/Turr|away/Turr|work).
+I usually hang out in #glftpd. You can also email to turranius@hotmail.com
+Complaints can be sent to bill.gates@microsoft.com
+
+Ask the question and I'll answer it when I can. 
+More crappy work from me can be found at http://www.grandis.nu/glftpd/
+Mirror can be found at http://grandis.mine.nu/glftpd/
+
+/Turranius 2002

@@ -1,0 +1,11 @@
+ShiftDaBandwidth (GL1)
+
+Description: A script to change the speed_limit in glftpd.conf. Set it up, and run 
+it like ShiftDaBandwidth.sh 500 100 and it will set the max download speed to 
+500k/sec and max upload to 100k/sec. Can kick users if you really need the change 
+to happen NOW. Crontab it at the hours you want the change, with the numbers you 
+want to change to. Read the .sh for full docs.
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Apr-2003

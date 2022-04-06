@@ -1,0 +1,15 @@
+###############################################################################
+## MSS /etc/hosts.allow Updater script v1.7
+## Created by phyber- on EFNet
+## This script is made for sites that have dynamic IPs and dyndns names 
+## associated wtih them.
+## It should update the /etc/hosts.allow file with a sites IPs when it is run.
+## Designed to be ran from crontab, so you don't have to look at 
+## /etc/hosts.allow ever again. Unless I screwed up.
+## Add the following to crontab to make it run every three hours.
+## * */3 * * * /glftpd/bin/mssdns.pl >/dev/null 2>&1
+## Or you can change it to your own time period, whatever.
+## Oh, and you'll also need the Net::DNS perl module, you can install that
+## with the following command: 'perl -MCPAN -e 'install Net::DNS'
+## Enjoy
+###############################################################################

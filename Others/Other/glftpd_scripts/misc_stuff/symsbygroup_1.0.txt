@@ -1,0 +1,10 @@
+SymsByGroup (GL1&2)
+
+Description: Create folders based on groupname with a symlink to every release on 
+site, from that group. Neat if you wish to have a SVCD.By.Group or similar folder. 
+Works for dated dirs too (0days/Mp3). Supports more then one section. Simply define
+where to look for releases and where you want those GroupName folders created.
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Apr-2003

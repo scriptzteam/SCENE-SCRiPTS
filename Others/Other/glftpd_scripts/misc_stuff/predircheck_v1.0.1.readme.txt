@@ -1,0 +1,20 @@
+                                                 predircheck_v1.0.1 by eur0dance
+                                                 ===============================
+Introduction
+~~~~~~~~~~~~
+This is my public release of the predircheck script. This doesn't include the MISSEDPRE event capture
+(being used to trace missed and stolen pres) due to the fact that it would only work if you have a centralized
+pre/groups system, which many sites don't have. Apart from that I just documented what I use and released it as v1.0. 
+
+Installation
+~~~~~~~~~~~~
+The whole documentation is inside the "predircheck.sh" file. Please read it carefully and before you message
+me with "it doesn't work", make sure you did change all I wrote there.
+
+Enjoy!
+
+P.S
+   This script isn't for total newbies, you need to have some basic *nix/scripting knowledge to set it up.
+   Special thanks go to Speedy from 2DB whose old script gave me the idea for this one, a few years ago.
+---------------------------------------------------------------------------------------------------------------------
+                                                     by eur0dance from EFNet

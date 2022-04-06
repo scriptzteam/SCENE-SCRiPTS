@@ -1,0 +1,161 @@
+ High Definition x264 Standards
+ Revision 4.0 :: 2011-01-29
+
+ [ Intro ]
+ A lot has happened in the years since the last revision and time came for some updates.
+ Main changes include the need to provide proof for retail disc sources in view of the many
+ suspicious releases that we have seen over the last year, Sizing has been made a bit more
+ flexible, Subtitles rules have been reworked, foreign overlays have been addressed and finally
+ suggested encoding settings have been updated to match the codec developments/changes since the
+ previous standards.
+ This rule set will target HDDVD and Blu-Ray sourced 720p and 1080p movie and TV-show rips.
+ 
+ [ Previous Releases ]
+ These rules do not apply to previous releases, and propering for those reasons will not be tolerated.
+
+ [ General ]
+ 1.1) Release must be packed in RAR. SFV and NFO must be included.
+ 1.2) Rars must be in multiples of 50 MiB, no more than 99 files.
+ 1.3) Compressed rars are not allowed.
+ 1.4) Release must be muxed into a mkv container.
+ 1.5) NFO should contain information on Audio and Video Bitrate.
+ 1.6) BluRay and HDDVD sources dupe each other.
+ 1.7) Suggested directory format:
+         Movie.Name.YEAR.<720p/1080p>.BluRay.x264.<PROPER/READ.NFO/REPACK>-GROUP
+         TV.Show.SxxExx.<720p/1080p>.BluRay.x264.<PROPER/READ.NFO/REPACK>-GROUP
+ 1.8) No intros, outros, betweenos, or any other form of defacement of the film will be tolerated.
+ 1.9) Credits must not be removed but can be encoded at a lower bitrate provided they
+       don't contain any scenes (bloopers, story, etc).
+ 1.10) A sample roughly 60 seconds in length is required.
+       1.10.1) It must be cut from the final release and not encoded separately.
+       1.10.2) It must be put within a directory named "Sample".
+
+ [ Video ]
+ 2.1) If needed, appropriate de-interlacing and ivtc must be applied.
+ 2.2) Must use a minimum encode of 2 passes.
+ 2.3) Width of release must be mod 16. Height of release must be mod 8.
+ 2.4) Crop the black borders from the source. Crop to the widest frame possible.
+      Info: For technical reasons you cannot crop 1 pixel, the minimum is 2 pixels, therefore propering for 1 pixel over/under does 
+      not make sense.
+      2.4.1) Resizing is not allowed on 1080p encodes. Either crop to closest mod8/mod16 without overcropping, or crop().addborders()
+ 2.5) Use the same aspect ratio as the source, not what IMDB, cover or any other sources say.
+ 2.6) Custom Matrices are allowed.
+ 2.7) VfW (Video for Windows) is not allowed.
+ 2.8) x264 version used must be no more than 50 revisions from newest.
+ 2.9) Level 4.1 must be respected.
+ 2.10) --deblock must be enabled (default).
+       --aq-mode must be enabled (default).
+       --bframes 3 or higher is required (default).
+       --ref 5 or higher is required unless the vertical resolution is greater than 864, then 4 must be used to respect L4.1.
+       --me umh or higher is required.
+       --subme 7 or higher is required (default).
+       --trellis 1 or higher is required (default).
+ 2.11) 720p refers to a MAXIMUM resolution of 1280x720.
+       2.11.1) For aspect ratio equal or above 1.78 horizontal resolution must be 1280.
+                   e.g. AR of 2.35:1 will be 1280x544.
+       2.11.2) For aspect ratio lower than 1.78 vertical resolution must be 720.
+                   e.g. AR of 1.33:1 will be 960x720.
+ 2.12) 1080p refers to a MAXIMUM resolution of 1920x1080.
+       2.12.1) For aspect ratio equal or above 1.78 horizontal resolution must be 1920.
+                   e.g. AR of 2.35:1 will be 1920x816.
+       2.12.2) For aspect ratio lower than 1.78 vertical resolution must be 1080.
+                   e.g. AR of 1.33:1 will be 1440x1080.
+ 2.13) Video bitrate should be as follows:
+       2.13.1) 720p - Minimum 4000 kbit, maximum 8000 kbit. Minimum bitrate for animation is 2300 kbit.
+       2.13.2) 1080p - Minimum 8000 kbit, maximum 14000 kbit, though not more than source-2000kbit. Minimum bitrate for animation is 5000 kbit.
+
+ [ Suggested encode settings for 720p ]
+ 3.1) First pass:
+       x264.exe --pass 1 --profile high --stats movie.stats --bitrate 4000 --preset slow -o NUL movie.avs
+ 3.2) Second pass:
+       x264.exe --pass 2 --profile high --stats movie.stats --bitrate 4000 --preset slow --ref 5 --subme 7 --analyse all --no-fast-pskip -o movie.mkv movie.avs
+
+ [ Foreign overlays ]
+ 4.1) English spoken movies sources with non-english overlays in the actual movie footage are NOT allowed.
+     This does not count for start/end credits but to relevant movie parts. e.g. on screen locations text,
+     hardcoded non-english subtitles (hardsubs) and similar occurrences. example: http://i52.tinypic.com/2mnof94.jpg
+
+ [ Audio ]
+ 5.1) Audio must be AC3, DTS or FLAC, preferably from source.
+       DTS core must be extracted from a DTS HR/HD MA track.
+       AC3 640 kbit, DTS 768 kbit and DTS 1536 kbit must be encoded from a higher bitrate source.
+       Encoded DTS track must be decodeable by older hardware decoders.
+       FLAC audio must be created from LPCM, DTS HD MA or TRUEHD sources.
+ 5.2) Audio bitrate must never be below 640 kbit, unless source only has lower bitrate audio track.
+ 5.3) All audio shall be 5.1 with correct channels, except in the case of stereo/mono only.
+ 5.4) Release must only contain one audio track muxed into the mkv container, unless original language isn't english.
+       5.4.1) Original language audio track or English dubbed track must be used.
+               5.4.1.1) English dubbed movie without original audio track must be tagged DUBBED.
+               5.4.1.2) DUBBED release only allowed if no release with secondary English dubbed audio track exists.
+       5.4.2) If original language is not English:
+               5.4.2.1) English Subtitles must be included.
+               5.4.2.2) English dub is allowed as a secondary audio track.
+
+ [ Subtitles ]
+ 6.1) English subs in a text-based format (.srt) must be muxed into the mkv container for non-english movies or non-english scenes.
+       They should be carefully ocr'd and must be in sync. It is encouraged to include english subs for english spoken movies too.
+ 6.2) Subs MUST be from a retail source. Fan/Custom/Web subs are not allowed.
+ 6.3) Must use a separate substream for FORCED subtitles when available for english movies with foreign spoken parts (e.g. the alien
+       the "alien spoken" parts in District 9). http://i52.tinypic.com/2zi3tkh.jpg
+       When making use of forced subs, it is necessary to enable this stream by default, placing it above any other stream,
+       so that there is no user interaction required when playing the movie. For this, the muxer has to be set to show the stream
+       by default.
+ 6.4) Subtitles must not be burned into the video stream.
+ 6.5) Multi-language subtitles cannot be used as a basis for a dupe.
+ 6.6) "Subs" directories are allowed.
+       They are intended only for external (not muxed) use and must be in vobsub format (idx/sub).
+       Vobsubs can be made using BDSup2Sub (http://tinyurl.com/49txsaw). Please use the subs resizing option in BDSup2Sub
+       according to your release (1280x720 resizing for 720p, 1920x1080 for 1080p).
+       6.6.1) External subs CANNOT replace muxed text-based srt subs for non-english movies/scenes and can only act as a supplement.
+       6.6.2) Vobsubs are NOT allowed to be muxed into the mkv container.
+       6.6.3) Vobsubs need to be in a single idx/sub set format. Multi-language streams can be made into one set using VobsubMuxer
+               (http://tinyurl.com/4aqdsal) or similar.
+       6.6.4) Subs in /Subs dir need to be rar packed using best compression and should be identical in tagging to mkv name. Subpack rar name
+               must not dupe main release rar names.
+
+ [ Total Size ]
+ 7.1) Final mkv file size in MiB (1048576 bytes) must be:
+           Multiples of 1120
+           DVD5/x (896, 1493, 2240, etc.)
+           Also allowed 2713, 8140 for all releases and 4070 for 1080p tv.
+ 7.2) A max undersize of 40 MiB can be tolerated.
+ 7.3) Propering a release that could have been a larger size is not allowed, unless below minimum bitrate.
+ 
+ [ Proof ]
+ 8.1) ALL releases MUST now include source proof in the following way: Snapshot (not scan) of the actual physical disc (printed side) in
+       jpg/png format with a group tag (e.g http://i53.tinypic.com/2jg9yqe.jpg). Disc snapshot must be in good quality with disc details clear
+       and readable. Small portions containing store stickers/barcodes may be blurred or blackened.
+       It's encouraged to also add a web hoster link to nfo to avoid trading skips.
+       8.1.2) Cover scans and m2ts samples may be added but DO NOT count as sufficient proof.
+       8.1.3) Releases that fail to pre with such proof are to be considered a nuke and can be propered. Proofixes later than 2 hours from pre
+               (if a proper has not been pred during that time) will not be accepted.
+ 8.2) IMPORTANT NOTE:
+       Some mobile phone cameras (such as iPhone) add exif metadata to the pictures (gps location for example). It is ESSENTIAL to make
+       sure exif metadata is removed from your snapshot. This can be done in windows7 (http://i53.tinypic.com/2qltvu9.png), by editing
+       and re-saving the picture with Microsoft Paint or using freeware tools available on an "exif remover" web search.
+       e.g http://tinyurl.com/purejpg.
+
+
+ [ Signed By (in alphabetic order) ]
+ aAF, aBD, ALLiANCE, AMIABLE, AVCHD, AVCDVD, BESTHD, BLOW, CBGB, CiNEFiLE, CLUE, CROSSBOW, CULTHD, Felony, FilmHD, HD4U, HDEX, HUBRIS, iBEX,
+ iNFAMOUS, iNGOT, KaKa, LEVERAGE, NODLABS, NOHD, PELLUCiD, PFa, QCF, REFiNED, REWARD, SECTOR7, SEMTEX, SEVENTWENTY, SHORTBREHD, SiNNERS,
+ TENEIGHTY, THUGLiNE, TREBLE, TWiZTED, WASABi, XPRESS
+
+ [ Refused to Sign (in alphabetic order) ]
+ AVS720, FLHD, Japhson, LCHD, OEM1080
+ 
+ [ These rules apply from 2011-02-07 00:00:00 GMT (1230768000 unixtime) ]
+
+ [ Change Log ]
+  + = added
+ * = changed
+
+ 4.0:
+ + 4.1: Foreign overlays are not allowed.
+ + 6.2: Subs must be from a retail source. fan subs are not allowed.
+ + 6.3: Forced subtitles for non-english scene must be included in seperate stream.
+ + 8.1: Source Proof is enforced.
+ * 3.1: First Pass suggested settings updated.
+ * 3.2: Second Pass suggested settings updated.
+ * 6.6: Subs directories for Vobsubs are allowed.
+ * 7.1: Multiples of 1120 instead of 2240.

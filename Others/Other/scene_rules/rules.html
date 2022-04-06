@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>basic.rules</title>
+<style type="text/css">
+body {font-family: Lucida Grande, Arial, Verdana, Helvetica, sans-serif;color: #666;background-color: #FFFFFF;margin-left: 2em;}
+</style>
+</head>
+<body>
+<!--please note that this page isn't always up to date.-->
+<pre> 
+[ NUKE-RULES ]
+[ Syntax: ]
+  !nuke release reason [source]
+  !unnuke release reason [source]
+  !renuke release reason [source]
+  !modnuke release reason [source]
+  !snuke release reason [source]
+  !oldnuke release reason [source]
+  The [source] parameter is required for nukes that are echoed in.
+   !snuke & !oldnuke are <strong>silent</strong>nukes, for old releases.
+     Not to be announced in announce channels, however they should still
+     be echoed around in nuke channels, and be added to databases. 
+[ Nuke Formats: ]
+  repack - <strong>reason</strong>_get.repack(/repacked.YYYY-MM-DD)
+  propers - <strong>reason</strong>_get.GRP.proper(/repacked.YYYY-MM-DD)
+  invalid propers - invalid.proper_<strong>reason</strong>
+  dupes - dupe.GRP.<strong>YYYY-MM-DD</strong>
+  minor update - mu.GRP.<strong>YYYY-MM-DD</strong>
+  re-encodes - re-encoded_<strong>proof</strong>
+  bad crack - bad.crack_<strong>whats.wrong</strong>_<strong>proof</strong>
+  free from web - free.from.web_<strong>proof</strong>
+  nuked source - nuked.GROUP.source
+  <strong>always</strong> use YYYY-MM-DD. <strong>never</strong> use sameday, or any other formatting.
+[ Nuke reasons <strong>MUST</strong> be in <strong>english</strong>. same with channel conversation. ]
+[ Be <strong>specific</strong> with your nukes and unnukes. ]
+[ Provide proof where possible/applicable ]
+   ie: if the entire release isn't out of sync, nuke it with timestamps, (eg: oos_eg.05m45s-08m09s)
+[ <strong>Use common sense</strong> in un/nukes. ]
+[ <strong>nuke here first</strong> - <strong>before anywhere else</strong> - or just inform an op, and leave. ]
+[ Do <strong>NOT</strong> distribute nick, channel, or sensative information ]
+[ Do <strong>NOT</strong> nuke spam/fakes/bad echos, !delpre them ]
+[ Do <strong>NOT</strong> nuke something unless you are sure it's <strong>valid</strong> - meaning <strong>no fake</strong> un/nukes ]
+[ Do <strong>NOT</strong> unnuke for "<strong>fine</strong>". The reason <strong>MUST</strong> explain why the release is "fine" eg; ar.is.within.acceptable.range, not.dupe, etc ]
+[ Do <strong>NOT</strong> nuke for bad.encoding you <strong>MUST</strong> explain whats wrong, or how the release is bad! ]
+[ Do <strong>NOT</strong> nuke for "reencoded_duration.samples.mod.is.different.from.0" - this <a href="//scenerules.org/t.html?id=mod588.txt" target="_blank">method</a> is NOT 100% ]
+[ Do <strong>NOT</strong> unnuke and renuke (or use !re/modnuke) to add _get.repack, _get.rerip, etc. ]
+[ Do <strong>NOT</strong> use special characters in un/nuke reasons (eg; !"£$%^&*:;{[}]@'~#/\?>\<,|\ etc) ]
+[ Do <strong>NOT</strong> fix bad unnukes by renuking the release with "fix" or similar ]
+[ Do <strong>NOT</strong> engage in "nukewar" un/nukes. ]
+[ Do <strong>NOT</strong> use foul language in un/nukes. ]
+[ Do <strong>NOT</strong> nuke with personal opinions or comments. ]
+[ Do <strong>NOT</strong> echo un/nukes from other networks! ]
+  If botowners want to accept another networks nukes, they'll join the network. (prefixed nukes are still allowed) 
+  Don't accept nukes from other bots that say they got it from a source - alot of bots mess up source tags! 
+[ Do <strong>NOT</strong> echo out this channel, copy/paste snippits of conversation, etc to <strong>ANYONE</strong> for <strong>ANY</strong> reason. ]
+   if the persons not in this channel - its for a reason. anyone found to be breaking this rule will be <strong>glined</strong>. 
+   un/nukes sourced from here are obviously excluded from this rule.
+[ If a fix has been released for a nuked release - and is <strong>valid</strong>, <strong>unnuke</strong> the original release for <strong>get.fix</strong>
+  However, take note, that if the fix does <strong>not</strong> fix the original release, or is not valid (eg: dirfix when trackfix is required),
+  <strong>nuke</strong> the release for <strong>fix.for.nuke</strong>.
+  Refer to individual rulesets to see if the fixes are forbidden - eg; 
+   sizefixes are <a href="//scenerules.org/t.html?id=2009_XViD.nfo" target="_blank">not</a> allowed for xvid releases
+   trackfixes have <a href="//scenerules.org/t.html?id=2007_MP3v1.1.nfo" target="_blank">restrictions</a> 
+[ <a href="//scenerules.org/" target="_blank">https://scenerules.org</a> - scene rules ]
+[ Use <a href="http://www.tinypic.com/" target="_blank">tinypic</a> for pictures, and <a href="http://www.tinyurl.com/" target="_blank">tinyurl</a> for shortening urls. ]
+[ disable "thanks for the +v" etc, scripts or expect a ban ]
+<!--[ these are rules that have been made over time, tailored to this nuke channel, don't copy them. ] -->
+</pre>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//piwik.root.ax/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//piwik.root.ax/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>

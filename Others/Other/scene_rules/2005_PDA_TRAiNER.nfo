@@ -1,0 +1,59 @@
+PDA Trainer rules:  (Updated: Aug 2005)
+---------------------------------------
+
+Naming:
+
+Folder names:
+For Trainers naming should be:
+Game.Version.Plus.X.Trainer.OS-Group
+example:
+Mario.v1.0.Plus.3.Trainer.PalmOS-FooBar
+
+For cheats/guides naming should be:
+Game.Version.Type.OS-Group
+example:
+Mario.v1.0.Cheats.PalmOS-FooBar
+
+Allowed types are:
+- Cheats
+- Walkthrough
+- Guide
+
+Allowed OS: same as PDA rules, if PDA rules change, so does this.
+Allowed Group name:  same as PDA rules if PDA rules change, so does this.
+
+All file names MUST follow 8.3 rule.
+
+If a trainer is already released, a trainer with more cheats is allowed. A group is only allowed to release ONE trainer for each game version (if group X releases +3 and group Y release +4, group X can NOT release +5 unless as stated that the version has changed).
+
+If a game is released with more than one version (lowres and highres), the trainer-release must include trainers with equal functionality for all these versions
+
+Trainers/Cheats for games that have not been release on the scene is NOT allowed. The scene release can not be more than 4 months old.
+
+
+Trainers MUST:
+... Work on both cracked/uncracked version
+
+
+Trainers MUST NOT:
+... Be bigger than 100k bytes
+... Bundle the game
+... Cracks the game.
+... Require better PDA than the game
+
+
+Cheats MUST NOT:
+... Be stolen from anywere (you have to hack them out yourself)
+
+
+IMPORTANT INFO TO SITEOPs : 
+
+... As we have seen in the past, there are some rules which prevent groups releases being nuked on an affiliate site.  We think that if a valid nuke reason applies to any release, it should be nuked on all sites - affil or not.
+
+                ->>> AFFIL PREVENTS NOT FROM BEEING NUKED !!! <<<-
+
+                                    RULES SIGNED BY
+                                   -+-+-+-+-+-+-+-+-
+
+                                 Nov 2003   --  CSCPDA
+

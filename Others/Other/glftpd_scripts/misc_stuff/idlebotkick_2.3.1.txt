@@ -1,0 +1,10 @@
+IdleBotKick (GL1&2)
+
+Description: Can do two things. If execute from irc, with !kick and no arguments, 
+it will kick all users that are idle. It can also take one username as an argument,
+and will in that case kick that user. For ops only per default but that can be 
+changed in the tcl (change bind to -|- or so).
+
+Author:   Turranius
+Version:  2.3.1
+Added on: 23-Apr-2003

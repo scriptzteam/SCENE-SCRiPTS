@@ -1,0 +1,11 @@
+Recommend (GL1&2)
+
+Description: Set up a recommendation system for releases on your site. Made for 
+sites with large archives where stuff is seldom removed.
+Every user can add their "rank" of a release and it creates a symlink there.
+Can also produce iMDB like ranking lists with the best/worst recommended releases. 
+Keeps symlinks updated incase the release moves around.
+
+Author:   Turranius
+Version:  1.1
+Added on: 11-Sep-2003

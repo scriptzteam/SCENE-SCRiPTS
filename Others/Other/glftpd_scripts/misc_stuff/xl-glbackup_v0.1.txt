@@ -1,0 +1,11 @@
+################################################################
+# xL-glbackup v0.1                                             #
+#								       #	
+# (C) 2003, xoLax (xolax@home.se)				       #
+#                                                              # 
+# * copy this file to your glftpd/bin dir and chmod a+x	       #
+# * edit your crontab and add:				       #
+# 45 23 * * *     /glftpd/bin/xl-glbackup.sh > /dev/null 2>&1  #
+# * edit the config below 	                 		       # 
+# * create the destination dir				       #	
+################################################################

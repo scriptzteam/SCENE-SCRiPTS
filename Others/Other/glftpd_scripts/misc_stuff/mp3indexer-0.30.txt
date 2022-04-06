@@ -1,0 +1,63 @@
+mp3indexer 0.30
+----------------
+
+INTRODUCTION
+-------------
+mp3indexer is a C script to sort mp3's into a genre, alpha and group
+directory, and while sorting it'll write a list of all mp3's it found to
+an ascii-text database file. This ascii-text file can then be used with
+glftpd to make a super duper ultra fast "site locate" command for searching
+mp3's... (use 'locate.sh' for that, included in this release!)
+
+It's written in C, so it'll outperform any bash/perl/python scripts already
+found on the net! And by the way: i wasn't even able to find a script that
+creates an ascii-text while sorting. So this will save you from running 2
+scripts the cycle the filesystem...
+
+Changes since 0.19:
+  - Total redesign to fix a couple of design errors.
+  - Fixed 3 bugs regarding file & owner-chip.
+  - Made configuration super easy, even a monkey can configure it now!.
+  - Little performance tweaks.
+  - Yet removed remaining overhead as much has possible, lowering CPU intensitivity
+
+
+INTALLATION
+------------
+
+- First edit the Makefile and make sure GLFTPD_PATH points to you glftpd installation.
+
+- type make && make install to compile/install mp3indexer
+
+  EXPERT NOTE: - It will create the folowing directory's
+			GLFTPD_PATH/index/genre
+			GLFTPD_PATH/index/alpha
+			GLFTPD_PATH/index/group
+	       - It will install "mp3indexer" to GLFTPD_PATH/bin
+	       - And it will install a sample configuration into GLFTPD_PATH/etc/mp3indexer
+
+- Next, open GLFTPD_PATH/etc/mp3indexer.conf (/glftpd/etc/mp3indexer.conf)
+  and configure your directories. You can add more MP3_DIR lines if
+  required. Configuration should be self-explanatory.
+
+- Finally, add it to the crontab so it'll run at least once a day.
+
+  Example:
+
+   0 */4 * * * /glftpd/bin/mp3indexer /glftpd/etc/mp3indexer.conf
+
+- READ THE BELOW NOTICE!
+
+IMPORTANT NOTICE:
+-----------------
+	mp3indexer does *NOT* create the parent index directories. So
+	if you don't want the default directories (GLFTPD_PATH/index/alpha,
+	GLFTPD_PATH/index/genre, GLFTPD_PATH/index/group) then you have
+	to create these directories yourself before you run mp3indexer
+	the first time.
+
+For questions: I'm on IRC. If you know me, talk to me other wise RIP!
+
+Have fun!
+  DaFiesta
+

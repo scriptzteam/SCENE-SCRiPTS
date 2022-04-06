@@ -1,0 +1,10 @@
+BotNuke (GL1&2)
+
+Description: Adds !nuke and !unnuke functions to your irc chan for opped users. 
+Read botnuke.sh for more info. 
+If you get "Failed to perform chroot", check this file 
+http://www.grandis.nu/glftpd/scripts/turranius/Botnuke.readme.txt
+
+Author:   Turranius
+Version:  1.2.1
+Added on: 23-Apr-2003

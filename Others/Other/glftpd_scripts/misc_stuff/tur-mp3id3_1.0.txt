@@ -1,0 +1,15 @@
+Tur-Mp3ID3
+
+Description: This is a script for those with mp3 sections. It grabs the id3 tags 
+from the .mp3 files and stores them in a MySQL database.
+Also included is a script that enables your users to search this database, from 
+both glftpd and irc, based on the id3 tags.
+Searching can be done based on artist, title, album, year, genre, releasename 
+and/or filename.
+
+Its actually kinda great to be able to search the entire site for some artist or 
+similar.
+
+Author:   Turranius
+Version:  1.0
+Added on: 11-Jul-2005

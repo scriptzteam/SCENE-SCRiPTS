@@ -1,0 +1,15 @@
+SectionSpace
+
+Description: How to describe this? Hmm.
+If you have multiple sections on the same harddrive and want to see how much space 
+each section occupies, this is the script for you. You can also specify max amount 
+of space allowed for each section, although that is only for display. It does NOT 
+limit the amount in any way. Use some kind of quota for that.
+Ment for shell/irc usage and comes with a tcl for your eggdrop to load. 
+
+See this post for a better explanation: http://www.grandis.nu/glftpd/modules.php?na
+me=Forums&file=viewtopic&t=257&sid=8193a0459599a4c1502ba33e4fc0cb3c
+
+Author:   Turranius
+Version:  0.2
+Added on: 20-Jun-2004

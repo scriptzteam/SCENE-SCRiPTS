@@ -1,0 +1,67 @@
+The Windows Media Video Releasing Standards 2007 for Blu-Ray and HDDVD
+
+Intro:  As seen in recent weeks the WMV-HD scene has really picked up.  The more groups that join in on WMV-HD
+    the more varations we have in encodes.  With this said, standards need to be set in place in order
+    for all releases to be consistent and quality.  Many people feel as if WMV-HD is redundent because of 
+    the x264 scene.  This is not true because of the compatiblity of WMV-HD.  It can be played on the
+    XBOX360 and HTPC's.  Where as x264 is restricted to HTPC's.  The quality of WMV-HD vs x264 is equal
+    only reason many ppl are against WMV-HD is because its Microsoft.  Even with the new dashboard
+    update x264 will not be able to play on the XBOX360 so again this shows that its gonna be a while before
+    someone makes a standalone that plays it.
+
+
+Video:
+
+    1: Video size is determined by length of movie
+        A: If Video is 80 min or less DVD5 is ok but DVD9 is perferable and is to the discretion of the ripper
+        B: If Video is 81min or more DVD9 is required
+            a: Animated Films are a exception to the video length rule, DVD5 is sufficent for animated
+        Note: discs must be fully used when encoding so for DVD5 no less then 4.1 gig and DVD9 no less then 8.0 gig
+    2: Resolution must be no less then 720p
+        A: 1080p is at the ripper discretion
+            a: min bitrate for 1080p is 10,000kbps and it must be constrained to a peak limit of 14,000kbps with size limit 
+DVD9 or greater
+        B: Custom resolution is allowed as long as its multiple of 16
+    3: Video must be in Windows Media 9 Advanced Profile (WVC1)
+    4: 2-Pass VBR ONLY
+
+Audio:
+
+    1: Audio bitrate must be no lower then 640kbps WMA Pro 5.1 unless source is
+    2: No Stereo to 5.1 upmixing allowed, source must be 5.1 with correct channels mapped unless source disc only has 2.0
+    3: Must be 24bit or 16bit audio unless source is less
+    4: English audio is to be use if its the native language on the disc
+        -- If english is not the native audio on the disc do one of the following: 
+        A: Add hardcoded English subs and native audio
+        B: Use dubbed English audio track
+    5: Audio can be either CBR or VBR and 1 Pass is sufficient
+
+General:
+
+    1: WMV must be in RAR with a recovery record added, SFV NFO and Sample are required as well
+        A: Sample must be atleast 60 sec
+        B: NFO MUST state VIDEO and AUDIO BITRATES, VIDEO RESOLUTION, AUDIO LANGUAGE, AND IF SUBS ARE HARDCODED. NO 
+EXCEPTIONS or PROPER is valid!
+        C: RARS must be 50mb stored for DVD5, 100mb stored for DVD9, and 150mb for 1080p rls's going beyond DVD9 size
+    2: Source Must be HDDVD, Blu-Ray.  No re-encoding allowed of x264!
+    3: 2xDVD5 is not allowed, DVD9 can be split very easily by the end user
+    4: HDDVD and Blu-Ray sources dupe each other, INTERNAL tag is required if one is already rlsed
+        A: Resolution dupe rules is as follows: 720p dupes 1080p but 1080p does not dupe 720p
+    5: Intro and credits are to be intact, removing them is grounds for a proper
+    6: Directory format suggestion:
+
+        Movie.Title.Year.<BluRay/HDDVD/HDTV>.VC1.<720p/1080p>.5.1.WMV-GROUP 
+
+
+NOTE:    These new rules do not apply to past releases, If a group wants to redo one that was done before the WMVS2k7 rules 
+were rlsed
+it must be labled INTERNAL.  Only reason a rls should be propered that was rlsed before this nfo is if its not working.
+
+These rules will be updated when there is more progress in the HD DVD and Blu-ray scene.
+
+
+Signed by
+
+IGUANA SMeG DEViANT
+
+05/16/07

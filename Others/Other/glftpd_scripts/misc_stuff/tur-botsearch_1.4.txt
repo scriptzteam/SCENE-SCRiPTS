@@ -1,0 +1,9 @@
+Tur-BotSearch 1.4
+
+Description:
+Two small scripts that allow users to do like 'site search' from irc.
+Combine this with Tur-DirLogClean to keep the dirlog nicely updated!!
+
+Author:   Turranius
+Version:  1.4
+Added on: 12-Jan-2004

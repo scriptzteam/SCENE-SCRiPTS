@@ -1,0 +1,64 @@
+ 
+   Ein Jahr ist vergangen seit dem Rel von: A.Call.out.to.all.German.
+   XviD.Grps.to.reorganize.Rules.for.2007.READ.NFO.iMPORTANT-iND
+ 
+   Da wir uns leider nicht einigen konnten, wird GME2000/ADM ab 2008 mit
+   den unteren Ergaenzungen zu den ddr-20040502 rippen. Wir folgen damit
+   den respektablen Schritten von CDC.
+ 
+   Wir finden es bedauerlich, damit auszerhalb der "aktuellen" Regeln zu
+   stehen, und sind weiterhin an einer gemeinsamen Loesung interessiert.
+ 
+ 
+   
+ * GROESZEN:
+ 
+   DVD5 & DVD9 min 1080mb (1.132.500.000 byte) +- 4mb inklusive Subs
+          DVD5 max 1620mb (1.698.700.000 byte) +- 4mb inklusive Subs
+          DVD9 max 2160mb (2.265.000.000 byte) +- 4mb inklusive Subs
+           
+   Folgende Moeglichkeiten zum Brennen auf DVD ergeben sich daraus:
+   
+   4 x 1080mb
+   2 x 1080mb + 1 x 2160mb 
+   2 x 1620mb + 1 x 1080mb
+   2 x 2160mb
+ 
+ * AUDIO:
+ 
+   AC3 ist Default.
+ 
+   MP3 128kbit VBR bei Mono
+   MP3 160kbit VBR bei Stereo
+   MP3 192kbit VBR bei 5.1
+   
+ * VIDEO:
+ 
+   Nach einem Kompressionstest mit 10% des Filmes, nehmen wir die Auf-
+   loesung, die mindestens 66% Qualitaet ergibt.
+ 
+   Wir nehmen Aufloesungen in x/y div16, da man nur so auch die maxi-
+   male DVD-Aufloesung rippen kann und immer den kleinstmoeglichen As-
+   pektfehler hat. Zudem gibt es nahezu keine Player mehr, die damit
+   Probleme haben.
+ 
+   Als Richtwert fuer die Aufloesungen sehen wir 1080p und 720p, dessen
+   Fortsetzung "360p" = 640x360 (230.400 = 230k) waere. 
+   In einer kleinen Uebersicht dazu ein paar gaengige Aufloesungen(x) und
+   die Entsprechungen in Pixeln bezueglich anderer Formate(y).
+ 
+            175k      200k      230k      300k      390k
+   2.35:1 @ 640x272   672.288   720.304   ---       ---
+     16:9 @ 560.320   592.336  *640x368*  720.400   ---
+      4:3 @ 496.368   512x384   560.416   640x480   720.544
+   
+   Ein normaler Film auf DVD5 mueszte sich in 640x368 mit ac3 auf 1080mb
+   rippen lassen, bei guter Qualitaet. Er haette damit 1/4 der Aufloesung
+   eines 720p x264 bei ebenfalls 1/4 der Standardgroesze.
+ 
+ * PACKEN:
+   
+   Beim RARen maximal 1% Recovery Record.
+   Subs maximal 5mb.
+   Keine Addons.
+ 

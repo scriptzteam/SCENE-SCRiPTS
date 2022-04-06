@@ -1,0 +1,89 @@
+#!/bin/sh
+# $1 = Name of zipfile.
+# $PWD = Current Path.
+
+# EXIT codes..
+# 0 - Good: Give credit and add to user stats.
+# 1 - Bad:  No credit / No stats & file is removed.
+
+case $1 in  
+   *.zip|*.ZIP)
+        echo -e "Checking file integrity...\r"
+        if /bin/unzip -tqq $1 ; then
+	  echo -e "File PASSED. \r"
+	  echo -e "Extracting FILE_ID.DIZ...  \r"
+	  rm -f [Ff][Ii][Ll][Ee]_[Ii][Dd].[Dd][Ii][Zz]	
+          /bin/unzip -Cpoqq $1 file_id.diz > FILE_ID.DIZ
+ 	  # Add Zip comment here	
+	  echo -e "Adding ZIP comment...  \r"
+          /bin/zip -z -q $1 < /ftp-data/misc/av.nfo
+          # Add site nfo here
+          echo -e "Adding ALTERNATE VOiD propaganda...  \r"
+	  /bin/zip -j -q $1 /ftp-data/misc/*.nfo
+	  # Tell daemon file is good.
+      	  exit 0
+        else
+          echo -e "BAD, deleting! \r"
+          #/bin/mv $1 $1.bad
+	  /bin/rm $1	
+	  # Tell daemon file is bad.
+          exit 1
+        fi
+    	;;
+
+    *.[rR][aA][rR]|*.[rRsS0123456789][0123456789][0123456789])
+        #SFV relies upon the *.sfv file to be uploaded first!
+	#echo -e "$PWD"
+	case $PWD in
+	    /site/ISO/*)
+	   echo -e "ISO upload. RAR's allowed. \r"
+       	   if /bin/sfv_check $1 ; then
+    		exit 0
+           else
+		echo -e "BAD, deleting! \r"
+               	exit 1
+           fi
+	   ;;
+	*)
+           echo -e "AV does NOT accept RAR files, deleting! \r"
+    	   exit 1;
+           ;;
+	esac 
+	;;
+	
+    *.[fF][xX][pP])
+        #Tell daemon to go ahead and delete all *.fxp files.
+	echo -e "Share your passwords on some other site MORON! \r"
+        exit 1;
+        ;;
+    
+    *.[nN][fF][oO])
+       	#Tell daemon to go ahead and delete all *.nfo files.
+        case $PWD in   
+            /site/ISO/*)
+           echo -e "ISO upload. NFO's allowed. \r"
+                exit 0
+           ;;
+        *)     
+           echo -e "We extract our own .NFO files, deleting! \r"
+           exit 1;
+           ;;
+        esac 
+	;;
+    
+    *.[eE][xX][eE])
+        #Tell daemon to go ahead and delete all *.exe files.
+        echo -e "We dont accept .EXE files, deleting! \r"
+        exit 1;
+        ;;
+
+    *.[dD][iI][zZ])
+        #Tell daemon to delete all *.diz files.
+	echo -e "We extract our own .DIZ files, deleting! \r"
+	exit 1;
+	;;
+
+    *)
+    	exit 0
+	;;
+esac

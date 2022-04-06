@@ -1,0 +1,65 @@
+xL-uldlratio v1.4.2 README
+------------------------
+First i planned to write a script that displays the UL/DL ratio...
+then i added some features...though the name is till the same
+
+CHANGELOG
+---------
+1.0
+First release
+
+1.1
+Fixed problems with userpositions above #99
+
+1.2
+Added tagline and nuke status.
+Now you can choose if you want to display ul/dl ratio, nuke status, 
+ratio and credits, tagline.
+Now all commands also work as pm to the bot.
+
+1.3
+Added group stats
+
+1.4
+Now you can disable the ul/dl ratio comments
+Added percentage of the group's total ul/dl
+Added nuketop place
+
+1.4.1
+Now it works even on FreeBSD
+It won't occasionally add a "0" to AlDn position (Caused by lazy cut/paste :P ) 
+Thanks DreamWork for reporting and testing.
+
+1.4.2
+Fixed some ugly output
+
+DESCRIPTION
+-----------
+This script will make the bot output some info about a certain user or a certain group.
+Available commands are: !alstats, !mnstats, !wkstats, !daystats
+                        !galstats, !gmnstats, !gwkstats, !gdaystats
+
+Output example: (with all features enabled)
+
+All Time stats for USER/GROUP:
+Upload: 57613 MB (7.5% of group total)
+Download: 50461 MB (3.6% of group total)
+UL/DL Ratio: 1.14 (One of the best!)
+AlUp: #03 ..:.. AlDn: #36
+NukeTop: #23 (11N/1647MB)
+Credits: 122123.0 MB ..:.. Ratio: 1:3
+USER says: I have a tagline
+
+INSTALLATION
+------------
+* Extract the file ( gzip -dc xl-uldlratio_v1.4.2.tar.gz | tar -xof- )
+* Edit and copy xl-uldlratio.sh to /glftpd/bin and chmod a+x
+* Copy xl-uldlratio.tcl to your eggdrop script dir and add it to your eggdrop.conf
+
+CONTACT
+-------
+Please contact me if u have any questions about this script or if you experience any bugs.
+
+email: xolax@home.se
+IRC:   xoLax@EFnet
+

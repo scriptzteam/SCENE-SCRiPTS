@@ -1,0 +1,35 @@
+#!/bin/sh
+# 
+# Taken from glftpd.ml.org, modified by Sicko
+#
+# You should add an entry in crontab like this
+#
+# 5 0 * * *  /path/to/script
+#
+# Added a backuproutine as well
+
+# date is current date, date2 is yesterdays date
+# new datedir is made, yesterdays dir is mode 775
+# so users are forced to UL into todays dir
+
+date=`date +%m%d`
+date2=`date --date '1 days ago' +%m%d`
+
+mkdir -m 777 /home/glftpd/site/incoming/$date
+cd /home/glftpd/site 
+rm -f today
+ln -s incoming/$date today
+chmod 775 /home/glftpd/site/incoming/$date2
+chown site.root /home/glftpd/site/incoming/$date
+chown site.root /home/glftpd/site/today
+
+# remove all .bad files
+
+find /home/glftpd/site/incoming/$date2 -name \*.bad -print0 | xargs -0r rm -f   
+
+# make a backup of logs and userdata and mail it
+
+zip -r -p /usr/tmp/ftp-data /home/glftpd/ftp-data
+zip -r -p /usr/tmp/ftp-data /home/glftpd/etc
+uuencode /usr/tmp/ftp-data.zip backup | mail sicko@none.of.your.business
+rm /usr/tmp/ftp-data.zip 

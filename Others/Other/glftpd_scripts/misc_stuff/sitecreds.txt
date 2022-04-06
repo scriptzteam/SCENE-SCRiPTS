@@ -1,0 +1,26 @@
+Credits transfer.
+
+Leafs can send to and take from the hub.
+
+So to transfer from leaf to leaf, you have to give to hub and take from hun on the other slave.
+
+"/msg bot transfer" for help.
+
+MORA@EFNet
+
+
+Small installation instruction by Turranius.
+Note: I do not support this script, so dont message me. hoho.
+
+Make a dir called sitecreds in your bot dir (not in scripts/).
+On the hub, Put sitecreds.hub.tcl and sitecreds.shared.tcl in it.
+On the slave (called leaf here), put sitecreds.leaf.tcl and sitecreds.shared.tcl in it.
+Load sitecreds.hub.tcl in your bots config file on the hub.
+Load sitecreds.leaf.tcl in your bots config file on the slave.
+
+(Do not load sitecreds.shared.tcl. Just leave it in the same dir.)
+
+Edit sitecreds.hub.tcl and sitecreds.slave.tcl and change the few settings.
+Rehash the bots.
+
+You can now /msg leafbot transfer for instructions.

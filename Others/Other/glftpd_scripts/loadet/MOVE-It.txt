@@ -1,0 +1,47 @@
+#!/bin/sh
+#----------------------------------------------------------------------------#
+#  Name:         MOVE-It                                                     #
+#  Version:      1.0                                                         #
+#  Last Updated: 2002-06-03                                                  #
+#  Author:       loadet (C) 2002                                             #
+#  Contact:      loadet on EFNet or loadet@gbit.dk                           #
+#  Usage:        site move dirname destination                               #
+#  Notes:        This script Moves a dir from one partition to another       #
+#  Requirements: mv echo  						     #
+#  site_cmd MOVE           EXEC    /bin/MOVE-It.sh			     #
+#  custom-move    1       					             #
+#----------------------------------------------------------------------------#
+#  credits goes to dn for his almost identical script =)                     #
+#                                                                            #
+#----------------------------------------------------------------------------#
+
+#Set this 
+homedir=/site
+
+#Config done
+echo "Dir Mover by loadet"
+echo ""
+[ -z "$1" ] && {
+	echo "You must enter a dirname to move!"
+	exit 0
+}
+[ -z "$2" ] && {
+	echo "You must enter a destination to move to!"
+	exit 0
+}
+[ ! -e "$1" ] && {
+    echo "That dirname does not exist!"
+    exit 1
+}
+[ ! -e "$homedir/$2" ] && {
+    echo "That destination does not exist!"
+    exit 1
+}
+echo -n "Moving dir . . "
+mv $1 $homedir/$2
+if [ $? = 0 ]; then
+	echo "DONE."
+   else
+	echo "FAILED.  Please move manually!"
+fi
+exit 0

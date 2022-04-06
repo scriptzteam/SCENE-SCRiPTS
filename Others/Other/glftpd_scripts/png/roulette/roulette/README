@@ -1,0 +1,12 @@
+## Roulettescript 1.0 by pnG
+## 
+
+give install.pl the correct permissions (chmod a+x install.pl) and fire
+it off! Read the output, and youll be just fine.
+
+Please try my other scripts:
+	- getnfo.pl	(imbd script for glftpd)
+	- roulette.pl	(roulette game for glftpd)
+
+get them @ http://www.xeptic.net/scripts/
+contact me on efnet, #getnfoscript, nick pnG (duuh!)

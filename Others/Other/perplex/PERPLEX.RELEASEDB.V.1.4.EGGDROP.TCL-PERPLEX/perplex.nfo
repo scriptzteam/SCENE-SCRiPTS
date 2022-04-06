@@ -1,0 +1,138 @@
+                                  _______
+                               \ \\     |
+                                   \     \
+                                   | .    \\ \
+                               ..  | :     \  ..
+                             . ..  | :     |  .. .
+                             : ::  | :     |  :: :
+                             i ii  | :     |  ii i
+                       -|----| ##  | ::    |  ## |----|-
+                  |--|  |    | ##  | ::    |  ## |    |  |--|-,y$     ,
+          -  ---|-|--|--|----| ##  | :::.  |  ## |----|--|--|$$$l-  - jy
+        __________  _______ _________ _______  ____  ________ 7$$,   ,$$
+      //_______   \/ _____//____   _//____   \/  _/_/_    ___|_ §$$s$$7'
+    - ---_\    ___/ _\    \\        _    ____/  _\    \  _\   \\-y$$$y,-- -
+         \______\________  \\   \___\\____\\__________\\_______,$$' "7$
+                         \_______\ .       .  __              ,$$i ol
+          -  ---|-|--|--|----i mm  |   ::: |  ## |----|--|--|-$$$$-  -
+                  |--|  |    | ##  |    :: |  ## |    |  |--|
+                       -|----| 00  |    :: |  00 |----|-
+                               oo  |     : |  oo
+           ..   ____________   ..  |     : |  ..   ____________   ..
+           .. __)          //______|     : |______\\          (__ ..
+           .. \.                                               ./ ..
+           :: |:             Perplex presents you:             :| ::
+           :: |: PERPLEX.RELEASEDB.V1.4.EGGDROP.TCL-PERPLEX   :| ::
+           :: |:                                               :| ::
+        ...:: |:                                               :| ::...
+        :: ,-\\    coder ......: TEAM-PERPLEX                   //-, ::
+      ..:: |  \\-  type .......: Eggdrop TCL                  -//  | ::..
+      _____|  |:   system .....: ALL                           :|  |_____
+    __)       |:   size/discs .: 1x1.44                        :|       (__
+    \.        |:   date .......: 04/24/05                      :|        ./
+    |:        |:                                               :|        :|
+    |:        |/-----------------------------------------------\|        :|
+    |:                                                                   :|
+    |:                   --[ d e s c r i p t i o n ]--                   :|
+    |:                                                                   :|
+    |:  This is a fully featured release database script for anykind of  :|
+    |:  group. you can set if the name of the releaser will be shown as  :|
+    |:  cracker, coder, ripper, etc. this scripts supports adding,       :|
+    |:  deleting, listing, marking as nuked and unnuke of the releases.  :|
+    |:  we`ve also added a top10 function so you can easily see who      :|
+    |:  are your most active releasers and a function to dcc you a       :|
+    |:  themeable release list.                                          :|
+    |:                                                                   :|
+    |:  Changelog:                                                       :|
+    |:                                                                   :|
+    |:  -builtin blowcrypt support removed,                              :|
+    |:  -new features to addrel command (-date and -size)                :|
+    |:  -releases r sorted by date                                       :|
+    |:  -fixed releases per day calulation                               :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:        --[ i n s t a l l a t i o n ]--        :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //  - if you really want to use this tcl         \\  | ....
+        :: |_//    you know how to install it, just audjust     \\_| ::
+        ::... |    your eggdrop config file and the tcls head   | ...::
+        :: ,-\\                                                 //-, ::
+      ..:: |  \\-                                             -//  | ::..
+      _____|  |:                                               :|  |_____
+    __)       |:                                               :|       (__
+    \.        |:                                               :|        ./
+    |:        |/-----------------------------------------------\|        :|
+    |:                     --[ a b o u t   p p x ]--                     :|
+    |:                                                                   :|
+    |:  since test (the elite scripting team, the one and only real      :|
+    |:  scene related scripting group so far) faded away some years      :|
+    |:  ago, the scene was in urgent need of a new group of hard-        :|
+    |:  working and dedicated coders and scripters. again, most          :|
+    |:  groups lack of some experienced and skilled individuals to       :|
+    |:  fulfil their needs. that`s the hole perplex jumps in.            :|
+    |:  we cover all kinds of scripting and coding imaginable. from      :|
+    |:  asm coded executable packers and crypters to release database    :|
+    |:  scripts for eggdrops. we also offer help on decent ftp sites     :|
+    |:  to get them working correctly and running smooth. just drop      :|
+    |:  us a message in our irc chan.                                    :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:                --[ n e w s ]--                :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //  *  expect more from us - soon ;)             \\  | ....
+        :: |_//                                                 \\_| ::
+        ::... |                                                    | ...::
+        :: ,-\\                                                 //-, ::
+      ..:: |  \\-                                             -//  | ::..
+      _____|  |:                                               :|  |_____
+    __)       |:                                               :|       (__
+    \.        |:                                               :|        ./
+    |:        |/-----------------------------------------------\|        :|
+    |:                   --[ a p p l i c a t i o n ]--                   :|
+    |:                                                                   :|
+    |:  if you think you`ve got the balls for a group like this, don`t   :|
+    |:  hesitate to contact us using the information listed below.       :|
+    |:  remember, we only take skilled and loyal people.                 :|
+    |:                                                                   :|
+    |:  currently, weve got open positions for:                          :|
+    |:                                                                   :|
+    |:  - experienced and skilled coders and scripters.                  :|
+    |:    (c, asm, tcl, shell, perl, etc)                                :|
+    |:  - shell box suppliers (10mbit static and above, no bbb)          :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:        --[ c o n t a c t   i n f o ]--        :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //  IRC    : #ppx @ efnet                        \\  | ....
+        :: |_//   WWW    : NONE                                 \\_| ::
+        ::... |   E-MAIL : NONE                                 | ...::
+        :: ,-\\                                                 //-, ::
+      ..:: |  \\- WE WONT HAND OUT OUR RELEASES VIA EMAIL!    -//  | ::..
+      _____|  |:  ALSO, DON`T ASK FOR TRADING SCRIPTS!         :|  |_____
+    __)       |:                                               :|       (__
+    \.        |/-----------------------------------------------\|        ./
+    |:                       --[ m e m b e r s ]--                       :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                        * no need to list *                        :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:           --[ g r e e t i n g s ]--           :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //    BACKLASH - DYNASTY - cRo - ACME - CLASS    \\  | ....
+        :: |_//      DEViANCE - CORE -  TRSI - TDA - MYTH       \\_| ::
+        ::... |:                                               :| ...::
+           :: |:      ALL OUR FRiENDS AND ESPECiALLY YOU!      :| ::
+           :: |:                                               :| ::
+           .. |___    ___  ___  ____  ___  _    ___  _  __   ___| ..
+                //--- \\-' \\/_ \\-<  \\-' \\_. \\/_ \\/  ---\\
+                         ____ (c)  perplex mmiii ____/\\

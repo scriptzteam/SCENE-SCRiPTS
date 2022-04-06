@@ -1,0 +1,62 @@
+#!/bin/bash
+# -------------------------------------------------------------------------
+# Jehsom's zipscript chooser script. Chooses which zipscript to run.
+# Copyright (C) 2001 jehsom@jehsom.com
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# -------------------------------------------------------------------------
+
+# This script chooses which zipscript whould be run on an uploaded file
+#  based on which directory tree the file is uploaded to. This script 
+#  should be set as your zipscript, and you should set the various
+#  sections in the $TREE vars, and the zipscripts that should run in
+#  the corresponding sections in the matching $ZS variable.
+
+# First match is used, so put more specific dirs on top
+# If you are not using any of the TREEs, set their value to something bogus.
+TREE0="/site/ReqFilled"
+TREE1="/site/Incoming/0day"
+TREE2="/site/Incoming/MP3s"
+TREE3="/site/Incoming"
+
+ZS0="" # We don't want to run a zipscript for tree 0.
+ZS1="/bin/jzipscript"
+ZS2="/bin/vcheck"
+ZS3="/bin/zipscript"
+ZS_DEFAULT="" # Zipscript to be run in non-matching sections.
+
+#######################
+### Ignore the rest ###
+#######################
+
+case "${2}" in
+	$TREE0*)
+		[ -n "$ZS0" ] && exec $ZS0 "$@"
+		;;
+	$TREE1*)
+		[ -n "$ZS1" ] && exec $ZS1 "$@"
+		;;
+	$TREE2*)
+		[ -n "$ZS2" ] && exec $ZS2 "$@"
+		;;
+	$TREE3*)
+		[ -n "$ZS3" ] && exec $ZS3 "$@"
+		;;
+	*)
+		[ -n "$ZS_DEFAULT" ] && exec $ZS_DEFAULT "$@"
+		;;
+esac
+# If we manage to get down here, which we shouldn't.
+exit 0

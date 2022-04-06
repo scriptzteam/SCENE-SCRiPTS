@@ -1,0 +1,315 @@
+ÿÿÿÜ   Ü                                                                     
+     ÜÿÜ Ü ÛÜ²  ÞÝÜÜÜ Ü Ü                                                  Ü e!
+     Üÿ² ² ²ÜÜ  Û  ²  ² ² ÜÜ                                               Ü   
+  Þ²Ûß ÛÜÛ Û ² ÞÝ  Û  ßÜß                                                  ßÛ²Ý
+  ÞÛÜÜÜÜÜÜÜ  ß ß Ü ÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÝ
+  Þ²ÝÜÜ ÜÜÜ ÜÜÜ Ü  Ü ÜÜ  ÜÜÜ ÜÜÜ ÜÜ  ÜÜ                         ÜÜÜ ÜÜÜ Ü Ü Þ²Ý
+  Þ±Ý²ÜÜ ²  ²ÜÛ ²ßÜÛ ² Û ²ÜÛ ² Û ² Û ²ÜÜ                        ÜÜÛ Û Û Û Û Þ±Ý
+  Þ°Ý Ü² Û  Û ² Û  ² ÛÜ² Û ² ÛßÜ ÛÜ²  Ü²                        ÛÜÜ ÛÜÛ Û Û Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                The UK TV XviD Releasing Standards 2011                Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý     Requires: Notepad with terminal font or any other ASCII viewer    Þ°Ý
+  Þ  Üÿ                                                                    Ü  Ý
+     Üÿ                                                                    Ü   
+  Þ²Ûß                                                                     ßÛ²Ý
+  ÞÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÝ
+
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                          +---[ INTRO ]---+                            Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý    This rule set is written specifically for UK TV, taking into       Þ°Ý
+  Þ°Ý    consideration various factors which differ from other regions.     Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ  Üÿ                                                                    Ü  Ý
+     Üÿ                                                                    Ü   
+  Þ²Ûß                                                                     ßÛ²Ý
+  ÞÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÝ
+
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                      +---[ RELEASE RULES ]---+                        Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   Release sizing:                                                     Þ°Ý
+  Þ°Ý   - Shows 18:00-22:59 must be 175MiB                                  Þ°Ý
+  Þ°Ý   - Shows 23:00-30:59 must be 233MiB                                  Þ°Ý
+  Þ°Ý   - Shows 31:00-46:59 must be 350MiB                                  Þ°Ý
+  Þ°Ý   - Shows 47:00-73:59 must be 550MiB                                  Þ°Ý
+  Þ°Ý   - Shows 74:00-94:59 must be 700MiB                                  Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - If the length of the show is near the end of any range, the       Þ°Ý
+  Þ°Ý     next size up may be used in the interests of quality, at cappers  Þ°Ý
+  Þ°Ý     discretion. For example, a 70 minute show could be either         Þ°Ý
+  Þ°Ý     550MiB or 700MiB.                                                 Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Shows above these lengths must be a multiple of 550 or 700 while  Þ°Ý
+  Þ°Ý     keeping the average video bitrate above 880kbps.                  Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Splitting into CDs is OPTIONAL. If releases are split they must   Þ°Ý
+  Þ°Ý     be placed in directories named CD1, CD2, CD3 etc. No Disc1 cd1    Þ°Ý
+  Þ°Ý     or other naming styles.                                           Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Episodes that air back-to-back without a natural break such as    Þ°Ý
+  Þ°Ý     full credits or commercials in between must be pred as a single   Þ°Ý
+  Þ°Ý     release.                                                          Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - All releases must be no more than 2.0MiB above the target size.   Þ°Ý
+  Þ°Ý     Releases up to and including 700MiB must be no more than 3.0MiB   Þ°Ý
+  Þ°Ý     under the target size. Releases larger than 700MiB may be no      Þ°Ý
+  Þ°Ý     more than 6.0MiB under. This applies to the size of the entire    Þ°Ý
+  Þ°Ý     release, not per CD.                                              Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   Previously on/Credits:                                              Þ°Ý
+  Þ°Ý   - Any "previously on" footage must be included.                     Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - No release may be propered for glitches in, or missing portions   Þ°Ý
+  Þ°Ý     of previously on footage.                                         Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Full end credits must be included if they contain show content    Þ°Ý
+  Þ°Ý     or outtakes/bloopers. End credits are optional if they are clean  Þ°Ý
+  Þ°Ý     or contain promotions for future episodes or other shows.         Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   Video:                                                              Þ°Ý
+  Þ°Ý   - 2-pass variable bitrate XviD must be used.                        Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Quantization matrix must be either MPEG or H.263. Custom          Þ°Ý
+  Þ°Ý     quantization matrices are not allowed.                            Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - QPel and GMC are not allowed.                                     Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Pixel Aspect ratio MUST be square (default). Custom 1:1 or any    Þ°Ý
+  Þ°Ý     other custom ratio is not allowed.                                Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - B Frames:                                                         Þ°Ý
+  Þ°Ý     - The use of B frames is required.                                Þ°Ý
+  Þ°Ý     - A maximum of 2 consecutive B frames may be used.                Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - This document gives no preference to packed versus unpacked       Þ°Ý
+  Þ°Ý     bitstreams as there are benefits to each format, and it is        Þ°Ý
+  Þ°Ý     trivial to convert between them using MPEG4 Modifier.             Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Framerates must be in relation to the original source. Valid      Þ°Ý
+  Þ°Ý     framerates for releases are PAL (25 fps).                         Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Valid horizontal resolutions are are 512-576 for 4:3, 608-640     Þ°Ý
+  Þ°Ý     for 16:9, 544-576 for 14:9 or 672-720 for 2.35:1.                 Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - A maximum aspect ratio error of 5% is permissible.                Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Releases shall be cropped so that all black/noise on the edges    Þ°Ý
+  Þ°Ý     of the first full scene of a show is removed. These crop values   Þ°Ý
+  Þ°Ý     must then be used for the entire show.                            Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Live shows must be cropped to the first studio scene which may    Þ°Ý
+  Þ°Ý     not be the first full scene broadcast.                            Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Live shows without any studio scenes must follow the main rule    Þ°Ý
+  Þ°Ý     and be cropped to the first full scene.                           Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - In situations where the first scene has vastly different AR to    Þ°Ý
+  Þ°Ý     the rest of the episode, crop values that retain most picture     Þ°Ý
+  Þ°Ý     throughout must be used. (example: 2.35:1 for the opening scene,  Þ°Ý
+  Þ°Ý     16:9 after - crop to 16:9)                                        Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Video defacement such as intros, outros, and group watermarks     Þ°Ý
+  Þ°Ý     are forbidden.                                                    Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   Audio:                                                              Þ°Ý
+  Þ°Ý   - Allowed audio formats are VBR MP3 and original AC3. ABR is        Þ°Ý
+  Þ°Ý     considered a VBR technique.                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - MP3 audio must be encoded using standard LAME presets such as     Þ°Ý
+  Þ°Ý     '--preset 128' or '-m s -V 5 -b 32'.                              Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Average bitrate on MP3 audio may not exceed 192kbps.              Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - MP3 audio must be normalized.                                     Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Audio sampling rate must be maintained at 48KHz.                  Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Original AC3 audio may be used at the discretion of the capper,   Þ°Ý
+  Þ°Ý     provided video bitrate remains above 890kbit. However,            Þ°Ý
+  Þ°Ý     transcoding to AC3 is forbidden.                                  Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   Release Naming:                                                     Þ°Ý
+  Þ°Ý   - Numbering for episodic programming shall be in the format         Þ°Ý
+  Þ°Ý     S00E00 or 0x00 (or S00E000 / 0x000 for series with more than 99   Þ°Ý
+  Þ°Ý     episodes per season).                                             Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Number for date-based programming including soaps, daytime TV     Þ°Ý
+  Þ°Ý     and variety shows shall be in the format YYYY.MM.DD.              Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - For variety shows, it is strongly recommended that the primary    Þ°Ý
+  Þ°Ý     guest's name be included in the directory name.                   Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Different shows that have the same name in different countries    Þ°Ý
+  Þ°Ý     must be tagged with the code for the country of airing.           Þ°Ý
+  Þ°Ý      (example: The.Apprentice.UK.S01E01.SOURCE.XviD-Group)            Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Different shows with the same name produced in different years    Þ°Ý
+  Þ°Ý     must be tagged with the year of airing of the first season.       Þ°Ý
+  Þ°Ý      (example: Doctor.Who.2005.S00E00.SOURCE.XviD-Group)              Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Releases are to be named in the format:                           Þ°Ý
+  Þ°Ý     - Show.Name.S00E00.SOURCE.XviD-Group                              Þ°Ý
+  Þ°Ý     - Show.Name.Part0.SOURCE.XviD-Group                               Þ°Ý
+  Þ°Ý     - Show.Name.2008.00.00.SOURCE.XviD-Group                          Þ°Ý
+  Þ°Ý     - Show.Name.S03E04-E05.SOURCE.XviD-Group                          Þ°Ý
+  Þ°Ý     - Show_Name.0x00.SOURCE.XviD-Group                                Þ°Ý
+  Þ°Ý     - Show_Name.Part_Zero.SOURCE.XviD-Group                           Þ°Ý
+  Þ°Ý     - Show_Name.3x04_3x05.SOURCE.XviD-Group                           Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - The episode title may optionally be included between the episode  Þ°Ý
+  Þ°Ý     number and the source.                                            Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Allowed Characters:                                               Þ°Ý
+  Þ°Ý     - abcdefghijklmnopqrstuvwxyz                                      Þ°Ý
+  Þ°Ý     - ABCDEFGHIJKLMNOPQRSTUVWXYZ                                      Þ°Ý
+  Þ°Ý     - 0123456789                                                      Þ°Ý
+  Þ°Ý     - .-_                                                             Þ°Ý
+  Þ°Ý     - All Sample, NFO, SFV, and RAR names MUST be in all lowercase    Þ°Ý
+  Þ°Ý       letters. The name of AVI inside the RARs is permitted to        Þ°Ý
+  Þ°Ý       contain capital letters.                                        Þ°Ý
+  Þ°Ý     - Double dots (..) are not allowed.                               Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Additional Tagging:                                               Þ°Ý
+  Þ°Ý     - PROPER, REPACK, REAL, UNCUT, SUBBED,  INTERNAL,                 Þ°Ý
+  Þ°Ý       OAR (Original Aspect Ratio), DIRFIX, SAMPLEFIX, NFOFIX or       Þ°Ý
+  Þ°Ý       READNFO are allowed (discretion is recommended).                Þ°Ý
+  Þ°Ý     - All releases tagged PROPER, REPACK, REAL, and READNFO must      Þ°Ý
+  Þ°Ý       include notes in the NFO as to why the release was tagged       Þ°Ý
+  Þ°Ý       that way. PROPER.READNFO is therefore redundant and must not    Þ°Ý
+  Þ°Ý       be used.                                                        Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Source Naming:                                                    Þ°Ý
+  Þ°Ý     - Valid source names are WEBRIP, PDTV, WS.PDTV, HDTV, and no      Þ°Ý
+  Þ°Ý       tag (analogue).                                                 Þ°Ý
+  Þ°Ý     - Analogue source will have no tag other than WS if needed.       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Source Definitions:                                               Þ°Ý
+  Þ°Ý     - analogue, via svideo or the like, must have no tag.             Þ°Ý
+  Þ°Ý     - 576i\576p shall be tagged PDTV.                                 Þ°Ý
+  Þ°Ý     - 720p\1080i\1080p shall be tagged HDTV.                          Þ°Ý
+  Þ°Ý     - Content from iPlayer, 4oD or other/future services must be      Þ°Ý
+  Þ°Ý       tagged WEBRIP. Use common sense. If multiple streams are        Þ°Ý
+  Þ°Ý       available, use the highest quality one. Propering with a        Þ°Ý
+  Þ°Ý       higher quality source will not be tolerated.                    Þ°Ý
+  Þ°Ý     - 4:3 content broadcast at HDTV resolutions shall be tagged       Þ°Ý
+  Þ°Ý       PDTV.                                                           Þ°Ý
+  Þ°Ý     - Windowboxed (16:9 with black on all sides),                     Þ°Ý
+  Þ°Ý       letterboxed (16:9 with black on the top and bottom) and         Þ°Ý
+  Þ°Ý       native 16:9 content shall be labeled as Widescreen (WS.PDTV).   Þ°Ý
+  Þ°Ý     - The use of the HDTV tag implies widescreen so WS.HDTV shall     Þ°Ý
+  Þ°Ý       not be used.                                                    Þ°Ý
+  Þ°Ý     - Upscaled sources must be labeled PDTV.                          Þ°Ý
+  Þ°Ý     - PDTV/HDTV sources must be 100% digital. S-Video, composite,     Þ°Ý
+  Þ°Ý       or RF from a digital receiver to a tuner card is analogue.      Þ°Ý
+  Þ°Ý       Valid PDTV and HDTV sources will be received via a digital      Þ°Ý
+  Þ°Ý       connection such as USB, Firewire, Ethernet from a reciever,     Þ°Ý
+  Þ°Ý       or DVB tuner.                                                   Þ°Ý
+  Þ°Ý     - Dupe order:                                                     Þ°Ý
+  Þ°Ý       WEBRIP -> PDTV -> WS.PDTV -> HDTV                               Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   Packaging:                                                          Þ°Ý
+  Þ°Ý   - Container:                                                        Þ°Ý
+  Þ°Ý     - Container must be AVI.                                          Þ°Ý
+  Þ°Ý     - The file must consist of one video stream, one audio stream     Þ°Ý
+  Þ°Ý       and the usual AVI overheads, files are not to be padded out     Þ°Ý
+  Þ°Ý       with junk.                                                      Þ°Ý
+  Þ°Ý     - The AVI itself must be named like the release and include       Þ°Ý
+  Þ°Ý       some format of episode number (show initials are fine, as is    Þ°Ý
+  Þ°Ý       shortening the episode number).                                 Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - RAR\SFV:                                                          Þ°Ý
+  Þ°Ý     - Releases shall be packed into 15,000,000 or 20,000,000 byte     Þ°Ý
+  Þ°Ý       RARs using store compression.                                   Þ°Ý
+  Þ°Ý     - 50,000,000 byte RARs are allowed for releases that are 1100MiB  Þ°Ý
+  Þ°Ý       or larger, and MUST be used for larger releases to ensure       Þ°Ý
+  Þ°Ý       there are no more than 101 rar parts.                           Þ°Ý
+  Þ°Ý     - An SFV must be created for all RAR files in the release.        Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Sample:                                                           Þ°Ý
+  Þ°Ý     - All releases must include a sample of length :50-1:10 cut       Þ°Ý
+  Þ°Ý       directly from the release (NOT encoded separately).             Þ°Ý
+  Þ°Ý     - The sample must be placed in a directory named Sample.          Þ°Ý
+  Þ°Ý     - The file itself must be named uniquely, preferably containing   Þ°Ý
+  Þ°Ý       the name of the release as well as the word sample.             Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - NFO:                                                              Þ°Ý
+  Þ°Ý     - An NFO must be included in the release and, at a minimum,       Þ°Ý
+  Þ°Ý       must contain release name, episode number (or title), channel   Þ°Ý
+  Þ°Ý       the show was broadcast on, and date of airing/release.  An      Þ°Ý
+  Þ°Ý       IMDB/tvrage/broadcaster link is recommended but not essential.  Þ°Ý
+  Þ°Ý     - The NFO must be named uniquely based on the name of the         Þ°Ý
+  Þ°Ý       release.                                                        Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   Propers:                                                            Þ°Ý
+  Þ°Ý   - Propers are only permitted in the case of technical flaws with    Þ°Ý
+  Þ°Ý     the original release or violations of applicable rules.           Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - All propers must include a note in the NFO detailing the flaw in  Þ°Ý
+  Þ°Ý     the original release, including timecodes if relevant.            Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Including a sample of the flaw is suggested but not required.     Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   - Propers are expressly permitted in cases of any of the following  Þ°Ý
+  Þ°Ý     flaws in a release:                                               Þ°Ý
+  Þ°Ý     - Audio 120ms or more out of sync.                                Þ°Ý
+  Þ°Ý     - Severe audio drops resulting in the inability to understand     Þ°Ý
+  Þ°Ý       dialogue. Glitches that do not result in inability to           Þ°Ý
+  Þ°Ý       understand dialogue are not properable.                         Þ°Ý
+  Þ°Ý     - Improper audio normalization, including audio with levels that  Þ°Ý
+  Þ°Ý       vary widely between parts, very quiet audio, or audio with      Þ°Ý
+  Þ°Ý       excessive clipping.                                             Þ°Ý
+  Þ°Ý     - Under or over crop of 2 or more pixels on any one side that     Þ°Ý
+  Þ°Ý       lasts for the entire show. Propers for under/over crop which    Þ°Ý
+  Þ°Ý       does not last for the entire show are not allowed.              Þ°Ý
+  Þ°Ý     - Releases missing a significant portion of video, either in      Þ°Ý
+  Þ°Ý       duration or content.                                            Þ°Ý
+  Þ°Ý     - Glitches that do not result in the inablity to watch the show   Þ°Ý
+  Þ°Ý       are not nukeable (we all agree Freeview isn't perfect).         Þ°Ý
+  Þ°Ý     - Change in video format (PDTV on an HDTV release) exceeding      Þ°Ý
+  Þ°Ý       five seconds or causing loss of dialogue.                       Þ°Ý
+  Þ°Ý     - Inclusion of 2 or more seconds of commercials over an entire    Þ°Ý
+  Þ°Ý       release.                                                        Þ°Ý
+  Þ  Üÿ                                                                    Ü  Ý
+     Üÿ                                                                    Ü   
+  Þ²Ûß                                                                     ßÛ²Ý
+  ÞÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛÝ
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                The UK TV XviD Releasing Standards 2011                Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý        Released: 2011-01-01 + Valid from: 2011-01-11 onwards.         Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý          -------- +  ------[ GROUPS ]  ------+ -------------          Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                     TVX2K11.UK rules created by                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                       BiA FoV FTP PVR WATERS                          Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                            and signed by                              Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý    aAF ANGELiC BARGE C4TV CaRaT CBB ORGANiC RiVER SomeTV TASTETV      Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ°Ý   °    ÿßÿÿÿÿÿßÿÿÿÿ ÿÿßÿÿÿÿÿÿ ß        ÿÿÿÿßÿÿÿÿ ÿÿßÿÿÿÿÿÿ ß          Þ°Ý
+  Þ°Ý   ÿ      ÿÿ±ÿÿÿÿÿÿÿ        ß        °  ÿ±ÿÿÿÿÿÿÿ        ß        °    Þ°Ý
+  Þ°Ý      ß   ÿÿÿÿÿÿÿÿßÿÿ ÿÿ   ÿ    ÿÿ   ÿ  ÿÿÿÿÿÿÿßÿÿ ÿÿ   ÿ    ÿÿ   ÿ    Þ°Ý
+  Þ°Ý          ÿÿßÿÿÿÿ      ß      °   ß     ÿßÿÿÿÿ      ß      °   ß       Þ°Ý
+  Þ°Ý       °        °                            °                         Þ°Ý
+  Þ°Ý                                                                       Þ°Ý
+  Þ±Ý                                                                       Þ±Ý
+   ²                                                                         ²

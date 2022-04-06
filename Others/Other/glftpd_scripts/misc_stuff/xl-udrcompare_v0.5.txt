@@ -1,0 +1,36 @@
+xL-udrcompare v0.5 README
+-------------------------
+
+CHANGELOG
+---------
+0.2
+First public release
+
+0.3
+Increased the output a little.
+Added some more options. Check the config.
+
+0.4
+Added an option to set the upload limit from irc
+
+0.5
+Now it lists the users who have UL but no DL
+
+DESCRIPTION
+-----------
+Lists the top 5 UL/DL ratios.
+Available commands are: !altopratio, !mntopratio, !wktopratio, !daytopratio [Upload Limit].
+
+INSTALLATION
+------------
+* Extract the file ( gzip -dc xl-udrcompare_v0.5.tar.gz | tar -xof- )
+* Edit and copy xl-udrcompare.sh to /glftpd/bin and chmod a+x
+* Copy xl-udrcompare.tcl to your eggdrop script dir and add it to your eggdrop.conf
+
+CONTACT
+-------
+Please contact me if u have any questions about this script or if you experience any bugs.
+
+email: xolax@home.se
+IRC:   xoLax@EFnet
+

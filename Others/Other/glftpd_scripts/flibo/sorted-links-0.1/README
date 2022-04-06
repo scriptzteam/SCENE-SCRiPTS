@@ -1,0 +1,273 @@
+
+ ------------------------------------------------------------------------------
+ sorted-links-0.1 (2002-09-18)                         by flib0 (flibo@hack.gr)
+ ------------------------------------------------------------------------------
+
+ -------------
+ INTRODUCTION:
+ -------------
+
+ this is a set of shell scripts  that  create  symlinks  to the mp3 releases on
+ your site, based on album artist,  album genre,  album year, or release group.
+
+ these scripts  are  to be used  mainly  with  glFTPd  (http://www.glftpd.com).
+ although one can always  use  'SITE SEARCH <string>'  in order to search for a
+ specific release, it is not  the  easiest  way  of locating what you're after.
+ so, these scripts will create symlinks  under  a  directory  you  specify, and
+ from then on the end-used can navigate through  a  simple  tree  structure  in
+ order to find what he wants.
+
+ additionally, a header dir will be  created for each category (i.e. under each
+ Genre/Artist/Year/Group dir),  indicating the number of releases found in that 
+ section, as well as their total size.
+
+ each script also takes care of bad symlinks, by verifying the existence of the
+ folder they point at, and  deleting the dead  links. if a directory containing
+ only dead syms  eventually  gets  empty, it will  be  deleted too, as to avoid
+ wasting people's time looking around  for that nice release that doesn't exist
+ anymore.
+
+ -------------
+ INSTALLATION:
+ -------------
+
+ i reccomend setting up a few cronjobs  to run these scripts automatically, say
+ twice every hour, or more/less  frequently, depending on your needs (and, most
+ importantly, your site's size). a sample crontab follows:
+
+ # MIN HOUR DAY MONTH DAYOFWEEK  COMMAND
+
+ 05,35 * * * *	/glftpd/bin/make-syms-by-mp3-artist.sh 2>&1
+ 10,40 * * * *	/glftpd/bin/make-syms-by-mp3-group.sh 2>&1
+ 15,45 * * * *	/glftpd/bin/make-syms-by-mp3-genre.sh 2>&1
+ 20,50 * * * *	/glftpd/bin/make-syms-by-mp3-year.sh 2>&1
+
+ in the example above, each script is run  twice  every  hour. notice the 5-min
+ gap between each script's run. you might  want  to  increase  that  if you run
+ a site  packed  with daydirs  containing hundreds  of rels inside. btw, if you
+ want cron to mail you with  any  errors  associated with the execution of each
+ script, remove the redirection at the end of each line.
+
+ -----------
+ BENCHMARKS:
+ -----------
+
+ i used a Pentium MMX at 200MHz, with 128 MBytes of RAM, and two (13.1GB+6.4GB)
+ 5400 rpm HDDs when doing my benchmark tests. my mp3 dir contained 105 releases
+ that occupied 4.25GB. execution times for each of the scripts are shown below:
+
+ make-syms-by-mp3-artist.sh	23 seconds
+ make-syms-by-mp3-group.sh	28 seconds
+ make-syms-by-mp3-genre.sh	26 seconds
+ make-syms-by-mp3-year.sh	22 seconds
+
+ not bad at all. but if this scales up linearly, 30 daydirs and ~10k subfolders
+ would probably require 100x that amount of time, which equals 45 mins or more.
+ granted, this whole deal  would  be  faster  if these scripts were C programs.
+ however, i cannot be bothered to write those right now. sometime in the future
+ perhaps. it'd  be  really  interesting  to see how those C progs would perform
+ compared to their shell script counterparts.  for the moment,  you should make
+ sure you don't run this too often if you have lots of things to symlink for...
+
+ -------------
+ A FINAL NOTE:
+ -------------
+
+ these scripts wouldn't be possible without the aural stimulation provided by : 
+
+ 1_giant_leap-my_culture-rns-+-a-ha-minor_earth_major_sky-trix-+-a-ha-velvet-tr
+ ix-+-accadia-into_the_dawn_(accadia_ambient_mix)-pow-+-adam_f-aromatherapy-sou
+ r-+-adam_f-circles_(7_inch_edit)-bpm-+-afrodelics-rollin_on_chrome-just-+-agne
+ lli_and_nelson-embrace_(radio_edit)-pow-+-agnelli_and_nelson-everyday_2002_(al
+ ex_gold_voc_mix)-mtc-+-air-all_i_need_(beth_hirsch)-nuhs-+-air-dirty_trip-idm-
+ +-air-high_school_lovers-idm-+-alice_deejay-house_is_so_real-vinyl-bmi-+-all_s
+ aints-pure_shores-ego-+-angelic-cant_keep_me_silent_(julian_dor_radio_edit)-mt
+ c-+-angelic-stay_with_me_(original_mix)-snd-+-aphrodite-fanfare-sour-+-apollo_
+ four_forty--altamont_super_highway_revisited-se-+-apollo_four_forty--carrera_r
+ apida_(from_rapid_racer)-se-+-apollo_four_forty--electro_glide_in_blue-se-+-ap
+ ollo_four_forty--krupa_(lp_version)-se-+-apollo_four_forty--pain_in_any_langua
+ ge-se-+-apollo_four_forty-heart_go_boom-+-apollo_four_forty-yo_future-+-art_of
+ _trance-madagascar_(ferry_corsten_radio_edit)-tgx-+-ascension-someone_(slacker
+ s_elevation_vocal)-ms-+-atb-dedicated-mtc-+-atb-get_high-mtc-+-atlantic_ocean-
+ waterfall_(97_radio_edit)-xds-+-aurora-ordinary_world_(above_and_beyond_remix)
+ -vinyl-fli-+-ayla-karawane-ksi-+-ayla-liebe_(trance_mix)-ksi-+-babylon_zoo-ani
+ mal_army-+-babylon_zoo-is_your_soul_for_sale-+-babylon_zoo-the_boy_with_the_x-
+ ray_eyes-+-baltimora-tarzan_boy-fsp-+-banco_de_gaia-last_train_to_lhasa-tronik
+ -+-banco_de_gaia-obsidian_(banco_de_gaia_radio_edit)-ms-+-basement_jaxx--broke
+ n_dreams-i-+-basement_jaxx-get_me_off_(jaxx_2002_remix)-fnt-+-basement_jaxx-gr
+ eek_thang-bpm_house-+-bbe-desire_(full_forces_radio_mix)-mip-+-bbe-desire_(rad
+ io_edit)-esk-+-bbe-flash_(radio_edit)-esk-+-bbe-seven_days_and_one_week_(kai_t
+ racid_remix)-xds-+-bbe-seven_days_and_one_week_(radio_edit)-esk-+-berry_lipman
+ -beach_party_in_santa_cruz-sfe-+-berry_lipman-der_stern_von_afrika-sfe-+-berry
+ _lipman-easy_drummin-sfe-+-berry_lipman-i_like_it-sfe-+-bif_naked-spaceman-+-b
+ ig_bud-hypnosis-sour-+-big_bud-lifeline-sour-+-big_bud-mombassa-sour-+-big_bud
+ -my_spirit-sour-+-blaine_l_reininger--johnny_harpoon-i-+-blue_amazon-searching
+ -tronik-+-blue_amazon-the_javelin-tronik-+-blur-beetlebum-ego-+-blur-end_of_a_
+ century-ego-+-blur-on_your_own_(crouch_end_broadway_mix)-ego-+-blur-parklife-e
+ go-+-blur-theres_no_other_way-ego-+-bomb_the_bass-beat_dis-pow-+-bomb_the_bass
+ -bug_powder_dust-just-+-bomfunk_mcs-back_to_back-ser-+-bomfunk_mcs-put_ya_hand
+ s_up-ser-+-bomfunk_mcs-super_electric-ser-+-bomfunk_mcs-wheres_the_party_at-se
+ r-+-breeder-new_york_fm_(van_bellen_mix)-tronik-+-breeder-twilo_thunder_(auran
+ aut_remix)-tclub-+-breeder-tyrantanic_(slackers_magic_kingdom_mix)-tronik-+-bt
+ -blue_skies_(feat_tori_amos)-ms-+-bt-dreaming_(libra_mix)-rns-+-bt-flaming_jun
+ e_(bt_and_pvd_edit)-ms-+-bt-give_me_strength-cmg-+-bt-godspeed_(hybrid_mix)-2d
+ b-+-bt-love_peace_and_grease_(radio_edit)-mim-+-bt-loving_you_more-cmg-+-bt-ma
+ dskillz_(mic_chekka)-2db-+-bt-mercury_and_solace_(transa_remix)-2db-+-bt-namis
+ tai-2db-+-bt-never_gonna_come_back_down_(hybrids_breaktek_mix)-rns-+-bt-ride-2
+ db-+-bt-shame_(way_out_west_mix)-tronik-+-bt-smartbomb_(plump_djs_mix)-tronik-
+ +-c_j_bolland-con_spirito-ms-+-c_j_bolland-the_prophet_(original_mix)-pow-+-c_
+ j_bolland-the_tower_of_naphtali-ms-+-cass_and_slide-perception_(vocal_mix)-tro
+ nik-+-chicane-offshore_(disco_citizens_remix)-+-christina_aguilera-genie_in_a_
+ bottle_(amen_remix)-sour-+-coast_2_coast_feat_discovery-home_(original_radio_e
+ dit-hs-+-cortina-music_is_moving_(bk_and_dbm_amber_mix)-dcore-+-cosmos-take_me
+ _with_you_(radio_mix)-tronik-+-cosmos-take_me_with_you_(radio_vocal_mix)-troni
+ k-+-count_basic-speechless-just-+-cygnus_x-hypermetrical-+-cygnus_x-the_orange
+ _theme_(man_with_no_name_mix)-tclub-+-cygnus_x-the_orange_theme_(solar_stone_r
+ emix)-tclub-+-da_hool-hypochonda_(male_radio_edit)-nbd-+-dario_g-voices-ego-+-
+ days_of_the_new-die_born-apc-+-days_of_the_new-never_drown-apc-+-days_of_the_n
+ ew-where_are_you-apc-+-death_in_vegas-aisha-+-delerium-heavens_earth_(matt_dar
+ ey_remix_edit)-wax-+-depeche_mode-enjoy_the_silence-srm-+-depeche_mode-everyth
+ ing_counts-srm-+-depeche_mode-home-srm-+-depeche_mode-i_feel_you-srm-+-depeche
+ _mode-just_cant_get_enough-srm-+-depeche_mode-little_15-srm-+-depeche_mode-mas
+ ter_and_servant-srm-+-depeche_mode-shake_the_disease-srm-+-desiderio-starlight
+ _(ferry_corsten_remix)-bmi-+-desiderio-starlight_(radio_edit)-bmi-+-dido-all_y
+ ou_want-srm-+-dido-dont_think-srm-+-dido-here_with_me-srm-+-dido-honestly_ok-s
+ rm-+-dido-hunter-srm-+-dido-im_no_angel-srm-+-dido-my_lovers_gone-srm-+-dido-t
+ ake_my_hand_(bonus_track)-srm-+-dj_rolando_aka_aztec_mystic-jaguar_(lawrence_b
+ urden_radio_edit)-bpm-+-dj_tiesto-643_loves_on_fire_(oliver_klein_vocal_mix)-p
+ ow-+-dot_allison-color_me-ksi-+-dr_dre_and_snoop_dog-still_dre-rns-+-dubstar-a
+ _northern_bride-+-duran_duran-anyone_out_there-+-duran_duran-careless_memories
+ -+-duran_duran-friends_of_mine-+-duran_duran-girls_on_film-+-duran_duran-plane
+ t_earth-+-elbow--powder_blue-i-+-electribe_101-talking_with_myself_98-+-electr
+ ique_boutique-revelation_(ferry_corsten_mos_mix)-+-emiliana_torrini-to_be_free
+ -ksi-+-energy_52-cafe_del_mar_(michael_woods_remix)-tclub-+-enigma-age_of_lone
+ liness-fsp-+-enigma-beyond_the_invisible-fsp-+-enigma-out_from_the_deep-fsp-+-
+ enigma-return_to_innocence-fsp-+-enigma-the_eyes_of_truth-fsp-+-enigma-the_rou
+ ndabout-fsp-+-eno-an_ending_(ascent)-rns-+-enya-orinoco_flow_(sail_away)-atm-+
+ -etnica-patricia_our_happy-ute-+-faithless-crazy_english_summer-chr-+-faithles
+ s-crazy_english_summer_(hiver_n_hammer_rmx)-chr-+-faithless-drifting_away-rns-
+ +-faithless-insomnia_(monster_radio_edit)-nbd-+-faithless-salva_mea_(way_out_w
+ est_mix)-+-faithless-tarantula-chr-+-faithless-we_come_1_(radio_edit)-idm-+-fa
+ ithless-woozy-ego-+-faithless_feat_dido-one_step_too_far_(radio_edit)-tronik-+
+ -feeder-buck_rogers-tmn-+-felix-dont_you_want_me-pow-+-fluke-absurd_(whitewash
+ _mix)-mim-+-fluke-atom_bomb_(atomix_1_edit)-+-fluke-tosh-tronik-+-freestylers-
+ check_the_skillz-+-freestylers-dont_stop-+-freestylers-ruffneck_feat_navigator
+ -+-freestylers-warning_feat_navigator-+-garbage--milk_(the_wicked_mix_featurin
+ g_tricky)-i-+-garbage--only_happy_when_it_rains-i-int-+-garbage--queer-i-int-+
+ -garbage--stupid_girl-i-+-goldfrapp--lovely_head-i-+-groove_armada-at_the_rive
+ r-+-groove_armada-dusk_you_and_me-+-groove_armada-moiras_theme-+-groove_armada
+ -my_friend_(lp_version)-rda-+-gus_gus-purple_(sasha_vs_the_light_mix)-nbd-+-gu
+ s_gus-teenage_sensation-rns-+-heather_nova-london_rain_(nothing_heals_me_like_
+ you_do)-+-high_contrast-return_of_forever_(john_b_rmx)-sour-+-hooverphonic--2w
+ icky-i-int-+-hooverphonic--barabas-i-int-+-hooverphonic-mad_about_you-ds-+-hyb
+ rid-beachcoma-cmg-+-hybrid-if_i_survive-cmg-+-jam_and_spoon-be_angeled_(hiver_
+ and_hammer_remix)-snd-+-jam_and_spoon-be_angeled_(radio_edit)-snd-+-jelly_fish
+ -appreciation-+-jerry_bonham-seventh_seal_(original_mix)-tronik-+-john_b-up_al
+ l_night_(radio_mix)-bpm-+-john_b-up_all_night_(remix)-bpm-+-jose_padilla-adios
+ _ayer_(fresh_mix)-bmi-+-jungle_brothers-down_with_the_jbeez-+-jungle_brothers-
+ jungle_brother-+-jungle_brothers-vip_(radio_edit)-+-jurgen_vries-the_theme_(al
+ titude_remix)-pow-+-jurgen_vries-the_theme_(original_mix)-pow-+-kamaya_painter
+ s--far_from_over_(oliver_lieb_remix)-tb2k-+-kansas-dust_in_the_wind-+-kim_carn
+ es-bette_davis_eyes-fsp-+-kristi_stasinopoulou--we_are_flying-diss-+-laika-une
+ asy-ube-+-lamb--scratch_bass-i-+-laurent_garnier-the_man_with_the_red_face-rev
+ -+-leftfield--21st_century_poem-i-int-+-leftfield--inspection_(check_one)-i-in
+ t-+-leftfield--melt-i-int-+-leftfield--open_up-i-int-+-leftfield--original-i-i
+ nt-+-leftfield--release_the_pressure-i-int-+-leftfield--song_of_life-i-int-+-l
+ eftfield--space_shanty-i-int-+-leftfield--storm_3000-i-int-+-leftfield-fanfare
+ _of_life-esk-+-leila_k-ca_plane_pour_moi-atm-+-les_rythmes_digitales-music_mak
+ es_you_lose_control-+-liquid-sweet_harmony_(95_mix_edit)-fp-+-live_element-be_
+ free_(original_vocal_mix)-2db-+-lo_fidelity_allstars-fis_in_ibiza-bpm_house-+-
+ lost_tribe-angel_(four_four_mix)-+-lost_tribe-gamemaster_(original_mix)-+-lost
+ _witness-7_colours_(angelic_remix)-idc-+-lost_witness-7_colours_(radio_edit)-i
+ dc-+-ltj_bukem-horizons-sour-+-ltj_bukem-music-sour-+-makoto-you_make_me_feel-
+ bpm-+-massive_attack--angel_(album_version)-kw-+-massive_attack--inertia_creep
+ s_(album_version)-kw-+-massive_attack--protection_(album_version)-kw-+-massive
+ _attack--safe_from_harm_(original)-kw-+-massive_attack--sly_(album_version)-kw
+ -+-massive_attack-unfinished_sympathy_(original)-cmg-+-matt_darey-beautiful_(m
+ att_dareys_radio_edit)-aft-+-matt_darey-from_russia_with_love_(alaska_remix)-t
+ club-+-matt_darey_pres_mash_up-liberation_(matt_darey_rmx)-pow-+-mike_oldfield
+ -moonlight_shadow-fsp-+-moby-honey_(rollo_and_sister_bliss_remix)-vinyl-+-moby
+ -porcelain_(clubbed_to_death_variation_rob_dougan_mix)-rns-+-moby-we_are_all_m
+ ade_of_stars_(full_vocal_remix)-bmi-+-moonman-dont_be_afraid_(of_the_power)_(o
+ riginal_mix)-mim-+-morcheeba--blindfold-i-+-morcheeba--the_sea-i-+-mory_kante-
+ yeke_yeke_(hard_floor_mix)-+-motivation-para_mi_(radio_edit)-snd-+-nelly-hot_i
+ n_herre_(radio_edit)-ego-+-new_order--blue_monday-kw-+-new_order-crystal-rev-+
+ -new_order-true_faith_(12_inch_remix)-amok-+-nightmares_on_wax--finer_(alex_go
+ pher_mix)-kw-+-nightmares_on_wax-les_nuits-ksi-+-nookie_feat_larry_heard-parad
+ ise-+-omni_trio-sanctuary-sour-+-orbital--oi-tb2k-+-orbital-attached-+-orbital
+ -chime-rns-+-orbital-choice-rns-+-orbital-funky_nomads_(bonus_hit_version)-+-o
+ rbital-funky_nomads_(long_radio_edit)-+-orbital-halcyon-rns-+-orbital-lush-rns
+ -+-orbital-nothing_left-rns-+-orbital-the_box-rns-+-orbital-the_saint-+-orches
+ tral_manoeuvres_in_the_dark-enola_gay-fsp-+-paul_oakenfold-motion-rns-+-paul_o
+ akenfold-ready_steady_go_(radio_edit)-nbd-+-paul_oakenfold-southern_sun_(radio
+ _edit)-nbd-+-paul_oakenfold-starry_eyed_surprise_(single_edit)-mod-+-paul_oake
+ nfold-the_harder_they_come-rns-+-paul_oakenfold-zoo_york-rns-+-paul_van_dyk_vs
+ _jps-found_an_angel_(bootleg)-+-pilote-turtle_(bonobo_mix)-ds-+-planet_perfect
+ o_feat_grace-not_over_yet_(radio_edit)-+-punjabi_mc-mundian_to_bach_ke-pulse-+
+ -quivver-she_does_(radio_edit)-tronik-+-radiohead-(nice_dream)-just-+-radiohea
+ d--airbag-i-int-+-radiohead--karma_police-i-int-+-radiohead--let_down-i-int-+-
+ radiohead--no_surprises-i-int-+-radiohead--paranoid_android-i-int-+-radiohead-
+ -subterranean_homesick_alien-i-int-+-radiohead-high_and_dry-just-+-radiohead-j
+ ust-just-+-radiohead-my_iron_lung-just-+-radiohead-street_spirit_(fade_out)-ju
+ st-+-raven_maize-fascinated_(radio_edit)-ds-+-roos-instant_moments_2002_(fire_
+ and_ice_mix)-sq-+-royksopp-eple-cig-+-royksopp-poor_leno-cig-+-royksopp-so_eas
+ y-cig-+-ruff_driverz-waiting_for_the_sun_(heliotropic_mix)-+-salt_tank-origin_
+ of_species-tronik-+-sasha_and_emerson-scorchio_(full_length_version)-rns-+-sas
+ ha_and_maria-be_as_one_(short_cut)-bmi-+-schiller-beachmusic-bmi-+-schiller-dr
+ eam_of_you_(feat_heppner)-bmi-+-schiller-dream_of_you_(feat_heppner)_(chillout
+ _mischung)-mod-+-schiller-magic_garden-bmi-+-schiller-schiller-bmi-+-seba-plan
+ etary_funk_alert-sour-+-shakedown-at_night-rns-+-shamen-move_any_mountain-pow-
+ +-sheryl_crow-steve_mcqueen-wax-+-simple_minds-alive_and_kicking-+-simple_mind
+ s-dont_you_(forget_about_me)-fsp-+-slusnik_luna-sun_(radio_edit)-ds-+-smashing
+ _pumpkins-disarm-roya-+--+-smashing_pumpkins-medellia_of_the_gray_skies-+-smas
+ hing_pumpkins-obscured-+-smashing_pumpkins-rotten_apples-+-smashing_pumpkins-t
+ oday-+-smashing_pumpkins-today_(live)-ksi-+-smashing_pumpkins-tonight_tonight-
+ +-sneaker_pimps--tesko_suicide-i-+-sneaker_pimps-6_underground-ksi-+-sofa_surf
+ ers-sofa_rockers-just-+-solar_stone-seven_cities_(atlantis_mix)-wax-+-solar_st
+ one-seven_cities_(katcha_remix)-pow-+-solar_stone-the_calling_(inner_peace_edi
+ t)-tronik-+-stereo_mcs-connected-pow-+-stone_temple_pilots-days_of_the_week-ks
+ i-+-storm-time_to_burn_(video_edit)-hs-+-sugababes-round_round_(craigie_and_cr
+ ichton_remix)-tlt-+-sugababes-round_round_(mandy_radio_mix)-tlt-+-sugababes-ro
+ und_round_(seani_b_remix)-tlt-+-sugababes-round_round_(soulwax_remix)-tlt-+-su
+ gar_ray-spinning_away-+-talvin_singh--butterfly-i-int-+-talvin_singh--travelle
+ r-i-int-+-tasmin_archer-sleeping_satellite-+-taste_xperience-summersault_(tall
+ _paul_edit)-+-tears_for_fears-shout_(uk_remix)-nuhs-+-ten_sharp-you-+-the_chem
+ ical_brothers-alive_alone-+-the_chemical_brothers-elektrobank-+-the_chemical_b
+ rothers-lost_in_the_k-hole-+-the_chemical_brothers-my_elastic_eye-chr-+-the_ch
+ emical_brothers-one_too_many_mornings-+-the_chemical_brothers-piku-+-the_chemi
+ cal_brothers-three_little_birdies_down_beats-+-the_crystal_method-busy_child-+
+ -the_crystal_method-cherry_twist-+-the_crystal_method-high_roller-+-the_crysta
+ l_method-keep_hope_alive-+-the_future_sound_of_london-papua_new_guinea_(hybrid
+ _radio_edit)-pow-+-the_future_sound_of_london-papua_new_guinea_(papsico)-mgc-+
+ -the_future_sound_of_london-papua_new_guinea_(satoshi_tomiie_radio_path)-pow-+
+ -the_future_sound_of_london-papua_new_guinea_(the_lovers)-mgc-+-the_future_sou
+ nd_of_london-spineless_jel-+-the_klf--justified_and_ancient_(stand_by_the_jams
+ )-kw-+-the_klf--justified_and_ancient_(the_white_room_ver)-kw-+-the_klf--madru
+ gada_eterna-kw-+-the_klf--wichita_lineman_was_a_song_i_once_heard-kw-+-the_orb
+ -toxygene-nbd-+-the_prodigy--climbatize-i-int-+-the_prodigy--funky_shit-i-int-
+ +-the_prodigy--mindfields-i-int-+-the_prodigy--narayan-i-int-+-the_prodigy-3_k
+ ilos-+-the_prodigy-babys_got_a_temper-boss-+-the_sisters_of_mercy-i_was_wrong_
+ (american_fade)-+-the_sisters_of_mercy-temple_of_love-+-the_stranglers-golden_
+ brown-+-the_thrillseekers-synaesthesia_(alaskas_sunset_rmx)-tclub-+-the_thrill
+ seekers-synaesthesia_(en_motion_rmx_edit)-koma-+-the_thrillseekers-synaesthesi
+ a_(full_vocal_edit)-koma-+-the_verve--bitter_sweet_symphony-i_int-+-the_verve-
+ -lucky_man-i_int-+-the_verve--sonnet-i_int-+-the_verve--the_drugs_dont_work-i_
+ int-+-thievery_corporation-38_45_(a_thievery_number)-cc-+-thievery_corporation
+ -a_warning_(dub)-cc-+-thievery_corporation-lebanese_blonde-ksi-+-thievery_corp
+ oration-scene_at_the_open_air_market-cc-+-thievery_corporation-shaolin_satelli
+ te-cc-+-thievery_corporation-the_foundation-cc-+-thievery_corporation-the_glas
+ s_bead_game-cc-+-tilt-invisible_(tilts_supernatural_dub)-+-trisco-musak_(wonde
+ rland_ave_remix)-rns-+-turin_brakes--underdog_(save_me)-i-+-tzant-sounds_of_th
+ e_wickedness_(160kbps)-+-u2-electrical_storm_(william_orbit_mix_radio_edit)-rn
+ s-+-u2-mysterious_ways-cmg-+-u2-mysterious_ways_(solar_plexus_club_mix)-cmg-+-
+ u2-mysterious_ways_(the_perfecto_mix)-cmg-+-u2-new_years_dub_2000_(vocal_radio
+ _dub)-tgx-+-u2-stay_(faraway_so_close)-cmg-+-u2-zooropa_(911_mix)-cmg-+-ub40--
+ until_my_dying_day_(cjs_closest_cut)-i-+-underworld-8_ball-+-underworld-cowgir
+ l_(album_version)-+-urban_cookie_collective-the_key_the_secret-pow-+-us3-canta
+ loop_(edit)-ond-+-way_out_west-ajare-tb2k-+-way_out_west-blue-tb2k-+-way_out_w
+ est-domination-tb2k-+-way_out_west-mindcircus_(gabriel_and_dresden_mix)-tronik
+ -+-way_out_west-mindcircus_(original_radio_edit)-tronik-+-way_out_west-the_gif
+ t-tb2k-+-william_orbit-water_from_a_vine_leaf_(edit)-+-zero_7-destiny-idx-+-ze
+ ro_7-give_it_away-idx-+-zero_7-in_the_waiting_line-idx-+-zero_7-spinning-idx-.
+
+EOF

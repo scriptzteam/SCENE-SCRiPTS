@@ -1,0 +1,14 @@
+PHP Movie Player
+
+This will serve as a movie player jukebox for you.  It requires a 
+webserver with php support.  It also requires mplayer to be able to play 
+the movies.  The php layer (movie.php) allows you to browse your 
+filesystem for the file(s) you want to play and the bash script 
+(playmovie) handles the task of managing when to tell mplayer to play 
+them.  There are a few config options at the top of both files that are 
+self-explanatory.  I have a few ideas to add to this which I will do so 
+if someone else actually runs a linux movie player like I do.
+
+Contact: 
+
+Efnet: zubov

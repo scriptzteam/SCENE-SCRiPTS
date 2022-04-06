@@ -1,0 +1,72 @@
+                                        mvpack_v1.0.1 by eur0dance
+                                        ==========================
+
+Introduction
+~~~~~~~~~~~~
+
+Hi everybody :) I've finally decided to release some script for public, especially that
+it's not a common one, and I'd say pretty much unique. I am talking about the pack of
+scripts to handle music videos (mvids) on glftpd sites. First of all, the scripts have been
+tested on Debian, Slackwere and RedHat, so I think it should work find on any kind of Linux.
+About BSD systems, there shouldn't be a problem to get them to work as well. (that is if they don't
+work well there, which I am not sure about). I decided to call the whole pack as "mvpack", so here it
+is: mvpack_v1.0.1. The zipscripts I've personally tested the pack with were zipscript-c v0.5.x and
+project-zc v0.6.x by Dark0n3.
+
+
+Features
+~~~~~~~~
+
+weekdir.sh --> This one creates week dirs and a symlink to them, same principle as daily dir scripts.
+               Please notice that mvid weeks are not the same as glftpd stats weeks (this has been
+	       this way since I downloaded my first musicvideos by ja9war in 1998). Mvids week starts
+               at 00:00 on Sunday/Monday night. Infos about how to use it are inside the script itself.
+
+getmvpreinfo --> This one is a binary that parses an .nfo file containing the music videos genre. You
+                 should run it without any parameters in order to see its syntax. This by itself is not
+                 a script, just a binary being used in order scripts.
+
+getmvpreinfo.sh --> This one is a script that uses the getmvpreinfo binary above. it should be used inside
+                    your pre scripts in order to get the mv genre and to create a 0-byte tag file in the 
+                    release dir, like this: [dS] - ( Pop ) - [dS] and it will output this: MUSICVIDEOS Genre: Pop
+
+mvscript.sh --> This one is a post check script (same type of the script as the zipscript), it's needed in order
+                to announce the genre during the races and to create the 0-byte genre tag files inside the raced
+                dirs. Please read the inportant comments inside the script itself.
+
+parsegenre --> This one is a helping binary for the next script, mvlinks.cron. Some of you might wonder why I
+               didn't use awk instead. The reason is the difference between different awk versions on different
+               Linux distributions and it would have affected the script. awk by itself is a symlink: to gawk on
+               Slackwere & RedHat and to mawk on Debian. 
+
+mvlinks.cron --> This one is based on mp3links.cron script by Jehsom (all credits to him for that one). As the name
+                 states by itself it creates sorted dirs according to Artists, Genre and Group. More infos about it
+                 are inside the script itself.
+
+
+Installation
+~~~~~~~~~~~~
+
+1. To compile the binaries do: "make"
+
+2.
+   If your glftpd paths are the standard ones (/glftpd/bin), do: "make install"
+   If not, just copy the binaries to your glftpd bin dir.
+
+3.
+   Edit the .sh scripts, pay attention to the commented infos inside them. All you need is 
+   to edit is the stuff inside the ### CONFIG ###  section, don't touch the ### CODE ###
+   section, unless you really know what you're doing.
+4. Copy the .sh scripts to your glftpd bin dir.
+
+5. The infos about editing the crontab, glftpd.conf and the sitebot tcl are inside the scripts
+   themselves, in the beginning of each script, in the commented aread. Do as it says. Don't forget
+   to rehash your sitebot if you do changes in its tcl.
+
+Enjoy!
+
+P.S
+   All bugs should be reported to me, I can be reached on EFNet.
+   Special thanks go to Jehsom and Darkon3 whose zipscript scripts inspired me into creating the scripts.
+------------------------------------------------------------------------------------------------------------------------
+                                                                  by eur0dance from EFNet

@@ -1,0 +1,38 @@
+A simple tool for scan share folders for Nuked releases!
+Tested on windows 7 and win2008 server!.
+
+Based on orlydb.org, MP3 Nfo Database and PRELiST..and more comming :)
+
+Releasedate  :   22.10.2012
+Files        :   1 file
+Version      :   v.1.5
+
+Note         :  Might be bugs or other unseen qualitys, report them to us!
+				
+Changelog:
+----------------------------------------------------------------------------
+
+1.1:
+	Fixed - Repacks / Propers, does not show as nuked!
+	Fixed - Bad spellings
+	Fixed - Crash when run application for secound scan!
+	
+1.2:
+    Added - Multi path scan
+	Added - Check if found on ORLYDB
+	Added - More options on right click menu
+	Added - Show help on hover items
+	
+1.3:
+    Fixed - found on orlydb (improved? )
+	Added - Search on optional sites, added MP3 NFO DATABASE 400k scene mp3 releases! but alot slower scaning with this!
+	Fixed - smal bugs and stuff
+	Fixed - Some code fixes
+	
+1.4:
+	Added - PRELiST nuke check site! 3 times as much x264 hits.
+	Fixed - Added some smal GUI fixes
+
+1.5:   
+    Added - after check if release is scene, make a hyperlink in new optional directory!
+	

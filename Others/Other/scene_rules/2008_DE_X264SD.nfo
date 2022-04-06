@@ -1,0 +1,122 @@
+||||||| German.x264.Releasing.Rules.non.HD |||||||
+
+
+
+ | Einleitung |
+   Das Ziel dieser Rules ist es, eine Art Richtlinie
+   gemischt mit verbindlichen Regeln fuer das Releasen
+   von Filmen in "normaler" Aufloesung mit x264-Codec
+   zu gestalten. Dass XviD nicht mehr ganz up-to-date
+   ist, wird immer deutlicher und scheint langsam
+   auch in die Koepfe einzudringen. Nicht umsonst 
+   bedient sich die HD-Scene des x264-Codecs.
+   Um einem neuen Format mit viel Potenzial
+   zu mehr Akzeptanz zu verhelfen, sollen diese
+   Rules gelten. Der x264-Codec dupet keinesfalls XviD,
+   ebensowenig ist es das Ziel dieser Rules,
+   XviD zu verdraengen.
+   Er stellt eine Alternative dar, die sich hoffentlich
+   in der Zukunft durchsetzen wird.
+
+
+
+ | Allgemein | 
+ 
+1.1] Diese Rules beziehen sich nur auf DVDRips.
+1.2] Jedes Release muss enthalten: NFO, SFV, Sample.
+1.3] Jedes Release ist in RAR-Dateien von 15MB oder 25MB Groesse
+     ohne Kompression zu packen.
+1.4] Als Container ist nur MKV zulaessig.
+1.5] Das Nutzen von CAM, TS, TC und FS.Screenern ist nicht zulaessig.
+1.6] In der NFO muessen Size, Audio- und Videobitrate angegeben werden.
+1.7] Die Dauer des Samples muss zwischen 40 und 60sec betragen.
+     Dieses ist in einem Unterordner "Sample" zu hinterlegen.
+     Das Sample muss dem letztlichen Release entstammen.
+1.8] Extras, Specials etc duerfen nicht im Release enthalten sein.
+1.9] Die Verzeichnisbenennung ist nach folgendem Schema vorzunehmen:
+     Filmtitel.German.<YEAR>.<AC3>.DVDRip.
+     <PROPER/READ.NFO/REPACK/iNTERNAL>.x264-<GROUP>
+     1.9.1] Sofern kein anderes rules-konforme Releases pred wurde,
+            besteht keine Pflicht "iNTERNAL" zu lablen.
+    
+
+ | Dateigroesse |
+ 
+2.1] Die maximale Filesize betraegt 1.37GB.
+     2.1.1] Die Filesize darf bei angemessener Qualitaet auch niedriger
+            gewaehlt werden.
+     2.1.2] Sollte keine ausreichende Qualitaet innerhalb der maximalen
+            Filesize erreicht werden, darf diese ueberschritten werden.
+2.2] Bei einer Filmlaenge von mehr als 150min ist eine hoehere
+     Filesize erlaubt.
+2.3] Das Splitten des Releases in z.B. 2CDs ist verboten.
+
+
+
+ | Ton |
+ 
+3.1] Erlaubte Tonspuren:
+     3.1.1] AC3 (DD5.1/DD2.0) sowie DTS.
+     3.1.2] Die Tonspuren muessen von der DVD stammen.
+3.2] Nicht erlaubte Tonspuren:
+     AAC, EAC3, FLAC, MP3, LPCM, OGG, TRUEHD sowie DTS-HD
+3.3] Die Bitrate der AC3-Spuren sollte 384kbps bzw. 448kbps
+     betragen - ausgenommen die Source weist eine geringere
+     Bitrate auf.
+3.4] Mehrsprachige Releases (DL/ML) sind nicht erlaubt.
+3.5] Ein Release aufgrund mangelnder DTS-Tonspur zu propern,
+     ist nicht erlaubt.
+    
+
+| Video |
+
+4.1] Die minimale Videobitrate betraegt 1000kbps.
+     4.1.1] Bei guter Komprimierbarkeit darf dieser Wert
+            auch unterschritten werden.
+     4.1.2] Die minimale Bitrate gilt nicht fuer Animationsfilme.
+4.2] Ziel sollte trotzdem sein, die bestmoegliche Qualitaet
+     zu erreichen.
+4.3] Die Framerate darf gegenueber der Source nicht veraendert werden.
+4.4] Encoding ist stets mit der aktuellen x264-Revision auszufuehren.
+     4.4.1] Es ist mindestens mit 2 Passes zu encoden.
+     4.4.2] Es muessen mindestens 2 B-Frames sowie 2 R-Frames verwendet werden.
+            4.4.2.1] Animationsfilme sollten mit mehr B- und R-Frames
+                     encodet werden. (z.B. 12)
+4.5] Schwarze Balken muessen cropped werden.
+4.6] Die Aufloesung muss mod16-konform sein (Hoehe sowie Breite).
+    4.6.1] Es ist immer die Aufloesung der Source beizubehalten.
+           Muss gecroppt werden, ist die Width der Source
+           beizubehalten (720px).
+4.7.] Die AR des Releases darf maximal 3% von der Original-AR abweichen.
+
+
+| Untertitel |
+
+5.1] Es besteht kein Zwang, Untertitel beizulegen. Fehlende Subs
+     sind kein Nuke- bzw. Properreason.
+5.2] Untertitel duerfen nur in einem Unterordner "Subs" beigelegt werden.
+5.3] "Forced Subs" muessen hardcoded werden.
+5.4] Subs muessen im idx/sub-Format vorliegen.
+5.5] Subpacks sind verboten.
+5.6] Die Subs sollten vorher auf Lesbarkeit geprueft werden.
+     Unlesbare Subs sind ein Nukereason.
+
+
+| Cine |
+
+6.0] Es gelten die oben genannten Rules mit folgenden Abweichungen:
+6.1] Als Audiospuren sind Mics sowie Lines zulaessig.
+     6.1.1] Zusaetzlich ist hier MP3 erlaubt.
+6.2] Es duerfen nur DVDRip, DVDScreener und R5 gedubbt werden!
+6.3] Verzeichnisnamen sind folgendermassen zu waehlen:
+     Filmtitel.<DVDRip/DVDScr/R5>.<MD/LD/Mic.Dubbed/Line.Dubbed>.
+     German.<PROPER/READ.NFO/REPACK/iNTERNAL>.x264-<GROUP>
+     
+     
+     
+||||||| SiGNED BY |||||||
+
+ HDD | XMF | LEX
+ 
+ 
+      [August 2008]

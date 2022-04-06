@@ -1,0 +1,119 @@
+Charte.DiVX.CLASSiC.2006
+
+
+Même si les rulez XVI standard sont suffisantes, bien faites, 
+et plutôt claires pour qui sait les lire, un petit rappel en français s'impose.
+Afin de souligner ou préciser les points concernant de plus près les teams de Classico,
+Voici donc une charte de qualité ou de bonne conduite ;)
+
+
+Titre (dirname) :
+
+Le Titre de la release doit être en US de préférence pour les films US.
+Dans la langue originale ou en US pour les autres origines.
+Le Titre français est toutefois possible pour les films US si le Titre QC est identique.
+(Même si ce dernier point n'est pas le plus recommandé)
+
+
+Source :
+
+DVD9 original pour les DVD9
+DVD5 original pour les DVD5
+DVDR autorisé uniquement si source non downsampled.
+(C’est à dire Vidéo et Audio UNTOUCHED, aucune source encodée CCE ou autre n'est autorisée)
+
+Indiquer les accords entre team(s) DVDR-Classico et team(s) de XVI-Classico dans le NFO.
+Pour les releases pre en DVDR moins de 10 jours avant le xvid veuillez indiquer une preuve
+De votre source quelle qu'elle soit (scan du DVD, covers, sample d'un vob du DVD constituant 
+Une preuve tangible (sample des bonus/extras non présents sur le DVDR ou contenant 1 
+Ou plusieurs langues ayant été stripped sur le DVDR correspondant)
+Sans preuve de votre bonne foi incluse avec la rlz, il est indispensable de préciser
+iNTERNAL dans le dirname de la rlz.
+
+Nuke: Charte.divx.classik.2006 sera juste un moyen de montrer la différence entre
+Une productivité de faible qualité et des gens qui veulent faire avancer les choses
+Afin d'avoir un partage sérieux et honnete.
+
+
+Utilisez les ratios corrects et pensez à croper vos releases correctement...
+
+Ci joint les points importants des rules standards TDK
+
+
+AUDIO:                                                                     
+   - MUST be MP3 or Studio AC3 (AC3 transcoding forbidden).                  
+   - MUST BE VBR! NO CBR MP3!                                                
+   - MP3 tracks must have the original frequency as it was on the DVD's      
+     audio: i.e. 48khz for 48khz and 44.1khz for 44.1khz.                    
+   - MP3 files must be normalized.                                           
+   - ABR is considered a VBR technique.                                      
+   - AC3 MUST be used wisely and correctly. Ripper's discretion on when to   
+     use it. Using or not using AC3 IS NOT a technical flaw.                 
+
+VIDEO:                                                                     
+   - Keyframe:                                                               
+     MUST be <=20 seconds and MUST be inserted according to scene changes    
+     and framesizes as determined by the codec or encoding application.      
+   - Group watermarks of any kind on the video will not be tolerated!        
+   - Intermission messages must be removed from the avi!                     
+
+Codec:                                                                     
+   - MUST BE XviD (all DivX codecs are banned).                              
+   - MUST use 2 pass technique during encoding.                              
+
+
+Resolution and Aspect Ratio:                                               
+   - Width: 512 - 672 pixels for WS movies (Letterboxed is considered WS).   
+            448 - 576 pixels for FS movies (Only 4:3 images).                
+   - Height and Width: Must be a multiple of 16.                             
+   - Cropping is required to be the MAXIMUM possible (black borders must     
+     be cropped to their maximum). Over cropped releases are considered      
+     a technical flaw. Some movies present changing ARs, in that case the    
+     cropping applies only to the image that presents more pixels (Means     
+     that part of the movie will have bad cropping).                         
+   - Movie encodes must be within 5% of the original aspect ratio.           
+     Calculating AR % error: (Release AR - Original AR)/Original AR x 100    
+
+
+Subs, Interactive Menus, Trailers:                                         
+   - OPTIONAL (ONLY if all other requirements have been met).                
+
+
+Packaging:                                                                 
+   - All releases must be AVI, not BIN/CUE.                                  
+   - Must be packed with RAR and broken into 15 or 20 MB volumes.            
+     Releases that are more then 1 CD must have the RAR files broken into    
+     2 or more CD volumes.                                                   
+   - Compression is not allowed.                                             
+   - Recovery and MD5 record are recommended.                                
+   - Must have SFV included for each CD.                                     
+   - Must have NFO.                                                          
+   - NFO SHOULD INCLUDE:                                                     
+       Group name                                                            
+       Title                                                                 
+       Actual XviD release date                                              
+       DVD release date                                                      
+       Theatrical release date (US preferably)                               
+       Video size                                                            
+       Framesize/Aspect Ratio                                                
+       Audio bitrate                                                         
+       Video bitrate                                                         
+       Movie runtime/Length                                                  
+       IMDB/Amazon/Any other DVD site info link                             
+       Number of rars per CD (i.e. 50x15MB)                                                                                    
+
+Samples:                                                                   
+   - REQUIRED!                                                               
+   - 1 full minute in length and in a separate folder marked as 'Sample'.    
+   - MUST be taken from the movie - NOT encoded separately.                  
+
+                                                              
+Ci joint les team ayants participer à cette charte :
+
+CiNEMA 
+LOWIMDB 
+TeuB 
+VFC
+
+
+

@@ -1,0 +1,9 @@
+Changelog:
+----------
+
+New since 0.12:
+    - a bug in the adminport command parser was fixed, all commands are
+      working as expected again.
+    - a new adminport command "SITE LIST" was added. It shows all ftp-
+      and irc-bouncers which are currently configured.
+

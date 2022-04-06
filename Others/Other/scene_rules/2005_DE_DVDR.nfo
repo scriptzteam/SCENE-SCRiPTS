@@ -1,0 +1,193 @@
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoO
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+O.ffizielle D.eutsche D.VDR R.elease R.ules 2k5
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoO
+
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+1. FESTLEGUNGEN ZUM RELEASE:
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+1.1 Muss vorhanden sein:
+------------------------
+
+1.1.1.   Original-Menue (entfernte Links totlegen - d.h. entweder
+         duerfen sie nicht mehr mit dem Cursor anwaehlbar sein, oder
+         beim Druecken passiert nichts)
+1.1.2.   Hauptfilm
+1.1.3.   2-Sprachig (deutsch/englisch Dolby Digital)
+1.1.3.1. Ab 140min Lauflaenge kann das Release 1-sprachig sein
+         um eine bessere Bildqualitaet zu erzielen. Bei Erreichen
+	 guter Bildqualitaet ist Duallanguage aber weiter erlaubt.
+1.1.4.   DTS Tonspur MUSS nicht vorhanden sein, kann sofern die
+         Bitrate nicht zu gering ausfaellt (siehe 2.) vorhanden sein
+1.1.5.   Alle Subtitles
+
+
+
+1.2 Kann vorhanden sein:
+------------------------
+
+1.2.1.   Extras
+1.2.2.   Sonstige Tonspuren
+         (das Vorhandensein ist aber NIEMALS Proper-Grund und wird
+         als DUPE gewertet solange das Erst-Release unnuked ist)
+         
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+°°°°°°°°
+2. FILM:
+°°°°°°°°
+
+
+2.1.     Sofern alle in 1.1. genannten Voraussetzungen erfuellt sind
+         und der Videostream ohne Neu-Enkodierung auf eine DVDR passt
+         (d.h. wenn die unter 1.1. beschriebenen Daten nicht auf 
+         4,37GB passen), duerfen nicht zusaetzliche Extras oder 
+         Tonspuren hinzugefuegt werden, die eine Neu-Enkodierung 
+         erforderlich machen wuerden.
+
+2.2      Videokodierung
+2.2.1.   CCE ab Version 2.5x
+2.2.2.   Der Film MUSS bis 120 Min. mit 4 Passes und ab
+         120 Min mit mindestens 5 Passes enkodiert werden.        
+2.2.3.   Die oddrr-2k5 schreiben keine minimale AvgBitrate vor.
+         Sie sollte entsprechend der Komprimierbarkeit und der Groesse
+         des Original-Video-Streams gewaehlt werden um keinen
+         bad.quality Nuke zu provozieren. Die Angabe der Bitrate sowie
+         der benutzten Passes ist in der NFO zu vermerken!!!
+
+2.3      Serien DVDs
+2.3.1    Diese enthalten oft nur 2.0 ger+engl Ton und keine 
+         Extras (vgl. 1.1.3.1.).
+         Eine serien-DVD9 sollte nur in Ausnahmefaellen als 2-DISC DVD5
+         released werden (zb. wenn das Bild sichtbar auf laengere zeit 
+         grosse Artefakte enthaelt).
+2.3.2    Sollte eine Group eine Season beginnen, gelten alle anderen
+         Release dieser Season durch eine andere Group als Dupe.
+         Bei Start einer Season darf es maximal 6 Wochen dauern bis alle
+         DVDs dieser Season released sind, ansonsten verfaellt der Dupe.
+         Zwingend fuer den Start einer Season ist DISC 1!!!
+2.3.3    Bei Rls und Split auf 2 DVDs sollte Disc 1 das Originalmenue
+         enthalten, Disc 2 sollte fuer den Fall, dass alle Serien in
+         einem PGC sind ein selbstgefertigtes Menue enthalten, in dem
+         jede Episode einzeln anwaehlbar ist. Im Falle mehrerer PGC
+         muss auch Disc 2 das Originalmenue enthalten.
+
+2.4      Groesse einer DVD-R
+2.4.1.   Sofern Neukodiert, muss das Release (d.h. alle Dateien
+         im Image zusammen, nicht das Image-File selber) insgesamt
+         min. 4,24 GB (= 4.550.000.000 Bytes) enthalten, was
+         91 Files zu 50.000.000 Bytes entspricht (und ca. 143 MB 
+         Leerraum auf der dvdr).
+2.4.2.   Ausnahme sind DVD5 die als COMPLETE (vgl. 3.6.) kleiner sind.
+
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+°°°°°°°°°°°°°°
+3. BETITELUNG:
+°°°°°°°°°°°°°°
+
+Titel.Titel.Titel.German(.DL|.ML)(.SUBBED).YYYY(.ANIME|.HENTAI|.DOCU|.XXX)(.xDISC|SyyDxx|SyyDxxSzz)(.COMPLETE).PAL(.PROPER)
+.DVDR(.MDVDR)(.INTERNAL)-GRP
+
+3.1.     Titel.Titel.Titel:
+         Ist der deutsche Name des Films - hierbei werden "-" ersetzt
+         durch "." (bsp "Otto-Der Film" wird zu "Otto.Der.Film")
+
+3.2.     German(.DL|.ML):
+         Gibt die Anzahl der Sprachen an. (nur ger. Audio: German,
+         2-Sprachig: German.DL, 3- und Mehrsprachig: German.ML)
+         Bei COMPLETE entfaellt die Bezeichnung "DL/ML" (weitere Angaben
+         gemaess NFO)
+
+3.2.1.   German(.SUBBED):
+         Wenn der Film nur in Originalsprache inkl. deutschen Subs vorliegt (Omu).
+
+3.3.     YYYY:
+         Gibt das Produktions-Jahr (imdb-date) an.
+
+3.4.     ANIME|HENTAI|DOKU|XXX:
+         Kennzeichnung bei Anime/Hentai/Doku/XXX etc. Filmen
+3.4.1.   Bei der Bezeichnung .MDVDR entfaellt das .DVDR im Releasetag und wird
+         an deren Position gesetzt.
+3.5.     xDISC|SyyDxx|SyyDxxSzz:
+3.5.1.   Sofern das Release aus mehr als einer DVDR besteht wird
+         hier mit "x" die Anzahl der DVDs angegeben. (bsp: 2DISC)
+3.5.2.   Sofern es sich um eine Serien-DVD Release handelt wird
+         die Season und die Disc angegeben (bsp: S01D01, S03D05)
+3.5.3.   Bei einer 2-seitigen, 1-schichtigen Serien dvd wird zusaetzlich
+         auch noch die Seite angegeben (bsp: S01D01S01, S01D01S02)
+
+3.6.     COMPLETE:
+         Wenn die DVD komplett inkl. aller Sprachen und Extras uebernommen
+         wurde. Das gilt auch bei reencode (weitere Angaben gemaess NFO)
+
+3.7.     PROPER:
+         Wenn es sich um ein PROPER-Release handelt
+         (Ein Proper MUSS innerhalb eines Zeitraumes von 30 Tagen gebracht
+         werden, falls das zu propernde Release nicht schon vorher genuked
+         worden ist)
+ 
+3.8.     INTERNAL:
+         Nur bei internal Releases zu verwenden
+         (Internal Dupes duerfen nicht ohne Approval getraded werden sonst
+         gelten sie als offizieller Dupe und werden genuked).
+
+3.9.     GRP:
+         Der Gruppenname
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+
+°°°°°°°°°°°°°°°°°°
+4. BESONDERHEITEN:
+°°°°°°°°°°°°°°°°°°
+
+4.1.     Region Free, PUP:
+         Das DVD-R Release muss Region-Free sein und die PUPs
+         entfernt werden. Region-Free heist es muessen Region 1-6
+         aktiviert sein. Region 7 darf nicht aktiviert sein, da
+         dies bei wenigen DVD-Playern Probleme macht.
+
+4.2.     Format:
+         Die DVD-R muss als .img File erstellt werden.
+
+4.3.     Packen:
+         DVD-R releases werden mit WinRAR in Files mit einer
+         Groesse von 50.000.000 Bytes "gestored" (d.h. Compression
+         Ratio 0 - "rar -m0 a foo.rar foo.img")
+
+4.4.     Sample: 
+         Das Sample sollte zwischen 30-60 Sekunden lang sein und 
+         45MB nicht uebersteigen. Es ist Empfehlenswert ein zweites
+         Sample vom Original beizulegen welches an gleicher Stelle
+         erstellt wurde.
+	 Ein Proper MUSS immer drei Samples enthalten: Original, 
+         Own Reencode und das zu propernde, welche alle an derselben
+         Stelle zu erstellen sind und nicht mehr als 30 Sek/Sample
+         laufen sollten. Bei Serien DVDs ist ein zusaetzliches Sample
+         vom Original pflicht.
+
+4.5.     PROPER Releases:
+         NUR zulaessig, wenn das Erst-Release technische Fehler
+         aufweist bzw Verstoesse gegen die ODDRR beinhaltet und
+         aus diesem Grunde geNUKED wurden.
+
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°
+-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-
+             an der Ausarbeitung wirkten mit:
+  CDD, c0nFuSed, DAW, DFE, DFL, DLRG, DRABBiTS, FAI, GDC, 
+ GMI, GOTHAM, HS, LC, MOS, OMERTA, SiECHTUM, STRAiGHT, TM, 
+                    TM3, VSN, VTK, ZZG 
+
+                letztes Update: 20.03.2005
+-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-:-
+°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°

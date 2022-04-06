@@ -1,0 +1,17 @@
+-----------------
+SITETiNG BNC v1.0
+-----------------
+
+
+### Installation ###
+Edit sitebnc.tcl and change it to fit your needs.
+Do the same with sitebnc.sh.
+Copy the sitebnc.tcl to your eggdrop's script directory.
+Add "source scripts/sitebnce.tcl" to your eggdrop config file.
+Copy sitebnc.sh to your glftpd bin directory and chmod a+x.
+Add a crontab. My line locks like this. It will run every 10 minutes.
+0,10.20.30.40.50 * * * * /glftpd/bin/sitebnc.sh
+Then it's done. If your bot was running rehash it.
+
+APPROVE (C)  wh3e@hugbox.net / vip3r@i386.net
+ 

@@ -1,0 +1,16 @@
+MultiSiteSync (MSS) (GL1&2)
+
+Description: This is not for the faint of heart. Its a number of scripts, ment for 
+people who want to run a multisite enviroment with the same userbase. 
+It allows you to have one hub server and unlimited slave servers. You make any and 
+all changes on the hub server and it is replicated onto the slave(s). Requires some
+knowledge of what the heck you're doing. Credits and stats are seperated. Credits 
+can be moved manually between sites by users and stats can be moved back to the hub
+server for easy trials etc etc. Check the readme in the package for more info.
+
+This baby has been tested on RedHat, Mandrake, Debian, Slackware, Fedora, FBSD 5.1,
+5.2 and Gentoo.
+
+Author:   Turranius
+Version:  2.26
+Added on: 23-Apr-2003

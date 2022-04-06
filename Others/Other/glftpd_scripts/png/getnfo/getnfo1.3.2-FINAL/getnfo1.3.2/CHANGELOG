@@ -1,0 +1,20 @@
+getnfo 1.3.2 | 02/03/02
+
+- Making first changelog, wiii :)
+- Fixed the "" bug. When " occures in a plot, the TCL would hang.
+- Fixed the "" bug #2. No longer need the "" in imdburl.log
+- Fixed ignoredirs, now it works ok
+
+getnfo 1.3.1 | 02/02/07
+
+- Search function now improved
+- Added so user can choose .message file to output to
+
+getnfo 1.3.0 | 02/02/01
+
+- FINALLY we got rid of that ugly crontab thing, added a eggdrop TCL instead
+- Added a trigger function (-f) in shell mode.
+
+getnfo 1.1 | 02/01/28
+
+- First official version, didnt work great at all :)

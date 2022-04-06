@@ -1,0 +1,37 @@
+SITE DUEL v4.0 by Pentagon
+Adds Duel and Russian Roulette as site commands
+
+# site duel <user>
+# site duel list
+#
+# configure for chrooted running and make sure /glftpd/tmp is writable.
+# this isn't perfect and could be speeded up in another language but its 
+# all ya getting from me :D feel free to modify the code i ran outta ideas :P
+#
+# INSTALL
+# make sure the binaries (grep cat expr cut etc..) are in /glftpd/bin
+# make sure your /ftp-data/users is writeable 666/777 which ever works best
+# tar zxvf sd.tar.gz
+# gcc -o /glftpd/bin/random.c random;chmod a+x /glftpd/bin/random
+# cp duel.sh /glftpd/bin;chmod a+x /glftpd/bin/duel.sh
+# add the usual crap to dZSbot.tcl i don't support anything else.
+# 
+# set msgtypes(DEFAULT) "SDUEL"
+# set chanlist(SDUEL)   "$sitechan"
+# set disable(SDUEL)    0
+# set variables(SDUEL)  "%u1 %u2 %msg"
+# set announce(SDUEL)   "(\002DUEL\002) - \[%u1 vs. %u2\] %msg"
+# 
+# and glftpd.conf
+# 
+# site_cmd        DUEL            EXEC    /bin/duel.sh
+# custom-duel     !8 *
+#
+# BACKUP YOUR USERS BEFORE RUNNING THIS SCRIPT!
+# BACKUP YOUR USERS BEFORE RUNNING THIS SCRIPT!
+# BACKUP YOUR USERS BEFORE RUNNING THIS SCRIPT!
+# the script has been tested but just to be safe...
+#
+# ««§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»«§»»
+#
+# config start.. (configure for chrooted (/glftpd) running)

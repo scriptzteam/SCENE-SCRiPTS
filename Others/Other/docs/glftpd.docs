@@ -1,0 +1,3045 @@
+please read changelog for updates, not all changes are in this file yet
+if you find something please let us know
+
+glFTPD Docs for v2.00
+	Original docs composed by icetrain
+	Maintained by: Archimede #glftpd (efnet)
+	Maintained by: Usurper 
+	Maintained by: Bloody_A #glftpd (efnet)
+
+NOTE:   These docs are provided to you in respect that you know linux basics.
+	If you come in #glftpd without reading these docs or not knowing LINUX
+	very well, you WILL get flamed and this is your own fault. We in
+	#glftpd do not have enough time to support glftpd AND linux. Be smart
+	and buy a LINUX book..it does help a lot.
+
+NOTE:  If you have a suggestion or correction, please feel free to let us know.
+
+  This document describes how to install, and covers some frequently asked
+  questions and answers regarding the glftpd server.  They are compiled
+  from various sources including the glftpd Forum <http://www.glftpd.com>
+  and the glftpd IRC channel on efnet (#glftpd).
+
+  The latest version of this document can always be found at
+  http://www.glftpd.com.
+
+  Please read the changelog and faq as well as looking at this document.
+
+
+
+
+Table of contents:
+
+I.	Installation
+II.	Glftpd.conf
+III.	Complete list of site commands.
+IV.	Color cookies
+V.	Other cookies
+VI.	Glftpd strings
+VII.    Glftpd directory & file structure
+
+
+
+
+PREREQUISITES:
+
+You need the following to successfully install and use glftpd:
+- root password
+- System V ipc support in kernel (shared memory)
+- Disk drive with UNIX-like file system (like ext2/ext3 in linux)
+
+
+
+
+
+
+.------------------------.
+| 1. Installation        |
+`------------------------'
+
+
+
+
+
+*** NOTE: installgl.sh is an install script that eliminates the following
+	tasks. Try using that before attempting to do this by hand.
+*** NOTE: If running this script more then once you will get an error, please
+	do the following to remove it and start over again:
+	    edit /etc/inetd.conf, /etc/services and remove all glftpd instances.
+	    rm -rf /glftpd /etc/glftpd.conf
+
+1. Extract the archive to your root directory.
+   (tar zxvf glftp-XXX.x.xx.tgz -C /)
+
+*** NOTE: Steps 2-5 are only needed for scripts, like zipscript, to work.  They are not necessary for glftpd itself.  Also, if your rootpath is /, you can skip these steps.
+
+2. Copy the required library files and the 'ldconfig' utility to your ftp-structure.
+   (cp /lib/* /glftpd/lib; cp /sbin/ldconfig /glftpd/bin)
+
+* NOTE: Depending on your OS, your libs maybe be in /usr/lib or other directories
+
+3. Now do this:
+   (cd /glftpd/dev; mknod null c 1 3; chmod 666 null)
+   (cd /glftpd/dev; mknod zero c 1 5; chmod 666 zero)
+* NOTE: This is the syntax for linux; other OSes may have different syntax. Do ls -l /dev/null on your box to see which numbers you need (exmp: fbsd uses "2 2" for null and "2 12" for zero, instead of "1 3" and "1 5")
+
+4. Create 'ld.so.cache' in your ftp-structure.
+   (chroot /glftpd /bin/ldconfig)
+
+   If this doesn't work, try: chroot /glftpd /bin/ldconfig /lib
+   (some systems, like OpenBSD, use /usr/lib as default path). You may also
+   need to copy ld.so to /glftpd/usr/libexec on OpenBSD and similar - see where
+   that file is on your system and replicate this path under /glftpd.
+
+   NOTE: /glftpd/etc/ld.so.cache is what this is under LINUX. Other OSes use other files, for example
+         OBSD uses /glftpd/var/run/ld.so.hints, so you need to create /glftpd/var/run. Do a
+         "man ldconfig" and check what it creates, then create that directory under /glftpd
+         before performing step #4.
+	
+* NOTE: This will only work right if the libs are copied right. You can be anywhere when performing
+* this task, a good idea would be to cd /glftpd/etc and ls after you have typed this command to make
+* sure that ld.so.cache is there.
+
+   You might need to create ld.so.conf in /glftpd/etc and put "/lib" inside.
+	
+   You will probably get an error-message like this, just ignore it:
+   bin/ldconfig: warning: can't open /usr/lib (No such file or directory), skipping
+   Ignore other errors that mention missing files or symlinks
+
+   Check that '/glftpd/etc/ld.so.cache' (or whatever it is on your OS) exists,
+   if not go back to step 2 and try again.
+
+5. cp /bin/sh /glftpd/bin; cp /bin/kill /glftpd/bin; 
+   cp /bin/cat /glftpd/bin; cp /bin/echo /glftpd/bin;
+   cp /bin/grep /glftpd/bin; cp /bin/unzip /glftpd/bin
+   cp /usr/bin/gunzip /glftpd/bin; cp /bin/bash /glftpd/bin
+
+   Make sure all permissions are set correctly in '/glftpd/bin' and
+   that your incoming directory is world-wide-read/writeable.
+   (chmod -R 755 /glftpd/bin)
+   (chmod -R 755 /glftpd/lib)
+   (chmod 777 /glftpd/site/incoming)
+
+* NOTE: If using bkpack you will need to follow what he has written in the faq.
+
+6. Copy the config file to '/etc' and edit it to your likes.
+   More about this below.
+
+*** NOTE: DO NOT USE NOTEPAD OR MS-WORD TO EDIT THIS FILE ***
+*** NOTE: Also get into the habit of using tabs for spaces ***
+   (cp /glftpd/glftpd.conf /etc/glftpd.conf)
+
+*VERY IMPORTANT* glftpd.conf is your server configuration file. you MUST edit this!!!!
+* NOTE: READ all of this file..it has many variables that are easy to follow.
+
+7. Add the following line to '/etc/inetd.conf':
+   glftpd stream tcp nowait root /usr/sbin/tcpd /glftpd/bin/glftpd -l -o -i
+   (If your system uses xinetd instead of inetd, like Readhat7, you need to add an entry
+    for xinetd instead. There is an example entry in README.xinetd)
+
+   *NOTE* If you do not use tcpd then you need to use a bogus flag ('-' isn't
+   needed in front) to make the first real option work (this is usually -l, so
+   without the bogus flag logging to glftpd.log will not work).
+   A good idea is to use the word 'glftpd':
+   glftpd stream tcp nowait root /glftpd/bin/glftpd glftpd -l -o -i
+
+   If you ARE using tcpd, make sure you modify hosts.allow to allow connections
+   to glftpd (something like GLFTPD: ALL)
+   
+   The following switches can be used in inetd.conf:
+   -B            This will only allow connections from the port bouncer
+                 (connecting from localhost [127.0.0.1] will still work)
+   -b            This allows connections from a port bouncer or direct connections.
+   -e            This will use european week (Mon-Sun) when modifying stats
+   -l            Logs new dirs,deleted dirs,nukes,unnukes,logins,logouts to
+                 /glftpd/ftp-data/logs/glftpd.log and login.log in ascii.
+   -L            Works just like -l, but it will always log creation and
+                 deletion of directories to glftpd.log. The -l option only logs
+                 those if they are in dirlog path (specified in glftpd.conf).
+                 Most likely, you want to use -l, this is for special cases.
+   -i            Logs uploads to /glftpd/ftp-data/logs/xferlog.
+   -I            Disables ident lookups. Note that if you use tcpd, it will do
+                 an ident lookup independently from glftpd.
+   -o            Logs downloads /glftpd/ftp-data/logs/xferlog. 
+   -d            Logs connections and all user commands to system logs as debug
+                 (usually /var/log/debug, but refer to your /etc/syslog.conf).
+   -r <file>     Use alternate glftpd.conf file.
+   -t <seconds>  Sets the default idle timeout period.
+   -T <seconds>  Sets the maximum idle timeout period a user may select using
+                 the 'site idle' command if he/she doesn't have a personal
+                 idle time set (site change user idle_time xx).
+   -n <#>        Number of DNS retries, 0 disables DNS resolving.
+   -s <path>     The full path to the glstrings binary (default is /glftpd/bin/glstrings.bin)
+                 Example: -s/home/glftpd/bin/myownglstrings.bin
+   -x		 makes glftpd only log ips on errors. (by default everything will be logged)
+   -X		 forces glftpd not to log ips (not even for error messages in login.log)
+
+
+   Add the following line to '/etc/services'
+   glftpd	<Port you want glftpd on>/tcp
+
+* NOTE: e.g.: glftpd 8000/tcp # Glftpd
+* NOTE: Do not initially put your ftpd on port 21...stick it on a really high port so you know it works *
+* NOTE: DO NOT PUT THE PORT RIGHT NEXT TO ANOTHER PORT, SPACE THEM OUT BY AT LEAST 5-10 PORTS *
+
+7.1 Read README.TLS, and set your certificate
+
+8. Restart INETD.
+   (killall -HUP inetd) or (kill -HUP <PID of inetd>
+*** NOTE: This is only needed when modifying inetd.conf, glftpd.conf has nothing to do with inetd.  For changes in glftpd.conf to take effect, you need to relogin.
+
+9. Login to your newly created site.
+   Login/Pass = glftpd/glftpd
+   Please note that you must use ftp to localhost since the ipmask
+   on the predefined account 'glftpd' is *@127.0.0.1.
+   (ftp localhost <Port you have chosen>)
+
+### NOTE: For SECURITY reasons you will either need to delete this account or change the ip and password.
+
+*** If you are getting a "421 Service not available" message or something similar, you didn't install glftpd correctly.  Check your system logs (you might need to configure your syslog to start logging errors and warnings - i believe redhat doesn't do that by default!, try man syslog.conf), glftpd logs, permissions, config file settings, and try installing again.
+
+10. Now add your own account and enable the siteop flag.
+   (site adduser <user> <password> <ident@ip>)
+   (site change <user> flags +1)
+
+*** NOTE: The 1 flag is NOT god mode...you must add any flags you wish to perform, those flags are listed later in this doc.
+
+11. Set up a crontab entry for root to run the included 'reset' bin
+	every night at midnight.
+	Sample Entry.
+	0 0 * * *       /glftpd/bin/reset
+
+	(Reset is a binary that resets users' daily/weekly/monthly
+	 upload/download/nuke statistics. Try reset -? for help. You do not
+	 normally need any arguments, reset will make it's own decision on
+	 what to reset based on the system date. If you use switches to reset
+	 specific stats, this automated resetting will not kick in.)
+
+12. Logs
+
+	Log rotation won't be covered here - you should know how to do that.
+	However, there are 2 utils that you should regularly use to keep
+	your dirlog in shape (list of directories on site).
+	- glupdate, to re-add moved directories to dirlog, or to add new
+	  directories that were not created through glftpd.
+	- olddirclean (olddirclean2 as of Nov 2000), to remove old entries from
+	  your dirlog (when you move/delete directories) and to sort your
+	  dirlog after glupdate runs.
+	For more info, look in /glftpd/bin/sources.
+
+
+
+
+
+
+.------------------------------------.
+| II. Glftpd.conf                    |
+`------------------------------------'
+
+
+
+
+
+NOTE: All these variables should be in lower case in the config file -
+      if you make them upper case glftpd won't see them. Order doesn't matter,
+      you can add these anywhere in the file.
+
+SPECIAL CHARACTERS:
+
+	* If you want to use a space in an argument, you need to use
+	[:space:] instead.  Glftpd will convert it to ' '.
+
+	* When glftpd sees the character #, it will replace it with null
+	(meaning everything that follows it will be disregarded). All
+	comments should be done this way.
+
+	* To represent the # character, use [:hash:].
+
+	* You can use "include" to split the main config file into several
+	pieces, kind of like it's done in C (but without the # in front). Just
+	add a line "include /path/to/config.file" to glftpd.conf.
+
+RECOGNIZED SETTINGS:
+
+ifip IP [IP2 IP3 ...]
+elseip
+endifip
+	Settings in glftpd.conf can be conditional - depending on the IP mask
+	of the person connecting. The "ifip" setting takes one or more IP
+	masks. If the connecting IP matches one of those masks, settings that
+	follow (on lines below) will be used, until "elseip" or "endifip" is
+	encountered. If the IP does not match any of the masks, settings that
+	follow it will be ignored. If "elseip" is encountered, settings that
+	follow it will be used instead.
+
+	Nesting in the elseip part is ok, but I wouldn't recommend nesting in
+	the if part, it might screw up.
+
+	Examples: this was mainly created for the pasv_addr setting, so that
+	people connecting locally could have a different pasv_addr than people
+	connecting from the Internet, but it can be used with any settings:
+
+	ifip 192.168.* 10.*
+	  pasv_addr 10.10.10.1
+	  sitename_long MyLanSite
+	elseip
+	  ifip 127.0.0.1
+	    include /glftpd/etc/myspeciallocalsettings.conf
+	  elseip
+	    pasv_addr 128.1.2.3 1
+	    sitename_long MyInternetSite
+	  endifip
+	endifip
+
+
+ascii_downloads <size> [<mask1> <mask2> ...]
+	<size> is the maximum byte size that can be downloaded in ASCII mode.
+	Set it to 0 or any string (like 'disabled') to disable size check.
+
+	<mask> is file masks which are allowed for ASCII mode. Files that
+	don't match them have to be downloaded in BINARY mode. Omitting this
+	setting is the same as using *, meaning all files will be downloadable.
+
+	Exmp: ascii_downloads 20000 *.[Tt][Xx][Tt] *.[Dd][Ii][Zz]
+	This will only allow downloading of .txt and .diz files that are 20
+	thousand bytes or smaller in ASCII mode.
+
+	Note: directory listings are not affected by this.
+
+
+shutdown flag|-user|=group [flag|-user|=group ...]
+	Shuts glftpd down for everyone EXCEPT the people specified on the right
+
+	'shutdown 0' is the same as 'shutdown *'
+	glftpd will display the /ftp-data/text/shutdown file to users that
+	are denied login because of this setting.
+
+	exmp: shutdown 1 =STAFF
+	this will only allow users with flag 1 and members of group STAFF to
+	log in
+
+	exmp: shutdown !*
+	this will not allow anyone to log in
+
+
+free_space xxx
+	This will prevent people from uploading if your free space on current drive is
+	equal to or smaller than xxx megs.
+	ex. Without this, if there is only 1 meg of free space and someone is uploading
+	files 3 megs in size, all of them would fail the test and be deleted, resulting
+	in a big waste of bandwidth.
+
+use_dir_size k|b|m path1 [ path2 path3 ... ]
+	This will make glftpd show directories' size (the total size of all
+	files in that directory), instead of the number of bytes the directory
+	itself takes up, when a user does a "LIST".
+
+	k = kilobytes, b = bytes, m = megs
+
+	*NOTE* For slow processors/hard drives, this might cause slow dir listing.
+
+	path1 is mandatory - it should be the path for which this option will
+	work. You may specify several paths. No wildcards. You don't even need
+	full paths, instead of /site you can use /si and it will work for /site
+	as well as every other directory starting with /si, and every
+	subdirectory of that directory.
+
+	exmp: use_dir_size k /
+	This will show directory size, in kilobytes, for every directory on
+	your site.
+
+	exmp: use_dir_size m /site/incom /site/priva
+	This will show directory size, in megabytes, for every directory that
+	begins with "/site/incom" and "/site/priv", like /site/incoming,
+	/site/incoming/whatever, /site/private, /site/privateer, etc.
+
+timezone +-#
+	This modifies the timezone + or - for different regions.
+	eg: timezone -4 will show the time 4hours behind what it was showing originally
+
+	NOTE: this command has been reported to slow down glftpd for some people - I have no
+	idea why, it works fine for most.  Because of this, I decided not to bother fixing
+	a bug that it has - new files/directories will have the system time, not the
+	timezone-corrected time.
+
+	It's best to use the 'localtime fix' instead of this setting - search the FAQ
+	for how to do that.
+
+color_mode 0|1
+	This option determines whether colors are present in directory listing
+	when a user has the color flag.
+
+	Use "color_mode 0" to prevent glftpd from using color codes in directory
+	listing. The control connection (the dialog between client and server)
+	will show colors when the user has the color flag turned on.
+
+	Use "color_mode 1" to make glftpd act like before, using colors both in
+	the control connection and directory listing. This is the default
+	action.
+
+sitename_long <name>[:space:]<name>
+	Your site's name.
+
+sitename_short <abb>
+	The abbreviation for your site.
+
+login_prompt <string>
+	String to replace the standard login prompt.
+
+rootpath <path>
+	The path where all your system directories reside. (bin, etc, lib...)
+
+	Glftpd will chroot itself to this directory when a user connects, meaning
+	nothing above this directory can be accessed through ftp. If no path is specified
+	glftpd will assume /glftpd as its rootpath.
+
+reload_config <path>
+	The config file used when we recieve a SIGHUP signal.
+
+	Glftpd will reload the config file when it recieves the SIGHUP signal. This
+	will only happen if there is a reload_config line in the config file. The
+	path specified is relative to the rootpath and to make this work the 
+	file must be within the rootpath. 
+
+	NOTE: When a bad config path is specified and glftpd gets a SIGHUP signal 
+              the user will be logged out with an error telling its impossible to
+	      read the config file.
+
+master <user> [<user> ...]
+	Here you can specify the master(s) of the site. The master(s) can change
+	anyone's flags, including all siteops.
+
+ipc_key #
+	Glftpd uses shared memory, so it needs to use an ipc_key.  The default
+	key that glftpd uses is "0x0000DEAD".  If you want to run another
+	glftpd server, you need to define a different key for it in its own
+	config file.  The key can be any 8-digit hexadecimal string, like:
+	0x01234567, 0xDEADBABE, 0xBEEFBABE, 0xBADC0FEE, etc.
+
+	If you're using ftpwho.c, it's ipc key will also need to be modified.
+
+secure_ip <min num of fields> <nnhostname> <need ident?> <flags/=groups/-usernames>
+	Glftpd will not allow users to add an IP address that doesn't pass these rules.
+
+	<min num of fields> specifies the minimum number of fully numeric fields
+	that need to be in the IP address.
+	<nnhostname> can be 1 to allow hostnames (non-numeric IP addresses), or 0 to disallow them.
+	<need ident?>, if set to 1, will require a valid ident for this IP.
+	
+	ex. secure_ip 2 1 0 =STAFF 1
+	this will allow STAFF and siteops to add numeric IPs with 2 or more fully
+        numeric fields, and it will let them add hostnames, as in a@b.com. A
+	valid ident will not be required.
+
+	ex. secure_ip 3 0 1 *
+	this will allow everyone else to add IPs with 3 or more fully-numeric
+	fields and it will not allow anyone to add hostnames. A valid ident
+	will be required.
+
+	You can have several secure_ip entries; glftpd will go through all of
+	them. If a match for the user adding the IP is found in the flags,
+	users and groups on the right, and the security settings allow the IP,
+	the search will stop. Otherwise, glftpd will continue until either
+	another rule allows the IP or there are no more rules. In the second
+	case, if there were any rules that matched the user but denied the IP,
+	the IP will be denied, otherwise it will be allowed.
+
+secure_pass <mask> <flags/=groups/-usernames>
+	Glftpd will not allow passwords that do not match <mask>.
+	
+	The mask's length sets the minimum password length.  You can also specify the
+	minimum number of capital and lowercase letters, numbers, or "other symbols".
+
+	The '.' is a placeholder to "fill in" to the minimum length you want.
+
+	You can use any letter, number, or "other character" (remember, '.' has a
+	special meaning) in this string.
+
+	ex. "secure_pass Ab1... *" will only allow passwords 6 characters or longer
+	that contain at least one capital letter, one lowercase letter, and one number.
+
+	In this example, everyone who changes a password (through either "site passwd" or
+	"site chpass" will have to stick to this mask.  If you replace '*' with flags,
+	groups, etc, only users that match them will be forced to stick to this rule.
+	
+	You can have multiple secure_pass rules; if the first rule's
+	permissions don't match the user, glftpd will go on to the next rule.
+	If they do match, but the password does not meet the security
+	requirement for that rule, glftpd will try other rules, until either a
+	rule is found that matches the user and allows the password, or there
+	are no more rules. In the second case, if there were any rules that
+	matched the user but denied the password, the password will be denied,
+	otherwise it will be allowed.
+
+	ex. secure_pass ZZf3$. !1 !=STAFF *
+	This will force everyone but siteops and members of STAFF to have passwords at
+	least 6 characters long, with at least 2 upper case letters, one lower case letter,
+	one digit, and one "other character".
+
+datapath <path>
+	The path where you keep all data-files (default ftp-data).
+	This is relative to your rootpath.
+	
+	If your rootpath is /glftpd, this should be /ftp-data.
+	If your rootpath is /, this should be /glftpd/ftp-data.
+
+pwd_path <path/file>
+	The path of where you want glftpd passwd file stored.
+	(default is /etc/passwd, but for rootpath / set this to /glftpd/etc/passwd).
+
+grp_path <path/file>
+	The path of where you want your glftpd group file stored.
+	(default is /etc/group)
+
+botscript_path <path>
+	The path to your bot script.
+
+	The botscript will be executed after a directory is created, deleted,
+	nuked or unnuked.
+	You can use it to signal your bot to 'announce' the newest directory.
+
+bouncer_ip XXXX [ XXXX ... ]
+	..where XXXX is either an IPv4 address or a hostname.
+
+	If you have (an) ftp bouncer(s), you have to put their IP(s) here so that glftpd
+	knows when the connection is from a bouncer and when it's from a regular user.
+
+	exmp:
+	bouncer_ip 1.2.3.4 another.bouncer.dynamicip.net static.bouncer.com
+
+speed_limit <path> <dl_limit> <up_limit> [flags/=groups/-usernames]
+        Global bandwidth limit based on directory (first match is the one being used)
+	The number is in bytes, so 50000 is 50 thousand bytes per second (almost 50K/s)
+
+        The third argument is the familiar X (flag), -user or =group.
+        If you have multiple speed_limit rules, first path/permission match decides
+        which rule is active.
+
+        exmp: speed_limit /site/Incoming* 150000 0
+              speed_limit /site/Archives* 50000 0 1
+              speed_limit /* 200000 0 =group -user
+        (0 = unlimited)
+
+sim_xfers max_downloads [max_uploads]
+	Global setting controlling maximum simultaneous downloads and uploads
+	on the whole site. -1 means unlimited.
+	*NOTE* Users with the EXEMPT flag will not be affected, they can
+	download even if this limit is reached.
+
+	exmp: sim_xfers 10 -1
+	This will only allow 10 downloads at a time. If a user tries to
+	download something and there are already 10 other downloads in
+	progress, he/she will receive an error message.
+
+calc_crc [<filemask>|<path>] ...
+	This is for on-the-fly CRC checking. It can take multiple arguments.
+
+	You can use filemasks or paths or you can mix them.
+	exmp: calc_crc *.rar /site/rars/games/* *.[Mm][Pp][3]
+	This will calculate CRC for all rars, all files uploaded to the
+	/site/rars/games directory (and its subdirectories), and all mp3s,
+	including different cases (like .MP3 or .Mp3).  The CRC will be passed
+	to zipscript as the third argument.  If you upload a file that does not
+	match any mask listed and is not in any path listed, '000000' will be
+	passed to zipscript.
+
+xdupe filemask1 [filemask2 filemask3 ...]
+	If the user turns x-dupe on, only files which match any of the filemasks
+	will be reported.
+
+	ex. filemask *.zip *.r?? *.gz *.tgz
+
+	This will report zips, rars, gzips and gzipped tarballs on the x-dupe line.
+
+mmap_amount <#>
+	# can be a number from 1 to 50.  It represents the size (in MB's) of files being 
+	downloaded to keep in memory (a little faster download).
+        The default is 4 (files smaller than 4 megs are kept in memory during download)
+
+	If you have little memory and big files, setting this to a low number may improve speed.
+
+dl_sendfile <#>
+	This option determains if we should use the zerocopy systemcall sendfile() on systems
+	where this is available. This option overrules mmap_amount which is one of the 3
+	possible downloading methods, being: plain, mmaped and zerocopy.
+	If set to >0 this option is enabled, 0 or no line is disabled.
+	The number specifies size ( in kbytes) of block for one sendfile() system call. During the call
+        sharedmem (user info) is not updated, so for slower sites use smaller number !.
+
+	If user has speed rate limit or transfer is using SSL glftpd will automatically fallback
+	to mmap or normal upload.
+	
+	We strongly recommend you use this function unless you use a lot of speed limiting.
+
+	As of v2.0RC5 this option is enabled by default unless specified otherwise (with 512kb blocks)
+
+	NOTE: This system is not available on all operating systems, confirmed to support
+	this are Linux, FreeBSD, Solaris and AIX. Also, this is only available on plain
+	binary file transfers (no TLS/SSL).
+
+ul_buffered <#>
+	# can be a number from 0 to 50. It represents the size (in MB's) of the upload buffer
+	where the data read from the network is buffered to decrese disk writes. This option
+	should make uploads a little faster. 
+	When set to 0 or when no line is present this option is disabled and the data will
+	not be buffered.
+
+min_homedir <path>
+	You need this set to allow siteops to change users' home directories with "site change".
+	ex. min_homedir /site will allow homedir to be inside the /site dir but not outside.
+
+	NOTE: This setting has nothing to do with the actual users' homedirs,
+	it is a simple security setting to stop siteops from allowing people to
+	start in protected directories. To change actual homedirs, either edit
+	/glftpd/etc/passwd for existing users, or modify the HOMEDIR line in
+	/glftpd/ftp-data/users/default.* for new users. 
+
+valid_ip <ip> [<ip> ...]
+	If you have multiple IP's on your system, enter the ones you want glftpd to
+	listen on.  Only connections to the listed IP(s) will be allowed, so if you add
+	"valid_ip 127.0.0.1" to the config file, you will only be able to connect
+	by typing "ftp 127.0.0.1 port" or "ftp localhost port", but not if you try
+	"ftp 1.2.3.4 port".
+
+
+active_addr <ip/hostname>
+	Tells glftpd which interface to bind to when doing active file
+	transfers. Without this, glftpd uses the same interface that the user
+	connected to.
+
+	If you have multiple active_addr lines, glftpd will cycle through them
+	in a round-robin style each time the user transfers a file.
+
+
+pasv_addr <ip> [1]
+	Determines what IP/Host is used for passive mode.
+
+	If you want glftpd to bind to this interface (for example, if you use
+	more than one NIC in the same box and you want passive connections to
+	not use the default one), just do "pasv_addr x.x.x.x".  If you want
+	glftpd to only report this IP to the client but to bind to the default
+	interface (as in when your box only has an internal IP and you're using
+	NAT), do "pasv_addr x.x.x.x 1".
+
+	If you have multiple pasv_addr lines, glftpd will cycle through them in
+	a round-robin style each time a file is transferred using passive mode.
+
+
+pasv_ports <X1[-Y1]> [<X2[-Y2]> ...]
+	Causes glftpd to pick an open port between X and Y when making a
+	passive connection, instead of picking a random port.
+
+	If Y isn't present, glftpd will just use X. If Y is present, glftpd
+	will pick a random port between X and Y. If there are too many
+	errors trying to pick a port from the current range, glftpd will move
+	on to the next one.
+
+	Exmp: pasv_ports 10000-11000 20 21 22 23 80 110 1600-1610 35000-35050
+
+	Maximum is 50 arguments. It makes most sense to use the biggest range
+	as the first argument, since it'll be used most often.
+
+	You should have at least 10 ports per user, so if you have 30 users
+	online, this range should be 300, i.e. pasv_ports 2000-2300
+
+
+active_ports <X1[-Y1]> [<X2[-Y2]> ...]                                                                                              
+        Causes glftpd to pick an open port between X and Y when making a                                                            
+        active connection, instead of picking a random port.                                                                        
+                                                                                                                                    
+        If Y isn't present, glftpd will just use X. If Y is present,                                                                
+        glftpd will pick a random port between X and Y. If there are too                                                            
+        many errors trying to pick a port from the current range, glftpd                                                            
+        will move on to the next one.                                                                                               
+                                                                                                                                    
+        Maximum is 50 arguments. It makes most sense to use the biggest                                                             
+        range as the first argument, since it'll be used most often.                                                                
+                                                                                                                                    
+        You should have at least 10 ports per user, so if you have 30                                                               
+        users online, this range should be 300, i.e. active_ports                                                                   
+        13000-13300                                                                                                                 
+                                                                                                                                    
+        This option together with pasv_ports will control which ports that                                                          
+        will be used on the server by glftpd
+
+allow_fxp <yes/no> <yes/no> <yes/no> [flag|-user|=group]
+         downloads uploads  logging  permissions
+
+	Defaults are: allow_fxp yes yes no *
+
+	Fxp is an unofficial name for site-to-site transfers, where a user
+	can directly upload from, or download to, another ftp server. This
+	is done by "cheating" the ftp server, and using another server's
+	IP and port in the PORT command.
+	This setting can check whether the IP in the PORT command is the
+	same as the IP the user connected from. If it isn't, that means the
+	user is trying to establish a connection to another ftp server, and
+	he will be denied if he doesn't match permissions. This will also
+	check whether an incoming data connection, when using the PASV command,
+	is from the user or not (this is another way to cheat).
+
+	The third setting, if set to yes, will log all attempted transfers
+	(whether successful or not) to foreign addresses to sysop.log for
+	users that match permissions.
+
+	Permissions are the familiar X (flag), -user or =group.
+	If you have multiple allow_fxp rules, first permission match decides
+	which rule is active.
+
+	Exmp: allow_fxp no yes no =Leech 8
+	This will allow people in group Leech or anonymous users to upload from
+	foreign addresses (like other ftp sites), but will not allow them to
+	download to foreign addresses. All other users are allowed both.
+
+	Exmp: allow_fxp yes yes yes *
+	This will allow everyone to do site-to-site transfers, but it will log
+	each of them to login.log
+
+	Exmp: allow_fxp yes yes no =STAFF
+	      allow_fxp no yes no *
+	This will allow users in group STAFF to both download and upload using
+	fxp, and it will deny downloads for everyone else.
+
+
+welcome_msg <path/filename> <flags/groups/users>
+	A file displayed at login, after the user has entered his password.
+
+	If you have multiple lines, glftpd will try to match the user with
+	flags/groups/usernames on the right.
+	The first match will display the file (first argument) and stop the search.
+
+goodbye_msg <path/filename> <flags/groups/users>
+	Displayed at logoff.
+
+	Same as above.
+
+newsfile <path/filename> <flags/groups/users>
+	Displayed after the first cd-command you issue.
+
+	Same as above, but glftpd will NOT stop on the first match - all matches will
+	be displayed.
+
+banner <path/filename>
+	Displayed before the prompt for username.
+
+alias <alias> <directory>
+	Defines an alias for a directory.
+
+	ex. alias	util	/incoming/utils
+
+	This would allow a user to issue the command 'cd util' anywhere, and it
+	would take him to 'homedir/incoming/utils' where homedir is his home
+	directory like /site (in which case it'd be /site/incoming/utils).
+
+cdpath <cdpath>
+	Defines a search-path when changing directories.
+
+	ex. cdpath	/incoming/utils
+	    cdpath	/incoming/games
+
+	If a user tries to cd to the directory 'foo' it will be searched for in the
+	following order:
+
+	./foo
+	an alias called 'foo'
+	homedir/incoming/utils/foo
+	homedir/incoming/games/foo
+
+	... where homedir is the user's home directory (/site by default)
+
+	This only works with the cd command.
+
+ignore_type <filemask> [<filemask> ...]
+	Will ignore the assigned file types from being recognized in the directory race info, 
+	nukes, unnukes, and dupes.	
+	
+	Example:
+	ignore_type  *.[tT][xX][tT] *.[nN][fF][oO] [rR][eE][aA][dD][mM][eE] .message
+	ignore_type  *.[sS][fF][vV] *.[cC][rR][cC] *.[dD][iI][zZ]
+
+
+*RIGHTS SECTION*
+	
+	Function		Path			Flags/Groups/Uusers
+	---------------------------------------------------------------
+	
+# who can delete any files where
+	delete		/site/GRP_PRE/*			=GRP 
+
+# who can delete their own files where
+	deleteown	/site*				!8 *
+	
+# who can overwrite existing files where
+	overwrite	/site/GRP* 			=GRP
+	
+# who can upload resume where
+	resume		/site*				*
+
+# who can rename any files where
+	rename		/site/GRP_PRE/*			=GRP 1 =STAFF
+
+# who can rename their own files where
+	renameown	/site/*				=TRUSTED
+
+# who can move files (rename to other directories) and
+# from which paths can they be moved
+	filemove	/site/incoming/*		=STAFF
+
+# who can create directories where
+	makedir		/site*				*
+	
+# who can upload files to which directories
+	upload          /site/incoming/????/*/*		*
+	upload		/site/request/*			* 
+	
+# who can download files from which directories
+	download	/site/*				!-viewer *
+
+# which paths can people with access to the nuke command nuke in
+	nuke	        /site/incoming/????/* 		*
+	
+# controls adding new directories to 'site search' database and to
+# glftpd.log if using the -l switch in inetd.conf
+	dirlog		/site/incoming/????/*/		*
+
+# which users will be hidden from 'site who' while they are in which paths
+	hideinwho	/private/pre/directory*		!1 !=STAFF *
+
+# who can download which files for free
+	freefile	*.[Nn][Ff][Oo]			*
+
+# which users should not get files uploaded/downloaded statistics change
+# when they download, and to which paths does this apply
+	nostats		/site/requests/*		*
+
+*** NOTE: These are examples only..they do not necessarily reflect the tree you need to use.
+*** NOTE: The ???? is used to match date directories, like 1214
+
+See the file glftpd.conf-EXAMPLES for more examples
+
+This rights section is read from top to bottom.
+The first directory match will stop the search, so you should put the more
+specific directories on top and the least specific ones on the bottom.
+NOTE: As of glftpd 1.24, the rights section is case-sensitive.
+
+Special variables:
+If the paths in the settings above contain "[:username:]" or "[:groupname:]",
+glftpd will replace them with username or primary group's name, respectively,
+when it's checking those rules.
+
+Exmp:   upload /home/[:username:]/* *
+        This will allow only joe to upload in /home/joe.
+
+*END RIGHTS SECTION*
+
+stat_section <keyword> <directory> <separate credits>
+	Here you can define up to 10 multiple statistic sections.
+
+			Keyword		Directory		Separate Creds
+			-------		---------		--------------
+	stat_section	DEFAULT		*			yes
+
+
+	THIS SECTION MUST ALWAYS BE ADDED IN THE CONFIG FILE AS THE FIRST SECTION!!
+
+	If you want to define more statistic sections simply add another
+	line. The directory option uses the same wildcard scheme as
+	delete, upload etc.
+
+	ex.
+
+	stat_section	GAMES		/site/incoming/games/*	yes
+	stat_section	UTILS		/site/incoming/utils/*	no
+
+	This would make 2 new sections, 1 Games and 1 Utils. The games
+	section is using a separate credit system which means that
+	all uploads/downloads/credits will change as soon as a user changes
+	to the games directory. If he goes into the utils directory
+	uploads/downloads will change but the credits will remain the same
+	as in the default section.
+
+	If you want to create one section from multiple paths, use the special
+	keyword [:and:] to separate the paths, like:
+	stat_section LINUX /slackware[:and:]/debian[:and:]/redhat yes
+
+	site USERS, site GIVE, site TAKE, site GINFO, ALL STATS, all show or
+	change data from current section only (based on which directory you
+	are in).
+
+	All stat commands that display text files with cookies in them
+	(wkup, gpal, etc) look for SECTIONfilename if you are invoking them
+	for a section other than DEFAULT.
+
+	*NOTE* The maximum number of sections specified is 10!! You can not add
+               more. This includes the default section.
+
+
+path-filter <group> <path/filename> [<filter> ...]
+	Sets rules for what characters a filename can have.
+
+	 		Group	Message-file		Filters
+			-----	------------		-------
+	path-filter	*	/ftp-data/misc/pathmsg	^[-A-Za-z0-9_.()[:space:]]*$  ^\.  ^-
+
+	This line means that a filename may only be made up of the characters 
+	A-Z, a-z,0-9, "._-()" and spaces, and that it may not start with "." or "-".
+	
+	The filters are regular expressions - type `man re_exec` to learn more
+	about these rules. (For complete syntax, you might need to figure out
+	the right page, on debian it's 'man 7 regex').
+
+	If you want characters '[' and ']' in filenames, use this path-filter:
+	path-filter     *       /ftp-data/misc/pathmsg  ^[][A-Za-z0-9_.'()[:space:]-]*$  ^\.  ^-
+	
+	If a filename is invalid the message-file will be displayed.
+
+	If you supply a group-name instead of '*' the rule will only apply to
+	users who belong to that group.
+
+	You can use multiple path-filter lines. The first match wins, so the
+	line with * in the group field should always be last.
+
+	You can disable path-filter by commenting it out, but this is a security
+	risk and it is not recommended. Just add the characters you need to
+	the list and leave it on.
+
+max_users <#> <#>
+	The maximum amount of users allowed to login at once.
+
+	The first number specifies the maximum amount of users allowed to connect to the site.
+	The second number specifies how many exempt users can connect, if the site is already full.
+	They must have exempt flag for this to work. Exempt users take up a slot, just like everyone else,
+	so if you have max_users 5 5, and you have 5 exempt users logged in, non-exempt users won't be able to login.
+
+	*** NOTE: You cannot do this with people connected to the site; if you change this
+		    you MUST have 0 users connect and no gl_spy running, otherwise you will
+		    get a 220 Server Error: (SHMGET) Failed! error.
+		    Look in the FAQ for a fix to this.
+
+max_ustats <#> [flag|-user|=group]
+	The maximum amount of results shown when the matching users use the user stats commands.
+	These commands include all, month, week and day up and download tops.
+
+	The first number specified the maximum number of results shown for the people that match
+	the flags/users/groups. If -1 is specified as the number the result is unlimited.
+
+	Please note that the first match always wins. Thus if you would like everyone with flag 1
+	to be able to see the complete top but other only the first 10 you would need:
+		max_ustats -1 1
+		max_ustats 10 *
+
+max_gstats <#> [flag|-user|=group]
+	The maximum amount of results shown when the matching users use the group stats commands.
+	These commands include all, month, week and day up and download tops.
+
+	The first number specified the maximum number of results shown for the people that match
+	the flags/users/groups. If -1 is specified as the number the result is unlimited.
+
+	Please note that the first match always wins. Thus if you would like everyone with flag 1
+	to be able to see the complete top but other only the first 10 you would need:
+		max_gstats -1 1
+		max_gstats 10 *
+
+banned_users <user> [<user> ...]
+	To ban users (prevent accounts with their usernames from being created)
+
+	ex. banned_users root billgates
+
+	If present, file "/rootpath/ftp-data/help/site.adduser.banned" will be
+        displayed when someone attempts to add root or billgates.
+
+show_diz <filename> [rights]
+	A filename that will be shown, if it exists, when you change into a directory.
+	You can have multiple lines and they can be bound to rights.
+
+	ex. show_diz	FILE_ID.DIZ  1
+	    show_diz	.message
+	This would show the print out the files FILE_ID.DIZ just for siteops 
+	and .message for everyone when you change into any directory in which they exist.
+
+	Cookies present in this file will not be interpreted by glftpd (think
+	security).
+
+show_totals <max lines> <path> [<path> ...]
+	When a user cd's into a directory that matches <path>, the totals for this
+	directory (race info) will be calculated and displayed, showing max <max lines>
+        results.
+
+	You can have multiple lines with multiple arguments each.
+
+	ex. show_totals 30 /site/incoming/????/*/
+	This will show statistics for all directories in /incoming/0301, but
+	not for their subdirectories (remove the trailing / if you want that)
+
+dl_incomplete <1/0>
+	Whether or not to allow users to download a file before it is completely
+	uploaded.
+
+	It is best to have this set to 1; if a file is still being uploaded and
+	a user tries to download it, glftpd will not close the transfer until
+	the file is finished, so you won't download incomplete files if you
+	download faster than the uploader is uploading. This setting causes the
+	file that's being uploaded to have 755 permissions; if it is set to 0,
+	the file will be 600.
+	NOTE: this only works if the upload is steady; if there are long
+	periods of inactivity during upload (over 30 seconds), glftpd stops
+	waiting and closes the transfer. It does this by checking the file's
+	modification time, so older files with 755 permissions will be sent
+	without waiting.
+
+file_dl_count <1/0>
+	1 is the default - glftpd changes each file's GID by +1 when that file
+	is downloaded (up to 99 times). This number is displayed when you do
+	long listing (list -l) and your color is on (so it's safe to assume
+	you're in UNIX; Windows clients choke on listing like that).
+
+	Setting this to 0 turns it off, so GID will not be incremented, and
+	listing will not display the number of times each file was downloaded.
+	
+dupe_check <#> [yes/no]
+	The amount of days back to check for dupes.
+
+	Set this to 0 to disable dupe-checking.
+
+	The second parameter is optional - "no" is assumed if it's missing.
+	It refers to ignoring file case when checking dupes. If you set it to
+	yes, it will act like Windows, so file.zip will be treated the same as
+	FILE.zip and glftpd will say it's a dupe.
+
+	logs/dupefile is automatically "compressed" and glftpd will randomly
+	(1/1000) decide to remove all entries older than your days limit.
+
+3 built-in scripts:
+	The paths to these scripts must be full. If your rootpath is "/", these
+	paths have to be /glftpd/bin/scriptname (unless you move them to /bin). 
+
+	For pre_check and pre_dir_check, you should only echo normal text if
+	the exit code that follows it will be > 0 (meaning the file/directory
+	will be rejected). If you want to echo something and then exit with 0,
+	you have to put "#0" at the beginning of the echo string.
+        Exmp: echo "#0File will be accepted!"
+
+pre_check /bin/dupescript [path mask]
+	pre_check runs BEFORE an upload begins
+
+	For path mask description, see post_check below.
+	See example dupescript in /glftpd/bin
+
+pre_dir_check /bin/dirscript [path mask]
+	pre_dir_check runs BEFORE a directory is created
+
+	For path mask description, see post_check below.
+	See example dirscript in /glftpd/bin
+
+post_check /bin/zipscript [path mask]
+	post_check runs AFTER an upload finishes
+
+	post_check can be defined multiple times. Path mask is optional; if
+	present, glftpd will only execute this script if the path mask matches
+	the full path to where the file was uploaded. If the path doesn't
+	match, glftpd will try to find another post_check declaration whose
+	path does match, or one that doesn't have a path mask.
+
+	Example:
+	post_check none /site/public/*  # disables zipscript in /site/public
+	post_check /bin/special.sh /site/special/*      # special zipscript
+	post_check /bin/zipscript *     # normal zipscript for all other paths
+
+	If you want to enable upload resume in a certain path, you should
+	disable the zipscript for that path, so that partial files are not
+	deleted when the uploader loses connection.
+
+	The post_check script receives 3 parameters from glftpd:
+	$1 - the name of file uploaded
+	$2 - the directory the file was uploaded to
+	$3 - the CRC code of that file (if calc_crc was enabled, or 000000 otherwise)
+	     NOTE: If the uploader times out the CRC code will also be 000000, this to
+	           prevent that if one reconnected and started uploading the same file
+	           again but left an stalled upload session alive a bad crc would be passed,
+	           and the file would get deleted.
+
+	If zipscript exits with 1 or 127, glftpd assumes there was a problem executing
+	it. The file will not be deleted or unduped.
+	If zipscript exits with anything bigger than 1, glftpd will assume that the
+	file uploaded was bad and it will be deleted, the user's credits and stats will
+	not be added, and the file will be removed from the dupe database.
+
+	If zipscript exits with a number between 10 and 1010, glftpd will "sleep" for that
+	many seconds minus 10 before continuing.  This might be helpful if you want to
+	prevent people from uploading a file that is being uploaded to their system over
+	and over until it is complete.
+	ex. To make a user wait 10 seconds after uploading a bad file, exit with 20.
+	NOTE: exit code 127 is exempted: it will NOT cause a delay, it will be
+	treated like exit code 1 instead.
+
+idle_commands command1 [command2 command3 ...]
+	This sets what commands to ignore when resetting the idle counter.
+
+	ex. idle_commands noop pwd cwd* site[:space:]who
+	This will not reset the idle counter when a user issues noop, pwd, cwd
+	(alone or followed by other characters/arguments), or "site who", so
+	users who use these commands and not any others will be disconnected
+	after their idle timeout expires.
+
+	NOTE: The "idle time" that you see in site who, gl_spy, etc, is NOT
+        the same timer used to disconnect people, it is time idle since the
+        last command issued by the user. The "real" idle timer is internal and
+        cannot be seen (not that there is any reason to see it).
+
+	NOTE: The STOR, APPE and RETR commands can't be used as idle commands
+        because the timer *has to* be refreshed during transfer, otherwise
+        people would drop out downloading big files.
+
+total_users <#>
+	This sets a limit of how many users that can be added.
+
+lslong <path/file options> [<num of asterisks>]
+	This sets the default 'ls' command parameters.
+	
+	ex. lslong -a
+	This will make glftpd show hidden files by default
+
+	The second argument is optional; it specifies the number of asterisks
+	that glftpd will allow in arguments to LIST. The default is 2. If you
+	want unlimited, use 0. exmp: ls /*/* will work by default, but
+	ls /*/*/* will not - this is to prevent abuse of the globbing function
+	that could raise load average on the box to very high levels.
+
+
+hidden_files <path> <filemask> [<filemask> ...]
+	Specifies masks for files, directories, links, etc that will be
+	skipped during directory listing, even if the -a switch is used to show
+	standard hidden files (starting with .)
+
+	Exmp: hidden_files / .message hidden.*
+
+
+noretrieve <filename> [<filename> ...]
+	Specifies files that cannot be downloaded.
+
+	Password files and other sensitive files should be listed here.
+
+
+dir_names <1/0> [<lower/upper>] [XY] [XY] ...
+	Rules for new directory names.
+
+			Caps	Upper or Lower	Character Conversions
+			----	--------------	---------------------
+	dir_names	1	lower		[:space:]_ ,. [( ])
+
+	This will change the case of every character in new directories to lower
+	case, capitalize the first character, convert all spaces to underscores,
+	all commas to periods, and all brackets to parentheses.
+
+	If you don't want the second option active, just use any word other than
+	lower or upper, i.e. dir_names 1 blah [conversions...]
+
+	If the second of the character pairs in the third option is the word NULL,
+	the first character will simply be deleted. exmp:
+	dir_names 1 nothing ,NULL 'NULL [( ]) [:space:]_
+	this will delete commas and apostrophes
+
+file_names <1/0> [<lower/upper>] [XY] [XY] ...
+	Rules for new file names.
+
+	See dir_names as the same rules apply.
+
+tagline <string>
+	If a user's tagline matches string, he will be forced to change it
+	before glftpd lets him download.
+
+email <user@host.tld>
+	Admin's e-mail (used with the e-mail cookie).
+
+multiplier_max <#>
+	The highest multiplier a nuker can use.
+
+
+oneliners <#> 
+	This tells the number of oneliners to show on the site onel command.
+	If this is set to 0 or this line does not exist glftpd will consider the
+	oneliners to be disabled.
+
+requests <path/filename> <#>
+	
+			Location			# of lines to store
+			--------			-------------------
+	requests	/ftp-data/misc/requests		10
+	
+
+	Tells glftpd where to look for the request display
+	file and how many lines to store.
+
+lastonline <0/1/2> [#]
+
+	This setting determains if we should log certain cases.  
+	If it is 0, all users will be logged.
+	If it is 1, users who timed out and who didn't upload,
+	download, nuke or add users will not be logged.  If it is 2,
+	users who quit, timed out, or lost connection (and who didn't upload,
+	download, nuke, or add users) will not be logged.
+	The second options is the default number of lines to show when 
+	someone does site laston. If none specified the default is 10.
+	exmp:
+	lastonline 0 10
+
+	NOTE: If there is no lastonline line in the config we will nog log 
+	      the lastonline at all.
+
+empty_nuke <#>
+	The amount of kbytes that will be removed from the user if
+	his empty directory is nuked.
+
+nodupecheck <path>
+	This suspends both the internal dupe check (done by searching
+	ftp-data/logs/dupefile) and the execution of pre_check (also called
+	dupescript) for files uploaded under <path>.
+
+	This uses the same default wildcard-scheme.
+
+creditcheck <path> <ratio> [<-user|=group|flag> ...]
+	Set other ratio than default on a directory.
+
+	If the user doesn't match the permissions on the right, glftpd will
+	move on to the next rule. Path is only checked if the permissions for
+	this rule apply. If you don't have any permissions, * is assumed, so
+	the rule applies to everyone.
+
+	This ratio is only used for uploading, people get file size * ratio
+	credits when they upload. This isn't used for downloading, so setting
+	this to 0 does not allow people to download for free. Use the 
+	"creditloss" option for that.
+
+	The path uses the same default wildcard-scheme.
+
+creditloss <multiplier> <allow leechers yes/no> <path> <permissions>
+	Sets the amount of credits lost in <path>.
+
+	If multiplier is 0, users downloading files that match <path> will not
+        lose any credits. If it's >1, users that match this rule will lose that
+	number * filesize of credits for each file they download from <path>.
+
+	If second argument is "no" and the user's active ratio (either main
+	ratio if sratio for the current section is -1, or sratio) is 0, the
+	user will be denied downloads that match <path>. The error given will
+	be the same as if user had no 'download' right in glftpd.conf.
+
+	<path> can be either /path/to/filename, or /path/*. The second is
+	recursive (obviously) and matches all files in that path.
+
+	<permissions> are the same -user =group flag used in many other
+	settings.
+
+	You can have multiple creditloss statements - first path match wins.
+
+	Exmp: creditloss 0 yes /site/freestuff/* *
+	This will allow everyone to download for free from /site/freestuff
+
+	Exmp: creditloss 2 yes /site/heavystuff/* =somegroup
+	This will charge members of somegroup twice the amount of credits
+	they would lose for downloading files from /site/heavystuff without
+	this rule.
+
+	Exmp: creditloss 3 no /site/specialfile.zip *
+	This will cause file /site/specialfile.zip to cost 3 * filesize of
+	credits to people downloading it, and users with leech (ratio=0) will
+	not be allowed to download it at all.
+
+nukedir_style <format> <0/1/2> <byte>
+	Settings for site NUKE command.
+
+	2nd option: 0 = delete all nuked directories
+		    1 = delete files, keep directories
+		    2 = keep files and directories
+
+	nukedir_style	NUKED-%N	2	50000	
+
+	This would cause a nuked dir to be renamed to NUKED-Dirname.
+	It would also save all files inside - so if you unnuke the directory,
+	you get all files back.
+
+	If the size of all files in the dir is below 50000 (third option), the 
+	dir will be treated as empty and nuked with the empty dir penalty.
+
+hideuser <-user/=group/flag> ...
+	Allows you to hide users from being displayed in site who, added to
+	the last-users-online file, or listed with "site users".
+
+	exmp: hideuser -Usurper =HIDDENGROUP 1 7 =LEECH
+
+	This will hide all users with siteop and useredit flags, all users
+	belong to groups HIDDENGROUP or LEECH, and user Usurper.
+
+	*NOTE* This setting does not affect siteops - they can see all.
+
+	If you want to hide users from stat commands, you need to chown
+	their userfiles to 99:99.
+
+privgroup <group> <description>
+	Here you define your private groups.
+
+	ex. privgroup STAFF Siteops[:space:]And[:space:]Such
+
+msgpath <path> <filename> <flag/=group/-user>
+	Display a file when a user goes into the specified directory.
+
+	*NOTE* You NEED a trailing slash at the end of path if you don't have a wildcard there.
+
+	exmp: msgpath /site/incoming/ /ftp-data/misc/incoming.txt *
+	      msgpath /site/incoming/????/* /ftp-data/misc/dir_and_subdirs.txt *
+	      msgpath /site/incoming/????/*/ /ftp-data/misc/somedirs.txt *
+
+	NOTE: On the right, you need to specify which users this rule applies to.
+
+privpath <path> <flag/-user/=group>
+	Here you define who will get access to certain directories.
+	
+	Users that do not match any flags/groups/usernames will not see the directory.
+
+	*NOTE* You can't use wildcards in the path here.  Wildcards would slow down
+	directory listing too much.
+
+site_cmd <cmd name> <exec/text/is> <filename> [optional argument]
+	Here you can define external site commands.
+
+	EXEC will execute a script/binary.
+	TEXT will display a text file, converting cookies to their values.
+	IS will execute the internal command specified afterwards.
+
+	site_cmd	UPURGE	EXEC	/bin/upurge.sh
+	site_cmd	RULES	TEXT	/ftp-data/misc/site.rules
+	site_cmd	PICTURE TEXT	/ftp-data/misc/picture.asc
+	site_cmd	WEEKTOP	IS	WKUP
+
+	*NOTE* All custom commands need the access rights defined for them
+	in order to work.  Exmp:
+	custom-rules *
+	custom-picture =STAFF -Usurper 1 7
+	custom-weektop !8 *
+
+	After defining here, you can use these as in "site rules" or "site
+	upurge".
+	Be aware that commands defined with the IS setting (like WEEKTOP above)
+	are subject to 2 sets of restrictions: first, the custom-weektop
+	setting, and then the -stats setting (which controls WKUP).
+
+	If using the EXEC mode, you can specify an optional argument that will
+	be passed to the program in front of any user arguments. To specify
+	multiple arguments, use [:space:]. Example:
+
+	site_cmd	TEST	EXEC	/bin/test.sh	arg1[:space:]arg2
+	custom-test *
+
+	Now when someone issues "site test moo", test.sh will be executed with
+	3 arguments: test.sh bleh blah moo.
+
+max_sitecmd_lines #
+	Specifies the maximum number of output lines from a custom site
+	command that are shown to users. Default is 9999.
+
+cscript <cmd name> <when to run> <path/filename>
+	CScript is short for Custom Script.
+	Custom scripts (or binaries) to be executed before/after any command.
+	<cmd name> - the name of the command before/after which to execute the script.
+	<when to run> - can be either "pre" or "post", to run before or after, respectively.
+	<path/filename> - the full path to the script to be executed.
+
+	If using a command with a space in it, like a site command, you need
+        to use "[:space:]" between the words, ex: site[:space:]who.
+
+        "post" scripts won't be able to echo anything because they are executed
+        after glftpd sends the response to the client - can't do this any other
+        way.
+	If a "pre" script exits with anything bigger than 0 (or if it can't be executed),
+	glftpd will NOT execute the command which should run after the script, nor will
+	it execute that command's "post" script.
+
+	Some "post" scripts will not be executed when the command they follow
+	fails (for example, if you try to add a user, but have no access to the
+	'site adduser' command). Here is the list of commands that behave
+	this way:
+	DELE, RMD, STOR, APPE, STOU, RETR, CWD, CDUP, RNFR, RNTO, MKD, PASV, TYPE;
+	and SITE commands: CHANGE, ADDUSER, GADDUSER, DELUSER, NUKE, UNNUKE,
+	WIPE, KILL, KICK, REQUEST, REQFILLED, ONEL.
+        This list might grow in the future.
+
+	It is YOUR responsibility to echo the correct MESSAGE CODE with every echo line
+	that you use - if you echo the wrong code, ftp clients may 'hang'.  To find out
+	what code you need to use, just look at what glftpd uses when that command is executed.
+        Example: if you run a script before "site who", and you want to print
+        something from it, use: echo -e "200Your message here\r".
+
+        If you exit a pre script with 1 in order to prevent the user from
+        executing the command, you might want to use a generic error code with
+        your echo lines, like 500, which will tell the clients that this
+        command was denied - or use the error code that glftpd uses when
+        denying execution of this command.
+
+        Both kinds of scripts will be passed 3 parameters:
+        $1 = full command string the user used, $2 = user's login name,
+        $3 = user's primary non-private group.
+
+	ex:
+	cscript site[:space:]who pre /bin/sitewhoprescript.sh
+	cscript retr post /bin/postdownloadscript.sh
+
+	NOTE: There is no limit to how many cscript entries you can have.
+	
+
+
+The following environment variables can be used by external scripts:
+
+	$USER		Username.
+	$FLAGS		User flags.
+	$TAGLINE	User tagline.
+	$GROUP		User group.
+	$RATIO		User ratio.
+	$PGROUP		1st priv group.
+	$SPEED		Speed in K/s. This is exported after every upload/download.
+	$HOST		User's ident@ip
+	$HOME		User's home directory (from /glftpd/etc/passwd)
+	$SECTION	The name of the section user is currently in
+
+
+.------------------------------------.
+|   Who can use what site commands?  |
+`------------------------------------'
+
+Below is a list of configurable site commands.
+To the right of a command are flags - a user needs at least one of those
+to be able to execute the command.  You can also use groupname instead of
+a flag (the format is =groupname) or username (format is -username).
+'*' means "everyone".  A ! in front of a flag/group/username means no access
+if user matches this right - the scan through parameters will stop at this
+point (so first match, whether positive or negative, ends the search. No
+match is treated like a negative match - no access).
+
+Note: by default, gadmins have access to the following commands:
+	-addip, -adduser, -changeratio, -chpass, -delip, -deluser,
+	-flags, -ginfo, -grpnfo, -readd, -userextra.
+	These commands are gadmin-restricted, meaning that if you are a
+	gadmin you can only use those commands on users who are in the 
+	same group as your first (primary) group.  Other commands are
+	not gadmin-restricted, so if you give gadmins access to them, they
+	will be able to use them on ANY user.
+
+	The "site purge" command is also gadmin-restricted, but gadmins don't
+	have access to it by default. Showing user comments when doing
+	"site user", controlled by -usercomment, is also restricted but not
+	enabled by default.
+
+
+-addip           1 2 7
+-adduser         1 2 7
+-change          1 7
+-changeallot	 1 2 7		#(who should be able to change users allotments)
+-changeflags     1
+-changeratio	 1 2 7
+-changesratio    1 7
+-changehomedir   1
+-chmod           1
+-chgadmin	 1 7		#(who can set/unset gadmins)
+-chgrp           1 7
+-chgrp-priv      1		#(chgrp for private groups)
+-chpass          1 2 7
+-delip           1 2 7
+-delownip	!8 *		#(let users delete their own ips)
+-deluser         1 2 7
+-dirs		!8 *		#(search dupe new nukes unnukes cdpath alias)
+-emulate	-specialuser
+-errlog		 1
+-flags           1 2
+-gadduser        1 7
+-ginfo           2 H
+-give            G
+-group           !3 *
+-groups          *
+-grp		 *		#(who should be able to do site grp)
+-groupcomment	 1		#(who should see group.comment when doing site grp)
+-grpadd          1
+-grpchange	 1 		#(who should be able to change a grp)
+-grpdel          1
+-grplog          1
+-grpnfo          1 2
+-grpren          1
+-grpstats	 *
+-help		!8 *		#(help)
+-info		!8 *		#(laston welcome)
+-kick            D
+-kill            E
+-laston		!8 *
+-logins          1
+-misc		!8 *		#(vers time color idle)
+-msg             *		#(reading/sending messages. !* here will deny the 3 settings below, too)
+-msg*            1		#(msg to everyone, msg * blah)
+-msg=            1		#(msg to a group (members of group are exempted), msg =STAFF blah)
+-msg{            *		#(msg to several users, msg { a b c } blah)
+-nuke            A
+-onel		!8 *		#(viewing oneliners with site onel)
+-userothers	!8 *		#(viewing xfer stats ed form other users)
+-oneladd	!8 *		#(adding oneliners with site onel something)
+-passwd          *
+-predupe	 C
+-purge           1
+-readd           1 2 7
+-renuser         1 7
+-reqlog          1 A B 7
+-request	!8 *		#(viewing request, using site reqfilled)
+-requestadd	!8 *		#(adding requests)
+-seen		!8 *		#(who should have access to site seen)
+-show            1
+-showhiddenusers 1		# Show hidden users in the site who and site swho
+-stat		 *		#(site stat, displaying of statline after transfers)
+-stats		!8 *		#(wkup wkdn alup aldn monthup monthdn dayup daydn stats nuketop traffic gpal gpwk gpwd gpad)
+-swho           =STAFF 1 E
+-take            F
+-syslog          1 =STAFF
+-traffic	 1 7
+-undupe          C
+-unnuke          B
+-update          1
+-user		!8 *		#(user seen unfo tagline)
+-users           H
+-usercomment     1 7		#(who should see user.comment when doing site user)
+-userextra       1 2 7		#(who should see user's IPs when doing site user)
+-who             *
+-wipe		-trusteduser
+
+
+You can define your own "You do not have access to this command" for each
+of the settings above.
+First, create directory "ad" in /glftpd/ftp-data/misc. Then, create a file in
+that directory with the same name as the restriction keyword shown above,
+without the leading dash, and put whatever text you want displayed in it.
+(so, if you want glftpd to say "You do not have access to see who is online"
+when a user does "site who" and he/she doesn't have access to it, create a file
+called "who").
+Glftpd will try to display the individual file first; if that doesn't work,
+it will show the generic no access error.
+
+# Custom commands must also be bound to flags, just add "custom-"
+# in front of the custom command's name
+
+custom-rules    *
+
+
+
+
+
+
+
+.------------------------------------.
+|III. Complete list of site commands.|
+`------------------------------------'
+
+
+
+
+
+*** NOTE: In glftpd 1.17 and newer, access to site commands is defined in the config file (at the bottom), it is no longer hard-coded in glftpd.
+
+USAGE: site adduser <user> <password> [<ident@ip#1> ... <ident@ip#5>]
+	Adds a user. You can have wild cards for users that have dynamic ips
+	Examples: *@192.168.1.* , frank@192.168.*.* , bob@192.*.*.*
+	(*@192.168.1.1[5-9] will allow only 192.168.1.15-19 to connect but no one else)
+
+	If a user is added by a groupadmin, that user will have the GLOCK
+	flag enabled and will inherit the home directory from the default.user
+	or default.<groupname> file.
+	
+	All default values for the user are read from file default.user in
+	/glftpd/ftp-data/users. Comments inside describe what is what.
+	Gadmins can be assigned their own default.<group> userfiles
+	as templates to be used when they add a user, if one is not found,
+	default.user will be used.
+	default.groupname files will also be used for "site gadduser".
+
+	ex. site ADDUSER Archimede mypassword 
+
+	This would add the user 'Archimede' with the password 'mypassword'.
+
+	ex. site ADDUSER Archimede mypassword *@127.0.0.1
+	
+	This would do the same as above + add the ip '*@127.0.0.1' at the
+	same time.
+
+	HOMEDIRS:
+	After login, the user will automatically be transferred into his/her
+	homedir. As of 1.16.x this dir is now "kinda" chroot'ed and they are
+	now unable to "cd ..".
+
+
+USAGE: site addip <user> <ident@ip#1 ... ident@ip#10>
+	Add IP to user.
+
+	Note: if you don't know what ident is, you need to read your
+	internet-for-dummies book first.
+
+	ex. site addip Archimede Archimede@127.0.0.1 *@10.10.
+	This would add the ident@ip 'Archimede@127.0.0.1' and mask '*@10.10.*'
+	to user 'Archimede'. (* at the end is optional in this case)
+
+	ex. site addip Archimede Archimede@blah.net Archimede@209.44.* *@24.1.64.20
+	This would add all 3 ip masks to user 'Archimede'.
+
+	ex. site addip lamer someident@3.1.2.1[2-5]?
+	This mask will match IPs 3.1.2.120 through 3.1.2.159
+	Warning: You can't use [] to declare range of numbers > 9, so [10-79]
+	will not work. Use [1-7]? or [1-7][0-9] instead. Ranges that don't start
+	at a power of 10 or don't end at 9 are not possible unless you add
+	more than 1 mask.
+
+	NOTE: There is a maximum of 10 IPs that can go into the userfile.
+	If you need more than 10, you need to add them to a text file, each one
+	on a line by itself, in the format ident@ip.  To make glftpd use this
+	file, the first IP in the userfile (IP0 in site user) has to look like
+	this:
+	IP !/path/to/iplist.txt
+	Glftpd won't let you add an IP like that; you need to edit the userfile
+	manually (in /glftpd/ftp-data/users) and add it.
+	Make sure there are no DOS carriage returns at the end of each line in
+	the file containing the list of IPs.
+	If an entry in that file starts with !, it will be banned (meaning if
+	the user connects from that ident@ip, he will NOT be allowed to log in,
+	even if there is a different IP below that would let him in).
+
+	The file can contain comments following each IP. Separate the comment
+	from the IP with spaces/tabs followed by the # character. Exmp:
+	!1.2.3.4	#this user is not allowed to connect from this ip
+	2.3.4. 		#user's home ip mask (same as 2.3.4.*)
+
+
+USAGE: site aldn [number] [<section>] [<=group>]
+	Display alltime downloaders.
+
+	Number is optional - it controls the number of output lines.
+
+	Section is optional. It can be either a section's name or number (0-9).
+	If section is numeric, you need to preceed it by the number of output
+	lines, e.g.:
+	site aldn 10 2
+
+	This is the same for all statistic commands (wkup,gpal,nuketop,etc)
+
+	<=group> is also optional. Specifying it will only show users who
+	belong to that group, but the user doing it has to have special
+	access in glftpd.conf to do it. This is controlled by the -grpstats
+	setting.
+
+	Exmp: -grpstats *
+	site aldn =Friends
+	site aldn 20 LinuxSection =Leechers
+
+USAGE: site alup [number] [<section>] [<=group>]
+	Display alltime uploaders.
+
+USAGE: site dayup [number] [<section>] [<=group>]
+	Display daytop upload.
+
+USAGE: site daydn [number] [<section>] [<=group>]
+	Display daytop download.
+
+USAGE: site monthup [number] [<section>] [<=group>]
+	Display monthtop upload.
+
+USAGE: site monthdn [number] [<section>] [<=group>]
+	Display monthtop download.
+
+USAGE: site nuketop [number] [<section>] [<=group>]
+	Display alltime nuketop.
+
+USAGE: site wkup [number] [<section>] [<=group>]
+	Display weektop uploaders.
+
+USAGE: site wkdn [number] [<section>] [<=group>]
+	Display weektop downloaders.
+
+
+USAGE: site alias
+	Show current aliases.
+
+USAGE: site cdpath
+	Show current cdpaths.
+
+USAGE: site chpass <user> <password> 
+	Change users password.
+
+	ex. site chpass Archimede newpassword
+	This would change the password to 'newpassword' for the 
+	user 'Archimede'.
+
+	See "site passwd" for more info if you get a "Password is not secure
+	enough" error.
+
+	* Denotes any password, ex. site chpass arch *
+	This will allow arch to login with any password
+
+	@ Denotes any email-like password, ex. site chpass arch @
+	This will allow arch to login with a@b.com but not ab.com
+
+USAGE: chgadmin <user> <group>
+	Toggle the users gadmin status for the given group.
+
+	NOTE: When a user becomes a gadmin he will automaticly get
+              flag 2 added. When a user stops to become a gadmin of 
+              any of his groups the gadmin flag will be automaticly
+	      removed.
+
+USAGE: site change <user> <field> <value> - change a field for a user
+       site change =<group> <field> <value> - change a field for each member of group <group>
+       site change { <user1> <user2> .. } <field> <value> - change a field for each user in the list
+       site change * <field> <value>     - change a field for everyone
+
+	Type "site change user help" in glftpd for syntax.
+
+	Fields available:
+
+	Field			Description
+	-------------------------------------------------------------
+	ratio		Upload/Download ratio. 0 = Unlimited (Leech)
+	wkly_allotment 	The number of kilobytes that this user will be given once a week
+			(you need the reset binary enabled in your crontab).
+			Syntax: site change user wkly_allotment "#,###"
+			The first number is the section number (0=default section),
+			the second is the number of kilobytes to give.
+			(user's credits are replaced, not added to, with this value)
+			Only one section at a time is supported,
+	homedir		This will change the user's homedir.
+			NOTE: This command is disabled by default.  To enable it, add
+			"min_homedir /site" to your config file, where "/site" is the
+			minimum directory that users can have, i.e. you can't change
+			a user's home directory to /ftp-data or anything that doesn't
+			have "/site" at the beginning.
+			Important: don't use a trailing slash for homedir!
+			Users CAN NOT cd, list, upload/download, etc, outside of their
+                        home dir. It acts similarly to chroot() (try man chroot).
+	startup_dir	The directory to start in. ex: /incoming will start the user
+			in /glftpd/site/incoming if rootpath is /glftpd and homedir is /site.
+			Users CAN cd, list, upload/download, etc, outside of startup_dir.
+	idle_time	Sets the default and maximum idle time for this user (overrides
+			the -t and -T settings on glftpd command line). If -1, it is disabled;
+			if 0, it is the same as the idler flag.
+	expires		yyyy-mm-dd : The date a user expires, after this date a user will no
+			longer be able to login. To never let a user expire use "never" instead
+			of yyyy-mm-dd.
+	credits		Credits left to download.
+	flags		+1ABC or +H or -3, type "site flags" for a list of flags.
+	num_logins	# # : number of simultaneous logins allowed. The second
+			number is number of sim. logins from the same IP.
+	timeframe	# # : the hour from which to allow logins and the hour when logins from
+        		this user will start being rejected. This is set in a 24 hour format.
+			If a user is online past his timeframe, he'll be disconnected the
+			next time he does a 'CWD'.
+	time_limit	Time limits, per LOGIN SESSION. (set in minutes. 0 = Unlimited)
+	tagline		User's tagline.
+	comment		Changes the user's comment (max 50 characters).
+			Comments are displayed by the comment cookie (see below).
+	max_dlspeed	Downstream bandwidth control (KBytes/sec) (0 = Unlimited)
+	max_ulspeed	Same but for uploads
+	max_sim_down	Maximum number of simultaneous downloads for this user
+			(-1 = unlimited, 0 = zero [user can't download])
+	max_sim_up	Maximum number of simultaneous uploads for this user
+			(-1 = unlimited, 0 = zero [user can't upload])
+	sratio		<SECTIONNAME> <#>
+			This is to change the ratio of a section (other than default).
+	expires		yyyyddmm : Date after which a user expires (0 = Never).
+
+	Flags available:
+
+	Flagname       	Flag	Description
+	-------------------------------------------------------------
+	SITEOP		1	User is siteop.
+	GADMIN		2	User is Groupadmin of one of his/her groups
+				(doesn't work for private groups).
+	GLOCK		3	User cannot change group.
+	EXEMPT		4	Allows to log in when site is full. Also allows
+				user to do "site idle 0", which is the same as
+				having the idler flag. Also exempts the user
+				from the sim_xfers limit in config file.
+	COLOR		5	Enable/Disable the use of color (toggle with "site color").
+	DELETED		6	User is deleted.
+	USEREDIT	7	"Co-Siteop"
+	ANON		8	User is anonymous (per-session like login).
+	
+	*NOTE* The 1 flag is not GOD mode, you must have the correct flags for the actions you wish to perform.
+	*NOTE* If you have flag 1 then you DO NOT WANT flag 2
+	*NOTE* As of version 2.00 the gadmin flag can not be changed by using site change anylonger. The only
+               way to set/unset a gadmin is not with site chgadmin.
+	
+	Restrictions placed on users flagged ANONYMOUS.
+		1.  '!' on login is ignored.
+		2.  They cannot DELETE, RMDIR, or RENAME. 
+		3.  Userfiles do not update like usual, meaning no stats will
+	    	    be kept for these users.  The userfile only serves as a template for the starting 
+		    environment of the logged in user. 
+	    	    Use external scripts if you must keep records of their transfer stats.
+
+	NUKE		A	User is allowed to use site NUKE.
+	UNNUKE		B	User is allowed to use site UNNUKE.
+	UNDUPE		C	User is allowed to use site UNDUPE.
+	KICK		D	User is allowed to use site KICK.
+	KILL		E	User is allowed to use site KILL/SWHO.
+	TAKE		F	User is allowed to use site TAKE.
+	GIVE		G	User is allowed to use site GIVE.
+	USERS/USER	H	This allows you to view users ( site USER/USERS )
+	IDLER		I	User is allowed to idle forever.
+	CUSTOM1		J	Custom flag 1
+	CUSTOM2		K	Custom flag 2
+	CUSTOM3		L	Custom flag 3
+	CUSTOM4		M	Custom flag 4
+	CUSTOM5		N	Custom flag 5
+
+	You can use custom flags in the config file to give some users access
+	to certain things without having to use private groups.  These flags
+	will only show up in "site flags" if they're turned on.
+
+	ex. site change Archimede ratio 5
+
+	This would set the ratio to 1:5 for the user 'Archimede'.
+
+
+	NOTE: The flag DELETED can not be changed with site change, it
+	      will change when someone does a site deluser/readd.
+
+	
+USAGE: site chgrp <user> <group> [<group>]
+	Adds/removes a user from group(s).
+
+	ex. site chgrp archimede ftp
+	This would change the group to 'ftp' for the user 'archimede'.
+
+	ex1. site chgrp archimede ftp
+	This would remove the group ftp from the user 'archimede'.
+
+	ex2. site chgrp archimede ftp eleet
+	This moves archimede from ftp group to eleet group.
+
+	NOTE: When adding a user to a group the group must have available slots
+	      left, even when you are a siteop.
+
+
+USAGE: site chmod <mask> <pathname>
+	Changes a file's permissions to mask.
+
+	ex. site chmod 444 file.zip
+	ex. site chmod 777 /site/incoming
+
+USAGE: site color [on/off/show]
+	Enable/Disable the use of colors.
+
+	If no arguments are specified, this will toggle color.
+
+* NOTE: This will screw up many windows clients if enabled *
+
+
+USAGE: site delip <user> <ident@ip> ...
+	Delete IP from user, you can also use the ip number.
+	(Takes up to 10 arguments)
+
+	ex. site delip Archimede Archimede@127.0.0.1
+
+	This would remove the ident@ip 'Archimede@127.0.0.1' from the 
+	user 'Archimede'.
+
+	ex. site delip Archimede 1
+
+	This would remove ident@ip #1 from the user 'Archimede'.
+	(Get list with site user <user>)
+
+
+USAGE: site deluser <user>
+	Delete a user, may be readded with site READD.
+
+	ex. site deluser Archimede
+
+	This will activate the flag DELETED (6) for the user 'Archimede'.
+	In order to fully delete this user you will need to do a 'site purge'
+
+USAGE: site dupe [-max <num>] [-from <mmddyy>] [-to <mmddyy>] <string> [<string2> ... ]
+
+	Searches the dupe database (ftp-data/logs/dupelog) for a match.
+	Searching a big database can take quite some time so please
+	be patient. Do NOT include wildcards!
+	This will only search for directories!
+	
+	If -max is not specified, glftpd defaults to 20 matches.
+	Matches are taken from the bottom of the dupelog (newest entries are
+        at the bottom).
+
+	If you specify more than one search string, glftpd will only show
+        entries with ALL the search strings present.
+
+	ex. site dupe quake
+	This will search the database for the string quake.
+
+	ex. site dupe quake arena
+	This will find "Quake_Arena" but not just "Quake".
+
+	ex. site dupe -from 010199 -to 010100 duke nukem 3D
+	This will search for "duke", "nukem", and "3d" in all of 1999.
+
+	ex. site dupe -max 50 linux glftpd 1.
+	This will show up to 50 entries with "glftpd", "linux" and "1." in the
+	name, like "Glftpd.for.linux.v1.20" or "glftpd.v1.19_for_linux".
+
+
+USAGE: site emulate <user>
+	Load user's userfile into your process' memory, essentially becoming
+	that user (although some things, like home directory or 'site who'
+	display, won't change). Need -emulate permission in config file.
+	This was created for special scripts, so they can act as some user
+	without having to know his password and logging in as that user. Most
+	siteops will find no use for this.
+
+	Note: This isn't TRUE emulation, you shouldn't use this to do serious
+	things. Some things won't work, and some will work incorrectly. The
+	only way to achieve 'true' emulation is to log in as that user.
+
+
+USAGE: site errlog [<number>] [<searchstring>]
+	Display the error log.
+
+	This displays '/glftpd/ftp-data/logs/error.log'
+	See info about "site syslog" for syntax.
+
+
+USAGE: site fdupe [-max <num>] [-from <mmddyy>] [-to <mmddyy>] <string> [<string2> ... ]
+
+        Searches the dupe database (ftp-data/logs/dupelog) for a match.
+        Searching a big database can take quite some time so please
+        be patient. Do NOT include wildcards! 
+	We will only search for filenames!
+
+        If -max is not specified, glftpd defaults to 20 matches.
+        Matches are taken from the bottom of the dupelog (newest entries are
+        at the bottom).
+
+        If you specify more than one search string, glftpd will only show
+        entries with ALL the search strings present.
+
+        ex. site dupe quake
+        This will search the database for the string quake.
+
+        ex. site dupe quake arena
+        This will find "Quake_Arena" but not just "Quake".
+
+        ex. site dupe -from 010199 -to 010100 duke nukem 3D
+        This will search for "duke", "nukem", and "3d" in all of 1999.
+
+        ex. site dupe -max 50 linux glftpd 1.
+        This will show up to 50 entries with "glftpd", "linux" and "1." in the
+        name, like "Glftpd.for.linux.v1.20" or "glftpd.v1.19_for_linux".
+
+
+USAGE: site flags [<user>]
+	Display a user's flags.
+
+	ex. site flags
+	
+	This will show your own flags.
+
+	ex. site flags Archimede
+
+	This will show flags of user Archimede.
+
+
+USAGE: site gadduser <group> <user> <password> [<ident@ip#1 .. ident@ip#5>]
+	Adds a user and changes his/her group to <group>.  If default.group
+	exists, it will be used as a base instead of default.user.
+
+        Only public groups can be used as <group>.
+
+	NOTE: When adding a user to a group the group must have available slots
+	      left, even when you are a siteop.
+
+USAGE: site group [<group>]
+	Shows your current groups or leaves/joins a group.
+	To join a group simply pass the groupname as a parameter to the
+	command. You must leave all groups before you can join a new one.
+	Only users with the siteop flag enabled can change private
+	groups (see site CHGRP).
+
+	ex. site group
+	
+	This will display the groups you are in.
+
+	ex. site group ftp
+
+	With this you will join/leave group 'ftp'.
+
+USAGE: site groups
+	Shows available groups.
+	
+USAGE: site ginfo <group>
+	Shows detailed info on a group.
+
+	ex. site ginfo ftp
+
+	This will show detailed info on the group 'ftp'.
+	
+	If a user is deleted, his tagline will be replaced by "***DELETED***".
+
+
+USAGE: site give <user> <kbytes>[gGmM] [<message>]
+	Gives credits to user (Taken from you)
+
+	ex. site give Archimede 100000 there you go
+	The optional g/m suffix will take the number to be gigabytes or megabytes.
+	This will give around 100mb of credits to user 'Archimede' and send 
+	the message 'there you go'.
+
+
+USAGE: site gpal [number] [<section>]
+	Display alltime group upload.
+
+USAGE: site gpmonthup [number] [<section>]
+	Display month group upload.
+
+USAGE: site gpmonthdn [number] [<section>]
+	Display month group download.
+
+USAGE: site gpwk [number] [<section>]
+	Display weektop group upload.
+
+USAGE: site gpwd [number] [<section>]
+	Display weektop group download.
+
+USAGE: site gpad [number] [<section>]
+	Display alltime group download.
+
+USAGE: site grp <group>
+	Display the group info.
+
+USAGE: site grpchange <group> <field> <value> - change a field for one group
+       site grpchange { <group1> <group2> }  <field> <value> - change a field for multiple groups
+       site grpchange * <field> <value> - change a field for all groups
+
+	Type "site grpchange group help" in glftpd for syntax.
+
+        Fields available:
+
+        Field                   Description
+        -------------------------------------------------------------
+	slots			Change the available number of slots for this group. -1 is unlimited.
+	leech_slots		Change the available number of leech slots for this group. -1 is unlimited, -2 is disabled.
+	allot_slots		Change the available number of allotment slots for this group. -1 is unlimited, -2 is disabled.
+	max_allot_size		Change the max allotment size that a gadmin can give
+				for this group. 0 is unlimited.
+	max_logins		Change the maximum number of users from this group that 
+				can simultanious login.
+	comment			Change the comment for this group.
+
+
+USAGE: site grpadd <group> [<description>]
+	Add a new group.
+
+	ex. site grpadd group new_group
+
+	This would add the group 'group' with the description 'new_group'.
+
+
+USAGE: site grpdel <group>
+	Delete a group.
+
+	ex. site grpdel group
+
+	This would delete the group 'group'.
+
+
+USAGE: site grpren <groupname> <NEWgroupname> 
+	Rename a group.
+
+	ex. site grpren ftp new_ftp
+
+	This would change the group name 'ftp' to 'new_ftp'.
+	All users in group 'ftp' will now automatically belong to 'new_ftp'.
+
+
+USAGE: site grpnfo <group> <description>
+	Change description for a group.
+
+	ex. site grpnfo ftp new_description
+
+	This will change the current description for the group 'ftp' to
+	'new_description'.
+
+
+USAGE: site help
+	Display helpscreen.
+
+
+USAGE: site idle [<idletime>]
+	Set your idle-time (per-session only).
+	This sets your idle-time (the amount of time you can be online without
+	doing something). Max idle-time is 7200 sec.
+
+	ex. site idle
+
+	This will show you current idle-time settings.
+
+	ex. site idle 7200
+
+	This will set your idle-timeout to 7200 sec.
+
+	"site idle 0" for users that have the exempt flag will allow them to idle forever
+
+### NOTE: If you assign a user the +I flag he will idle forever without needing to perform the above command.
+
+USAGE: site kick <user>
+	Kick a user off the site.
+
+	ex. site kick Archimede
+
+	This will kill all connections for the user 'Archimede'
+
+USAGE: site kill <pid>
+	Kill a PID.
+
+	ex. site kill 345
+
+	This will kill pid# 345 (if it belongs to a glftpd user).
+
+USAGE: site logins [<number>] [<searchstring>]
+	Display failed logins.
+
+	This displays '/glftpd/ftp-data/logs/login.log'
+	See info about "site syslog" for syntax.
+
+
+USAGE: site laston [num] [-user] [=group] [type] 
+	Displays the last users that where online.
+
+	Options:
+		[num]       The number of entries to show
+		[-user]     Only show lastonlines from this user 
+		[=group]    Only show lastonlines from this group 
+		[type]      Only show lastonlines from this type 
+	              Types can be either: U (Upload)
+	                                   D (Download)
+	                                   A (Added user) 
+	                                   L (Lost connection) 
+	                                   T (Timed out) 
+	                                   N (Nuked a dir) 
+
+	NOTES:  You can only specify ONE type at the time.
+		You are able to combine the different options in any 
+		way you choose.
+
+
+
+USAGE: site msg <options>
+	Shows messages waiting / sends a message.
+	Every user has his/her own mailbox, with this command you can either
+	send mail to a user or read your mail.
+	As of 1.17.2 the mailbox has been expanded. You now get an inbox and a
+	trash. When you do "site msg read", your mail goes into trash.
+	Everything from trash gets deleted when you log off.
+
+	OPTIONS:   read - lets you read your messages
+		   save - Will copy your messages from trash to inbox
+		   purge - Will purge messages from trash
+		   tread - Will read messages that are in the trash
+		   <username> <message> - send a message to user <username>
+		   { <user1> <user2> .. } <message> - send a message to all
+			users in the list (30 max)
+		   =<group> <message> - send message to all members of <group>
+		   * <message> - send message to every user on the site
+		 
+
+	ex. site msg read
+	This will display any mail waiting in my mailbox.
+
+	ex. site msg Archimede Hi there!
+	This will send the message 'Hi there!' to user Archimede.
+
+	ex. site msg =STAFF don't add any more users.
+	This will send the message 'don't add any more users.' to every member of group STAFF
+
+	ex. site msg { frank bob john mary } whats up
+	This will send the message 'whats up' to users frank, bob, john, mary
+
+	ex. site msg * The server has been upgraded to version 1.16.8
+	This will inform everyone that you upgraded the server.
+
+	ex. site msg save
+	This will save any messages that are in your trash
+	
+	ex. site msg purge
+	This will purge any messages you have
+
+
+USAGE: site nuke <directory> <multiplier> <message>
+	Nuke a directory
+
+	ex. site nuke shit 2 CRAP
+
+	This will nuke the directory 'shit' and remove x2 credits with the
+	comment 'CRAP'.
+
+	NOTE: You can enclose the directory in braces if you have spaces in the name
+	ex. site NUKE {My directory name} 1 because_i_dont_like_it
+
+
+USAGE: site nukes
+	Display recently nuked releases.
+
+
+USAGE: site new [.] [<#>]
+	Display newest created directories (taken from dirlog).
+
+	ex. site new
+	This will display the 10 newest directories.
+
+	ex. site new .
+	This will show new directories in the current dir tree
+
+	ex. site new 40
+	This will display the 40 newest directories everywhere.
+
+	ex. site new . 20
+	This will show the last 20 dirs made in the current dir tree.
+
+	NOTE: Users are only able to see directories created under
+	their home directory.  If your homedir is /site/public, you will
+	not see directories created in /site/private by using site new.
+	To achieve this, you need to set up a %NEW cookie in a text file
+	with /site/private as a parameter, and use msgpath or a custom
+	command to display it.
+
+USAGE: site onel [<string>]
+	Show/Add oneliner.
+
+	ex. site onel
+
+	This will display the current oneliners.
+
+	ex. site onel Archimede was here
+
+	This will add 'Archimede was here' to the oneliners.
+
+
+USAGE: site passwd <password>
+	Change your password.
+
+	ex. site passwd newpass
+
+	This will change your password to 'newpass'.
+
+	If you can't change your password because it's not 'secure' enough,
+	see the section about the secure_pass setting in the config file.
+
+	Passwords can only be 8 characters long.
+
+USAGE: site purge [<username>]
+	Remove deleted users, site READD will NOT work for purged users.
+
+	ex. site purge
+	This will REMOVE ALL users who have the DELETED flag.
+
+	ex. site purge frank
+	This will remove just frank and leave the rest of deleted users on site
+
+	If you are a gadmin, you can only purge users from your group (that is,
+	if you are given access to this command in the config file).
+
+USAGE: site renuser <old_username> <new_username>
+	Rename a user
+
+	ex. site renuser usurper Usurper
+	This will make usurper look bigger and meaner
+
+USAGE: site request [<string>]
+	Add/Display Requests.
+
+	ex. site request
+	
+	This will display the current requests.
+
+	ex. site request A new super-duper-fast computer!
+
+	This will add my request to the requestlist.
+
+	If logging is enabled, new requests are logged to glftpd.log
+
+
+USAGE: site reqfilled <#>
+	Fill a request.
+
+	ex. site reqfilled 3
+	
+	This will remove request number 3 from the request list and send
+	mail to the user who made the request saying you filled it. 
+	(List requests with site request)
+
+	If logging is enabled, filled requests get logged to glftpd.log.
+	They are also always logged to request.log.
+
+
+USAGE: site reqlog [<number>] [<searchstring>]
+	Show the log of filled requests.
+
+	This displays '/glftpd/ftp-data/logs/request.log'
+	See info about "site syslog" for syntax.
+
+
+USAGE: site readd [<user>]
+	Readd user.
+
+	ex. site readd
+
+	This will show a list of users that can be readded.
+	(You can also achieve this with "site users deleted")
+
+	ex. site readd Archimede
+
+	This will remove the DELETED flag for user 'Archimede'.
+	
+	NOTE: When readding a user from a group the group must have available slots
+	      left, even when you are a siteop.
+
+
+USAGE: site stat
+	Display your current status line.
+
+
+USAGE: site search <string> [<string2> ...]
+	Searches the entire site for matching directory names.
+
+	(ftp-data/logs/dirlog is what's being searched.  If this command
+	finds old non-existing directories, you need to run the
+	"olddirclean2" utility to clean your dirlog. Best run it from crontab.)
+
+	ex. site search quake
+	This will search the entire site for directories containing the
+	string 'quake'. The search is NOT case-sensitive.
+
+	ex. site search linux gnu
+	This will find all directories that contain both "linux" and "gnu"
+
+
+USAGE: site seen <user>
+	Check when a user was last online.
+
+	ex. site seen Archimede
+
+	This will display the last time Archimede logged in.
+
+
+USAGE: site stats [<user>]
+	Display a user's upload/download statistics.
+
+	Definable in '/ftp-data/text/user.stats'
+
+	If you have multiple sections then this will display stats from 
+	all sections.  (But you have to copy this file to SECTIONuser.stats.
+	exmp: if you have a section called GAMES then glftpd will look
+	for the files user.stats and GAMESuser.stats in the /ftp-data/text dir.
+
+
+USAGE: site show <user>
+	Displays the userfile in raw format.
+
+
+USAGE: site swho
+	Shows detailed information about users online.
+
+
+USAGE: site tagline [<tagline>]
+	Shows/Sets your tagline		
+
+	ex. site tagline 
+
+	This will show your current tagline.
+
+	ex. site tagline Archimede owns
+
+	This will set your tagline to 'Archimede owns'.
+
+USAGE: site take <user> <kbytes>[gGmM] [<message>]
+	Removes credit from user
+
+	ex. site take Archimede 100000 haha
+	The optional g/m suffix will take the number to be gigabytes or megabytes.
+	This will remove 100mb of credits from the user 'Archimede' and 
+	send the message haha to him.
+
+
+USAGE: site time
+	Display current time on the site.
+
+USAGE: site unnukes
+	Display recently unnuked releases.
+
+USAGE: site user [<user>]
+	Lists users / Shows detailed info about a user.
+
+	ex. site user
+
+	This will display a list of all users currently on site.
+
+	ex. site user Archimede
+
+	This will show detailed information about user 'Archimede'.
+
+
+USAGE: site users [keyword|flag|=group|usernam*]
+
+	Lists users and shows their group, ul stats, dl stats, and credits.
+
+	Use a keyword to limit the display to specific users.
+	A keyword can be: deleted,siteop,gadmin,leech,anonymous,glock,exempt,
+	useredit,nuke,unnuke,undupe,kick,kill,take,give,users,idler.
+
+	Specifying a group's name instead of a keyword will only list users 
+	that belong to that group. Specifying a flag will only lists users with
+	that flag. Exmp: site users 1 (list all siteops), site users 5 (all
+	users with color turned on), site users =STAFF (all users in group
+	STAFF).
+
+	You can use partial username with a * at the end to find all users
+	whose name starts with those letters.  ex. site users f*
+	This will find frank, frog, etc.
+
+USAGE: site update <string>
+	Adds all dirs matching <string> in current directory to dirlog (for "site new")
+
+	ex. site update A*
+
+	This will add all directories in current path that start with A to the dirlog.
+
+
+USAGE: site syslog [<number>] [<searchstring>]
+	Display the user changes log (ftp-data/logs/sysop.log).
+
+	If you don't specify a number, the whole log will be shown.
+	If you do specify a number, it will only show changes that number of days old.
+	ex. site syslog 5
+
+	If you specify a searchstring, only entries containing that string will be shown.
+	ex. site syslog 10 deleted
+	ex. site syslog added   -OR-   site syslog 0 added
+
+
+USAGE: site traffic
+        Display total uploads/downloads by all existing users in all sections.
+
+
+USAGE: site unnuke <directory> <message>
+	Unnuke a directory.
+
+	ex. site unnuke shit NOT CRAP
+	
+	This will unnuke the directory 'shit' with the comment 'NOT CRAP'.
+
+        NOTE: You can enclose the directory in braces if you have spaces in the name
+        ex. site unnuke {My directory name} justcause
+
+	You need to configure glftpd to keep nuked files if you want to unnuke.
+	See the section about glftpd.conf.
+
+
+USAGE: site undupe <string>
+	Remove filename(s) from ftp-data/logs/dupefile
+
+	ex. site undupe cls*
+
+	This will remove all files that start with the string 'cls' from
+	the dupe database.
+
+
+USAGE: site predupe <filename>
+	Adds <filename> to the dupefile database, so that it can't be uploaded.
+
+	Users need access to -predupe in glftpd.conf to use this.
+
+	Files that match those listed under ignore_type in glftpd.conf will
+	not be added.
+
+
+USAGE: site vers
+	Show current glftpd version.
+
+
+USAGE: site who
+	Display users currently online.
+
+
+USAGE: site welcome
+	Display the welcome screen.
+
+USAGE: site wipe [-r] <file/directory>
+
+	This is similar to the UNIX rm command.
+	In glftpd, if you just delete a file, the uploader loses credits and
+	upload stats for it.  There are many people who didn't like that and
+	were unable/too lazy to write a shell script to do it for them, so I
+	wrote this command to get them off my back.
+
+        If the argument is a file, it will simply be deleted. If it's a
+	directory, it and the files it contains will be deleted.  If the
+	directory contains other directories, the deletion will be aborted.
+
+	To remove a directory containing subdirectories, you need to use
+	"site wipe -r dirname". BE CAREFUL WHO YOU GIVE ACCESS TO THIS COMMAND.
+	Glftpd will check if the parent directory of the file/directory you're
+	trying to delete is writable by its owner. If not, wipe will not
+	execute, so to protect directories from being wiped, make their parent
+	555.
+
+	Also, wipe will only work where you have the right to delete (in
+	glftpd.conf). Delete right and parent directory's mode of 755/777/etc
+	will cause glftpd to SWITCH TO ROOT UID and wipe the file/directory.
+	"site wipe -r /" will not work, but "site wipe -r /incoming" WILL, SO
+	BE CAREFUL.
+
+	This command will remove the deleted files/directories from the dirlog
+	and dupefile databases.
+	
+	To give access to this command, add "-wipe -user flag =group" to the
+	config file (similar to other site commands).
+
+
+*NOTE*	The two commands below require unzip to reside in the /bin directory
+	(it's /bin in the chroot'ed environment, so /glftpd/bin in reality) 
+
+
+USAGE: site xdupe [mode]
+
+	If mode is present, xdupe mode will be set to it. If not, glftpd will
+	print currently set mode.
+
+	Xdupe will allow clients that keep queues of files to be uploaded to
+	quickly remove files from their queue if they already exist on
+	the glftpd site, without the need to refresh. This should minimize the
+	number of 'dupe' errors as clients try to upload files that have
+	already been uploaded by someone else to the current directory. When
+	this is turned on (through 'site xdupe'), glftpd will give a list of
+	files, preceded by the string "X-DUPE:", right before the usual "this
+	file is a dupe" message. The files are first matched against a list
+	of file masks on the "xdupe" line in glftpd.conf. See the included
+	x-dupe-info.txt for more details. Currently, pftp is the only client
+	which supports this feature.
+
+	example config file entry:
+	xdupe *.zip *.rar *.r[0-9][0-9] *.gz *.tgz *.arj
+
+
+
+
+
+
+
+.------------------------------------.
+  IV. color cookies
+`------------------------------------'
+
+
+
+
+
+Here are all the color cookies available:
+Use without the ':'
+
+Normal colors
+-------------
+
+!a: Black		!A: Dark gray
+!b: Red			!B: Bright red     
+!c: Green		!C: Bright green       
+!d: Brown		!D: Yellow              
+!e: Blue		!E: Bright blue         
+!f: Magenta		!F: Bright magenta      
+!g: Cyan		!G: Bright cyan         
+!h: Light Gray		!H: White       
+
+Blinking colors
+---------------
+
+!k: Black   		!K: Dark gray
+!l: Red			!L: Bright red
+!m: Green		!M: Bright green
+!n: Brown		!N: Yellow
+!o: Blue		!O: Bright blue
+!p: Magenta		!P: Bright magenta
+!r: Cyan		!R: Bright cyan
+!s: Lt. Gray		!S: White
+
+
+Background colors
+-----------------
+
+!1: Black
+!2: Red
+!3: Green
+!4: Yellow
+!5: Blue
+!6: Magenta
+!7: Cyan
+!8: White
+
+Special Cookies
+---------------
+
+!0: All attributes off (use at end of each line!)
+!!: display a single "!"
+!Z: generic bold code
+
+
+
+
+
+
+
+
+
+.------------------------------------.
+  V. Other cookies
+`------------------------------------'
+
+
+
+
+
+
+Here are all cookies available:
+Use without ':'
+
+Cookies      %d - decimal, %f - float, %s - string
+
+WARNING: Be sure the above parameters are used correctly with the
+	 right cookie.
+
+	ex.  FREESPACE     %[%.1f]FMB  = 755.5MB
+	     HOSTNAME      %[%-13.13s]E  =  localhost@127
+	     COUNTER       %[%02d]c  =  01
+	     TRANSFER RATE %[%.2f]AK/s = 150.23K/s
+
+	
+%[%f]A: Last Real-Time Avg. transfer Rate in K/sec.
+%[%f]F: Free Space in CWD in MB.
+%[%s]E: Email address
+%[%d]M: Max # of users allowed online.
+%[%s]T: Current Time/Date
+%[%s]D: Date/Time current file was last modified.
+%[%s]R: RemoteHost 
+%[%s]H: Hostname
+%[%s]S: sitename Long Format
+%[%s]s: sitename Short Format
+%[%d]c: Counter
+%[%s]d: Current Directory
+%[%s]b: Name of current section
+%[%s]P: Type of SSL connection (ctrl&data or ctrl, or none if not using SSL)
+%%: Literal '%'
+
+%[%d]B:  # of users currently logged in.
+%[%d]Bo: # of users currently logged in excluding the hidden users.
+
+%[%s]Iu: Username
+%[%s]I$: User's comment (use with caution)
+%[%s]I!: Users expire date.
+%[%s]I-: The user that added this user.
+%[%s]Iy: Groups: Long string separated by spaces (with a prepented * if the user is a gadmin for this group).
+%[%s]IY: Private Groups: Long string separated by spaces.
+%[%s]IZ: User flags
+%[%s]Ir: Ratio:  "1:x" or "Unlimited" if ratio is 0
+%[%s]Id: Will print a 'Y' if the user has messages waiting and an 'N' if not.
+%[%s]IE: Shows the timeframe
+%[%d]If: Total # of files uploaded
+%[%d]IF: # of files uploaded this call
+%[%d]Ig: # of files uploaded this week
+%[%d]Ia: # of files uploaded this month
+%[%d]IA: # of files uploaded this day
+%[%f]IG: Total # of bytes uploaded in MB.
+%[%f]Ih: # of bytes uploaded this week in MB.
+%[%f]IH: # of bytes uploaded this call in MB.
+%[%f]Ib: # of bytes uploaded this month in MB.
+%[%f]IB: # of bytes uploaded this day in MB.
+%[%d]Ii: Total # of files downloaded
+%[%d]II: # of files downloaded this week
+%[%d]Ij: # of files downloaded this call
+%[%d]In: # of files downloaded this month
+%[%d]IN: # of files downloaded this day
+%[%f]IJ: Total # of bytes downloaded in MB.
+%[%f]Ik: # of bytes downloaded this week in MB.
+%[%f]IK: # of bytes downloaded this call in MB.
+%[%f]Ip: # of bytes downloaded this month in MB.
+%[%f]IP: # of bytes downloaded this day in MB.
+%[%f]IU: Average upload rate in K/sec.
+%[%f]ID: Average download rate in K/sec.
+%[%f]IS: Average download rate in K/sec this day.
+%[%f]IV: Average download rate in K/sec this week.
+%[%f]Iv: Average download rate in K/sec this month.
+%[%f]Iq: Average upload rate in K/sec this week.
+%[%f]IQ: Average upload rate in K/sec this month.
+%[%f]Is: Average upload rate in K/sec this day.
+%[%f]IR: Overall Average transfer rate in K/sec.
+%[%s]It: User tagline
+%[%s]IT: Last time/date online for user
+%[%d]Iw: Time Limit in Minutes
+%[%f]Ic: Amount of credits in MB.
+%[%d]IL: Total number of times user has logged in.
+%[%s]IM: Max # of simultaneous logins for user or "Unlimited"
+%[%s]I#: Max # of sim. logins from the same IP
+%[%d]Im: Number of times current user is logged in.
+%[%s]Io: Time Online this call.
+%[%s]Ie: Time Online today.
+%[%s]IC: When user was added to system.
+%[%f]IW: Weekly Allotment in megs
+%[%s]Il: Last Nuked
+%[%d]IO: Times Nuked
+%[%f]Ix: Bytes Nuked
+%[%s]I0: Ip #1 of User
+%[%s]I1: Ip #2
+%[%s]I2: Ip #3
+%[%s]I3: Ip #4
+%[%s]I4: Ip #5
+%[%s]I5: Ip #6
+%[%s]I6: Ip #7
+%[%s]I7: Ip #8
+%[%s]I8: Ip #9
+%[%s]I9: Ip #10
+%[%f]Iz: User's max allowed download speed.
+%[%f]I&: User's max allowed upload speed.
+%[%s]I^: User's max simultaneous uploads
+%[%s]I*: User's max simultaneous downloads
+%[%s]I+: Last time/date we saw the user.
+%[%s]I@: Maximum individual idle time, or 'Disabled' if -1
+
+Flags Cookies
+-------------
+
+%[%s]fX: '*' will be printed if user has flag X, ' ' otherwise.
+
+
+Ginfo Cookies
+-------------
+ginfo.body:
+%[%s]ga: User's ratio
+%[%f]gb: User's bytes up
+%[%f]gc: User's bytes down
+%[%d]gf: User's files up
+%[%d]gg: User's files down
+%[%s]gu: Username
+%[%s]gt: Tagline
+%[%f]gW: Wkly in MB
+
+ginfo.foot:
+%[%d]gk: Number of users
+%[%d]gl: Number of leechers
+%[%d]gx: Total files up
+%[%d]gy: Total files down
+%[%f]gm: Total megs up
+%[%f]gn: Total megs down
+%[%s]gh: Number of free slots
+%[%s]gi: Number of free leech slots
+%[%s]gj: Number of free allotment slots
+
+
+Group Info Cookies
+------------------
+%[%s]Cg: Group name
+%[%s]Cc: Group comment
+%[%s]CS: Number of free slots
+%[%s]Cl: Number of free leech slots
+%[%s]Ca: Number of free allotment slots
+%[%s]Cw: Maximum allotment size
+%[%s]Cs: Maximum number of simultanious users
+%[%s]Ci: Group info
+
+Show_totals Cookies
+----------------
+%[%s]Zu: Uploader
+%[%s]Zg: Group
+%[%s]Zb: total bytes by uploader
+%[%s]Zf: total files by uploader
+%[%f]Zp: Percentage of total bytes up'd by uploader
+%[%f]ZP: Total Percentage
+%[%s]ZB: Total bytes in DiR
+%[%s]ZF: Total files in DiR
+	 
+
+Who's Online Cookies
+--------------------
+%[%s]Wa: User action
+%[%s]Wo: Time Online
+%[%s]Wi: Idle Time
+%[%s]WI: Time since the last succesfull transfer
+%[%s]Wu: Username
+%[%s]Wg: Group
+%[%s]Wp: PiD
+%[%s]Wd: Current directory
+%[%s]Wh: Remote hostname 
+%[%s]Wt: User's tagline
+%[%s]Ws: The user is using SSL? (ctrl&data, ctrl or none).
+%[%s]Wx: Total upload speed by all visible users
+%[%s]Wy: Total download speed
+
+
+Onliners Cookies
+----------------
+%[%s]ou: The user who added the oneliner
+%[%s]og: The users group
+%[%s]ot: The users tagline
+%[%s]oD: The day it was added
+%[%s]oM: The month is was added
+%[%s]oY: The year it was added
+%[%s]om: The message
+
+
+Lastonline Cookies
+------------------
+%[%s]Lu: The username
+%[%s]Lg: The groupname
+%[%s]Lt: The users tagline
+%[%s]Li: The time of logon
+%[%s]Lo: The time of logoff
+%[%s]LU: The amount of bytes uploaded
+%[%s]LD: The emount of bytes downloaded
+%[%s]Ls: The actions the user did
+
+New Directories Cookies
+-----------------------
+%[%s]ND: Newest directory (full path)
+%[%s]Nd: Newest directory
+%[%s]Na: Age
+%[%s]Nm: Owner
+%[%s]Ns: Size
+
+
+Nuke/Unnuke Cookies
+-------------------
+%[%s]KD: Nuked/UnNuked directory (full path)
+%[%s]Kd: Nuked/UnNuked dir
+%[%s]Ka: Age
+%[%s]Kr: Reason/Comment
+%[%s]Kn: Nukee/Old Nukee
+%[%s]KN: Nuker/UnNuker
+%[%s]Ks: Multiplier + Size	
+
+
+Multipurpose STAT Cookies
+-------------------------
+%[%s]Gb: Bytes - Available for all stats.
+%[%s]GN: Times nuked - Nuketop cookie only.
+%[%s]Gs: Speed in K/s - Used in all but nuketop and grouptops.
+%[%s]Gn: Bytes nuked - Nuketop cookie only.
+%[%s]Gt: User's tagline.  Used in all but grouptops.
+%[%s]Gu: Username.  Used in all but grouptops.
+%[%s]Gg: Group - Available for all stats.
+%[%s]Gf: Number of files.  Used in all but nuketop.
+%[%s]Gp: Percantage of the total amount of bytes. Used in all usertops.
+%[%s]Gd: Group description.  Used in grouptops only.
+%[%s]Gm: # of Group members.  Used in grouptops only.
+
+
+Special Cookie
+--------------
+
+%=FLAG/path/file	Display file only if user has FLAG enabled
+
+	ex. %=123/ftp-data/text/site.help.nuke
+
+	This would display the file 'site.help.nuke' to user with flags 1,2,3
+	enabled.
+
+Conditional Cookie
+------------------
+
+This is a cookie that works like an if/else statement. It will check whether
+the user has flags or is in groups listed, and will print different chunks of
+text based on the result.
+
+Syntax: %?X,=group:text1:text2:?
+	...where X is a flag, text1 is the text printed if user has access,
+	and text2 is printed if not. "%?" is the beginning of the cookie, a
+	single '?' is the end, and ':' is the field delimiter.
+
+	The ':' and '?' characters must not be used as part of text1 or text2,
+	since glftpd would confuse it with field delimiter or end of cookie.
+
+	One flag or group is the minimum condition; multiple flags or groups,
+	which can be mixed, must be separated by commas. The text1 and text2
+	fields can be plain text, regular cookies, color cookies, or the
+	%LOGOUT super-cookie.
+
+        Example: %?1:You are a siteop, %[%s]Iu:You are not a siteop:?
+        (this will print "You are a siteop, username" if user has flag 1, and
+        "You are not a siteop" otherwise).
+
+        Example: %?=disabled:Your account is disabled. %LOGOUT::?
+        (this will log out users who are in group 'disabled', and will do
+        nothing for everyone else).
+
+        Example: Your comment is %?1,=STAFF:%[%s]I$:hidden:?.
+        (this will print "Your comment is <comment>." for siteops and users in
+        group STAFF, and "Your comment is hidden." for everyone else.
+
+
+"Super" Cookies
+---------------
+These cookies only work by themselves at the beginning of the line.
+Replace '#' with a number of your choice to specify the amount of lines to display.
+
+For the statistic cookies, section is optional.  If it's missing, stats will be
+calculated for the current section.  You can use either section name or number
+(default section is 0, section 10 is 9).
+
+
+%!/dir/file	  	Display File
+%=123/dir/file		Display file if user has flags 1, 2, or 3 set.
+%@GROUP /dir/fil  	Display File if user is in GROUP
+%EXEC/dir/file		Execute & Display File
+%NEW# <dir>	  	Show newest # uploads in <dir> (both are optional).
+			<dir> can be . to show new uploads in current dir.
+%ONEL			Display current oneliners
+%LASTON			Display last users online				  
+%LOGOUT			Properly log off (erasing shared memory segment, etc).
+%WHO			Display who's online
+%REQS			Display requests
+%NUKES#			Display nukes
+%UNNUKES#		Display unnukes	
+%WEEKUP# [<sec>]	Display WEEKTOP uploaders
+%WEEKDN# [<sec>]	Display WEEKTOP downloaders
+%DAYUP# [<sec>]		Display Today's top uploaders
+%DAYDN# [<sec>]		Display Today's top downloaders
+%MONTHUP# [<sec>]	Display the Top Uploaders for the Month
+%MONTHDN# [<sec>]	Display the Top Leechers for the Month
+%ALLUP# [<sec>]		Display ALLTIME top uploaders
+%ALLDN# [<sec>]		Display ALLTIME top downloaders
+%GALLTOP# [<sec>]	Display the ALLTIME top groups
+%GWKTOP# [<sec>]	Display the TOP groups for the week.
+%GALLDOWN# [<sec>]	Display the ALLTIME top group downloaders.
+%GWKDOWN# [<sec>]	Display the WEEK top group downloaders.
+%NUKETOP# [<sec>]	Display nuketop
+
+
+
+
+
+
+
+
+.------------------------------------.
+| VI. glftpd strings                 |
+`------------------------------------'
+
+
+
+
+Glftpd strings (keywords: glstrings, glstrings.bin)
+---------------------------------------------------
+
+Glstrings is the name of an external package that contains most of the reply
+strings in glftpd. For example, when glftpd replies "user logged in" after
+logging in, or "you do not have access to this command" if a user tries to
+execute a command he has no access to, these responses are now taken from
+the glstrings package instead of being hard-coded into the glftpd binary.
+
+Glstrings was created in glftpd version 1.25 in Autumn 2001.
+
+The default strings file, in binary format, is called glstrings.bin and it
+resides in /glftpd/bin. Glftpd will by default try to read that file when a
+user connects. If your glftpd is in a different location, you need to specify
+the path to glstrings.bin on the command line (in inetd.conf or xinetd.conf).
+Use the -s switch for that. Exmp: glftpd -l -o -i -s/glftpd/mystringsfile.bin
+
+The rest of the glstrings package resides in /glftpd/bin/sources/glstrings.
+It contains programs to compile and decompile the strings file, as well as
+documentation for those who wish to modify default strings(replies).
+
+
+
+
+.----------------------------------------.
+|VII.  Glftpd directory & file structure |
+`----------------------------------------'
+
+
+
+1.  /glftpd/ftp-data:
+
+The ftp-data directory is where most of the data is stored for the server.  It
+contains subdirectories which contain most of the configurable files for help
+as well as login/logout.  It also contains the logs and all the userfiles.
+
+The following is an explanation of all subdirectories:
+
+byefiles - Contains the text files displayed to the user when he/she has
+           been deleted.  
+help     - Contains all the help files displayed for all the commands used on the
+           site.  The main file is site.help.  This file contains special cookies
+           based on flags for displaying help files based on flags and/or groups.
+logs     - Contains all the glftpd logs and directory/file databases.
+misc     - Contains all the files for welcome, news, logoff as well as other
+           configurable text files.
+msgs     - Contains user messages (site msg)
+text     - Contains all the header, body and footer files for all the stat
+           commands as well as many other text files displayed on the site.
+users    - Contains all of the userfiles.  See default.user for a description
+           of all the fields in the userfiles.
+groups	- Contains all of the groupfiles. See default.group for a description
+	   of all the fields in the groupfiles.
+
+
+Description of files in ftp-data/logs:
+
+- binary files:
+dirlog      - Contains all the directories created via the site.  This is used
+              when executing `site new` or `site search`.  It should be updated
+              if anything moves on the site.  Use glupdate to re-add new
+              directories or to add directories not created through glftpd.
+              glupdate is not recursive, so it must be executed on each
+              directory containing directories you wish to add.  Use
+              olddirclean2 to sort your dirlog and remove entries which no
+              longer exist on disk.
+laston	    - Contains all the user entries from people that logged in with their
+	      actions.
+nukelog     - Contains all the information on nuked directories.
+dupefile    - Contains the dupe database for all files uploaded through glftpd.
+oneliners   - Contains the onliners database.
+
+- text files:
+dupelog     - Contains the date and name of all directories made through
+              glftpd. New entries are added to the bottom; old ones are never
+              removed, so you may need to rotate this if it gets too big.
+              This file is used by the 'site dupe' command.
+error.log   - Contains errors that glftpd encounters, like bad homedirs etc.
+              Siteops should examine this frequently (exmp: site errlog 5).
+glftpd.log  - Contains many different actions taken by users, as described in
+              the description of the -l command-line option. Many sitebots
+              tail this file to announce user actions.
+login.log   - Contains login failures due to incorrect IPs or passwds.
+sysop.log   - Contains all siteop-made changes, like adding or removing users,
+              ips, purging, killing, etc.
+xferlog.log - Contains all the upload/download information for all files
+              transferred (if logging of that is enabled). The format is the
+              following: current time, transfer time, user's hostname, number
+              of bytes sent, filename, 'a' if transfer was in ASCII mode or
+              'b' if BINARY, _ (meaningless), 'i' if incoming (user uploading)
+              or 'o' if outgoing (user downloading), 'r' (no meaning), user's
+              name, user's group, 1 if user had ident or 0 if not, user's ident
+request.log - Contains requests that were filled with 'site reqfilled'.
+
+
+
+2.  /glftpd/etc:
+
+The etc directory contains the passwd and group files.  This is also the 
+place to store an additional copy of glftpd.conf for scripts that may want
+to access it as well as anything else that usually resides in /etc that
+you may need access to under chroot, ie: mtab so your df works under the site.
+
+The following is an explanation of the passwd and group files:
+
+passwd - This file contains the username, password, UID and home directory for
+         each glftpd user.  The format is as follows:
+
+         glftpd:6uwHOjJ3grid6:0:0:0:/site:/bin/false
+         user:encrypted passwd:UID:GID:Creation Date:homedir:irrelevant
+
+group  - This file contains all the group information for all your non-private
+         groups.  The format is as follows:
+
+         glftpd:glftpd:0:5
+         short group name:long group name:GID:irrelevant
+

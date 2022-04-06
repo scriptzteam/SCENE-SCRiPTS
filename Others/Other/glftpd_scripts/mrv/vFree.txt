@@ -1,0 +1,356 @@
+#!/bin/tclsh
+########################################################################
+#                    Mr V Archive-or-Delete v2.0                       #
+########################################################################
+# If you want to send it to background run it with a 'screen'          #
+# 'screen -s ./vFree'                                                  #
+########################################################################
+# siteName ?
+set siteName "MRV"
+# glftpd based logging ?
+set log(glftpd) "1"
+# glftpd log path
+set log(gllog) "/glftpd/ftp-data/logs/glftpd.log"
+# debug ?
+set debug 1
+# cycle checks
+set daemon 1
+# scan delay
+set sleepTime "300"
+# Arrays Configuration
+# .:( Drives Array ):.
+# this array sets the current devices you are going to check
+# eX: set free(devices) "MAiN DiVX iSO-GaMES"
+set free(devices) "Console Movies Series Incoming"
+
+# .:( DevicePath Array ):.
+# this arrays sets the physical device of the 'device' to be cleaned
+# eX: set device(MAiN) "/dev/hda1"
+set device(Console) "/dev/site_vg/site_lv"
+set device(Movies) "/dev/hdb1"
+set device(Series) "/dev/hdc1"
+set device(Incoming) "/dev/hda3"
+
+# .:( Cleaning Array ):.
+# in MBS define whats the MINSpace to start the Cleanup Routine
+# eX: set cleanup(MAiN) "700"
+set cleanup(Console) "2000"
+set cleanup(Movies) "2000"
+set cleanup(Series) "2000"
+set cleanup(Incoming) "7000"
+
+# .:( Directory Array ):.
+# this array sets the directorys of the device (multi-zones-per-disk)
+# eX: set dirs(MAiN) "/glftpd/site/iSO-GaMeS /glftpd/site/DiVX"
+#set dirs(MAiN) "/glftpd/site/DvD-R /glftpd/site/Screener /glftpd/site/xBox /glftpd/site/iSO-UTiLS /glftpd/site/TV"
+set dirs(Console) "/glftpd/site/Console/GameCube /glftpd/site/Console/xboxdvd /glftpd/site/Console/ps2dvd"
+set dirs(Movies) "/glftpd/site/Movies/Divx /glftpd/site/Movies/DvD-r /glftpd/site/Movies/VCD /glftpd/site/Movies/SVCD"
+set dirs(Series) "/glftpd/site/Movies/Series"
+set dirs(Incoming) "/glftpd/site/Incoming/GAMES /glftpd/site/Incoming/VCD /glftpd/site/Incoming/SVCD /glftpd/site/Incoming/DVDR /glftpd/site/Incoming/DIVX /glftpd/site/Incoming/PS2DVD /glftpd/site/Incoming/XBOXDVD /glftpd/site/Incoming/DOX /glftpd/site/Incoming/GAMECUBE"
+
+# .:( Excluded Array ):.
+# this array is for EXCLUDE stuff of a Deleting Routine
+# eX: set excluded(MAiN) "Mvids _Groups"
+set excluded(MAiN) "Groups Reques"
+
+# .:( Special Array ):.
+# this array is for AUTOARCHIVE stuff matching a String
+# SINTAXIS: STRING:DIRECTORY-TO
+# eX: set special(MAiN) "ISOGRP1:/glftpd/site/Archive/ISOGRP1 LINUX:/glftp/site/Archive/ISOGRP2"
+set special(MAiN) {
+*-SUPERKEWL:/dira:dirb
+}
+
+# .:( Archive Array ):.
+# this array defines if what found should goes to the Archive directory
+# SINTAXIS: DIR-SOURCE:DIR-DESTINATION
+# eX: set archive(/glftpd/site/Screener) "DELETE"
+# --- set archive(/glftpd/site/DiVX) "/glftpd/site/Archive/DiVX"
+# set archive(/glftpd/site/DvD-R) "/glftpd/site/Archive/DVD-ARCHIVE"
+set archive(/glftpd/site/Incoming/VCD) "/glftpd/site/Movies/VCD"
+set archive(/glftpd/site/Incoming/SVCD) "/glftpd/site/Movies/SVCD"
+set archive(/glftpd/site/Incoming/DIVX) "/glftpd/site/Movies/Divx"
+set archive(/glftpd/site/Incoming/XBOXDVD) "/glftpd/site/Console/xboxdvd"
+set archive(/glftpd/site/Incoming/PS2DVD) "/glftpd/site/Console/ps2vd"
+set archive(/glftpd/site/Incoming/DVDR) "/glftpd/site/Movies/DvD-r"
+set archive(/glftpd/site/Incoming/GAMECUBE) "/glftpd/site/Console/GameCube"
+set archive(/glftpd/site/Incoming/DOX) "/glftpd/site/Archive/iso/dox"
+set archive(/glftpd/site/Incoming/GAMES) "/glftpd/site/Archive/iso/games"
+set archive(/glftpd/site/Movies/SVCD) "/glftpd/site/Archive/movies/svcd"
+set archive(/glftpd/site/Movies/VCD) "/glftpd/site/Archive/movies/vcd"
+set archive(/glftpd/site/Movies/Divx) "/glftpd/site/Archive/movies/divx"
+set archive(/glftpd/site/Movies/DvD-r) "/glftpd/site/Archive/movies/dvdr"
+set archive(/glftpd/site/Console/xboxdvd) "/glftpd/site/Archive/console/xboxdvd"
+set archive(/glftpd/site/Console/ps2dvd) "/glftpd/site/Archive/console/ps2dvd"
+
+# .:( getSize process ):.
+# returns in KBytes the size of the 'directory' specifed
+proc free:getSize {dir} {
+    set size "[lindex [exec -- /glftpd/bin/du -s ${dir}] 0]"
+    return "$size"
+}
+
+# .:( getDestination process ):.
+# this process tells us where the release should goes
+# RETURNS:
+# DELETE -> release goes deleted
+# != DELETE -> release goes archived to $RETURN directory
+proc free:getDestination {zone dir} { global archive
+    if {[info exist archive($zone)]} {
+        return $archive($zone)
+    }
+    foreach name [array names archive] {
+        if {[string match "${name}/*" $dir]} {
+            return $archive($name)
+        }
+    }
+    return "DELETE"
+}
+
+# .:( getFree process ):.
+# tells to us the Current free space of a device
+proc free:getFree {unit} { global device
+    set free 0
+    set found 0
+    if {![info exist device($unit)]} {
+        return "N/A"
+    } else {
+        set freeLine [split [exec -- /glftpd/bin/df -k] "\n"]
+        foreach line $freeLine {
+            if {[string match  "$device($unit)" [lindex $line 0]]} {
+                set found 1
+            }
+            if {$found == 1} {
+                set count [llength $line]
+                if {$count >= 6} {
+                    set type a
+                } else {
+                    set type b
+                }
+                switch $type {
+                    a {
+                        set free [lindex $line 3]
+                        break
+                    }
+                    b {
+                        if {[info exist mark]} {
+                            set free [lindex $line 2]
+                            break
+                        }
+                        set mark 1
+                    }
+                }
+            }
+        }
+    }
+    return $free
+}
+# this process return the Name of the Release Splitted correctly
+proc name {fpath} {
+    set split [split $fpath "/"]
+    set ll [llength $split]
+    if {$ll < 3} {return "\{ERR\} \{ERR\}"}
+    set loc "[lindex $split [expr $ll - 2]]"
+    set rel "[lindex $split [expr $ll - 1]]"
+    if {[string match "\[cC\]\[dD\]\[0-9\]" $rel] || [string match "\[sS\]\[aA\]\[mM\]\[pP\]\[lL\]\[eE\]*" $rel] || [string match "\[dD\]\[iI\]\[sS\]\[cCkK\]*" $rel] || [string match "\[pP\]\[aA\]\[rR\]\[tT\]*" $rel]} {
+        set loc "[lindex $split [expr $ll - 3]]"
+        set rel "[lindex $split [expr $ll - 2]]/$rel"
+    }
+    return "\{$rel\}"
+}
+
+# .:( moveRelease process ):.
+# this process moves the release to the Specifed directory
+proc free:moveRelease {release dest} {
+    set release [lindex $release 0]
+    set dest [lindex $dest 0]
+    if {([file isdirectory $release]) && ([file isdirectory $dest])} {
+        exec -- cp -uRf $release ${dest}/
+        file delete -force $release
+        if {![file isdirectory $release]} {
+            debug "  vFree: [name $release] Archived correctly in [name $dest]"
+        } else {
+            debug "  vFree: Error Moving Release.. (Multiple HDs)"
+            debug "  vFree: Copying Release.. (This will take a while)"
+            exec -- /bin/cp -R [pwd]/$release ${dest}/
+            debug "  vFree: Copied Sucessfully"
+            debug "  vFree: [name $release] Archived correctly in [name $dest]"
+        }
+    }
+}
+
+# .:( special process ):.
+# this process tells to us if the release is special and should be moved or not
+# RETURN:
+# 0 - Nothing
+# 1 $PATH - Ok is Special!
+proc free:getSpecial {section dir} { global special
+    if {![info exist special(${section})]} {
+        return 0
+    }
+    foreach stat $special(${section}) {
+        set string [lindex [split $stat ":"] 0]
+        set dest [lindex [split $stat ":"] 1]
+        if {[string match -nocase "$string" $dir]} {
+            return "1 $dest"
+        }
+    }
+    return 0
+}
+
+# .:( debug process ):.
+# that shows or not the debug info
+proc debug {text} { global debug
+    if {$debug == 1} {
+        puts "DEBUG: vFree -> $text"
+    }
+}
+
+# .:( sanityCheck process ):.
+# this checks that all info is configured properly
+proc free:sanityCheck {name} { global device free cleanup dirs archive
+    if {![info exist device(${name})]} {
+        debug " ($name) DEViCE ARRAY NOT FOUND"
+        return 0
+    }
+    if {![info exist free(devices)]} {
+        debug " ($name) FREE ARRAY NOT FOUND"
+        return 0
+    }
+    if {![info exist cleanup(${name})]} {
+        debug " ($name) CLEANUP ARRAY NOT FOUND"
+        return 0
+    }
+    if {![info exist dirs(${name})]} {
+        debug " ($name) DIRS ARRAY NOT FOUND"
+        return 0
+    }
+    foreach wop dirs(${name}) {
+        if {[info exist archive(${wop})]} {
+            if {![file isdirectory $archive(${wop})]} {
+                debug " ($name) ARCHiVE CONFiGURATiON ERRoR"
+                return 0
+            }
+        }
+    }
+    return 1
+}
+
+# .:( log process ):.
+# based-log process
+proc log {type name relDate relName relDest relAccess relSize} { global log siteName
+    if {$log(glftpd) != "1"} {
+        #debug " ($name) LOG ROUTiNE SKiPPED"
+        return 0
+    }
+    set relName [lindex [name $relName] 0]
+    set log_format "[clock format [clock seconds] -format "%a %b %d %T %Y"]"
+    set of [open $log(gllog) a]
+    switch $type {
+        special {
+            puts $of "$log_format SAY: \"\037(\037\002$siteName\002-ARCHiVED\037)\037 Archived (\002SPECiAL\002) \002$relName\002 (Freed: \002$relSize\002KBs)-(Created: [clock format $relDate -format "%H:%M:%S %d-%m-%Y"])"
+        }
+        archive {
+            puts $of "$log_format SAY: \"\037(\037\002$siteName\002-ARCHiVED\037)\037 Archived (\002SPECiAL\002) \002$relName\002 (Freed: \002$relSize\002KBs)-(Created: [clock format $relDate -format "%H:%M:%S %d-%m-%Y"])"
+        }
+        delete {
+            puts $of "$log_format SAY: \"\037(\037\002$siteName\002-WiPED\037)\037 >\[FREE\]>-->> Deleted \002$relName\002 (Freed: \002$relSize\002KBs)-(Created: [clock format $relDate -format "%H:%M:%S %d-%m-%Y"])"
+        }
+    }
+    close $of
+}
+
+# .:( excluded process ):.
+# that process tells us if the directory is skipped or not
+proc free:getExcluded {name rel} { global excluded
+    foreach word $excluded($name) {
+        if {[string match "$word" "$rel"]} {
+            return 1
+        }
+    }
+    return 0
+}
+
+# .:( main process ):.
+# that gets the info from the different procs and does the necessary to fit your needs
+proc free:main {} { global free device cleanup dirs excluded archive log
+    debug " STARTiNG SCRiPT..."
+    debug " vFree-or-Delete v2.1 17/05/2004"
+    foreach name $free(devices) {
+        set deviceFree "[free:getFree $name]"
+        debug " ($name) STARTiNG CLEANUP ROUTiNE"
+        if {[free:sanityCheck "$name"] == "0"} {
+            debug " ($name) SANiTY CHECK NOT PASSED EXiTiNG"
+            return 0
+        }
+        debug " ($name) SANiTY CHECK PASSED"
+        if {[expr $cleanup($name) * 1024] < $deviceFree} {
+            debug " ($name) CLEANUP NOT NEEDED SKiPPiNG DEViCE (FREE: ${deviceFree}KBs)"
+            continue
+        }
+        debug " ($name) CLEANUP NEEDED -> FREE ${deviceFree}KBs out of the [expr $cleanup(${name}) * 1024]KBs Needed"
+        foreach zone $dirs(${name}) {
+            set listdir [glob -nocomplain -types d -path $zone/ *]
+            set dest [free:getDestination $zone $zone]
+            foreach stuff $listdir {
+                if {![info exist del(${name})]} {
+                    set del(${name}) "\{[file mtime $stuff] $stuff $dest\}"
+                } else {
+                    lappend del(${name}) "[file mtime $stuff] $stuff $dest"
+                }
+            }
+        }
+        if {![info exist del(${name})]} {
+            debug " ($name) FREE SPACE NEEDED BUT NOT STUFF TO DELETE"
+            return 0
+        }
+        set del(${name}) "[lsort -increasing -integer -index 0 $del(${name})]"
+        debug " ($name) STARTiNG WiPE ROUTiNE"
+        foreach crap $del(${name}) {
+            set deviceFree "[free:getFree $name]"
+            set relDate [lindex $crap 0]
+            set relName [lindex $crap 1]
+            set relDest [lindex $crap 2]
+            set relAccess [file atime $relName]
+            set relSize [free:getSize $relName]
+            if {"[expr $cleanup($name) * 1024]" < "$deviceFree"} {
+                debug " ($name) CLEANUP ROUTiNE FiNiSHED"
+                break
+            }
+            set ispec [free:getSpecial $name "$relName"]
+            set sstat [lindex $ispec 0]
+            set sdes [lindex $ispec 1]
+            if {$sstat == "1"} {
+                debug " ($name) SPECiAL RELEASE FOUND -> $relName ->> MOVED TO ->> $sdes"
+                free:moveRelease "$relName" "$sdes"
+                debug " ($name) SPECiAL RELEASE MOVED CORRECTLY"
+                log special $name $relDate $relName $relDest $relAccess $relSize
+            }
+            if {$relDest != "DELETE"} {
+                set dest [free:getDestination $relName $relName]
+                debug " ($name) ARCHiVE ROUTiNE -> $relName ->> ARCHiVED iNTO ->> $dest"
+                free:moveRelease "$relName" "$dest"
+                debug " ($name) ARCHiVED RELEASE CORRECTLY"
+                log archive $name $relDate $relName $relDest $relAccess $relSize
+            } else {
+                file delete -force "$relName"
+                debug " ($name) DELETED $relName (FREED: ${relSize}KBs)-(NEEDED: [expr $cleanup($name) * 1024]KBs)-(LAST ACCESS: [clock format $relAccess -format "%H:%M:%S %d-%m-%Y"])-(LAST MODIFICATION: [clock format $relDate -format "%H:%M:%S %d-%m-%Y"])"
+                log delete $name $relDate $relName $relDest $relAccess $relSize
+            }
+        }
+        debug " ($name) CLEANUP OF DiSK FiNiSHED"
+    }
+}
+# basic loop
+proc daemonize {} { global sleepTime
+    while {![info exist HUP]} {
+        free:main
+        debug "Sleeping $sleepTime secs till next scan"
+        exec -- sleep $sleepTime
+    }
+}
+if {$daemon != "0"} {
+        daemonize
+} else {
+        free:main
+}

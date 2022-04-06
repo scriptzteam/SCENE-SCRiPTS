@@ -1,0 +1,116 @@
+         German.Charts.Release.Rules.V1
+---------------------------------------------------------------------
+#  Einleitung:
+# Ziel dieser Rules ist es, eine Richtlinie fuer das Releasen	#
+# von German Charts zu setzen. In der fruehren Zeit bevor	#
+# es so genannte MP3 Rules in der Form von Heute gab		#
+# wurde auf das Releasen der Charts nicht besonders geachtet	#
+# Doch diese Zeit hat sich nun geaendert und dies zwingt uns	#
+# diese Rules nieder zu legen.					#
+# 								#
+# 1. Charts bestimmung						#
+# Die Bestimmung der Charts ist ausschließlich von		#
+# Media Control zu beziehen. Die Veroeffentlichung		#
+# stand(04.2010) findet Freitags um 12 Uhr statt.		#
+# Früher duerfen somit auch keine Release ohne 			#
+# beigelegtem Proof in form eines .jpg der Liste,		#
+# erfolgen.							#
+#								#
+# 2. Source							#
+# Als Source duerfen nur CDA / CDS und Webstores benutzt 	#
+# werden. Promos sind ausdruecklich untersagt und koennen	#
+# durch einen Proper zum Nuke des gesamten Releases 		#
+# fuehren. Die Auffuehrung welche Source jedes Titels		#
+# genommen wurde ist nicht noetig und muss somit nicht		#
+# erbracht werden.						#
+#								#
+# 3. Encoding							#
+# - Lame 3.97 mit preset V2 und VBRNEW (-V2 --vbrnew)		#
+# - Die Sampling Rate muss immer 44.1 khz oder 48 khz sein.	#
+#   Alle anderen Sampling Rates fuehren zum Nuke.		#
+#   Downsampling von 44.1 khz oder 48 khz ist erlaubt sofern	#
+#   die benutze Source besser ist. Upsampling von 44.1 khz	#
+#   oder 48 khz ist untersagt und somit nicht erlaubt.		#
+#								#
+# 4. ID3 Tag							#
+# Alle MP3 Files muessen einen ID3 v1.1 und ID3 v2 Tag haben	#
+# Die Tags muessen folgende Informationen beinhalten:		#
+# Artist, Titel, Album, Jahr und Genre. Als Album muss stehts	#
+# German XXX Charts stehen. Das XXX muss durch die einzelne	#
+# Charts Kategorie ersetzt werden. (Top 100, ODC oder BC )	#
+# 								#
+# 5. Dir Tag							#
+# Die Ordner muessen wie folgt beschriftet werden:		#
+# German_Top_100_Singel_Charts_DD_MM_YYYY-GRP			#
+# German_ODC_Charts_DD_MM_YYYY-GRP				#
+# German_BC_Charts_DD_MM_YYYY-GRP				#
+# Bei einem Proper oder Repack ist folgendes zu ergaenzen:	#
+# _DD_MM_YYYY_(Proper/Repack)-GRP				#
+# Tag mit HAPPY.NEW.YEAR or HAPPY.EASTER			#
+# duerfen eingefuegt werden und koennen nicht zu einem		#
+# Nuke durch Bad.Tagging fuehren				#
+# HOMEMADE oder SELFMADE Tags muessen nicht eingefuegt werden	#
+# Erlaubte Zeichen sind a-z A-Z 0-9 _ . - () 			#
+# Die maximale Laenge darf nur 128 Zeichen sein			#
+#								#
+# 6. File Tag							#
+# M3U: Muss mit 000- beginnen					#
+# NFO: Muss auch mit 000- beginnen				#
+# MP3 Files: Muessen von 001- bis 100- nummeriert werden	#
+# des weiteren muss mindestens Artist - Titel im Tag 		#
+# vorkommen							#
+# Erlaubte Zeichen sind a-z A-Z 0-9 _ . - () 			#
+# Die maximale Laenge darf nur 128 Zeichen sein			#
+#								#
+# 7. M3U							#
+# Es muessen 2 Arten von .m3u ´s vorhanden sein.		#
+# Die erste muss alle MP3s beinhalten und die zweiten		#
+# alle Neueinsteiger.						#
+#								#
+# 8. NFO Datei							#
+# In der NFO Datei muss eine komplette Liste der MP3s		#
+# in richtiger reinfolge vorhanden sein und die Playtime	#
+# muss pro Titel und Gesamt aufgefuerht werden.			#
+# weitere Daten duerfen auch hinzugefuegt werden		#
+#								#
+# 9. Release Fix						#
+# Der Group ist es erlaubt ein Release Fix zu erbringen.	#
+# Es duerfen auch einzelne Files als Fix erscheinen. Dennoch	#
+# muss ab 10 Prozent des Gesamt Volums ein Repack erfolgen.	#
+# Als Beispiel der TOP 100, darf die Group Maximal 10 Mp3s	#
+# Fixen.							#
+# Der Group ist es nur 1x erlaubt einen MP3 Fix zu Pren		#
+# sollte dieser Fix immer noch fehler beinhalten ist die Group	#
+# gezwungen ein sauberes Repack zu PREN.			#
+# DiR Fix und M3U Fix sind von der Regel ausgeschlossen		#
+# Dennoch wird an die Group appelliert dies so wenig		#
+# wie moeglich zu benutzen					#
+# Die Group hat fuer einen MP3 FIx Maximal 48 Stunden		#
+# nach bekannt werden durch einen Nuke, Zeit			#
+# diesen zu Releasen. Danach kann ein Proper erfolgen.		#
+#								#
+# 10. Proper							#
+# Ein Proper des vorhandenem Releases ist nur erlaubt		#
+# sofern Rule 3 missachtet wird oder das Release mehr als	#
+# 10 Prozent an MP3 Files defekt sind oder nicht den		#
+# Bestimmungen dieser Rule entsprechen.				#
+# Ein Proper durch defekten M3Us oder Falscher NFO 		#
+# ist nicht erlaubt.						#
+# Sollte das Release unter der 10 Prozent Marke liegen		#
+# und es erfolgt nicht innerhalb von 48 Stunden nach 		#
+# bekannt werden des Fehlers durch einen Nuke	, ein FiX	#
+# kann ein Proper erbracht werden.				#
+# Waerend dieser 48 Studen darf kein Proper Release erscheinen	#
+# erst nach 48 Stunden !					#
+#								#
+#################################################################
+#################################################################
+Die Rules tretten ab dem 10.05.2010 in Kraft.
+Signed Rules
+
+DRD - CentralNET 
+
+
+
+
+

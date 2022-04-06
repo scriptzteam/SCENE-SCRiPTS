@@ -1,0 +1,16 @@
+###################################################################
+#   (kpre.sh) KPRE Adder v1.0 by kulgan                           #
+#             							   #
+#    									   #
+#    Instructions:							   #
+#    									   #
+#  1. Put this file in your bin for glftpd (/glftpd/bin/ usually) #
+#  2. Set variables for your glftpd system                        #
+#  3. Make the file executable by doing chmod +x kpre.sh.         #
+#									   #
+#									   #
+#  CHANGELOG:								   #
+#									   #
+#  2004-12-08: - Added Delete Function (thx loxley for ur help)   #
+#  2004-10-06: - Initial Release; Delete function will be made    #
+###################################################################

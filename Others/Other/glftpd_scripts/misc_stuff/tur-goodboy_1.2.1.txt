@@ -1,0 +1,12 @@
+GoodBoy (GL1&2)
+
+Description: A good puppy script !
+Will give the todays/this weeks/this months top uploader a reward. The reward can 
+be any flag or leech in any particular place on your site.
+The reward can stick for the reamining duration (whole week or month) or you can 
+force it to just last 24 hours.
+Comes with info for dZSbot.tcl (as usual).
+
+Author:   Turranius
+Version:  1.2.1
+Added on: 27-Aug-2003

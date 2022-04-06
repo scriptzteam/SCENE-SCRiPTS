@@ -1,0 +1,5 @@
+Tur-Linknet-Status.
+2003-10-26
+
+A small script to show linkstatus of all linknet servers.
+Can also display all servers using argument 'all'.

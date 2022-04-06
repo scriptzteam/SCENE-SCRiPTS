@@ -1,0 +1,111 @@
+0DAY:
+
+Dupes:
+We can be very quick with this one, below an example (The "CuNT" release is a real dupe)
+2002-10-20 Jack.The.MP3.Ripper.v1.0.cracked-DiCK
+2002-10-30 Jack.The.MP3.Ripper.v1.0.incl.keygen-CuNT
+
+But a Jack.The.MP3.Ripper.v1.0.keygen.only-CuNT is allowed!
+
+Nuke reason: dupe.<yyyy-mm-dd>.<group>
+
+Mu:
+In general we handle a MinorUpdate period of 14 days! If you release a new version of a program with in 14 days of the last program release , but 14 days from the last release out no matter if its nuked for MU or not.
+
+Example:
+2002-10-10 Jack.The.MP3.Ripper.v1.0.cracked-DiCK
+2002-10-15 Jack.The.MP3.Ripper.v1.1.incl.keymaker-CUNT <- (nuked for MU)
+
+Next version is allowed on 2002-10-29 AND NOT on 2002-10-24, coz we count 14 days from the last release, no matter if its nuked for MU or not.
+
+Additionally to bring some more clearness:
+
+2002-10-10 Jack.The.MP3.Ripper.v1.0.cracked-DiCK
+2002-10-14 Jack.The.MP3.Ripper.v1.0.keymaker.only-CUNT
+
+So v1.0 cracked gets released on 10th of oct. and the keymaker.only on 14th then the next release is allowed on 2002-10-24, no matter what time the keymaker.only was released. coz we always count 14 days of the release that included the setup-file of the software itself.
+
+The following groups have agreed to comply to these rules (ask handymen to add ur group here):
+LAXiTY/ACME/DWP
+
+Nuke reason: mu.<yyyy-mm-dd>.<group>
+
+Release Name creation:
+<PROGRAM NAME>.vX.XX.<opt. options>-<GROUP NAME>
+<PROGRAM NAME>_vX.XX_<opt. options>-<GROUP NAME>
+
+Examples:
+The.true.story.by.php.monkey.v1.4-D2D
+The_true_story_by_php_monkey_v1.4-D2D
+
+Nuke reason: bad.dir
+
+File naming:
+Files should be named as stated in the 8.3 notation. And disk size should be between 720 KB and 5 megs. It also has
+to include a .diz and .nfo file
+Example: lxtd2d2.zip
+
+Nuke reason: bad.pack
+
+Size:
+Maximum size of 0day release should be 300 MB
+
+Nuke reason: oversized
+
+Keygen rules:
+A keygen is a standalone program which calculates serials based on pc name/company/user name etc etc.
+When a serial algo uses fixed chars on certain positions and your "keygen" fills the other positions with random data it's NOT a keygen. When a keygen is not sufficient and a crack is required, the dir name should include this "incl.keygen.and.patch"
+
+Nuke reason: not.a.valid.keygen
+
+Theft:
+Using a keygen/serial/crack with out permissions of the owners (other groups for example) is not legit. A group which is cought 2 times with stealing will be banned here aka being auto nuked (ofcourse if there is good evidence)
+
+Nuke reason: stolen
+
+Repack:
+Fucked up releases can be re-released by doing a repack. Dir should contain ".repack.". The previous (bad) release will be nuked
+
+Nuke reason: get.repack
+
+Trade/pre faults:
+Trade faults ("detecting macro monkeys" dirs for example), pre tests or fake things will not be counted as a legit release.
+
+Nuke reason: crap
+
+Free software:
+Software which is freely available is not allowed. "Free" on d2d means that it costs around $0.00. "Cardware" or "free-registration" is. There are 2 exceptions there is, if a upgrade/update is not publicly available. And free updates/upgrades which will render the crack/serial/keygen of the previous version unusable (ie. they blacklisted stuff)
+
+Nuke reason: free
+
+Newer out:
+When a group releases a v1.02 of a program and the new version v1.03 is already out for more then 3 days, it's a nuke. The grace period is 3 days. Only exception COULD be an util group having a hard to get program (thus means not publicly downloadable) and they release it when there's just a new version out, if this happens (unlikely:D) tell so in info file
+
+Nuke.reason: newer.out.v<x.xx>
+
+Crack malfunction:
+If a crack/serial/keygen is not working 100% it's a nuke! This could mean a keygen without a server patch, a keygen which doesn't accept certain basic chars "A-Z,a-z,0-9" and ofcourse spaces (only when the program accepts these chars!) or a crack with missed checks having removed.
+
+Nuke reason: bad.crack
+
+Group request:
+If a group really thinks they fucked up a release badly then they can do a group request. The release will be nuked then.
+
+Nuke reason: grp.req
+
+Beta software:
+Betas / builds / rc are allowed only it's not an hidden beta/build/rc, means the word "Beta", "build" & "RC" has to be in directory name.
+
+Nuke reason: hidden.beta
+
+Types Allowed:
+- ALL languages (Dutch, German, Chinese, Italian, Polish, etc etc)
+- ALL platforms (PC, MAC, Linux, Solaris, OS/400, Windows, etc etc)
+- Bookware
+- HW required software (GSM & Telephone programs)
+- Kiddie (some people have kids here, hi fanny:) )
+- Addons (all types of addons for utils/games)
+- Commerical fonts
+- Screensaver
+- Porn
+- Different kind of flavors (Standard, prof, premium are ALL allowed) 

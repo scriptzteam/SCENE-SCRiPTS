@@ -1,0 +1,88 @@
+
+
+ [ PS2 - Standards ]
+ 
+ 1.1)  Releases must be packed in RAR. SFV and NFO must be included.
+ 1.2)  Rars should be split to volumes of 50 MB(DVD5) 15 MB (PS2CD)
+ 1.3)  Rars must be compressed with M1 (fastest) or better.
+ 1.4)  The image of the game must be in .iso format
+ 1.5)  If a game does not include the English language, this must be specified
+       in the dir name.
+ 1.6)  If a game is rereleased for having additional foreign languages, the 
+       dir must be tagged MULTI and the nfo must specify which additional 
+       languages are included.
+ 1.7)  No p2p dupes without proof of your own source.  
+ 1.8)  Source of game disc origin must be included in nfo.
+ 1.9)  A release must be pred no later then 30 days after retail date. 
+ 1.10) Suggested directory format:
+ 
+       Game.Name.<PROPER/READ.NFO/REPACK>.PS2DVD-GRPNAME
+       Game.Name.MULTI.<PROPER/READ.NFO/REPACK>.PS2DVD-GRPNAME
+       Game.Name.<PROPER/READ.NFO/REPACK>.PS2CD-GRPNAME 
+       Game.Name.LANGUAGE.<PROPER/READ.NFO/REPACK>.PS2CD-GRPNAME
+
+
+
+
+ [ Xbox360 - Standards ]
+ 
+ 2.1)  Releases must be packed in RAR. SFV and NFO must be included.
+ 2.2)  Rars should be split to volumes of 50 MB(DVD5) 100 MB(DVD9)
+ 2.3)  Rars must be compressed with M1 (fastest) or better.
+ 2.4)  The image of the xbox 360 game must be in .iso with .dvd file
+ 2.5)  The security sectors must be patched.
+ 2.6)  If a game is not region free, the game region must be in the dirname.
+ 2.7)  If a game does not include the english language, this must be specified
+       in the dir name.
+ 2.8)  PAL/NTSC dupes are only allowed when the initial game was not region
+       free or when there are additional foreign languages.
+ 2.9)  If a game is rereleased for having additional foreign languages, the 
+       dir must be tagged MULTI and the nfo must specify which additional 
+       languages are included.
+ 2.10) Source of game disc origin must be included in nfo. 
+ 2.11) No p2p dupes without proof of your own source. 
+ 2.12) A release must be pred no later then 30 days after retail date.
+ 2.13) Suggested directory format:
+       
+       Game.Name.<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+       Game.Name.NTSC.<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+       Game.Name.PAL.<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+       Game.Name.NTSC.LANGUAGE.<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+       Game.Name.PAL.LANGUAGE.<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+       Game.Name.MULTI<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+       Game.Name.NTSC.MULTI.<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+       Game.Name.PAL.MULTI.<PROPER/READ.NFO/REPACK>.XBOX360-GRPNAME
+
+
+
+
+[ Wii - Standards ]
+
+ 3.1)  Releases must be packed in RAR. SFV and NFO must be included.
+ 3.2)  Rars should be split to volumes of 50 MB(DVD5) 100 MB(DVD9)
+ 3.3)  Rars must be compressed with M1 (fastest) or better.
+ 3.4)  The game rip needs to be a full "dump".
+ 3.5)  No tools like wiiscrub allowed.
+ 3.6)  The image of the wii game must be in .iso
+ 3.7)  Source of game disc origina must be included in dir name (PAL/NTSC/JAP).
+ 3.8)  If a game does not include the English language, this must be specified
+       in the dir name.
+ 3.9)  If a game is rereleased for having additional foreign languages, the 
+       dir must be tagged MULTI and the nfo must specify which additional 
+       languages are included.
+ 3.10) No p2p dupes without proof of your own source. 
+ 3.11) A release must be pred no later then 30 days after retail date.
+ 3.12) Suggested directory format:
+ 
+       Game.Name.PAL.<PROPER/READ.NFO/REPACK>.Wii-GRPNAME
+       Game.Name.NTSC.<PROPER/READ.NFO/REPACK>.Wii-GRPNAME
+       Game.Name.LANGUAGE.<PROPER/READ.NFO/REPACK>.Wii-GRPNAME
+       Game.Name.MULTI.<PROPER/READ.NFO/REPACK>.Wii-GRPNAME
+      
+      
+
+-
+
+These rules are signed and will be followed by following groups in alphabetic order:
+
+ACCiDENT, Allstars, DAGGER, GLOBAL, LoCAL, MOMENT, NAGGERS, PreCiSiON, PROTOCOL, RANT, STRANGE, SUSHi, WARG, WiiERD

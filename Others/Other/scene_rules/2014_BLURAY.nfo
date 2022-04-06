@@ -1,0 +1,102 @@
+                          THE 2014 COMPLETE BLURAY RELEASING STANDARDS                                     
+
+                                  
+        - GENERAL
+
+        G1)  Release size must be a true 1:1 image of retail disc.
+        G2)  Group watermarks within the Bluray are strictly forbidden.
+        G3)  Releases must be made region free.
+        G4)  Any new unmentioned copy protection that comes out must be stripped.
+        G5)  If for any reason any standards cannot be met it a brief explanation
+             must be written in the nfo.
+
+
+        - PACKAGiNG
+
+        P1)  Sample, nfo and sfv are required for each release.
+        P2)  NFO must contain at least: 
+              - IMDB link
+              - Bluray Region
+              - Audio streams
+              - Subtitle streams
+        P3)  Rar's must be split into 250 or 500 MB archives.
+        P4)  Passwords or encryption is not tolerated.
+        P5)  Compression is not allowed.
+		
+
+
+        - TAGGiNG
+
+        T1)  Acceptable characters are as follows:
+                 ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                 abcdefghijklmnopqrstuvwxyz
+                 0123456789 . -
+        T2)  Suggestion for tagging:
+              - Movie.Name.YEAR.<PROPER/READ.NFO/REPACK>.<MULTi/SUBS/REGiON>.COMPLETE.BLURAY-GROUP
+              - TV.Show.SxxDxx.<PROPER/READ.NFO/REPACK>.<MULTi/SUBS/REGiON>.COMPLETE.BLURAY-GROUP
+              - Music.YEAR.<PROPER/READ.NFO/REPACK>.<MULTi/SUBS/REGiON>.COMPLETE.MBLURAY-GROUP
+        T3)  The first release of a movie, if it has the original audio, English subs and menu,
+             must be tagged Movie.Name.YEAR.COMPLETE.BLURAY-GROUP. Next releases must contain a
+             language tag (MULTiSUBS/MULTi/NL/NORDiC/iTALiAN/etc) or region tag (A/B/C).
+        T4)  All releases are to include production year, except for TV series.
+        T5)  Sub directories are to be labelled as DiSC1, DiSC2, etc.
+             EXTRA and CD1, CD2 dirs are not allowed.
+        T6)  Additional explanation of some tags:
+             MULTi:     In case of a minimum of 2 audio languages.
+             MULTiSUBS: In case of a minimum of 6 subtitle languages.
+
+
+
+        
+        -Proof
+
+        P1)  ALL releases MUST now include source proof in the following way: Snapshot (not scan)
+             of the actual physical disc (printed side) in jpg/png format with a group tag 
+			 Disc snapshot must be in good quality with disc details clear and readable. Small 
+			 portions containing store stickers/barcodes may be blurred or blackened. 
+             Releases that fail to pre with such proof are to be considered a nuke and can be 
+			 propered. Proofixes later than 2 hours from pre (if a proper has not been pred during 
+			 that time) will not be accepted.
+			 
+			 IMPORTANT NOTE:
+             Some mobile phone cameras (such as iPhone) add exif metadata to the pictures (gps location 
+			 for example). It is ESSENTIAL to make sure exif metadata is removed from your snapshot. 
+			 This can be done in windows7, by editing and re-saving the picture with Microsoft Paint 
+			 or using freeware tools available on an "exif remover" web search.
+
+
+        - SAMPLE
+
+        S1)  A sample roughly 60 seconds in length is required.
+             It must be cut from the movie m2ts file and not encoded separately.
+             It must be put within a directory named "Sample".
+		     A .m2ts file must be cut and used as sample. You cannot rename a rar and use it as 
+			 the sample.  
+
+
+ 
+        - PROPERS
+                       
+        R1)  Propers may only be released if previous release had technical 
+             flaws such as undersized, errors, etc.  
+        R2)  Propers based on previous releases having stripped the menu
+             are allowed.
+        R3)  Propers based on previous releases having improper dir names
+             will not be tolerated.
+        R4)  Blurays with different audio or subtitle streams do not
+             dupe each other.
+
+
+        - NOTES & SUGGESTiONS
+
+        N1)  Applicability
+             These rules apply from 2014-04-01 00:00:00 GMT.
+             Released pre'd before this time are not allowed to be nuked based
+             on these rules unless there is a valid technical reason to proper
+
+ 
+
+             The COMPLETE BLURAY releasing standards signed by
+
+                
+             BAKED BDA CiNEMATiC GMB Japhson LAZERS NOSCREENS o0o PCH SEMTEX

@@ -1,0 +1,26 @@
+# Top stats (irc) v. 1.1 by pexi  
+# ------------------------------- 
+# -[Purpose]-
+# Output to irc, users (including their rank) with most credits, 
+# users most nuked,biggest leechers, best uploaders (allup) and times logged in (nerd-o-meter ;) )
+# when triggered in irc. ie !top leech 5 will show top 5 list of leechers.
+# Supports a "ranking system" ie. !top rank pexi 
+# will show users rank in all 3 sections (creds,nukes,leech(alldn)) 
+ 
+# -[Installation and usage]-
+# place px-topstat.sh in your glftpd bin dir. And .tcl in your eggdrops scripts dir. 
+# edit px-topstat.sh and px-topstat.tcl
+# add source scripts/px-topstat.tcl in your eggdrop.conf and rehash bot
+# type !top (or whatever you configured it to be, !top is default) in sitechan.
+
+# -[Contact]- 
+# irc: pexi @ efnet 
+# email: me@pexi.net 
+# Please report bugs,ideas, anything
+
+# -[Updates]-
+# V. 1.1,
+# Added top uploaders and the nerd-o-meter
+
+# -[Todo]-
+# Optimize the script. It's a little heavy right now

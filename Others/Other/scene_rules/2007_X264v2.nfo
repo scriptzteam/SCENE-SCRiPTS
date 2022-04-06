@@ -1,0 +1,145 @@
+high.def.x264.movie.standards.rev2.nfo
+ 
+ Revision 2 :: FINAL :: 2007-07-05
+ 
+ [ Intro ]
+ 
+ The High Definition x264 encoding scene has the goal of creating rips of HDDVD
+ and BluRay sources that can be played by the majority of end users. Specific
+ hardware (other than something higher then a mid-range Pent 4) should never be
+ required to play releases. The goal is for these to be burnable to a DVD media
+ source, playable on an HTPC. We are not releasing these to be re-authored onto
+ HDDVD or BluRay media. These rules will be constantly updated to adjust for new
+ audio formats that are playable.
+ 
+ We have gotten together and discussed file sizing. DVD9 causes a much too high
+ bitrate for releases around the 2 hour long mark. In reality leads to longer
+ download times and more space being used on your hard drives for no real season.
+ In addition, the higher bitrate causes playback to be tougher for lower end
+ machines. Our goal is to reach as many people as possible, so this is an 
+ attempt to adjust for download times and playback.
+ 
+ These rules apply to 720p releases only.
+ 
+ 
+ [ Previous Releases ]
+ 
+ These rules do not apply to previous releases, and propering for those reasons
+ will not be tolerated. Groups who have released eac3 in the past have the 
+ option to repack, but this isn't mandatory. Common sense rules such as 
+ cropping are properable.
+ 
+ 
+ [ General ]
+ 
+ 1.1)  RAR/SFV/NFO needed.
+ 1.2)  Rar's can be 50mb, 100mb or 150mb. Use your best judgment.
+ 1.3)  Releases should be packed into mkv container.
+ 1.4)  NFO must contain information on Audio and Video Bitrate.
+ 1.5)  BluRay and HDDVD Sources dupe each other.
+ 1.6)  Suggested Directory Format (not a properable reason):
+         Movie.Name.Year.720p.<HDDVD/BluRay>.x264.<PROPER/READ.NFO/REPACK>-GROUP
+ 1.7)  NO intros, outros, betweenos, or any other form of defacement of the film
+       will be tolerated.
+ 1.8)  Credits must not be removed
+         1.8.1)  Can be encoded at a lower bitrate provided they don't contain
+                 any scenes (bloopers, story, etc).
+ 1.9)  A sample roughly 60 seconds in length is required.
+         1.9.1)  It must be cut from the final release and not encoded
+                 separately.
+         1.9.2)  Must be put within a directory named "Sample".
+ 
+ 
+ [ Total Sizes ]
+ 
+ 2.1)  Final file size must be DVD5, 1.5 x DVD5, or DVD9 size
+ 2.2)  A size of 0.5 x DVD5 is acceptable for animated movies ONLY.
+ 2.3)  A max undersize of 40 MiB can be tolerated
+ 2.4)  DVD9 should be used only in cases of long movies, or high action movies.
+ 2.5)  Propering a release that could have been a bigger size is not valid,
+       unless below minimum bitrate.
+ 2.6)  2x DVD5 is NOT allowed.
+ 2.7)  For very long movies like LOTR, you may deviate from rules. Please use a
+       multiple of 0.5xDVD5 (2240 MiB).
+ 
+ 
+ [ Audio ]
+ 
+ 3.1)  No EAC3, DD+, TRUEHD or DTSHD audio until there is practical Windows and
+       Linux support.
+         3.1.1)  This does not include VMWare or alienating any group of users.
+         3.1.2)  The solution should be a reasonable codec that has a high
+                 compatibly rate.
+ 3.2)  Currently accepted audio:
+         3.2.1)  FLAC audio is allowed ONLY if created from LPCM or TRUEHD
+                 sources.
+         3.2.2)  Source AC3 or DTS from a BluRay
+         3.2.3)  AC3 transcoded from source LPCM, DD+ or EAC3
+ 3.3)  All audio should be proper 5.1, with correct channels, except in the case
+       of stereo/mono only.
+ 3.4)  All AC3 audio with HDDVD releases should be at 640kbit/s, unless the disc
+       only comes with lower bitrate audio.
+ 3.5)  Releases may only contain one audio track muxed into the mkv container.
+         3.5.1)  Use English only if English is the native audio.
+         3.5.2)  If English audio is not native:
+              3.5.2.1)  English Subtitles must be included
+              3.5.2.2)  English dub is allowed as a secondary audio track.
+         3.5.3)  Other language audio may be released as a SECOND release with a
+                 bat file that will remux that audio into the release.
+ 
+ 
+ [ Video ]
+ 
+ 4.1)  Minimum bitrate should be 4 Mbit/s
+         4.1.1)  Animated movies allowed less than 4 Mbit/s bitrate.
+ 4.2)  All movies must be at their original framerate.
+ 4.3)  Use at least 3 bframes
+ 4.4)  Must use a minimum encode of 2 passes.
+ 4.5)  Crop the black borders from the source.
+       Sharp edges in the encoded region will lead to border bits needing more
+       information than they should.
+ 4.6)  Height and Width of rip must be mod 16.
+ 4.7)  720p refers to a maximum resolution of 1280x720.
+         4.7.1)  Acceptable resolutions are:
+                  - 1280 x 528 = 2.40 AR
+                  - 1280 x 544 = 2.35 AR
+                  - 1280 x 688 = 1.85 AR
+                  - 1280 x 720 = 1.78 AR
+                  -  960 x 720 = 1.33 AR
+         4.7.2)  Rare occasions where a movie if VERY wide, use appropriate
+                 settings.
+ 4.8)  Use the aspect ratio on the source, not what IMDB says.
+ 4.9)  Custom Matrices are allowed.
+ 4.10) VfW (Video for Windows) is not allowed
+ 4.11) --deblock can be varied depending on the source.
+ 
+ 
+ [ Subtitles ]
+ 
+ 5.1)  Multi-language subtitles cannot be used as a basis for a dupe
+ 5.2)  Subtitles are to be MUXED into the mkv container, but MAY NOT be burned
+       in to the video stream.
+ 5.3)  "Subs" directories are forbidden.
+ 5.4)  Subs should not be HUGE AND UGLY. Check your settings!
+ 5.5)  Subs must be a text-based format that will mux into an mkv container.
+ 
+ 
+ [ Encoding ]
+ 
+ Recommended settings are at least:
+ 
+ Pass 1:
+ x264.exe --pass 1 --bitrate x --threads auto --thread-input --bframes 3 --me dia --ref 1 --subme 1 --no-dct-decimate 
+--partitions none --progress --no-psnr --no-ssim --output NUL
+ 
+ Pass 2:
+ x264.exe --pass 2 --bitrate x --threads auto --bframes 3 --b-pyramid --bime --weightb --b-rdo --me umh --ref 5 --mixed-refs 
+--subme 7 --trellis 1 --8x8dct --no-fast-pskip --progress --no-psnr --no-ssim --output x.mkv
+ 
+ 
+ [ Signed By (in alphabetic order) ]
+ 
+ hV PPQ PROGRESS REVEiLLE SEPTiC
+ 
+ 
+ [ These rules apply from 2007-07-06 00:00:00 GMT (1183680000 unixtime) ]

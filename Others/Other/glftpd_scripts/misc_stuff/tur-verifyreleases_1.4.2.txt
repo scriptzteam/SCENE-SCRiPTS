@@ -1,0 +1,10 @@
+VerifyReleases (GL1&2)
+
+Description: Verifies .rar releases by using the unrar -t command and/or scan each 
+files crc and verifies it towards the .sfv file, making it an excellent 'rescan' 
+for a whole section.
+Primary use: Check the entire section for corrupt releases. Plenty configurable.
+
+Author:   Turranius
+Version:  1.4.2
+Added on: 13-Feb-2004

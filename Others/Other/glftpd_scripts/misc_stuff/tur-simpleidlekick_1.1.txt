@@ -1,0 +1,12 @@
+SimpleIdleKick (GL1&2)
+
+Description: This is a simple idlekicker for those who think ktmf is too 
+complicated. It works in a different way then ktmf in that it goes by the real 
+idletime reported.
+This will fix those mofos who manage to idle forever without executing any antiidle
+commands.
+Requires tur-ftpwho 3.0 atleast.
+
+Author:   Turranius
+Version:  1.1
+Added on: 19-Oct-2003

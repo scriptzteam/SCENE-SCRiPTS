@@ -1,0 +1,309 @@
+ The.Spanish.Retail.SD.Releasing.Standards.2014-ESCOUNCiL (2014-05-17)
+
+ --------------------------------------------------------------
+ 
+ Special note to nukenets: This ruleset aims to clean the actual spanish
+ p2p crap pre from ours. From now on, proof is mandatory for every single
+ release. At the moment, only the following teams are recognised as legit
+ and follow those rules: 
+
+ 0ld - ASS - FCC - JODER - LPH - MAHOU - sPHD - TORO - XPERT - XPERT_HD
+ 
+ Ha pasado mucho tiempo desde la ultima revisión de rules para material
+ retail en Español. XviD es un códec muy débil y obsoleto frente a X264.
+ Adicionalmente, debido a la cantidad de pre's P2P, sospechosas y erróneas
+ que se han podido ver a lo largo de estos años, hemos acordado una serie
+ de reglas que cubren las releases SD para material retail en Español (Castellano).
+ Todo lo especificado aquí solo se aplica para las releases preadas después de que
+ este documento entre en funcionamiento (2014-05-17).
+
+
+ 1) Video:
+
+ 1.1)	Watermarks, intros, outros o cualquier otro tipo de desfiguración
+        añadida en el video estan prohibidos, incluido durante los créditos.
+
+ 1.2)	Quitar los creditos queda prohibido, y estos deben ser encodeados
+	a la misma calidad que el resto de la release.
+
+ 1.3)	Los bordes deben ser cropeados completamente.
+
+ 1.4)	Solo se permiten "Sharp Resizers" tales como Lanczos/Lanczos4, Spline36,
+	o Blackman. "Simple Resizers" (bicubic, simple, etc) estan prohibidos.
+
+ 1.5)	La anchura para el BDRip debe ser 720 píxeles y la altura mod2.
+
+ 1.6) 	La anchura para el DVDRip se ajustará al crop máximo y la altura mod2.
+
+ 1.7)   Las alturas, respecto a las anchuras despues de cropear, no pueden ser
+        elegidas. Mod2 debe determinar la altura adecuada, para mantener la
+        relación de aspecto correcta, nunca el ripper.
+
+ 1.8)	Queda prohibido reescalar para fuentes DVD. Si después de hacer crop 
+	queda por ejemplo una anchura de 694 píxeles, esta debe ser respetada.
+
+ 1.9)   Se debe aplicar desentrelazado si es necesario, con alguna tool
+        inteligente como Yadif. Una release entrelazada está considerada
+        un fallo técnico (nuke). Rara vez el material retail viene
+        entrelazado, pero existe.
+
+
+ 2) Audio:
+
+ 2.1)	Español Castellano. Estas rules no afectan al LATiN.SPANiSH.
+ 
+ 2.2)   Solo se permite audio VBR AAC LC (Low Complexity). AC3 se permite solo como
+        INTERNAL.
+
+ 2.3)	El audio debe ser normalizado y reconvertido a stereo y de entre 96 y 160kbps.
+        Mono queda prohibido a excepción de que la fuente sea audio mono.
+
+ 2.4)	NO se permite DUAL (varios idiomas) audio.
+
+
+ 3) FPS:
+
+ 3.1)	La tasa de FPS debe ser igual a la fuente y constante. FPS variables estan 
+        prohibidas ya que no funcionan correctamente en muchos reproductores. Solo
+        se permiten FPS variables en caso de que la fuente sea así, y en este caso
+        se debe demostrar con una captura con información técnica sobre el vídeo fuente
+        extraido del medio físico dentro de la carpeta Proof, que así lo justifique.
+        De cualquier otra manera, queda prohibido.
+
+
+ 4) Codec:
+
+ 4.1)	XViD no permitido. Para prear con XViD debe hacerse como INTERNAL.
+
+ 4.2)	Debe ser H264 encodeado con 8-bit depth x264 Level 3.1, x264 10-bit 
+	está baneado.
+  
+ 4.3)	Mantener x264 actualizado. Hay muchas formas de actualización, 
+    	incluso automáticas. Matrices y deblocking a gusto del grupo. Por defecto
+    	vienen configurados.
+
+ 4.4)	Ninguna opción puede estar por debajo de lo especificado por --preset
+    	slow.
+
+ 4.5)	El colormatrix puede ser usado (bt709) para las rls BDRip. Para DVDRip es
+        'undef' (default).
+
+ 4.6) 	Las zonas (--zones) no se permiten.
+
+ 4.7)	El valor del CRF tiene que ser 19 o 20, pero si el bitrate resultante está
+	por encima de 2000 kbps, tiene que usarse el valor 21, y si esta vez 
+	también	esta por encima de 2000 kbps deberá usarse el valor 23.
+
+ 4.8)	DVDRip dupea a BDRip. BDRip no dupea a DVDRip. No se permite DVDRip después
+        de que BDRip haya sido preado con las excepciones de que sean versiones distinas
+        (Version cine BDRip vs Version extendida DVDRip) y la del siguiente punto (4.9).
+
+ 4.9)	x264 no dupea a XviD. Se permite prear en x264 cosas que ya estan preadas
+        en XviD, con motivo de ganar en términos calidad / tamaño SIEMPRE que la
+        release XviD esté preada hace 5 años o más.
+
+ 4.10)	Linea de comando sugerida:
+       	- BDRip: x264.exe --crf ## --preset slow --level 3.1 <--colormatrix bt709> -o output.mkv input.avs
+       	- DVDRip: x264.exe --crf ## --preset slow --level 3.1 -o output.mkv input.avs
+
+
+ 5) Contenedores:
+
+ 5.1) 	El contenedor debe ser Matroska (MKV) o MP4 para Series de TV, miniseries 
+        y cualquier otro contenido que no sea cine. A gusto del grupo. El cine debe
+        ser empaquetado obligatoriamente en Matroska (MKV).
+
+ 5.2)	El release debe estar en un solo contenedor, no se permite dividir la release
+        en varios contenedores.
+
+ 5.3)	Se recomienda muxear con mkvmerge o MP4Box, aunque se permiten tools
+        personalizadas. El resultado debe ser compatible con lo que los demuxeadores
+        estandares (MP4Box, mkvmerge, etc...).
+
+
+ 6) Sample:
+
+ 6.1) 	Obligatorio, debe estar en una carpeta separada llamada "Sample", ser 
+    	de entre 60-120 segundos y ser de la rls, no encodeado por separado.
+
+
+ 7) Empaquetamiento: 
+
+ 7.1)	La rls debe ser empaquetada en partes RAR de 15, 20 o 50 MB (mínimo 10
+    	partes de 50 MB). No se permite la compresión. 1 MB = 1,000,000 bytes.
+
+ 7.2)	NFO y SFV obligatorios. Los archivos Sample, Proof, RAR y SFV deben tener
+        el mismo nombre, en minusculas y con la tag del grupo.
+
+ 7.3)	RAR's o SFV corruptos u olvidados despues de prear = REPACK o PROPER.
+
+ 7.4)	Se recomienda añadir la siguiente información en el NFO:
+	-Nombre del grupo
+	-Titulo
+	-Fecha del release
+	-Valor de CRF
+	-IMDB
+        -Número de rars (e.g.30x15MB)
+
+
+ 8) Proof:
+
+ 8.1)	OBLIGATORIA para cada release (para cada capítulo en una serie, por
+        ejemplo). Sin proof cuando se prea = NUKE no.proof.provided en un 
+        rango de 6 horas (si no se saca una version PROPER antes). Despues
+        de estas 6 horas, un PROOFFIX no será aceptado. La proof debe ser una
+        foto (no se permiten escaneos) del medio físico (disco/s) por el lado 
+        impreso con una nota que tenga el nombre del grupo, en formato JPEG.
+        La imagen debe ser de buena calidad, donde se aprecien claramente los
+        detalles y sea legible. Pequeñas partes de la imagen se pueden ocultar,
+        recortar o censurar si contienen informacion sensible. Para series de
+        TV u otros medios que puedan venir separados por discos, es obligatorio
+        que aparezcan todos los discos.
+
+ 8.2)	La imagen debe estar en una carpeta (dentro de la relase) separada llamada
+        /Proof. Sigue la misma estructura que otros archivos de la release, ver punto
+        7.2.
+
+ 8.3)	Algunos móviles u otros dispositivos añaden la metadata EXIF en las fotos.
+        Esta metadata puede contener información como por ejemplo localización por
+        GPS. Es MUY IMPORTANTE que te asegures de borrar esta metadata de tu Proof,
+        si la tiene. Es suficiente con abrir y re-guardar con Microsoft Paint o usar
+        cualquiera de las tools freeware que encontrarás buscando "exif remover" por
+        la red.
+
+ 8.4)	Se recomienda, pero no es obligatorio, añadir un enlace web en el NFO de la
+        release hacia la Proof (Tinypic, Imgur...) con tal de evitar los fallos de
+        los autotraders que pueden inducir a error/skip de la Proof.
+
+
+ 9) Propers:
+
+ 9.1) 	Properear solo se permite si la release original tiene un fallo tecnico.
+    	ejemplos: falta contenido, mal cropeo, contiene errores, drops, audio
+        fuera de sincronización, parametros x264 erroneos, errores en los subtítulos,
+        etc.
+
+ 9.2) 	Se debe explicar y justificar la razon de PROPER en el NFO de la rls PROPER.
+    	Se recomienda adjuntar sample/s o captura/s para demostrar.
+
+ 9.3)	Los propers basados en las reglas aquí explicadas solo se permiten para las
+    	rls que se prearan despues de que este documento entre en efecto.
+
+ 9.4)   No se permite prear una release PROPER por razón de subtitulos, si la release
+        PROPER no contiene los subtítulos correctos o sin fallos. Debe contener los 
+        mismos idiomas que la release nukeada, o más. De lo contrario sera considerado
+        un PROPER no válido.
+
+ 9.5)	Una rls con fallos tecnicos o experimental puede ser preada como INTERNAL.
+   	Explicar el porqué en el NFO se sugiere.
+
+
+ 10) Internals:
+
+ 10.1)	El tag debe ser .INTERNAL.
+
+ 10.2)	No hace falta seguir la parte técnica de estas reglas pero si debe contener
+	obligatoriamente Proof, Sample, NFO, SFV y ser empaquetada siguiendo las reglas
+        arriba expuestas. La Proof es obligatoria tambien para los INTERNAL.
+
+
+ 11) Subtitulos:
+
+ 11.1)  Solo se permiten los subtitulos .SRT y .IDX/.SUB. Cualquier otro formato de subtitulos
+        está considerado fallo técnico. La extraccion y/o conversión debe ser completamente correcta.
+        Se recomienda hacer esto usando tools como tsMuxer, VobSub, SubRip, BDSup2Sub, SupRip... etc.
+
+ 11.2)  Subtitulos en formato .SRT se han de muxear obligatoriamente, en formato .IDX/.SUB queda
+        prohibido muxearlos y hay que incluirlos en el folder /Subs dentro de la release, con la
+        siguiente estructura de directorios: Release/Subs/releasesubs.rar+idx+sfv. Este releasesubs.rar
+        contiene el archivo .SUB rareado (se permite y recomienda usar la mejor compresión) acompañado
+        de su correspondiente .IDX sin rarear. El SFV de la carpeta /Subs (en caso de usar subtitulos
+        .IDX/.SUB) solo ha de listar el contenido de esta, y no el de la release. El SFV de la release
+        no debe listar el contenido de ninguna /Carpeta.
+
+ 11.3)  Los subtitulos Español son obligatorios para las releases que contengan partes habladas en otros
+        idiomas que no sean Español Castellano o Latino, aunque se recomienda incluirlos para todas las
+        releases. Solo se permiten los subtitulos extraidos del medio físico, no fansubs, no custom subs
+        o subs de otras fuentes. Otros idiomas de subtítulos son bienvenidos, pero no obligatorios en
+        ningún caso.
+
+
+ 12) Capitulos:
+
+ 12.1)  Capitulos en formato .TXT obligatorios para cine. Opcionales para Series de TV, miniseries o 
+	cualquier otra cosa aunque se recomiendan. Muxeados con mkvmergue, mp4box o similares.
+
+ 12.2)  No se permiten capitulos de otras fuentes o custom.
+
+
+ 13) Nombre de los directorios:
+
+ 13.1)  Tags de fuentes: DVDRip, BDRip.
+
+ 13.2)	Nombre.Pelicula.AÑO.SPANiSH.<BDRip/DVDRip>.x264-GRUPO.
+
+ 13.3)  Nombre.Serie.SXXEXX.<Codigo>.<AÑO>.SPANiSH.<BDRip/DVDRip>.x264-GRUPO.
+
+ 13.4)	Es obligatorio añadir el año de PRODUCCION para películas, no el de publicación
+        en cines/tv/otros. Para series/miniseries el año es opcional pero recomendado
+        si ya ha existido otra serie/miniserie con el mismo nombre en un año diferente.
+        En el caso de que ya haya existido otra serie/miniserie con el mismo nombre en
+        otro pais, se debe usar el código del pais (UK, US, ES, AU...) o el año siempre
+        que no coincidan.
+
+ 13.5)  Se permite el uso de la tags: REAL, REMASTERED, RERIP, PROPER, INTERNAL, REPACK,
+        FINAL, UNCUT, EXTENDED y READ.NFO. V.EXTENDIDA u otros derviados quedan prohibidos.
+        Deben ir antes de .SPANiSH.
+
+ 13.6)	Los carácteres aceptables en los nombres de directorio son:
+
+      	ABCDEFGHIJKLMNOPQRSTUVWXYZ
+      	abcdefghijklmnopqrstuvwxyz
+      	0123456789._-
+
+      	Sin espacios o dobles puntos, puntos únicos exclusivamente.
+
+
+ 14) Reglas especiales:
+
+ 14.1)  Reencodear releases de otros sources que no sean discos BluRay y/o DVD queda
+        prohibido. Ademas, se debe presentar proof obligatoriamente para cada release.
+
+ 14.2)	Cualquier otro tipo de pre que no sea lo que cubre este documento (retail DVD/BluRay)
+        se rige por lo aquí explicado y debe seguir todas las reglas, a excepción de la Proof.
+        Ejemplos: CAM, TS, TC, SCREENER, DVDSCR o BDSCR. Estos releases no cuentan como dupe
+        cuando se prea de retail.
+
+ 14.3)	Nuestras releases no son dupe del pre spam P2P que dice ser algo,
+        no nos preocuparemos de mirar dupecheck o utilizar tags como PROPER,
+        INTERNAL más alla de los grupos conocidos en prear bien y legit, que
+        son los que han firmado este documento.
+
+ 14.4)  Debido a la gran cantidad de pre p2p que hay actualmente, cualquier otro nuevo 
+        grupo (o ex) interesado en prear releases retail SD en SPANiSH deberá seguir 
+        todo lo especificado en este documento y contactar con nosotros con tal de su
+        adhesión en el concilio. GUSTE O NO GUSTE, es la única manera de saber quién
+        quiere hacer las cosas bien y quien no. De lo contrario será ignorado como
+        se explica en el punto anterior 13.3.
+
+
+
+  [Changelog]:
+
+   2014-05-16 - Primera versión.
+
+
+---------------------------------------------------------------  
+ 
+ Ruleset x264 para releases DVDRip o BDRip en Español (Castellano)
+
+   -> Firmado por los siguientes grupos: 
+
+   0ld - ASS - FCC - JODER - LPH - MAHOU - sPHD - TORO - XPERT - XPERT_HD
+
+   -> Declinado por los siguientes grupos:
+
+
+ --------------------------------------------------------------
+ 
+ The.Spanish.Retail.SD.Releasing.Standards.2014-ESCOUNCiL (2014-05-17)

@@ -1,0 +1,579 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                             ³
+³                       An Independent Critic presents                        ³
+³                             a Rebuttal of...                                ³
+³                      The XviD Releasing Standards 2005                      ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³     Requirements: Notepad with terminal font or any other ascii viewer.     ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                              ÀÄÄÄ[ INTRO ]ÄÄÄÙ                              ³
+³                                                                             ³
+³ To introduce myself first...I am a member of one of the oldest active XviD  ³
+³ release groups and one of main writers/contributors to TDX2k2. Neither I,   ³
+³ nor my group was informed of this new ruleset. That is reflected in the     ³
+³ fact that we are not a signatory. I find it astounding that the writers of  ³
+³ this ruleset can give "respect" to the previous TDX teams but at the same   ³
+³ time self-proclaim themselves to be the new TDX team and write a new ruleset³
+³ without even consulting them. In fact, not even half of the of the (active) ³
+³ groups to whom the main TDX2k2 writers belonged have signed off on TXD2k5.  ³
+³ Several of the oldest XviD groups have not signed TXD2k5, but instead of    ³
+³ any attempts at compromise, the new ruleset was steamrolled through without ³
+³ them or their input.                                                        ³
+³                                                                             ³
+³ As a result of these strong-arm tactics, I am now forced to point out each  ³
+³ any every flaw that the TXD2k5 authors are forcing the XviD scene to        ³
+³ swallow. The TDX2k5 ruleset was meant to plug the holes in TDX2k2 and some  ³
+³ had hoped it would usher in a new era in MPEG-4 based encoding. Sadly, this ³
+³ abomination does neither. Within the ruleset guideline below, I have        ³
+³ included my rebuttal comments. While many of my points might seem to be     ³
+³ bordering on anal, it is my opinion that a ruleset must be precise and      ³
+³ concise. It should eliminate all ambiguity and close all loopholes.         ³
+³ As you will see, I find that this new ruleset does neither. The scope of    ³
+³ the rules is adequate, but it could have gone a lot further in some areas,  ³
+³ and went too far in others. TDX as a ruleset must curb the release of bad   ³
+³ rips, while at the same time it cannot impede a ripper's ability to create  ³
+³ the highest possible quality rip. I do also acknowledge that some of the    ³
+³ words and ideas that I contest in my rebuttal were present in TDX2k2. This  ³
+³ does not excuse TXD2k5 of having the same problem since the TXD2k5 writers  ³
+³ had the choice to edit or reword anything they felt appropriate.            ³
+³                                                                             ³
+³ I know that some people will just dismiss this as me holding a personal     ³
+³ grudge or think that I'm just out to pick a fight. If you take the time to  ³
+³ read my rebuttal comments, you should find them to be valid concerns. I     ³
+³ truly care about the future of the MPEG-4 scene and am deeply troubled when ³
+³ I see a document like this being flaunted as a new ruleset.                 ³
+³                                                                             ³
+³ This document is meant only as a rebuttal of the TXD2k5 document and is not ³
+³ intended as a reflection of any of the signee groups. I know that many of   ³
+³ the groups that signed did so blindly in order to support what appeared to  ³
+³ be a positive advancement for the XViD Scene. As such, I'm not suprised by  ³
+³ the number of obvious errors that I was able to locate when picking it      ³
+³ apart. I don't believe that having signed TXD2k5 precludes any group from   ³
+³ lending their voice to anything that might arise from the dialogue that I   ³
+³ hope to have started. I would encourage all groups who agree with any of my ³
+³ points to speak their mind, whether it be with me or the writers of TXD2k5, ³
+³ or even in a public forum or their own nfos. I welcome any groups to        ³
+³ include this nfo or their own rebuttals with their releases.                ³
+³                                                                             ³
+³ Thank you for your time.                                                    ³
+³                                                                             ³
+³ P.S. I find it strange how TXD2k5's intro is written in the first person    ³
+³      singular when it is supposedly an intro from the entire new TDX        ³
+³      committee...                                                           ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                          ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                          ³
+³                                                                             ³
+³  Movie Length:                                                              ³
+³   - PAL (25 fps) = MINIMUM runtime is 100 minutes/CD.                       ³
+³   - FILM (23.976 fps) = MINIMUM runtime is 105 minutes/CD.                  ³
+³   - NTSC (29.97 fps) = MINIMUM runtime is 87 minutes/CD.                    ³
+³   - These runtimes are scalable via the following equation:                 ³
+³     N CD time minimum = (N-1) * allowed time where N is number of CDs and   ³
+³     allowable time applies to fps as outlined above:                        ³
+³     i.e. 3 CD FILM rip minimum = 105 x (3-1) = 210 minutes.                 ³
+³   - MINIMUM time length rule is as implied - that is the MINIMUM time per   ³
+³     CD -- NOT MAXIMUM!!! (i.e. no such thing as "must be more than 1 CD")   ³
+³   - Release runtime must be at least 50 minutes for using the full burnable ³
+³     media capacity. In such cases, releases MUST utilize a MINIMUM of       ³
+³     680mb of the 700mb standard burnable media (Multi-CD releases MUST      ³
+³     conform to the 680mb minimum, for each CD used). Any other use of the   ³
+³     media shall not be over 350mb (Sizes between 350mb to 680mb are not     ³
+³     allowed).                                                               ³
+³   - Media usage is at ripper's discretion, please use it.                   ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - The runtime rule is still a slightly vague and occasionally contested   ³
+³     issue within TDX. The new wording doesn't change this at all. The       ³
+³     correct interpretation of this rule is that it is permitted to use an   ³
+³     additional CD for every additional x minutes beyond the original x      ³
+³     minute runtime (x being the runtime based on the framerate). The way it ³
+³     is currently worded can still be interpreted such that each CD MUST     ³
+³     have at least x minutes on it.                                          ³
+³   - With the improvements in encoding technology, I don't understand why    ³
+³     the new ruleset would be trending towards less compression with the     ³
+³     modified length rules.                                                  ³
+³   - The first time I read the new point that was added, I thought that it   ³
+³     related to shorts but apparently it's not. The point just seems to      ³
+³     bumble around. Couldn't it just have been simply stated that the        ³
+³     minimum capacity used on a CD is 680MB? The 50 minute rule should have  ³
+³     just been included in some new rules about the runtime of shorter       ³
+³     features (which I definitely feel is needed). The new TDX implies that  ³
+³     everything under 50 minutes can be ripped to 350MB, but doesn't a 350MB ³
+³     rip of a 5 or 10 minute short seem a bit oversized?                     ³
+³   - Why is the capacity of a CD not explicitly defined? Is it 700MB even    ³
+³     (734,003,200 bytes)? 702MB (which will still fit on a CD)? or something ³
+³     else? There have been several releases between 700 and 702MB, is that   ³
+³     allowed?                                                                ³
+³   - So what are the rules for non-standard framerate releases? There are    ³
+³     plenty of silent films that IVTC to 16 to 22fps...                      ³
+³                                                                             ³
+³                                                                             ³
+³  AUDIO:                                                                     ³
+³   - MUST be MP3 or Studio AC3 (AC3 transcoding forbidden).                  ³
+³   - MUST be STEREO for STEREO sources, MONO for MONO sources                ³
+³     (MONO audio as STEREO on source is considered a MONO source).           ³
+³   - MUST BE VBR! NO CBR MP3!                                                ³
+³   - MP3 tracks must have the original frequency as it was on the DVD's      ³
+³     audio: i.e. 48khz for 48khz and 44.1khz for 44.1khz.                    ³
+³   - MP3 files must be normalized.                                           ³
+³   - ABR is considered a VBR technique.                                      ³
+³   - AC3 MUST be used wisely and correctly. Ripper's discretion on when to   ³
+³     use it. Using or not using AC3 IS NOT a technical flaw.                 ³
+³   - MONO AC3 is not allowed, in that case must encode to mono MP3.          ³
+³   - Multi-language audio tracks are FORBIDDEN! (Use INTERNAL!)              ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - Please define mono. The term was incorrectly used in TDX2k2 and has     ³
+³     caused all sorts of issues. Technically speaking, any audio track with  ³
+³     identical channel(s) is mono. Of course, the intention is to forbid the ³
+³     use of 2.0 Mono MP3/AC3, but once again, this is left unclear.          ³
+³   - The term source also needs definition. Is it the source AC3 track on    ³
+³     the DVD? The original theatrical master? This ruleset still doesn't     ³
+³     clear up whether a DVD should be encoded in stereo when the studio      ³
+³     remasters a mono theatrical track into 2.0 (Stereo) or 5.1 audio.       ³
+³   - Why MUST MP3 need to be normalized? Wouldn't minimal processing of a    ³
+³     track be ideal? The rule also doesn't state the extent to which the     ³
+³     audio must be normalized. Without that, the rule means absolutely       ³
+³     nothing.                                                                ³
+³                                                                             ³
+³  VIDEO:                                                                     ³
+³   - Keyframe:                                                               ³
+³     MUST be <=20 seconds and MUST be inserted according to scene changes    ³
+³     and framesizes as determined by the codec or encoding application.      ³
+³   - Group watermarks of any kind on the video will not be tolerated!        ³
+³   - Intermission messages must be removed from the avi!                     ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - I know the intermission rule is personal. I still maintain that there   ³
+³     is often wonderful musical accompaniment during the intermission and    ³
+³     that would be lost if that rule is kept in effect. Sometimes the        ³
+³     intermission is used as a directorial tool as well, so removing it      ³
+³     would alter the flow of the movie. If removing the climax of a movie is ³
+³     frowned upon, shouldn't the same common sense lend itself to any other  ³
+³     part of a movie?                                                        ³
+³                                                                             ³
+³                                                                             ³
+³  Framerate:                                                                 ³
+³   - MUST be as close to original source framerate as possible.              ³
+³   - In some cases PAL movies should be ivtc'd (i.e. to 24fps). Therefore    ³
+³     using a PAL source is not an excuse for lack of ivtc.                   ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - Once again, the term source needs to be defined. While it seems obvious ³
+³     to most what the correct framerate should be, there are some that think ³
+³     that the NTSC telecine framerate of 29.97fps is the "source framerate". ³
+³   - Hybrids? What are the guidelines for ripping hybrids? What would        ³
+³     make a hybrid encode properable? Hasn't this been a hot enough issue to ³
+³     address?                                                                ³
+³                                                                             ³
+³                                                                             ³
+³  Codec:                                                                     ³
+³   - MUST BE XviD (all DivX codecs are banned).                              ³
+³   - MUST use 2 pass technique during encoding.                              ³
+³   - NO DUPES BASED ON CODEC TYPE, USE INTERNAL!                             ³
+³                                                                             ³
+³                                                                             ³
+³  Resolution and Aspect Ratio:                                               ³
+³   - Width: 512 - 672 pixels for WS movies (Letterboxed is considered WS).   ³
+³            448 - 576 pixels for FS movies (Only 4:3 images).                ³
+³   - Height and Width: Must be a multiple of 16.                             ³
+³   - Cropping is required to be the MAXIMUM possible (black borders must     ³
+³     be cropped to their maximum). Over cropped releases are considered      ³
+³     a technical flaw. Some movies present changing ARs, in that case the    ³
+³     cropping applies only to the image that presents more pixels (Means     ³
+³     that part of the movie will have bad cropping).                         ³
+³   - Movie encodes must be within 5% of the original aspect ratio.           ³
+³     Calculating AR % error: (Release AR - Original AR)/Original AR x 100    ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - Due to the popular 1.37:1 AR, the FS rule should probably be extended   ³
+³     from the 4:3 definition to any AR 1.4/1.5:1 and narrower. It's obvious  ³
+³     that 1.37:1 isn't widescreen.                                           ³
+³   - The term "bad cropping" is kind of silly. It's either overcropped or    ³
+³     undercropped. Once again, the wording of the 3rd point is imprecise.    ³
+³     Why not just say what correct cropping is and go from there. The        ³
+³     "maximum possible" cropping is just to crop the whole frame away. The   ³
+³     rule regarding a source with varying ARs is appropriate but again badly ³
+³     worded. How does cropping apply to anything? Does this sentence make    ³
+³     sense? "In the case that the movie presents changing ARs, cropping      ³
+³     applies only to the image that presents more pixels." Huh?! How about:  ³
+³     "In the case..., the movie must be cropped such that no frame is        ³
+³     overcropped". Simple.                                                   ³
+³                                                                             ³
+³                                                                             ³
+³  Subs, Interactive Menus, Trailers:                                         ³
+³   - OPTIONAL (ONLY if all other requirements have been met).                ³
+³   - VOBSUB is the preferred format due to the fact it does not use OCR.     ³
+³     However, any format that displays with DVobSub is acceptable.           ³
+³   - Subtitles may be MUXED with video stream, but MAY NOT be BURNED into    ³
+³     video stream. MUXED subs will proper BURNED subs.                       ³
+³   - Subtitles not muxed into video stream MUST be encapsulated in a .rar    ³
+³     file with the MOST compression available and shall be contained in      ³
+³     the directory named 'Subs' and will NOT be packaged with main movie     ³
+³     rars.                                                                   ³
+³   - Burned subtitles shall only be permissible when the source exhibits     ³
+³     aforementioned subtitles in the picture itself (i.e. Subs in the        ³
+³     matte portion of the picture MUST be typed in a separate file and the   ³
+³     frame shall be cropped). If there is a part of the burned subtitles     ³
+³     on the picture itself, and another part on the matte portion of the     ³
+³     picture, the frame must be cropped to 2 pixels from the start of the    ³
+³     subtitles on the matte portion. Upside cropping of the picture has      ³
+³     nothing to do with the downside, therefore the cropping on the upside   ³
+³     MUST BE to it's maximum.                                                ³
+³   - English subs on non English movies MUST fit on CD with main movie,      ³
+³     all other optional subs SHOULD fit on the CD.                           ³
+³   - Foreign movies (Non English Spoken) with no English subs, must have     ³
+³     the language name taggings (applies to the various non English          ³
+³     scenes). Movies with English subs present, WILL NOT HAVE any language   ³
+³     tag on them!                                                            ³
+³   - Using of hand made subs on non English releases (i.e. fansubs) MUST     ³
+³     be mentioned in the nfo, and at nuker's discretion if to nuke the       ³
+³     release for Bad.Subs, depends on how bad the subtitles are. Please      ³
+³     use common judgement! Releases that were nuked for bad subtitles, may   ³
+³     be propered only by subtitles that came from the retail DVD (Ripper's   ³
+³     choice if to release the full movie again or just the subtitles).       ³
+³   - Multi-language subtitles cannot be used as a basis for a dupe.          ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - I see nothing about Interactive Menus or Trailers, or any other extras  ³
+³     for that matter.                                                        ³
+³   - As we appear to be still using the avi container, it is not possible to ³
+³     mux subs into the actual container (which is what muxing actually means)³
+³   - I'm not sure about the mandatory use of rar. I know there are certain   ³
+³     (standalone) players that wouldn't read through the rar. Not that       ³
+³     many (if any) current standalones play Vobsubs anyway.                  ³
+³   - I've always loved this 1/2 matted burned subs discussion. Doing it the  ³
+³     way that the ruleset indicates would cause the image to be off-center   ³
+³     during fullscreen playback. Some people swear that they can't watch     ³
+³     anything off-center, personally don't think it's the end of the world.  ³
+³     In any event, a few of us had thought up a great compromise based on    ³
+³     the macroblock structure of MPEG encoding. It's too bad we weren't      ³
+³     consulted.                                                              ³
+³   - EngSub Must fit on CD rule: See above rar comment and more above CD     ³
+³     filesize comment.                                                       ³
+³   - The next bullet..."will not" or "must/may not"? (And I find the use of  ³
+³     exclamation marks to be very unprofessional in a ruleset)               ³
+³   - How many times do I have to say it? How bad do subs have to be to be    ³
+³     bad.subs? I'm sure there's no consensus on what "common judgement" is.  ³
+³     (judgment is misspelled too). This of course is even worse since the    ³
+³     rules state that if SOMEONE has made the call to nuke it for bad.subs,  ³
+³     then it can be propered.                                                ³
+³                                                                             ³
+³  Packaging:                                                                 ³
+³   - All releases must be AVI, not BIN/CUE.                                  ³
+³   - Must be packed with RAR and broken into 15 or 20 MB volumes.            ³
+³     Releases that are more then 1 CD must have the RAR files broken into    ³
+³     2 or more CD volumes.                                                   ³
+³   - Compression is not allowed.                                             ³
+³   - Recovery and MD5 record are recommended.                                ³
+³   - Must have SFV included for each CD.                                     ³
+³   - Must have NFO.                                                          ³
+³   - NFO SHOULD INCLUDE:                                                     ³
+³       Group name                                                            ³
+³       Title                                                                 ³
+³       Actual XviD release date                                              ³
+³       DVD release date                                                      ³
+³       Theatrical release date (US preferably)                               ³
+³       Video size                                                            ³
+³       Framesize/Aspect Ratio                                                ³
+³       Audio bitrate                                                         ³
+³       Video bitrate                                                         ³
+³       Movie runtime/Length                                                  ³
+³       IMDB/Amazon/Any other DVD site info link                              ³
+³       Number of rars per CD (i.e. 50x15MB)                                  ³
+³       Ripping method                                                        ³
+³       DRF average                                                           ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - Now that we've cleared up what it SHOULD include, what MUST it include? ³
+³   - DRF. Sigh... (see more about this below)                                ³
+³   - Exactly what ripping method we are talking about?                       ³
+³   - How about...Audio Codec? XviD Build? Packed Bitstream? Max Conseq BFs?  ³
+³                                                                             ³
+³  Credits:                                                                   ³
+³   - Movie credits can be encoded separately at a lower bitrate only if the  ³
+³     time length exceeds the no. of CDs used (i.e. 106 min on 1CD for FILM   ³
+³     source, or 201 min on 2CDs for PAL source, etc).                        ³
+³   - Any movies with scenes in the credits (i.e. bloopers or continuation    ³
+³     of story) MAY NOT be downsampled!                                       ³
+³   - Cutting Credits is not allowed.                                         ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - I don't see the advantage in restricting when credit downsampling can   ³
+³     occur. There's no consistency. They're either expendable, or they       ³
+³     aren't.                                                                 ³
+³                                                                             ³
+³  Samples:                                                                   ³
+³   - REQUIRED!                                                               ³
+³   - 1 full minute in length and in a separate folder marked as 'Sample'.    ³
+³   - MUST be taken from the movie - NOT encoded separately.                  ³
+³   - Vob samples are recommended for any rip that is deemed questionable:    ³
+³     i.e. no ivtc possible on source, ivtc to 24.975fps etc.                 ³
+³                                                                             ³
+³                                                                             ³
+³  Propers:                                                                   ³
+³   - Propers are ONLY permitted in the case of a technical flaw in the       ³
+³     original release (i.e. Bad IVTC, Interlacing, bad number of CDs).       ³
+³   - Releases not nuked on release lists and/or sites MUST include           ³
+³     original sample of the technical flaw.                                  ³
+³   - Qualitative propers are not allowed, nor are propers based on           ³
+³     decisions made by a ripper (i.e. No. of CDs, AC3 or MP3, etc).          ³
+³   - Propers based upon the compliance with new instances of TXD2K5          ³
+³     guidelines are also forbidden.                                          ³
+³     Only propers acceptable when propering old tdx rips are propers based   ³
+³     on picture damage: Aspect Ratio, IVTC, Over-Cropping. Other propers     ³
+³     acceptable are propers based on releases that did not follow previous   ³
+³     tdx guidelines, at the time they were released.                         ³
+³   - Subbed (in original movie language) propers dubbed (in any language).   ³
+³   - Hardcored Subs may be propered by releases containing Vobsub/Srt.       ³
+³     <This rule will not apply to movies ripped before TXD2K5>               ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - "bad number of CDs"...speaks for itself.                                ³
+³   - Speaking of which...something can be propered for "bad number of CDs"   ³
+³     but not for "No. of CDs".                                               ³
+³   - Are you expecting new instances of TXD2K5? That whole sentence needs to ³
+³     be rethought. "Only propers acceptable" -> "Propers are only acceptable"³
+³     might be slightly better English? Although that whole sentence probably ³
+³     needs reworking. The meaning of "old tdx rips" is obvious even if it    ³
+³     doesn't seem to make sense. I also believe that the list of flaws was   ³
+³     previously called technical flaws (a couple points up, why change that?)³
+³     In any event, I'm sure there are plenty of other ways to reword that    ³
+³     bullet.                                                                 ³
+³   - "Original movie language" -> "Movie's original/native language"?        ³
+³   - I know some people are pretty passionate about their subs, but hardcore ³
+³     might be going a bit to far (Yes, I know it's just a typo)              ³
+³   - Propers imply that there was something wrong with the original release  ³
+³     and it doesn't make sense to penalize a group for ripping a hardsubbed  ³
+³     DVD.                                                                    ³
+³                                                                             ³
+³  WS vs. FS:                                                                 ³
+³   - FS movies after WS was out, are FORBIDDEN unless proven it contains     ³
+³     more picture (use of sample or .jpg as proof).                          ³
+³   - WS movies after FS was out, MUST HAVE original sample from the          ³
+³     previous release, unless proven no WS DVD was out at the time the FS    ³
+³     was released. A WS not following the above is considered a DUPE!        ³
+³   - WS or FS name tags on the release name, if the other wasn't released    ³
+³     in the past, WILL NOT BE TOLERATED! <use nfo to mention the AR>.        ³
+³   - WS cannot proper another WS: for example 2.35:1 after 1.85:1 is out.    ³
+³     Use the tag WS in the dirname instead. However WS after a wider WS      ³
+³     was released, will be considered a DUPE unless proven it contains       ³
+³     more picture! Sample rule applies here also.                            ³
+³   - Letterboxed DVDs are not considered FS even if it's FS on the source!   ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - "FS movies after WS was out" is also grammatically incorrect.           ³
+³   - Why no FS tag when it's the first one out? I can understand people not  ³
+³     wanting to read the nfo just to see if the release if FS or WS.         ³
+³   - Aren't violations of any rule not to be tolerated? Why makes this one   ³
+³     so special?                                                             ³
+³   - Again, define source...In this case, the physical layout of the DVD is  ³
+³     being considered the source.                                            ³
+³   - This whole segment feels that it could be reworked for less redundancy  ³
+³     and more conciseness.                                                   ³
+³                                                                             ³
+³  Special Movie Editions:                                                    ³
+³   - Allowed: SE, DC, EXTENDED, UNCUT, REMASTERED, UNRATED, THEATRICAL,      ³
+³     CHRONO.                                                                 ³
+³   - Special Edition releases without any different features in the film     ³
+³     itself will be considered dupes of previous releases of the same        ³
+³     movie.                                                                  ³
+³   - Shorter cut version of a movie after a longer version was released is   ³
+³     allowed (i.e. THEATRICAL), and MUST be mentioned in the dirname.        ³
+³   - Remastered movies after the original have been released are allowed     ³
+³     only if the original release was in BLACK AND WHITE and the             ³
+³     remastered edition is colour. Everything else use INTERNAL!             ³
+³     (Remastered DVD releases that were nuked in the past and were colour    ³
+³     after black and white, shall not be unnuked and shall not be duped!)    ³
+³   - Remastered audio will be considered a dupe if it's the only reason      ³
+³     movie was re-released.                                                  ³
+³   - Extras released in a special movie edition, cannot be used as a basis   ³
+³     for a dupe, unless released separately <and are not dupes of previous   ³
+³     releases>.                                                              ³
+³   - Homemade Rips are not allowed (Use INTERNAL!). For example adding of    ³
+³     deleted scenes, alternate endings, chrono editions. Only retail DVD     ³
+³     rips of this versions are allowed.                                      ³
+³   - NOTE: PAL - NTSC length difference comes from the no. of frames, not    ³
+³     extra footage.                                                          ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - "different features" -> "different footage"? What is a feature in a     ³
+³     movie and how can it differ?                                            ³
+³   - How about Original Black & White after a studio coloured version?       ³
+³   - Aren't violations of any rule not to be tolerated? Why makes this one   ³
+³     so special?                                                             ³
+³   - Uh, excuse me? PAL <-> NTSC time difference comes from the SAME number  ³
+³     of frames being played at a different rate. Example:                    ³
+³     NTSC: 86400 frames ö 24frames/secs ö 60 secs/min = 60 mins              ³
+³     PAL:  86400 frames ö 25frames/secs ö 60 secs/min = 57.6 mins            ³
+³                                                                             ³
+³                                                                             ³
+³  Directory Naming:                                                          ³
+³   - All releases are to include production year (applies to the pre scene   ³
+³     as well).                                                               ³
+³   - DO NOT indicate Ripping method, DVD/XviD release date, Genre, Audio     ³
+³     which was used (no AC3) or anything else! (ONLY WITHIN THE NFO)         ³
+³   - Movie distribution tags i.e. FESTIVAL, STV, LIMITED or TV (TV tag       ³
+³     is used for TV movies only) are allowed and shall be used wisely and    ³
+³     correctly.                                                              ³
+³   - READ.NFO is strictly forbidden.                                         ³
+³   - Other permitted tags are: WS/FS <rules above>, PROPER, REPACK, RERIP,   ³
+³     REAL, RETAIL, EXTENDED, REMASTERED, UNRATED, CHRONO, THEATRICAL, DC,    ³
+³     SE, UNCUT, INTERNAL, DUBBED, SUBBED.                                    ³
+³   - Acceptable characters in naming a directory include (NO spaces or       ³
+³     double dots - single dots or underscores ONLY):                         ³
+³                                                                             ³
+³       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ³
+³       abcdefghijklmnopqrstuvwxyz                                            ³
+³       0123456789 .-_                                                        ³
+³                                                                             ³
+³   - Releases that are more than 1 CD MUST be named CD1, CD2, CD3 and so     ³
+³     on ('disc1' and others are NOT allowed).                                ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - I almost missed it, and I know that READ.NFO is often abused, but there ³
+³     are legitimate uses for it. Banning it is an overreaction.              ³
+³                                                                             ³
+³                                                                             ³
+³  TV Series Notes:                                                           ³
+³   - All Episodes <DVD rips> are obligated to follow the above rules.        ³
+³   - Media usage capacity:                                                   ³
+³       *  4x 20-23min = 1CD, Releases shall not be over 175mb.               ³
+³       *  3x 23-35min = 1CD, Releases shall not be over 233mb.               ³
+³       *  2x 35-50min = 1CD, Releases shall not be over 350mb.               ³
+³       *  Episodes further then 50 minutes, will follow the length rules     ³
+³          of TXD2K5.                                                         ³
+³     NOTE: Runtimes not mentioned above should fit on 1 CD i.e. 5x120mb,     ³
+³     6x116mb, 7x100mb etc.                                                   ³
+³   - Sizes mentioned above may be used only when minimum runtime is applied, ³
+³     i.e. 23 minutes on 233mb or 35 minutes on 350mb. Media usage is at      ³
+³     ripper's discretion (i.e. 25 minutes may also be on 175mb).             ³
+³   - Recommendation: 26x22min = 1 DVD-R Disc, 13x45min = 1 DVD-R Disc        ³
+³     i.e. 172mb x 26eps or 344mb x 13eps fits on 1 burnable DVD-R Disc.      ³
+³   - Exception: 20-23min NTSC episodes (29.97 fps) may use 233mb.            ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - "Episodes further then" -> "Episodes longer than"? (and no comma)       ³
+³   - "Sizes mentioned above may be used only when minimum runtime is         ³
+³     applied". What does this actually mean? It seems redundant?             ³
+³   - For consistency, how about 29.97fps 23-35min or 35-50min eps?           ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³
+³                                                                             ³
+³                                                                             ³
+³  Source related notes:                                                      ³
+³   - DVD source shall be RETAIL/DVD Screener only. Non DVD sources like      ³
+³     CAM, TS, TC, VHS, SCREENER, PDVD, LDVD etc, MUST be tagged with source  ³
+³     in dirname and MUST adhere to ALL TXD2K5 rules!                         ³
+³   - DVD Screeners shall be clearly marked in the directory name and the     ³
+³     nfo shall contain presence of studio watermarking and counters or       ³
+³     lack thereof.                                                           ³
+³   - Use of downsampled DVD-Rs as source is FORBIDDEN! <only untouched>      ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - Maybe it's just me, but what is a LDVD? Is is supposed to be Laserdisc? ³
+³                                                                             ³
+³                                                                             ³
+³  Internals:                                                                 ³
+³   - All INTERNALS must follow TXD2K5 rules, apart from the time length      ³
+³     rules and multi-language audio tracks rule (and will not be considered  ³
+³     as dupes). Other codecs and containers are allowed for experimental     ³
+³     purposes.                                                               ³
+³   - NOTE: INTERNAL dirfix is not allowed as a basis of avoiding a nuke.     ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - Excuse me? Groups can do whatever they want with internals. Internals   ³
+³     are not meant to be regulated. Internal dupes? Am I missing something?  ³
+³   - Many people disagree with dirfixing an internal to avoid a dupe, but    ³
+³     TDX doesn't have jurisdiction over internals. Let sites and dupechecks  ³
+³     decide what they want to do with them.                                  ³
+³                                                                             ³
+³  Ripping related notes:                                                     ³
+³   - Maximum VIDEO bitrates are covered by length rules.                     ³
+³   - If DRF average would be over 4.0, the resolution should be lowered if   ³
+³     possible, until the minimal res is reached. See Resolution rules.       ³
+³     DRF average can be checked with DRF Analyzer <It is recommended to      ³
+³     check the full avi file and not just the sample>.                       ³
+³   - Quant. Matrix always has to be H.263/MPEG due to lack of hardware       ³
+³     support for Custom matrixes.                                            ³
+³   - Quarterpel/GMC forbidden due to lack of hardware support.               ³
+³   - Packed Bitstream is not supported on some of the major gen chipsets,    ³
+³     therefore using it, is not recommended.                                 ³
+³   - The use of ITU-R is not recommended since it gives an AR error of       ³
+³     around 2% from the original DVD's Aspect Ratio.                         ³
+³   - Multi-language audio tracks are allowed only for INTERNALS.             ³
+³     Multiple languages should be interleaved into the AVI, with a           ³
+³     graphedit filter for each appropriate audio stream.                     ³
+³   - NO intros, outros, betweenos, or any other form of defacement of the    ³
+³     movie will be tolerated.                                                ³
+³                                                                             ³
+³  REBUTTAL:                                                                  ³
+³   - Our friend DRF again. DRF (Detail Removal Factor) is actually a DIVX    ³
+³     3.11/SBC ATTRIBUTE. XViD's equivalent attribute is the Quantizer.       ³
+³     Obviously I'm quite amused to see DRF mentioned in this new ruleset     ³
+³     which abolishes SBC.                                                    ³
+³   - For those that really understand how quantizers work, especially with   ³
+³     regards to their relationship with the Quantization type, they'd know   ³
+³     that the raw quant avg doesn't mean anything without the exact quant    ³
+³     matrix being used. As such, using the average quant as a statistic to   ³
+³     to determine the rip quality without considering the exact method of    ³
+³     quantization would be erroneous. Of course since this ruleset bans all  ³
+³     Custom Matrices (more on that later), that simplifies things...but MPEG ³
+³     and h263 are two completely different animals and look very different   ³
+³     at comparable quants. As a result, blind avg quant comparison is        ³
+³     dangerous and not a good benchmark at all.                              ³
+³   - While the argument about compatibility on standalones is a valid one,   ³
+³     many CQMs do in fact work on standalones and as long as rippers choose  ³
+³     well, the problems should be minor. On the flipside, the power of the   ³
+³     wide range of CQMs is unmatched. The choice of matrix gives control of  ³
+³     how XViD prioritizes the compression of the source material. The        ³
+³     quality of a high bitrate encode made with h263 or basic MPEG           ³
+³     quantization pales in comparison to one created with one of several     ³
+³     high bitrate matrices.                                                  ³
+³   - The packed bitstream (PB) issue is one that is already solved and thus  ³
+³     I don't even know why it has to be brought up again. There are some     ³
+³     standalones that do not work with 2 consecutive B-Frames with PB and    ³
+³     there are some (fewer) that don't work without it. Luckily, a tool was  ³
+³     developed that allowed for PB to be removed from a video file without   ³
+³     the need to reencode. Unfortunately it doesn't work in reverse (It      ³
+³     can't add PB to a non PB file). So really, if there were a rule, it     ³
+³     should be that all B-Frames must be packed, as it would be simple       ³
+³     enough to remove them if necessary. Alternatively, rips with 2+         ³
+³     consecutive B-Frames should be banned entirely.                         ³
+³   - Finally, this whole ITU-R thing...Specifically, the referral is to the  ³
+³     ITU-R BT.601 Standard for Aspect Ratios. The ITU-R itself is a body     ³
+³     that establishes standards, so the phrase "the use of ITU-R" doesn't    ³
+³     make a whole lot of sense. It still doesn't make sense if you           ³
+³     substitute in "ITU-R BT.601 Standard" since you abide or obey standards,³
+³     you don't "use" them. The ruleset is probably just talking about the    ³
+³     Gknot checkbox. It is true that the difference between following the    ³
+³     standard and not doing so is about 2% on the AR. However, the jury is   ³
+³     still out on which is the correct way to proceed. For now, it really    ³
+³     seems to come down to the output device being used and what is          ³
+³     considered to be the "correct" viewing experience. Links below:         ³
+³     http://www.uwasa.fi/~f76998/video/conversion/                           ³
+³     http://forum.doom9.org/showthread.php?t=42708                           ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³            The Tradition Continues: TXD RULES 2K5 (2005-09-25)              ³
+³         TDX2K2 <2002-07-12) 2K1 (2001-04-22) Original (2000-04-26)          ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        À--------[ GROUPS ]--------Ù                         ³
+³            TXD2K5 Rebuttal signed by the following XviD Groups:             ³
+³            ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ             ³
+³                                                                             ³
+³                                     ME                                      ³
+³                                                                             ³
+³                                   MYSELF                                    ³
+³                                                                             ³
+³                                   AND  I                                    ³
+³                                                                             ³
+ÀÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÙ
+   À----[ Created by Me 2005. Respect goes to all TDX teams 2000-2002 ]----Ù

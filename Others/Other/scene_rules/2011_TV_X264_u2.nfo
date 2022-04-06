@@ -1,0 +1,316 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                             ³
+³             The 720p x264 TV Releasing Standards 2011 Update 2              ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³     Requirements: Notepad with terminal font or any other ascii viewer.     ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                              ÀÄÄÄ[ INTRO ]ÄÄÄÙ                              ³
+³                                                                             ³
+³ This standard aims to produce consistent quality releases. If consistent    ³
+³ release size doesn't matter, but consistent quality does, this is for you.  ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                          ÀÄÄÄ[ RELEASE RULES ]ÄÄÄÙ                          ³
+³                                                                             ³
+³  Compliance with this document is optional as of its pre date, and          ³
+³  mandatory as of 2011-08-15 00:00 UTC.                                      ³
+³                                                                             ³
+³  Video:                                                                     ³
+³   - 1080i/p sources are to be cropped and resized using sharp resizers such ³
+³     as  Lanczos/Lanczos4, Spline36, or Blackman. Bicubic is banned.         ³
+³   - Video taken from the decoded HD output of a  set-top box (e.g.          ³
+³     component, DVI, HDMI) may be used as a source; source must be tagged    ³
+³     in dirname as AHDTV. Releases taken from a natively recorded transport  ³
+³     stream shall be tagged as HDTV and do not dupe AHDTV releases. AHDTV    ³
+³     releases do dupe HDTV. AHDTV captures must be done at the native format ³
+³     of the channel, i.e. 720p or 1080i.                                     ³
+³   - Sources that sideconvert 1080i to 720p (such as BellTV) are banned      ³
+³   - If there is a question as to the validity of a source, the release      ³
+³     may be nuked source.sample.requested_<reason.for.nuke> (e.g.            ³
+³     source.sample.requested_suspicion.of.analog.source) within 24 hours of  ³
+³     pre. The group has 24 hours from the nuke to pre a RARed SOURCE.SAMPLE  ³
+³     that is at least 10 seconds in length in order to document that the     ³
+³     source is valid. Failure to provide source proof or providing bad       ³
+³     source proof shall result in the release remaining nuked, and it may    ³
+³     then be propered.                                                       ³
+³   - Improper methods of IVTC that result in loss of half the fields         ³
+³     (SeparateFields.SelectEven, YV12InterlacedSelectTopFields) are banned   ³
+³   - Improper IVTC methods that result in jerky playback, such as Force      ³
+³     Film, are banned                                                        ³
+³   - 1080i video sources must be deinterlaced with a smart deinterlacer such ³
+³     as Yadif. FieldDeinterlace is banned.                                   ³
+³   - Group watermarks of any kind on the video are banned                    ³
+³   - Intros, outros, betweenos, or any other form of defacement of the       ³
+³     episode are banned                                                      ³
+³   - Upconverted  sources must not be done as 720p.x264. See notes regarding ³
+³     HR.PDTV.x264.                                                           ³
+³   - "Native" refers to the standard in which the video was produced (e.g.   ³
+³     NTSC or PAL). NTSC produced video is native to NTSC, PAL produced video ³
+³     is native to PAL. PAL produced video that is broadcast in NTSC is       ³
+³     converted. NTSC produced video that is broadcast in PAL is converted.   ³
+³   - Converted video that has significant artifacting (e.g. blended frames)  ³
+³     and cannot be reversed to native must use CONVERT tag                   ³
+³   - Converted video that does not have significant artifacts does not need  ³
+³     convert tags and may not be nuked for the conversion                    ³
+³   - Native releases are allowed after those tagged CONVERT. Use NATIVE tag. ³
+³                                                                             ³
+³  Audio:                                                                     ³
+³   - Must be original source audio, AC3 if available. Transcoding audio that ³
+³     is already in a consumer-grade format (AAC, AC3, MP2, etc.) is banned.  ³
+³     Minor adjustments to audio (channel count, adding/removing frames) in   ³
+³     order to prevent issues with playback or sync are permitted.            ³
+³   - Dupes  based  on audio format are forbidden and must be tagged INTERNAL ³
+³   - Multiple language audio tracks are allowed and must be listed in NFO    ³
+³   - Dupes are not allowed based on multiple audio tracks                    ³
+³   - Severe audio drops resulting in one full missing word or otherwise the  ³
+³     inability to  understand material dialogue is considered to be a        ³
+³     technical flaw and may be propered                                      ³
+³   - Audio that is 120ms or more out of sync or drifts more than 120ms       ³
+³     between any two points (e.g. needing -80 at one and +40 at another) is  ³
+³     considered to be technically flawed and may be propered                 ³
+³                                                                             ³
+³  Framerate:                                                                 ³
+³   - IVTC or deinterlacing must be applied as needed                         ³
+³   - 50/60fps video may be released at 50/60fps or 25/30fps. Releasing true  ³
+³     25/30fps video at 50/60 is considered a technical flaw.                 ³
+³   - In rare cases, 25/50Hz sources should be IVTC'd to 24 or 30 fps.        ³
+³   - In rare cases, 30/60Hz sources should be IVTC'd to 25fps.               ³
+³     Failure to apply IVTC when needed is a technical flaw.                  ³
+³                                                                             ³
+³  Codec/Container:                                                           ³
+³   - Must be x264 (8-bit depth).                                             ³
+³   - Must use Matroska (.mkv) for container                                  ³
+³   - You will have 30 days from latest  x264  rev date to update in order to ³
+³     maintain all bug fixes and improvements in the x264 codec               ³
+³   - Stripping or falsifying encode information in the file header is banned ³
+³   - Custom  muxing  tools are permitted; however, output must be compatible ³
+³     with  standard  demuxers  to  the  same  extent that files created with ³
+³     MKVToolnix  are.                                                        ³
+³   - Custom Matrices are allowed                                             ³
+³   - Encoded colorspace must be 4:2:0.                                       ³
+³   - Deblocking  must  be  used;  values are at the discretion of the group. ³
+³     (default is enabled, 0:0 settings)                                      ³
+³   - Sample Aspect Ratio (--sar) must be square (1:1).                       ³
+³   - No setting can go below what is specified by --preset slow.             ³
+³   - Keyframe  interval  (--keyint) must be at least 200 and at most 300. It ³
+³     is  recommended  to  be  10*framerate  (film=240,  PAL=250,  NTSC=300). ³
+³   - Minkeyint must be 30 or less                                            ³
+³   - Constant Rate Factor (--crf) must be as follows:                        ³
+³     ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿ ³
+³     ³ Compressibility ³  CRF  ³ General Examples                          ³ ³
+³     ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´ ³
+³     ³ High            ³ 18-19 ³ Scripted, Talk Shows, Poker, Animation    ³ ³
+³     ³ Medium          ³ 20-21 ³ Documentary, Reality, Variety             ³ ³
+³     ³ Low             ³ 22-23 ³ Sports, Awards, Live Events, Competitive- ³ ³
+³     ³                 ³       ³ Reality                                   ³ ³
+³     ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ ³
+³   - x264 parameters shall not vary within a release                         ³
+³   - Zones (--zones) are forbidden.                                          ³
+³   - Any deviation in CRF from given examples must be specifically justified ³
+³     in the NFO. Use discretion when deviating CRF by matching the           ³
+³     compressibility of the show to a corresponding CRF value. CRF values    ³
+³     below 18 and above 23 are never permitted.                              ³
+³   - As a general suggestion, average video bitrate in excess of 5000kb/s    ³
+³     is a sign that a higher CRF value should be chosen, when possible       ³
+³   - Allowed parameters for --tune (optional) are film/grain/animation       ³
+³   - Level 4.1 must be respected.                                            ³
+³   - Suggested command line:                                                 ³
+³     x264.exe --crf ## --preset slow --level 4.1 -o out.mkv in.avs           ³
+³                                                                             ³
+³  Resolution:                                                                ³
+³   - 1080i/p sources must be cropped as needed and resized to fit within     ³
+³     1280x720 with width=1280 and/or height=720. Never upscale, never add    ³
+³     borders. Resolution must be mod2.                                       ³
+³   - 720p sources may optionally be cropped to the nearest mod2, or may be   ³
+³     left at mod16                                                           ³
+³   - When cropping, remove everything that is not actual picture, including  ³
+³     black or other colored borders, duplicate lines, and full-time tickers. ³
+³     Removing or retaining fading edges is at capper's discretion and shall  ³
+³     not be considered undercropped or overcropped.                          ³
+³   - In the case of varying crops, crop to the most common frame size (e.g.  ³
+³     pitch/primary view in sports).                                          ³
+³   - Actual picture area may be over- or under-cropped by 1px maximum per    ³
+³     side. More than 1px on any side is considered a technical flaw.         ³
+³   - Encoded Video resolution must be within 2% of the original aspect ratio ³
+³     To calculate AR error (%): (Original AR - Release AR)/Original AR * 100 ³
+³     OAR = (SourceWidth-CropLeft-CropRight)/(SourceHeight-CropTop-CropBottom)³
+³     Release AR  = EncodedWidth / EncodedHeight                              ³
+³   - 720p sources shall never be resized                                     ³
+³                                                                             ³
+³  Subs:                                                                      ³
+³   - Optional, but encouraged                                                ³
+³   - Text based format is preferred (e.g. SubRip, SubStation Alpha, etc).    ³
+³   - Subtitles must be muxed into the MKV. "Subs" directories are forbidden. ³
+³   - Burned subtitles will only be allowed when the source exhibits such     ³
+³     subtitles in the picture itself                                         ³
+³   - Subtitles cannot be used as a basis for a dupe                          ³
+³   - Group marks in subtitles are banned                                     ³
+³                                                                             ³
+³  Packaging:                                                                 ³
+³   - Releases must be packed in RAR file format.                             ³
+³   - Rars must be in multiples of 50 MB, no more than 101 files (.rar-.r99)  ³
+³     if using old-style naming, or 99 (.part01.rar-.part99.rar) if using     ³
+³     new-style naming. 1MB = 1,000,000 bytes                                 ³
+³   - Multi-episode  releases  with no clear delineation such as credits must ³
+³     not be split                                                            ³
+³   - RAR Compression must not be used                                        ³
+³   - Recovery and MD5 record are optional                                    ³
+³   - Encryption or password protection is forbidden                          ³
+³   - Must have SFV and NFO                                                   ³
+³   - RAR, SFV, and sample files must have unique, lowercase filenames with   ³
+³     the group tag.                                                          ³
+³   - Missing SFV or RAR(s) on all sites is considered a technical flaw.      ³
+³     Corrupt RARs (errors on extraction) are considered technical flaws.     ³
+³     SFVFix and RARFix are not permitted. Uploading a missing SFV or RAR to  ³
+³     all presites after pre is not permitted. Release REPACK.                ³
+³                                                                             ³
+³  Credits/Previously On:                                                     ³
+³   - Previously on footage is optional, but suggested to be included         ³
+³   - Full end credits must be included if they contain show content or       ³
+³     outtakes/bloopers. End credits are optional and suggested if they are   ³
+³     clean, and purely optional in other cases.                              ³
+³                                                                             ³
+³  Samples:                                                                   ³
+³   - REQUIRED!                                                               ³
+³   - 50-70 seconds in length and  in  a  separate  folder  marked  as Sample ³
+³   - Must be taken from the episode, not encoded separately                  ³
+³   - Stream samples are recommended for any questionable issue with the      ³
+³     source, e.g. no IVTC possible, IVTC to 24.975fps, etc.                  ³
+³                                                                             ³
+³  Propers:                                                                   ³
+³   - Propers are only permitted in the case of a technical flaw in the       ³
+³     original release (e.g. Bad IVTC, Interlacing, missing footage, resizing ³
+³     720p source, bad crop, commercials, bad x264 settings used, bad source, ³
+³     etc.)                                                                   ³
+³   - Scrolling or other alert messages added by a station (e.g. weather,     ³
+³     Amber alerts) must be at least 30 seconds in length in order to         ³
+³     nuke/proper                                                             ³
+³   - Drops with missing footage but no missing dialog must be at least 2     ³
+³     seconds long in any one instance to be considered a technical flaw      ³
+³   - Proper  reason  must  be clearly stated in nfo, including timecodes and ³
+³     extent of the flaw when appropriate                                     ³
+³   - Sample of propered release is encouraged                                ³
+³   - Qualitative propers are not allowed                                     ³
+³   - Flaws  (such  as  drops) present in any optional content are not a flaw ³
+³     and shall not be nuked or propered.                                     ³
+³   - Propers based upon the rules set forth here are allowed only on         ³
+³     releases that come after this document goes into effect                 ³
+³                                                                             ³
+³  Internals:                                                                 ³
+³   - Internals are allowed to be pred for any reason, including releases     ³
+³     with technical flaws or those done with alternate codecs, containers,   ³
+³     or settings for experimental purposes                                   ³
+³   - Any severe technical flaws or deviations must be mentioned in the NFO   ³
+³   - With the exception of the following rule, internal releases may only be ³
+³     nuked for severe technical flaws or deviations that are not mentioned   ³
+³     in the NFO                                                              ³
+³   - Using  DIRFIX.iNTERNAL to avoid a dupe nuke is banned, and such         ³
+³     dirfixes shall be nuked fix.for.nuke                                    ³
+³                                                                             ³
+³  Directory Naming:                                                          ³
+³   - Show.Name.SXXEXX.Episode.Title.720p.HDTV.x264-GROUP                     ³
+³   - Show.Name.YYYY.MM.DD.Guest.Name.720p.HDTV.x264-GROUP for daily or other ³
+³     dated shows                                                             ³
+³   - Episode title and guest name are optional                               ³
+³   - Show.Name.PartXX.720p.HDTV.x264-GROUP for miniseries                    ³
+³   - ALL others are FORBIDDEN. (e.g 0x00 000 EXX.EP.TITLE PART.VI)           ³
+³     Sport:                                                                  ³
+³     - League.YYYY.MM.DD.Event.EXTRA.TAGS.720p.HDTV.x264-GROUP               ³
+³     - Competition.YYYY-MM.Event.EXTRA.TAGS.720p.HDTV.x264-GROUP             ³
+³     Using just the year is only permitted if the event is once per year     ³
+³     (e.g. a WWE PPV). In the case of leagues which have seasons that span   ³
+³     multiple years, it is permissible to tag the release with just the years³
+³     of the season. Inclusion of MM and DD is mandatory for all constantly   ³
+³     running shows (e.g. WWE).                                               ³
+³     If there is no league, the sport needs to be used instead               ³
+³     The following are some examples of correct directory names:             ³
+³     - EPL.2010.01.01.Manchester.United.vs.Arsenal.720p.HDTV.x264-GROUP      ³
+³     - TNA.Impact.2010.03.02.720p.HDTV.x264-GROUP                            ³
+³     - WWE.WrestleMania.2010.PPV.720p.HDTV.x264-GROUP                        ³
+³     - Tennis.US.Open.2011.Final.Player1.vs.Player2.720p.HDTV.x264-GROUP     ³
+³   - Different  shows  that have the same title in different countries (e.g. ³
+³     The Marriage Ref) must have the ISO 3166-1 alpha 2 country code in the  ³
+³     directory name, except for UK shows (e.g. The.Marriage.Ref.UK not       ³
+³     The.Marriage.Ref.GB). ISO country code is not needed for the original   ³
+³     show (e.g. The.Marriage.Ref.US is forbidden).                           ³
+³   - Different shows with the same name in the same country produced in      ³
+³     different years must have the year of the first season in the directory ³
+³     name, e.g. Human.Target.2010 and Doctor.Who.2005. Year is not needed    ³
+³     for the first show with a particular name.                              ³
+³   - Channel name (e.g. National.Geographic, History.Channel) shall not be   ³
+³     tagged on any normal series starting after this ruleset's effective     ³
+³     date. Miniseries and single-episode docus may optionally be tagged with ³
+³     the channel name.                                                       ³
+³   - The use of audio format tags such as AAC, AC3, and AC3.x.x is FORBIDDEN ³
+³   - READ.NFO tag is allowed; however, discretion is recommended             ³
+³   - PROPER.READ.NFO is NOT allowed. The NFO is REQUIRED to have a reason;   ³
+³     therefore, the tag is redundant.                                        ³
+³   - All repacks must include detailed reason as to why it's being repacked  ³
+³     in the nfo                                                              ³
+³   - Other  permitted  tags are: PROPER, REPACK, RERIP, REAL, UNCUT, DUBBED, ³
+³     SUBBED, iNTERNAL, OAR, PPV, CONVERT, NATiVE                             ³
+³   - Acceptable  characters  in  naming  a  directory  include (NO spaces or ³
+³     double dots - single dots ONLY):                                        ³
+³                                                                             ³
+³       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ³
+³       abcdefghijklmnopqrstuvwxyz                                            ³
+³       0123456789._-                                                         ³
+³                                                                             ³
+³  Nukes:                                                                     ³
+³   Releases must be nuked for any of the following reasons:                  ³
+³   - Any valid proper listed in the propers section                          ³
+³   - Missing nfo, or missing Sample                                          ³
+³   - Invalid directory naming format                                         ³
+³   - Mislabeled  directory  that  could  prevent  finding  the  release in a ³
+³     dupecheck,  including  incorrect season/episode/date or incorrect title ³
+³   - Dupe                                                                    ³
+³   - Releases may not be propered for bad tagging or missing nfo/sample      ³
+³                                                                             ³
+³   Fixes:                                                                    ³
+³   - The  following  fixes are  allowed: NFOFix, SampleFix, DirFix, SyncFix, ³
+³     ProofFix                                                                ³
+³   - DirFix requires NFO and NFO must state which release is being fixed     ³
+³   - The original release shall be unnuked when a valid fix is released      ³
+³   - A proper may not be released for an issue that was fixed, unless the    ³
+³     fix does not completely correct the issue                               ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        ÀÄÄÄ[ NOTES TO THE RULES ]ÄÄÄÙ                       ³
+³                                                                             ³
+³  HR.PDTV.x264:                                                              ³
+³   - HR PDTV x264 encodes are allowed for non-HD shows airing fully          ³
+³     upscaled on HD channels. Windowboxed (with large black bars on all      ³
+³     sides) content lacks sufficient source resolution to warrant releasing  ³
+³     in HR format and is therefore banned.                                   ³
+³   - Video shall be cropped and resized to fit within 960x544 following      ³
+³     standard crop and resize rules listed above                             ³
+³   - Directory tags shall be HR.PDTV.x264 for 4:3 shows, and HR.WS.PDTV.x264 ³
+³     for 16:9 shows                                                          ³
+³   - All other standard rules apply                                          ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³           The 720p x264 TV Releasing Standards 2011 (2011-08-07)            ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÄÄÄÄÄÙ
+ÚÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÁÄÄÄÄÄÄÄ¿
+³                        ÀÄÄÄÄÄÄÄÄ[ GROUPS ]ÄÄÄÄÄÄÄÄÙ                         ³
+³                                                                             ³
+³              TVx2642011 rules created by the following groups:              ³
+³              ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ              ³
+³                187HD 2HD aAF BAJSKORV BiA C4TV DAH DiCH DHD                 ³
+³                  DIMENSION DiVERGE FTP GNARLY IMMERSE KYR                   ³
+³                 LOCATiON LMAO MiNDTHEGAP MiRAGETV MOMENTUM                  ³
+³                 NGCHD ORENJI PREMiER RIVER SFM SiTV SYS W4F                 ³
+³                                 xD2V YesTV                                  ³
+³                                                                             ³
+³ Dedicated to Spatula (RIP 2010-11-22) who made the first ever scene TV-x264 ³
+³ release: The.Unit.S01E04.HD720p.x264-MiRAGETV.                              ³
+³                                                                             ³
+ÀÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÙ
+ ÀÄÁÄÄ\   Thanks  to   the   x264+matroska   developers   for   their   /ÄÄÁÄÙ 
+  ÀÄÄÄÄ\  assistance in determining the best mix of  encode settings.  /ÄÄÄÄÙ  
+   ÀÄÄÄÄ\                                                             /ÄÄÄÄÙ   

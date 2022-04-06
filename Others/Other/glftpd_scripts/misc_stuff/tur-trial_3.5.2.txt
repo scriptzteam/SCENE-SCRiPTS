@@ -1,0 +1,13 @@
+Tur-Trial 3 (GL1&2)
+
+Description: The latest installation of Tur-Trial. Requires a mysql server but no 
+real knowledge of mysql (comes with scripts to setup the database etc. All you need
+to know is the mysql 'root' users password.). 
+
+Supports both trial and quota. Multiple stat sections with different ratios. 
+Month-Up top limit (keep only the top 10 users for example). 
+Too many functions to list here really.
+
+Author:   Turranius
+Version:  3.5.2
+Added on: 30-Dec-2004

@@ -1,0 +1,208 @@
+
+
+
+ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+ ³                                                                             ³
+ ³                   The TRAINER Releasing Standards 2009                      ³
+ ³                                                                             ³
+ ³ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ³
+   
+                             ÄÄ[ INTRODUCTION ]ÄÄ
+   
+  As game engines are evolving so are trainers. One trainer being better than
+  an other trainer it's more difficult these days to determine which trainer
+  has the best quality. Therefor to guide everyone making trainers in the
+  scene we decided to set up a set of rules. The rules are there to give
+  everyone the possibility to work at the same level through the same rules.
+  At this time there are no rules trainer related. We think it's time to set
+  up some standards so when we sceners using a trainer we can be sure it has 
+  an certain level of quality in it.
+   
+  Please read this draft, and if you do not agree to certain parts of it,
+  please inform us and tell us what exactly needs to be changed/removed/added,
+  so that it fits your opinion about what these rules should look like.
+   
+                               ÄÄ[ TRAINERs ]ÄÄ
+   
+  - .rar and .zip file names should have a maximum of 8.3 characters.
+   
+  - Compression format for iSO  trainers is RAR.
+  - Compression format for 0DAY trainers is ZIP.
+   
+    Compression mode should be m1 or above.
+   
+  - 0DAY trainers must include DIZ file.
+  - NFO must be included in each RAR/ZIP.
+   
+  - Trained games must previously have been released as a valid (non-nuked)
+    release into the 0DAY/iSO section.
+    Only game releases from valid/non-scenebanned release groups may be used.
+   
+  - To keep the competition, trained games must not be older than 6 months.
+
+  - If an update for a game has been released, it is still allowed to release a
+    trainer for the old version of the game. If this game isn't older than
+    three months.
+   
+  - All trainers should work the same on all formats that the game supports.
+    If the game supports Win9x/ME/XP/Vista, then the trainers options must work
+    on all those formats too.
+    Due to WinVista there may also be games that support dx10 with a second
+    game.exe. However, as long as the dx9 trainer works on all supported
+    formats, the trainer will be accepted as valid, if this issue has been
+    explained in the .nfo.
+   
+  - Trainers which have been made with so called 'Trainer Making Utilities'
+    like TMK, GameTrainerStudio or any other utility, are not allowed.
+   
+  - Trainers for BETAs/DEMOs/etc. are not allowed. Unless the trainer is tagged
+    as internal.
+ 
+  - All languages are allowed.
+    Accordingly it is preferred (but not necessary) to write the .nfo in the
+    language the release is for. If the .nfo is not the same language as the
+    trainer is for, english must be used.
+   
+  - No group should use anothers groups work. No exceptions.
+    Any group that does, will be nuked and should be banned instantly.
+    Any future release/s of this group will be ignored.
+   
+  - Using ingame cheats in trainers shows of no respect to other trainer makers
+    and is not allowed in any way.
+    Any group that does, will be nuked and should be banned instantly.
+    Any future release/s of this group will be ignored.
+   
+  - Option Counting:
+   
+    Trainer options should be counted properly. Lame ways like explained below
+    aren't allowed to count the amount of options on a trainer. Everyone can
+    throw out shit.
+   
+    For example:
+
+    Health:
+    Infinite Health for player A
+    Infinite Health for player B
+    Same for more than 1 team mate
+    These options can be seperated in the trainer, but they count as one
+    option.
+   
+    Ammo:
+    Ammo in a game is based on ALL ammunition types. It should include
+    grenades, mines and everything else related to ammunition.
+    These options can be seperated in the trainer, but they count as one
+    option.
+    In short this means every option related with secondary or primary ammo
+    should be counted as one option.
+   
+    Items:
+    Usually trainers are called +20 or bigger because people are counting all
+    different types of items as seperate options.
+    Items can have a different hotkey in the trainer but they count as one
+    option.
+
+    Resources:
+    Wood, Stones, Iron, etc. are Resources.
+    These options can be seperated in the trainer, but they count as one option
+    unless:
+    for example we take a game where we have wood, stone and coal.
+    If resources are treated as individually in the game ie for trading among
+    other AI players or games like civilization where some resources affect
+    trade, while other affect military, etc, those are allowed to be regarded
+    as individual options.
+   
+    Time:
+    Infinite Time for Game-Mode A
+    Infinite Time for Game-Mode B
+    Infinite Time for Mini-Game A
+    Infinite Time for Mini-Game B
+    These options can be seperated in the trainer, but they count as one
+    option.
+
+    Toggles:
+    Toggle Option 1 ON/OFF
+    For those who don't know already, this is only one option.
+   
+  - If you do not count your options correctly, you may get PROPERed by other
+     groups.
+   
+  - Release Name:
+    The Release Name has to include the trained games name, the version number
+    (if an update has been trained) the number of options and the group name.
+   
+  DEFAULT:
+  <Game Name>.PLUS.<Option Number>.TRAINER-<GROUP NAME>
+  <Game Name>_PLUS_<Option Number>_TRAINER-<GROUP NAME>
+  <Game Name>.<Version Number>.PLUS.<Option Number>.TRAINER-<GROUP NAME>
+  <Game Name>_<Version Number>_PLUS_<Option Number>_TRAINER-<GROUP NAME>
+  REPACK'S:
+  <Game Name>.PLUS.<Option Number>.TRAINER.REPACK-<GROUP NAME>
+  <Game Name>_PLUS_<Option Number>_TRAINER_REPACK-<GROUP NAME>
+  <Game Name>.<Version Number>.PLUS.<Option Number>.TRAINER.REPACK-<GROUP NAME>
+  <Game Name>_<Version Number>_PLUS_<Option Number>_TRAINER_REPACK-<GROUP NAME>
+  PROPER's:
+  <Game Name>.PROPER.PLUS.<Option Number>.TRAINER-<GROUP NAME>
+  <Game Name>_PROPER_PLUS_<Option Number>_TRAINER-<GROUP NAME>
+  <Game Name>.<Version Number>.PROPER.PLUS.<Option Number>.TRAINER-<GROUP NAME>
+  <Game Name>_<Version Number>_PROPER_PLUS_<Option Number>_TRAINER-<GROUP NAME>
+
+    Examples:
+    Trackmania.United.Plus.1.Trainer-JEDiDOX
+    Star_Trek_Legacy_v1.030_Plus_5_Trainer-HATEDOX
+   
+    Not valid:
+    Wartorn.Resource.Trainer-MYSTiCAL
+    The_Sims_Money_Trainer-DVN
+   
+  - Dupes:
+    Group A releases a +5 trainer for game X.
+    Later if group B releases a trainer for game X with the same +5 options, it
+    is a dupe.
+    If group B wants to make a valid trainer for game X, group B must have at
+    least one or more new options on top of the original trainers. Group B can
+    also release an trainer with less options but completely different ones
+    than the one made by group A.
+   
+  - Multiple Releases:
+    If group A releases a +3 and later wants to release a new trainer with
+    more options, the new trainer's dir has to contain 'REPACK'.
+    This will result in the previous trainer being nuked and the new trainer
+    being valid. We know this rule can result in a debate. Setting the rule
+    like this avoids groups updating and updating their trainer all the time.
+    Updating your trainer to work with an updated version of the game is
+    offcourse allowed. The rule is there to avoid a pre flood of updated over
+    updated trainers for the same game version.
+    Better create a QUALITY trainer in the first try than updating it 5 times
+    to get the same result as an other group. Do your best on your first prior
+    trainer release.
+
+  - REPACK's:
+    Trainers with one or more non-working option/s can be re-released by doing
+    a repack. NON working options can be removed, although we condone everyone
+    to fix them to keep the quality. The dirname has to include REPACK.
+    Make sure to lable the trainer appropriate. So if your faulty trainer had
+    6 options and you remove two options. Lable the REPACK as a PLUS 4 than.
+   
+  - PROPER's:
+    Trainers with one or more non-working option/s can be propered by another
+    group.
+    The PROPER Trainer must not have less options than the original (non-
+    working) release.
+    NFO must include detailed proper reason.
+    Dirname has to include PROPER.
+   
+   
+   
+                                ÄÄ[ GROUPS ]ÄÄ
+   
+  - ALL groups (0DAY/DOX) that ever DID or possibly MAY release a trainer, are
+    being considered as signers of the FINAL TRS.
+    These rules have been accepted by the following groups:
+   ===========================================================================
+    Council of ReUnion, Reebsaw, Outlaws and team BReWErS
+   
+Draft 1.2
+
+
+
+<END>

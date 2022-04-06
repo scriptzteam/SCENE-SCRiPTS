@@ -1,0 +1,230 @@
+------------------------------------------------------------------------
+glftpd-TLS v1.31 final                               http://pftp.suxx.sk
+------------------------------------------------------------------------
+
+This product includes cryptographic software written by Eric Young
+(eay@cryptsoft.com)
+
+this readme is based on readme from ftpd-tls project, check the links for
+ftpd-tls and ftp-tls in links section (ftp.runestig.com)
+
+------------------------------------------------------------------------
+first of all, what is ftp TLS :
+------------------------------------------------------------------------
+ ftp TLS is a secure extension for normal ftp standard which lets us
+ use SSLv3 encryption with ftp connections, it is described in included
+ IETF draft file (draft-murray-auth-ftp-ssl-xx.txt), please read it
+ for a lot of important informations on how does it work
+
+------------------------------------------------------------------------
+now, how to install glftpd-TLS :
+------------------------------------------------------------------------
+ first install glftpd using the steps in glftpd.docs, now create yourself
+ a key with the included script file (/glftpd/create_server_key.sh),
+ for example "/glftpd/create_server_key.sh FOOBAR" will make DSA key (default)
+ with filename ftpd-dsa.pem and comment test "FOOBAR"
+ 
+ when done, put it to some safe place (outside /glftpd chroot)
+ and tell glftpd where to get it (add "-z cert=/path/file.pem" parameter to inetd,
+ and restart it) and you are done with basic install, now verify all works ok
+ if you have any problems check syslog (you may need to add -d parameter in
+ inetd or you dont find errors in syslog) if you have problems loggin in try
+ to add "-z certsok" to inetd.conf that helps if you have bad client/server
+ certificate
+
+new glftpd.conf settings :
+ with these you can deny TLS access to some people
+ check the examples
+
+ NOTE : you cannot use =GROUP or FLAGS in these 2 lines !!!! userfile isnt
+ loaded yet you can only use -username and *
+
+EXAMPLE :
+#not allow lamer to use TLS mode
+userrejectsecure -lamer !* 
+#allow only hoe to use insecure access
+userrejectinsecure !-hoe *
+
+v1.29 new settings:
+you can now deny unecrypted access to dirlist using denydiruncrypted
+and to other transfers using denydatauncrypted
+so :
+
+denydiruncrypted !-idiot =IDIOTS *
+denydatauncrypted !-idiot =IDIOTS *
+
+only user idiot and group IDIOTS can get unencrypted dirlist or file
+transfer
+
+
+basically to create 100% secure site you will want to use this setting :
+userrejectsecure !* 
+userrejectinsecure *
+denydiruncrypted *
+denydatauncrypted *
+
+to create site where people can using both noTLS and TLS connections use:
+userrejectsecure !* 
+userrejectinsecure !*
+denydiruncrypted !*
+denydatauncrypted !*
+
+
+------------------------------------------------------------------------
+few notes :
+------------------------------------------------------------------------
+ please note that using a bouncer like bnc4all or dike will not work
+ with TLS mode, this is because these bouncers parse the ftp commands
+ and this isnt possible in TLS mode, because the bouncer doesnt know
+ how to decrypt the data...
+ for port bouncing you can use hpbnc (http://pftp.suxx.sk) and
+ for data bouncing you can use hbnc (http://pftp.suxx.sk) however
+ hbnc is in very early state of development at this moment (december 2000)
+ and doesnt have much features yet and hpbnc doesnt support ftps mode
+
+ it is maybe possible to use hbnc as a decrypt bouncer and put it before
+ dike bouncers and create a chain when hbnc will decrypt the ssl connection
+ to dike bouncer and that will just work as usually... however i didnt try
+ it.. maybe i will try and document it in next hbnc release so check it out
+ if you are interested...
+ 
+------------------------------------------------------------------------
+advanced features :
+------------------------------------------------------------------------
+ check the rest of this file for some more parameters and informations,
+ basically you may be interested in adding "-z certsok" to inetd, this
+ will let people with expired keys (if they use a key) to not be rejected,
+ or you can use "-z ftps" for ftps mode (lftp supports it with open ftps://")
+ 
+links :
+ clients that support TLS : pftp (http://pftp.suxx.sk)
+                            lftp (http://ftp.yars.free.net/projects/lftp/)
+                            ftp-tls (ftp://ftp.runestig.com/pub/ftp-tls/)
+			    jfxp (http://jfxp.com)
+                      NEW : now also windows client WS-FTP and CUTE FTP
+                            PRO are supported
+                            (www.globalscape.com and www.wsftp.com)
+    and many others (flashfxp 2.0 included :))
+    
+ servers : ftpd-tls (ftp://ftp.runestig.com/pub/ftpd-tls)
+           glftpd-TLS (http://pftp.suxx.sk)
+           or any normal server with hbnc (http://pftp.suxx.sk)
+	   ...
+------------------------------------------------------------------------
+cipher settings (optional) : 
+------------------------------------------------------------------------
+you can now set ciphers for various connections with -z commandline parameter :
+-z cipher=control connection cipherlist (default : HIGH:MEDIUM)
+-z cipherdir=dirlist connection (default : HIGH:MEDIUM)
+-z cipherdataconn=ssl fxp cipher (default : LOW:MEDIUM:HIGH, to make fxp fast)
+-z cipherdata=other data transfers (default : ALL)
+(if the session from control channel is reused, also the cipher stays the same,
+so if you cant get some low cipher for data connection maybe your client is using
+same session id as control channel)
+
+
+------------------------------------------------------------------------
+special infos taken from ftpd-tls : 
+------------------------------------------------------------------------
+The ftpd server tries to use these TLS related files by default:
+ftpd-rsa.pem		RSA certificate, may include private key
+ftpd-rsa-key.pem	RSA private key
+ftpd-dsa.pem		DSA certificate, may include private key
+ftpd-dh-key.pem		DH private key
+ftpd-crl.pem		Certificate Revokation List
+ftpd-dhparam.pem	DH Parameters (a set of DH params is compiled in)
+
+These files is searched for in the following directorys (in this order):
+o  Current working directory of the process.
+o  Specified by the `X509_get_default_cert_dir_env()` environment variable
+   (usually $SSL_CERT_DIR).
+o  `X509_get_default_cert_dir()`, usually (openssl-dir)/certs.
+o  `X509_get_default_private_dir()`, usually (openssl-dir/private.
+
+Default CRL directory for the proftpd server is (openssl-dir)/crl.
+
+New TLS related command line options:
+glftpd [-z {rsa|dsa}cert=FILE] [-z {rsa|dsa}key=FILE] [-z dhparam=FILE]
+     [-z crlfile=FILE] [-z crldir=DIR] [-z cipher=STRING] [-z certsok]
+     [-z ftps]
+     
+certsok - if client supplies certificate, then its always considered as ok
+    it can be expired or broken in other way, but connection will not be
+    rejected     
+
+ftps - glftpd will run in ftps mode, whole connection from the beginning
+    will be in ssl mode... (except for connections from bouncers, those must
+    supply IDNT command first) (note that data connection is set the ssl mode
+    too, use PROT command to switch back if you want)    
+
+     
+Default cipher list is "ALL:!EXP".
+
+How to put together a  'cipher list string':
+  Key Exchange Algorithms:
+    "kRSA"      RSA key exchange
+    "kDHr"      Diffie-Hellman key exchange (key from RSA cert)
+    "kDHd"      Diffie-Hellman key exchange (key from DSA cert)
+    "kEDH'      Ephemeral Diffie-Hellman key exchange (temporary key)
+
+  Authentication Algorithm:
+    "aNULL"     No authentication
+    "aRSA"      RSA authentication
+    "aDSS"      DSS authentication
+    "aDH"       Diffie-Hellman authentication
+
+  Cipher Encoding Algorithm:
+    "eNULL"     No encodiing
+    "DES"       DES encoding
+    "3DES"      Triple DES encoding
+    "RC4"       RC4 encoding
+    "RC2"       RC2 encoding
+    "IDEA"      IDEA encoding
+
+  MAC Digest Algorithm:
+    "MD5"       MD5 hash function
+    "SHA1"      SHA1 hash function
+    "SHA"       SHA hash function (should not be used)
+
+  Aliases:
+    "ALL"       all ciphers
+    "SSLv2"     all SSL version 2.0 ciphers (should not be used)
+    "SSLv3"     all SSL version 3.0 ciphers
+    "EXP"       all export ciphers (40-bit)
+    "EXPORT56"  all export ciphers (56-bit)
+    "LOW"       all low strength ciphers (no export)
+    "MEDIUM"    all ciphers with 128-bit encryption
+    "HIGH"      all ciphers using greater than 128-bit encryption
+    "RSA"       all ciphers using RSA key exchange
+    "DH"        all ciphers using Diffie-Hellman key exchange
+    "EDH"       all ciphers using Ephemeral Diffie-Hellman key exchange
+    "ADH"       all ciphers using Anonymous Diffie-Hellman key exchange
+    "DSS"       all ciphers using DSS authentication
+    "NULL"      all ciphers using no encryption
+
+Each item in the list may include a prefix modifier:
+
+    "+"         move cipher(s) to the current location in the list
+    "-"         remove cipher(s) from the list (may be added again by
+                a subsequent list entry)
+    "!"         kill cipher from the list (it may not be added again
+                by a subsequent list entry)
+
+If no modifier is specified the entry is added to the list at the current 
+position.  "+" may also be used to combine tags to specify entries such as 
+"RSA+RC4" describes all ciphers that use both RSA and RC4.
+
+For example, all available ciphers not including ADH key exchange:
+
+  ALL:!ADH:RC4+RSA:+HIGH:+MEDIUM:+LOW:+SSLv2:+EXP
+
+All algorithms including ADH and export but excluding patented algorithms: 
+
+  HIGH:MEDIUM:LOW:EXPORT56:EXP:ADH:!kRSA:!aRSA:!RC4:!RC2:!IDEA
+
+The OpenSSL command 
+
+  openssl ciphers -v <list of ciphers> 
+
+may be used to list all of the ciphers and the order described by a specific
+<list of ciphers>.

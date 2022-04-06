@@ -1,0 +1,181 @@
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ                         Polska scena TV przedstawia:                        บ
+บ             Zasady dotyczace standardow wydawania rlsow TV XViD             บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+
+
+I. WSTEP:
+ฤฤฤฤฤฤฤฤฤ
+  Ponizsze zasady obowiazuja od 2010-08-01 00:00:00 GMT (1280620800).
+  Rozpoczete sezony seriali moga byc konczone na starych zasadach. Dla nowych
+  sezonow i filmow obowiazuja ponizsze standardy.
+
+
+
+II. DLUGOSC I ROZMIAR:
+ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ 1.  Dopuszczalne wielkosci: 
+   - 16:00  - 25:59  : 175MiB
+   - 21:00  - 33:59  : 233MiB
+   - 31:00  - 51:59  : 350MiB
+   - 47:00  - 74:59  : 550MiB
+   - 63:00  - 109:59 : 700MiB
+   - 105:00 - 199:59 : 2x700MiB
+
+ 2.  Dla innych czasow nie mieszczacych sie w tabeli, poprawne wielkosci to:
+     87MiB, 100MiB, 116MiB. Bitrate dla tych wielkosi musi miescic sie w
+     zakresie 800-1500kbit.
+ 3.  Gdy dlugosc serialu oscyluje w okolicach maksimum dla danej wielkosci
+     zaleca sie wybor wiekszej wartosci.
+ 4.  Maksymalny blad wielkosci pliku wynikowego wynosi 2MiB wiecej, oraz 4MiB
+     mniej niz wielkosc podana w tabeli. 
+
+
+
+III. AUDIO:
+ฤฤฤฤฤฤฤฤฤฤฤ
+ 1.  Dopuszczalny kodek audio: MP3 VBR lub ABR (AC3 5.1 dla zrodel retail).
+ 2.  Dopuszczalny bitrate audio: 128kbit +/-20kbps (dla AC3 5.1: oryginalny
+     bitrate zrodla).
+ 3.  Zabroniona jest konwersja mono na stereo oraz odwrotnie.
+ 4.  Audio musi zachowac oryginalna czestotliwosc probkowania.
+ 5.  Jesli stacja nadaje audio w AC3 dopuszczalna jest konwersja na VBR MP3.
+ 6.  Stosowanie wielu sciezek dzwiekowych dla jednego rlsa jest zabronione.
+
+
+
+IV. VIDEO:
+ฤฤฤฤฤฤฤฤฤฤ
+ 1.  Dozwolony format pliku: AVI.
+ 2.  Dopuszczalny kodek video: XviD (w mozliwie jak najnowszej wersji),
+     kodowanie 2-przebiegowe.
+ 3.  Zabronione jest nanoszenie na obraz wszelkich znakow grupy, napisow itp.
+ 4.  Dla poprawienia jakosci dozwolone jest obciecie napisow koncowych.
+ 5.  Dopuszczalny framerate: 25fps.
+ 6.  Rozdzielczosc pozioma:
+        576 - 672 pikseli dla materialow z proporcjami obrazu: 1.70-3.00
+        512 - 672 pikseli dla materialow z proporcjami obrazu: 1.00-1.69
+ 7.  Dla rozdzielczosci poziomej wynoszacej 672, minimalny bitrate video musi
+     wynosic nie mniej niz 1200kbps.
+ 8.  Rozdzielczosc pozioma i pionowa musza byc wielokrotnosciami liczby 16.
+ 9.  Z powodu specyficznego systemu nadawania stacji z rozdzielczoscia inna niz
+     720/704 x 576/480 (np 544x576) (niestandardowa szerokosc piksela)
+     dozwolone jest ustawienie, dla proporcji obrazu z zakresu 1.70-3.00,
+     rozdzielczosci poziomej na poziomie 576 pikseli. Zalecane jest jednak nie
+     przekraczanie rozdzielczosci zrodla.  
+ 10. Maksymalny dopuszczalny blad Aspect Ratio: 3%.
+ 11. Z obrazu musza byc usuniete zewnetrzne czarne obszary nie bedace trescia
+     obrazu (cropping).
+ 12. Dozwolone jest obciecie tresci obrazu, maksymalnie do 16 pixeli z kazdej
+     strony, w celu utrzymania prawidlowego Aspect Ratio.
+
+
+
+V. PAKOWANIE:
+ฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ 1.  Rls musi byc spakowany pakerem RAR z zachowaniem nastepujacych warunkow:
+   - Brak kompresji (-m0)
+   - Dodane dane naprawdze (-rr)
+   - Podzial na czesci o wielkosciach 15MiB (-v15000) lub 20MiB (-v20000)
+   - Dozwolone jest tylko stare nazewnictwo rozszerzen rarow 
+     (.rar, .r00, .r01, ...) (-vn) 
+ 2.  Dla rlsow wieloczesciowych (np 2x 700MB) nalezy spakowac czesci osobno, w
+     oddzielnych katalogach (CD1, CD2, itd).  
+ 3.  Nazwy plikow musza byc unikalne i zawierac:
+   - Nazwe filmu/serialu w wersji angielskiej lub oryginalnej jesli nazwa
+     angielska nie jest dostepna.
+   - Numer odcinka w formacie SxxEyy, gdzie xx to numer sezonu a yy to numer
+     odcinka w sezonie.
+   - W przypadku mini-seriali (seriali jednosezonowych) numer odcinka w
+     formacie Exx, gdzie xx to numer odcinka.
+   - W uzasadnionych przypadkach (np wiele seriali o tej samej nazwie) do nazwy
+     filmu/serialu do nazwy mozna dodac rok produkcji.
+   - Symbol polskiego rlsa: PL.
+   - Dodatkowe tagi, jesli sa potrzebne:
+      - Dopuszczone tagi: PROPER, REPACK, RERIP, DiRFiX, SYNCFiX, NFOFiX, 
+        SAMPLEFiX, REAL, INTERNAL (= iNT), SUBBED, PREAiR, READNFO.
+      - Tag REPACK powinien byc uzywany w przypadku przepakowywania materialu.
+      - Tag RERiP powinien byc uzywany w przypadku ponownego
+        zgrywania/enkodowania materialu.
+      - W przypadku uzycia tagu REPACK/RERiP nalezy zmienic rowniez nazwy
+        plikow.
+      - Tag READNFO jest dopuszczony, jednak nie powinien byc naduzywany.
+   - Format materialu zrodlowego:
+      - WEBRiP: dla materialow pochodzacych ze streamu internetowego.
+      - DSR: dla materialow pochodzacych ze streamu ktory nie spelnia wymogow
+        podanych w PDTV.
+      - PDTV: dla materialow pochodzacych ze streamu z rozdzielczoscia
+        720/704 x 576/480.
+      - HDTV: dla materialow pochodzacych ze streamu z rozdzielczoscia
+        720p/1080i/p (Dotyczy rozdzielczosci rzeczywistej! Rozdzielczosc PDTV
+        sztucznie powiekszona do HDTV nalezy tagowac PDTV!)
+      - DVDRip: dla materialow pochodzacych z DVD.
+   - Zastosowany kodek video (XviD).
+   - Wszystkie elementy rozdzielane sa znakiem kropki.
+   - Nazwe grupy poprzedzona mysnikiem ("-").
+    
+      Przyklad:   Nazwa.S01E01.READNFO.PL.PDTV.XviD-Grp
+ 
+ 4.  Rls musi zawierac plik SFV (w przypadku rls'ow wieloczesciowych: dla
+     kazdej czesci oddzielne).
+ 5.  Rls musi zawierac plik NFO z nastepujacymi informacjami:
+   - Nazwa Grupy
+   - Tytul
+   - Data wydania rlsu
+   - Data emisji
+   - Czas trwania materialu
+   - Rozdzielczosc video oraz proporcje obrazu
+   - Bitrate video
+   - Bitrate audio
+   - Kodek zastosowany do kompresji video (wersja)
+   - Liczba RARow
+   - Link do serialu/filmu np na: IMDB (jesli istnieje), uzupelniony o link do
+     polskiej strony np: Filmweb (jesli istnieje).
+ 6.  Dopuszczone znaki w nazwie katalogi i plikow:
+       ABCDEFGHIJKLMNOPQRSTUVWXYZ
+       abcdefghijklmnopqrstuvwxyz
+       0123456789.-_
+ 7.  Niedopuszczalne jest wstawianie w nazwie katalogu oraz plikow podwojnych
+     kropek.
+ 8.  Rls musi zawierac sample wyciete z materialu:
+   - Powinien trwac 1 minute (+-10 sekund) i musi byc umieszczony w katalogu
+     'Sample'.
+   - Musi pochodzic z enkodowanego materialu. Zabronione jest enkodowanie
+     sampli oddzielnie.
+
+
+
+VI. PROPERY I NUKI:
+ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ
+ 1.  Wydawanie Properow dozwolone jest TYLKO w sytuacji niedopelnienia ktoregos
+     z wyzej wymienionych punktow dotyczacych spraw technicznych.
+ 2.  Proper MUSI miec umieszczone w NFO informacje na temat tego co jest
+     poprawiane.
+ 3.  Rlsy nie znukowane na sajtach i/lub w bazie nukow musza zawierac w
+     katalogu "Sample" wycinek z rlsa ktory sie poprawia, udowadniajacy blad
+     techniczny.
+ 4.  Zabrania sie wydawania Properow po wydaniu dziajacego fixa do blednego
+     rlsa.
+ 5.  Sizefix'y nie sa dozwolone.
+ 6.  Prawidlowa kolejnosc wydawania rlsow (wg zrodla): 
+     WEBRiP -> DSR -> PDTV -> HDTV -> DVDRip.
+   - Wydawanie WEBRiP'a po PDTV/HDTV/DVDRip jest zabronione. Wydawanie WEBRiP'a
+     po DSR jest dozwolone TYLKO wtedy, gdy oferuje on znacznie lepsza jakosc
+     niz DSR.
+   - Wydawanie DSR po WEBRiP jest dozwolone. DSR po HDTV/PDTV/DVDRip jest
+     zabronione.
+   - Wydawanie PDTV po WEBRiP/DSR jest dozwolone. PDTV po HDTV/DVDRip jest
+     zabronione.
+   - Wydawanie HDTV po WEBRiP/DSR/PDTV jest dozwolone. HDTV po DVDRip jest
+     zabronione.
+   - Wydawanie DVDRip po WEBRiP/DSR/PDTV/HDTV jest dozwolone.
+
+
+ษอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ               Sporzadzone i podpisane przez nastepujace grupy:              บ
+บ              ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ             บ
+บ                 55L A4O BFHMOV BiL BEER CL4SS ProPL R4F SiBV                บ
+บ              ฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤฤ             บ
+ศอออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
+                    บ     Dzieki za wspolprace! njoy!     บ
+                    ศอออออออออออออออออออออออออออออออออออออผ

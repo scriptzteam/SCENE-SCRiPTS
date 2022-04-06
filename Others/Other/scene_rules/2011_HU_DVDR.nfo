@@ -1,0 +1,391 @@
+
+
+
+                   The Hungarian DVDR Releasing Standards 2011
+
+
+
+
+                Alabbi szabalyzat 2011. februar 14-etol ervenyes.
+
+
+
+       0. Altalanos:
+
+        0.1 A kepfajl meretenek 4400 es 4482 MB kozott kell lennie, kiveve,
+            ha a forras DVD5.
+            Ha a release nem eri el a minimalisan megengedett meretet, akkor
+            ennek okat egyertelmuen jelezni kell az NFO-ban. Pl.: A forras 
+            4.07 GB-os lett miutan eltavolitottam az FS verziot.
+        0.2 A vegso kepfajl maximalis merete NEM lehet nagyobb mint egy atlagos
+            DVD+R lemez maximalis tarolokapacitasa = 4,700,372,992 byte.
+        0.3 NTSC release nem keszulhet PAL utan, NTSC utan PAL igen.
+        0.4 WS release johet FS utan.
+        0.5 A DVDR releaseknek meg kell felelniuk a DVD-Video szabvanynak. A
+            CSAPAT/RIPPER FELELOSSEGE MEGISMERKEDNI A TECHNIKAI RESZLETEKKEL,
+            ugyanis csokkenti a lejatszokkal valo kompatibilitast ezen
+            szabvanyok nem korultekinto alkalmazasa.
+
+
+       1. Video:
+
+        1.1 Ujrakodolas:
+
+         1.1.1 2.67+ CCE verzio vagy ujabb hasznalata KOTELEZO minden olyan
+               esetben, ahol a video stream ujrakodolasa szukseges.
+         1.1.2 CCE-n kivul semmilyen mas program nem engedelyezett.
+         1.1.3 DVD-Rebuilder PRO 1.28+ hasznalhato CCE-hez, ha a
+               beallitasai megfelelnek az alabbiaknak:
+
+                   - A one-click opciot ki kell kapcsolni.
+                   - A fentiekben emlitett CCE verzio hasznalata
+                     KOTELEZO.
+                   - Qual Prec es VBR Bias megfeleloen legyen beallitva.
+                   - Max_Bitrate beallitas hasznalata kotelezo a
+                     DVD-Video szabvanynak megfeleloen.
+                   - Target_Sectors beallitas hasznalata JAVASOLT a leheto
+                     legtobb felhasznalhato szektor kitoltesere.
+                   - A CCE adott kodolashoz szukseges idealis beallitasainak
+                     modositasahoz RB-Opt vagy mas kulso program hasznalata
+                     JAVASOLT.
+
+         1.1.4 A minimalisan megengedett atlagos bitrata 3000 kbit/s.
+
+         1.1.5 Az ujrakodolt forrasnak is rendelkeznie KELL a helyes
+               de-interlacing vagy IVTC method-dal, ha a forrasban
+               alkalmazasra kerult ilyen.
+
+
+
+                -CCE minosegi beallitasok:
+
+                       - CBR hasznalata tilos. Multipass KOTELEZO.
+                       - Az elso pass, ami a .vaf fajlt, vagy a  Qual Prec.
+                         control fajlt kodolja, NEM szamit bele a multipass
+                         beallitasokba.
+                       - VBR Bias es Qual Prec. ertekek JAVASOLT beallitasa:
+                         VBR Bias   - ajanlott ertek = 30
+                         Qual Prec. - ajanlott ertek = 28
+                   - A film kodolasahoz szukseges passok szama a vegso
+                     atlagos bitrata fuggvenyeben a kovetkezokeppen alakul:
+                     4,000 kbit/s alatt  = Min. 6 pass szukseges.
+                     4,000 kbit/s folott = Min. 5 pass szukseges.
+
+               MEGJEGYZES: A CCE kodolas beallitasainak idealis esetben
+                     egyeznie kellene a forras video stream beallitasaival.
+                     Nem a mi dolgunk eldonteni, hogy a forras keszitojenek
+                     milyen filtereket es azokat hogyan kellett volna
+                     alkalmaznia a forras video stream kodolasa kozben.
+                     Ezen beallitasok hasznalatat nagyon nehez lenne
+                     ellenorizni, igy minden egyes csapat egyedi dontesere
+                     bizzuk.
+
+
+         1.1.6 Ha nem elerheto a minimalis bitrata, egy elfogadhato
+               magyarazatot kotelezo feltuntetni az NFO fajlban.
+
+        1.2 Stablista ujrakodolasa, eltavolitasa:
+              
+               - A stablista eltavolitasa, barminemu megcsonkitasa TILOS.
+               - A stablista drasztikus merteku kodolasa ENGEDELYEZETT
+                 minosegjavitas vegett olyan mertekben, hogy az olvashato
+                 maradjon, KIVEVE, amikor a stablista kepi elemeket is
+                 tartalmaz. Ilyen esetekben a megengedett atlagos kodolasi
+                 rata 2000kbit/s.
+
+               MEGJEGYZES:  RB-vel torteno kodolas eseten az utolso
+                            chapter nem feltetlenul azonos a stablistaval.
+
+ 
+        1.3 Erintetlen video megtartasa:
+               
+               - KIZAROLAG abban az esetben nem vonatkozik a 6.7-es szabaly
+                 a keszitore, ha a menu nagysaga miatt tomoriteni kell a
+                 videot. Tehat ENGEDELYEZETT az erintetlen video megtartasa
+                 erdekeben torteno stillesites, illetve a menu
+                 hasznalhatosaga szempontjabol nem fontos blokkok
+                 eltavolitasa.
+               - A stablista eltavolitasa, megcsonkitasa ebben az esetben is
+                 TILOS.
+               - Az ily modon keszitett dvd-k utan erkezo tomoritett,
+                 erintetlen menuvel rendelkezo releasek DUPE-nak minosulnek,
+                 csakugy, mint ugyanezen forrasbol keszulo tomoritett videoju
+                 releasek utan erkezo erintetlen videoval rendelkezo releasek
+                 is DUPE-nak szamitanak.
+
+        1.4 TV-DVDR ujrakodolasa: 
+
+               - TV-DVDR release-eknek meg KELL felelniuk a fent leirtaknak,
+                 kiveve az alabbiakat:
+
+                     - Minimalis atlagos bitrata a release-nek: 2800 kbit/s.
+                     - TV-DVDR-t nem szukseges de-interlacingelni.
+
+
+       2. Audio:
+
+        2.1 Dolby Digital a kotelezoen megtartando audio formatum minden 
+            olyan release-ben, amelynek forrasa tartalmazza ezt a
+            formatumot.
+        2.2 Azok a retail DVD-k amelyek csak PCM hangot tartalmaznak,
+            megengedettek. Az NFO-ban erre fel kell hivni a figyelmet.
+        2.3 Minden egyes hangsav downsamplingje TILOS!
+        2.4 Ha az audio sav DVD9-rol lett rippelve, akkor a jobb hangsav
+            megtartasa kotelezo. Pl.: Ha a DVD Dolby 2.0 es Dolby 5.1
+            hangsavot is tartalmaz, akkor a Dolby 5.1 elonyt elvez a
+            Dolby 2.0-val szemben.
+            Az egyetlen kivetel e szabaly alol a DTS hang. Ha DTS es
+            Dolby 5.1 is van a lemezen, akkor a Dolby 5.1 megtartasa kotelezo.
+            A DTS megtartasarol donthet a ripper, figyelembe veve a bitratara
+            vonatkozo szabalyokat.
+        2.5 Nem angol nyelvu filmek keszitesenel az eredeti hangsav megtartasa
+            KOTELEZO, kiveva ha a retail lemez nem tartalmazza azt.
+            Azokban az esetekben, amikor ujra kiadnak egy DVD-t, amely
+            tartalmazza az eredeti hangsavot, a filmek ujra release-elese
+            megengedett, es az NFO notes rovataban fel kell tuntetni ennek
+            okat.
+        2.6 Minden magyar nyelvu film eseteben a magyar hangsav megtartasa
+            KOTELOZO.
+        2.7 Mas hangsavok megtartasarol a ripper donthet, az legyen akar
+            mas nyelvu hangsav, vagy kommentar.
+        2.8 Egy retail release eltavolitott felesleges hangsavokkal nem DUPE
+            egy MULTi release-re, hacsak a MULTi release nem rendelkezik
+            erintetlen video streammel.
+        2.9 Azon release-ek konyvtar neveben hasznalni kell a DUBBED 
+            taget, melyek nem tartalmazzak az eredeti nyelvu hangsavot,
+            sem pedig az eredeti nyelvu feliratot.
+
+
+        MEGJEGYZES: DTS/DTS-ONLY/SUPERBiT/CRiTERiON/3D release-ek kiadasa NEM
+               tiltott. Azonban nem vagyunk kompetensek annak eldonteseben,
+               hogy melyik engedelyezett es melyik tiltott. Az FTP SITE-ok
+               feladata eldonteni a sajat szabalyzatuk alapjan, hogy naluk mit 
+               lehet prezni es mit nem.
+               Azonban azoknak a csapatoknak, akik ilyen tipusu release-eket
+               keszitenek, kotelezo az elfogadott tagek valamelyikevel
+               jelolni a konyvtarnevet:
+               DTS, DTS-ONLY, SUPERBiT, CRiTERiON vagy 3D.
+
+
+      3.  Forras:
+
+        3.1 El kell tavolitani a fullscreen valtozatot azokrol a forrasokrol,
+            amelyek tartalmazzak a szelesvasznu es fullscreen valtozatot is.
+        3.2 Superior/Remastered kiadasok megengedettek, ha a korabban kiadott
+            verzio valamely tulajdonsagaban jobbak.
+            Pl.: Elfogadottnak tekintendo egy olyan release, mely
+            Dolby 5.1-es hangsavot tartalmaz, mig a korabbi release 2.0-t.
+        3.3 A mar letezo valtozat mellett megengedett minden olyan
+            Director's Cut, Unrated, Extended release, amely utolag hozzaadott,
+            bovitett, vagy extra jeleneteket tartalmaz.
+        3.4 Minden olyan release, amelynek video, audio, vagy felirat savja
+            nem hivatalosan megjelent DVD-rol szarmazik, CUSTOM taggel kell
+            ellatni. CUSTOM tag szinten kotelezo olyan menuvel nem rendelkezo
+            releasek eseteben, ahol a releaser nem tudja bizonyitani, hogy a
+            retail lemezen nem volt menu. CUSTOM release-ek NFO-jaban
+            egyertelmuen fel kell tuntetni a lemez elkeszitese soran
+            felhasznalt forrasok mindgyiket!
+        3.5 "Proof" mappa hasznalatat igyekezzunk megszokni. Ha a jelen
+            szabalyzatban nincs egyertelmu utalas egy kerdeses problemara,
+            egy proof mappaba elhelyezett keppel, vagy screenshottal el
+            lehet kerulni a nuke-ot.
+        3.6 Minden esetben indokolni kell az NFO notes reszeben az
+            iNTERNAL release kiadasanak az okat. Dupe elkerulese vegett
+            kiadott iNTERNAL releasek tulajdonosai szelsoseges esetben
+            grpbant kaphatnak.
+
+
+      4.  Authoring:
+
+        4.1 ONE CLICK PROGRAMOK HASZNALATA TILOS!  Pl.: InstanCopy, DVDXCopy,
+            DVDShrink stb. Scenarist, Maestro es MuxMan hasznalhatoak.
+        4.2 A DVD-Rebuilder reauthoring motorja hasznalhato abban az esetben,
+            ha a rippeles is ezzel a programmal tortent.
+        4.3 Eltavolitott audio es felirat streamekre torteno hivatkozast el
+            KELL tavolitani.
+        4.4 A lemez lejatszoba torteno behelyezesekor a menut tartalmazo VTS
+            legyen a legelso ami elindul, mivel igy gyorsabb a lemez
+            betoltese, mint amikor a menu elott lejatszando tartalmat
+            kitoroljuk.
+        4.5 A release nem tartalmazhat egyetlen hibas PGC commandot sem.
+        4.6 Nem hivatkozott anyagot nem tartalmazhat a vegso release.
+
+
+      5.  Feliratok:
+
+        5.1 Tartsd meg mindet, beleertve a kommentar feliratokat is. Ha egy
+            felirat technikai gondot okoz, megtartasa a releaser dontesen
+            mulik. Ezesetben egy elfogadhato magyarazatnak KELL lennie az
+            NFO notes reszeben arrol, hogy miert lettek torolve az egyes
+            feliratok.
+        5.2 Magyar vegfelhasznaloknak keszult release-eknek tartalmaznia
+            KELL magyar feliratot az idegen nyelvu reszekhez.
+        5.3 MULTiSUBS release keszitese csak akkor engedelyezett, ha a
+            korabbi release NEM TARTALMAZOTT magyar feliratot.
+        5.4 Closed Caption felirat megtartasa KOTELEZO ha volt a forrason.
+        5.5 CUSTOM tag hasznalata kotelezo, ha a retail lemezbe custom
+            feliratot tettunk. Ezesetben az NFO-ban is egyertelmuen meg
+            kell jelolni a custom sub forrasat.
+        5.7 Egetett feliratot tartalmazo release-t SUBBED taggel kell
+            jelolni.
+
+
+      6.  Menu:
+
+        6.1 Menu KELL! Az NFO-ban jelolni kell ha a retail lemez nem 
+            tartalmazott menut.
+        6.2 Magyar anyanyelvu vegfelhasznaloknak keszult release-ek eseteben
+            kotelezo a magyar menu hasznalata. Ha nincs ilyen, akkor
+            hasznaljuk az eredeti menut.
+        6.3 Idegen nyelvu menuk, top menuk torlese KOTELEZO.
+        6.4 A nem hasznalt menu cellak torlese es gombok hide-olasa kotelezo. 
+            Ha torolsz valamit, a hozza tartozo gombot is hide-olni,
+            vagy torolni kell. A gomb parancs NOP-ra torteno atirasa
+            nem minosul a gomb eltavolitasanak.
+        6.5 Minden gombnak a funkciojanak megfeleloen kell mukodnie.
+        6.6 A menu tomoritheto minimum 3000kbit/s-os bitrataval.
+        6.7 Menut stillesiteni TILOS.
+        6.8 CUSTOM taggel ellatott release tartalmazhat photoshoppolt menut.
+
+
+      7.  Extra:
+
+        7.1 Az extra egy hozzaadott ertek, melyre nincs szukseg. Olyan extrak
+            megtartasa engedelyezett, amelyek szorosan kapcsolodnak az
+            eredeti filmhez. Pl.: torolt jelenetek es bakik megtartasa
+            elvezzen elonyt az elozetesekkel es a kovetkezo resz tartalmaval
+            szemben.
+        7.2 Azon elozeteseket NEM kell megtartani, amelyek nem elerhetoek a
+            menubol. 
+        7.3 Csak abban az esetben tarthatoak meg olyan tartalmak, amelyekhez
+            nem lehet hozzaferni a menubol, ha a film erintetlen marad.
+        7.4 Nem elfogadhato indok PROPER eseteben egy olyan release, amely a
+            korabbinal csak annyiban nyujt tobbet, hogy elozteteseket
+            tartalmaz.
+        7.5 Extrak ujrakodolasanal, a minimalisan megengedett beallitasok 
+            5 pass mellett atlagosan 2,500 kbit/s.
+
+
+      8.  DVD vedelmek es korlatozasok:
+
+        8.1 A VEDELEM MINDEN FORMAJAT EL KELL TAVOLITANI A RELEASE-BOL.
+            Pl.: Macrovision, "CSS Encryption", "Bad Sector Insertion" 
+            azon belul ARccOS, DVDR-Movie PROTECT, FluxDVD stb., 
+            "Content Alteration" Pl.: Ripguard, Rimage stb.
+        8.2 Azokat a hianyos/ures/nem hozzaferheto cellakat torolni kell,
+            amelyek akadalyoznak a release minosegi kodolasaban.
+            Pl. ures, de 100 MB-os VOB vagy PGC-k. Erintetlen video
+            nem elfogadhato indok ezek megtartasara.
+        8.3 Minden figyelmeztetest es minden studio logot el KELL
+            tavolitani a release-ekbol.
+        8.4 Minden felhasznaloi korlatozast es tiltast el KELL tavolitani
+            a release-ekbol. Pl.: UOP, valamint minden szuloi zarat.
+            A szuloi zar felhasznaloi korlatozasnak minosul, igy az
+            minden esetben eltavolitando a release-bol.
+            Minden sprm(13) (13-as system register)-re torteno hivatkozast
+            torolni kell.
+        8.5 Minden regio es RCE (Region Code Enhancement) korlatozast el
+            KELL tuntetni a vegso release-bol. Minden sprm(20)
+            (20-as system register)-re torteno hivatkozast torolni kell.
+        8.6 MINDEN uj es/vagy nem ismert masolas vedelmi technikat teljesen
+            torolni KELL a lemezrol.
+
+
+      9.  Csomagolas:
+
+        9.1 Minden release csak ISO vagy IMG fomratumban keszulhet. Minden
+            mas formatum hasznalata szigoruan TILOS.
+        9.2 A releaseket 50,000,000 byte-os darabokba kell csomagolni.
+        9.3 Helyreallitasi bejegyzes hasznalata KOTELEZO, amely maximum
+            2% lehet.
+        9.4 Tomoritesi eljarasnak a "raktaroz/store" opciot valasszuk.
+        9.5 Ajanlott az archivum lezarasa.
+        9.6 SFV es NFO fajl KELL a release-be.
+        9.7 Az NFO-nak minimalisan az alabbiakat kell tartalmaznia:
+               . Csapat nev
+               . Cim
+               . A forras regioja
+               . Video Szabvany (NTSC, PAL)
+               . A film kodolasahoz alkalmazott passok szama es bitrata
+               . Az extrak kodolasahoz alkalmazott passok szama es bitrata
+               . Hang es felirat savok nyelve es a csatornak szama
+               . Ami torolve lett; extrak, menu, hangok stb.
+               . IMDB, vagy hasonloan reszletes link.
+               . Az archive fajlok szama.
+
+
+      10.  Sample:
+
+       10.1 Sample kotelezo. Minimum 30MB-osnak, de nem nagyobbnak, mint
+            50MB kell lennie.
+       10.2 A Sample-t egy kulon alkonyvtarba kell tenni, melynek a neve:
+            "Sample" Minden mas elnevezes TILTOTT.
+       10.3 A sample-nek VOB fajlnak kell lennie. RAR atnevezese VOB-ra es
+            Sample-kent torteno felhasznalasa TILTOTT.
+            A Sample-nek headerrel kell rendelkeznie. 
+       10.4 Sample-nek egy, a releasebol kivagott VOB fajlt kell hasznalni.
+            Kulon sample kodolas TILOS.
+
+
+      11.  Konyvtar elnevezes:
+           
+       11.1 Angol filmcim hasznalata KOTELEZO!
+             11.1.1 Minden esetben az iMDB-n elerheto angol filmcimet
+                    hasznald, kiveve a magyar filmeket. Ha nincs
+                    elerheto angol cim, hasznald az eredetit.
+       11.2 Minden elfogadott konyvtar tag a fentiekben leirtak
+            betartasa mellett hasznalhato.
+       11.3 Minden release-nek tartalmaznia kell a gyartasi evet, kiveve
+            a TV sorozatokat. 
+       11.4 A konyvtar nevenek tartalmaznia kell a video szabvanyt
+            (NTSC vagy PAL)
+       11.5 Elfogadott karakterek:
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                    abcdefghijklmnopqrstuvwxyz
+                    0123456789.-
+       11.6 COMPLETE csak olyan DVD5 forras eseten hasznalhato, amelyen 
+            semmilyen valtoztatast sem hajtottunk vegre. A vedelmet es a 
+            korlatozasokat COMPLETE release-ek esetben is el kell tavolitani.
+       11.7 Release-ek elnevezese:
+               FILM.CIM.EV.HUN.SZABVANY.DVDR-GROUP
+               FILM.CIM.EV.SZABVANY.DVDR.Hungarian-GROUP
+       11.8 Alkonyvtar lehet: DISC1, DISC2 stb.
+            CD1, CD2 es EXTRA konyvtarak hasznalata TILTOTT.
+
+
+      12.  Propers:
+
+       12.1 Proper keszitese engedelyezett minden olyan release-re, amelyek
+            keszitoi nem tartottak be a fent leirt szabalyok barmelyiket,
+            es/vagy a korabbi release technikai hibat tartalmaz.
+            Pl.: akadozo, kockakra eso kep, hang vagy menu hibak stb.
+       12.2 Nem elfogadhato indok a PROPER/DUPE, csak azert mert a korabbi
+            release nem volt COMPLETE.
+       12.3 Nagyobb bitrataval rendelkezo PROPER keszitese egy korabbi,
+            minden szabalynak megfelelo es minoseginek nevezheto release-re 
+            TILOS.
+       12.4 Hibas konyvtar elnevezes, hianyos NFO, vagy rosszul elkeszitett
+            sample miatt NEM keszitheto PROPER. Ezekben az esetekben az
+            elfogadott eljaras a DIRFIX, NFOFIX es SAMPLEFIX release
+            keszitese.
+       12.5 A PROPER taget nem hasznalhatja az a csapat, aki REPACKet
+            keszit. A REPACK tag hasznalata kotelezo ervenyu ra nezve.
+
+
+      13.  Tagging:
+
+       13.1 Introk, outrok es a film barmilyen nemu megvaltoztatasa es
+            csonkitasa TILTOTT.
+       13.2 Csapat vizjelek alkalmazasa a DVD-n SZIGORUAN TILOS!
+       13.3 A Volume Label-nek PONTOSAN meg KELL egyeznie az eredetivel,
+            hacsak nem tartalmaz lemez-, vagy teruletazonosito kodot. A
+            Volume Labelhez adott barmilyen idegen tag TILOS!
+
+
+         Jelen szabalyzat 2011. februar 14-e utan prezett release-ekre
+       vonatkozik, visszamenoleg nem kap nuke-ot senki a fentiek alapjan.
+
+
+              A szabalyzatot alairtak es elfogadtak (abc sorrendben):
+
+                    Gazdi, HSF, MWT, pOK, Thick, TvTiME, WFNaL

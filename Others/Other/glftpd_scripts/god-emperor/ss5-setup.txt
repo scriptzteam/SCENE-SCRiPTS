@@ -1,0 +1,122 @@
+
+
+* * * * * * * * * * * * * * * * 
+Sitestat 5.0 installation notes
+* * * * * * * * * * * * * * * * 
+
+CONTACT -> #imperium on Efnet
+
+PREWORD
+     Before you start getting heavy into config, you'll need to grab
+     a few things (if you haven't already):
+
+     zipscript-c 0.6+ by Dark0n3
+     --> http://kotisivu.raketti.net/darkone/project-zs/project-zs-022302.tgz
+     (it will have to be compiled with the custom zsconfig.h in ss-local.zip)
+
+     gl pass verifier by Usurper *NOW INCLUDED IN SS-LOCAL PACK*
+     --> http://usurper.eroded.org/glpassver.tgz
+     (make sure passwd file path in the .c points to /etc/passwd and compile)
+
+     Sitestat 5.0 runs in 2 parts, a local bot and a remote bot, the local bot
+     would reside on the ftp box, it has to be eggdrop 1.65+ with tcl 8.3+,
+     the remote bot can be a win or *nix egg, as long as it also is 1.65+ with
+     tcl 8.3+ .... they only have to be linked, NOT sharing userfile ....
+
+     A full setup guide will come soon...
+
+
+GLFTPD.CONF
+     Some settings have to be appended to the conf to make everything work,
+     zipscript-c will have some entries to add as well so check its readme:
+
+   site_cmd AUTHPASS       EXEC    /bin/glpassver
+   site_cmd INVITE         EXEC    /bin/ss-inv.tcl
+   site_cmd TRIAL          EXEC    /bin/ss-trial.tcl
+   site_cmd VIEWTRIAL      EXEC    /bin/ss-trial.tcl view
+   site_cmd TOTAL          EXEC    /bin/du -ks
+   custom-total 1 7
+   custom-viewtrial  !8 *
+   custom-trial     1
+   custom-invite   !8 *
+   custom-authpass !8 1 =SITEBOT
+
+
+INSTALLING #1: COMMANDS
+     If you understand what has to be done from the above section great, you
+     can skip this one.. if you aren't sure heres what has to be done:
+
+     1. copy 'du' to gl's bin dir, chmod it 755
+
+     2. edit 'ss-inv.tcl' then copy it to gl's bin dir, chmod it 755
+
+     3. edit 'ss-trial.tcl' then copy it to gl's bin dir, chmod it 4755
+
+     4. make a 'sitestat' dir inside the main glftpd dir, chmod it 666
+
+     5. compile glpassver.c after changing the passwd path to '/etc/passwd'
+        chmod 755 if necessary, copy to gl's bin dir
+
+     6. make sure libtcl8.3.so libtclstub8.3.a librt.so.1 libm.so.6
+        are in gl's lib dir... and world readable (files might differ for 8.4)
+
+     7. make sure 'tclsh' is in gl's bin dir and chmodded 755
+
+
+INSTALLING #2: LOCAL (ss-local.zip)
+     Get an egg, crack it, let it fall into either the 'sitestat' or 'sitebot'
+     dir inside glftpd's main dir... Sitestat's local script 'ss5-local.tcl' 
+     now has to be extracted there also - yes the main egg dir - and must be
+     edited, theres a few important options to set, like the botnet name of
+     the remote bot, the bouncers if you have any and such, all simple stuff.
+
+     Add 'source ss5-local.tcl' to the egg conf
+
+     If you are unsure how to link bots or have fears regarding a dynamic ip
+     or anything else like security, heres a few pointers:
+
+     * when bots are set to link, as long as one of them has a static hostname
+       the other can link to it
+
+     * if the local bot does not need to be on irc, its better if it isn't, 
+       to accomplish this just do not load the IRC module in the egg conf
+
+
+INSTALLING #3: REMOTE (ss-main.zip)
+     The second eggdrop running somewhere not on the ftp box, for security as
+     well as performance reasons has to be as free of work as possible, so if
+     you want it as part of a botnet fine, just don't load things like netbots
+     or rupt scripts, it is recommended you use getops in that case..
+
+     Extract ss-main.zip to the main egg dir, you will see a few tcl and .cfg
+     files, yes many people think its messy this way but you have to do it!
+
+     * it is possible the remote bot will kick the local bot for flooding, to
+       prevent this, 'set dcc-flood-thr 200' in the remote egg's conf
+
+     Order of operations:
+
+     1. at the end of your egg conf, add: 'source ss5-main.tcl' without quotes
+
+     2. edit 'ss5-main.tcl' and read all the comments before changing options
+
+     3. edit 'ss5.cfg' and read all the comments before adding, changing
+
+     4. if you want to load jackjack, add 'source jackjack.tcl' after the line
+        for ss5-main.tcl in the egg conf
+
+     5. some skins are provided as of RC2, make sure you have the preferred 
+        one defined in ss-main (where reversi used to be), to have seperate
+        skins for any particular areas you simply need to make a copy of the
+        file and name it <areaname>_skin.cfg e.g: MP3_skin.cfg
+
+
+AFTERWORD
+     Failure to do the above instructions or deciding you know better and doing
+     it all your own way will likely result in errors all over, and a basically
+     useless setup... you have been warned
+
+     For help with dupecheck and nukecheck .cfg files refer to:
+     --> http://home.no.net/fluorscr/scripts/sitestat/dupecheck.html
+
+- GOD-EMPEROR 24/6 2002

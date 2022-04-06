@@ -1,0 +1,1 @@
+GLROOT=/glftpd; for i in $GLROOT/site/foo/*; do chroot $GLROOT /bin/rescan --normal --dir="`echo $i|sed s@$GLROOT@@`"; done

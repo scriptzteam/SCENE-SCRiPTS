@@ -1,0 +1,110 @@
+
+
+OFFiZiELLE DEUTSCHE DiVX REGELN
+
+
+             
+
+.PROLOG__________________________________________________________________
+Diese Regeln wurden aufgestellt, um eine Richtlinie für qualitativ hochwertige DiVX-Rips zu schaffen. Sie sollen Siteops und Nukern, aber auch unetablierten Gruppen und dem letztendlichen Konsumenten, ein paar Grundsaetze vermitteln, die wir bei einem guten Rip als Minimalanspruch erachten. Sie sind weder ein Gesetz, noch statisch. Aufgrund immer neuer Erkenntnisse und der Weiterentwicklung von Codecs und Programmen können sie nur eine Momentaufnahme des jetzigen Erkenntnisstandes sein. Wir bitten euch deshalb um eure Mithilfe, diese Regeln immer so aktuell und zeitgemaess wie moeglich zu halten.
+Bitte sprecht den Führer eurer Gruppe bezueglich Verbesserungen oder Fehlern an und wir beruecksichtigen dies in der naechsten Version.
+
+Danke.
+
+
+
+.Aenderungen_____________________________________________________________
+ seit ODDR-20011113a.htm: 03, 04, 05, 06, 07, 09, 11, 12
+ .ALLGEMEiN_______________________________________________________________
+Der Rip muss komplett von der Gruppe stammen, es muessen Video und Audio von derselben Quelle kodiert worden sein.
+
+
+Es muss ein DVD- oder direkt kopierter digital-TV-Rip sein (d.h. die Quelle muss ein rein digital verarbeiter MPEG2-Stream sein).
+
+
+Filme als dTV-Rips duerfen kein Senderlogo oder jegliche Einblendungen enthalten.
+
+
+Ein Sample von 30 Sekunden, welches aus dem releasten AVI stammt (d.h. nicht extra kodiert wurde) muss in einem separaten Verzeichnis im Release enthalten sein.
+
+
+Es muss per SBC 2-Pass kodiert worden sein.
+
+
+Jedes Release muß eine minimale Auflösung von freigestellten 135.000 Pixeln haben.
+
+
+a)   Die minimale/maximale Audiobitrate muss 128/192 (C/ABR) oder 96-160/128-224 (Lame VBR) sein. Die Audioaufloesung betraegt 44khz/48khz @ 16bit.
+
+b)   Bei einem 2CD-Release ist die AC3-Tonspur erwuenscht, sofern eine Videobitrate von 1000kbit nicht unterschritten wird.
+
+c)   Sofern ein Film 2 CDs benötigt und die Videospur mindestens 1000kbit betraegt, ist eine deutsche und die Originaltonspur erwünscht (Die Tonspuren beide nur als MP3, nicht als AC3, siehe dazu 7a).
+
+
+Das Seitenverhaeltnis der Videoaufloesung darf maximal 5% von dem des DVD-Bildes abweichen. Die X-Werte der Aufloesung muessen div32 sein, die Y-Werte div16.
+
+
+Bei einem nCD Release, muß jede CD die <n
+095 Minuten bei einem AR von 1.33:1
+100 Minuten bei einem AR von 1.85:1
+105 Minuten bei einem AR von 2.35:1
+Film enthalten - ausgenommen sind vollstaendig computeranimierte Filme (z.B. Toy Story, Antz, Shrek), XXX und S/W.
+
+
+Der Abspann muss in einem 1CD Release nicht vollstaendig enthalten sein, jedoch soweit, dass erkennbar ist, dass der Film tatsaechlich geendet hat. Falls im Abspann noch Filmszenen enthalten sind, muss dieser in gleichberechtigter Bitrate wie der eigentliche Film, soweit diese Szenen reichen, kodiert werden. In einem 2CD+ Release muss der Abspann in voller Laenge enthalten sein.
+
+
+Inhaltsrelevante fremdsprachliche Dialoge (und nur diese) muessen mit den deutschen Untertiteln von der DVD versehen werden, sofern vorhanden. Falls die Untertitel softkodiert auf der DVD sind, müssen diese im Format von Vobsub releast werden.
+
+
+Bei einem Nuke aufgrund technischer Maengel, muß ein Proper immer zugleich mit einem Fix in einem separaten Unterverzeichnis releast werden, sofern technisch möglich.
+
+.BENNENNUNG______________________________________________________________
+   <gruppe>-<filmtitel>_<cd#>.avi    1CD = grp-pitch_black.avi
+                                     2CD = grp-pitch_black_1.avi
+                                           grp-pitch_black_2.avi
+   <gruppe>-<abkuerzung><cd#>.rar    1CD = grp-pibl.rar
+                                     2CD = grp-pib1.rar
+                                           grp-pib2.rar
+   <gruppe>-<abkuerzung><cd#>.sfv    1CD = grp-pibl.sfv
+                                     2CD = grp-pib1.sfv
+                                           grp-pib2.sfv
+
+   <gruppe>-<filmtitel>_(<jahr>).nfo     = grp-pitch_black_(2000).nfo
+Die Benennung des Verzeichnisses ist beliebig - enthalten sein muss jedoch:
+
+   <Filmtitel> DiVX German <QUELLE> -<GRUPPE> 
+Beispiele, Quelle = DVD:
+
+   Pitch.Black.DiVX.DVDRIP.German-GRP
+   Pitch.Black.DiVX-DVDRIP-German-GRP
+   Pitch_Black_DiVX-DVDRIP-German-GRP
+Beispiele, Quelle = digital-TV:
+
+   Pitch.Black.DiVX.dTV.German-GRP
+   Pitch.Black.DiVX-dTV-German-GRP
+   Pitch_Black_DiVX-dTV-German-GRP
+.NFO_____________________________________________________________________
+
+In der NFO sollten mindestens folgende Informationen enthalten sein:
+Releasedatum 
+Anzahl der RARs pro CD 
+Videoaufloesung 
+Audioaufloesung 
+deutscher Titel und Originaltitel 
+deutscher Kinostart und DVD-Release-Datum 
+Name des Regisseurs 
+Laenge des Films 
+IMDB-Rating und URL zum Film 
+5-zeilige Angabe desPlots 
+Informationen fuer die Beschaffung erforderlicher Codecs, Plugins, Tools
+
+.SiGNiERUNG______________________________________________________________
+
+
+Diese Regeln wurden von allen Führern der offiziellen deutschen Divx-Gruppen anerkannt.
+
+
+
+[ODDR-20020501a.htm]________________________________________________[EOF]
+ 

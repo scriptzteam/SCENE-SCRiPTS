@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <title>Basic Auto-Nuke - #glftpd chat log 2015-03-23</title>
+  <link rel="stylesheet" href="../../../styles.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+
+
+
+<h1>Basic Auto-Nuke</h1>
+#glftpd chat log 2015-08-27<br/>
+
+<br/>
+
+[13:01:59] &lt;Bsugar&gt; tittof : do you use tur-autonuke ? <br/>
+[13:22:39] &lt;tittof&gt; only very little of it <br/>
+[13:22:46] &lt;tittof&gt; mainly the empty one <br/>
+[13:23:00] &lt;tittof&gt; i mean empty nuke. I used to just use my own  <br/>
+[13:23:25] &lt;tittof&gt; which is also just a wrapper around "find" <br/>
+[13:23:49] &lt;tittof&gt; but skips the "remember what I already warned" database that makes everything much simpler imho <br/>
+[13:24:37] &lt;Bsugar&gt; ya <br/>
+[13:24:46] &lt;Bsugar&gt; I'm not liking it <br/>
+[13:24:58] &lt;Bsugar&gt; not to mention the syntax error warnings <br/>
+[13:25:18] &lt;tittof&gt; you need any of its features? <br/>
+[13:25:35] &lt;Bsugar&gt; I liked the pre-warning stuff <br/>
+[13:25:45] &lt;tittof&gt; i use a find that crawls with find for "COMPLETE" directories/filenames <br/>
+[13:26:08] &lt;tittof&gt; and let it only find it if its of a given age <br/>
+[13:26:26] &lt;tittof&gt; and the second find for those that are old enough then nuke right away <br/>
+[13:26:57] &lt;Bsugar&gt; did you keep the log to glftpd.log for warnings? <br/>
+[13:27:24] &lt;tittof&gt; actually yes I used to keep the tur ANUKE message <br/>
+[13:27:33] &lt;tittof&gt; just replaced the script :) <br/>
+[13:29:29] &lt;Bsugar&gt; ya i'd like to take a peak
+[13:29:35] &lt;Bsugar&gt; at what you've got <br/>
+[13:31:23] &lt;tittof&gt; already looking for it <br/>
+[13:32:31] &lt;tittof&gt; ok there it is <br/>
+[13:37:34] &lt;tittof&gt; <a href="content/misc/Basic_Auto-Nuke/basic-autonuke.sh">http://nopaste.linux-dev.org/?452012</a> <br/>
+[13:38:04] &lt;tittof&gt; this isn't a drop in replacement but you get the idea <br/>
+[13:39:20] * tittof sees siska laughin with tears in his eyes now <br/>
+[13:42:47] &lt;Bsugar&gt; ya I can work with that <br/>
+[13:42:48] &lt;Bsugar&gt; thanks <br/>
+[13:43:06] &lt;tittof&gt; for that you have to make sure not to miss a run with cron <br/>
+[13:43:14] &lt;tittof&gt; because it has (intentionally) no state <br/>
+[13:43:39] &lt;tittof&gt; originally it was run on pure ram :] <br/>
+[13:43:51] &lt;Bsugar&gt; k <br/>
+[13:45:14] &lt;Bsugar&gt; you have a file named SECTIONS ? <br/>
+[13:45:15] &lt;Bsugar&gt; hehe <br/>
+[13:46:20] &lt;tittof&gt; everything is generated my friend <br/>
+[13:46:29] &lt;tittof&gt; but you can replace that of course <br/>
+[13:46:48] &lt;tittof&gt; you just had a peek into something that's obviously more integrated ;) <br/>
+[13:47:51] &lt;Bsugar&gt; ya <br/>
+[13:48:11] &lt;Bsugar&gt; need to incorporate with glutil <br/>
+[13:48:18] &lt;Bsugar&gt; so that dirlog gets updated <br/>
+[13:51:01] &lt;tittof&gt; im sure siska can beautify that a lot <br/>
+[13:54:17] &lt;Bsugar&gt; nah <br/>
+[14:49:08] &lt;siska&gt; tittof: looks fine to me <br/>
+
+<br/>
+
+<a href="https://algorhythm.cc">Go back to main page</a> <br/>
+
+
+
+</body>
+</html>

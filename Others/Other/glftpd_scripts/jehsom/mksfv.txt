@@ -1,0 +1,77 @@
+#!/bin/bash
+# -------------------------------------------------------------------------
+# Jehsom's mksfv - Creates a standard sfv file with CRCs of specified files.
+# Copyright (C) 2001 jehsom@jehsom.com
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# -------------------------------------------------------------------------
+#
+# You must compile the provided calc_crc32.c provided:
+#       gcc -o calc_crc32 calc_crc32.c
+# and place it in your search path ($PATH), i.e. in /usr/local/bin.
+#
+#######################
+### Ignore the rest ###
+#######################
+
+VERSION="1.0"
+
+[ -z $1 ] && {
+	echo
+	echo "Jehsom's SFV maker v$VERSION"
+	echo "Usage: mksfv sfv_name.sfv file1 file2 ..."
+	echo
+	exit 0
+}
+
+[ -z $2 ] && {
+	echo "You must specify at least one file to put in the sfv."
+	exit 1
+}
+
+[ -f $1 ] && {
+	echo "$1 already exists. Please delete or"
+	echo "rename it if you wish to create a new sfv of the same name."
+	exit 1
+}	
+
+type calc_crc32 > /dev/null 2>&1 || {
+	echo "You need calc_crc32 to use this SFV maker"
+	exit 1
+}	
+
+# Put a \r in $cr so we can make the file dos-friendly
+cr="`echo -n x | tr 'x' '\015'`"
+pad="          "
+sfv=$1
+
+echo -n > $sfv || { echo "Could not write to $sfv."; exit 1; }
+
+# Now all the params are files to be sfv'd
+shift
+
+{ echo "; SFV created with calc_crc32 and Jehsom's mksfv ver. $VERSION"
+  echo ";"
+  echo -e "; List of files and byte sizes:"
+  # Get a listing of the files and their sizes
+  ls -ld $* | tr -s ' ' | cut -f5,9 -d ' ' | sed 's/^/; /'
+  echo ";"
+
+  for i; do
+	echo "$i $(calc_crc32 $i)"
+  done
+} | sed "s/$/$cr/" > $sfv  
+
+exit 0

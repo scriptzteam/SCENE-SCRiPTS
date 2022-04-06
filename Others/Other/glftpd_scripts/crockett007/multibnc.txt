@@ -1,0 +1,423 @@
+MULTI - BNC, Version 0.14
+=========================
+
+Multi-BNC primarily is a FTP bouncer. There are 3 major differences to other ftp
+bouncers you might know, like PSI's "ftpbounce", the RISC "port bouncer" and so
+on:
+
+1) With Multi-BNC, you can run multiple bouncers with one installation. Other
+   bouncers require you to have one copy for each site you want to bounce.
+   Multi-BNC can bounce many sites - this means you will have only one program
+   showing up in the process list, and you need to restart only one program
+   after a reboot (which can be easily done with a cronjob, explained below).
+
+2) Multi-BNC can optionally run an admin port which you can use for remote
+   maintenance. It pretends to be a FTP server so you can login to this port
+   with any FTP client of your choice. BNC operators can add new bouncers, site
+   operators can take the bouncer for their site up and down - all can be done
+   without having to login to the bouncer shell.
+
+3) Multi-BNC can also be used as IRC bouncer. In this regard it is optimized for
+   sitebots, not for humans or mIRC script kiddies.
+
+
+INSTALLATION
+============
+
+Installation is simple:
+
+    1) Copy multibnc and multibnc.cfg to a directory of your choice.
+    2) Make sure "multibnc" is executable by issuing this command:
+                        chmod +x multibnc
+    3) Edit multibnc.cfg (see below)
+    4) Run "./multibnc"
+
+
+
+RUNNING MULTIBNC
+================
+
+Starting multibnc is as simple as going into the directory where you copied
+multibnc and multibnc.cfg into, and run "./multibnc". The full syntax is:
+
+multibnc [configfile]
+
+This means you can optionally pass the name of your configuration file, like
+
+./multibnc /home/johndoe/my-multibnc.cfg
+
+This of course is only necessary if your configuration file is NOT
+"multibnc.cfg" in the current directory when starting multibnc.
+
+
+CONFIGURING MULTIBNC
+====================
+
+There's three things to configure: the ftp bouncers, the irc bouncers, and the
+admin port which can be used for remote maintenance.
+
+CONFIGURING FTP BOUNCERS
+------------------------
+
+They configuration keyword for ftp bouncers is "ftpbnc". The complete syntax is:
+
+ftpbnc <sitename> <port> <target_ip:target_port>
+
+You can have as many "ftpbnc" lines in your configuration file as you want to
+run ftp bouncers. If you have two sites you want to run bouncers for, ONE and
+TWO, and you want ONE's bouncer to listen on port 5000 (so your users connect to
+the IP of your bouncer box, port 5000), and TWO's on port 6000, this could look
+like that:
+
+ftpbnc ONE 5000 100.100.100.100:5678
+ftpbnc TWO 6000 200.200.200.200:1234
+
+In this example, 100.100.100.100 would be ONE's real IP address, where it would
+be running on port 5678. 
+
+Of course, all of your ftp bouncers must be run on a different port. For
+example, you can't run two bouncers on port 5000. 
+
+
+CONFIGURING IRC BOUNCERS
+------------------------
+
+The IRC bouncers MULTI-BNC provides are different in other IRC bouncers you
+probably already know. Instead of authenticating the user with a password, it
+only allows connections from one IP address - usually the site's IP address,
+because usually you'll want to bounce your sitebot.
+
+Why is this so? Our approach has the following advantages:
+
+1) When you provide a bouncer for a sitebot, you'll usually only want the
+   sitebot to be bounced. However in practice, sooner or later some of the
+   siteops with shell access on the site will start stealing the password for
+   the bouncer and you end up with 5 people on IRC with your shell, resulting in
+   both attraction for your shell and maybe even getting it banned for clones
+   from public IRC servers.
+2) You don't need any additions scripts for your sitebot to support bouncers,
+   i.e. no bnc.tcl for your eggdrop or whatever.
+
+Setting up an IRC bouncer is done with the "ircbnc" keyword. Full syntax:
+
+ircbnc <sitename> <port> <allowed_ip> <target_ip:target_port>
+
+Example:
+
+ircbnc ONE 40000 100.100.100.100 irc.ultraleet.com:6667
+
+You can have as many "ircbnc" lines as you want. In the above example, we'd be
+running an irc bouncer for ONE - the sitename given on this command line is for
+convenience, as we'll see later. It would listen on port 40000, so you would
+make ONE's sitebot want to connect to the IP of your bouncer shell, port 40000.
+The IRC bouncer offers this service only for someone connecting from
+100.100.100.100, which, in our example, is site ONE's real IP. All connections
+from ONE's sitebot would then be redirected to irc.ultraleet.com on port 6667. 
+
+Please note that currently only one irc server can be specified, not a list of
+irc servers. Again, in practice this is enough, just pick a stable IRC server
+which isn't down very often.
+
+
+CONFIGURING THE ADMIN PORT
+--------------------------
+
+One of multibnc's so-far-unique features is the possibility to set up an
+administration port which can be used for remote maintenance. This might
+especially be useful in two cases:
+
+a) If you're providing a bouncer box for several people and want them to be able
+   to add/modify/delete their bouncers without having to bother you all the
+   time, but you don't want to give them shell access.
+b) When you're just as lazy as we are - and you think it's easier to issue a
+   single SITE command than having to log into a shell, mess around with
+   configuration files and restart all the stuff.
+
+To enable remote maintenance, you have to add an "adminport" line to your
+configuration file:
+
+adminport <port>
+
+Example:
+
+adminport 54321
+
+Also, you'll need to set up at least one user account. There are two types of
+accounts: bncop accounts and siteop accounts. The difference is that bncops have
+more power - they can add new ftp bouncers, irc bouncers and users. Siteops on
+the other hand are limited to modify the settings of their site's ftp bouncer.
+
+You can add as many bncops as you want to:
+
+bncop <username> <password>
+
+Example:
+
+bncop john l33tp455
+bncop jane r00l3Z
+
+The syntax for siteops is slightly different:
+
+siteop <sitename> <username> <password>
+
+Example:
+
+siteop ONE charly g3ck0
+siteop TWO david c00ld00d
+
+You then can use any FTP client and connect to the adminport of your shell.
+Multibnc pretends to be a FTP server on the adminport, but somewhat restricted -
+it just automates the task of sending the username and password, so your users
+can save those settings in their FlashFXP or whatever they use. After logging
+in, all you need to do is to send some "raw" commands (FlashFXP default:
+CTRL-R), similar to the SITE commands you already know. The available commands
+are described some way down in this file.
+
+
+CONFIGURING GLFTPD TO USE BOUNCER
+=================================
+
+If you've never set up a bouncer for a ftp site before, you probably should read
+the ftp server's documentation first. This is just a short description of how to
+do it with glFTPd, the #1 ftp daemon on Linux. (www.glftpd.com)
+
+First, make sure that glftpd is started with either the -b or the -B switch from
+/etc/inetd.conf - if you make any changes to inetd.conf, run "killall -HUP
+inetd" afterwards.
+
+Also, in /etc/glftpd.conf, you'll need a line like this:
+
+bouncer_ip x.x.x.x y.y.y.y
+
+where x.x.x.x is the IP address of your first bouncer, y.y.y.y the IP address of
+your second bouncer (if you have more than one) - so if you have multiple
+bouncers, put them all in one "bouncer_ip" line in glftpd.conf .
+
+That's it... easy, huh? :-)
+
+
+REMOTE ADMINISTRATION OF MULTI-BNC
+==================================
+
+We assume you've set up the admin port on port 54321 for all further examples.
+There are two ways to connect to the admin port:
+
+1) Using a FTP client. This makes it easy because you can save your username and
+   password and don't have to type it manually all the time. However,
+   MULTI-BNC's FTP server emulation is very primitive - for example, the PASV,
+   PORT and LIST commands will all fail and return an error. Not all FTP clients
+   like this and might disconnect you. We have successfully used MULTI-BNC with
+   both FlashFXP in Windows and the standard "ftp" in Linux.
+2) Using a telnet client, like "telnet" or "netcat". You will have to type the
+   following commands after connecting to the admin port:
+   USER yourusername
+   PASS yourpassword
+
+Afterwards, you can send any of the commands explained below. Note that when
+using an FTP client, you'll have to send them as "raw" commands:
+
+- in FlashFXP, this is done with "CTRL-R" and then typing the command in the
+  up-popping dialog box.
+- with most Linux textmode FTP clients, instead of "command bla bla", you will
+  have to type "quote command bla bla", i.e. prepend the FTP client's "quote"
+  command.
+
+There are two types of commands, normal commands and bncop-only commands.
+
+ADMINPORT COMMANDS
+------------------
+
+1) BNC HELP or SITE HELP
+
+Displays a short summary of the available commands. Might help if you just get
+the number of parameters wrong for one of the other commands, otherwise this
+documentation will probably serve you better.
+
+
+2) SITE WHO or BNC WHO
+
+Shows a list of people currently connected to or via this bouncer. Siteops see
+only people connected to their own site, BNCops see everyone. People logged into
+the adminport are shown as connected to the "partyline".
+
+
+3) SITE DIE or BNC DIE
+
+This command is only available to BNCops, not to siteops. It will make MULTI-BNC
+exit, i.e. all FTP and IRC bouncers as well as the adminport go down. It's
+pretty much the same as "kill"ing the process on the shell. Be aware that there
+is no way to restart the bouncer remotely - you either need to have shell access
+or it has to be restarted automatically (e.g., through a cronjob, see below) to
+get it up again - so use this command with care!
+
+
+4) SITE RESTART or BNC RESTART
+
+Restarts multibnc. This is the same as killing and restarting multibnc manually,
+e.g. after you've modified the configuration file. But it might just be easier
+than doing the dirty work on your shell.
+
+
+5) SITE SHUTDOWN <sitename>  or  BNC SHUTDOWN <sitename>
+
+Take the FTP bouncer for a site down. Example:
+SITE SHUTDOWN ONE
+
+Would terminate the FTP bouncer for site "ONE". Siteops can only apply this
+command to their own site; BNCops can shutdown any of the bouncers. 
+
+To take the site up again, one has to use SITE ENABLE <sitename> . Example:
+SITE ENABLE ONE
+
+
+6) SITE KICK <sitename> <username>  or  BNC KICK <sitename> <username>
+
+This command is similar to SITE KICK found on many ftp servers to kill a user's
+connection. Example:
+
+SITE KICK ONE lamer123
+
+This command is only available to BNCops - siteops should use SITE KICK on their
+site, not on the bouncer ;-)
+
+
+7) SITE SPY <sitename> <username>  or  BNC SPY <sitename> <username>
+
+This command is only available to BNCops. It allows you to tap the connection
+between <username> and <sitename>. Example:
+
+SITE SPY ONE lamer123
+
+Afterwards, you will see all the commands lamer123 sends to ONE, and all of 
+ONE's replies. Ain't that mean? :D Anyway, that's nothing special, as you could
+get the same result by running a sniffer on your bouncer box. Use it if you feel
+real bored or want to be cheered up by the lameness of your users.
+
+
+8) SITE CHANGE <sitename> <newport> <newtarget>  or 
+   BNC CHANGE <sitename> <newport> <newtarget>
+
+Changes the bouncer configuration for a site. Siteops can only apply this
+command to their own site's bouncer, BNCops to all. For example, to change site
+ONE's bouncer to run on port 10000 of your bouncer shell, and to connect to the
+real site on 123.123.123.123, port 23456, you would use:
+
+SITE CHANGE ONE 10000 123.123.123.123:23456
+
+
+9) SITE ADDBNC <sitename> <port> <target_ip:target_port>  or
+   BNC ADDBNC <sitename> <port> <target_ip:target_port>
+
+This command is available to BNCops only. You can add a new FTP bouncer with it.
+For example, to add a bouncer for a site called THREE, which should be running
+on port 5000 or your bouncer shell and connect to 150.150.150.150, port 30000
+(which are THREE's real ip and port), you would use:
+
+SITE ADDBNC three 5000 150.150.150.150:30000
+
+
+10) SITE ADDBNCOP <username> <password>  or  BNC ADDBNCOP <username> <password>
+
+Adds a new BNCop account. Due to the privileges BNCops have you should give out
+as few of these accounts as possible. This command is only available to BNCops.
+
+
+11) SITE ADDSITEOP <sitename> <username> <password>  or
+    BNC ADDSITEOP <sitename> <username> <password>
+
+Adds a new siteop for <sitename>. Example:
+
+SITE ADDSITEOP THREE philip l33tp4ssw0rd
+
+This command is only available to BNCops.
+
+
+12) SITE ADDIRC <sitename> <port> <allowed_ip> <target>
+
+This command is only available to BNCops. It adds a new IRC bouncer for
+<sitename> which runs on port <port> and accepts connections from <allowed_ip>
+only, which it then forwards to <target>. Example:
+
+SITE ADDIRC THREE 56665 150.150.150.150 irc.superchat.com:6667
+
+
+13) SITE DELBNCOP <username>
+    SITE DELSITEOP <sitename> <username>
+    SITE DELIRC <sitename>
+
+These commands are available to BNCops only. You can use the prefix BNC instead
+of SITE with all of them.
+
+They delete a BNCop, siteop or irc bouncers, respectively. 
+
+
+14) SITE ADMINPORT DOWN  or             BNC ADMINPORT DOWN
+    SITE ADMINPORT <newport>     or     BNC ADMINPORT <newport>
+
+You can take the adminport down by issuing the "SITE ADMINPORT DOWN" command.
+Please be aware that the only way to get the adminport back is to edit the
+configuration file on the shell and restarting multibnc manually. You will be
+disconnected immediately after issuing this command.
+
+Alternatively, you can move the adminport to a different port. For example, to
+make 17263 the new adminport, you'd do a 
+
+SITE ADMINPORT 17263
+
+You will also be disconnected immediately, but this time you can re-connect on
+port 17263 - of course unless there was a problem, e.g. if that port was already
+in use by a FTP or IRC bouncer. Bad luck, buddy :)
+
+
+15) QUIT
+
+Disconnects you from the adminport.
+
+
+16) SITE LIST
+
+BNCop-only command. Lists all services currently provided by this multibnc, i.e.
+all ftpbncs, ircbncs and adminport users.
+
+
+CRONTABBING YOUR MULTI-BNC
+==========================
+
+I assume that the shell you want to run multibnc on has the crontab service
+running. Most Linux boxes do so by default.
+
+Step 1:
+-------
+
+Edit the file multibnc.sh , you'll probably have to adjust the path to where you
+installed MULTI-BNC only.
+
+Step 2:
+-------
+
+Put the following line into your crontab:
+
+*/15 * * * * /path/to/and/filename/of/multibnc.sh > /dev/null 2>&1
+
+If you have no cronjobs yet, you simply might put the above line into a text
+file and then run this command:
+
+crontab name_of_this_textfile
+
+This will make multibnc.sh run every 15 minutes - multibnc.sh in turn checks
+whether multibnc is still running and restarts it if necessary - for example
+after a system reboot.
+
+
+
+CONTACT
+=======
+
+To contact the multibnc authors, feel free to send an email to 
+
+                        multibnc@yahoo.com
+
+We're open for feature requests, bug reports, suggestions, questions and also
+for providing your site with other scripting solutions. 
+
+

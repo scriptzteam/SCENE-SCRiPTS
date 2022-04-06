@@ -1,0 +1,1443 @@
+v1.17.2
+Fix:    Glftpd wasn't passing the correct parameters to dupescript.  It is
+        now passing just the filename as $1 and just the directory name
+        (without the trailing slash) as $2, as it was supposed to.
+Fix:    Site unnukes unnecessarily switched UID to 0 (root) and never switched
+        it back.  I doubt anyone had any problems because of this, but now
+        glftpd is a bit more secure.
+Change: When you give someone wkly_allotment and this user has less credits
+        than the allotment amount, he will get the credits now and not have
+        to wait until the beginning of the next week.
+Change: Userfile cache will now be turned off by default.  We found that it
+        is greatly decreasing performance instead of increasing it.  If you
+        still want to turn it on, add "use_cache 1" to your config file.
+New:    Writing to userfiles is now much more secure.  Before, it was possible
+        for a user with 2 connections to lose stats if one connection wrote
+        over his/her user file while the second connection was in the process
+        of modifying it.  Now, glftpd will create a userfile.lock when it
+        reads a userfile.  If a lockfile exists, glftpd will wait until it
+        disappears before making modifications.
+        NOTE: If you turn user cache on, this will be turned off, because
+        there is some bug that makes glftpd segfault if both are turned on.
+Change: SITE SEARCH will now strip the user's homedirectory from the paths
+        that it finds in dirlog (/site/blah will become /blah).
+Fix:    The external nuker wasn't subtracting credits for what was nuked!
+        Thanks to everyone who was using it for months or years and never
+        reported this bug :).
+Fix:    After an upload, the statline was not updated with the new stats (if
+        the user received credits for the file) - it is now.
+Fix:    The nostatdir option might not have worked correctly in some cases
+        (it was using an uninitialized integer).
+Fix:    For "creditcheck 1" directories, uploading resulted in 1x credit, but
+        deleting resulted in 3x credit loss (assuming your ratio was 3).
+Change: Nukers were able to delete any files on the site.  Now they will
+        need either nuke or delete rights to be able to delete.  Everyone
+        else needs delete rights to delete files (except the file's owner).
+Fix:    SITE USERS didn't count deleted users in the end statistics.
+Fix:    SITE PURGE will now delete the user's message file after deleting
+        his/her userfile.
+New:    The messaging system has been expanded. Users now have 2 mailboxes,
+        inbox and trash. After reading messages, they are moved to trash.
+        They can be moved back to inbox with "site msg save". They can be
+        deleted from trash with "site msg purge". They can also be read
+        while in trash with "site msg tread". Messages will be automatically
+        deleted from trash when the user normally logs off (with QUIT).
+New:    Normally, siteops were unable to change flags for other siteops, so
+        the only way to do this was to edit the userfile manually.  You are
+        now able to specify a master siteop by adding "master bleh" to the
+        config file.  A master siteop can change flags for other siteops.
+        There can only be one master siteop, all subsequent master
+        definitions are ignored.
+Change: SITE PURGE USER will no longer allow to purge users that have not
+        been deleted first (this also fixes several security issues, like
+        purging siteops when deleting them wasn't allowed).
+New:    You can now use echo in dupescript and dirscript before exit 0
+        (you could only use it before exit 1 until now).  Just add "#0" at
+        the beginning of your echo string.
+        EXAMPLE: echo -e "#0Script will exit with success.\r"
+Change: The rights section of the config file (upload, dirlog, nuke, etc)
+        will now be read from top to bottom instead of the other way around.
+        This will make the rights check faster and similar to what practically
+        all other programs use.  The first directory match will stop the
+        search, so you should put the more specific directories on top and
+        the least specific ones on the bottom.  Example:
+        upload /site/archive/* no *
+        upload /site/incoming/* yes *
+        upload /site/* yes STAFF
+Fix:    Site help users was fixed and updated to show all the options.
+Change: Site change flags is more idiot-proof and converts lower-case
+        letters to upper-case (since all flags are upper case).
+Fix:    New users' password won't be stored in shared anymore memory anymore
+        after someone uses the "adduser" command, so ftpwho won't show it.
+
+v1.17.1
+Fix:	SITE CHGRP removed a user from all private groups if you tried
+	to remove him/her from the first private group.
+Fix:    ftpwho.c was fixed to show when a user is idle (thanks HoE)
+Fix:    site who and site swho had problems with idle time when you were
+        using the new timezone variable.
+Fix:    SITE TRAFFIC fixed to handle higher numbers of bytes for alltime
+        stats (by storing kilobytes instead of bytes).
+Fix:    Users who had the IDLER flag and who were idle more than their idle
+        time (usually 900 seconds) could cause an infinite loop that ate all
+        the CPU when their connection to the site was lost. To fix this,
+        users who have the IDLER flag will get their idle time set to 0 right
+        after login (so it will work the same as having the EXEMPT flag and
+        typing "site idle 0").
+Change: Deleted users will not be listed in "site users" anymore (except when
+        you type "site users deleted").
+Fix:    There was a bug that, instead of starting to look at the 4th argument
+        of the function settings in the config file (upload, makedir, dirlog,
+        etc), it looked at the first, second, third... argument. As a
+        result, if you used "*" on the PATH line, everyone would get access,
+        not just users belonging to the group in the 4th argument.
+
+v1.17.0
+Fix:    SITE CHHOMEDIR didn't show the user's home directory if a new
+        directory wasn't specified, like it was supposed to.
+Fix:    SITE REQFILLED only worked on requests < 22 even if you set your
+        site to keep a list of more than 21 requests.  It was increased to
+        50 to match the maximum setting.
+New:    Filled requests are now added to ftp-data/logs/request.log so that
+        siteops can check if the uploads were actually requested and by whom.
+        Entries are only added when someone does SITE REQFILLED # successfully.
+        This log can be viewed with SITE REQLOG [#], the optional number
+        being the number of days ago to show.
+        Example: SITE REQLOG 5 (will show requests filled in the last 5 days).
+Fix:    SITE FLAGS user crapped out on you if you were gadmin trying to view
+        someone who wasn't in your group.
+Change: Due to a conflict of flags and parameters passed to custom commands,
+        this feature has been removed (see below).
+Change: Most of site commands are now configurable, that is, you can specify
+        who is allowed to execute them.  You will need all 40+ commands in
+        your config file, the details on how to do this are in the docs.
+Change: Custom commands can be bound to flags/groups just like the commands
+        mentioned above.
+New:    Dirscript.  It is similar to dupescript, but it is ran before a
+        directory is made.  If it returns 1, the directory will not be made.
+        $1 and $2 are directory name and path in which the user is trying to
+        make it, respectively.  To enable dirscript, add "pre_dir_check
+        /bin/dirscript" into your config file.  The default dirscript checks
+        if $1 already exists in yesterday's dated directory.
+Change: People with the +7 flag are now unable to add to/remove from private
+        groups (this is configurable with the -chgrp-priv variable)
+New:    Userfiles contain an additional field, TIMEFRAME, with 2 arguments,
+        the hour from which to allow logins and the hour when logins from
+        this user will begin being rejected.  To change it use SITE CHANGE
+        <username> timeframe # #.
+Change: The %[%s]IE cookie was changed to show timeframe.
+New:    New variable for the config file, timezone.  Use this if your glftpd
+        is getting the wrong time from the operating system (usually because
+        redhat sucks).  Exmp: "timezone -4" will make glftpd shift the time
+        it receives from the OS 4 hours back.
+Change: The code to do stats (weektops, etc) was re-designed to use linked
+        lists instead of static arrays - glftpd should use a little less
+        memory now.
+New:    Stat sections can now have different ratios. The default ratio is
+        the one used by stat section 0. By default, other ratios are -1,
+        meaning they are disabled and the default one will be used.  If you
+        change ratio for a stat section, it will be used when uploading/
+        nuking/etc in that stat section's directory.
+        To change ratio for stat sections 1-9, use SITE CHANGE SRATIO.
+Change: SITE CHPASS will now allow groupops to change password for members
+        of their group by default (this of course can be disabled).
+Change: "SITE CHHOMEDIR" is now "SITE CHANGE <user> homedir", this way you
+        can change it for more than one user at a time.
+Fix:    ftpwho.c was fixed (it was screwing up the display).
+Change: The userfile format was changed, credits and ratio were removed
+        from the GENERAL line and ratio has its own line now.
+        You HAVE to convert your user files using the "uconv" program
+        when you're upgrading if you don't want users' settings to get
+        messed up.
+New:    New optional variable for config file, no_ident. If you add this
+        variable, glftpd will not add an ip if the user adding it doesn't
+        have access and if he/she does not supply an ident. The access flags
+        work the same way as for site commands.
+        Example: "no_ident 1 7" will only allow siteops and useredits to add
+        an ip with * for an ident. This is a good way to prevent group admins
+        from adding insecure access masks to their users.
+Fix:    SITE ADDUSER was made a little more "idiot-proof" :}
+New:    New variable for glftpd.conf, freefile.  USAGE: freefile *.nfo *
+        The above will allow everyone to download all files ending in .nfo
+        without losing any credits. If you replace * with a group name, only
+        users belonging to that group will not lose credits. Only one group
+        per line, if you want multiple groups, add multiple freefile variables.
+Change: The freedldir variable can now take a group as second argument to
+        only allow a certain group to download for free from the directory.
+Fix:    A minor security bug: files specified after the noretrieve variable
+        could not be downloaded with "get file" but could with
+        "get /site/file file".
+New:    New variable for config file, no_downloads.
+        USAGE: "no_downloads /site/private*" will not allow users to download
+        files from directory /site/private or any of its subdirectories.
+Change: SITE GROUPS modified by Jestrz to show the number of users that are
+        in each of the groups.
+Fix:    Gadmins are now unable to take away their own leech (assuming
+        they're dumb enough to try) if they don't have the leech slot
+        setting enabled.
+Change: Users with leech were unable to give credits. This check was removed
+        - if leechers have credits they can give them away now (provided
+        they have the +G flag).
+
+v1.16.9
+New:    The default zipscript was modified to only extract file_id.diz to
+        .message if .message does not exist or has 0 bytes. Now if someone
+        uploads a zip that doesn't have file_id.diz, the .message file won't
+        become 0 bytes.
+Change: Shared memory is now initialized before banner is displayed, so you
+        can access it from a script ran from banner and perhaps deny login
+        if the hostname matches an entry on your black list or something.
+Fix:    I forgot to remove a debug message from ls, your login.log is
+        probably full of "doing ls" messages, sorry about that.
+New:    SITE USERS can now take a username with an asterisk at the end to
+        find all users that begin with that username.
+        Example: "SITE USERS la*" will find lamer, lamuh, lazyass, etc.
+Change: Nuking files uploaded by a non-existing user didn't get logged.
+        It will show up as UNKNOWN now.
+New:    New command, SITE TRAFFIC, shows total uploads/downloads/speeds.
+Fix:    A security problem was fixed. Siteops are urged to upgrade.
+        I won't disclose the details for a while so that people who don't
+        upgrade right away won't get hacked (this hack is possible with
+        all versions since 1.10.x.)
+Change: SITE LOGINS can take an argument, number of days.  This works the
+        same as with SITE UCHANGES, see changelog for v1.16.8.
+
+v1.16.8
+New:    New command, SITE CHHOMEDIR, allows siteops and people with useredit
+        to change a user's homedir.  Use SITE CHHOMEDIR username to view it.
+        As a security measure, this command will not work by default. To
+        enable it, add "min_homedir /directory" to your config file, where
+        "/directory" is the minimum directory depth a homedir can be changed
+        to. Example: "min_homedir /site" would only allow users' homedir to
+        be changed to /site, /site/blah..., and deny /bin, /etc, /ftp-data,...
+New:    SITE MSG can now accept multiple destinations enclosed in braces.
+        Example: SITE MSG { user1 user2 user3 } test message
+        NOTE: Don't forget a space around each brace.
+New:    Siteops can send global messages.
+        Example: SITE MSG * Global message test
+New:    Users can send a message to every member of their group.
+        Example: SITE MSG =MyGroup hi there
+        NOTE: Siteops can use this for any group.
+Change: To read your messages, use SITE MSG READ instead of SITE MSG.
+New:    SITE CHANGE can now accept multiple users just like site msg
+        (usernames in { }, group name with = in front, or * for all)
+Change: Site commands' length changed from 512 to 1024 characters.
+Fix:    Directories made on FreeBSD did not have the user's primary group
+        as gid.
+Fix:    When post_check is disabled, glftpd should not delete an incomplete
+        file when connection is lost (so that people can resume) - this might
+        not have worked every time, should be fixed now.
+Change: site_cmd can now be bound to user flags.
+        Example: site_cmd PICT TEXT /ftp-data/misc/pict.ans 5
+        (this will only allow users who have color enabled to see the picture)
+        Example: site_cmd UPURGE EXEC /bin/purge.sh 17
+        (this will only work for people with useredit or siteop access)
+        If you don't specify flags, or specify non-existent flags, access is
+        granted to all (so this is backwards compatible).
+New:    SITE RENUSER <old_username> <new_username> will rename a user.
+Change: SITE UNNUKE worked in a really weird way - you could unnuke dirs that
+        were not nuked, etc.  Some extra code was removed and the command
+        works as it should now.
+Fix:    SITE NUKE and SITE UNNUKE can take {dirname} instead of dirname, this
+        is helpful if you have spaces in the dirname, putting it in braces
+        keeps glftpd from confusing dirname with nuke/unnuke message.  This
+        did not work correctly, should be fine now.
+New:    SITE UCHANGES can now accept the number of days to show.
+        Example: SITE UCHANGES 3 will show sysop.log of only the last 3 days.
+Fix:    Purging users who were online resulted in deletion of passwd entry
+        but not of the userfile - as a result you couldn't add this user
+        again until you manually deleted his user file.  Purge will now skip
+        users who are logged on, you have to kick them first.
+Fix:    The lslong variable in the config file did not work since glftpd
+        started using an internal ls.
+
+v1.16.7
+Fix:    The last fix in 1.16.6 (deleting files when uploader loses connection)
+        did not work correctly, it was fixed in a different way now.
+New:    New site command, GADDUSER, will add a user and put him in a group
+        Example: site gadduser IND lamer lamepass lamer@*.aol.com
+Fix:    Forgot to modify reset to work with new userfile fields (groupop
+        leech slots and max_ulspeed) so they did not get saved.
+Fix:    The %% cookie got broken a few versions back.  Also the %x cookies
+        will now print nothing (they were replaced a few versions back by
+        the %[%x]x cookies).
+Fix:    Deleting directories with DELE was logged to glftpd.log, but deleting
+        them with RMD was not.
+Change: SITE CHMOD can now only be used by siteops.
+Fix:    Some groups put ^M at the beginning of line in file_id.diz, glftpd
+        would not display a line like that, it will convert ^M to space now.
+Fix:    max_dlspeed and max_ulspeed didn't work in 1.16.6.
+New:    The stats binary was upgraded to version 3.2 (supports multiple
+        stat sections now)
+
+v1.16.6
+Change: After uploading, the transfer speed is now being calculated before
+        zipscript is executed - this should make it more accurate.
+Change: The "SITE UMASK" command was disabled - it wasn't being used anyway.
+Fix:    get -R in ncftp will now work (as well as all list commands that
+        have directory name following parameters).
+Fix:    *Sigh* yet another (this time final) bug in site who that I missed,
+        filenames 11 characters in length had a control character at the end.
+New:    Global bandwidth control (directory based). Speed settings go into
+        the config file. USAGE:   speed_limit   PATH     DL_LIMIT   UP_LIMIT.
+        The first directory match is the one used, so you would want
+        the completely global setting (/* as PATH) at the very bottom if
+        you have several speed_limit settings.
+        Example: speed_limit /site/Incoming* 150000 0     # 0 = Unlimited
+        NOTE: speed indicated on gl_spy or ftpwho may tend to fluctuate more
+        than before.
+Change: gl_spy and ftpwho during a user's transfer shows the full path to the
+        file in question instead of the user's current directory. This is in
+        support of the global bw feature.
+New:    Memory mapping of files downloaded is now configurable.  The default
+        setting for mmap_amount is 16 (used in v1.16.3+). Change it in the
+        config file, the range is 1 to 50 (in megs). If you have low memory
+        and your users are downloading large files, you might want to set
+        this to a low number, otherwise glftpd uses up all your memory.
+        Example: mmap_amount 5 (keeps files smaller than 5 megs in memory).
+Change: max_speed is now max_dlspeed (in site change).
+New:    max_ulspeed, controls how fast a user can upload (bytes/sec).
+New:    New cookie, %[%f]I&, displays max upload speed.
+Change: Site who will now hide the user altogether instead of just hiding
+        the filename if the user is transferring in a hidden dir.
+Change: Glftpd will not allow you to enter the ':' character in group name
+        or description.
+New:    New color code, !Z, which prints a generic bold.
+Fix:    Connecting from localhost did not work with -B bouncer option.
+New:    glftpd now supports bnc4all (detection is automatic).
+Change: When server is shut down, glftpd will display /ftp-data/text/shutdown
+        instead of responding with a built-in message.
+Fix:    site grpren fixed and re-enabled.
+Fix:    If an uploader lost connection before file was finished, that file did
+        not get deleted if it was bad - should be getting deleted now.
+
+v1.16.5
+New:    Second parameter passed to dupescript (the actual upload dir, just
+        like with zipscript in v1.16.4).
+New:    New variable in glftpd.conf, bouncer_ip.  If you run the daemon with
+        -b or -B, you MUST add the bouncer IP(s) to the config file.  You
+        can add more than one IP (in case you have more than one bouncer).
+        Example: bouncer_ip 1.2.3.4 10.20.30.40
+Change: The -b option will now allow users to log in directly to the site if
+        their IP is not on the bouncer_ip list.
+New:    New user flag (+I = IDLER), it lets the person idle forever (will not
+        timeout and disconnect).  Be careful with this, don't give it to
+        everyone or your site will always be full, I recommend only giving
+        it to a few siteops.
+New:    A new change command added, comment.  Use "site change user comment
+        blah" to change someone's comment to "blah". If you are a siteop or
+        have useredit & do "site user bleh", file /ftp-data/text/user.comment
+        will be displayed right before the user.txt file. Comments can be
+        max 50 characters. The purpose of comments is to keep info about a
+        user that only siteops can see, like "This is my friend, don't delete
+        him - Usurper" or "Has leech for hardware contribution" etc.
+        The default comment for new users is "Added by <username>".
+New:    A new cookie added, "%[%s]I$", that will display the user's comment.
+        Suggestion: don't use it in any files readable by normal users.
+Change: GINFO restricted to users with the +H flag (group admins are exempted
+        if they do GINFO for their own group).
+Fix:    The Sighup tcl did not work because one dumbass (no need to mention
+        names) misspelled botscript in the code :}
+New:    Optional variable added to config file, shutdown. It takes one
+        argument: 2, 1 or 0. If it's 1, the server will only allow siteops to
+        log on.  If it's 2, it won't let anyone log on. 0 or any other
+        number (or no shutdown variable) will make glftpd run as usual.
+New:    When the site is full, glftpd will now display the file "sitefull"
+        located in ftp-data/text instead of responding with the built-in
+        message.
+Fix:    Site who still showed junk if filenames were smaller than 12 chars.
+Change: SITE GRPREN temporarily disabled (anyone want to try to fix it?)
+Change: "SITE CHMOD" disabled by default (in the config file), comment
+        it out if you want users to be able to change file permissions.
+        (If you already have glftpd.conf, add "site_cmd CHMOD blah" at the
+        bottom to disable this command).
+Fix:    Gadmins were able to exploit a bug and get as many group slots as
+        they wanted.
+New:    "SITE group_slots" now can take a second parameter, the number of
+        leech accounts the gadmin can add.  By default, this is -1 (disabled,
+        whereas for group_slots, -1 means unlimited).  To give gadmins
+        unlimited leech accounts, change the second parameter to very high #.
+        Gadmins are only able to change ratio to 0 (give leech) or to 3.
+        You can also use this variable to count how many leech accounts siteops
+        add (make it 100 and if it becomes 90 it means the person added
+        10 leech accounts - same as counting number of users a siteop added
+        using the first argument of group_slots).
+Change: The group slots cookie (%[%-5d]IX) changed to (%[%-5s]IX) because it
+        now displays a string (both arguments of the slots setting with a
+        space between them), fix your text files if you're using it.
+New:    You can hide filenames in site who from non-siteops if a user is
+        transferring to or from a hidden directory. Just add
+        "hidedir /path* yes *" to the config file. It works the same
+        as upload/makedir/delete/etc.
+Change: The old useredit binary will not save userfiles correctly with 1.16.5,
+        if you're using it you should wait till greyline modifies it.
+
+v1.16.4
+Fix:    There was a small bug that might have been causing glftpd not to work
+        when resolve_dns was set to 0 in the config file.
+Fix:    The -r /etc/other.conf option in inetd.conf fixed for those running
+        multiple daemons on the same box.
+New:    New variable in the config file, botscript_path.
+        Default is /bin/botscript (you need to change it if you don't
+        chroot the daemon)
+Fix:    dirlogscanner.c did not work correctly if your rootpath was "/".
+        This made the bot announce a number as owner/group of a new dir.
+Fix:    FreeBSD displayed all files' group as root.  Should be ok now.
+Fix:    OpenBSD was causing problems due to some files not being closed.
+Fix:    External nuker did not work with rootdir set to "/".  Updated to
+        version 1.5.
+New:    Uploading files to directories other than "." did not work.  To fix
+        this, a second parameter is passed to zipscript - the actual path
+        the file is stored in.  If you do "put file.zip /incoming/file.zip",
+        $1 is still "file.zip" and $2 is "/incoming".  You need to use the
+        new zipscript to take advantage of this feature (or just change
+        all but the "case $1 in" instance of $1 to $2/$1).
+Fix:    Site who showed incorrect filename when a user was up/downloading with
+        bulletproof ftp.
+
+v1.16.3
+Fix:	CWD 1 - changing to a directory as seen in 'site new'
+Fix:    Samba and Uploads
+New:	Under certain conditions most files sent from the site
+	will be memory mapped before transferring.
+New:    pwd_path variable in glftpd.conf.  eg. pwd_path /glftpd/etc/passwd
+	Allows one to specify where glftpd's passwd file should be kept.
+	Path is in reference to rootpath.
+	Default: /etc/passwd
+New:	grp_path variable in glftpd.conf.  eg. grp_path /glftpd/etc/group
+	Default: /etc/group
+Change: rootpath may now be specified as just '/' to disable chrooting of 
+	the daemon.  (not recommended)
+	Be sure to use the new grp_path and pwd_path variables if you choose
+	to not chroot the daemon.
+New:    glftpd no longer alters the permission set on its passwd and group file.
+	chmod 400 /glftpd/etc/*   is allowed and the "daemon" should still 
+	function properly with just read permissions for root.
+Change: CHGRP modified by Usurper to allow up to 2 GROUPS to be named on the
+	command line.
+New:    DELIP can now take an argument like username@hostname instead of
+        the number of the ip (useful for scripts that auto-add and delete
+        users)
+Change: DELIP can now take up to 10 arguments.  The arguments can be mixed
+        (either a number 0-9 or username@hostname).
+Fix:    ADDIP was adding junk if you specified 5 or more arguments. It can
+        now take up to 10 arguments (some anti-idiot code was added, too).
+
+v1.16.2
+Fix:	Racestats (show_diz) were not displaying for the 0 byte .message files.
+Fix:	SIZE command wasn't compatible with the restricted homedirs yet.
+Fix:	Overwriting of files that turned out to be bad and were deleted were 
+	being left in the dupefile database.
+Fix:	Race condition existed if the same user (different process) tried
+	to upload the same file to the same directory.  Uploaded file would
+	then most likely become corrupted and be deleted via zipscript.
+	Workaround in place that checks the permissions of the file before
+	the transfer begins.  Overwriting of files now disabled if it see's
+	that the file is in mid transfer.
+Change: Overwriting of one's own files now disabled by default.
+	Setting overwrite to yes in glftpd.conf allows all to overwrite any
+	file in the associated directory.
+Fix:	Site delip wasn't able to delete ip #0.  
+	Multiple arguments on the command line left out in this
+	version for 'site delip'.
+New:	FAQ provided by Barkeep for those users having zipscript problems or
+	those who are looking for answers as to why the daemon deletes
+	all uploads.   (zipscript-faq)
+
+v1.16.1
+New:	Extra parameter added to the max_users variable in glftpd.conf.
+	#max_users   10    5
+	The '5' says to make room for five additional user slots that may
+	only be filled in by users who are flagged exempt.  All other users
+	will get the "Site full" message if more than 10 users are currently 
+	logged on.
+Fix:	hidden grppaths showing up in directory listings.
+Fix:	site users would crash the daemon on most instances.
+Fix:	gl_spy - cosmetic fixes.
+
+v1.16.0
+Change: Pid files moved into shared memory. (/ftp-data/pids can be removed)
+	The system kernel must have System V IPC support compiled in!
+Change: Pid structure also modified.  
+	See the new included ftpwho.c for details.
+New:	ipc_key variable in glftpd.conf.  See included sample.
+	Needs to be changed for those running multiple sites on the same box.
+New:	gl_spy utility.  Provides real-time information of all users on
+	site neatly on screen.  Uses the same ncurses background and
+	similar functionality as used in useredit, so you must have
+	ncurses installed on your system PROPERLY.
+	Available options include selectable config files, 
+	increase/decrease of refresh rate, and a popup detailed 
+	info box giving all pertinent information on the user selected.
+	If ran as root the kick option 'k' also becomes available.
+Change: EXEMPT users will now be UNABLE to login when the site if full due
+	to the new daemon structure.  
+	A future version MAY include a BACKDOOR for siteops to be able
+	to still get in when the site is full.
+Change: The check for max users on site is now done before the login prompt
+	is even displayed.
+Note:   Changing the config variable 'max_users' requires ALL users to be
+	logged off the site as this variable controls how much memory is
+	allocated.   Any other change to glftpd.conf 
+	just requires you to relogin.  
+	NOTE: The gl_spy utility will also have to be restarted if
+	you change this variable.
+Change: site who modified and shows more information on what the last command
+	issued was from a user using a 5 second timer before displaying IDLE.
+Change: site who: paths from transfers are now stripped to show just the 
+	filenames.
+Change: site whoami removed.
+Change: The periodic updates on transfer speed statistics has been removed.
+	All Stats are in true Real-Time.
+Change: upload/nuke, etc rights have the GROUP and yes/no fields reversed 
+	now so that you can add multiple groups on the same line.
+Fix:	Additional checks/logging added for the use of pasv_addr.
+Fix:	statfilecmd() fixed.
+Fix:	logging of max_speed changes.
+Fix:	NLST totally reworked.
+Fix:	statline immediately updated properly after a download.
+Fix:	Possible exploit in the stats bin if it was +s.
+	Freebsd installation file updated since this bin should not need to 
+	be ran as root anyway.  Thanks to neophyte for noticing it.. :) 
+Fix:	NUKER: As a security concern, the glftpd.conf file must be root owned.
+Change: Deleted dirs logged to glftpd.log as well now.  
+	DELDIR: "dir" "user" "grp" "tag"
+New:	%@GROUP /ftp-data/textfile   
+	Display "textfile" if the user belongs in specified group.
+	Main purpose is for use in welcome.msgs.
+Change: %!, %=, %@ all revert back to the main parser so that any and all
+	cookies can be redisplayed.
+Fix:    dirs with () characters were not being processed by botscript.
+New:    Homedir RESTRICTIONs now in place.  Homedirs will now become the user's 
+	fake root.
+	The homedir for users must be valid in order for users to successfully 
+	login.  Users added by gadmins inherit their homedirs.
+New:	ls -C and ls -F  added back in.
+Fix:    Ident fix for mirc type users.  Thanks to the Eagle_1 and Eternal for 
+	proving to me it was broke and especially for providing the fix.
+Fix:    Timeout's fixed on transfers.  A timed out connection should also 
+	no longer leave behind an incomplete file.
+New:	Overwrite added to glftpd.conf's rights section.  
+	See included glftpd.conf for example.  
+	Its function is like that of "delete" where if the path/group match for
+	the user, they'll be allowed to overwrite files.
+Change: Overwriting of one's own files is now allowed by default, however, 
+	stats are not updated after the upload.  The only exception are the 
+	ANONYMOUS users who may not overwrite ANY files.
+New:	Makedir added to glftpd.conf's rights section.
+	See included glftpd.conf for example.  (NEEDED)
+New:	Cmd line option -I in inetd.conf to disable ident.
+Change: More detailed logging of purged users to sysop.log.
+Change: SITE DELIP will accept multiple arguments in order to delete more
+	than one ip from a user at a time. eg. SITE DELIP <USER> 1 3 5
+Fix:	Directory listings on SAMBA mounted drives.
+Fix:	PASSWD cmd now disabled for users flagged anonymous.
+
+v1.15.8
+Change: Stats no longer AUTO RESET themselves.  Running the RESET bin in
+	crontab at midnight everyday now needed.  See UPGRADING text file.
+	Expect certain scripts will need to be modified again.
+	We'll try it like this for while and see if anyone complains. 
+Fix:	DELETE was removing stats even in defined nostatdirs.
+Fix:	Another and hopefully the last of the cache problems fixed.
+Fix:	Added additional checks for users without ratios in order 
+	to keep their credit statistics from varying.
+Fix:	Userfile updates had the USER field still truncated down to 24
+	characters.
+Change: Purge: Moved the passwd entry removal before the userfile deletion.
+New:	Collection of addon utilities written by Evilution included in the
+	bin dir.
+Change: All bins have been updated to comply with one another.
+Fix:	Stats bin (Today) tops fixed.
+New:	Reset bin has additional options added.  -h for Help
+	Userfiles which fail to be reset will be announced through stdout.
+New:	SITE USERS now recognizes: groups, private groups, leech, gadmin, siteop,
+	nuke, unnuke, kick, kill, glock, exempt, useredit, undupe, take, give,
+	and users as a filter.
+
+v1.15.7
+Fix:	User Cache bug.
+Fix:	umask not cleared when writing to userfiles.
+Fix:	Special owner/group assignments on userfiles being reset. (ie. 99)
+Fix:	Unnuke function not logging the proper float value to glftpd.log
+Fix:	Unfo changes not showing up immediately in 'site who'
+Fix:	goodbye file not being created when a user is deleted.
+Change: SITE UPDATE will now recreate the dirlog database in sorted order.
+New:	%WHO cookie.
+New:	External program (reset) for resetting user stats.  
+	Designed to be run from crontab every night at midnight and is 
+	made available just in case.  This program *should* never have to be
+	used.  [ reset -h ] for available options.
+Change: All external bins that update userfiles have been updated.
+Change: The BSD version is now being compiled and tested on a 3.1-RELEASE 
+	system.
+
+v1.15.6
+New:	New flag '8' for ANONYMOUS type users. 
+	Restrictions placed on users flagged ANONYMOUS.
+	1.  '!' on login is ignored.
+	2.  They cannot DELETE, RMDIR, or RENAME. 
+	3.  Userfiles do not update like usual, meaning no stats will
+	    be kept for these users.  The userfile only serves as a template
+	    for the starting environment of the logged in user. 
+	    Use external scripts if you must keep records of their 
+	    transfer stats.
+Fix:	Bug in userfile parser that was introduced into 1.15.5.  Whoops!
+	Those users who logged into a running 1.15.5 server with negative
+	credits had their credits changed to some large number.
+Change: Updates to userfiles now using a different approach.  
+	This is in hopes of clearing an old problem of
+	userfiles being truncated if a problem occurred during an update.
+Fix: 	The well known file dupe bug is fixed.
+New:	glupdate.c included in the bin dir.  Another cheesy addon utility
+	for glftpd.  I'm surprised this old proggie sorta still works. 
+	Its looking for a new home and someone who is willing to take care of it.
+Fix:	External Nuker for BSD and possibly Solaris systems were inoperative.
+	Needed an update to be compatible with ANONYMOUS type accounts.
+New: 	New flag 'H' for the 'SITE USERS' command required.
+New:	New environment variable added.  $HOST = IDENT@IP
+Change: nostatdir was disabling credit subtraction on downloads when it shouldn't be.
+	The freedldir variable in glftpd.conf should be the only determining factor
+	concerning credits on downloads besides (ratio/creditcheck).
+Fix:	CWD bug related to the use of dir_names fixed, and code improved upon.
+	Those windows clients *should* be extremely satisfied now.
+
+v1.15.5
+Fix:	Rename rule added to disallow renaming over an existing file.
+	Deletion of the old file beforehand is enforced.
+Fix:	Negative credits wasn't being properly tested before a download.
+Fix:	User CMD will now not allow you to change users if already logged in.
+	Didn't work to begin with anyway.  
+
+v1.15.4
+New:	Dirlogscanner & nukelogscanner sources included.
+Fix:	[:space:] use in glftpd.conf.
+New:	grppath will now accept a (-) dash before the group names to signify
+	that this group is not allowed access to the assigned directory.
+	First directory/group match found in the order is used which makes
+	this option best served if it is listed first.
+	Example:
+*	grppath  /bin	-GRP1
+	will hide the bin dir from people in GRP1 only.
+*	grppath  /bin	-GRP1 STAFF
+	will allow only people in group STAFF access unless they are also in 
+	group GRP1 in which case they will be denied.
+New:	ignore_type config variable.   Will ignore the assigned file types from
+	being recognized in the directory race info, nukes, unnukes, and dupes.	
+	Example:
+	ignore_type  *.[tT][xX][tT] *.[nN][fF][oO] [rR][eE][aA][dD][mM][eE] .message
+	ignore_type  *.[sS][fF][vV] *.[cC][rR][cC] *.[dD][iI][zZ]
+
+v1.15.3 
+Change:	gadmin slots increased by one with each deluser for gadmins.
+Fix:	site users <group>
+Fix: 	time on today cookie.
+Fix:	Code cleanup.
+Fix:	group stats for different sections.
+
+v1.15.2
+New:	-B option for inetd.conf.
+	Like the -b (port bouncer) option, the difference is this will only allow 
+	connections to the ftp site by way of the bouncer.  Prevents the 
+	display of the banner and login prompt if the user is not connecting 
+	from a valid IP address.
+	NOTE:  When using a bouncer you WILL need to run a tcp wrapper
+	to only allow connections from the bouncer.
+Change: ftp localhost (ie. 127.0.0.1) will allow the user to connect to the 
+	site directly, thus bypassing ANY port bouncer options that may be enabled.
+Fix:	Updates to userfiles wasn't always being detected properly by the cache.
+Fix:	ls globbing.
+Fix:	Site laston.
+Change: help disabled at login
+Change: ls -?  chucked.
+Change: hardcoded filenames for /bin/dupescript & /bin/zipscript removed.
+	USE..
+	pre_check   /bin/dupescript
+	post_check  /bin/zipscript
+	#pre_check runs BEFORE the actual transfer begins..
+	#post_check runs AFTER the file transfer..
+	The paths to your script must be full and still be within the
+	chroot. "rootpath". 	
+
+v1.15.1
+Change: New ls.  Contains most of the original external bin ls options.
+	ls -? for help.
+Change: grppaths now do EXACT fullpath matching now.  Now filenames/dirnames etc, can be
+	similar.
+Fix:	some of the admin functions were not parsing the command line properly.
+Fix:	Input stream was not being closed before the file checking occurred.
+Change: Gave those with USEREDIT rights the ability to use CHGRP.
+Fix:	Logging of group changes fixed.
+Fix:	Resuming uploads.
+Change: EXEMPT user's are exempt from idle setting restrictions.
+	They must now use 'site idle 0' if they wish to disable idle timeouts.
+
+v1.15.0
+Change: Useredit Program: Flags now can be modified.  No confirmation
+	needed after changing an entry.  Some visual screen fixes.
+Change: More (sysop.log) logging for group changes.
+Change: passwd file preloaded/cached at startup.
+Change: group file preloaded/cached at startup.
+New:	Internal LS built in to take advantage of new caching features.
+New:	Intelligent caching system for userfiles.
+	Config variable "user_cache [1/0]" can be used to enable/disable
+	it.  Default is enabled.
+Fix:	Directory wildcard matching during CWD would hang the connection
+	if the directory was non scannable.
+Fix:	Minor nuke fixes.  
+Fix:	Ignore_Noop, was still resetting the alarm counter.
+Change: Exempt Users now (can) have to set their idle time to 0 after
+	login to remain on site indefinitely.
+Change: switched from using setenv() to putenv() to support the new
+	Solaris Port.  
+Change: When a new nuke matches that of a previous nuked directory, it is
+	now totally removed from the system to prevent a rename error and the
+	possibility of people renuking the same directory over again. 
+Change: Daemon will allow the first line in the userfiles to be customized.
+	Normally it would read, USER <username>.  Username can be anything
+	and will remain untouched by the daemon.  50 Character limit.
+New:	%[%s]IE  cookie made specifically for statline.txt.  
+	Prints out the number of credits in a .1 float value or Unlimited.
+Change: Byte totals in stats now displayed with commas.
+
+v1.14.5
+Fix:	pasv_addr - different compile optimization broke it.  Suspect pgcc is CRAP! 
+Fix:	Cuteftp '!' bug fixed.
+Fix:	Group login limits off by 1.
+Fix:	Nuke/Unnuke wasn't updating user stats.. Ooops  
+Fix:	Unnuke wasn't logging the full directory path.
+Fix:	Missing /bin/dupescript from the dupe_check line in glftpd.conf now allowed.
+Fix:	site stat crashing glftpd on FBSD if issued immediately upon login.
+New:	User Editor binary included.
+	
+v1.14.4
+New:	Optional "pasv_addr" variable for glftpd.conf.
+	Determines what IP/Host is used for passive mode.
+Fix:	IDLE time reporting was a tad inconsistent, to put it mildly.
+	Guess you were right icetrain, it was the daemon.   :)
+Fix:	Num_logins mistakenly incremented rather than login_times.  Oops.
+
+v1.14.3
+Fix:    Custom site commands would only accept up to a 30 character argument.
+Fix:	Current directory information set incorrectly.  
+Fix:	Stats broke when more than two stat_sections were defined.
+
+v1.14.2
+Fix:	site nfo. 
+Fix:	total_users variable.
+Fix:	Bug in the stat_section RETRIEVE function which caused FBSD daemons 
+	to crash.
+
+v1.14.1
+Fix:	Stupid CuteFTP again.
+Fix:	Some site who variables were being initially cleared.
+
+v1.14.0
+Added:  modified bftpd ftpghost utility for those who supposedly have
+	ghost problems???  Source is in the bin dir.
+New:	Optional "total_users" config variable.  Sets the total maximum number of
+	users allowed on site.
+New:    Optional "login_prompt" config variable added to customize your own
+	initial login prompt.
+New:	Optional "lslong" config variable added.  Standard wuftpd variable.
+	Sets the default 'ls' command parameters.  Example:  lslong /bin/ls -lG
+Change: SITE ADDIP now also accepts up to 5 ips on the command line.
+New:	Multiple STATS & or CREDITS (by directory) supported.
+	*REQUIRED*  'stat_section  DEFAULT   *   yes'  must be in glftpd.conf
+	for current glftpd sites regardless of whether you use or need multiple 
+	stats. See DOCS for needed configurations for use with multiple stats. 
+	Due to userfile size limitations and what not, up to ten separate 
+	sections may only be defined. 
+	Site users, site give, site take, site ginfo, all stats, ALL show
+	relevant information depending on what the current directory is.
+New:	SITE STATS, SITE STATS <user> 
+	Displays 'user.stats' of all sections.
+	Additional stats are appended onto the display and read in their own
+	text file to gather display format.  
+	eg. A stat_section with a keyword of ISO would read from ISOuser.stats.
+New:	SITE SHOW <user>, for SITEOPS.  Displays a user's userfile in raw form 
+	to be used in troubleshooting and outside scripts.
+New:	Optional inetd.conf parameter added:  -n <num>
+	Set the number for dns retries.  0 disables dns resolving all together.
+Change: call to zipscript totally rewritten.  Stdout from zipscript now
+	lreply'd.  Use of color cookies within zipscript possible.
+Change: call to dupescript rewritten as well.  Stdout IS ALLOWED.
+Change: SITE GROUP split.  Listing of available groups now done with a new
+	site command of SITE GROUPS.
+Change: flags allowed changed back to A - Z, a - z, 1 - 9.  For the benefit
+	of external scripts again.
+Change: pid/online file routines rewritten and now taking advantage of shared memory.
+Fix:	Few Online cookies fixed.
+Fix:	Requested security fix for bouncer by Eagle_1 put into place. 
+Fix:	GPWD showing gpwk header.
+Fix:	Bug in changing user flags.
+Fix:	DEL & RMDIR modified to work with (dir_names / file_names) configs.
+Fix:	site delip user 0 fixed.
+
+v1.13.6
+Fix:	Long standing random uid bug that showed up under certain
+	circumstances fixed.  Should fix those [UNKNOWN] nuke announcements.
+New:	Bandwidth controls on users (downloads only)
+	SITE CHANGE <USER> max_speed <BYTES/SEC>
+	0 = Unlimited. <Default>
+New:	%[%f]Iz User cookie added for max_speed.
+Fix:	creditdir on deletes wasn't working.   
+New:	DUPE_CHECK_DAYS in glftpd.conf changed to just DUPE_CHECK and reads
+	in an additional parameter.  A path to an external script may be 
+	specified which will be ran before a file is actually transferred.
+	Exit status of 1 denies upload, 0 allows it to continue.
+	Simple dupescript included as sample.
+Change: nodupechk, nostatdir, creditdir, freedldir all moved over to using
+	the same wildcard matching scheme that was implemented in 1.13.4.
+	Add the /* at the end of your paths if you need them.
+Change: ! & " characters now not allowed when using 'site unfo'
+Change: dirlog updates modified to show total files/bytes for all files directly
+	below it including all those within subdirs.
+	This should benefit ISO sites mostly due to the majority of their
+	releases containing subdirs of CD volumes.
+Fix:	Changing the DELETED flag via the 'site change <user> flags' command 
+	wasn't properly setting the ownership of the userfile.  Only deluser/
+	readd will be allowed to modify this flag from now on.
+New:	ignore_noop in glftpd.conf.  Usual [1/0] On/Off usage.
+	Ignores the NOOP command and keeps that idle time ticking.. :)
+Fix:	Abort fix on Downloads.
+	 
+v1.13.5
+Change: SITE NEW, SITE NUKES, and SITE UNNUKES rewritten.
+	100% speed improvement from earlier versions.
+
+v1.13.4 
+Change: glftpd.conf now will accept [:space:] anywhere and will translate
+	it into a space.  Default_tagline, sitename_long, private group
+	descriptions will most likely need this.
+	This also makes it possible to specify arguments on the command line
+	of your custom site cmds.
+Change: New wildcard matching scheme employed.  Directory wildcard matching
+	is as it should be finally.  Is now able to limit new directory
+	announcements, nukes, etc,, to a specific directory.
+	See sample glftpd.conf for some great samples and explanations.
+Change: Force_Tagline and Default_Tagline in glftpd have been combined.
+	See sample glftpd.conf file.
+Change: SITE SEARCH does it matching like that of site dupe. 
+	(Wildcards not used)
+New:	Gadmins can be assigned their own default.<group> userfiles
+	as templates to be used when they add a user.
+	Defaults to the default.user file if none is found.
+	Suggest chown 99.99 all default.* files to keep them out of the
+	displays.
+Change: SITE USERS now accepts a GROUP NAME along with DELETED,
+	SITEOP, GADMIN, and LEECH in its lists of optional arguments.
+	SITE LGRP seems obsolete now and has been removed.
+Fix:	With the port bouncer enabled certain fxp clients were unable
+	to transfer files through the bounce.  Broke in 1.13.3 with 
+	the stupid security enhancements that were put into place.  
+
+v1.13.3 
+New:	DOC file included.  Supplied & maintained by icetrain.
+New:	SITE GRPLOG now has a build in help display showing the current
+	group login restrictions.
+New:	PGROUP environment variable (Just the 1st private group of user)
+Fix:	Dirlogscanner broke with the new userfile format.  Also in add-ons.
+Fix:	More security enhancements made when the port_bouncer is in use.
+Fix:	RMD associated with the delete right in glftpd.conf now.
+Fix:	RENAME, & DELETE by default now only allow those who own the file/dir to
+	rename or delete unless they have the NUKE flag set.
+	If the rename or delete right is set to yes in the rights section of
+	glftpd.conf, anyone will be allowed to rename or delete another's
+	file/dir.  Samples included with the packaged glftpd.conf for better
+	clarification.
+Fix:	A check for invalid flag values put into the SITE CHANGE function.
+	Invalid flag values won't be written out to the userfile.
+Fix:	SITE UNFO broke.  Thanks to Devestato for tracking down
+	the creation of those strange files in the users dir.
+New:	FILE_NAMES in glftpd.conf has the caps_first_letter option.
+	Same setup as DIR_NAMES below it.
+New:	%= COOKIE,  SAMPLE: %=123/dir/file  '123' are flag values.  
+	If the user has any one of them set then the specified file is 
+	displayed.  NOTE: the path must begin with a '/' 
+	See the site.help file for more samples.
+New:	USEREDIT flag added.  Basically a GADMIN for any group on site, 
+	and given limited access to some of the 'site change' commands. 
+Fix:	GRPPATHs slightly modified and is now accurate.  Use spaces or tabs
+	to separate groups/users instead of commas from now on.
+Fix:	Private groups not showing up in the 'site chgrp user' listing.
+Change  Private groups now shown on the 'site group' listings.
+
+v1.13.2
+New:    New install text files thanks to Fenris.
+Fix:	The group ids popping up instead of names when comments are 
+	included in the group file.
+New:	Date Created Cookie for the 'SITE USER' display.  See README.COOKIES
+Fix:	Changing flags for users who are currently online.
+	This should also take of those strange named userfiles showing up
+	in the users directory.
+Change: Flag of KILL allows the user to use SITE SWHO
+Fix:	SITEOPS can now kick themselves.. :)
+Fix:	Some colors displayed in SITE GROUP was crashing the daemon on FBSD.
+ 
+v1.13.1
+Fix:	SITE WHO displaying the same user/group/unfo information.
+Change: ftpwho.c (pidfile struct) has tagline added.
+Fix:	%! was removed in 1.13.0.
+New:	STATS bin - UNTESTED
+	Also does not require SUID ROOT anymore!   Just needs read
+	access to the userfiles and glftpd.conf.
+New: 	glconvert bin to convert from the old < 1.13.0 versions.
+	This does not set the flags of users on the site, so all siteops,
+	nukers, and gadmins will need to have their accounts modified 
+	afterwards.  BACK-UP all userfiles before using.
+	Usage:  copy to the users directory and run.
+New:	New ftpwho source available with the new struct defined.
+
+v1.13.0
+Change: TOTAL rewrite of the loading and updating of userfiles.
+	Should get rid of the old LOCK.ERR problem as well as ALOT of
+	the unnecessary disk io's.  Userfile structure regrettably has to 
+	change to become more efficient.
+Change: LEVELS are history.  FLAGS now in effect.  Thanks to KATMAN for
+	the great flag routines.
+	LOTS of code and command changes were made to make this one
+	possible. 
+Change: Internal getgrpid() call to hopefully fix the problem
+	some systems have with obtaining the group name for the show_diz
+	cookies.
+Change: If dir_names is selected to convert spaces to _'s, CWD will also
+	match.
+New:	Default site help list is displayed if no site.help file exist.
+	The site.help by levels are removed.
+Fix:	Target Directory Nuke fix.
+New:	site vers (version)
+Change: Level 25+ users being set to uid 0 is gone.  There will only be one
+	root user on the ftp site, IF the passwd file holds an entry for uid0.
+	Initially this was the glftpd user.
+Fix:    Localtime macro trimmed.
+Fix:	SITE USER now takes into account the user's last login and shows
+	the true transfer stats for that day/week/month.
+Change: Free Space cookie changed to only refresh during change dirs.
+New:	-b option.  Support for a Port Bouncer added.  The port bouncer
+	must send its output to the daemon in the following format.
+	IDNT authuser@remoteip:remotehost
+	Available remote ftp connections to the site is left up to tcpd.
+New:	SITE FLAGS <user>, available for reference.
+Fix:	Ratio Macro fixed.
+New: 	Custom 'SITE USER <USER>' display.  Two text files are used, site.txt &
+	site.extra.  Site.extra is only displayed to users displaying themselves,
+	gadmins viewing others in their group, and siteops.
+New:	All conceivable individual user cookies added / fixed.  
+Change: The group that a gadmin is responsible for is set by their primary group.
+Change: SITE CHANGE <USER> group_slots #  to change the number of open adduser
+	slots for a gadmin.
+New:    SITE CHANGE <USER> FLAGS to change someone's assigned flag values.
+	eg.  site change testusr flags +135-C
+	See SITE FLAGS for reference.
+
+v1.12.10 
+Fix:	Reset of stats.
+New: 	Total percent and group of uploader added to the show_diz cookies.
+Fix:	Receive abort fix.
+
+v1.12.9 
+Change: Directory statistics enhanced, sorted, and is user customizable via
+	show_diz.head/body/foot files.  See README.COOKIES for more goodies.
+	Original idea and look from Hackrat's own shell script.
+Fix:    Display bug in site nfo.
+New:	Time Limits, Per LOGIN SESSION.  (set in minutes. 0 = Unlimited)
+	Support in site change added.  Help file also modified.
+New:    -e switch added for those backward places in which the week starts on 
+	Monday.  :)    Untested.
+Change: caps_first_letter in glftpd.conf merged in with "dir_names"
+	See sample glftpd.conf for available options.
+	WARNING!!!, some of the selected options may make your
+	site incompatible with certain windows ftp clients.
+
+v1.12.8 
+Fix:	FreeBSD passwd file update fix.
+Fix:	Broken file transfers "should" now be deleted and unduped.
+New:    Traffic shaping for those downloading while the file is still
+	being uploaded.
+Change: SITE DUPE has new syntax.  SITE DUPE BLAH 100
+	Default listing is still set at 20.
+Change: Default_restrict in glftpd.conf renamed to default_homedir which
+	is more accurate and should be less confusing to those who still 
+	have site restrict path relapses.
+New:    More requested CWD facelifts included.
+New:	file_names (glftpd.conf)
+	Syntax: file_names [0/1]  [lower/upper]
+	First option turns off/on the conversion of spaces to _ characters.
+	Seconds option determines case of filenames.	
+Fix:    creditcheck:  Older versions were looking for the incorrect variable 
+	name of creditdir.
+
+v1.12.7
+Fix:    Rights for those who weren't assigned to a group were always
+	denied access.
+Fix:    Users who change groups now have their effective and group ids changed
+	immediately instead of on the next login.
+Fix:    Nuke and Unnuke failing to properly execute botscript.
+Fix:	Several 'site change' fixes also in place.
+
+v1.12.6
+Fix:	Another security problem eliminated.
+Fix:	Damn rights straightened out in glftpd.conf
+New:	show_diz has a new parameter.
+	show_diz .message
+	show_diz FILE_ID.DIZ
+	Displays either or both of these files when entering dirs.
+Change: Some code changes made to make the daemon more easily portable.
+
+v1.12.5
+Fix:	The old sh was found to be incompatible with certain systems.
+	This version should now work with your original provided system's sh.
+Fix:	Bug found which under certain conditions would make uploaded files 
+	own by root.
+Change: nodirlog in glftpd.conf has been moved into the rights section of 
+	glftpd.conf as dirlog.   Enables siteops to pick which directories
+	newly made dirs will appear in the dirlog and dupedatabase files.
+	See sample glftpd.conf.
+
+v1.12.4
+Fix:	cd ~, ls ~
+Fix:	Resuming uploads disallowed because of the dupe checker, fixed.
+Fix:	Dirlogscanner fixed to work with groups without descriptions.
+	It used to report the ids instead of names in the old ver.
+Change: Some mods to zipscript, crc_check.c and sfv_check.c to serve
+	as examples for those who have ftp clients that hang during these
+	checks.
+Change: TZ variable removed in glftpd.conf.  Didn't work for redhat users
+	anyway.
+
+v1.12.3
+New:	TZ variable in glftpd.conf to set the correct timezone.
+New:	noretrieve in glftpd.conf  (man ftpd for usage)
+Change:	SITE RESTRICT PATHS ripped out!
+	Got tired of trying to work around it for all these ftp clients
+	while maintaining security.
+	Userfiles will be updated automatically as each user logs in.
+	Use of grppath's and the noretrieve features are recommended now
+	that this is history..  SEE sample glftpd.conf file.
+Change: Dupefile structure change to allow 255 characters for filenames.
+	Damn mp3 sites!!!  :)
+	Remove the old /glftpd/ftp-data/logs/dupefile database file and 
+	touch a new one before upgrading.
+
+v1.12.2  
+Change:	Statline displayed after uploads/downloads, instead of 
+	"Transfer Complete."
+Change:	.crc & .sfv files now ignored for dupes.
+Change: Some code improvements.  (Smaller daemon size)
+
+v1.12.1
+Fix:	Windows clients who use full paths to upload files failing. (bulletproof)
+
+v1.12.0  
+Change: /ftp-data/dupes removed and converted over to a single binary database
+	/ftp-data/logs/dupefile.
+	This file is maintenance free in that you shouldn't have to touch it 
+	unless you change the dupe_check_days setting in glftpd.conf.
+	Its final size is dependant on system usage and the dupe_check_days 
+	setting. 
+Change: Wildcards now used in 'SITE UNDUPE'
+New:	New wildcard compare routine for the rights section in glftpd.conf.
+	"Should" give more control using wildcards with directory paths.
+	For example:
+	upload 		*			*	yes
+	upload		/site/incoming/????	*	no
+	1st line will allow anyone (* = all groups) to upload anywhere on the site.
+	2nd line will not permit uploads directly under the dated dirs under
+		incoming, but will allow people to create directories there and 
+		upload into them.
+	This should get rid of those stray files appearing under the dated dirs.
+Fix:	'*' in the rights filters for the group field wasn't matching those users
+	who were without a group relationship.
+Fix:	username's weren't working in GRPPATHS.
+Change: *NUKED* listings removed from SITE NEW.
+Fix:	User's able to login more times than allowed FINALLY fixed, I hope.
+	
+v1.11.0 
+Change: ALL COOKIES rewritten to accept PRINTF style formats with cookies.
+	eg. %[%-15.15s]S   will limit the sitename_long to min/max length of 15.
+	All new text files are available in package for examples.
+Change: External file support to accept multi-line entries.
+Change: Auto dir completion for complete paths on a CWD.  
+	This is a patch for flashfxp users on sites which have 
+	'caps_first_letter' selected.
+New:	dl_incomplete  option in glftpd.conf.
+	dl_incomplete 0  will set the permissions on files while uploaded to
+	-rw-------.  Default is -rwx-r-xr-x to allow people access to download
+	files while they are being uploaded.
+Change: Most of the ONLINE user structure was rewritten and cleaned in hopes
+	of fixing a sporadic problem of people being able to connect to the site
+	more times than they are allowed.  FEEDBACK on whether this is a fix or not
+	is welcomed.
+Change: site.head / site.foot support removed.  Header and footer are hard coded
+	for external admin utility, siteop.
+Change: SITE UNNUKE will accept both types of directory named entries.
+	"site unnuke [NUKED].directory" or "site unnuke directory" are valid.
+Fix:    Files with nonstandard characters failing through the zipscript process.
+New: 	PATH-FILTERS: with a rip of rftpd's space support style. ie [:space:] 
+	Path filters are assigned by groups and can even be used to restrict all users
+	of a group from MKDIR/RENAME/STORE functions.
+	See sample glftpd.conf.
+New:	Settable command rights for, DELETE, NUKE, UPLOAD, and RENAME.
+	Configurable by specific directory and/or group.
+	See sample glftpd.conf for examples.
+Change: GRPPATH's redone with a new configuration style.
+	Only one directory per line allowed, but multiple groups/users may be
+	included on that same line.  See glftpd.conf.
+
+v1.10.8
+Change: SITE ZIPCHK now accepts wildcards.
+Change: TIMEZONE is now saved before the chroot call.  The old localtime file
+	is now obsolete.
+Change: A completely new ident authentication is now implemented due to possible
+	bugs in the old code.
+Fix:	site kill
+Fix:	Download/Upload bytes this call cookie.
+Fix:	Some nasty memory leaks.
+
+v1.10.7
+Change: Exempt_from_limit also exempts users from idle time limits.
+New:	Custom STAT cookies + external file support.
+New:    Additional text/body files added to /text dir to serve as samples..
+
+v1.10.6
+New:	Custom SITE NEW support.
+New:	Variable length NEW cookies.  See README.COOKIES
+New:	Custom SITE NUKE/UNNUKE support.
+New:	Variable length NUKE/UNNUKE cookies.  See README.COOKIES
+
+v1.10.5
+New:	Custom SITE WHO/SWHO support.
+	New text files added into the /text dir. (who.body, swho.head,body,foot)
+New:	Special variable length WHO cookies.  See README.COOKIES
+
+v1.10.4
+Fix:	site change <user> gadmin none
+New:	%EXEC FILENAME  cookie.
+	All files are executed under chroot and with the same external variables
+	as the site commands.   Any output from FILENAME is also displayed.
+Fix:	dupe by message.
+Fix:    nuked by message dir.
+New:    valid_ip option.  Used in glftpd.conf to specify which IP address the ftp
+	daemon should recognize on a multi-IP system.
+Change: glftpd.conf variable sitename -> sitename_long
+New:    glftpd.conf variable sitename_short
+Change: COOKIE's rewritten/reassigned in preparation for external 
+	custom file support.
+New:	Custom STATLINE  { /ftp-data/text/statline.txt }
+Change: Nuke formula.
+
+v1.10.3
+Fix:	Initial change dir fixed.
+Fix:	Permissions fix.
+Fix:	-i -o options fixed.
+
+v1.10.2
+Change:	site grpadd <group> <group nfo>
+	If group nfo is missing the entry is now made blank.
+Fix:	group file will accept a blank entry in its description field.
+Change: groups made case sensitive.
+Fix:	ls ..
+Change: Dupe checker now adds all filenames except .message, *.nfo, & *.diz.
+Change: NUKE & UNNUKE: rewritten.  Nukes recursively while ignoring .nfo, .message, .diz
+	files.
+Added:  Option in glftpd.conf to have the nuker bypass certain file sizes in its
+	determination of an empty directory.
+Fix:	Rename function to work with restrict paths.
+Fix:	More directory logging fixes.
+Change: -i -o added to the available options of glftpd.  Used within inetd.conf
+	to log incoming and or outbound xfers.  
+	Both used to be selected by default if the -l option was given. 
+	
+v1.10.1
+Fix:	Deletes using full paths, ala flash fxp.
+Fix:	Minor dirlog update improvements.
+
+v1.10.0
+New:	CUSTOM SITE CMDS..  see glftpd.conf
+New:    CUSTOM NUKE STYLE's... see glftpd.conf
+New:    SITE GRPREN.. group rename added.
+New:    New Improved LS binary
+New:	cd paths.. see glftpd.conf
+New:    cd aliases..  see glftpd.conf
+New:    Force tagline support.. see glftpd.conf
+New:    Custom paths for oneliner, requests, & lastonline.. see glftpd.conf
+New:    Custom paths for welcome, goodbye, newsfile, & banner.. see glftpd.conf
+New:    User Creation Date added in "SITE USER <USER>" display.
+Change: CMD syntax of GRPUNFO and GRPLOGINS changed to GRPNFO, GRPLOG.
+Change: groups.priv REMOVED, see glftpd.conf
+Change: msgpath REMOVED, see glftpd.conf
+Change: gpath REMOVED, see glftpd.conf
+Change: hideuser file REMOVED, see glftpd.conf
+Fix:    ABORT fixed.
+Fix:	Group nfo's not displaying in weektops.
+Fix:    file listings in Dirs with spaces not displayed.
+    
+v1.9.9
+Change: SITE SEARCH now uses the dirlog database and wildcards.
+Fix:    Downloads specified using full paths would fail. 
+New:    New ls compiled.  Old gpath limits within ls removed.
+	Dl: count now is only displayed when in color mode.
+Fix:    Invalid Nuke Factor fixed.
+
+v1.9.8
+Fix:    -l logging to glftpd.log
+Added:  %NEW10 <Specific Directory>  eg. "%NEW10 /site/Games" will list the 
+	last 10 dirs created in Games.
+
+v1.9.7	
+New:	SITE UPDATE , Updates dirlog database. (Accepts Wildcards)
+	Help file included.
+Change: Group stats fixed.
+Change: Groups dynamically allocated. (The 40 groups limit is history)
+Fix:	Rename function.
+Added:  More signal handling.  (killall glftpd was leaving behind old pid files.)
+Added:  Stale pid check/removal.  
+Fix:    DirLog logging.  Incorrect paths were being entered into the database under
+	certain conditions.
+Change: -l on the glftpd command line within inetd.conf now logs all LOGINS,
+	LOGOUTS, NEWDIRS, NUKES, and UNNUKES to a /logs/glfpd.log file which
+	has been designed to be easily parsed out for use with scripts.
+	WTMP (support) entries removed from ftpd.
+Change: Authentication modified, timeout increased.	
+
+v1.9.5
+change: ZIPSCRIPT is now ran as the REAL (logged_in) user.
+	The temp fix: chmod commands may be removed.
+	Added: command line parameters passed depending on how 
+	is was called.  SAMPLES..
+		NEWDIR /site/uploads/newdir1
+		NUKE /site/uploads/newdir1
+		UNNUKE /site/uploads/newdir1
+change: glftpd.conf  - CHECK IT OUT for new additions.
+	max_users 0  will only show the banner before disconnecting remote users.
+New:    Binary NUKELOG / DIRLOG
+	*** REMOVE your OLD DIRLOG/NUKELOG ***
+New:    STATS - all stats can take an additional parameter being the number
+	of users to list.  eg. SITE WKUP 10.  
+	Cookie support for this function is also included.
+change: /text & /help files updated.
+New:    Dirlogscanner / Nukelogscanner
+	See their help for the different display outputs.
+	glftpd.tcl has been updated to work with the new bins.
+Fix:  	Many, MANY, and many more fixes.
+Fix:	Redhat problems with SITE GRPDEL, GRPUNFO.
+New:	SITE GRPLOGINS <- changes the number of allowed logins from this group.
+New	Static ls binary recompiled to completely comply with standards.
+	Another ugly windows ftp client (cuteftp 2.5beta) which can't handle
+	special characters in the directory listings.  The only change was the
+	removal of the "Dl:" characters in front of the filenames.
+
+v1.9.1	
+Fix:	DELE / RMDIR fixes.
+New: 	nodirlog - variable in glftpd.conf.  The "nodupechk" will only handle
+	dupe checking from now on.
+New: 	USERS in gpath available.  Same syntax as with the groups.  Only
+	one user per line.
+Fix:	PASV stripping seteuid(0) from level 25 users.
+
+v1.9.0  NEW - Improved SITE NEW using a binary database.
+	NEW - Download count on files.  Must use the included LS binary.
+change: SITE UPDATE removed.  An external executable will be provided 
+	for this instead, soon.
+	NEW - glftpd.tcl   <- Addition of !new
+Fix:    SITE READD now only shows users of level 0.
+Fix:    SITENAME variable would sometimes get corrupted.
+change: SITE KICK available for gadmins against any of their lower level members.
+
+v1.8.0  NEW - SITE PURGE
+	NEW - SITE UNNUKE & SITE UNNUKES
+change: SITE GADMIN abolished.. normal ADDUSER, DELUSER, READD, ADDIP, DELIP
+	apply to GADMIN's now.
+	
+
+v1.7.0  NEW - SITE GRPADD, GRPDEL, GRPUNFO
+	Now GADMIN's can also be assigned a max number of users that they may add
+	via slots..  see site change.
+
+v1.6.4  NEW - BBS style listing of last online users.
+	%LASTON cookie, or 'site laston' to call.
+fix:    Sysloging fixed and made available with the -l logging switch in inetd.conf
+change: Login.log now logs ALL logins and logouts.  
+change: Cosmetic changes made to SITE USERS.
+
+v1.6.3  NEW command.  SITE USERS   See 'site help users' for available options.
+	glftpd.conf added site_users to custom level configs.
+fix:	Bad files were not being unduped from the dupe database.
+fix:    site gadmin addip - failing to send a reply.
+
+v1.6.1  NEW - Custom sitecmd levels (glftpd.conf)
+change: Sitecmd names / help / text files have all changed.  Lame pheard 
+	naming convention is gone...
+change: Upon max simultaneous user connections, user is not disconnected.
+change: 'SITE NEW' has a new improved look.
+fix:    Timeout values during transfer now match those in wu-beta16.
+
+v1.6.0  Fixes, fixes, and more fixes..
+	See glftpd.conf for the new / additional settings -
+	Also check out the /text & /help dirs for the names of additional
+	used text files.
+added:	NEW "nukestyle"
+	Choose between the [NUKED] or --NUKED 
+	create_nukedirs now has addition info.  ie. NUKED 1x by Sysop - dupe.
+	Nuking also gives addition info including the names of nukees and
+	sizes of nuke.
+change:	*IMPORTANT*   groups.priv & gpath should be located in the etc 
+	directory from this release on.
+added:  Static LS binary is available for the site and is required if you want 
+	hidden-group-directory support.  Paths specified in gpath
+	will become hidden to users who are not in the related group.
+added:  More COOKIES. (See the README.COOKIES file.)
+change: GroupAdmins now can see all stats for users of their same group.
+new:    STATS program with additional options including NUKETOP, 
+	ALL TIME GROUP DOWN, WEEK GROUP DOWN.
+change: msgpath now accepts wildcards. ie...
+	/site/incoming/1??? /ftp-data/msg.new
+	/site/incoming/0??? /ftp-data/msg.new
+change: 'site adduser' now accepts up to 5 ips on the command line to be added
+	to the user's stats.
+
+v1.5.0  Fixes, fixes, and more fixes..
+	See glftpd.conf for the new / additional settings.
+	All bins have been updated.
+	New group restrictions added.. see /glftpd/etc/group  for format.
+	User stats now hold nuking statistics.  See 'site user USER'
+	Support for spaces now available.  Use '{' and '}' to nuke those dirs.
+	eg.  site nuke {test dir} 1 testing
+	Several Environment Variables also Added.. See VAR.TXT
+
+v1.4.2  
+	Cosmetic fixes only.  Installation doc updated also.
+
+v1.4.1
+added:  More color cookies added. (Blink)  See /glftpd/ftp-data/README.COLOR
+
+v1.4.0
+fix:    More bugs squashed.
+added:  SITE ZIPCHK
+change: extract_nfo & file_check from glftpd.conf removed.  Internal zip checker
+	removed along with the crc32 checker.  
+	xftpd implementation of filechecking now in place ala scripts only.
+	See "/glftpd/bin/zipscript" for an example.
+
+v1.3.1
+change: Minor enhancements to SITE NFO & ZIPLIST.
+
+v1.3.0
+change: 'SITE DUPE'  Now reads from a database called dupelog in 
+	cf.datapath/logs.  "incomingdir" in /etc/glftpd.conf must be set to
+	whatever your incoming directory for new releases is. 
+	DUPE BOT TCL and external dupelog program available in /scripts.
+added:  'SITE ZIPLIST' nuff said.
+added:  'SITE NFO'  Usage: "site nfo zipfile nfofile"  If nfofile is not
+	specified then all nfo's will be displayed.
+fix:    Few login discrepancies.
+fix:    SITE DEL would sometimes announce an undupe message.
+fix:    Credit check on downloads for those users who had over 4gigs 
+	of credits and were unable to download.
+
+v1.2.5
+fix:    Problem of some windows clients (leapfxp) not able to connect to server
+	has been fixed.
+added:  New dirlogscanner program with '-r' option for alternate config files.
+	NOTE: Mucho thanks to PRICE of TFA for this great utility.
+
+v1.2.4
+change: 'Site Undupe' changed.   SITE UNDUPE WIN  will now undupe all files
+	matching the string "WIN"
+added:  Reporting with the site undupe command.
+
+v1.2.3
+added:  new 'stats' file in /glftpd/bin.  Multiple command line options 
+	supported including '-r' to use an alternate config file.
+fix:	No default config file was set.  Oops. 
+	Default configfile = /etc/glftpd.conf
+
+v1.2.2
+fix:	DELCMD was destroying transfer rate statistics.
+
+v1.2.1
+fix:    Weak password encryption method fixed.
+change: 'site userpass' changed to chpass.  See help.
+
+v1.2.0
+change: Adding users is now done internally within the site.  Script call to 
+	'ua' removed.
+added:  Weekly Allotment - user stat.  eg. A Weekly Allotment of 100000 would
+	give that user 100megs of credit at the start of the week only if 
+	their current credit status falls below that.
+
+v1.1.1
+added:  LastOnline display. %LASTONLINE cookie.   Displays the last # of users
+	to have connected to the site indicating logout time, how long they 
+	were online and how many files/megs were uploaded or downloaded 
+	if any.  NOTE: Hidden users are not added.
+change: Nuke multiplier 0 is now allowed.
+
+v1.1.0  
+change:	Groups Totally reworked.  
+	/etc/group file used instead of groups.user.  See group file for format
+	details.
+change: -o option from DIR LISTINGS removed now that GROUP structure is in place.
+change: xferlog: user@host changed to dest/source ip_address of transfer.	
+
+v1.0.2
+added:  SITE UPDATE:  Use to add all dirs in the CWD to the search database.
+added:  SITE TAKE
+
+v1.0.1
+fix:    Credit calculation after downloads grossly outta wack.
+fix:    'SITE USER XX' fixed credit display.
+fix:    Oneliners (site chat) was broke.
+change: Nuked empty directories are deleted even if "create nukedirs"
+	is selected.
+change: Empty dir nukes added to dirlog.
+added:  TCL script for newdir and nuke announcements.
+change: dupe checker now replies with ( 00d 00h 00m) format.
+
+v1.0.0
+added:  Default Num of credits to take for a nuked emptydir.
+fix:    cwd into a dir that started with a numeral would fail.
+added:  -r option for ftpwho & ftpghost utilities.
+added:  -r option for alternate config files.  Syntax: glftpd -r /etc/glftpd.conf
+fix:    Upgraded ftp daemon to wu-ftp beta16 standards.
+added:  Timeouts for data connection and block transfers.
+added:  Nukes now chmod dirs to 555.
+added:  RealTime transfer rates to statline, sitewho and ftpwho utility.
+fix:    ascii file retrievals < 51200 bytes would fail.
+added:  Nuked dirs now also added to the dirlog database.
+added:  Dirlog database now holds user taglines as well..
+added:  Server now runs in chrooted environment and still uses the normal
+        path restrictions found in bftpd.  ie. now noone has to see the 
+	dev, etc, lib dirs anymore.
+added:  chpass site cmd - allow users to change their own password on the site.
+added:  userpass site cmd - allow siteops to change other users password.
+fix:    invalid options on commandline would corrupt buffer.
+added:  Option for either the normal zip checker, the crc32 file checker
+        for isos, or no file checker at all.
+added:  Option to extract/not to extract nfos.  Extracting of nfo's is still
+	limited to those greater than 5k in size.
+added:  '-'passwd option on login to disable lreply's.  ie. Quiet mode.
+added:  '!'name  option in login to kill any prior logins on the site for
+	that user.. ie. ghost connections.
+change: Dir creations and files owned for sysops are now owned by their unique
+	uid/gid instead of root's.
+change: Nuked dirs now have the --NUKED extension.
+change: FILE_ID_DIZ filename convention changed to .message.
+fix:    Non valid archives not counted in the directory totaling.
+fix:    All the commands that didn't work hopefully work now. :)
+change: Sitewho greatly improved.
+added:  passwd file downloads forbidden.
+added:  New useradd program to comply with the chrooted env. and to add 
+	users externally.
+change: Shadowed password support removed to comply with chroot.
+added:  Freedisk space added to the statline.  Ratio removed.
+added:  site exec - Runs a script or executable located in the /bin/exec dir.
+added:  All Stats are now done internally and on demand.
+	(GWEEKUP, GWEEKDN, ALLUP, ALLDOWN, MONTHUP, MONTHDOWN,
+	WEEKUP, WEEKDOWN, DAYUP, DAYDOWN)
+added:  More viewable xfer stats within 'site user'
+added:  logging to xferlog option
+added:  -t -T options along with SITE IDLE.
+
+

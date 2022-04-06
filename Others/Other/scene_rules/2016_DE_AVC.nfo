@@ -1,0 +1,169 @@
+German AVC Retail Movie Ruleset V1.0
+
+[ General ]
+
+
+1.1  )  Die Releases muessen im Matroska Container (*.mkv) vorliegen.
+1.2  )  Der Abspann muss im vollen Umfang vorliegen und darf nicht gekuerzt
+        werden. 
+1.3  )  RAR/SFV/NFO/SAMPLE/PROOF sind notwendig.
+1.4  )  Filmtitel.JAHR.German.{DUBBED|SUBBED}.{DL}.1080p.<HDDVD|BluRay>.<AVC|MPEG2|VC1>.{PROPER|
+        READ.NFO|REPACK|RERiP}-GROUP
+        Syntax: {optional}
+        * Als Filmtitel ist der deutsche Titel zu waehlen.
+1.5.1)  Das Produktionsjahr ist Pflicht und von IMDB zu entnehmen.
+1.5.2)  Als Anlaufstelle fuer den deutschen Filmtitel gilt IMDB (also known as).
+1.6  )  Ein Sample, das dem Release beiliegen und aus dem finalen Release
+        herausgeschnitten werden muss, sollte eine Laufzeit von circa 30 Sekunden
+        haben und muss dem Release in einem Unterordner (./Sample) beiliegen.
+1.7  )  Die NFO muss Informationen zu Video- und Audiobitrate, sowie zur
+        Aufloesung enthalten.
+1.8  )  BluRay und HDDVD Sourcen dupen sich gegenseitig.
+1.9  )  Es ist Pflicht die originalen Kapitel der Source in den mkv
+        Container einzubetten.
+1.10 )  Aus Kompatibilitaetsgruenden ist es zwingend erforderlich Header Stripping
+        zu deaktivieren.
+1.11 )  Filme die aufgrund ihrer Laenge auf 2 Discs aufgeteilt wurden (wie zum Bsp.
+        "Der Schakal DC" und "Der Herr der Ringe ssE") sind in einem Stueck in 
+        eine MKV zu muxen.
+      
+
+[ Audio ]
+
+
+2.1  )  Als Audiospuren zulaessig sind alle Formate die es auf BluRay gibt.
+        Nicht erlaubt ist das encodieren von Tonspuren (zum Beispiel von DTS-HD zu DTS).
+2.2  )  Die Audiobitrate muss Untouched bleiben.        
+2.3  )  Plicht ist es sowohl die deutsche Tonspur als auch die Original Tonspur (von der 
+        Disc zu entnehmen) zu verwenden.
+2.4  )  Die korrekte Originalsprache des Films ist von IMDB zu entnehmen.
+
+2.5  )  Sollte mehr als ein Audiotrack gemuxt werden, so ist auf die korrekte
+        Standardtrackmarkierung zu achten (Standard = yes/no).
+        Deutsch - Standard
+        O-ton   - kein Standard
+
+2.6  )  Die deutsche Tonspur muss aus Kompatibilitaetsgruenden zu einigen Playern,
+        die, die Standardtrackmarkierung ausser Acht lassen als erster Track nach
+        dem Video gemuxt werden.
+ 
+        Aufbau des fertig gemuxten mkv Containers:
+
+        Track 0: Video
+        Track 1: Audio (ger)
+        Track 2: Audio (O-Ton) 
+        Track 3: Untertitel - forced (.srt)
+        Track 4: Untertitel - vollsubs (.srt) (OPTIONAL)
+        Track 5: Untertitel - forced (.srt) (O-TON)
+        Track 6: Untertitel - vollsubs (.srt) (O-TON) (OPTIONAL)
+
+
+[ Video ]
+
+
+3.1  )  Das Video muss Untouched aus der BluRay extrahiert werden. 
+
+        
+[ Untertitel ]
+
+
+4.1  )  Zwangsuntertitel (forced subs) muessen in einem text-basierten Format 
+        vorliegen, das in den mkv Container gemuxt wird. 
+4.2  )  Text-basierte Untertitel muessen als UTF-8 kodiert sein, um eine
+        korrekte Darstellung von Sonderzeichen zu gewaehrleisten.
+        Beim OCR ist zwingend auf korrekte Schreibweise zu achten.
+        Mehr als 5 selbstverschuldete Rechtschreibfehler werden nicht geduldet.
+4.3  )  Sollte mehr als ein Untertiteltrack gemuxt werden, so ist auf die
+        korrekte Standardtrackmarkierung zu achten (Standard = yes/no).
+        Deutsche forced Untertitel = standard
+        Alle weiteren Untertitel   = kein standard       
+4.4  )  Multi-language Untertitel koennen nicht als Basis fuer einen Dupe
+        dienen.
+
+4.5  )  Wenn das Release mit zweiter Tonspur gemuxxt wird (Plicht), muessen auch die 
+        Zwangsuntertitel der Originalsprache im .srt Format in den mkv Container
+        gemuxxt werden. Ebenso muessen in diesem Fall auch die Vobsubs in der Originalsprache 
+        im "Subs" Ordner (siehe 4.7) beigelegt werden, sofern diese auf der Disc vorhanden sind. 
+        Beim Erstellen der Vobsubs ist zwingend auf die korrekte Aufloesung
+        (1080p) und auf die korrekte Spracheinstellung zu achten.
+        Die "forced flags" aus dem .sup Stream muessen beibehalten werden.
+        Zusaetzlich muessen die Zwangsuntertitel zu einem seperaten Stream mit dem
+        Zusatz -forced extrahiert werden.
+        Sollten die deutschen Zwangsuntertitel in einem seperaten Stream vorliegen, 
+        so sind diese auch nochmal seperat mit dem Zusatz -forced beizulegen.
+        Beispiel: 
+        filename.idx / filename.sub = deutsche Vollsubs
+        filename-forced.idx / filename-forced.sub = deutsch (forced)
+        filename-eng.idx / filename-eng.sub = englisch
+        filename-eng-forced.idx / filename-eng-forced.sub = englisch (forced)
+
+        "eng" steht hierbei fuer das englische Sprachenkuerzel.
+        Weitere Sprachenkuerzel koennen in jeder beliebigen Suchmaschine gefunden
+        werden.
+
+        Aus Kompatibilitaetsgruenden ist das Zusammenfassen (mergen) zu einem Sub          
+        Stream nicht erlaubt.
+
+4.6  )  Die Vobsubs muessen mit hoechster Kompression in eine RAR-Datei gepackt,           
+        mit einem sfv File verifiziert und in einen "Subs" Unterordner beigelegt
+        werden.
+        Um doppelte Dateinamen zu verhindern muss die RAR-Datei anders
+        als die RAR-Dateien des Hauptfilmes benannt werden.
+
+
+[ Dubbed + Subbed ]
+
+
+5.1  )  Bei DUBBED Releases gelten die gleichen Regeln wie im Audioruleset mit 
+        dem Zusatz das DVD und Line Sources erlaubt sind.
+
+5.2  )  Bei SUBBED Releases müssen die Deutschen Full-Subs im SRT Format gemuxxt werden. 
+        Ebenso müssen diese wie unter 4.5 beschrieben beigelegt werden.
+5.3  )  Die Pflicht von DL entfällt bei SUBBED Releases.
+5.4  )  Ist der O-Ton nicht Englisch, muss dieser als Standardtrack definiert werden.
+        Falls vorhanden, muss der Englische Ton als zweiter Audiotrack verwendet werden.
+
+
+[ Packaging ]
+
+
+6.1  )  Die Datein (im klassischem Format: .r00-.r99) müssen eine Größe von 500.000.000 bytes aufweißen.
+6.2  )  Wiederherstellunginformationen in der Höhe von 1% sind Pflicht.
+6.3  )  Es ist darauf zu achten die Datein "ohne" Kompression zu erstellen.
+
+
+[ Proof ]
+
+
+7.1  )  Jedem Release muss ein Source Proof der Disc beiliegen. Die Disc muss
+        klar zu erkennen und zum eindeutigen Beweis mit einem beigelegten 
+        (nicht digital hinzugefuegtem) Group Tag versehen sein. Als Anhaltspunkt 
+        gilt hier eine Mindestaufloesung von 640 * x Pixeln. 
+        Scans sind _nicht_ erlaubt.
+        Moegliche Seriennummern oder Aufkleber die eindeutig auf die Herkunft
+        der Disc schliessen lassen muessen unkenntlich gemacht werden.
+        Zur eigenen Sicherheit ist es notwendig die EXIF Metadaten aus dem Bild
+        zu entfernen, da ansonsten Informationen ueber Standort und Kamera
+        veroeffentlicht werden koennten. Auf Fake GPS Daten ist zu verzichten.
+        Das Foto muss sich im Unterordner /Proof gepackt als *-proof.rar und mit
+        *-proof.sfv befinden.  
+        Die Group hat bis 2 Stunden nach Pre die Moeglichkeit ein vergessenes
+        Foto nachzuliefern.
+
+
+[ PROPER Releases ]
+
+
+8.1  )  Einem PROPER Release sind Screenshots / Logs vom technischen Mangel des
+        ersten Releases im Proof Unterordner beizulegen. Zum Beispiel von
+        Pixelfehlern (Glitches). Sollte das vorangegangene Release asynchron sein 
+        sind eindeutige Timestamps in der NFO Datei anzugeben.
+
+8.2  )  Unnoetige Proper Releases wie fehlende Zwangsuntertitel, Header Stripping
+        bzw. allen anderen Fehler die repariert werden koennen sind zu unterlassen. 
+        Hier genuegt es eine Batch Datei zu releasen.
+
+                                 [ Signed by ]
+   
+
+       iFPD XORBiTANT ROOR CONFiDENCiAL

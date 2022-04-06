@@ -1,0 +1,393 @@
+ллллллллллллВ            Блллллллллллллллллллллллллллллллллллллллллллллллллллллл
+ВлллллллллллВ      +     Блллллллллллллллллллллллллллллллллллллллллллллллллллллл
+ ВлллллллллллВ          Бллллллллллллллллллллллллллллллллллллллллллллллллллллллл
+ ВлллллллллллВ         БлллллллллллВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВВллл
+  ВлллллллллллВ  .     БллллллллллВ                                          ллл
+   ВлллллллллллВ      БлллллллллллВ +                                        ллл
+   ВлллллллллллВ      БллллллллллВ                     +                 .   ллл
+    ВлллллллллллВ    БллллллллллВ         .                                  ллл
+    ВлллллллллллВ   БлллллллллллВ                                            ллл
+     ВлллллллллллВ  БллллллллллВ                                   +         ллл
+      ВлллллллллллВБлллллллллллВ  ББББББ           БББББ                     ллл
+      ВлллллллллллВлллллллллллВ ББллллллБ    +   ББлллллБ         БББББ      ллл
+       ВлллллллллллллллллллллВ БлллллллллБ      БллллллллБ   .   БлллллБ     ллл
+        Влллллллллллллллллллл  БллллллллллБ    БлллллллллБ      БллллллБ     ллл
+        ВлллллллллллллллллллВ  Бллллллллллл   БллллллББББ      БлллллллБ   . ллл
+   +     ВлллллллллллллллллВ    лБББББллллл   БллллББ          БлллллллБ     ллл
+          ВллллллллллллллллВ +        Блллл  БллллБ       +   БлллБллллБ     ллл
+          ВлллллллллллллллВ           Блллл  БллллллллллБ    БлллББллллБ     ллл
+           ВлллллллллллллВ           Бллллл  БлллллллллллБ  БлллБ БллллБ     ллл
+            ВллллллллллллВ     .     БллллБ БллллллллллллБ  Бллл  БллллБ  +  ллл
+       .    ВллллллллллллВ          БллллБ  БлллллБББллллл БлллБ  БллллБ     ллл
+           ВллллллллллллллВ        БллллБ   Бллллл   Блллл БллллллллллллБ    ллл
+          ВлллллллллллллллВ       БллллБ     Блллл   Блллл БллллллллллллБ    ллл
+          ВллллллллллллллллВ    ББллллБ      Блллл   Блллл БллллллллллллБ    ллл
+      +  ВлллллллллллллллллВ   БллллллББББББ БллллБББллллл ББББББББллллБ     ллл
+         ВллллллллллллллллллВ  Блллллллллллл  БллллллллллБ        Блллл      ллл
+        ВллллллллллллллллллллВ Блллллллллллл  БлллллллллБ         Блллл      ллл
+ .     ВлллллллллллллллллллллВ Блллллллллллл    БллллллБ          Блллл      ллл
+       ВллллллллллВлллллллллллВ             лллл         пллллл              ллл
+      ВллллллллллВ БлллллллллллВ           лл   п         лл  лл             ллл
+     ВлллллллллллВ БлллллллллллВ       +   лл             лл   л        .    ллл
+     ВллллллллллВ   БлллллллллллВ          ллл     .      лл   л    +        ллл
+    ВлллллллллллВ   БлллллллллллВ            ллл          лл + л             ллл
+   ВлллллллллллВ     БлллллллллллВ   .         лл         лл   л             ллл
+   ВллллллллллВ    +  БлллллллллллВ       м    лл         лл  лл   .         ллл
+  ВлллллллллллВ       БлллллллллллВ        ллллл         мллллл              ллл
+  ВллллллллллВ         БлллллллллллВ                                         ллл
+ ВлллллллллллВ   .     Блллллллллллллллллллллллллллллллллллллллллллллллллллллллл
+ВлллллллллллВ           Бллллллллллллллллллллллллллллллллллллллллллллллллллллллл
+ВллллллллллВ             Блллллллллллллллллллллллллллллллллллллллллллллллллллллл
+лллллллллллВ         .   Блллллллллллллллллллллллллллллллллллллллллллллллллллллл
+
+   
+  German SD Retail Movie Standards V1.0 (Stand: August 2013)
+
+
+  [GENERAL]
+ 
+   - Jedes als deutsches Retail-DVDRiP/BDRiP getaggtes Release muss von einer
+     originalen, sich im Besitz der jeweiligen Group befindlichen DVD/BD
+     stammen.
+     Dies impliziert, dass sowohl Video/Audio, als auch alle anderen fuer das
+     Release verwendeten Materialen (Subtitles), aus dem selben
+     Vobset/m2ts stammen und direkt von diesem encodiert oder extrahiert werden
+     muessen. Das Benutzen von DVDR-Releases, 720p/1080p oder Full-BluRay bzw. 
+     das Klauen einer fremden Source ist untersagt.
+   - BDRiP und DVDRiP dupen sich gegenseitig.    
+   - Der Video-Codec muss H264 sein, encoded mit 8-bit-depth x264.
+   - x264 und XViD Releases dupen sich gegenseitig.  
+   - Die Verwendung der crf oder 2pass Encodingmethode ist erlaubt.      
+     Es wird empfohlen immer die aktuellste x264 Version zu verwenden. Die 
+     verwendete Version darf nicht mehr als 2 Public Builds von der bis 
+     dato aktuellsten Version zurueckliegen. 
+     Als erste Anlaufstelle gilt http://download.videolan.org/pub/x264/binaries/
+   - Die Releases muessen im Matroska Container (*.mkv) vorliegen.
+   - Der Abspann muss im vollen Umfang vorliegen und darf nicht gekuerzt
+     werden. Jedoch ist es erlaubt den Abspann mit einer niedrigeren Bitrate
+     zu encoden, sofern keine zum Film gehoerenden Szenen (Blooper, Story,
+     Outtakes, etc) enthalten sind.
+   - Intros, Outros, Betweenos (alles was nicht zum Film gehoert) sind nicht
+     erlaubt.
+   - RAR/SFV/NFO/SAMPLE/PROOF sind notwendig.
+   - Aus Kompatibilitaetsgruenden ist es zwingend erforderlich Header Stripping
+     zu deaktivieren.
+   - Filme die aufgrund ihrer Laenge auf 2 Discs aufgeteilt wurden (wie zum Bsp.
+     "Der Schakal DC" und "Der Herr der Ringe SSE") sind in einem
+     Stueck zu encoden. Schwarze oder doppelte Szenen (was bisher geschah)
+     sind zu entfernen um einen lueckenlosen Uebergang zu gewaehrleisten.
+   - Internal Releases sind fruehestens 24 Monate nach First Pre erlaubt.
+   - Internal Releases sind 'shielded from dupe only' und koennen somit fuer
+     technische Fehler geahndet werden.
+
+                                                          
+  [VIDEO]
+
+   - Breite: -Es ist 720px bei BDRiP  zu verwenden.
+             -Es ist min. 688px und max. 720px bei DVDRiP zu verwenden
+              (ausgenommen davon sind DVDs mit einer AR kleiner
+              als 1.66 <-- max. Breite 640px).
+              Es sollte die groesstmoegliche Breite gewaehlt werden
+              (unter Beruecksichtigung des AR Errors).
+   - Fuer alle Encodes mit crf muss crf19 genutzt werden, dieser gilt
+     als erste Wahl zum Encoden.
+     Ausnahmen: Sollte bei crf19 die Bitrate 2000kbps uebersteigen, muss der
+     naechste Wert (crf20, usw.) oder 2pass genutzt werden.
+     Als Anhaltspunkt gilt eine Bitrate von 2000kbps fuer den Wechsel
+     auf den naechsten crf-Wert.
+     Sollte ein anderer Wert als 19 gewaehlt werden, ist 
+     der Grund hierfuer in der nfo anzugeben.
+   - crf-Werte unter 19 und ueber 21 sind nicht erlaubt und gelten als
+     technischer Mangel.
+   - 2pass Encodes muessen min 60% und max 90% von der source an Qualitaet
+     liefern, dieses ist durch ein Kompressionscheck festzustellen.
+     2pass Encodes sind nur erlaubt falls:
+     - die Bitrate 2000kbps bei crf19 uebersteigt
+     - die Filesize bei crf zu gross wird
+     Die Filesize bei 2pass ist frei waehlbar.
+     Der Grund fuer die Verwendung von 2pass, ist in der nfo anzugeben.
+   - 2pass und crf Releases dupen sich gegenseitig -- first Release wins.
+   - Splitting auf eine bestimmte Size ist unnoetig.  
+   - Die Framerate der Source muss beibehalten werden (kein PAL-Speedup). 
+   - Level 3.1 muss respektiert werden.    
+                                                              
+  Cropping:
+  
+   - Das Bild muss komplett freigestellt sein, es duerfen keine schwarzen
+     Balken im Bild verbleiben.
+   - Die Hoehe und Breite des Videos muss ein Vielfaches von 2 sein (mod2).
+   - Overcrop/Undercrop von 1px wird toleriert, da es aus technischen
+     Gruenden nicht moeglich ist 1px zu croppen. Mehr als 1px gilt als
+     technischer Mangel.
+   - Das Seitenverhaeltnis darf maximal 0.5% von dem des Input-ARs
+     abweichen.
+   - Der Zoomfaktor des Bildes darf 100% nicht ueberschreiten (kuenstliches
+     Aufblasen des Bildes nach dem Croppen).
+     Beispiel: das Bild einer DVD Source hat nach dem Croppen nur mehr
+               704px Breite -> Output AR darf 704px nicht ueberschreiten.
+   - Der ITU-R Standard ist nicht erlaubt.
+   - Als Resizer sind Lanczos/Lanczos4, Spline36, nvindexer oder Blackman
+     erlaubt. Alle anderen (bicubic, simple etc.) sind nicht erlaubt und
+     gelten als technischer Mangel.
+     
+  Deinterlacing:
+ 
+   - Interlaced Sources muessen entsprechend deinterlaced werden.            
+   - NTSC -> PAL Normwandlungen muessen auf ihre urspruengliche Framerate  
+     restored werden (hierfuer eignet sich besonders der "restore24" Filter).
+   - Progressives Encoden von interlaced Sources ist ein technischer Mangel.
+                                                                   
+  Codec-Paramter:
+  
+   - Folgende Tabelle zeigt welche x264 Settings verwendet werden muessen:
+
+     .------------------------------------------------------------------------.
+     | Setting         | benoetigte Einstellung        | x264 default         |
+     |-----------------+-------------------------------+----------------------|
+     | b-pyramid       | normal (mode 2)               | ja                   |
+     | me              | umh, esa oder tesa            | nein (hex)           |
+     | no-fast-pskip   | benoetigt                     | nein                 |
+     | ref             | 5                             | 3                    |
+     | subme           | 7                             | ja (7)               |
+     | mbtree          | an                            | ja                   |
+     | -> rc-lookahead | 40 (default)                  | ja (40)              |
+     | trellis         | 1                             | ja (1)               |
+     | bframes         | 3                             | ja (3)               |
+     | weightb         | an                            | ja                   |
+     | aq-mode         | an (ausser Zeichentrickfilme)*| ja (1)               |
+     | mixed-refs      | an                            | ja                   |
+     | b-adapt         | 1 oder hoeher                 | ja (1)               |
+     | deblock         | an**                          | ja (0:0)             |
+     | 8x8dct          | an                            | ja                   |
+     | direct          | darf nicht "none" sein        | ja (spatial)         |
+     | merange         | 16                            | ja (16)              |
+     | no-chroma-me    | darf nicht benutzt werden     | ja                   |
+     | psy-rd          | an (1.0:0.15)                 | ja (1.0:0.0)         |
+     | partitions      | alle oder p8x8,b8x8,i8x8,i4x4 | p8x8,b8x8,i8x8,i4x4  |
+     `------------------------------------------------------------------------'
+   
+     * Der eingeschaltete aq-mode bei Zeichentrickfilmen ist nicht verboten.
+       Hier sollte fuer sich selbst entschieden werden ob eine Verwendung
+       qualitativ sinnvoll ist.
+       Bei Animationsfilmen wie zB Monster AG, Findet Nemo etc. muss der
+       aq-mode zwingend aktiviert bleiben.
+
+     ** Erlaubte Settings sind hier 0:0 / -1:-1 / -2:-2 / -3:-3
+        Je dunkler der Film, umso ein hoeherer Negativwert
+        sollte hierfuer gewaehlt werden.
+ 
+
+  [Empfohlene Encoding Settings]
+
+   - crf19:
+     x264.exe --crf 19 --level 3.1 --me umh --ref 5 --sar 1:1
+     --thread-input --no-fast-pskip --output movie.mkv movie.avs
+  
+   - 1st pass:
+     x264.exe --pass 1 --level 3.1 --me umh --ref 5 --sar 1:1
+     --stats .stats --bitrate xxxx  --no-dct-decimate 
+     --no-fast-pskip --partitions none --output NUL movie.avs
+
+   - 2nd pass:
+     x264.exe --pass 2 --level 3.1 --me umh --ref 5 --sar 1:1
+     --stats .stats --bitrate xxxx  --no-fast-pskip  
+     --thread-input --output movie.mkv movie.avs
+                                                                               
+
+  [AUDIO]
+  
+   - Als Audioformat ist nur AC3 erlaubt.
+   - Die Originalfrequenz der Source muss beibehalten werden.
+   - Tonformate sind wie folgt zu behandeln:
+
+     AC3 5.1 640kbit oder 448kbit   -> AC3 5.1 384kbit
+     AC3 5.1 384kbit oder weniger   -> beibehalten
+     DTS/LPCM 5.1                   -> AC3 5.1 384kbit
+     DTS/LPCM 2.0                   -> AC3 2.0 192kbit
+     AC3 2.0 192kbit oder weniger   -> beibehalten
+     AC3 1.0 192kbit oder weniger   -> beibehalten
+     AC3 2.0 groesser 192kbit       -> AC3 2.0 192kbit
+     AC3 1.0 groesser 192kbit       -> AC3 1.0 192kbit
+
+   - Optional darf eine zweite Tonspur (Originalton) in das Release gemuxt
+     werden.
+   - Die korrekte Originalsprache des Films ist von IMDB zu entnehmen.
+   - Sollte mehr als ein Audiotrack gemuxt werden, so ist auf die korrekte
+     Standardtrackmarkierung zu achten (Standard = yes/no).
+     Deutsch - Standard
+     O-ton   - kein Standard
+   - Die deutsche Tonspur muss aus Kompatibilitaetsgruenden zu einigen Playern,
+     die, die Standardtrackmarkierung ausser Acht lassen als erster Track nach
+     dem Video gemuxt werden.
+
+     Aufbau des fertig gemuxten mkv Containers:
+
+     Track 0: Video
+     Track 1: Audio (ger)
+     Track 2: Audio (O-Ton) (OPTIONAL)
+     Track 3: Kapitel (OPTIONAL)
+  
+     Es ist erwuenscht die originalen Kapitel der Source in den MKV
+     Container einzubetten, jedoch ist es keine Pflicht.  
+          
+                                                                               
+  [UNTERTITEL]
+  
+   - Deutsche und fremdsprachige Subtitles fuer den kompletten Film duerfen
+     im VobSub-Format beigelegt werden, sind aber keine Pflicht.
+   - Aus Kompatibilitaetsgruenden ist das Zusammenfassen (mergen) mehrerer
+     Sub Streams (Vollsubs, Audiokommentar, Forced Subs, usw.) nicht erlaubt
+     (fuer jede Sprache sind eigene Vobsubs beizulegen - Deutsch/Englisch).
+   - Beim Erstellen der Vobsubs ist zwingend auf die korrekte Aufloesung (PAL)
+     und auf die korrekte Spracheinstellung zu achten.
+   - Die "forced flags" aus dem .sup/.sub Stream muessen beibehalten werden.
+   - Die Vobsubs muessen mit hoechster Kompression in eine RAR-Datei gepackt,           
+     mit einem sfv File verifiziert und in einen "Subs" Unterordner beigelegt
+     werden.
+     Um doppelte Dateinamen zu verhindern muss die RAR-Datei anders
+     als die RAR-Dateien des Hauptfilmes benannt werden.
+
+     Beispiel: 
+     filename.idx / filename.sub = deutsche Vollsubs
+     filename-eng.idx / filename-eng.sub = englisch
+
+     "eng" steht hierbei fuer das englische Sprachenkuerzel.
+     Weitere Sprachenkuerzel koennen in jeder beliebigen Suchmaschine gefunden
+     werden.
+   - Forced.Subs* muessen im Release hardcoded enthalten sein
+     (In manchen Filmen wie z.B. "Apocalypto" gilt die komplette
+     Untertitelung des Films als Forced.Subtitle und muss somit
+     ebenfalls hardcoded und als German.Subbed getagged werden).
+     Dies gilt auch fuer deutsch untertitelte Dokumentationen.
+   - Das Fehlen von Forced Subs gilt als technischer Mangel.
+   - Um die richtige Position der Forced Subs zu gewaehrleisten, muessen fuer
+     das Hardcoden die Vobsubs verwendet werden
+     (SRT Files duerfen nicht hardcoded werden). 
+
+   * Forced.Subs:                                                               
+     Jene deutsche Subs, die auf der DVD/BluRay fuer das Untertiteln fremd-     
+     sprachiger, nicht deutsch synchronisierter Dialoge oder Aufschriften auf   
+     Schildern/Papieren eingeblendet werden.                                    
+                                                                                
+                                                                  
+ [PACKEN/WINRAR UND CO]
+  
+   - Die fertigen MKV-Container muessen in RAR-Archive (Kompressionsstufe
+     store/speichern) gepackt werden und auf 20.000.000/50.000.000 Byte grosse 
+     Files gesplittet werden, *.r99 darf dabei nicht ueberschritten werden.
+   - Erwuenscht ist die Verwendung der Benennung von Teilarchiven im alten
+     Stil (*.rar und *.rxx). Das Einbetten von Wiederherstellungs-
+     informationen in die RAR-Archive wird ausdruecklich empfohlen.
+   - Eine SFV muss beigelegt werden und Checksummen fuer
+     alle RAR-Archive des jeweiligen Releases enthalten.
+   - Eine NFO-Datei muss sich im Hauptverzeichnis des Releases befinden.
+   - Zu jedem Release muss ein Sample im MKV-Format beiliegen (/Sample),
+     welches zwischen 30 und 60 Sekunden lang sein kann und direkt aus der
+     Release-MKV extrahiert sein muss; seperates Encoden des Samples ist
+     verboten, da die Aussagekraft dadurch hinfaellig wird.
+   - Die Vobsubs muessen mit hoechster Kompression in eine RAR-Datei gepackt,
+     mit einem sfv File verifiziert und in einen "Subs" Unterordner beigelegt
+     werden.
+   - Um doppelte Dateinamen zu verhindern muessen die RAR-Dateien der Subs/Proof
+     anders als die RAR-Dateien des Hauptfilmes benannt werden.
+    
+
+ [Proof]
+
+   - Jedem Release muss ein Source Proof der Disc beiliegen. Die Disc muss
+     klar zu erkennen und zum eindeutigen Beweis mit einem beigelegten 
+     (nicht digital hinzugefuegtem) Group Tag versehen sein. Als Anhaltspunkt 
+     gilt hier eine Mindestaufloesung von 640 * x Pixeln. 
+     Scans sind _nicht_ erlaubt.
+     Moegliche Seriennummern oder Aufkleber die eindeutig auf die Herkunft
+     der Disc schliessen lassen muessen unkenntlich gemacht werden.
+     Zur eigenen Sicherheit ist es notwendig die EXIF Metadaten aus dem Bild
+     zu entfernen, da ansonsten Informationen ueber Standort und Kamera
+     veroeffentlicht werden koennten. Auf Fake GPS Daten ist zu verzichten.
+     Das Foto muss sich im Unterordner /Proof gepackt als *-proof.rar und mit
+     *-proof.sfv befinden.  
+     Die Group hat bis 2 Stunden nach Pre die Moeglichkeit ein vergessenes
+     Foto nachzuliefern.
+
+                                                                      
+ [TAGGING]
+  
+   - Das Benennen der Dateien im Release bleibt den Groups selbst ueber-
+     lassen, sie sollte aber sinnvoll und ausreichend ausfuehrlich gewaehlt
+     werden, um Dupefiles vorzubeugen.
+   - Die Verzeichnisse sollten diesem Beispiel-Tag folgen, wobei
+     <...>-Ausdruecke editiert oder entfernt werden muessen,
+     [...]-Ausdruecke sind optional und releaseabhaengig:
+  
+    <Film.Titel>.German.[SUBBED].[ANiME].[DOKU].[YEAR].[AC3].[PROPER].
+    DVDRiP.x264.[iNTERNAL].[REPACK].[READ.NFO]-<GROUP>
+
+   - Bei Cine-Filmen, deren Produktionsjahr laenger als 2 Kalenderjahre
+     zurueckliegt, enfaellt der optionale [YEAR] Tag und wird zur Pflicht.
+     Bei allen STV-Filmen enfaellt der optionale [YEAR] Tag und wird zur
+     Pflicht.
+     Das Produktionsjahr ist von IMDB zu entnehmen.  
+   - Weitere optionale Tags sind: CHRONO, DC, EXTENDED, REAL, REMASTERED, 
+     RERIP, RETAIL, SE, SUBBED, THEATRICAL, UNCUT, UNRATED          
+                                                             
+                                                                
+  [PROPER]
+  
+     Ein Proper-Release ist notwendig und valid, wenn:
+   - Ein anderer Codec als x264 verwendet wurde (bad.Codec)
+   - Eine x264 Version verwendet wurde, die mehr als 2 Public Builds
+     zurueckliegt (old.x264.version)
+   - Aufloesungen ausserhalb der gegebenen Grenzen verwendet wurden
+     (bad.resolution)
+   - Zoom Faktor hoeher als 100%
+   - X- und/oder Y-Aufloesung kein Vielfaches von 2 sind (!=mod2)
+     (bad.resolution)
+   - ITU-R Standard verwendet wurde (bad.resolution)
+   - Ein groesserer AR-Error als 0,5% vorliegt (bad.ar)
+   - Unnoetig viel Bild an den Raendern gecropped wurde (overcropped)
+   - Nicht alle schwarzen Balken gecropped wurden (bad.crop)
+   - Interlaced Frames vorliegen (interlaced.frames)
+   - Ein anderes Audioformat als AC3 verwendet wurde (bad.audio.codec)
+   - Eine nicht zulaessige Audio-Bitrate verwendet wurde (bad.audio.bitrate)
+   - Anstatt der Forced.Subs die kompletten Untertitel hardcoded wurden
+     (hardcoded.subs.throughout.whole.movie)
+   - Die Forced.Subs fehlen, nicht hardcoded oder out of sync sind
+     (missing.forced.subs bzw subs.out.of.sync)   
+   - Bildfehler/Glitches vorliegen (glitches.at.timestamps)
+   - Audio out of sync ist (audio.out.of.sync)                  
+   - Kein Proof fuer eigene Source (missing.proof)
+   - Bei einem Proper muss nicht die gleiche Source verwendet werden.                                
+                                                                  
+                                                                      
+  [NFO]
+  
+   Fuer die NFO, die jedem Release pflichtmaessig beizulegen ist, gelten
+   folgende Minimalanforderungen:
+   - Releasedatum
+   - Kinostart oder STV
+   - IMDB-Rating + Votes und IMDB-URL zum Film
+   - Laufzeit
+   - Videoaufloesung
+   - Average Videobitrate
+   - Audiobitrate                                   
+   - Proper/Repack-Notes bei Proper/Repack-Release                 
+   - Encodierverfahren crf oder 2pass -- bei crf ebenfalls die Stufe  
+   - Forced Subs falls vorhanden.                                
+
+
+   Signed by:
+   
+   CONFiDENT DESPiTE EHLE EMPiRE EPHEMERiD ETM EXQUiSiTE GMA GOREHOUNDS GVD
+   iFPD MORTAL OldsMan QoM ROOR RSG STARS WATCHABLE WOMBAT w0rm XF
+
+
+   Diese Standards gelten ab dem 19.08.2013 00:00:01 GMT+1 und finden auf
+   alle Retails Anwendung.
+   Die alten Rules (German.Retail.XviD.Rules.v2.2010-ALLSiGNEDGROUPS)
+   sind noch bis 01.09.2013 00:00:01 GMT+1 gueltig.
+   Ab 01.09.2013 00:00:01 GMT+1 ist der Einsaz des XViD Codec nicht
+   mehr erlaubt.
+
+
+
+

@@ -1,0 +1,11 @@
+Account Expire (GL1&2)
+
+Description: Used to set a date for when to add or remove a certain flag. Designed 
+to be used for temporary accounts who should be locked out at a certain date / 
+number of days, but if you use your imagination, it can do so much more.
+Glftpd 2 has account expire built in, but since you can use it for any flag at any 
+time, I'll leave it anyway.
+
+Author:   Turranius
+Version:  1.1
+Added on: 11-Sep-2003

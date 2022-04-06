@@ -1,0 +1,182 @@
+   ≤€‹  ‹‹ﬂﬂﬂ‹‹
+   €€€ ≤€›‹≤‹  ﬂ≤‹‹    ‹    ‹≤                                             ‹‹‹
+ﬂ€≤≤€€∞±≤€‹€‹‹‹€≤≤€€€€€‹‹‹€€€€≤≤€≤€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤≤±≤€≤€
+   ≤≤€                                                      ‹ﬂﬂﬂ≤‹  ﬂ≤ﬂﬁ€≤ ﬂﬂﬂ
+   ∞∞                                                             ﬂﬂ‹‹‹ﬂﬂ
+   ∞  High.Def.x264.German.Movie.Standards.v1.nfo
+
+   ∞  [ Intro ]
+
+      Das  Ziel  dieser  Rules  ist  vor  allem  eins:  Kompatibilitaet
+      Ausser    einem   Mittelklasse    PC    sollte   nichts    weiter
+      erforderlich  sein, um  Releases abspielen  zu koennen.  Rips der
+      qualitativ   hochwertigen   BluRays,  respektive  HDDVDs  sollten
+      somit   ohne  Probleme  auf  DVDs  gebrannt  werden  koennen,  um
+      sie   dann   auf   einem   HTPC  abspielen   zu   koennen.   Eine
+      Weiterverarbeitung  auf BluRay  bzw  HDDVD Medien  ist nicht  das
+      Ziel dieser Rules.
+
+      Das   Thema   Filesize  war  ein  weiterer  Schwerpunkt  bei  der
+      Ausarbeitung  dieser  Rules.  DVD9 verursacht  fuer  viele  Filme
+      jenseits  der  2-Stunden-Marke  eine zu  unnoetig  hohe  Bitrate,
+      was  erstens  zu  laengeren Downloadzeiten  fuehrt  und  zweitens
+      mehr   Space  auf   der   Festplatte   erfordert.  Des   Weiteren
+      steigen       mit       hohen       Bitraten       auch       die
+      Hardwareanforderungen.    Ziel    dieser   Rules    ist    jedoch
+      Kompatibilitaet   und  ein   Kompromiss  aus   angemessener  Size
+      sowie Qualitaet.
+
+      Diese Rules beziehen sich ausschliesslich auf 720p Releases.
+
+
+      [ Vorherige Releases ]
+
+      Diese  Rules  gelten  nicht  fuer fruehere  Releases,  und  somit
+      ist  es  nicht  erlaubt  aeltere  Releases  unter  Anwendung  der
+      neuen Rules zu propern.
+
+
+  [ General ]
+
+  1.1)  RAR/SFV/NFO/SAMPLE notwendig.
+  1.2)  RAR Groessen von 50MB, 100MB oder 150MB sind zu verwenden.
+  1.3)  Releases muessen im mkv container vorliegen,  alternativ
+        im TS container.
+  1.4)  NFO muss Informationen zu Video- und Audiobitrate, sowie
+        zur  Aufloesung enthalten.
+  1.5)  BluRay und HDDVD Sourcen dupen sich gegenseitig.
+  1.6)  Verzeichnisnamen sind folgendermassen zu waehlen:
+        Movie.Name.{YEAR}.German.<AC3|DTS>.DUBBED.{DL}.720p.
+        <HDDVD|BluRay>.x264.{PROPER|READ.NFO|REPACK}-GROUP
+
+          Syntax: {optional} <entweder|oder>
+  1.7)  KEINE Intros, Outros, Betweenos (alles was nicht zum Film
+        gehoert).
+  1.8)  Ein Sample von etwa 60sec muss beiliegen.
+        1.9.1)  Es muss vom finalen Release herausgeschnitten werden
+                und darf nicht separat encoded werden.
+        1.9.2)  Es muss in einem Unterordner des eigentlichen Releases
+                liegen > "Sample".
+
+
+  [ Groessen ]
+
+  2.1)  Erlaubte Groessen: DVD5(4479MB), [1.5xDVD5(6718MB)], oder DVD9(8138MB).
+  2.2)  Bei animierten Filmen kann auch folgende Groesse verwendet werden:
+        [0.5xDVD5(2240MB)].
+  2.3)  Diese Groessen duerfen maximal um 40MB unterschritten werden.
+  2.4)  Aufsplittung auf 2xDVD5 oder sonstige Groessen sind nicht erlaubt.
+  2.5)  Fuer extrem lange Filme kann sich die Groesse nach oben verschieben;
+        hier bitte ein vielfaches von 0.5xDVD5 (2240MB) verwenden.
+
+
+  [ Audio ]
+
+  3.1)  Erlaubte Audiospuren:
+         3.1.1) AC3(DD5.1|DD2.0|DD1.0) untouched (bevorzugt) oder erzeugt aus
+                EAC3(DD+), LPCM.
+         3.2.1) DTS untouched (bevorzugt) oder erzeugt aus DTS-HD, LPCM.
+  3.2)  Nicht erlaubte Audiospuren:
+         3.2.1) EAC3(DD+), DTS-HD, TRUEHD, LPCM, FLAC.
+         3.2.2) Bei Konzerten MHDDVD/MBLURAY ist FLAC erlaubt.
+
+  3.4)  Alle AC3 Spuren sollten 640kbps(6ch) aufweisen, ausser die Source kommt
+        mit geringerer Bitrate oder weniger Channels (stereo|mono) daher.
+  3.5)  Releases mit mehr als einer Audiospur sind erlaubt (DL/ML).
+          3.5.1)  Es sei denn die Bitrate faellt deswegen unter 4mbps.
+          3.5.2)  Versuche ein Release mit einer Tonspur mit einem DL oder ML
+                  Release zu propern sind ungueltig.
+
+
+  [ Video ]
+
+  4.1)  Minimum Bitrate darf 4000kbps nicht unterschreiten.
+           4.1.1)  Werden die 4000kbps unterschritten ist jeweils die naechst-
+                   hoehere 0.5xDVD5 Groesse zu waehlen.
+                   Beispiel: Bitrate ist < 4000kbps bei DVD5 ist 1.5xDVD5
+                             zu waehlen und erneut die Bitrate zu pruefen.
+                             Bitrate ist < 4000kbps bei 1.5xDVD5 ist DVD9
+                             zu waehlen und erneut die Bitrate zu pruefen.
+           4.1.2)  Animierte Filme koennen 4000kbps unterschreiten;
+                   eine Groesse von 0.5xDVD5 ist allerdings einzuhalten.
+
+  4.2)  Alle Filme muessen in ihrer urspruenglichen Framerate bleiben
+        (fast immer 23.976fps).
+  4.3)  Es sind Minimum 2 bframes zu verwenden.
+  4.4)  2-pass Encode ist Minimum.
+  4.5)  Schwarze Balken sind wegzucroppen.
+  4.6)  Hoehe und Breite muessen mod 16 konform sein.
+  4.7)  720p steht bedeutend fuer eine maximale Aufloesung von 1280x720.
+          4.7.1)  Folgende Aufloesungen sind zulaessig:
+                   - 1280 x 528 = 2.40 AR
+                   - 1280 x 544 = 2.35 AR
+                   - 1280 x 688 = 1.85 AR
+                   - 1280 x 720 = 1.78 AR
+                   -  960 x 720 = 1.33 AR
+          4.7.2)  Es gibt hier natuerlich Ausnahmen. Dort ist entprechend
+                  eine andere Aufloesung zu waehlen (mod 16).
+  4.8)  Was zaehlt, ist die AR der Source, und nicht was beispielsweise auf
+        zu IMDB lesen ist.
+  4.9)  --deblock kann/muss/sollte je nach Source variiert werden.
+
+
+  [ Subtitles ]
+
+  5.1)  Fehlende Subs koennen nicht als Propergrund dienen.
+        Hier ist wenn ueberhaupt ein Subpack einem neuen Release zu bevorzugen.
+  5.2)  Multi-language subtitles koennen nicht als Basis fuer einen Dupe
+        dienen.
+  5.3)  Subtitles muessen in den mkv container gemuxt werden.
+  5.4)  Es sind keine "forced" Subtitles ins Bild zu encoden.
+  5.5)  "Subs" Ordner sind verboten.
+  5.6)  Subs sollten lesbar sein! (Bitte Einstellungen ueberpruefen, falls
+        notwendig)
+  5.7)  Subs muessen in einem text-basierten Format vorliegen,
+        das in den mkv container gemuxt wird.
+
+
+  [ Encoding ]
+
+  6.0)  Zu verwendende x264 cmd-line Parameter (mindestens):
+
+  Pass 1:
+  x264.exe --pass 1 --bitrate x --threads auto --thread-input --bframes 3
+  --me dia --ref 1 --subme 1 --no-dct-decimate --partitions none --progress
+  --no-psnr --no-ssim --output NUL
+
+  Pass 2:
+  x264.exe --pass 2 --bitrate x --threads auto --bframes 3 --b-pyramid --bime
+  --weightb --b-rdo --me umh --ref 5 --mixed-refs --subme 7 --trellis 1
+  --8x8dct --no-fast-pskip --progress --no-psnr --no-ssim --output x.mkv
+
+  6.1)  Grobe Abweichungen von Regel 6.0 sind durchaus Grund fuer einen Proper
+        (z.b. Qualitaetsminderung um an Geschwindigkeit zu gewinnen, usw).
+
+
+  [ Dubbed ]
+
+  Fuer Dubbed Releases gelten dieselben Rules wie fuer Retails,
+  mit folgenden Ausnahmen:
+
+  7.0) Ein dubbed Release ist nur zulaessig, sofern keine Retail Source
+       mit deuschem Ton existiert. Sollte innerhalb der naechsten 30 Tage eine
+       Retail erscheinen ist ebenfalls kein Release zulaessig.
+  7.1) Verzeichnisnamen sind folgendermassen zu waehlen:
+       Movie.Name.YEAR.German.<AC3|DTS>.DUBBED.<DL>.720p.
+       <HDDVD/BluRay>.x264.<PROPER|READ.NFO|REPACK>-GROUP
+  7.2) Als Audiospuren sind AC3 und DTS zulaessig (von der retail DVD),
+       aber keine Lines (Cinema).
+
+
+                            [ Signed By ]
+
+                          CDDHD EMPiRE FATE
+                                                                           ∞
+           [ Diese Rules gelten ab 19.11.2007 00:00:01 GMT+1 ]
+                                                                           ∞
+                                                                           ∞
+      ‹‹ﬂﬂﬂ‹‹                                                             ±∞
+ ‹‹‹ ≤€›‹≤‹  ﬂ≤‹‹‹ﬂ                                                      €≤≤
+€≤€≤±≤≤€€€‹€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€€≤€≤≤€€€€ﬂﬂﬂ€€€€€≤≤€ﬂﬂﬂ€ﬂ€≤±∞€€≤≤€‹
+ ﬂﬂﬂ                                             ≤ﬂ    ﬂ    ﬂﬂ≤‹  ﬂ≤ﬂﬁ€≤ €€€cpN
+                                                                ﬂﬂ‹‹‹ﬂﬂ  ﬂ€≤

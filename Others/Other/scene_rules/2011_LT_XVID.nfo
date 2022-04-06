@@ -1,0 +1,216 @@
+
+
+          [  Lithuanian XviD Releasing Standards 2011 LTXDRS-2K11  ]
+
+
+ Intro:
+  - Gyvename naujame tukstantmetyje ir CD diskai jau mire, DVD grotuvai skaito 
+    didesnius .avi failus ir t.t. 
+  - Sios taisykles buvo parasytos tam, kad butu galima isgauti geriausia kokybe 
+    filmams, tiek vaizdo, tiek garso atveju.
+  - Originalios xvid taisykles yra labai senamadiskos ir minimalios, todel
+    isgaunami prasti ripai.
+
+
+ Filmo trukme:
+  - Leidziami dydziai 350MB, 700MB, 1400MB, 2100MB.
+  - Lenteleje surasyti optimalus dydziu variantai filmams pagal ju trukme:
+
+        FPS    ³  350MB  ³   700MB    ³   1400MB    ³   2100MB
+       23.976  ³   -26   ³  26:01-52  ³  52:01-104  ³  104:01-312
+       25.000  ³   -25   ³  25:01-50  ³  50:01-100  ³  100:01-300
+       29.970  ³   -20   ³  20:01-41  ³  41:01-83   ³   83:01-250
+
+  - Lenteleje surasyti minimalus dydziai relyzams. Rippinti galima ir ant
+    didesniu variantu. Pvz 99 minuciu trukmes filmas gali buti laisvai 
+    nuripintas ant 2100MB dydzio. Tai priklauso nuo to kaip ripperis pasirinks. 
+    Rekomenduojama rinktis geriausia vaizdo ir garso kokybes varianta.
+  - Skaidyti .avi i CD disku dydzius yra neprivaloma.
+  - Max dydziu paklaida 10MB. jei bus daugiau tai bus nuked uz undersized arba
+    oversized.
+
+
+ Garsas:
+  - Privalo buti MP3 VBR 2.0 arba AC3 5.1. DTS uzdraustas, norit DTS, ziurekit 
+    BluRay. MP3 CBR uzdraustas. AC3 2.0 yra beprasmis, verskit i MP3 2.0, taip
+    sutaupysit vietos vaizdo kokybei.
+  - Stereo arba Mono saltinis. Re-encodinti is Mono i Stereo ir atvirksciai,
+    DRAUDZIAMA. Re-encodinti is DTS i AC3->MP3 leidziama. Encodinti is AC3 i 
+    MP3 leidziama (tik ABR technika).
+  - Re-encodinti is prastesnio saltinio (pvz is MP3 i AC3) i geresni yra
+    DRAUDZIAMA.
+  - Padirbineti netikrus AC3, buk tai su centriniais kanalais ir t.t. 
+    DRAUDZIAMA.
+  - Megejiski, custom ir visokie kitokie vaikiski garso takeliai GRIEZTAI 
+    DRAUDZIAMI.
+  - MP3 daznis turi likti toks koks is saltinio: 48khz ar 44.1khz. Re-encodinti
+    DRAUDZIAMA.
+  - Mono ar Dual Mono (1+1) AC3 uzdrausti, naudokite Mono MP3.
+  - MP3 garsas turi buti normalizuotas. Stereo saltiniams turi buti naudojamas
+    tik stereo arba joint-stereo kodavimo metodas. Mono saltiniams mono kodavimo 
+    metodas. Dual-mono uzdrausta.
+  - Kuo mazesnis garso takelio dydis - tuo didesne vaizdo kokybe, taciau
+    prastesnis garsas. Pasirinkimas priklauso nuo ripperio.
+  - Multi-garso takeliai yra UZDRAUSTI. Tai yra xvid taisykles TIK lietuviu
+    kalbos relyzams. Niekam nereikia originalaus garso takelio ir t.t. Tam 
+    yra atskiri relyzai kitomis kalbomis.
+  - Dubliuotas ir nedubliuotas relyzas vienas kito nedupina. Naudoti LTDUB taga.
+  - Rekomenduojami irankiai: istraukti garsui PgcDemux ar DGIndex.
+    Encodinti BeSweet su/be BeLight.
+
+
+ Vaizdas:
+  - Grupiu watermarkai, logotipai, reklamos ir t.t. filmuose - UZDRAUSTI.
+  - Vaizdo saltinis turi buti prekyboje esantis/buves DVD arba BluRay. Visokie
+    screeneriai, camripai, ts ir t.t. uzdrausti.
+  - Framerate privalo buti toks pat kaip ir saltinio (pvz PAL buna 25FPS tai
+    ir ripas turi buti 25FPS). Yra ir isimciu. Pasitaiko, kad PAL reikia 
+    IVTC'inti ir taip fps nukrenta iki 24fps, tai yra leidziama. Ypac seniems
+    saltiniams, tokiems kaip NTSC2PAL ar net VHS2NTSC2PAL ir t.t.
+  - Codecas PRIVALO buti XviD (DivX yra uzdraustas).
+  - Matrica turi buti tik H.263 arba MPEG. Custom matricos uzdraustos, nes del 
+    ju puse DVD grotuvu nerodo filmu.
+  - Pixel shape turi buti kvadratas (square).
+  - Encodinant PRIVALOMA naudoti 2-pass technika, kad isgauti geriausia kokybe.
+  - Aspect ratio gali buti TIK 16:9 arba 4:3.
+  - Minimum 512 pixeliu rezoliucija (dazniausiai galioja seniems FS saltiniams).
+  - Maximum 720 pixeliu rezoliucija (rekomenduojama 640, kad 100% rodytu ant 
+    visu metu leidimo DVD grotuvu).
+  - Plotis ir aukstis turi dalintis is 16 BUTINAI.
+  - Croppingas yra privalomas, kad panaikinti ivairius juodus sonus ir t.t. kad
+    liktu tik filmo vaizdas be visokiausiu juodu remu ir t.t. Overcroppingas yra
+    uzdraustas.
+  - Relyzo AR paklaida turi buti ne didesne kaip 4% originalaus saltinio.
+  - Versti is 16:9 i 4:3 ir atvirksciai yra UZDRAUSTA. Taip gaunasi kreivas 
+    relyzas ir neimanoma ziureti nes vaizdas gaunasi suplotas ar istemptas.
+  - One-click shudas GRIEZTAI UZDRAUSTAS, visokie AutoGK ir t.t. Naudoti tik
+    VirtualDub, VirtualDubMod, GKnot ir pan.
+
+
+ Subtitrai:
+  - NEPRIVALOMI, bet rekomenduojami, ypac lietuviski.
+  - Subtitrai turi buti ipakuoti i .rar faila su maksimalia kompresija. Jiems 
+    turi buti sukurta atskira direktorija pavadinimu /Subs/ ir jie turi tureti 
+    savo atskira .sfv faila.
+  - Rekomenduojami .sub+.idx subtitrai. Taciau leidziami ir .srt.
+  - Megejiski, custom subtitrai GRIEZTAI DRAUDZIAMI.
+  - Subtitru saltinis turi buti tas pats DVD ar BluRay is kurio buvo ripintas
+    filmas. Visokie pasaliniai subtitrai yra uzdrausti.
+  - Subtitrai turi pilnai ir aiskiai matytis ziurint filma.
+  - Subtitrai turi neatsilikti nuo garso.
+  - Jeigu filmas yra perskirtas i CD dydzius, tai subtitrai irgi turi buti
+    perskirti atskirai kiekvienam .avi failui.
+  - Jeigu DVD isejo su subtitrais ir filme yra vietu kur kalbama uzsienio kalba
+    ir nera lietuvisko igarsinimo (pvz angliskame filme vienoje scenoje kalbama
+    tarkim ispaniskai), bet yra lietuviski subtitrai, tai jie yra PRIVALOMI. 
+  - Del multi-subtitru stygiaus properinti negalima. Isleiskit SUBPACK.
+  - Jeigu subtitrai yra hardcoded tai butinas tagas .SUBBED., jeigu subai 
+    atskirai, tai tago nereikia.
+  - Softcoded ar be subtitru relyzinti leidziama jei jau yra hardcoded relyzas, 
+    taciau jeigu yra softcoded ar be subu tai hardcoded relyzai draudziami.
+  - Rekomenduojami irankiai: VSRip, karpymui VobSub Cutter.
+                                                                             
+                                                                             
+ Pakavimas:                                                               
+  - Tik .avi formatas.
+  - Supakuotas i .rar failus lygiai po 20MB per .rar faila. 50MB jeigu vienas
+    .avi 2100MB dydzio.
+    Jeigu filmas kirptas i CD dydzius, tai kiekvienas .avi turi buti supakuotas
+    i atskirus .rarus ir turi tureti direktorijas CD1, CD2 ir t.t.
+  - Failu pavadinimai turi buti skirtingi (net raru pavadinimai), kad isvengti
+    dupu.
+  - Kompresija uzdrausta (Compression method: Store).
+  - Recovery record rekomenduojamas.
+  - SFV BUTINAS.
+  - NFO BUTINAS.
+  - NFO PRIVALO buti si informacija:
+      Grupes pavadinimas.
+      Filmo/relyzo pavadinimas.
+      Relyzo data.
+      DVD/teatro data (anksciausia data, premjera ir t.t.).
+      Filmo dydis ir jo trukme.
+      Rezoliucija/AR.
+      Vaizdo ir garso kokybe.
+      IMDB ar panasi nuoroda i filma.
+      RARu skaicius (pvz 76x20MB)
+  - Rekomenduojami irankiai: hkSFV, DAMN NFO Viewer, WinRAR ir pan.
+                                                                             
+                                                                             
+ Samplas:                                                                    
+  - Samplas BUTINAS ir turi buti unikalaus pavadinimo.
+  - 1-2 minuciu trukmes ir turi buti atskirame aplanke pavadinimu /Sample/.
+  - Turi buti iskirptas is nuripinto filmo, o ne atskirai nuripintas is
+    saltinio.
+  - Rekomenduojami irankiai: VirtualDub, VirtualDubMod ir pan.
+
+
+ Properiai:                                                                    
+  - Leidziami tik del techniniu trukumu (pvz bad.ivtc, interlacing, oversized).                
+  - Properiai PRIVALO buti su pastaba nfo failuose, kokia properio priezastis 
+    ir t.t.
+  - Jeigu isejo relyzas su MP3 garsu tai properinti su AC3 ir t.t. yra
+    draudziama
+  - Jeigu relyzas isejo be subu, tai vien del subu properinti draudziama. Tam 
+    yra subpack.
+  - Jeigu tinkamas fixas buvo isleistas, properinti draudziama.
+  - Visokie sizefixai ir t.t. neleidziami. Tik NFOFIX, SAMPLEFIX, SYNCFIX,
+    RARFIX ir DIRFIX.
+  - BDRip ir DVDRip vienas kita dupina.
+                                                                             
+                                                                             
+ WS vs. FS:                                                                  
+  - WS ar FS pavadinimai relyzu taguose leidziami.     
+  - WS po FS relyzo yra leidziamas. FS po WS draudziama.
+                                                                             
+                                                                             
+ Spec. filmu versijos:
+  - Leidziama: DC, EXTENDED, UNCUT, REMASTERED, UNRATED, THEATRICAL, CHRONO,   
+    SE ir t.t.
+  - Jeigu filmu versiju trukmes skiriasi, pvz UNCUT ir DC, tai nera uzskaitoma
+    kaip dupe, taciau jeigu trukme vienoda, tai skaitoma, kad dupe.
+  - Trumpesne filmo versija po ilgesnes filmo versijos yra leidziama tik su
+    salyga, kad bus spec. uztaginta (pvz THEATRICAL).
+  - Remastered filmu relysai leidziami tik tada, kai kokybe labai labai
+    skiriasi, ypac kai originalas yra juodai baltas, o remastered versija yra
+    spalvota, restauruotas vaizdas ir t.t.
+  - Visokia extra medziaga is saltinio negali buti priklijuota prie filmo, turi
+    buti isleista atskirai, su salyga, kad yra naudinga ir turi tureti .EXTRAS.
+    taga.
+
+
+ Tagai:
+  - Visi relyzai turi tureti filmo metus direktorijose.
+  - Visi relyzai turi tureti .LT. arba .LTDUB. tagus.
+  - Visi relyzai turi tureti BDRip arba DVDRip ir XviD tagus.
+    Pvz: Originalus.Filmo.Pavadinimas.2011.LT.DVDRip.XviD-Grupe
+  - NEDETI visokiu buku tagu i pavadinimus, tokiu kaip relyzo data, garso
+    formatas ir t.t. Tam skirtas nfo.
+  - Filmu platinimo tagai pvz FESTIVAL, STV, LIMITED yra leidziami.                
+  - READ.NFO tagas leidziamas tik kai yra butinai privalomas.
+  - Kiti leidziami tagai: WS, FS, PROPER, REPACK, RERip, EXTENDED, REMASTERED, 
+    RATED, UNRATED, CHRONO, THEATRICAL, DC, SE, UNCUT, INTERNAL, INT, DUBBED, 
+    SUBBED, FINAL, COLORIZED.
+    * RERip naudoti del ripinimo klaidu, REPACK del pakavimo klaidu.  
+    * RERip/REPACK turi naudoti skirtingus failu pavadinimus, nesikartoti is 
+      praeito relyzo.
+  - Leidziami zenklai tagams (jokiu tarpu ar dvigubu tasku):                          
+                                
+      ABCDEFGHIJKLMNOPQRSTUVWXYZ
+      abcdefghijklmnopqrstuvwxyz
+      0123456789.-_
+
+                                                                             
+ Internalai:                                                                  
+  - Turi sekti sias taisykles taip kaip ir visi normalus relyzai.
+  - Leidziami tik praejus maziausiai 6 menesiams po pirmo relyzo.
+  - Internal apsaugo nuo dupe nuke ir internal paskirtis yra pagrinde grupes 
+    asmeniniams tikslams, archyvavimui ir t.t.
+
+
+                          [ RULES SIGNED BY ]
+
+    Founders of Lithuanian XviD Scene, ex-Ltu, the one and only active:
+                                 
+                                 PAPAi
+
+                              LTXDRS-2K11

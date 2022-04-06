@@ -1,0 +1,10 @@
+AntiLeech (GL1&2)
+
+Description: This is a script that prevents users with leech to download a release 
+until its a number of minutes old and/or has a "COMPLETE" dir in it. Lots of 
+configuration options for how you want it, who it should work on and ofcourse, 
+where it should work. 
+
+Author:   Turranius
+Version:  1.0
+Added on: 24-Dec-2003

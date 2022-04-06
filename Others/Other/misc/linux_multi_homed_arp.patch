@@ -1,0 +1,12 @@
+--- ./arp.c     2004-06-16 07:19:52.000000000 +0200
++++ ./arp.c.new 2004-07-12 23:50:12.000000000 +0200
+@@ -832,7 +832,8 @@
+        }
+
+        if (arp->ar_op == htons(ARPOP_REQUEST) &&
+-           ip_route_input(skb, tip, sip, 0, dev) == 0) {
++           ip_route_input(skb, tip, sip, 0, dev) == 0 &&
++           dev == ip_dev_find(tip)) {
+
+                rt = (struct rtable*)skb->dst;
+                addr_type = rt->rt_type;

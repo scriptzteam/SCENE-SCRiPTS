@@ -1,0 +1,35 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³                                                                                       ³
+³                          [ WiiU - Release Standards 2016]                             ³
+³                                                                                       ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                                       ³
+³ 1.1) Releases must be packed in RAR. SFV and NFO must be included.                    ³
+³ 1.2) Rars must be in multiples of 50 MB, no more than 99 files.                       ³
+³ 1.3) First working format that has English language wins; File Format or .WUD         ³
+³    1.3.1) File Format must be compressed with M1 (fastest) or better.                 ³
+³    1.3.2) .WUD must be RAR5, using 512 MB dictionary with Best compression method.    ³
+³ 1.4) The game rip must have the following dir structure for File Format rips:         ³
+³     Gamename/                                                                         ³
+³            code /                                                                     ³
+³            content/                                                                   ³
+³            meta /                                                                     ³
+³      The full game with the 3 folders in Gamename folder                              ³
+³ 1.5) If a game is re-released for having additional foreign languages, the            ³
+³      dir must be tagged MULTI and the nfo must specify which additional               ³
+³      languages are included. Dupes from other regions without new languages           ³
+³      or new content are not allowed                                                   ³
+³ 1.6) The dirname will NOT have a region tag like EUR, USA etc. The source             ³
+³      region must be included in the nfo instead.                                      ³
+³                                                                                       ³
+³      Suggested directory format:                                                      ³
+³       Game_Name_WiiU-GRPNAME                                                          ³
+³       Game_Name_PROPER/READNFO/REPACK_WiiU-GRPNAME                                    ³
+³       Game_Name_MULTI_PROPER/READNFO/REPACK_WiiU-GRPNAME                              ³
+³                                                                                       ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                                       ³
+³ These rules are signed and will be followed by following groups in alphabetic order:  ³
+³ GLoBAL, iCON, LiGHTFORCE, PACT, RETRiBUTiON, VENOM, WiiERD, WiiZARD                   ³
+³                                                                                       ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

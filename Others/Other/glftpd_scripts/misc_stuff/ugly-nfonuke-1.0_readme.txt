@@ -1,0 +1,42 @@
+README for ugly-nfonuke 1.0
+
+ * ABOUT
+
+Nfonuke scans a list of dirs for directories of a defined minimum age that are
+missing NFOs, and nukes them with a specified nuke multiplier.  It allows the
+user to specify a list of patterns that, if matched, will be exempted from
+nuking.  The script is designed for use with crontab.
+
+Nfonuke works on an assumption: if a directory contains a SFV somewhere in its
+hierarchy, then in all cases it also must contain an NFO in its hierarchy too.  
+Basically, if a directory does not have a SFV, it may not have a NFO, so it
+won't be nuked by the script.   This is often the case in "sample fixes" and
+similar, which may only contain an AVI/MPG.
+
+It does not matter if a dir contains an NFO within a subdir, it won't get
+nuked.
+
+ * INSTALLATION AND CONFIGURATION
+
+Copy nfonuke.sh to the directory you want it executed and 'chmod 755' it.  The
+script requires a (preferably) dedicated login for nuking, so add a user to
+your site with the +4A flags.
+
+Open the script in an editor and change the default configuration.
+
+Add a line to crontab ('crontab -e') similar to this:
+
+  * */4 * * *   /jail/glftpd/bin/nfonuke.sh
+
+The above line will execute the script every 4 hours.  Note that the script
+does not need to be placed in the glftpd/bin directory.
+
+FreeBSD users will need to install sh-utils (available in the ports tree as
+misc/sh-utils) for this script to work.
+
+ * CONTACT
+
+Please send bug reports to:
+
+ - ugly on EFNet
+

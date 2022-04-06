@@ -1,0 +1,35 @@
+Jehsom's mp3links
+-----------------
+
+This program is for use on mp3 sites. It goes through every release on the
+site, and creates a very nice looking and easily navigable index of these
+releases, by creating symlinks in the directories you specify.
+
+You should configure the script by modifying the settings near the top, and
+then place the script in root's crontab so it runs once a day or so:
+    
+    20 04 * * *     /glftpd/bin/mp3links.cron
+
+Make sure mp3info by Cedric Tefft is in root's path when this script runs, or
+else modify the script to use the full path to mp3info.
+
+The GROUP linking looks at the portion of the release directory after the last
+'-', and categorizes the release in that directory. So a rls named Hey_You-FOO
+would be indexed in your GROUP_DIR (see the configuration in the script) under
+the subdirectory FOO.
+
+The GENRE linking requires mp3info by Cedric Tefft. It finds an mp3 in each of
+the rls directories, and links the rls's into the appropriate genre directory
+under your GENRE_DIR, or "Unknown" if the genre could not be extracted.
+
+The ALPHA linking looks at the name of the rls dir, and indexes it under your
+ALPHA_DIR. It first creates a subdir for the first letter of the rls, then
+places the rls link under that. So for example, the Hey_You-FOO rls mentioned
+above would be linked to by $ALPHA_DIR/H/Hey_You-FOO.  If a rls name starts
+with VA-, VA_, Various, etc., it will be filed under a directory called
+"Various" rather than "V", as the V folder will otherwise become cluttered :)
+
+I hope you enjoy this script. If you have trouble with it, email me at
+jehsom@jehsom.com, or catch me on EFnet as jehsom, in #glftpd.
+
+- Jehsom

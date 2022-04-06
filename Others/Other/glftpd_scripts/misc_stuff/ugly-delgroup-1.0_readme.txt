@@ -1,0 +1,52 @@
+README for ugly-delgroup 1.0
+
+ * ABOUT
+
+Delgroup allows siteops to delete a group and all the users in it with one
+command.  The script takes two arguments: -force and -purge. The '-force' flag
+overrides the script's default behavior by deleting users who are in other
+groups besides the one the user is deleting.  The '-purge' flag deletes users,
+purges them, changes multi-group users out of the group (if '-force' wasn't
+specified), and finally deletes the group itself. If a user that is to be
+deleted is logged into the site at the time, (s)he will be kicked first before
+being deleted/purged.  Lastly, the script can also readd deleted users (if
+'-purge' wasn't specified).  Group name is case insensitive.
+
+ * INSTALLATION AND CONFIGURATION
+
+Copy delgroup.sh to your glftpd/bin dir and 'chmod 755' it.  The script makes
+use of a (preferably) dedicated siteop user, so add a user to the site with
+the following flags: +14D (siteop, exempt, and kick).
+
+Open the script in an editor and change the ftp username/pass/host/ip.
+
+This script requires that 'lftp' be present in your glftpd/bin dir.  If your
+lftp binary is dynamically linked, which it likely is, then you will have to
+copy a number of libraries into your glftpd/lib dir.  Use 'ldd /path/to/lftp'
+for a list of required libraries and their paths.  If you're using lftp+TLS you
+will need to create the 'random' dev.  To do this, enter:
+
+ 'mknod /jail/glftpd/dev/random c 1 8' in Linux 
+
+ 'mknod /jail/glftpd/dev/random c 2 3' in FreeBSD
+
+ 'mknod /jail/glftpd/dev/random c 45 0' in OpenBSD
+
+ 'chmod 666 /jail/glftpd/dev/random' in all OSes
+
+Lastly, add these lines to glftpd.conf:
+
+ site_cmd DELGROUP       EXEC    /bin/delgroup.sh
+ site_cmd READDGROUP     EXEC    /bin/delgroup.sh -readd
+ 
+ custom-delgroup         1
+ custom-readdgroup       1
+
+Use 'site delgroup [-force] [-purge] <group>' and 'site readdgroup <group>'.
+
+ * CONTACT
+
+Please report bugs to:
+
+ - ugly on EFNet
+

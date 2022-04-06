@@ -1,0 +1,39 @@
+-----------------
+TRIAL QUOTA V.1.4
+-----------------
+### NEWS ###
+
+v1.4
+----
+It fucked up the dates when a new month was started.. now it works fine again.
+
+v1.3
+----
+Fixed so users in the trial group that checked there quota got the right message.
+
+v1.2
+----
+Added a crontab that can delete users if they fail quota and will make 
+log the month stats. Users must have been added for the hole month to need to 
+pass quota. 
+
+### INSTALLATION ###
+Edit all .sh files and the .tcl file.
+Copy all .sh files to your glftpd bin directory.
+Change all .sh files to chmod a+x
+Copy the tcl file to your sitebots eggdrop script dir.
+Add it to you eggdrop config file.
+Type "touch /glftpd/ftp-data/logs/trial" and
+"chmod 777 /glftpd/ftp-data/logs/trial"
+Or what you changed the line to in the tcl and trials.sh 
+Make "/glftpd/ftp-data/logs/stats" chmod 777 on it.
+Add a cron "59 23 * * * /glftpd/bin/quotacron.sh"
+This will start the quota script and make logfiles in the statdir.
+If you have enabled auto delete on users that have faild quota the script 
+will check the date and delete if it's time for that.
+That's about all. Hope you find it usefull. Atleast if works for or needs. 
+And remember to add reset to you crontab...
+0  0 * * *      /glftpd/bin/reset
+-
+
+TRIAL QUOTA (C)  wh3e@hugbox.net / vip3r@i386.net

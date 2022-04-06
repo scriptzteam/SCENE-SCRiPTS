@@ -1,0 +1,36 @@
+#!/bin/bash
+#----------------------------------------------------------------------------#
+#  Name:         FTP-Backup                                                  #
+#  Version:      1.0                                                         #
+#  Last Updated: 2002-05-03                                                  #
+#  Author:       loadet (C) 2002                                             #
+#  Contact:      loadet on EFNet or loadet@gbit.dk                           #
+#  Usage:        ./FTP-Backup.sh (run from crontab)                          #
+#  Notes:        This script makes backup of important files and ftp them.   #
+#  Requirements: rm zip ncftp                                                #
+#----------------------------------------------------------------------------#
+#  Thnx to Zio for getting me started on this with inspiration               #
+#    from his mail Backuper script :]                                        #
+#----------------------------------------------------------------------------#
+
+# Path to store the temporary zipfile.
+path="/tmp";
+
+# Name of the zipfile.
+filename="site_backup_`date +%Y-%m-%d`.zip";
+
+ip="ftp.backup.com";
+login="loadet";
+password="rules";
+port="666";
+destination="/incoming/backup"
+
+#The backup process. (change to your needs)
+zip -q $path/$filename /glftpd/ftp-data/users/*
+zip -q $path/$filename /glftpd/etc/group
+zip -q $path/$filename /glftpd/etc/passwd
+zip -q $path/$filename /etc/glftpd.conf
+zip -q $path/$filename /glftpd/etc/pre.cfg
+
+# Comment out the line below if you don't want the zipfile to be ftp'd and removed.
+ncftpput -u $login -p $password -P $port $ip $destination $path/$filename -DD

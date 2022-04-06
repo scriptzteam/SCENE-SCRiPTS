@@ -1,0 +1,130 @@
+                                  _______
+                               \ \\     |
+                                   \     \
+                                   | .    \\ \
+                               ..  | :     \  ..
+                             . ..  | :     |  .. .
+                             : ::  | :     |  :: :
+                             i ii  | :     |  ii i
+                       -|----| ##  | ::    |  ## |----|-
+                  |--|  |    | ##  | ::    |  ## |    |  |--|-,y$     ,
+          -  ---|-|--|--|----| ##  | :::.  |  ## |----|--|--|$$$l-  - jy
+        __________  _______ _________ _______  ____  ________ 7$$,   ,$$
+      //_______   \/ _____//____   _//____   \/  _/_/_    ___|_ §$$s$$7'
+    - ---_\    ___/ _\    \\        _    ____/  _\    \  _\   \\-y$$$y,-- -
+         \______\________  \\   \___\\____\\__________\\_______,$$' "7$
+                         \_______\ .       .  __              ,$$i ol
+          -  ---|-|--|--|----i mm  |   ::: |  ## |----|--|--|-$$$$-  -
+                  |--|  |    | ##  |    :: |  ## |    |  |--|
+                       -|----| 00  |    :: |  00 |----|-
+                               oo  |     : |  oo
+           ..   ____________   ..  |     : |  ..   ____________   ..
+           .. __)          //______|     : |______\\          (__ ..
+           .. \.                                               ./ ..
+           :: |:             Perplex presents you:             :| ::
+           :: |:    GlFTPd.Traffic.v1.0.EGGDROP.TCL-PERPLEX    :| ::
+           :: |:                                               :| ::
+        ...:: |:                                               :| ::...
+        :: ,-\\    coder ......: TEAM-PERPLEX                   //-, ::
+      ..:: |  \\-  type .......: EGGDROP TCL SCRIPT           -//  | ::..
+      _____|  |:   system .....: INDEPENDENT                   :|  |_____
+    __)       |:   size/discs .: 1 x 2kb                       :|       (__
+    \.        |:   date .......: 02-10-2004                    :|        ./
+    |:        |:                                               :|        :|
+    |:        |/-----------------------------------------------\|        :|
+    |:                   --[ d e s c r i p t i o n ]--                   :|
+    |: Displays traffic statistics to the channel the command was        :|
+    |: triggered in                                                      :|
+    |:                                                                   :|
+    |:                     --[ R E A D  T H i S ]--                      :|
+    |:  ty for reading this :)                                           :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:        --[ i n s t a l l a t i o n ]--        :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //  - read & config the top of the tcl           \\  | ....
+        :: |_//   - put it into eggdrop/scripts dir             \\_| ::
+        ::... |   - add source scripts/glftpd-traffic.tcl       | ...::
+        :: ,-\\     to your eggdrop config file                 //-, ::
+      ..:: |  \\-                                             -//  | ::..
+      _____|  |:                                               :|  |_____
+    __)       |:                                               :|       (__
+    \.        |:                                               :|        ./
+    |:        |/-----------------------------------------------\|        :|
+    |:                     --[ a b o u t   p p x ]--                     :|
+    |:                                                                   :|
+    |:  since test (the elite scripting team, the one and only real      :|
+    |:  scene related scripting group so far) faded away some years      :|
+    |:  ago, the scene was in urgent need of a new group of hard-        :|
+    |:  working and dedicated coders and scripters. again, most          :|
+    |:  groups lack of some experienced and skilled individuals to       :|
+    |:  fulfil their needs. that`s the hole perplex jumps in.            :|
+    |:  we cover all kinds of scripting and coding imaginable. from      :|
+    |:  asm coded executable packers and crypters to release database    :|
+    |:  scripts for eggdrops. we also offer help on decent ftp sites     :|
+    |:  to get them working correctly and running smooth. just drop      :|
+    |:  us a message in our irc chan.                                    :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:                --[ n e w s ]--                :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //  *  alive and kickin'                         \\  | ....
+        :: |_//                                                 \\_| ::
+        ::... |                                                    | ...::
+        :: ,-\\                                                 //-, ::
+      ..:: |  \\-                                             -//  | ::..
+      _____|  |:                                               :|  |_____
+    __)       |:                                               :|       (__
+    \.        |:                                               :|        ./
+    |:        |/-----------------------------------------------\|        :|
+    |:                   --[ a p p l i c a t i o n ]--                   :|
+    |:                                                                   :|
+    |:  if you think you`ve got the balls for a group like this, don`t   :|
+    |:  hesitate to contact us using the information listed below.       :|
+    |:  remember, we only take skilled and loyal people.                 :|
+    |:                                                                   :|
+    |:  currently, weve got open positions for:                          :|
+    |:                                                                   :|
+    |:  - experienced and skilled coders and scripters.                  :|
+    |:    (c, asm, tcl, shell, perl, etc)                                :|
+    |:  - shell box suppliers (10mbit static and above, no bbb)          :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:        --[ c o n t a c t   i n f o ]--        :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //  IRC    : #ppx @ efnet                        \\  | ....
+        :: |_//   WWW    : NONE                                 \\_| ::
+        ::... |   E-MAIL : NONE                                 | ...::
+        :: ,-\\                                                 //-, ::
+      ..:: |  \\- WE WONT HAND OUT OUR RELEASES VIA EMAIL!    -//  | ::..
+      _____|  |:  ALSO, DON`T ASK FOR TRADING SCRIPTS!         :|  |_____
+    __)       |:                                               :|       (__
+    \.        |/-----------------------------------------------\|        ./
+    |:                       --[ m e m b e r s ]--                       :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                        * no need to list *                        :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:                                                                   :|
+    |:        |\-----------------------------------------------/|        :|
+    /__       |:           --[ g r e e t i n g s ]--           :|       __\
+       )____  |:                                               :|  ____(
+      .... |  //    BACKLASH - DYNASTY - cRo - ACME - CLASS    \\  | ....
+        :: |_//      RELOADED - CORE -  TRSI - TDA - MYTH       \\_| ::
+        ::... |:                                               :| ...::
+           :: |:      ALL OUR FRiENDS AND ESPECiALLY YOU!      :| ::
+           :: |:                                               :| ::
+           .. |___    ___  ___  ____  ___  _    ___  _  __   ___| ..
+                //--- \\-' \\/_ \\-<  \\-' \\_. \\/_ \\/  ---\\
+                         ____ (c)  perplex mmiii ____/\\

@@ -1,0 +1,153 @@
+
+
+
+
+  --------======== The Windows Media Video Releasing Standards v3.5 for Blu-Ray and HDDVD ========--------
+    
+                   --------======== Released on May 26th, 2009 ========--------
+         
+
+
+Introduction:	
+
+	     WMV is equal in quality to x264. Many people feel as if WMV-HD is redundant because of 
+        the x264 scene. This simply is not true because of the compatibility of WMV-HD. It can be 
+        played on the X360 and HTPC's; x264 is restricted to HTPC's. The only reason many people are 
+        against WMV-HD is because it's Microsoft. Fact is, many movie studios utilize the VC-1 codec
+        for their retail BD-ROMs.
+
+
+
+SECTION I: Video
+
+
+
+	     Video size is determined by Minimum Bitrates
+	
+        101: Source must be HDDVD or Blu-Ray. 
+              No re-encoding of any other source is allowed, i.e. x264!
+        102: 720p must have a minimum bitrate of 4000 kbps.
+        103: 1080p must have a minimum bitrate of 9000 kbps, and must be DVD9 or DVD9+5. If
+              the movie has a short runtime, see rules 150-153. 
+        104: Peak bitrate limits must be constrained to 14,500 kbps.
+        105: If the bitrate is lower than 4000kbps for 720p DVD5, DVD9 720p is required.
+        106: Resolution must be no less then 720p and NO GREATER then 1080 
+              If source is 1088, it must be cropped to 1080 due to known 360 problem with 1088 resolution.
+        107: Custom resolution is allowed, either OAR or MOD 16 is acceptable.        
+        108: Video codec MUST be Windows Media 9 Advanced Profile (VC-1).
+        109: All releases must be encoded with 2-pass VBR.
+        110: Whether 720p or 1080p is used is solely at the ripper's discretion.
+              However, minimum bitrates must be followed as outlined in rules 102 & 103.
+        111: Discs must be fully used when encoding. Thus,
+              DVD5 must be no less than 4.0 gb
+              DVD9 must be no less than 7.8 gb
+              DVD9+DVD5 must be no less than 11.8 gb
+        112: Intro and credits are to be kept intact; removing them is grounds for a proper.
+        113: Resolution dupe rules are as follows:
+              720p dupes 1080p
+              1080p does not dupe 720p 
+        114: Intros and watermarks are NOT allowed.
+	
+             TV Episodes & Short Films
+
+        150: 720p  - 1 hour or less     - Minimum size 1.1 gb
+        151: 720p  - 30 minutes or less - Minimum size 750 mb
+        152: 1080p - 1 hour or less     - Minimum size 2.0 gb
+        153: 1080p - 30 minutes or less - Minimum size 1.3 gb
+ 
+             Animated/Anime Titles
+        
+        160: All rules apply with the following exception:
+              There is no minimum filesize requirement as long as, 
+              720p  is 4000kbps or above
+	        1080p is 9000kbps or above		
+                          
+		
+SECTION II: Audio	
+	
+
+
+      201: Audio must be a minimum of 640 kbps WMA3 Pro 5.1.
+             The only excpetion is if the source kbps is lower than 640 kbps 
+             or the source contains only 2.0 or mono audio tracks.
+	202: Encoded audio channels must match source with correct channels mapped. 
+             Upmixing is prohibited.              
+	203: Must be 24bit or 16bit audio unless source is less.
+	204: English audio is to be use if it's the native language on the disc.
+      205: If English is not the native audio on the disc do A or B and always C: 
+	       A: Add hardcoded English subs and native audio.
+             B: Use dubbed English audio track.
+               C: Follow directory naming rule 408.
+	206: Audio can be either CBR or VBR and 1 Pass is sufficient.
+
+
+
+SECTION III: Subtitles
+  
+
+
+        301: Subtitles are NOT required if audio is English. 
+        302: English subtitles are suggested for titles that contain non-English audio segments when
+             English is the primary audio language.
+             
+
+
+SECTION IV: Packaging 
+
+
+
+	  401: WMV must be in RAR.
+        402: Recovery record must be used when RARing.
+        403: SFV, NFO, and Sample are required for all releases.
+	  404: Sample must be at least 60 seconds in duration.
+	  405: NFO MUST state the following information:
+              VIDEO bitrate
+              AUDIO bitrate
+              VIDEO resolution
+              AUDIO language 
+              If Subs are HARDCODED.
+        406: RAR filesizes
+              DVD5   - 50 mb  or 50,000,000 bytes
+              DVD9   - 100 mb or 100,000,000 bytes
+              DVD9+5 - 150 mb or 150,000,000 bytes
+        407: 2 X DVD5 is not allowed as DVD9 WMV can be split very easily by the end user.
+        408: If audio is not English, audio language MUST be specified in dir name.
+        409: Directory format suggestion:
+              Movie.Title.Year.<BluRay/HDDVD>.VC1.<720p/1080p>.<AUDIO CHANNELS>.WMV-GROUP 
+        
+
+
+
+SECTION V: NUKES
+
+	
+
+        501: These rules govern the WMV-HD section, NO OTHER RULES APPLY!
+              This means all nukes based on any other rules, implied or written, are INVALID NUKES and are
+              UNACCEPTABLE. All groups releasing WMV-HD have agreed to and signed this rule set. As such, 
+              we are the only ones who will develop, implement, and mandate the rules governing the WMV-HD
+              section.
+        502: These rules do not apply to any release pre'd prior to this rule set. Any and all nukes are
+             INVALID if these rules are applied to releases that came out prior to this rule set. 
+        503: If a group wants to redo a title that was done before the WMVS2K10 rules were released, it must be
+             labeled INTERNAL.  
+        504: Propers are valid if rule 405 is not strictly adhered to. 
+        505: HDDVD and Blu-Ray sources dupe each other.
+              INTERNAL tag is required if one is already released.
+        506: Propers or nukes are NOT VALID if 302 or 409 are not followed as these are only suggestions 
+             and NOT RULES.
+        507: An EXACT timecode must be specified and screen shot of issue is required in order to nuke a 
+             release for video "glitches" or other picture qualtiy problems. Without a the EXACT timecode and
+             screenshot, any nuke for picture quailty is INVALID.
+        508: An EXACT timecode is required to nuke a release for audio problems such as out-of-sync.
+        
+
+
+
+
+        
+  --------========  The Windows Media Video Releasing Standards v3.5 for Blu-Ray and HDDVD ========--------
+  --------========                  Signed by IGUANA, NOVO, BamHD, INSECTS, SMeG           ========--------   
+
+
+

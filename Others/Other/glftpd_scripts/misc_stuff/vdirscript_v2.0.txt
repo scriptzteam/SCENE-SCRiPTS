@@ -1,0 +1,48 @@
+########################################################################
+#                        Mr V DirScript v2.0                           #
+########################################################################
+# Changes :                                                            #
+#   - v2.0: Rewroted completly the script.                             #
+#         : Added cds & affil array support                            #
+#         : SQL Support                                                #
+#         : dupeCheck exporter (CLEAN,UPDATE FLAGS)                    #
+#         : Added socketBot support                                    #
+########################################################################
+# Features:                                                            #
+# -directory Creation control                                          #
+# -independent zones-control                                           #
+# -multi-zones                                                         #
+# -mp3zone compatible                                                  #
+# -log feature                                                         #
+# -dupeCheck dataBase exporter (OPTIONAL)                              #
+########################################################################
+# Notes:                                                               #
+# Lo bro.. this is my dirScript.. the SQL Features is OPTIONAL in this #
+# script.. but what it does.. ok.. it adds to your SQL 'dupeCheck'     #
+# database the new dirs maked.. so.. the dataBase dont need to be in   #
+# the localhost coz if configured properly the dataBase can be updated #
+# by an external option every X minutes with the crontab. In all cases #
+# any kind of dataBase should be used by the script TEXT or SQL..      #
+# The database can be auto-cleaned callin the script with the 'CLEAN'  #
+# flag. ex: 'vDirscript CLEAN'.                                        #
+# For update the dataBase from the TEXT file to the SQL you must call  #
+# the script with the 'DUMP' flag. ex: 'vDirscript DUMP'               #
+# Oh god! if im correctly you can run your own dupecheck if you got a  #
+# ring of sites or friends that runs some sections.. wohoo!            #
+# We can call the script for delete an entry of the text file with the #
+# 'DEL' flag. ex: 'vDirscript DEL <RELEASE>'                           #
+# I Will try to include a 'web-frontend' in the next version ;) omg!   #
+# I Did the script the most configurable as possible to fit everywhere #
+#      Remember to report bugs to me @ my mail.. read bellow..         #
+#  If you need custom scripts done, my services are always available.  #
+########################################################################
+# Dependencies:                                                        #
+# -TCL 8.4 atleast                                                     #
+# -SQL (Oracle,MySQL,Postgress..) (OPTIONAL)                           #
+# -TCL-SQL (OPTIONAL)                                                  #
+# -BRAiN to configure it..                                             #
+########################################################################
+# Author:                               Mr_V <vampirito@vampirito.com> #
+#       Check out my latest scripts at www.grandis.nu/glftpd/          #
+#                               Thanks Turranius for host it!          #
+########################################################################

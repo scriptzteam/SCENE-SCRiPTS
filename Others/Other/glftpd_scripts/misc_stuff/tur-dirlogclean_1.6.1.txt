@@ -1,0 +1,8 @@
+DirLogClean (GL1&2)
+
+Description: Used to keep the dirlog (site search) updated by using olddirclean2 
+and glupdate on the sections you define. It also has support for dated dirs.
+
+Author:   Turranius
+Version:  1.6.1
+Added on: 23-Apr-2003

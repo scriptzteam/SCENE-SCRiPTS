@@ -1,0 +1,19 @@
+#######################################################################
+#                  MrV Advanced Vote System                           #
+#                                                                     #
+# Features:                                                           #
+#                                                                     #
+#      HTML OUTPUT>                                                   #
+#             Can be uploaded via fTP or in Local                     #
+#        IRC OUTPUT>                                                  #
+#             TopicLock                                               #
+#             Onjoin Notice                                           #
+#             Chan/Msg Commands                                       #
+#                                                                     #
+#    Wanna help making better this TCL?                               #
+#  -You must know HTML (coz i dont)                                   #
+#  -Send me some HTMLCODE Templates for it to vampirito@vampirito.com #
+#  -You got a good idea ? mail me it too ;)                           #
+#  This tcl is a small rewrote+adds of the HTMLOpVote.                #
+#                                                      Thanks         #
+#######################################################################

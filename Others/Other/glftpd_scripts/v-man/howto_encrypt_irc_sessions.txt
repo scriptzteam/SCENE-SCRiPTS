@@ -1,0 +1,338 @@
+----------------------------------------------------
+| HowTo: encrypt irc sessions from various clients |
+----------------------------------------------------
+            (last revised: May/10/2002)
+
+
+
+
+< Author/Contact >
+  official homepage      : http://vware.hypermart.net
+  author's email         : moopowah@yahoo.com
+
+
+
+
+< Purpose >
+  Let's say you use a Windows or UNIX irc client and you want to encrypt
+  all the data transmissions between you and the irc server.  Better
+  yet, let's suppose you want to encrypt all transmissions for your
+  eggdrop.  On top of this we can add the option to use a bouncer and
+  still have everything encrypted so you have a fully secure session.
+  If you fall into any of these categories then this howto is for you.
+  You will find that even if your client or irc server does not support
+  encryption, there are measures you can take to encrypt data to a
+  certain degree. :-)
+
+
+
+
+< Audience >
+  This paper is written for newbies -- plain and simple.  If you've
+  never done ssl wrapping, or if you want to see how generic ssl
+  wrapping is, read on.  After reading this you should be able to fully
+  encrypt all irc sessions you may have, regardless of what operating
+  system the client/server is on.
+
+
+
+
+< SSL Wrapping >
+  Wrapping in general means you're adding a layer to something.  In our
+  case, "something" is network traffic and we add a "layer" that
+  encrypts it.  We use stunnel to accmplish this (Secure Tunnel).
+  Stunnel encrypts and decrypts tcp network data.  You can install it on
+  different machines and have them interact.  Here's a real case: you've
+  installed a mail server at work (imap, pop3, and smtp) and you want to
+  securely send and receive mail from your home Windows machine.  You'd
+  run one stunnel at home, and another one on the mail server.
+
+  [mail client] -> [stunnel client] => [stunnel server] -> [mail server]
+  |                               |    |                               |
+   \---------HOME MACHINE--------/      \--------WORK MACHINE---------/
+
+  This ugly diagram is showing you the layer stunnel creates.  It takes
+  the unencrypted data from your mail client (denoted '->') and encrypts
+  it, then the encrypted data (denoted with '=>') is sent it to another
+  stunnel, which decrypts and finally passes it to the mail server.  So
+  the mail server doesn't know that the data was previously encrypted;
+  in fact, it doesn't care.  This same scheme can be applied to most tcp
+  services, like ftp, telnet, irc, etc.  Read the Resources section for
+  links to ssl wrappers.
+
+
+
+
+< Built-in SSL >
+  If your client has "ssl built-in" then you don't need to run the extra
+  stunnel client.  Likewise, if the server has built in ssl, you don't
+  need an stunnel server.  Here's a real case: you want a secure chat on
+  the LinkNet irc network using mIRC (or any irc client) on Windows.
+
+  [mirc irc client] -> [stunnel client]  =>  [linknet irc server]
+  |                                   |      |                  |
+   \-----------HOME MACHINE----------/        \---IRC SERVER---/
+
+  LinkNet is an irc server that has ssl built-in (that means it was
+  coded into the software).  If we used XChat on UNIX (which has
+  built-in ssl) then we wouldn't need an stunnel client; we'd go
+  directly from the XChat irc client to the LinkNet irc server.
+  Hopefully you see that this goes for any service.  Let's go through a
+  few more examples: glftpd-tls and ezbounce-ssl.  The popular ftp
+  daemon GreyLine (http://www.glftpd.com) has a built-in ssl version
+  written by Hoe titled glftpd-tls (http://pftp.suxx.sk).  He also wrote
+  a UNIX ftp client that has ssl built-in, titled pftp.  Let's say our
+  ftp server uses glftpd-tls (so it's ssl enabled) and we're using
+  FlashFXP or any ftp client that doesn't have ssl built into it.
+
+  [flashfxp ftp client] -> [stunnel client]  =>  [glftpd-tls ftp server]
+  |                                       |      |                     |
+   \-------------HOME MACHINE------------/        \-----FTP SERVER----/
+
+  Whether we use FlashFXP, or even Windows' ftp.exe, we can establish an
+  encrypted session with the server.  Last example is using eggdrop with
+  ezbounce to connect to irc.
+
+  [eggdrop] -> [stunnel client] => [ezbounce-ssl proxy] => [irc server]
+  |                           |    |                  |    |          |
+   \-------HOME MACHINE------/      \-----BOUNCER----/      \--IRCD--/
+
+   Notice that the data being transmitted between different machines is
+   always encrypted (again, marked as '=>').  The irc server could be
+   LinkNet, or it could be your own private irc server such as
+   UnrealIRCD which has built-in ssl.  It can even be hybrid with an
+   additional stunnel server in front of it (I suspect you can visualize
+   this by now, so i won't diagram ;)
+
+
+
+< Resources >
+  If you're capable of putting these pieces of the puzzle together on
+  your own, then here are a few places you can grab software from.
+      UNIX irc servers with built-in ssl:
+	  1) Unreal @ http://www.unrealircd.com
+      UNIX irc clients with built-in ssl:
+          1) XChat @ http://www.xchat.org
+	  2) http://www.sirc.hu/files/linux-client/
+      Windows irc servers with built-in ssl:
+          1) i'll pretend i didn't hear that. ;)
+      Windows irc clients with built-in ssl:
+          1) http://www.sirc.hu/files/win-client/
+  Titan and Unreal have built-in support for server to server encryption
+  (when you link servers), but the encryption algorithms used is not
+  strong.  You may want to stunnel it so you use 168 bits.  Built-in ssl
+  is more convenient but you don't need it to establish encrypted
+  sessions between tcp services because you can use stunnel.
+      UNIX SSL Wrappers
+          1) Stunnel @ http://www.stunnel.org
+      Windows SSL Wrappers
+          1) Stunnel @ http://www.stunnel.org
+	  2) WinSSLWrap @ http://pftp.suxx.sk
+	  3) Stunnel Launcher @ http://www.sirc.hu/files/windows-gui/
+  Great site for general info: http://www.sirc.hu/english.html.
+
+
+
+
+< Now the details... >
+
+---------------------------------------------------------------------
+>> Method: Windows ftp/irc client and winsslwrap to use ssl-server <<
+---------------------------------------------------------------------
+Use hoe's winsslwrap software at http://pftp.suxx.sk.  The readme has
+examples for ftp and irc.  I recommend you install the software onto an
+encrypted filesystem (like BestCrypt at http://www.jetico.com).  And
+don't forget to encrypt your pagefile, you'll be surprised what that
+wonderful file holds! :)
+
+
+-----------------------------------------------------------------------
+>> Method: Windows irc client and stunnel launcher to use ssl-server <<
+-----------------------------------------------------------------------
+An advantage to using stunnel launcher is that you can connect to
+ezbounce-ssl with it, while you can't do this with winsslwrap.  See
+below method for more details.  If you need to connect to multiple
+servers that use SSL, load up additional S-Tunnel Launchers.  Each
+instance of the program can only serve for _one_ irc server.  It gives
+you the option to have a list of saved servers, however.  The list is
+stored in the ini file.
+
+1) Get the latest SSL Wrapper from http://www.stunnel.org.
+
+2) Get the latest OpenSSL libraries from http://www.stunnel.org.
+
+3) Get S-Tunnel Launcher as a GUI for the above wrapper.
+   http://www.sirc.hu/files/windows-gui/S-Tunnel.Zip
+
+4) Install S-Tunnel Launcher (preferably to an encrypted filesystem).
+
+5) Go to S-Tunnel Launcher's installed dir where S_tunnel.exe resides.
+   You'll notice another exe, something like stunnel-#.#.exe.  Overwrite
+   this file with the SSL Wrapper you downloaded in step-1; so this
+   means delete the old stunnel-#.#.exe and rename stunnel-3.21c.exe to
+   stunnel-#.#.exe.  Also, unzip the OpenSSL libs you got in step-2 to
+   this same dir (should be two DLLs).
+
+6) Now load S-Tunnel Launcher and by default it will minimize to
+   systray.  Double-click on it to bring up the window.  Click Stop
+   Service and uncheck the Autostart option.  Place the IRC server's IP
+   into the Server textbox, and the IRC Port right under it.  To the
+   right you should have 127.0.0.1 as the Local Server and make up any
+   Local Port you'd like.  This port will be OPEN on your machine -- you
+   are creating a service!  Click Save which is to the right of the Port
+   textbox.  Finally click on Start Service.
+
+7) Load up any IRC client you like for windows, connect to the following
+   IRC server:
+       IP=127.0.0.1, PORT=<thePortYouCreatedInStep6>
+   For example, let's say you have mIRC with ircN addon.  If you type
+   /irc2 without any arguments, you'll get the syntax for it, which is:
+       /irc2 <irc server> [port] [nick] [altnick] [password]
+   So to connect to the SSL IRC Server with ircN, type:
+       /irc2 127.0.0.1 <thePortYouCreatedInStep6> myNick myAltNick
+       <serverPassword>
+   And to connect to the SSL IRC Server with a vanilla mIRC, type:
+       /server 127.0.0.1 <thePortYouCreatedInStep6> <serverPassword>
+
+
+----------------------------------------------------------------
+>> Method: eggdrop irc client with ezbounce to use ssl-server <<
+----------------------------------------------------------------
+You can also use these steps to encrypt your own session to irc using a
+bouncer.  Just ignore the eggdrop related stuff and remember that the
+command for secure outgoing connections from ezbounce is different:
+/quote CONN ssl <server>.  Conventions used: "client" means the machine
+which will have eggdrop on it.  "bouncer shell" will be the box which
+will be used as an irc bouncer with ezbounce.
+
+1) Install the latest OpenSSL libraries from http://www.openssl.org on
+   the client and bouncer shell.
+
+2) Install the latest SSL Wrapper from http://www.stunnel.org on the
+   client.
+
+3) Install your favorite eggdrop from
+   ftp://ftp.eggheads.org/pub/eggdrop/source/ on the client.
+
+4) Install the latest ezbounce with the configure switch, --with-ssl,
+   from http://druglord.freelsd.org/ezbounce/.  Let's assume this
+   bouncer shell has the hostname "my.ezbounce.shell.com".
+
+5) Run ezbounce to listen with an ssl-listen port of 7777 and have a
+   valid user account "default".  Just make sure the username is
+   "default" because the below ezbounce bot script depends on this.
+   Here's an example entry for ezbounce's config (ezbounce-1.0-pre10):
+
+       user default {
+           allow {
+               from *
+               to *
+           }
+ 
+           vhosts {
+               all
+           }
+ 
+           set password myPasswordHere
+           set is-admin 1
+           set enable-incoming-dcc-proxying 0
+           set enable-outgoing-dcc-proxying 0
+           set enable-public-logging 0
+           set enable-private-logging 0
+           set enable-seperate-logging 0
+           set enable-detach-command 1
+           set enable-auto-detach 0
+           set enable-vhost-command 1
+           set enable-fake-idents 1
+       }
+
+
+6) Run stunnel on the client so that it locally listens and securely
+   (with encryption) proxy's your data to ezbounce.
+       shell> stunnel -r my.ezbounce.shell.com:7777
+              -d localhost:3333 -c -f
+   We force it into the foreground (-f) so we can debug any problems
+   before committing to it.
+
+7) Install an eggdrop script to facilitate the eggdrop-ezbounce
+   connection and make a secure connection with the remote irc server.
+   You can use mine (v_ezbounce.tcl) at http://vware.hypermart.net/
+   (make sure you specify "ssl" in the server list).  Email me if the
+   domain ever goes perm down. ;)
+
+8) Run eggdrop on the client so that it locally connects to
+   127.0.0.1:3333.  The eggdrop config looks like this:
+
+       set clients {
+           127.0.0.1:3333
+       }
+
+
+9) At this point you should see a connection from 127.0.0.1 in the
+   stunnel window.  This is relayed to my.ezbounce.shell.com:7777.  You
+   should then be able to see a connection from your client in the
+   ezbounce log.  If your bot does not appear on the irc server, you
+   should get into the eggdrop's partyline and debug the problem.
+
+10) Congrats!  Your irc bot is transmitting in a fully encrypted mode.
+    Reconfigure ezbounce so it logs to /dev/null (i.e., no logging).
+    Now let's finalize our stunnel settings so it doesn't stay in the
+    foreground and it doesn't log.  It's generally safer NOT to log
+    anything because by default it goes to the system logs.  If you
+    have an encrypted filesystem and you really want logs, then don't
+    issue the -o switch.  Kill the foreground stunnel process and
+    cronjob this one (don't cron it as root!):
+        */10 * * * *     /glftpd/stunnel/sbin/stunnel
+        -r my.ezbounce.shell.com:7777 -d 127.0.0.1:3333 -c -o /dev/null
+
+
+-------------------------------------------------------------
+>> Method: setting up an encrypted irc server with stunnel <<
+-------------------------------------------------------------
+  If you're irc daemon does not support built-in client/server ssl (like
+  titan-ircd and many others), then run stunnel on the same machine as
+  the ircd.  Have it securely listen on an external interface and relay
+  the connection to the ircd:
+      ircd-shell> stunnel -r localhost:8888
+                  -d my.ircd-host.com:9999 -p /my/cert.pem -o /dev/null
+  This means your ircd is actually listening on  the local loopback
+  port 8888, and stunnel is listening on port 9999 and will relay to
+  port 8888 for you.  Having the irc daemon listen on localhost will not
+  allow unencrypted connections to be established from outside the box.
+  We then configure the stunnel on the client to go directly to this
+  stunnel (i.e., we won't need ezbounce!):
+      client> stunnel -r my.ircd-host.com:9999
+              -d 127.0.0.1:3333 -c -o /dev/null
+  So our route will be a secure connection from client -> irc server.
+  Stunnel encrypts on the client, sends the encrypted data to stunnel on
+  the irc server where it is decrypted and sent to itself (so this step,
+  even though is not encrypted, is safe because it's a local route).  If
+  an oper performs /whois or /stats on this irc user, they will see an
+  ident@host and incoming connection from the irc server's ip (so this
+  is, in effect, a "bouncer" to hide you).  Just make sure the stunnel
+  on the irc server is not logging, or you're giving up your client's
+  true ip!  For this reason we issued -o /dev/null (send logs to null).
+  Search for your favorite irc daemon on http://www.freshmeat.net.
+
+
+
+
+< Final Notes >
+  You may be asking yourself why use ebzounce-ssl when stunnel acts as a
+  bouncer itself?  The problem is we can't establish an encrypted
+  session with servers that have built-in ssl (like LinkNet) if we used
+  an stunnel on our bouncer shell with parameters -p -c.  What we could
+  do is have it connect to another stunnel.  So if you have a custom irc
+  network you're connecting to with an ssl wrapper sitting on the
+  server, then that's what you would do instead of other bouncer
+  software.  Basically, stunnel can speak with other stunnel.  Thus, as
+  long as each node in your transmission has stunnel installed, you can
+  have a fully encrypted route.  Built-in ssl software also speak with
+  one another (like XChat with LinkNet).  But there are exceptions, like
+  XChat can speak with stunnel.  I'll tell you that as of this writing
+  (May/5/2002), winsslwrap can't speak with ezbounce-ssl.  Oh by the
+  way, use encrypted filesystems!
+      Linux:   Loop-AES @ http://sourceforge.net/projects/loop-aes/
+      Windows: BestCrypt @ http://www.jetico.com
+
+# EOF. :-)

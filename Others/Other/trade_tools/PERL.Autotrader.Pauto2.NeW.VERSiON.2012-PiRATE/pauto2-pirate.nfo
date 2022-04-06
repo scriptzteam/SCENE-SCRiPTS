@@ -1,0 +1,22 @@
+.__  .__ .__..___..___
+[__)*[__)[__]  |  [__ 
+|   ||  \|  |  |  [___
+                      
+
+Hello dear reader,
+here we go with a new version of pauto2.
+What's new?
+
+- iMDB working and should be work quite good
+- save iMDB information in imdb.db, faster movie lookup next time (new release of same movie)
+- rewritten some code parts
+- updated all information to current year and removed hardcoded crap like $year="2010";
+- code optimization (hopefully a little bit faster now)
+
+If you find a bug, report => pirate1337 (at) wolke7 (dot) net
+
+
+Have a nice weekend :>
+
+
+PS: Some fucking awesome asshole regards goes to Fuas / Eff3ct :D http://piv.pivpiv.dk/

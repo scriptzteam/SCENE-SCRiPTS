@@ -1,0 +1,67 @@
+Unofficial rules for Xbox 360 game releases
+Last updated: 2009-01-20
+
+
+1) Ripping:
+Reccomended hardware for ripping games:
+     - Samsung TS-H943 / BenQ VAD6038 / Lite-On DG-16D2S in 0800 mode; or
+     - Samsung SH-D162C / TS-H352C / SH-D163A / TS-H353A with Kreon firmware
+Recommended software for ripping games:
+     - Latest version of Schtrom360Xtract (v4.0 at time of writing); or
+     - Latest version of Xbox Backup Creator (v2.8.0 build 275 at time of writing)
+
+2) Image file must:
+     - contain correct Video Partition
+     - contain correct Video Data
+     - contain correct Security Sectors
+     - contain correct PFI / DMI (Stealth)
+     - pass stealth check in latest abgx360 GUI (v0.9.4 beta (leaked) at time of writing)
+
+3) Packing:
+     - Compression MUST be used (Best to Normal only)
+     - Recovery records MUST be used.
+     - rar files MUST be 100MB in size.
+     - .dvd file packed with the main rar (LayerBreak=1913760)
+     - Release MUST include sfv & nfo file.
+
+4) NFO must include:
+     -Group Name
+     -Game Title
+     -Region coding
+     -Language(s)
+     -Gamespot/IGN, or similar link.
+     -Number of archive files.
+
+5) Directory naming:
+     - Directories must be in the format:
+
+       Game_Name-LANGUAGE-REGION-XBOX360-GROUP
+
+       Acceptable characters are as follows:
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                    abcdefghijklmnopqrstuvwxyz
+                    0123456789 . -_
+
+     - LANGUAGE is only required if not English, and must be full language name, not abbreviated. If multilingual use MULTIX
+     - MULTIX is REQUIRED if there is more than one language option AND does not include English (X being the amount of languages included).
+     - Region coding is REQUIRED
+     - If region free state the region of origin
+            - If Europe then use PAL
+            - If USA then use NTSC
+            - If Asia then use JPN/KOR/ASIA (JAP ok but JPN preferred)
+     - If releasing Xbox1 game then use Game_Name-LANG-REGION-XBOX1_for_XBOX360-GRP
+       NB: Since Xbox1 backups now require DVD9, a.dvd file is required with the release
+
+6) Propers:
+     - Propers based on stealth patches/security sectors not being included are NOT allowed, release the patch separately! (See rule 7)
+     - Propers based on previous releases having bad dir names are NOT allowed
+     - If you must release the full game again, keep it INTERNAL.
+
+7) Fixes/Patches
+     - NFO must contain:
+            - Full release name of release the fix is intended for use with
+            - Detailed description of what is being fixed in the nfo, with full instructions on how to apply fix (supplying tools, or links to tools if necessary)
+     - Original release should be unnuked with reason get.GRP.fix
+     - Dirname format:
+              Game_Name-LANG-REGION-FIX-XBOX360-GRP
+

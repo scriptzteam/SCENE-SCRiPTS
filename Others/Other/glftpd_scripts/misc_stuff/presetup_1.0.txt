@@ -1,0 +1,13 @@
+PreSetup (GL1&2)
+
+Description: No, this is not a Pre script. This is a Pre Setup script. Do you HATE 
+making those folders and always forget something? Define your sections and how you 
+want your symlinks (if at all) and it will create the folder, make the symlink 
+folder (if on), create the actual symlink, chmod and chown the folders to your 
+choice & give you the privpaths etc that you need to hide it in glftpd.conf. It 
+will not edit any config files, just create the folders and tell you what you need 
+to do so you can cut and paste. Edit the file for more details.
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Apr-2003

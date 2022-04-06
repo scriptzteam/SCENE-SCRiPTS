@@ -1,0 +1,336 @@
+Music Video Council 5.0
+=============================
+EFFECTIVE DATE: Jan. 01, 2009
+
+This rule set has been approved by the following music video groups:
+CMS DYNASTY GWViD iUF JESTERS mV4U mVi mVz PmV SE SNO SRP uva UVZ VFi VSR
+
+
+######  DEFINITIONS / TERMS  ###################################################
+
+    - "source" references the actual source material (ie: dvd, dvb stream, etc.)
+    - "replacement" references material used to REPLACE something from the source
+    - "IVTC" is an abbreviation for Inverse Telecine
+    - "EXTENDED" refers to videos containing additional intro/outro/intermediate footage.
+    - "Live performance" refers to any performance that is not part of a music video.
+    - "Concerts" are simply live performances regardless if it's at a stadium, festival,
+       concert hall, club, etc.
+    - "Native" refers to the standard in which the video was produced, eg. NTSC or PAL.
+       NTSC produced video is native to NTSC, PAL produced video is native to PAL.
+       Videos may be either IVTC'able or progressive.
+       PAL produced video that is broadcast in NTSC is converted.
+       NTSC produced video that is broadcast in PAL is converted.  These converts cannot
+       be reversed to progressive and must be deinterlaced.
+    - "Mod16" refers to a multiple of 16.
+    - Any release pre'd in the MVID section is expected to follow this ruleset.
+
+
+######  CONTAINERS  ###########################################################
+
+
+    1.1)  Allowed containers are: MKV
+    1.2)  MKV container:
+
+        1.2.1)  mkvmerge MUST BE USED to mux.
+        1.2.2)  Including soft-sub lyrics is allowed but not required.
+        1.2.3)  Hard subbed lyrics are not allowed.
+
+
+######  AUDIO  #################################################################
+
+
+    2.1)  Allowed audio formats are: MP2, MP3, AC3, and DTS (allowed from BluRay sources only).
+    2.2)  All audio must have a minimum sample rate of 44.1kHz.
+    2.3)  Audio MUST BE FULLY SYNCED.
+    2.4)  When no lip-sync is present in the video, you must use audio which matches the source.
+          If you're unsure about this, put an alternative version as a 2nd track.
+    2.5)  Retail CD audio, if available, must be used as a replacement for TV and DVD audio.  If
+          proper replacement audio * DOES NOT EXIST * then you may use the best quality alternative
+          available (by this we dont condone p2p/torrent/etc use).
+
+          NOTE: Audio used for bootlegs, mixtapes, promos, etc. are commonly NOT the final mastered
+                retail audio.  Releases using audio from these sources MAY BE PROPERED if/when
+                final retail audio becomes available UNLESS the audio is of nearly the same quality.
+
+          EXCEPTION: You may use the source audio only if mixing source sfx and replacement audio
+                     produces too much difference in quality during playback.
+
+    2.6)  MP3's must be encoded as VBR using the V2 profile with LAME.
+    2.7)  PCM audio must be encoded to MP3.
+    2.8)  Audio from a vinyl source is not allowed under any circumstances.
+    2.9)  If part of the source audio is only available from the source itself, it must be inserted
+          into the replacement audio.  This includes all sound effects.
+    2.10) MP2/AC3/DTS is allowed only when source audio is not being replaced.  Re-encoding these to MP3
+          will NOT increase quality in ANY way so "untouched" also means NO RE-ENCODING!
+    2.11) If no editing is required, the replacement MP3 must be directly inserted with no re-encoding.
+    2.12) If AC3 5.1 audio is available from the source, it may be included as an extra audio track.
+    2.13) Multiple audio streams are allowed at the rippers discretion.  For example,
+          including both censored and uncensored audio.
+
+
+######  VIDEO  #################################################################
+
+
+    3.1)  Allowed codecs: x264
+    3.2)  Video source MUST BE digital and may NOT be passed thru any analog
+          equipment (svideo output, analog capture card, etc).
+    3.3)  Releasing raw source is NOT allowed!
+    3.4)  FPS must match that of the source except in the case of IVTC.
+          * Half-framerate is allowed on 50+ FPS sources when every other frame is a dupe.
+    3.5)  Dupe frames must be removed unless needed to maintain sync.
+    3.6)  Encodes must be within 5% of the original aspect ratio.  To calculate
+          the AR % error use: (Release - Original AR)/Original AR x 100
+    3.7)  Upscaling is not allowed.
+    3.8)  Telecined video MUST have IVTC applied using:
+
+              2:2 pulldown NTSC/PAL (10 pattern)
+              3:2 pulldown NTSC (10010 pattern)
+
+          * If IVTC is not possible, the reason must be stated in your nfo.
+
+    3.9)  For non-telecined interlaced video, a deinterlacer must be applied before
+          encoding.
+
+          * It's STRONGLY RECOMMENDED you DO NOT use the following deinterlacers/filters
+            due to poor quality output:  fielddeinterlace, dgbob, decomb/telecide
+
+    3.10) Interlace of any kind is not allowed.
+    3.11) Vfapi creates unnecessary colorspace conversions resulting in degraded color quality
+          and is not recommended.
+
+          To avoid this if using TMPGEnc for manual IVTC, use "tprivtc" to import your
+          .tpr project file into avisynth.
+
+    3.12) Videos containing mixed-fps/vfr (variable frame rate) must be IVTC'ed to preserve the vfr
+          if IVTC'ing them normally causes jumpy/choppy playback.
+    3.13) Deinterlacing the entire video is not permitted on IVTC'able sources.
+    3.14) Bootleg's shall be defined as any self-made or live-filmed works that are not a product
+          of the artists record label and are not intended for network broadcast or commercial sales.
+    3.15) Extended videos shall be considered different versions from that of non-extended versions.
+          Using an extended version to proper a non-extended version is not allowed.  Refer to 8.1 for
+          how to name extended versions.
+    3.16) Adding an intro/outro, or watermark is NOT allowed.
+
+
+######  CROPPING  ##############################################################
+
+
+    4.1)  Cropping the picture must be avoided if possible.
+
+          * Stretched/duplicate lines caused by the provider are not considered part of the
+            video and must be cropped out!
+
+    4.2)  Black letterboxing/borders must be removed.
+    4.3)  Both horizontal and vertical resolution must be cropped so the resulting resolutions are mod16.
+    4.4)  Cropping may be done in the MKV container.  When doing this, define the correct AR
+          when muxing with mkvmerge.  The encoded source must be uncropped, and the mod16 requirement in
+          4.3 is also unnecessary.
+
+          * This is not recommended until it works correctly in more player/codec combinations.
+    
+
+######  x264  ##################################################################
+
+
+    * Please use the newest x264.exe available from: http://x264.nl (rev. 1046 or greater REQUIRED!)
+
+    5.1)  Codecs supporting VFW are NOT permitted!
+    5.2)  Rips must use one of the following:  main profile (level 3.0) for non-HD
+                                               high profile (level 4.1) for HD
+
+    5.3)  CABAC encoding must be used.
+    5.4)  In-loop filtering may be used at the rippers discretion.
+    5.5)  Average quantizer must be lower than 28 for SD, and 30 for HD.  Recommended is 24 or less.
+
+          * If a higher quantizer is needed then the reason must be stated in the nfo.
+
+    5.6)  When using a non-square pixel shape, you MUST encode using the "--sar x:y" option and
+          mux with "--engage keep_bitstream_ar_info".
+
+    5.7)  minimum REQUIRED encoder settings:
+
+        5.7.1) --aq-mode must be enabled.
+        5.7.2) --bframes 3 (or higher).
+        5.7.3) --subme 8 (or higher).
+        5.7.4) --ref 4 (if vertical res is greater than 864) otherwise --ref 5
+        5.7.5) --me umh (or higher).
+        5.7.6) --trellis 1 (or higher).
+
+
+######  SD (Standard Definition)  ##############################################
+
+
+    6.1)  Maximum allowed average bitrate is 5000 kbps.
+    6.2)  Maximum allowed resolution is 720x576.
+
+
+######  HD (High Definition)  ##################################################
+
+
+    7.1)  Source vertical resolution must be greater than or equal to 720.
+    7.2)  For converts, same rules apply as for Standard Definition.
+    7.3)  Upscaled sources are NOT true High Definiton and are not allowed for
+          HD releases.  These must be ripped according to Standard Definition.
+    7.4)  Maximum allowed average bitrates are as follows:
+
+        7.4.1) 720p is 10000 kbps.
+        7.4.2) 1080p is 14000 kbps.
+
+    7.5)  1080i sources must be scaled to 720p.
+
+
+######  DIRECTORY/FILE NAMING, TAGGING, PACKAGING  #############################
+
+
+    8.1)  The directory naming scheme is now REQUIRED and enforced to maintain consistancy
+          in the scene.
+
+          The following are examples of the REQUIRED naming scheme:
+
+                Artist-Song_Title-FORMAT-YEAR-GROUP
+                Artist-Song_Title-HDTV-FORMAT-YEAR-GROUP
+                Artist-Song_Title-DVDRIP-FORMAT-YEAR-GROUP
+                Artist-Song_Title-BluRay-FORMAT-YEAR-GROUP
+                Artist-Song_Title_(Extended)-FORMAT-YEAR-GROUP
+                Artist-Song_Title_(Tonight_Show_01-31-07)-FORMAT-YEAR-GROUP
+                Artist-Song_Title_(49th_Annual_Grammys)-FORMAT-YEAR-GROUP
+                Artist-Song_Title_(2007_MTV_Music_Awards)-FORMAT-YEAR-GROUP
+                Artist-Song_Title-PROPER-FORMAT-YEAR-GROUP
+                Artist-Song_Title-BOOTLEG-FORMAT-YEAR-GROUP
+
+    8.2)  SFV and NFO are required.
+    8.3)  Live performances must include the show name and original air date.
+    8.4)  Award shows must include the show name and year OR the edition/series number.
+    8.5)  The appropriate tags must be used when applicable.
+    8.6)  Valid tags are:  BOOTLEG, CONVERT, DVDRip, HDTV, PROPER, 720p, 1080p, BluRay
+
+          * Rips containing a majority of a non-English language must be tagged with it's corresponding
+            ISO 639-1 language code. (http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes)
+
+    8.7)  RAR'ing is at the rippers discretion but recommended for large releases (>300MB).
+          Packaging: 15mb, 20mb or 50mb rars, and a 1 minute sample.
+
+          * RAR'ing single file releases <300MB is not allowed.
+
+
+######  CONCERTS, LIVE PERFORMANCES, FREESTYLES, ETC.  #########################
+
+
+    9.1)  If ripped in their entirety (introductions & breaks included), you have to
+          encode at the closest DVD/x size: 373MB, 559MB, 746MB, 1119MB, 1493MB, 2239MB, 
+                                            4479MB, 6717MB and 8140MB. If you need more
+                                            than dvd9, add multiples of 2239MB.
+
+        9.1.1) Multi-pass vbr encoding must be used for these. You may also split into
+               separate tracks (NOT separate releases).
+
+        9.1.2) An undersize of 10MB is acceptable.  Oversized rips are not allowed.
+
+    9.2)  Two or more songs from the same performance/event ripped to individual files
+          must be packaged in ONE release, similar to an MP3 album:
+
+                Artist-concert_title-x264-2007-group/00-artist-concert_title.nfo
+                Artist-concert_title-x264-2007-group/00-artist-concert_title.sfv
+                Artist-concert_title-x264-2007-group/01-artist-introduction.mkv
+                Artist-concert_title-x264-2007-group/02-artist-song1.mkv
+                Artist-concert_title-x264-2007-group/03-artist-song2.mkv
+                ...
+
+          * Award show and morning/late night tv performances are an exception and must be
+            packaged as single-song releases with any intermediate footage (interviews,
+            presentations, etc.) removed.
+
+    9.3)  Live performances (including pre-recorded) must be tagged with the
+          ORIGINAL BROADCAST DATE.  If the performance wasn't broadcast (such as
+          concerts released to dvd), use the date of the performance.
+    9.4)  Annual shows/events such as the Grammy's or Rock Am Ring must be tagged
+          with the YEAR only.
+    9.5)  Third party videos (commercials, karaoke, etc) are not allowed.
+
+
+######  NFO FILE  ##############################################################
+
+
+    10.1) NFO's MUST contain:
+                - artist name and song title
+                - format (x264)
+                - resolution and aspect ratio
+                - video source (DVD, DVB, DVB 1080i, DVB 720p, etc)
+                - audio source (CD, MP3, etc)
+                - deinterlace/IVTC method used
+                - genre
+                - year of video release
+                - repack reason (if applicable)
+                - proper reason and name of release you're propering (if applicable)
+
+                * Broadcasted live performances MUST include the show it aired on and original air date.
+
+            Other recommended (but not required) information to include:
+                - filesize
+                - video playtime (min:sec)
+                - audio/video bitrate
+                - album name (if available)
+                - (release)name of MP3 used
+
+
+######  DUPES  #################################################################
+
+
+    11.1) mkv/x264 dupe all releases prior to the date of this ruleset.
+    11.2) Fullscreen dupes widescreen.  Widescreen does NOT dupe fullscreen.
+    11.3) 720p/1080p do not dupe each other.
+    11.4) The following dupe priority shall be used (from highest to lowest):
+
+                NATIVE BluRay/HDDVD/DVD rip
+                NATIVE HDTV rip
+                NATIVE SDTV rip
+                CONVERT DVD rip
+                CONVERT SDTV rip
+
+        11.4.1) Native HDTV rips do NOT dupe DVD rips.
+
+        * NOTE: We want to allow users the choice of both fullscreen/widescreen rips, not force one or
+                the other simply because it was released first.  That is why native HDTV rips are
+                allowed after SD dvdrips, as long as a native BluRay/HDDVD doesn't exist.
+
+
+######  PROPERS/NUKES  #########################################################
+
+
+    PROPER/NUKE reasons are as follows:
+
+    12.1)  out-of-sync audio
+    12.2)  incomplete or missing audio/video
+           * NOTE widescreen may not be propered by fullscreen with this reason!
+    12.3)  improper or no IVTC when applicable
+    12.4)  1 or more frames containing interlace
+    12.5)  incorrect aspect ratio
+    12.6)  out-of-spec encodes
+    12.7)  very bad audio/video quality (including low bitrate on high motion videos)
+    12.8)  improper audio replacement (excluding concerts/live performances)
+    12.9)  lip-sync or audio sync to source is broken
+    12.10) missing 1 or more sound effects (profanity is NOT a sound effect!)
+           * NOTE if the video is available with and without sound effects, each is
+             considered different versions.
+    12.11) bad cropping
+    12.12) one-click tool (such as GordianKnot) was used for encoding
+    12.13) disabled CABAC for x264 encodes
+    12.14) improper naming/tagging
+    12.15) unnecessarily re-encoded audio
+    12.16) stream errors
+    12.17) missing/incorrect/false .nfo
+
+
+################################################################################
+
+        * NOTE TO NUKERS:
+
+          If you don't know how to determine things like progressive ghosting vs. a bad ivtc, or a
+          bad ivtc in general, please ask!  We'll be more than happy to explain anything regarding
+          our rules to eliminate any confusion!
+
+
+****  ANY RELEASES NOT FOLLOWING THESE RULES MUST BE KEPT INTERNAL OR RISK NUKE/PROPER!  ****
+
+aa3a1c554cf9596c315bf7ad2df5e5c7
+eof

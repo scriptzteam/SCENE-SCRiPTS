@@ -1,0 +1,27 @@
+### newPost script (pnG)
+##
+## This script will read glftpd.log for the five newest dirs
+## and log them to glftpd.log, alternatly post them in channel
+## via the included tcl.
+## 
+## THIS IS BETA, so sitebot configs will be included in later
+## versions. Im allso including a section choice "!sitenew section"
+## in later versions. Please be patient.
+##
+## Please repport all bugs to me @ efnet in #getnfoscript. Thanks
+## to all of you guys in #getnfoscript that helps me out with
+## suggestions and ideas!
+##
+## // pnG
+
+## !! Installation
+1. Copy newPost.pl to your glftpd/bin dir
+2. chmod it a+x
+3. Open it with your favorite text editor and edit your preferenses
+4. Copy newPost.tcl to your eggdrops scripts dir
+5. chmod it a+x and then add it to your bots config.
+6. Edit your preferenses in newPost.tcl and then rehash your bot!
+
+Now your all set, try to do a !sitenew in your channel and it will
+work just fine!
+

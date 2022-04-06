@@ -1,0 +1,516 @@
+                                                               )
+                ÚÄ Ä               ÜÜÛÛÜÞÛÜ          ÄÄÄ Ä    (
+                ³ ÚÄÄÄÄÄÄÄÄÄÄÄÄÄ Ü²ß  ß ÞÛ ß²ÜÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+                  ³               ßßßÛÜ ÞÛ  ÞÛß             ³ ³
+                  :        ÜÜÜÜÜ ßßßÜÜÛÝÞÛ Üß        ÜßßßÜ  :
+             )    ³      Üß ÜÜÜ ßßßÜÜ ß² ÛßÜßßßßÜ Üßßß ÛÜ ßÜ³
+      .     (   ÚÄÁÄÄÄÄÄÄÛ ÜÛÛÛÛÛÛÜÜ ßÜ  Üß ÜÛ² Ûß ÜÛ² ÛÛ² ÛÁÄ¿ .       .
+         .      ³  ÜÜÜ   Û  ²ÛÛßß²ÛÛÛÜ ßÜß ÛÛ² Üß ÛÛ²  ÛÛ² Û  ³  )    .
+         )\._ . ³Üß Ü ßÜß Ü ßÛÛÛ   ß²ÛÛ ß ÛÛÛ    ÛÛÛ   ÛÛ² Û  ³ . _./(
+        /    \ )³Û ÛÛ² ß ÛÛ² ß²ÛÜ    ÛÛÛ ÛÛÛ    ßÛÛ    ÛÛ² Û  ³( /    \
+_______(    ( ( ³ßÜ ßÛ²ÜÛ²ß       ÜÜÛÛß ÛÛ²ÜÛÛÛ²Ü ÛÛÜÜ ÛÛ² ßÜ ³ ) )    )_______
+`\_ _     `  __\³  Û ÜÛÛ²Ü   ÜÜÛÛÛßß  Ü ÛÛÜß   ßÛ²ßßßÛÛÛÛÛÛ Û ³/ _  '     _ _/'
+  _\___\     \  \Üß ÜÛ²ßÛÛ² ßÛÛ²     ÛÛ²ÛÛ²     ÞÛ²    ÛÛ² Üß /  /     /___/_
+ _\_    \     \  Û ÛÛ² Ü ÛÛ² ÛÛÛ²    ÛÛ² ÛÛ²Ü   ÞÛ²    ÛÛ² Û    /     /    _/_
+.\_ \____\_ _  \ ßÜ ß ÜßÜ ß Ü  ßßÛÛ²ÜÛÛ²  ßÛÛÛÜÜÛÛß    ÛÛ² Û   /  _ _/____/ _/.
+   ``  \           ßßß   ßßß ßßßÜÜÜ ßÛÛß ÛÜ ßßßÛ²ß ÜßÜ ÛÛß Û           /  ''
+        \___\    /'\(     .         ßÜÜÜÜß  ßßßÜÜÜÜß  ßÜÜÜß `\    /___/
+             `\/³\   )                                   (   /³\/'
+          .ÄÄÄÄÄ´ \ (     .    ÜßßÜ ÜßßÜ ÜÛ ÜßßÜ   .      ) / ÃÄÄÄÄÄ.
+        ___)____:, .`.          Üß  Û  Û  Û  Üß          .'. ,:____(___
+ ____   )         \ ) `   :   Üß    Û  Û  Û   ßÜ   :    ' ( /         (   ____
+Ú)___\.'Ä\_________(ÄÄÄÄÄÄ´  ßßßß ß  ßß  ßßß ßßßß  ÃÄÄÄÄÄÄÄ)_________/Ä`./___(¿
+³                                                                             ³
+³                                                                             ³
+³                                                                             ³
+³                                                                             ³
+³                                                                             ³
+:ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ:
+ )    Requirements: Notepad with terminal font or any other ascii viewer.    (
+ `._________________________________________________________________________.'
+./                    ``::³    Ü ÜÜ ÜÜÜ ÜÜ  ÜÜ     ³::''                     \.
+³                      Ä ÄÁÄÄ´ Û Û Û Û  ÛÜß Û Û ÃÄÄÁÄ Ä                       ³
+³                              Û Û Û Û  Û Û ßÜÛ                               ³
+³                                                                             ³
+³ A lot has changed since 2009, when the last revision of the XviD rules was  ³
+³ released. While these rules have served us well over the years, the need    ³
+³ for a change has come. The weaknesses of the XviD codec have become obvious ³
+³ and as habits change the need for strict size-based releases has gone.      ³
+³ After the non-retail TV scene moved to x264 the advantages of the codec     ³
+³ over XviD for SD resolutions became clearer for everyone and with CRF in    ³
+³ the mix, we can also ensure that the diverse array of material will get     ³
+³ the most appropriate bitrates and not arbitrarily fixed sizes. So once      ³
+³ again the active TV & Movie groups have gathered to bring the retail SD     ³
+³ rules in line with other sections using x264.                               ³
+³                                                                             ³
+³     Compliance with this document is optional as of its pre date, and       ³
+³         mandatory as of 2013-11-01 00:00 UTC (1383264000 unixtime)          ³
+³                                                                             ³
+ÀÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÂÄÄÂÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÙ
+./'               ``::³.   ÛßÜ Ûßß Û  Ûßß ÛßÜ Üßß Ûßß   .³::''              `\.
+³                  Ä ÄÁÄÄ´ ÛßÜ Ûß  Û  Ûß  ÛßÛ  ßÜ Ûß  ÃÄÄÁÄ Ä                 ³
+³                          ß ß ßßß ßß ßßß ß ß ßß  ßßß                         ³
+³                              ÛßÜ Û Û Û  Ûßß Üßß                             ³
+³                              ÛßÜ Û Û Û  Ûß   ßÜ                             ³
+³                              ß ß  ßß ßß ßßß ßß                              ³
+³ [ Video ]                                                                   ³
+³ 1.1) English spoken movie sources with non-English overlays in the actual   ³
+³      movie footage are NOT allowed. This does not count for start/end       ³
+³      credits, but for relevant movie parts. e.g. on screen locations text,  ³
+³      hardcoded non-English subtitles (hardsubs) and similar occurrences.    ³
+³      Foreign overlays can be present on iNTERNAL releases.                  ³
+³ 1.2) Watermarks, intros, outros, or any other form of defacement of the     ³
+³      movie or episode are banned including during the credits.              ³
+³ 1.3) Splitting the video into multiple files is not allowed.                ³
+³ 1.4) Movies split into 2 discs (ie LOTR Extended) must still be pred as     ³
+³      one file, assuming the movie only has start credits on D1 and end      ³
+³      credits only on D2.                                                    ³
+³ 1.5) Removing credits is not allowed, and they must not be encoded with     ³
+³      settings different to the main footage, except as follows:             ³
+³      With sources where only credits are interlaced, you may either leave   ³
+³      the credits interlaced or de-interlace the credits ONLY, but you must  ³
+³      NOT de-interlace the whole footage.                                    ³
+³ 1.6) Irrelevant material such as studio worksheets and test screens must    ³
+³      be removed.                                                            ³
+³                                                                             ³
+³ [ AR/Resolution ]                                                           ³
+³                                                                             ³
+³  [ General ]                                                                ³
+³ 2.1.1) Black borders must be removed completely with cropping. Where the    ³
+³        video has changing ARs, it must be cropped to the widest frame.      ³
+³ 2.1.2) Height and width must be mod2.                                       ³
+³ 2.1.3) Over/under-cropping by more than 1px is considered a technical       ³
+³        flaw. It is recommended to crop the 1 pixel out.                     ³
+³ 2.1.4) Video AR must be within 0.5% of the original AR.                     ³
+³ 2.1.5) AR for all releases must be based on the actual source AR, not on AR ³
+³        listed on IMDB, cover or other sources.                              ³
+³ 2.1.6) In rare cases where the source AR is incorrect (i.e. bad mastering), ³
+³        a source sample and a comparison screenshot explaining how you came  ³
+³        to the corrected AR is required.                                     ³
+³ 2.1.7) The ITU-R Standard, which assumes anamorphic WS DVD as 1.82 and      ³
+³        FS as 1.36, is not allowed.                                          ³
+³ 2.1.8) Only sharp resizers such as Lanczos/Lanczos4, Spline36, or Blackman  ³
+³        are allowed. Simple resizers (bicubic, simple, etc) are banned.      ³
+³                                                                             ³
+³  [ BluRay ]                                                                 ³
+³ 2.2.1) Width must be 720 for Bluray material.                               ³
+³ 2.2.2) The AR of the source must be applied to the encode, while resizing   ³
+³        the resulting height to mod2.                                        ³
+³              Examples : 1920x1080 -> 720x404                                ³
+³                         1920x1040 -> 720x390                                ³
+³                         1920x816  -> 720x306                                ³
+³                         1920x800  -> 720x300                                ³
+³                         1800x1080 -> 720x432                                ³
+³                         1440x1080 -> 720x540                                ³
+³                                                                             ³
+³  [ DVD ]                                                                    ³
+³ 2.3.1) Sources with a horizontal resolution of 720 will be cropped as       ³
+³        required and only the height must then be resized to the closest     ³
+³        mod2 ensuring the correct AR, except as follows:                     ³
+³         - 4:3 NTSC sources (720x480) with window/pillar boxed WS content    ³
+³           should be cropped by height and then resized by width.            ³
+³ 2.3.2) Width must be the highest possible after crop, except for            ³
+³        4:3 NTSC sources, where the width must not exceed 640.               ³
+³ 2.3.3) Resizing in a way that would cause the encode to be upscaled is not  ³
+³        allowed.                                                             ³
+³              Examples (pixels after crop --> anamorphic / non-anamorphic) : ³
+³                   NTSC:                                                     ³
+³                         720x480 --> 720x406 / 640x480                       ³
+³                         716x478 --> 716x404 / 636x478                       ³
+³                         720x460 --> 720x388 / 640x460                       ³
+³                         718x362 --> 718x306 / 638x362                       ³
+³                    PAL:                                                     ³
+³                         720x576 --> 720x404 / 720x540                       ³
+³                         716x574 --> 716x404 / 716x538                       ³
+³                         720x552 --> 720x388 / 720x518                       ³
+³                         718x434 --> 718x306 / 718x406                       ³
+³                                                                             ³
+³ [ Framerate / Filters ]                                                     ³
+³ 3.1) IVTC or deinterlacing must be applied when required.                   ³
+³ 3.2) Only smart deinterlacers, such as Yadif, may be used. FieldDeinterlace ³
+³      is banned.                                                             ³
+³ 3.1) MUST be as close to original source framerate as possible.             ³
+³ 3.3) In some cases PAL movies need to be IVTC'd (e.g. to 24fps). Therefore  ³
+³      using a PAL source is not an excuse for lack of IVTC.                  ³
+³ 3.4) Hybrid sources will be left to ripper's discretion when it comes to    ³
+³      IVTC, but they must explain and provide source proof for any use, or   ³
+³      lack of IVTC.                                                          ³
+³ 3.5) In cases of a problematic source (e.g. PAL content on NTSC disc or     ³
+³      NTSC content on PAL disc) resulting in ghosted/blended/duplicated      ³
+³      frames, the video must be source restored to its original frame rate   ³
+³      with restore techniques. When the result still presents consistently   ³
+³      noticeable issues a vob/m2ts is required or use the INTERNAL tag and   ³
+³      mention it in the NFO.                                                 ³
+³  3.5.1) Provided that the initial release was encoded from a source which   ³
+³         required restoration; a native source may be released at a later    ³
+³         date. Such a release must then be tagged as NATIVE and the original ³
+³         release will not be nuked. This rule, however, does not apply for   ³
+³         simple NTSC to PAL speed up releases.                               ³
+³ 3.6) VFR (Variable Frame Rate) techniques are not allowed.                  ³
+³                                                                             ³
+³ [ Container ]                                                               ³
+³ 4.1) Container must be MKV, and MKVMerge is the recommended muxer.          ³
+³      Custom muxing tools are permitted; however, output must be compatible  ³
+³      with standard demuxers to the same extent that files created with      ³
+³      MKVMerge are.                                                          ³
+³ 4.2) Support for file streaming and playing from rars is mandatory.         ³
+³ 4.3) MKV headers must be kept intact and are not allowed to be blanked or   ³
+³      modified, also MKV header compression must not be enabled.             ³
+³                                                                             ³
+³ [ Codec ]                                                                   ³
+³ 5.1) Video codec must be H264 encoded with 8-bit depth x264.                ³
+³ 5.2) x264 version used must be no more than 50 revisions from newest at pre ³
+³      time.                                                                  ³
+³      You should use http://tinyurl.com/mcekcw8 as reference to check what   ³
+³      the latest revision is.                                                ³
+³ 5.3) CRF must be used:                                                      ³
+³  5.3.1) CRF values below 19 and above 26 are never permitted.               ³
+³  5.3.2) A CRF value of 19 must be used for all sources where production     ³
+³         year is 2007 or NEWER, except sporting events and as follows:       ³
+³           - If at CRF 19 the resulting video's average bitrate is above     ³
+³             2000 kbps, a CRF value of 21 MUST be used.                      ³
+³           - If at CRF 21 the resulting video's average bitrate is above     ³
+³             1500 kbps, CRF values of 22-23 MAY be used.                     ³
+³           - If at CRF 21 the resulting video's average bitrate is above     ³
+³             2000 kbps, CRF value of 23-24 MUST be used.                     ³
+³  5.3.3) CRF values within the 19-21 range must be used for all sources      ³
+³         where the production year is 2006 or OLDER, except sporting events. ³
+³         It is the ripper's discretion to choose the most appropriate value  ³
+³         from this range. Exceptions are as follows:                         ³
+³           - If at CRF 21 the resulting video's average bitrate is above     ³
+³             1500 kbps, CRF values of 22-23 MAY be used.                     ³
+³           - If at CRF 21 the resulting video's average bitrate is above     ³
+³             2000 kbps, CRF values of 23-24 MUST be used.                    ³
+³  5.3.4) CRF values of 23-26 must be used for sporting events. The exact     ³
+³         value to use will be left to ripper's discretion.                   ³
+³  5.3.5) For TV season/volume sets the CRF value used must be the same for   ³
+³         all episodes, however for a maximum of 25% of the total episodes    ³
+³         different CRF values can be used to allow for variations in source  ³
+³         material, compressibility etc.                                      ³
+³  5.3.6) Bonus complete episodes must be encoded at the same CRF value as    ³
+³         the rest of the season/volume set, however the CRF value used for   ³
+³         any extras like deleted scenes/bloopers/bonus scenes will be left   ³
+³         to ripper's discretion. Rule 5.3.1 still applies.                   ³
+³ 5.4) No dupes based on source type (DVD/BD) are allowed, use INTERNAL.      ³
+³ 5.5) No setting can go below what is specified by --preset slow.            ³
+³ 5.6) Sample Aspect Ratio (--sar) must be square (1:1).                      ³
+³ 5.7) Keyframe  interval  (--keyint) must be at least 200 and at most 300    ³
+³      (inclusive). It is  recommended  to  be  10*framerate (rounded up)     ³
+³      (film=240,  PAL=250,  NTSC=300).                                       ³
+³ 5.8) Minkeyint (--min-keyint) must be at least 20 and at most 30            ³
+³      (inclusive). It is recommended to be 1*framerate (rounded up)          ³
+³      (film=24, PAL=25, NTSC=30).                                            ³
+³ 5.9) Colormatrix must be set to source specification. If not specified by   ³
+³      source, bt709 must be used for BD sources, DVD sources must use        ³
+³      'undef' (default).                                                     ³
+³ 5.10) Zones (--zones) are forbidden.                                        ³
+³ 5.11) --output-csp must be kept at default                                  ³
+³ 5.12) --level 3.1 must be respected.                                        ³
+³ 5.13) Custom matrices are not allowed.                                      ³
+³                                                                             ³
+³  [ Optional Psychovisual settings ]                                         ³
+³ 5.14.1) Allowed parameters for --tune (optional) are film/grain/animation   ³
+³ 5.14.2) --deblock ( Default : 0:0 )                                         ³
+³         + -2:-2 recommended for film content (--deblock -2:-2)              ³
+³         +  2:1  recommended for animation content (--deblock 2:1)           ³
+³ 5.14.3) --aq-strength XX  ( Default : 1.0 )                                 ³
+³         Sets the strength of AQ bias towards low detail ('flat')            ³
+³         macroblocks. Background is considered a low detail area, while      ³
+³         actor's face is a complex area. A lower value than 1.0 will give    ³
+³         more bitrate for complex areas.                                     ³
+³         Recommended value : 0.6-0.9 (Example: --aq-strength 0.7)            ³
+³ 5.14.4) --psy-rd xx:yy Default: 1.0:0.0                                     ³
+³         xx is the strength of Psy-RDO, yy is the strength of Psy-Trellis.   ³
+³         Note that Trellis is still considered 'experimental', so leave that ³
+³         at 0.0 .                                                            ³
+³         Recommended value for film content xx = 0.8-1.2                     ³
+³         Recommended value for animation content xx = 0.4-0.7                ³
+³         (Example: --psy-rd 0.5:0.0)                                         ³
+³                                                                             ³
+³  [ Suggested basic command lines ]                                          ³
+³ 5.15.1) BD:                                                                 ³
+³         x264.exe --level 3.1 --crf xx --preset slow --colormatrix bt709     ³
+³         -o output.mkv input.avs                                             ³
+³ 5.15.2) DVD:                                                                ³
+³         x264.exe --level 3.1 --crf xx --preset slow -o output.mkv input.avs ³
+³                                                                             ³
+³ [ Audio ]                                                                   ³
+³ 6.1) The only allowed audio format is VBR AAC LC (Low Complexity). INTERNAL ³
+³      AC3 releases are allowed.                                              ³
+³ 6.2) Nero and Apple encoders are recommended. FFmpeg and FAAC are banned.   ³
+³ 6.3) Average audio bitrate must be between 96 and 160 kbps (inclusive) for  ³
+³      stereo and between 60 and 100 kbps (inclusive) for mono.               ³
+³ 6.4) MUST be STEREO for STEREO sources, and MONO for MONO sources.          ³
+³      (Any audio track with identical channels is considered a MONO source). ³
+³      Dual mono is also forbidden. However this does not apply to remastered ³
+³      audio tracks for titles that may originally have been mono.            ³
+³ 6.5) Audio with more than 2 channels must be downmixed to stereo, with the  ³
+³      exception of INTERNAL releases.                                        ³
+³ 6.6) Audio tracks must be kept with the original frequency as it was on the ³
+³      source: e.g. 48khz for 48khz and 44.1khz for 44.1khz.                  ³
+³ 6.7) AAC audio must be normalized.                                          ³
+³ 6.8) Dual-language audio tracks are allowed for non-English material ONLY.  ³
+³ 6.9) English dubbed titles without original audio track must be tagged      ³
+³      DUBBED.                                                                ³
+³ 6.10) Dubbed releases are only allowed if no release with a secondary       ³
+³       English dubbed audio track exists.                                    ³
+³                                                                             ³
+³ [ Subtitles ]                                                               ³
+³ 7.1) Only Vobsub and accurately OCR'd srt are allowed.                      ³
+³ 7.2) Subtitles are required for non-English movies and movies with          ³
+³      non-English spoken parts.                                              ³
+³   7.2.1) If you chose to use srt, you must mux the English subtitles into   ³
+³          the MKV container and enable this stream by default.               ³
+³   7.2.2) If you chose to use vobsubs, and the foreign parts are not         ³
+³          available on a separate stream, but only embedded/flagged on the   ³
+³          full subs, a forced only stream must be provided. It must be muxed ³
+³          into the full subpack, with the exception of DVD forced subs that  ³
+³          can also be provided as a separate idx/sub set.                    ³
+³ 7.3) In all other cases it is recommended to mux srt subtitles into the MKV ³
+³      container. Packing them separately is also allowed.                    ³
+³ 7.4) Vobsubs are NOT allowed to be muxed into the MKV container.            ³
+³ 7.5) Subtitle files must have identical filenames to the video file, with   ³
+³      the exception of separate forced idx/sub subset from DVDs that should  ³
+³      be tagged *.forced.                                                    ³
+³      (i.e. Movie.2013.720p.BluRay.x264-group.forced.idx)                    ³
+³ 7.6) Vobsubs from BD sources must be resized to 720x480 or 720x576. This    ³
+³      can be achieved using BDSup2Sub/BDSup2Sub++.                           ³
+³ 7.7) External subtitles MUST be packed in a RAR file with the best          ³
+³      compression available: <video-name>.subs.rar =                         ³
+³      [ <video-name>.idx + <video-name>.rar(packed <video-name>.sub) ]       ³
+³      This RAR file must be placed in a directory named 'Subs' along with    ³
+³      a SFV file containing standard checksum information for that RAR.      ³
+³      The subtitles must not be packaged in the main RARs for the release    ³
+³      and the RAR file containing the subtitles must not be listed in the    ³
+³      main SFV for the release.                                              ³
+³ 7.8) There must only be one set for all the included subtitles.             ³
+³      VobsubMuxer can be used to merge VobSubs.                              ³
+³      Point 7.2.2 is the only case this rule can be ignored.                 ³
+³ 7.9) Hardcoded subtitles are only permissible when present in the source.   ³
+³      If the subtitles overlay both active video and matting (black bars),   ³
+³      cropping to the bottom of the subtitles is permissible, and an equal   ³
+³      amount of matting shall be left at the top. If the burned subtitles    ³
+³      overlay only matting, they must be OCR'ed and cropped out.             ³
+³ 7.10) English subs must be synced with the video.                           ³
+³ 7.11) Foreign releases (non-English spoken) lacking English subtitles MUST  ³
+³       be tagged with the spoken language. Releases with English subtitles   ³
+³       MUST NOT be tagged with the spoken language. A release containing     ³
+³       English subtitles after a foreign-tagged release is not considered a  ³
+³       dupe, regardless of whether or not the foreign-tagged release has     ³
+³       English subs.                                                         ³
+³ 7.12) Only Retail subtitles are allowed. Fan/Custom subs are not allowed.   ³
+³       Use INTERNAL.                                                         ³
+³ 7.13) Multi-language subtitles cannot be used as a basis for a dupe. Use    ³
+³       INTERNAL.                                                             ³
+³ 7.14) SUBBED tag MUST be used on hardsubbed releases. This only applies to  ³
+³       fully non-English movies.                                             ³
+³                                                                             ³
+³ [ Packaging ]                                                               ³
+³ 8.1) Must be packed with RAR files, broken into a max of 99 volumes.        ³
+³      Allowed rar sizes: 15,000,000 bytes and 50,000,000 bytes.              ³
+³ 8.2) Filenames (even the subpack rar file) MUST be unique (to avoid dupe).  ³
+³ 8.3) Compressed RARs or Recovery records are not allowed.                   ³
+³ 8.4) Must have an SFV for main RARs and another for subtitle RARs           ³
+³      (if applicable).                                                       ³
+³ 8.5) Must have an NFO.                                                      ³
+³ 8.6) It is recommended to include the following information in the NFO:     ³
+³       Group name                                                            ³
+³       Title                                                                 ³
+³       Release date                                                          ³
+³       CRF Value                                                             ³
+³       IMDB / Amazon / TVRage / Any other release relevant iNFO site link    ³
+³       Number of rars (e.g.30x15MB) or total video size                      ³
+³                                                                             ³
+³ [ Samples ]                                                                 ³
+³ 9.1) It is required to include a 50-70 seconds sample for each release.     ³
+³ 9.2) The sample must have a unique filename and be in a separate directory  ³
+³      named 'Sample'.                                                        ³
+³ 9.3) It MUST be cut from the video, NOT encoded separately.                 ³
+³ 9.4) Source samples are required for any rip that is deemed questionable,   ³
+³      e.g. when no clean IVTC is possible on the source, or all ghost frames ³
+³      can't be removed etc. See 'Framerate / Filters' section above.         ³
+³                                                                             ³
+³ [ Propers / Repacks / Rerips ]                                              ³
+³ 10.1) Propers are only permitted in the case of a technical flaw in the     ³
+³       original release (e.g. bad IVTC, interlacing, wrong CRF value).       ³
+³ 10.2) Propers MUST include a note in the NFO file detailing the reason.     ³
+³ 10.3) Releases not globally nuked MUST include a sample or screenshots from ³
+³       the original release that demonstrates the flaw in the release sample ³
+³       dir.                                                                  ³
+³ 10.4) Qualitative propers are not allowed, nor are propers based on         ³
+³       decisions made by a ripper, where it is allowed. Use INTERNAL.        ³
+³ 10.5) Releases containing hardcoded subs may be followed by non-hardsubbed  ³
+³       video. Original release SHALL NOT be nuked.                           ³
+³ 10.6) Propering a release when a working fix is released is not allowed.    ³
+³ 10.7) Propers for XViD releases can only be done if the release in question ³
+³       violated the XViD rules in effect at the pre time of the release.     ³
+³       Propers must be done respecting the current SD-x264 ruleset.          ³
+³ 10.8) Detailed reason must be included in the NFO for all repacks and       ³
+³       rerips.                                                               ³
+³                                                                             ³
+³ [ Special Movie Editions ]                                                  ³
+³ 11.1) Allowed: DC, EXTENDED, UNCUT, REMASTERED, UNRATED, THEATRICAL,        ³
+³       CHRONO, SE (or any other special edition).                            ³
+³ 11.2) Special Edition releases with the same runtime as previously          ³
+³       released versions of the movie will be considered dupes.              ³
+³ 11.3) Shorter cut version of a movie after a longer version was released is ³
+³       allowed (e.g. THEATRICAL), and MUST be mentioned in the dirname.      ³
+³ 11.4) Remastered releases after the original have been released are allowed ³
+³       and must be tagged REMASTERED.                                        ³
+³ 11.5) Extras released in a special movie edition cannot be used as a basis  ³
+³       for a dupe, unless released separately and are not dupes of previous  ³
+³       releases.                                                             ³
+³ 11.6) Homemade sources are not allowed.                                     ³
+³ 11.7) NOTE: PAL - NTSC length differences come from the number of frames    ³
+³       per second and not extra footage.                                     ³
+³                                                                             ³
+³ [ WS vs. FS ]                                                               ³
+³ 12.1) WS or FS tags on the release name are ONLY allowed in case of a rip   ³
+³       with a different AR existing.                                         ³
+³ 12.2) A WS release after a FS release (and vice versa) requires proof that  ³
+³       the new release contains more picture area than the original release  ³
+³       (provide sample from the original release or JPG screenshot of the    ³
+³       same frame in both releases showing additional area). A release not   ³
+³       documenting additional picture area is considered a DUPE.             ³
+³ 12.3) Wider wide screen where more of the original source is visible is     ³
+³       valid and not considered a dupe but must be tagged as WS not PROPER.  ³
+³       Original release must not be nuked. Provide proof as listed above.    ³
+³ 12.4) Letterboxed DVDs are not considered FS even if the aspect ratio       ³
+³       flagged on the disc is 4:3; only active picture area must be          ³
+³       considered.                                                           ³
+³                                                                             ³
+³ [ Directory and File Naming ]                                               ³
+³ 13.1) Mandatory directory format:                                           ³
+³         Movie.Name.YEAR.<PROPER/READ.NFO/REPACK>.<BDRip/DVDRip>.x264-GROUP  ³
+³         TV.Show.SxxExx.<PROPER/READ.NFO/REPACK>.<BDRip/DVDRip>.x264-GROUP   ³
+³ 13.2) ALL movie releases must include production year in the directory name.³
+³ 13.3) TV shows that have a matching name to a previously released show must ³
+³       either use a country tag, if different (US, UK, etc) or a production  ³
+³       year tag.                                                             ³
+³ 13.4) Use DVDRip for DVD sources, BDRip for BD sources, etc.                ³
+³ 13.5) DO NOT indicate ripping method, DVD/BD/X264 release date, genre,      ³
+³       audio that was used or anything else. (Use the NFO for that)          ³
+³ 13.6) Movie distribution tags e.g. FESTIVAL, STV, LIMITED or TV (TV tag is  ³
+³       used for TV movies only) are allowed and must be used wisely and      ³
+³       correctly.                                                            ³
+³ 13.7) READ.NFO tag is allowed, but shall not be abused.                     ³
+³ 13.8) Other permitted tags are: WS/FS (rules above), PROPER, REPACK, RERIP, ³
+³       REAL, RETAIL, EXTENDED, REMASTERED, RATED, UNRATED, CHRONO,           ³
+³       THEATRICAL, DC, SE, UNCUT, INTERNAL, DUBBED, SUBBED, FINAL,           ³
+³       COLORIZED.                                                            ³
+³   13.8.1) Use RERIP for ripping issues and REPACK for packing issues.       ³
+³   13.8.2) RERIP's/REPACK's must use different file names from the           ³
+³           previous release.                                                 ³
+³ 13.9) Acceptable characters in naming a directory include (NO spaces or     ³
+³       double dots/slashes - single dots/slashes ONLY):                      ³
+³                                                                             ³
+³        ABCDEFGHIJKLMNOPQRSTUVWXYZ                                           ³
+³        abcdefghijklmnopqrstuvwxyz                                           ³
+³        0123456789.-                                                         ³
+³                                                                             ³
+³ [ Proof ]                                                                   ³
+³ 14.1) ALL retail (including R5) releases MUST now include source proof in   ³
+³       the following way:                                                    ³
+³       Photograph (not scan) of the actual physical disc (printed side)      ³
+³       with a group tag in JPEG format. The image must be good quality with  ³
+³       disc details clear and readable. Small portions containing sensitive  ³
+³       information may be blurred or blackened.                              ³
+³ 14.2) The proof picture(s) must have unique filenames and be in a separate  ³
+³       directory named 'Proof'.                                              ³
+³ 14.3) Cover scans and m2ts/vob samples may be added but DO NOT count as     ³
+³       sufficient proof.                                                     ³
+³ 14.4) Releases that fail to pre with such proof are to be considered a nuke ³
+³       and can be propered. Proofixes later than 4 hours from pre (if a      ³
+³       proper has not been pred during that time) will not be accepted.      ³
+³ 14.5) For TV series one of the following is allowed:                        ³
+³        a) Include a proof image with all the discs in the first pred        ³
+³           episode of the set.                                               ³
+³        b) Include a proof image of the relevant disc in every episode of    ³
+³           the set.                                                          ³
+³        c) Include a proof image of the relevant disc once in one episode of ³
+³           your choice from that disc. In this case you MUST mention in all  ³
+³           the relevant NFOs the release name where proof can be found.      ³
+³        d) Include a proof image of all the discs in every episode of the    ³
+³           set.                                                              ³
+³ 14.6) It is ESSENTIAL to make sure EXIF metadata is removed from your image.³
+³ 14.7) As a transitional measure, VOB source proof instead of picture proof  ³
+³       will be allowed for titles that match ALL of the following conditions:³
+³        a) Come from a DVD source.                                           ³
+³        b) Retail date of the DVD is before the date this document is pred.  ³
+³        c) The pre is NOT iNTERNAL.                                          ³
+³                                                                             ³
+³ [ Source Related Notes ]                                                    ³
+³ 15.1) Re-encoding material of any transcoded source is forbidden.           ³
+³ 15.2) Non-studio audio must be tagged accordingly, e.g. LINE audio.         ³
+³ 15.3) Releases provided with studio audio do not dupe releases with         ³
+³       non-studio audio. The reverse does not apply.                         ³
+³ 15.4) The use of sources like CAM, TS, TC, Workprint, SCREENER, Laserdisc,  ³
+³       etc. MUST be tagged with the source in the dirname and must adhere    ³
+³       to ALL the rules of this document, except for the proof rules. Such   ³
+³       releases are not considered retail however, so retail DVD or BD rips  ³
+³       pred after are not to be considered dupes.                            ³
+³ 15.5) Screeners must be clearly marked in the directory name and the NFO    ³
+³       must contain presence of studio watermarking, black&white scenes and  ³
+³       counters or lack thereof.                                             ³
+³ 15.6) SD WEBRips from sources that offer SD downloads such as iTunes must   ³
+³       follow this ruleset without reencoding where possible. HD downloads   ³
+³       must be reencoded.                                                    ³
+³   15.6.1) WEBRips that are "capped" such as Netflix, Amazon VOD, etc must   ³
+³           follow TV rules.                                                  ³
+³   15.6.2) Proof must be a screenshot of the download in progress.           ³
+³   15.6.3) BDRip/DVDRip can be pre'd after WEBRip - WEBRip is NOT allowed    ³
+³           AFTER BDRip/DVDRip.                                               ³
+³                                                                             ³
+³ [ Internals ]                                                               ³
+³ 16.1) INTERNALS must follow all rules stated in this document and are exempt³
+³       from CRF rules and certain conditions explicitly mentioned throughout ³
+³       the rules.                                                            ³
+³ 16.2) INTERNALS are not exempt from proof rules.                            ³
+³ 16.3) Other codecs and containers are allowed for experimental purposes.    ³
+³   16.3.1) XviD has been superseded. XviD releases must be kept INTERNAL.    ³
+³ 16.4) Dirfixing a release to INTERNAL must not be done to avoid a nuke      ³
+³       and the release will remain nuked.                                    ³
+³ 16.5) INTERNAL must also be used for any releases that have already been    ³
+³       pred as XViD. Non-internal codec dupes are not allowed.               ³
+³                                                                             ³
+³ [ Changelog ]                                                               ³
+³                                                                             ³
+³  Rev1.1 - Fixed the resizing examples                                       ³
+³            ______                                        ______             ³
+³           /\     \                                      /     /\            ³
+ÃÄÄÄÄÄÄÄÄ__/  \_____\ÄÄÄ/   Üßß ß Üßß ÛßÜ Ûßß ÛßÜ    \ÄÄÄ/_____/  \ÄÄÄÄÄÄÄÄÄÄÄ´
+ÃÄÄÄ Ä  /\__\ /     / Ä((ÄÄ  ßÜ Û Û Û Û Û Ûß  Û Û  ÄÄ))Ä \   __\   /__Ä Ä ÄÄÄÄ´
+ÀÄÂÄÄÄÄÄ\/__//_____/ÄÄÄÄÄ)  ßß  ß  ß  ß ß ßßß ßß    (ÄÄÄÄÄ\_/__/\/__/ \ÄÄÄÄÄÂÄÙ
+./'  Ä       /\__\                                          \__\/ \__\/ Ä   `\.
+³          Ä \/__/                                                Ä           ³
+³                                                                             ³
+³   0x539 aAF AEN AFFECTION AFO ALLiANCE AMIABLE ANiHLS AN0NYM0US ARCHiViST   ³
+³                                                                             ³
+³  ARROW BALKAN BAND1D0S BiGGiESmaLLz BiQ BOV COCAIN Counterfeit DAA DeBTViD  ³
+³                                                                             ³
+³  DEiMOS DEMAND DERANGED DOCUMENT DoNE DRAWER EMX FARGIRENIS FFNDVD FiHViD   ³
+³                                                                             ³
+³ FLAiR FRAGMENT FUtV GECKOS GORE GxP HAGGiS I_KnoW iBlade iFH iFPD iGNiTiON  ³
+³                                                                             ³
+³     IGUANA iNGOT KEBAP KiDDoS KYR Larceny LiQUiD LPD Ltu NCAXA NODLABS      ³
+³                                                                             ³
+³ NOSCREENS OSiRiS OSiTV PFa PHOBOS PSYCHD QCF RCDiVX RedBlade REWARD ROVERS  ³
+³                                                                             ³
+³  RUNNER RUSTED SAiNTS SCREAM SDTV SFM SMOKEY SPARKS SPRiNTER TASTE TASTETV  ³
+³                                                                             ³
+³                   VETO VH-PROD WaLMaRT WASTE WiDE XSTREEM                   ³
+³                                                                             ³
+³                                                                       o     ³
+³   o                                 /Ä\                                     ³
+³ ()                                 /   \                                ()  ³
+ÃÄ    o          .                  /_(O)_\                  .         o     Ä´
+³`\____________ /                  _________                  \ ____________/'³
+:  ))________ /                   /         \                   \ ________((  :
+.           /______ / /________ _/ ÄÄÄÄÄÄ Ä  \_ ________\ \ ______\
+      +    )_______( (__\_(__/  /   S i L K   \  \__)_/__) )_______(    +     .
+.          +        )_)     :: /_______________\ ::     (_(        +
+                    '        ')                 (`         `               +  .
+   +             +      ___  (     pH7 & 0ND     )  ___        +
+                       /__/\ .                  .  /\__\
+           .   .  . _  \__\/                       \/__/  _ .  .   .
+                      \_  .                     . .    _/

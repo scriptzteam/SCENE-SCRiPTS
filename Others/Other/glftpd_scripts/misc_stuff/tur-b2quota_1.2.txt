@@ -1,0 +1,13 @@
+Tur-B2Quota
+
+Description: A script for those using B2's (BredBandsBolagets) 100 Mbit service 
+with the nasty quota limit / month. Its simply a small perl script made by Cruxis 
+that will report the available quota left and output this in shell.
+Included are two scripts by turranius.
+1: A tcl for your bot so you can get the current quota announced.
+2: A .sh script that works as an alarm and will alert you if the limit gets below a
+definable limit.
+
+Author:   Turranius
+Version:  1.2
+Added on: 15-Nov-2004

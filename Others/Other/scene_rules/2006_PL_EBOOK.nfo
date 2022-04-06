@@ -1,0 +1,264 @@
+(pers_v_1_0.nfo)
+
+0. Polish eBooks Releasing Standards v. 1.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Ponizsze  zasady okreslaja standardy wydawania polskich eBookow
+i powstaly w wyniku dyskusji  pomiedzy przedstawicielami naste-
+pujacych grup: BiL, iMN, KiOSK oraz PiSToNS.
+
+Zasady  obowiazuja  od  dnia  22  wrzesnia  2006  i nie dotycza
+releasow wydanych wczesniej.
+
+I. KOMIKSY, MAGAZYNY I CZASOPISMA - ZASADY OGOLNE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Zrodlo:
+
+a) Releasy  powinny byc skanowane z wydania papierowego w znaj-
+   dujacego sie w bardzo dobrym stanie, to jest bez  widocznych 
+   defektow mechanicznych,  chyba ze taki defekt jest wina dru-
+   karni lub wydawnictwa. Skaner, na ktorym release jest skano-
+   wany nie moze miec  zadnych uszkodzen, ktore wplywaja na ja-
+   kosc koncowego wydania.
+
+2. Skanowanie:
+
+a) Skany musza byc wykonywane w rozdzielczosci minimum 300 dpi.
+b) W przypadku stronic czarno-bialych skany musza byc  wykonane
+   w odcieniach szarosci.
+c) Mozna nie skanowac stronic zawierajacych  pelnoformatowe re-
+   klamy, ogloszenia drobne, plakaty.
+d) Mozna nie skanowac dodatkow.
+e) Wydanie zawsze powinno posiadac okladke.
+
+3. Obrobka:
+
+a) Dozwolone sa jedynie  dwie  szerokosci  stronicy 1280 i 1600
+   pikseli.
+b) Skany nie powinny  posiadac tzw. mory,  ponadto powinny  byc 
+   ostre.
+c) Kazda ze stron musi byc ustawiona prosto  optycznie  (maksy-
+   malne odchylenie  wynosi 1,5 stopni od  pionu wzgledem linii 
+   tekstu, badz ilustracji).
+d) Obszary znajdujace   sie poza obrebem skanowania powinny zo-
+   stac usuniete.
+e) Strony nie powinny przebijac (nalezy np. podlozyc pod skano-
+   wana strone kartke czarnego papieru)
+f) Dozwolone jest laczenie stron -  jesli zawartosc  to uzasad-
+   nia.
+g) Dozwolona kompresja plikow JPG to 80%-100%.
+h) Maksymalna waga pojedynczej strony nie moze przekraczac 2MB,
+   odpowiednio dla stron laczonych - ilosc stron * 2MB.
+i) Zabroniona  jest  konwersja skanowanych  gazet  i komiksow z 
+   JPG do PDF. 
+j) Zabroniona  jest  konwersja z PDF do  JPG. Jezeli komiks lub 
+   magazyn zostal wydany w formacie PDF, to jesli  jest to  mo-
+   zliwe to w takim  tez powinien zostac wydany na scenie (cho-
+   dzi  tutaj o  poskladane PDFy - zabronione jest na  przyklad 
+   konwertowanie do  JPG w celu  zdjecia  zabezpieczenia, a po-
+   zniej, z JPG znowu do PDF), przy  czym  jesli zabezpieczenie 
+   nie pozwala na wydanie poskladanego PDF'a, to mozna go prze-
+   robic na JPG i wypuscic.
+
+4. Pakowanie:
+
+a) Pliki nalezy spakowac  najpierw  w pliki rar (maksymalnie po 
+   5 000 000 bajtow kazdy), a nastepnie w zip dodajac do kazdej 
+   paczki wlasny plik file.diz i .nfo. Archiwa ZIP powinny miec 
+   nazwy skladajace sie maksymalnie z 8 znakow.
+
+5. Nazewnictwo:
+
+a) Releasy powinny byc nazywane wedlug schematu:
+
+   Nazwa.(Numer).(Rok).(Nr).(TRANSL).(PDF).(WEB).(iNTERNAL).POLISH.(Magazine/Comic/Walkthrough).(PROPER)(READ.NFO).-grp
+
+   Jezeli  release to wydanie  specjalne,  numer specjalny itp. 
+   to ta informacja powinna znalezc sie po nazwie, a przed nu-
+   meracja.
+   
+   Numer, Rok  - dotyczy gazet i czasopism lub komiksow, jezeli 
+                 taka numeracje posiadaja.
+   Nr          - numer kolejny w danym roku.
+   TRANSL      - stosowany gdy release tlumaczony jest przez 
+                 grupe
+   WEB         - stosowany do releasow pochodzacych z sieci i
+                 nie dostepnych w wersji papierowej
+                 (poradniki, platne ziny internetowe)
+   PDF         - stosowany gdy release wydawany w formacie 
+                 PDF
+   Magazine    - stosowany podczas wydawania gazet, czaso-
+                 pism, magazynow.
+   Comic       - stosowany podczas wydawania komiksow.
+   Walkthrough - stosowany podczas wydawania poradnikow.
+
+6. Nuki i propery
+
+   Release kwalifikuje sie do znukowania jesli:
+
+a) Brak w nim stron, jest w niewlasciwej rozdzielczosci lub la-
+   mie zasady - nalezy jednak unikac properow z blahych powodow.
+b) Jesli komiks lub gazeta dostepna jest do kupienia w formacie 
+   PDF, a grupa wyda ja w formacie JPG, to w momencie kiedy 
+   zostanie wydany na scenie poskladany PDF kupiony u wydawcy i 
+   odbezpieczony, to kwalifikowane to jest jako PROPER  (i  tak
+   powinno byc nazwane).
+c) w PROPERZE powinno byc jasno wyszczegolnione co bylo nie tak
+   w poprzednim releasie - z numerami stron w nfo oraz z przyk-
+   ladami wadliwych stron w samym releasie.
+
+II. MAGAZYNY, CZASOPISMA I PODRECZNIKI RPG - ZASADY SZCZEGOLOWE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Zrodlo
+
+a) Material  nie moze byc darmowy, badz posiadac nakladu mniej-
+   szego niz 150 egzemplarzy
+b) Mozna wydac  najwyzej  10  ostatnich  numerow  w odniesieniu
+   do aktualnego  numeru, lecz nie moga byc one starsze niz rok
+   (nie dotyczy prasy zawierajacej literature).
+c) Dzienniki nie moga byc  wydawane pozniej niz dzien po ukaza-
+   niu sie.
+
+2. Obrobka
+
+a) Stronice  powinny  byc nazywane  w  najprostszy  sposob  tj. 
+   01.jpg, 02.jpg itd...(dla  materialow  posiadajacych  maksy-
+   malnie 99 stronic) lub 001.jpg 002.jpg itd... (dla gazet za-
+   wierajacych wiecej  niz  99 stronic). Pliki  JPG powinny byc 
+   ponumerowane zgodnie z kolejnoscia  wystepowania w danej ga-
+   zecie (jezeli okladka nie jest  uwzgledniona numerujemy jako
+   00.jpg, a w przypadku  wiekszej  ich ilosci 00a.jpg, 00b.jpg 
+   itd.). Numeracja powinna uwzgledniac pomijane strony (jezeli
+   reklama znajduje sie na stronie 69, numeracja powinna wygla-
+   dac nastepujaco: 68, 70).  Informacja o pominietych stronach 
+   powinna byc w nfo.
+
+IV. KOMIKSY - ZASADY SZCZEGOLOWE
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Obrobka
+
+a) Stronice  powinny  byc nazywane  w  najprostszy  sposob  tj. 
+   01.jpg, 02.jpg itd...(dla  materialow  posiadajacych  maksy-
+   malnie 99 stronic)  lub 001.jpg 002.jpg itd... (dla komiksow
+   zawierajacych wiecej niz 99 stronic). 
+
+
+VI. KSIAZKI
+~~~~~~~~~~~
+
+1. Postanowienia ogolne
+
+
+a) Podstawowym  formatem  jest RTF (DOC - gdy  ksiazka  zawiera 
+   spora ilosc ilustracji), chyba ze  material zrodlowy  zostal 
+   wydany  tylko w wersji  elektronicznej np. w  PDFIE i nie ma 
+   mozliwsci konwersji. 
+
+b) Inne formaty  moga  byc  dolaczone  do releasu jako dodatek, 
+   jednakze nalezy unikac bezsensownego  dodawania mnostwa for-
+   matow - np. po co  dolaczac PDF'a  wygenerowanego  z  Worda,
+   skoro zrobienie takiego pliku to  kwestia paru sekund  (czym 
+   innym juz jest PDF poskladany w programie DTP).
+
+c) Obowiazuje  zasada  jeden  release  na jedna ksiazke - jesli 
+   grupa  chce  pozniej  wydac  dana ksiazke  w  innym formacie 
+   musi byc  to internal,  przy czym  po  wydaniu  releasu nie-
+   finalnego mozna wydac jeszcze release finalny.
+
+d) Do releasu trzeba dolaczyc wszelkie mapki oraz ilustracje do
+   ktorych znajduja sie odnosniki w tekscie. Inne ilustracje i 
+   okladka nie sa obowiazkowe.
+
+   Mapki i okladka - w osobnym pliku graficznym (jpg, png itp)
+
+   Ilustracje      - wstawione w tekst, najblizej jak sie da 
+                     miejsca, w ktorym byly w wydaniu papie-
+                     rowym. 
+
+   Jesli ebook  zawiera ilustracje  mozna dolaczyc  do  wydania 
+   druga wersje - bez ilustracji.
+
+e) Wprowadza  sie rozgraniczenie na releasy niefinalne i final-
+   ne.
+
+   Release niefinalny - ksiazka zdatna do czytania, z drobnymi 
+                        bledami i prostym formatem
+
+   Release finalny    - wydanie ostateczne ksiazki, z doskona-
+                        la korekta i formatowaniem
+
+2. Release niefinalny musi spelniac nastepujace warunki:
+
+a) Usuniete  wszelkie smieci Fr'a, poprawione akapity rozwalone 
+   w srodku zdania, usunieta  numeracja stron, a takze podzialy 
+   stron  (w sensie - po  kazdej stronie, nie  chodzi  tutaj  o 
+   podzialy wstawione na przyklad przed nowym rozdzialem)  lini 
+   i wyrazow.
+
+b) Co prawda ksiazka powinna byc przeczytana, ale dopuszcza sie 
+   mozliwosc  wydania  releasu bez czytania - jednakze nalezy o 
+   tym napisac w nfo, a sam tekst powinien byc bardzo dokladnie 
+   sprawdzony w FineReaderze i Wordzie.
+
+c) Rozdzialy,  czesci,  podrozdzialiki  - tak jak w wydaniu pa-
+   pierowym.
+
+d) Release  niefinalny  moze byc  sformatowany w prosty, jedno-
+   lity sposob.
+
+2. Release finalny musi spelniac nastepujace warunki:
+
+a) To, co w relasie niefinalnym, dodatkowo tekt MUSI byc  prze-
+   czytany i bardzo dokladnie  sprawdzony oraz sformatowany po-
+   dobnie  do  wydania papierowego  (tzn.  odpowiednie style na 
+   rozdzialach i czesciach ksiazki,  wieksze wciecia przy wier-
+   szach i listach itp). 
+
+b) Akapity  powinny byc  ustawione tak jak w ksiazce lub popra-
+   wione na akapity logiczne  (jesli laczenie akapitow nie bylo 
+   zamierzeniem autora, a w wydaniu papierowym byly bledy).
+
+c) Jesli  dana grupa chce wydac korekte finalna na bazie wczes-
+   niejszego releasu  niefinalnego innej grupy, to musi uzyskac 
+   zgode i napisac w nfo  ze  taka zgoda byla (chyba ze ksiazka 
+   zostala zeskanowana po raz drugi  -  co  jest latwe do spra-
+   wdzenia).
+
+3. Nuki i propery
+
+   Release kwalifikuje sie do znukowania jesli:
+
+a) Brak  w nim stron, lub posiada znaczna ilosc bledow - rozwa-
+   lonych akapitow,  literowek  i smieci  FR'a.  Nalezy  jednak 
+   unikac PROPEROW  z  blahych  powodow, a  w interesie  grupy, 
+   ktora  decyduje sie  wydac  PROPERA  lezy,  zeby  udowodnic,
+   ze poprzedni release byl wadliwy.
+   
+b) w PROPERZE powinno byc jasno wyszczegolnione co bylo nie tak
+   w poprzednim releasie a do archiwum nalezy dolaczyc porowna-
+   nie dokumentow oraz liste bledow.
+
+4. Nazewnictwo i pakowanie
+
+a) Releasy powinny byc nazywane wedlug schematu:
+
+   Nazwisko.Imie.Tytul.(TRANSL).(iNTERNAL).(Final).POLISH.eBook.(PROPER).(READ.NFO).-grp
+
+   Final  - w przypadku wydania finalnego
+   TRANSL - stosowany gdy release tlumaczony jest przez grupe
+
+b) Pliki nalezy spakowac  najpierw  w pliki rar (maksymalnie po 
+   5 000 000 bajtow kazdy), a nastepnie w zip dodajac do kazdej 
+   paczki wlasny plik file.diz i .nfo. Archiwa ZIP powinny miec 
+   nazwy skladajace sie maksymalnie z 8 znakow.
+
+c) Ksiazka w archiwum powinna byc nazwana w nastepujacy sposob:
+
+   Nazwisko_Imie_-_Tytul.(format) - ksiazka
+
+   Nazwisko_Imie_-_Tytul_-_okladka.(format) - okladka
+
+   Nazwisko_Imie_-_Tytul_-_nazwa_mapy.(format) - mapy

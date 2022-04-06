@@ -1,0 +1,598 @@
+        °
+     ± ± ± ±±±
+        °        DEUTSCHE HIGH DEFINITION SERIEN UND TV RULES v2.0         °
+                                  (DHDSTVR.v2.0)                        ± ± ± ±±±
+        °                                                                  °
+                              - Exclusive HDTV Filme
+                                                                           °
+
+
+                           -       PROLOG       -
+                           ----------------------
+
+     Dieses Ruleset ist im Vergleich zu dem von 2008 eigenstaendig gegenueber
+     den DSTVR und klaert alle Fragen die sich zum Thema HDTV ergeben. Es
+     wurde grundlegend ueberarbeitet und bietet eine Vielzahl von Neuerungen
+     und Neuregelungen. Die wichtigsten davon sind u.a. :
+       
+     *) HDTV / Retail-TV 1080p Release nun erlaubt / geregelt (A1)
+     *) Kein Groessen- / Laufzeitverhaeltnis mehr bei 2Pass (A2)
+     *) CRF als Encodeverfahren ist erlaubt (B1)
+     *) Bei Retail-TV darf nun auch DTS-Audio verwendet werden (B11)
+     *) Neuregelung von Retail-Staffelrechten (E7)
+     *) Regelung von Retail Proofs (F1)
+
+       
+                           - INHALTSVERZEICHNIS -
+                           ----------------------
+
+     A: Allgemeines                        G: Packaging (Sample - NFO - RAR)
+     B: Encoding (Bild - AR/Crop - Ton)    H: Dirnamen
+     C: Subbed/CustomSubbed                I: Proper Gruende
+     D: Dubbed Release (HDTV - BluRay)     J: Appendix
+     E: Staffelrechte                      K: Epilog
+     F: Retail Proof                       
+                      
+
+                           --  A * ALLGEMEINES --
+                           ----------------------
+
+     A1. 720p/1080p TV/Serien Release sind nur im x264 Format (MKV Container) 
+         zulaessig.
+
+         ----------------------------------------------------------------------
+         Kategorie 1 -> DVB-S2/C -> HDTV   -> Deutschsprachiges Sat./Kabel HDTV
+         Kategorie 1 -> iTunesHD -> WebHD  -> Deutschsprachiges iTunesHD
+         Kategorie 1 -> HDTV     -> Dubbed -> Auslaendisches HDTV
+         Kategorie 1 -> iTunesHD -> Dubbed -> Auslaendisches iTunesHD
+         ----------------------------------------------------------------------
+         Kategorie 2 -> BluRay   -> Dubbed -> Auslaendische Retail BluRays
+         Kategorie 2 -> HDDVD    -> Dubbed -> Auslaendische Retail HD-DVDs
+         ----------------------------------------------------------------------
+         Kategorie 3 -> BluRay   -> Retail -> Deutschsprachige Retail BluRays
+         ----------------------------------------------------------------------
+           
+         A1.1 Wertigkeit: Kategorie 1 = Niedrigste Kategorie
+                          Kategorie 3 = Hoechste Kategorie
+
+         A1.2. Erlaubte Bildquellen sind:
+               BluRay, DVB-C/S2, HDDVD, iTunesHD
+
+               Andere Bildquellen sind NICHT erlaubt! Die Tonspur darf,
+               sofern sie diesem Ruleset entspricht, auch aus Streaming-
+               portalen entnommen werden.   
+
+         A1.3. Einzelne Folgen, die als Promo BD (Zeitungs- oder 
+               Zeitschriftenbeilagen, Bonus-Episoden, etc.) publiziert 
+               wurden, duerfen nicht zur Sicherung von Retail Staffelrechten
+               genutzt werden. Das enthaltene Audiomaterial darf allerdings
+               fuer ein dubbed Release genutzt werden.
+               Ausgenommen hiervon sind Preview-Retails welche im regulaeren
+               Handel verfuegbar sind, wie zum Beispiel bei Star Trek TNG.
+                  
+     A2. Alle diesem Ruleset unterliegenden Release sollten sich an folgenden 
+         Groessen orientieren:
+
+         A2.1. Ein im 2Pass Verfahren erstelltes 720p Release sollte in der 
+               Groesse einem Vielfachen von 50MB entsprechen. Dabei darf eine
+               Videobitrate von 3000Kbps nicht unterschritten werden. 
+               Ausgenommen hiervon sind Anime- / Animations- und Zeichentrick-
+               serien, hier darf die Videobitrate 2300Kbps nicht unterschreiten.
+
+         A2.2. Ein im 2Pass Verfahren erstelltes 1080p Release sollte in der
+               Groesse einem Vielfachen von 100MB entsprechen. Dabei darf eine
+               Videobitrate von 7000Kbps nicht unterschritten werden.
+               Ausgenommen hiervon sind Anime- / Animations- und Zeichentrick-
+               serien, hier darf die Videobitrate 5000Kbps nicht unterschreiten.
+               
+         A2.3. Auslaendische und iTunesHD Quellen, welche zum Dubben verwendet 
+               werden, koennen in ihrer Groesse belassen werden.
+               Sollten sie jedoch selbst encodet werden unterliegen sie allen
+               Regelungen in diesem Ruleset.
+
+     A3. Bei digitalen HDTV Quellen muessen Sender-Logos NICHT ueberblendet
+         werden, es ist lediglich die Werbung zu entfernen.
+         
+     A4. Es wird empfohlen stets die aktuellste x264 Revision zu verwenden.
+         Bei der Nutzung des nativen x264 darf die verwendete Revision nicht
+         aelter als 5 Builds sein. Als erste Quelle dient hier x264.nl.
+         
+         Wenn ein Programm verwendet wird welches lediglich auf dem x264 
+         Sourcecode basiert, muss die verwendete Version stets der 
+         aktuellsten verfuegbaren Version mit neuer x264 Version ent-
+         sprechen, hier ist eine Abweichung von 3 Builds erlaubt.
+         
+
+
+                           --  B *  ENCODING   --
+                           ----------------------
+                              
+     B01. 720p und 1080p Release sind sowohl im CRF, als auch 2 Pass Verfahren
+          erlaubt.
+
+          B01.1. Ein im CRF-Verfahren encodetes Release muss einen CRF-Faktor 
+                 zwischen 20 und 18 aufweisen. Sollte ein Faktor groesser als 
+                 20 verwendet werden muss dies hinreichend in der NFO 
+                 begruendet werden.
+          
+                 Im Verhaeltnis der CRF-Faktoren sorgt 18 fuer eine groessere
+                 Filesize, waehrend 20 fuer eine kleinere Filesize sorgt.
+
+     B02. Bei dem encode eines Releases muessen mindestens folgende Settings
+          eingehalten werden:
+
+          --level 4.1
+          --profile high
+          --ref 5
+          --no-fast-pskip
+          --me umh
+          --trellis 1
+          --subme 7
+          --deblock -3:-3
+          --partitions p8x8,b8x8,i4x4,i8x8 --8x8dct
+          --bframes 3
+
+          B02.1. Um Level 4.1 zu respektieren muss fuer Vertikale Aufloesungen 
+                 groesser 864px --ref 4 verwendet werden.
+                 
+          B02.2. Bei Zeichentrick- oder Animeserien darf --deblock 0:0 
+                 verwendet werden.
+
+          B02.3. Das verwenden hoeherer Settings bleibt dem Ripper ueberlassen.
+                 Dies benoetigt keine weitere Begruendung, sollte aber Sinnvoll 
+                 eingesetzt werden.
+
+     B03. Retail Release sind in ihrer Original Abspielgeschwindigkeit zu
+          erstellen. (Bei BluRay in der Regel 23.976 FPS)
+          
+     B04. Das komprimieren des MKV-Headers (HeaderStripping) ist nicht erlaubt.
+          Des weiteren sollte auf korrekte Trackmarkierungen und eine korrekte
+          Trackanordnung geachtet werden.
+
+
+                            ->  Crop & Resize  <-
+
+     B05. Release welcher einer 720p Source entstammen duerfen nicht cropped
+          oder resized werden. Das anpassen einer 720p50 Source auf 25fps
+          mittels selectEven() ist jedoch Pflicht.
+
+     B06. Sofern es sich nicht um eine Anamorphe Quelle handelt ist das 
+          Resizen von 1080p Encodes nicht erlaubt. Es muss lediglich
+          mod8 Konform gecropped werden.
+          
+          Als Beispiel sei hier ComedyCentralHD genannt, welche Anamorph
+          1080p (1440x1080) ausstrahlen
+
+     B07. Release die als Source ein 1080(+) Bild haben, sind zu croppen, d.h. 
+          neu zu encoden. (Deinterlacen, IVTC beachten!)
+
+          B07.1. Bei Quellen mit variablen Cropwerten muss sich der Gesamtcrop 
+                 nach dem Frame mit den meisten Bildinformationen richten.
+
+          B07.2. Ein Overcropping ist nicht erlaubt. Im Zweifelsfall sind 
+                 Addborders in kauf zu nehmen. Diese sollten allerdings so 
+                 minimal wie moeglich ausfallen.
+
+
+                            ->  Aspect  Ratio  <-
+
+     B08. Ein HDTV-Release muss maximal eine der folgenden Aufloesungen haben:     
+         
+                       AspectRation |       720p  |      1080p
+                    ----------------+-------------+--------------
+                       WS (16:9)    |   1280 * X  |   1920 * X
+                       FS ( 4:3)    |    960 * X  |   1440 * X
+                
+          B08.1. Bei einer iTunes Quelle deren Eingangsmaterial eine Auf-
+                 loesung von 960x720 vorweist muss beim muxen das 16:9 Flag
+                 gesetzt werden.
+               
+          B08.2. Die X-Aufloesung richtet sich nach dem Seitenverhaeltnis des 
+                 gecroppten Eingangsmaterials. Die Abweichung des Seiten-
+                 verhaeltnisses (AR-Error) darf maximal +/- 3% zum gecroppten 
+                 Quellmaterial betragen
+
+          B08.3. Auf Teilbarkeit durch 8 (Mod8) muss geachtet werden!    
+
+
+                            ->   Audioformate  <-
+
+     B09. Einzig erlaubte Audioformate fuer Release die auf diesem Ruleset
+          basieren sind DTS und AC3.
+                 
+          B09.1. TrueHD Audio ist IMMER nach AC3 zu konvertieren. 
+                 (B10 beachten!)
+                 
+          B09.2. 1CH oder 2CH LPCM-Audio muss stets nach AC3 konvertiert
+                 werden. 6CH LPCM-Audio darf nach DTS 1510Kbps oder
+                 AC3 konvertiert werden.
+                 
+          B09.3. Bei dubbed Releasen ist ein deutscher original 5.1 Track 
+                 erwuenscht.
+
+          B09.4. Bei Retail Releasen und bei deutschen HDTV Releasen ist 
+                 ein deutscher 5.1 Track, soweit vorhanden, Pflicht!
+
+     B10. Erlaubte Bitrates fuer eine auf AC3 konvertierte Audiospur:
+                  1.0 / 2.0 AC3: 192 - 384Kbps
+                  5.1 AC3      : 384 - 640Kbps
+
+     B11. Sollte die verwendete Retail Quelle DTS-Ton vorweisen muss sich
+          dieser an folgenden Regeln orientieren:     
+
+          B11.1. DTS Ton sollte immer in seiner Originalbitrate belassen
+                 werden.
+
+          B11.2. Bei DTS-HD MA Tracks darf ausschliesslich der DTS-Core
+                 verwendet werden.
+
+          B11.3. DTS Audiospuren welche lediglich als 1CH oder 2CH vorliegen
+                 muessen IMMER nach AC3 konvertiert werden. (B10 beachten!)
+
+          B11.4. Bei einem 720p Release ist nur die Deutsche Tonspur im DTS- 
+                 Format, sofern vorhanden, erlaubt. Eine weitere Tonspur darf 
+                 lediglich im AC3-Format vorliegen. Dies gilt sowohl fuer CRF, 
+                 als auch fuer 2Pass encodete Release.
+                 
+     B12. Bei einem 720p Release darf, sofern vorhanden, eine 2. Tonspur
+          im AC3-Format gemuxt werden, dies ist jedoch keine Pflicht.
+
+     B13. Sofern vorhanden, ist das muxen einer 2. Tonspur bei einem 1080p 
+          Release Pflicht. Bei Retail Quellen muss diese untouched von der 
+          Source entnommen werden (B11 beachten). In der Regel sollte dies 
+          die Englische Tonspur sein, bei Animes darf stattdessen der 
+          Japanische Ton verwendet werden.
+
+
+                        - C * SUBBED/CUSTOM SUBBED -
+                        ----------------------------
+                           
+     C1. Ein deutschsprachiges Retail Release, welches in der Source bereits 
+         eingebrannte Untertitel aufweist, ist erlaubt!
+
+     C2. Bei Retail Quellen sind nur forced Untertitel, sofern vorhanden,
+         Pflicht.
+         
+         Als 'Forced Sub' gelten Untertitel, welche nur bei anderssprachigen 
+         Szenen eingeblendet werden und nicht staendig zu sehen sind.
+
+     C3. Die Untertitel bzw. forced Untertitel muessen im Textformat (.srt) 
+         in die .mkv Datei gemuxt werden. Das muxen von Complete Subs, 
+         sofern diese keine Forced Subs darstellen, ist freigestellt.
+
+     C4. In einem nach .srt konvertieren Untertiteltrack sind maximal 5 Fehler
+         erlaubt. Dies beinhaltet u.a. schwere Fehler beim OCR, Rechtschreib-
+         oder Grammatikfehler und aehnliches.
+         Allerdings ist eine Group nicht verpflichtet Fehler des Herstellers
+         zu korrigieren.
+
+     C5. Das beilegen weiterer Untertitel im VobSub-Format ist erwuenscht, 
+         jedoch keine Pflicht. Sollten welche beigelegt werden muessen sich 
+         diese in einer mit m5-Kompression gepackten .rar-Datei in einem 
+         Unterordner "Subs" befinden.
+
+     C6. Aufgrund der Vielzahl an moeglichen Custom Subbed Releases und der
+         Moeglichkeit, auch ohne eigene Source zu pren, MUESSEN Custom
+         Subbed Releases als iNTERNAL gelabelt werden.
+
+
+                         - D * DUBBED (HDTV - BluRay) -
+                         ------------------------------
+
+     D1. Die Normale Laufgeschwindikeit deutscher Releases ist 25 FPS (PAL),
+         Das Bild MUSS bei dubbed auf 25 FPS (PAL) angepasst werden!
+         Ton ist 25 FPS = Bild MUSS 25 FPS haben (Proper Grund).
+
+         D1.1. Eine Ausnahme hierzu entsteht nur, wenn im deutschprachigem 
+               TV mit 23,976 FPS gesendet wird (NTSC), in dem Fall MUSS 
+               das Bild dem Ton angepasst werden! Der Ton ist bei dubbed 
+               massgebend fuer die Laufzeit des Bildes, nicht andersrum 
+               (Ausnahme D1.3)!
+
+         D1.2. Sollte die Laufgeschwindigkeit in der deutschen Ausstrahlung 
+               weder 23,976 FPS (NTSC) noch 25 FPS (PAL) entsprechen, so 
+               ist die naeherliegende Laufgeschwingkeit fuer das Bild zu 
+               waehlen.
+         
+         D1.3. Alternativ darf bei einem 1080p Release der deutsche Ton
+               ohne hoerbare Unterschiede zum Original (z.B. Hoehen-
+               veraenderung der Stimmen) an die Framerate des Videos 
+               angepasst werden.
+               Hierzu kann z.B. das Tool Audacity (in Version 1.3.12-Beta 
+               [ANSI]) mit der Funktion "Tempo aendern" und einem Wert 
+               von +/- 4.096 verwendet werden.
+
+     D2. Sollte die Bildsource in progressiven 29 FPS (NTSC) vorliegen
+         (d.h. keine Interlaced Frames enthalten), ist die Anpassung
+         des Bildes auf 25 FPS (PAL) nicht notwendig. Der deutsch-
+         sprachige Ton MUSS in diesem Fall auf die Laufgeschwindigkeit
+         des Bildes (NTSC) gebracht werden.
+          
+        
+                           - E *  STAFFELRECHTE -
+                           ----------------------
+
+                           ->    HDTV-Race     <-
+
+     E1. Releases der selben Kategorie (siehe A1) sind gleichwertig.
+
+     E2. Quellen einer hoeheren Kategorie stehen immer ueber entsprechenden
+         Releases einer niedrigeren Kategorie.
+
+     E3. Sollte im laufe einer Staffel eine hoeherwertige Quelle verfuegbar
+         werden hat die Group, welche die Serienrechte inne hat, die Pflicht
+         diese beim naechsten Release als Quelle zu nutzen.
+         
+     E4. Wenn nach dem vollstaendigen Pre einer Staffel im Kategorie 1
+         Format eine hoeherwertige Quelle verfuegbar wird, darf diese
+         nur dann Regulaer (non Internal) pred werden wenn der deutsch-
+         sprachige Retailtermin mehr als einen Monat entfernt ist. 
+         Hierbei ensteht ein neues Race um die erste Episode!
+
+
+                          -> HDTV-Fortfuehrung   <-
+          
+     E5. Beginnt eine Group eine Serie, sollte die Group diese auch
+         konsequent zu Ende fuehren. Sollte dennoch 2 Tage (24 Stunden
+         * 2 Tage) nach Ausstrahlungsende/Verfuegbarkeit einer Folge
+         entweder kein, oder nur ein fehlerhaftes Release vorliegen,
+         kann eine andere Group diese Folge als "Ersatzepisode" pren.
+     
+     E6. Durch ZWEI hintereinanderfolgende fehlerhafte oder nicht existente
+         Folgen verliert die erste Group die Staffelrechte an die Group, 
+         die entweder die ausstehenden Folgen nach Ablauf der Zeit pred 
+         oder propert.
+         (Doppelfolgen, bzw. 2 Folgen die an einem Tag ausgestrahlt werden,
+         zaehlen NICHT als 2 Folgen)!
+     
+         Bei einem zweiten Ersatz- oder Properrelease hat die Group des
+         ersten Ersatz- oder Properrelease 24 Stunden Vorrang, um die
+         zweite Ersatz- oder Proper-Episode zu pren.
+
+            
+                           ->     TV-Retail    <-
+                              
+     E7. Fuer das Releasen einer Retail Serie im 720p Format hat eine Group
+         14 Tage (14 * 24h) ab dem ersten Pre zeit. Fuer eine Serie im 1080p
+         Format betraegt diese Zeit 21 Tage (21 * 24h). Nach dieser Zeit kann
+         eine andere Group diese Serie uebernehmen und die noch fehlenden
+         Release pren.
+
+     E8. Bei geteilten Boxen beginnt die Zeitrechnung ab dem Pre der ersten
+         Folge der naechsten Box von neuem.
+
+
+                           -  F * RETAIL PROOF  -
+                           ----------------------
+
+     F1. Source Proofs, sogenannte Proof Pics, sind KEINE Pflicht!
+         Sofern doch ein Proof beigelegt wird muss dieser lediglich dem 
+         ersten Release (SxxE01) einer Staffel beigelegt werden.
+
+     F2. Wenn ein Proof beigelegt wird muss sich dieser in einer mit m5
+         komprimierten .rar-Datei in einem Unterordner "Proof" befinden.
+         Es wird dringend darauf hingewiesen EXIF-Metadaten (z.B. mit
+         jhead) stets zu entfernen.
+
+     F3. Zudem kann neben dem Foto ein MediaInfo-Log (Normal Mode) der
+         Quelle, sowie ein x264 Encodelog beigelegt werden. Diese sollten
+         sich in der selben .rar-Datei wie das Foto befinden und im .txt
+         Format vorliegen.
+
+
+                           - G  *   PACKAGING   -
+                           ----------------------
+                           
+                           ->     NFO Datei    <-
+                           
+     G1. Die NFO-Datei sollte grundlegende Informationen beinhalten wie z.B.
+     
+         - Releasezeitpunkt
+         - Austrahlungs- oder Veroeffentlichungsdatum
+         - Bild- und Tonquelle
+         - Bild- und Tondetails (Format, Codec, etc.)
+         - Angabe zum Encodeverfahren und Faktor (Pflicht!)
+         - Link zur Informationsseite (vorzugsweise imdb)
+         - Grund eines Propers (dies ist nicht optional!) bzw. Fixes
+         
+     G2. Um ueber laengere Zeit Uebersichtlichkeit zu gewaehrleisten MUSS
+         bei einem DiRFiX (siehe H8) der Name des fehlerhaften Releases
+         angegeben werden. Dies ist allerdings nur dann notwendig wenn es
+         sich nicht um einfache Schreibfehler handelt, z.B. bei falscher
+         Episodennummerierung oder falschen Episodenname.
+
+            
+                           ->     RAR Files    <-
+                              
+     G3. Die Groesse der .Rar-Dateien muss einem Vielfachen von 50MB 
+         (50.000.000Byte) entsprechen. (z.B. 50MB, 100MB, 150MB, ...)
+     
+     G4. Diese sind mittels "Alter Volumennamen" mit m0-Kompression 
+         (nur speichern) zu erstellen.
+         
+     G5. Einen  Recoverypoint auf die RAR-Files zu legen ist erlaubt und
+         erwuenscht.
+
+         
+                           ->     Sample      <-
+
+     G6. Jedem Release ist ein mindestens 30 Sekunden langes Sample, im
+         Unterordner namens "Sample", beizulegen. Dieses Sample muss aus 
+         dem Originalrelease extrahiert werden.
+
+     G7. Einem Proper sollte ein aus dem zu propernden Release extra-
+         hiertes Sample beigelegt sein, welches den technischen Fehler
+         nachweist, z.B. aufgrund von Asynchronitaet, Videoglitches, o.a.
+
+         
+                           - H *   DIRNAMEN     -
+                           ----------------------
+
+     H1. Um eine einheitliche Uebersicht zu gewaehrleisten und Standards
+         beizubehalten, die eine gewisse Uebersicht beim Suchen und Dupen 
+         bieten, sollte eine Serie so gut wie moeglich in zweistelliger 
+         Staffel- und Episodennummerierung vorliegen. Bei Serien, bei denen 
+         eine groessere Anzahl an Folgen bereits bekannt ist (z.B. GZSZ), 
+         ist eine ausreichende Laenge der Episodennummerierung zu nutzen.
+     
+         [ S01E01, S01D01, Staffel01.Disc01, Folge087, E01 ]
+     
+     H2. Alle Staffel- und Episodentitel sind gemeinsam nachvollziehbar zu
+         halten, wobei hierzu (Wichtigkeit nach Listung) imdb.com bzw.
+         imdb.de und fernsehserien.de als Referenz zu nutzen sind.
+     
+     H3. Sollten zwei Serien mit dem gleichen Titel vorliegen, so ist
+         zwingend das Jahr der Serie im Verzeichnisnamen zu inkludieren.
+     
+     H4. Bei regelmaessig erscheinenden Releases, die keiner fortlaufenden
+         logischen Nummerierung unterliegen (z.B. Magazine, Talkshows),
+         ist ein Timestamp im Verzeichnisnamen zu hinterlegen. Dieser muss
+         im internationalen Format YYYY-MM-DD vorliegen, da so eine einfache,
+         alphabetische Sortierung nach Datum gewaehrleistet werden kann.
+  
+         [ Die.Heute.Show.2012-02-24.GERMAN.720p.HDTV.x264-GROUP ]
+            
+     H5. Die Releaseverzeichnisse bauen sich wie folgt auf und sind 
+         bevorzugt so zu verwenden:
+         
+          1) Serientitel
+          2) Staffel/Episodenkennziffer
+          3) Episodentitel                -> optional, jedoch gewuenscht
+          4) Sprache                      -> ggf. mit dem Zusatz .DUBBED.
+          5. Tonformat                    -> optional, AC3 oder DTS
+          6) Bildseitenverhaeltnis        -> nur bei FS (4:3) Pflicht
+          7) Bildformat                   -> 720p oder 1080p
+          8) Bildquelle                   
+          9) Video Codecformat
+         10) Groupname
+     
+            Zulaessige Bezeichnungen fuer die Bildquelle sind:
+            HDTV, BluRay, HDDVD und WebHD
+               
+            Als Video Codecformat ist stets x264 anzugeben!
+            Ausgenommen davon sind Web-Quellen, welche untouched im 
+            H.264 Format vorliegen. Bei solchen Quellen ist h264
+            im Tagging zu verwenden.
+         
+            Sofern das Release 2 Tonspuren beinhaltet ist dies
+            im Tagging mittels DL anzugeben.
+            
+            Als Abkuerzung fuer AC3.DUBBED oder DTS.DUBBED sind zudem
+            AC3D bzw DTSD zulaessig.
+         
+            Beispiele fuer korrekte Dirnamen: 
+            [Die.Simpsons.S22E22.Nedna.GERMAN.720p.HDTV.x264-GROUP        ]
+            [Die.Simpsons.S22E22.Nedna.GERMAN.DUBBED.720p.WebHD.h264-GROUP]
+            [Die.Simpsons.S22E22.Nedna.GERMAN.DL.1080p.BluRay.x264-GROUP  ]
+            
+            Das Release ist auf keinen Fall als fehlerhaft zu werten, sollten 
+            Teile des Taggings durchgehend lowercase oder uppercase sein. 
+            Das Release-Directory sollte jedoch bevorzugt in korrektem Casing 
+            bei Pre vorliegen.
+            
+     H6. Dokumentationen & Anime:
+     
+         Dokumentationen enthalten den Zusatz 'DOKU' im Pre-Directory, 
+         bei Animes ist es der Zusatz 'ANiME'.
+     
+         [Unsere.Erde.E01.Wie.alles.begann.GERMAN.DOKU.720p.BluRay.x264-GROUP ]
+         [Samurai.Girls.E01.Der.erste.Kuss.GERMAN.ANiME.720p.BluRay.x264-GROUP]
+
+     H7. Fuer Verzeichnis- oder Datei-Bezeichnungen sind die Zeichenfolgen
+         a-z, A-Z, 0-9 und die folgenden Sonderzeichen ._-() erlaubt.
+     
+     H8. Fehler im Verzeichnis (z.B. Vampire Night statt Vampire Knight, 
+         falsche Staffel-  oder Episodenbezeichnung) koennen mittels Zusatz 
+         'Dirfix' berichtigt werden.
+     
+         Sollte  mehr als ein Fix fuer das gleiche Release noetig sein (z.B.
+         Samplefix und Dirfix), so kann die Bezeichnung 'Prefix' verwendet
+         werden, um mehrere Fixe fuer ein bestehendes Release anzukuendigen.
+     
+         Bei Releases, die internal zu halten sind, die Bezeichnung internal
+         jedoch nicht ausweisen, duerfen nur dann zu internal dirfixed werden
+         solange kein globaler Nuke aufgrund von Dupe vorliegt.            
+
+         
+                           - I * PROPER GRUENDE -
+                           ----------------------
+
+     I1. Ein Proper kann ausschliesslich aus releaserelevanten Gruenden 
+         erfolgen. Dies schliesst vor allem schwere technische Fehler,
+         wie z.B. Glitches, Asynchronitaet u.ae., ein!
+     
+     I2. Ein Glitch in einem deutschsprachigen HDTV Release berechtigt nur 
+         dann zu einem Proper wenn er nicht durchs Schneiden (Schnittstelle) 
+         verursacht wurde, durch ihn kein Dialog unterbrochen wird oder das 
+         Release 3 oder mehr Glitches aufweist die zusammen l„nger als 
+         5 Sekunden sind.
+
+     I3. Ein Proper kann ausserdem erfolgen wenn ein im 2Pass Verfahren
+         erstelltes Release die Minimalbitrate unterschreitet oder ein
+         im CRF-Verfahren erstelltes Release einen Faktor kleiner als 
+         18 aufweist.
+
+     I4. Ein Propergrund liegt vor, wenn eine messbare/merkliche 
+         Asynchronitaet von:
+     
+         a) 150+ ms ueber einen Zeitraum von 60+ Sekunden,
+         b) 300+ ms ueber einen Zeitraum von 30+ Sekunden,
+         c) 500+ ms ueber einen Zeitraum von 10+ Sekunden oder
+         d) 150+ ms ueber einen Zeitraum von 30+ Sekunden an mindestens zwei
+    
+         Stellen vorliegt.
+
+     I5. 'Micky  Maus Ton', ueber laengeren Zeitraum stark leiernder oder
+         quietschender Ton, der nachweisbar/merklich nicht zum Video passt, 
+         oder Ton, der grundsaetzlich nicht dem vorliegenden Bildmaterial 
+         entspricht ist ein Propergrund.
+            
+     I6. Eine anderes als in diesem Ruleset aufgefuehrtes Audio-Format
+         verwendet wurde. (z.B. PCM, TrueHD, DTS-HD)
+
+
+                           - J *    APPENDIX    -
+                           ----------------------
+                   
+     J1. Internal Releases sind shielded from dupe only und koennen somit 
+         ebenfalls fuer technische Fehler geahndet werden. Ausnahmen hierzu 
+         sind: Custom Subbed, Foreign Forced Subs oder Overlays.
+
+     J2. Sofern ein Release keine schweren Technischen Fehler aufweist,
+         zum Beispiel fehlende Forced subs oder falsche Muxparameter,
+         ist es gewuenscht diese mittels einer selbstausfuehrenden .bat-
+         bzw .sh-Datei zu beheben. Ein Repack ist in solchen Faellen nicht 
+         notwendig, aber auch nicht verboten.
+         
+                           - K *    EPILOG      -
+                           ----------------------
+                              
+     dhdstvr.v2.0.deutsche.hd.serien.und.tv.rules.2012 (2012-02-26)
+
+     Jede Group und jeder Groupmember verpflichtet sich beim Signen dieses
+     Rulesets dazu, nach ordnungsgemaessem Verantwortungsbewusstsein zu handeln
+     und sowohl Missverstaendnisse als auch Nukes und Aehnliches nicht noch
+     mehr zu forcieren, sondern sie einzudaemmen.
+
+     Alle Nukes, welche auf Grundlage dieses Rulesets entstehen, MUESSEN dem
+     NukeRuleset des ehemaligen NukeCouncils entsprechen.
+     --> The.2008.Nuke.Ruleset-NukeCouncil
+
+     Diese Rules sind verbindlich gueltig ab dem 15.03.2012 und finden auf alle
+     Serien, TV Sendungen und Retails, die nach dem 15.03.2012 beginnen
+     Anwendung. In der Uebergangsphase vom 26.02.2012 bis zum 15.03.2012
+     koennen sowohl die d720pstvr08 als auch die DHDSTVRv2.0 angewendet werden.
+      
+     Die Anwendung auf laufendes Serien, TV Sendungen und Retails sind
+     freiwillig und duerfen sich nicht zum Nachteil der Group auswirken, bzw. 
+     Proper nach sich ziehen!
+ 
+ 
+        °
+     ± ± ± ±±±
+        °    Signed by:                                                      °
+                aWake - ETM - euHD - GEO - GTVG - idTV - ITG - MiSFiTS    ± ± ± ±
+        °                                                                    °
+                NVA - RSG - SiTiN - SOF - STARS - TVP - UTOPiA - ZZGtv       °
+                                                       
+                                                                             °

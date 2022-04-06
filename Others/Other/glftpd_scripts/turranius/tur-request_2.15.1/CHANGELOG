@@ -1,0 +1,680 @@
+#-[ Changelog for Tur-Request ]---------------------------------#
+If upgrading more then one version at a time, follow the
+"To upgrade from ..." for each version down.
+#---------------------------------------------------------------#
+
+2.15.1: Fix: If msgsdir was not set in the config, it could not
+             get the info on who made a request. This is now fixed.
+
+ To upgrade from 2.15:
+
+ * Replace tur-request.sh
+
+#---------------------------------------------------------------#
+
+2.15  : Add: New setting in config:
+             do_not_create_dir_until_filled="TRUE/FALSE"
+
+             When set to TRUE, the request dir is not added upon
+             request. Its added on reqfilled instead. See the config
+             for full explanation.
+
+ To upgrade from 2.14:
+
+ * Replace tur-request.sh
+
+ * Add to config, below filledhead= :
+   do_not_create_dir_until_filled="FALSE"
+   (or TRUE if you want to use this.. recomended FALSE)
+
+#---------------------------------------------------------------#
+
+2.14  : Chg: New setting in the config: AUTH_SYSTEM=TRUE/FALSE.
+             This controls how Tur-Request works. With it set to
+             TRUE, it will require glftpd authentication as added
+             in version 2.12.
+             When set to FALSE, it will works as it did prior to
+             2.12. Note that when set to FALSE, some functions will
+             not work, such as the rewardsystem and limiting number
+             of requests per user.
+
+        Chg: There are now two tcl files. One is used if AUTH_SYSTEM=TRUE
+             (tur-request.auth.tcl) and the other if its set to FALSE
+             (tur-request.no_auth.tcl).
+
+        Chg: Changed the config file a little to reflect which settings are
+             useless if AUTH_SYSTEM=FALSE.
+
+ To upgrade from 2.13:
+
+ * Replace tur-request.sh
+
+ * Remove tur-request.tcl from your bots config dir and replace it with
+   EITHER tur-request.auth.tcl OR tur-request.no_auth.tcl.
+   Load your selected tcl file in the bots config (removing tur-request.tcl from it)
+   and then RESTART the bot. Do not just .rehash it as it will not unload tur-request.tcl
+   unless you restart it.
+
+ * Its recomended that you replace tur-request.conf. If you do not want to, have a look
+   at the format and edit yours in a similar way.
+
+
+#---------------------------------------------------------------#
+
+ 2.13  : Fix: Will now automatically strip ^ from the list of commands.
+              Users with ^ in their nick from irc could not use !reqfilled <number>.
+              Thanks ^ArT^ for the testing.
+
+ To upgrade from 2.12:
+
+ * Replace tur-request.sh
+
+#---------------------------------------------------------------#
+
+ 2.12  : Fix: When reqwiping/reqdelling/reqfilling using -hide, the requests list
+              will no longer be shown, if set to be shown on those actions.
+
+         Fix: When reqwiping and the dir was not found, it would give the announce as
+              if you had reqfilled. It will now be correct.
+
+         Chg: BIG change. All commands, except reqfilling, now needs glftpd
+              authentication. That means that you use:
+              /msg botnick !request <username> <password> <request> (-hide) (-for:username)
+              /msg botnick !reqdel <username> <password> <reqname/number> (-hide)
+              /msg botnick !reqwipe <username> <password> <reqname/number> (-hide)
+
+              The public !request, !reqdel and !reqwipe commands, when used in open
+              channel, no longer works. Instead, it informs the user of the new system.
+              This is done in tur-request.tcl so replace that one as well.
+
+              No commands are locked to ops only in the tcl anymore. Its all handled by
+              the script itself instead.
+
+              All commands that go through OK will go the channel by logging it to
+              glftpd.log (same way as from inside glftpd). Error messages, like, wrong pass
+              etc etc, goes to the user in a private msg.
+
+              A note on this. Admins that dont want their users to send their password
+              through irc can instead have a look at tur-passchk at www.grandis.nu
+              It works perfectly fine to specify that script as passchk binary in the config
+              so the users can send a code instead of the real password. More on that in the
+              tur-passchk package itself.
+
+              All this is so we can keep track of WHO did WHAT by going by the glftpd username
+              instead of irc nick. This enables us to...
+
+         Add: Added functions so you can limit the amount of requests a user can do. As for now
+              you can only exclude this totally by flag or entering the username in the .conf.
+              This will be changed in the future to specific amount of requests per user/group
+              etc.
+
+         Add: Since reqwipe is no longer locked to ops only, we have functions in the config
+              to decide who can use reqwipe. Reqdel is also open for everyone, but its function
+              has not changed, in that you can only reqdel your own requests. Admins use reqwipe.
+
+         Add: As for reqwipe, we also have settings to control WHO can request.
+
+         Add: Added a new config setting; date_format_in_reqfile=NEW/OLD
+              When set to OLD, the date format in the requestfile is unchanged and best suit
+              the US I guess.. with set to NEW, its better suited for Europe (YYYY-MM-DD HH:MM)
+              Current requests are not affected. No need to edit date manually in reqfile.
+
+         Add: Added a new argument when requesting; -reward:<MB>
+              This is a reward, in MB, which the reqfillers will be awarded, above the credits
+              given the user from uploading files (unless giving credits in your requests dir is
+              disabled).
+
+              The reward will be split up to the people who uploaded the request based
+              on number of files.
+              If the request was 100 files and there were two uploaders, one upping 40 files
+              and the second 60 files, user 1 gets 40% of the reward and user two gets 60%.       
+
+              If one, or all, of the fillers have RATIO 0, they get nothing of course.
+
+              Who does the actual !reqfill does not matter.
+
+              The credits will be taken from the requester when doing the actual
+              request, unless its a user or flag that matches the config settings 
+              for "free -reward:".
+
+              In case the request is !reqdelled (can only be done by the requester or a siteop)
+              then the credits will be given back to the requester.
+              Same thing if its automatically removed for being too old (crontab job).
+
+              The type of files that are counted for the reward can be decided by you as well.
+
+ To upgrade from 2.11:
+
+ * Replace tur-request.sh
+
+ * Replace tur-request.tcl and RESTART your bot.
+
+ * Go through the default config for what to move into your own.
+   Its probably easier to start from scratch unless you made a lot
+   of custom stuff in the announce part.
+
+ * If you plan on using the rewardsystem, download the tuls package
+   from www.grandis.nu and put it in /glftpd/bin.
+
+#---------------------------------------------------------------#
+                                                               
+ 2.11  : Add: Added seperate announces in tur-request.conf for 
+              reqfilled, reqdel and reqwipe.                   
+
+         Add: Added another option to tur-request.conf.
+              DONT_SHOW_STATUSANNOUNCE_FROM_GL=TRUE/FALSE.
+              Set to true to NOT display the STATUSANNOUNCE when 
+              doing stuff from inside glftpd. This is if you use
+              pzs-ng which has a common header used. If so, you
+              dont want the STATUSANNOUNCE added as well.
+ 
+         Add: Added instructions for bot output in the README for
+              newer versions of pzs-ng.
+
+         Fix: Another fix for when reqfilling/reqdel/reqwipe by
+              name. Hope it holds this time then.. (IT DID!)
+
+         Fix: If requestshead wasnt set, it still tried to check
+              that the requestdir was not empty when reqfilling.
+              Since the dir didnt exist, thats kinda pointless.
+              Wont do that anymore.
+                                                               
+ To upgrade from 2.10:                                         
+                                                               
+ * Replace tur-request.sh                                      
+
+ * In tur-request.conf, below STATUSANNOUNCE=, add:
+   DONT_SHOW_STATUSANNOUNCE_FROM_GL=FALSE
+                                                               
+ * Change your current FILLANNOUNCE. %ACTION% is no longer   
+   a valid cookie so just replace it with 'reqfilled' such as: 
+   FILLANNOUNCE="%BOLD%[Request] -%BOLD% %WHO% reqfilled %BOLD%%WHAT% - %RELEASE%%BOLD%. Good work!"
+                                                               
+ * Add a similar one just below for FILLANNOUNCE_DEL, such as:            
+   FILLANNOUNCE_DEL="%BOLD%[Request] -%BOLD% %WHO% deleted %BOLD%%WHAT% - %RELEASE%%BOLD%."
+                                                               
+ * Add a similar one just below for FILLEDANNOUNCE_WIPE, such as:         
+   FILLANNOUNCE_WIPE="%BOLD%[Request] -%BOLD% %WHO% wiped out %BOLD%%WHAT% - %RELEASE%%BOLD%."
+
+ * Smile
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.10  : Add: New option in config: filled_dir=""              
+              This is a directory in your requests dir where   
+              all the filled releases will be stored.          
+              Simply enter the directory name, such as         
+              filled_dir="_filled"                             
+              Remember to create this dir and chmod it to 777. 
+                                                               
+              Leave at "" to not enable this feature.          
+                                                               
+         Fix: After editing the .requests file, it will try    
+              to chmod it to 666. Should not be needed, but    
+              some reported write errors to it, so...          
+                                                               
+              Remember to hide the .requests file using        
+              hidden_files in glftpd.conf                      
+                                                               
+         Add: If it "didnt get any resonable action", it will  
+              display the action it got in (). Woppido.        
+                                                               
+ To upgrade from 2.7 -> 2.9.1:                                 
+                                                               
+ * Replace tur-requests.sh.                                    
+                                                               
+ * Add to the config, below 'reqfile': filled_dir=""           
+                                                               
+ * If you want to use the filled_dir feature, create the dir   
+   and chmod it to 777.                                        
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.9.1 : Fix: Reqfilling by name looks like it could have      
+              triggered the wrong request sometimes. This      
+              means that when reqwiping, it could wipe some    
+              other dir in the request dir.                    
+                                                               
+              Since nobody actually took the time to test and  
+              report this to me, I'm gonna assume its all fine 
+              now, lazy mofos.                                 
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.9   : Add: You can now reqfill/reqdel/reqwipe using the     
+              name of the request instead of the number. The   
+              number way still works too, of course.           
+                                                               
+ To update from 2.8, just replace tur-request.sh               
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.8   : Fix: 'tur-request.sh checkold' got funky when delling 
+              more then one release at a time. Especially if   
+              showonauto=TRUE in the config. It would delete   
+              one, announce the rest, delete another (wrong    
+              one), announce the rest, and so on.              
+                                                               
+              Rewrote this part totally.                       
+              If showonauto=TRUE, it will list the remaining   
+              requests only once its finished deleting.        
+                                                               
+              Big thanks to BoGuS as usual.                    
+                                                               
+ To update from 2.7, just replace tur-request.sh               
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.7   : Add: When requesting, it will now show the number the 
+              request gets too. Most helpful if someone fills  
+              it straite away.                                 
+                                                               
+         Add: Two new options in the config:                   
+              showonfill=TRUE/FALSE                            
+              showonrequest=TRUE/FALSE                         
+              These, when set, will show current requests when 
+              either requesting and/or reqfill, reqdel &       
+              reqwipe                                          
+                                                               
+         Add: The reqdel command will now only work if the     
+              user that requested it initially matches the     
+              username thats trying to reqdel it.              
+              In other words, you can only reqdel your own     
+              requests.                                        
+              This means that we can now allow 'reqdel' for    
+              everyone.                                        
+                                                               
+              This was added since you can not (since 2.6)     
+              reqfill an empty release to remove it.           
+                                                               
+              Administrators should instead use 'reqwipe' to   
+              clear out releases.                              
+                                                               
+ To upgrade from 2.6, replace tur-request.sh and add those two 
+ new config settings below cc= in tur-request.conf             
+                                                               
+ Replace the tcl or change the bind on 'reqdel' from o to -    
+                                                               
+ Change the permissions in glftpd.conf for 'site reqdel' from  
+ 1 to *                                                        
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.6   : Add: When reqfilling, it will now check if the reqdir 
+              is empty. If so it wont allow a reqfill.         
+                                                               
+              Two new announces for this one. One for IRC and  
+              one if you're in glftpd.                         
+              REQFILLEDEMPTYIRC and REQFILLEDEMPTY             
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.5   : Fix: You can now have [, ] and | in your nick and it  
+              will still work from irc. What it will do is     
+              strip those chars away so your name will be      
+              displayed without them.                          
+                                                               
+         Fix: It will now try and chmod the messages files it  
+              creates to 666 to not cause permission denied on 
+              the files.                                       
+                                                               
+         Add: Added option max_requests= so you can decide the 
+              maximum number of current requests.              
+                                                               
+         Add: Added option TOOMANYREQUESTS= to announce if too 
+              many requests have been made already.            
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 2.4.4 : Fix: 'checkold' text wrote to screen instead of to    
+              the log if that was on.                          
+                                                               
+         Fix? Might have fixed the tr error that some users    
+              were having. Guess I'll know soon enough.        
+                                                               
+  Upgrade from 2.4.4: Replace tur-request.sh                   
+                                                               
+#---------------------------------------------------------------#
+ 2.4.3 : Fix: When it deleted a filled request due to it being 
+              older then defined days, it would echo to screen 
+              instead of writing to the logfile - Fixed.       
+              Also uses the STATUSANNOUNCE as a header for     
+              that output now.                                 
+              ( the 'tur-request.sh checkold' function ).      
+                                                               
+         Fix: When doing !request from irc without args, it    
+              said "Usage: site request ..." when it should    
+              say "Usage: !request ..." - Fixed.               
+              Thanks LPC.                                      
+                                                               
+         Chg: The datebin function in the config was not       
+              described anywhere. It is now in the config but  
+              no need to replace your current config really.   
+                                                               
+  Upgrade from 2.4.2: Replace tur-request.sh                   
+                                                               
+#---------------------------------------------------------------#
+ 2.4.2 : Fix: STATUSANNOUNCE is no longer used as a header for 
+              'site requests' from glftpd.                     
+                                                               
+#---------------------------------------------------------------#
+ 2.4.1 : Fix: Sigh! 'tur-request.sh status auto' outputted the 
+              text to shell instead of to irc. Thought I had   
+              tested that but apparently not.                  
+                                                               
+#---------------------------------------------------------------#
+ 2.4   : Chg: It no longer announces on irc if you do, for     
+              instance 'site reqfilled' from glftpd. Leftover  
+              from old versions that kicked in for some reason.
+                                                               
+         Fix: %BOLD% and %ULINE% are always stripped if        
+              executed from inside glftpd so no more happy     
+              faces and whatever else that popped up.          
+                                                               
+         Fix: STATUSANNOUNCE wasnt actually used as a header   
+              when checking stats.                             
+                                                               
+         I plan on totally splitting irc and glftpd announces  
+         but for now I'm tired of scripting so deal with it =) 
+                                                               
+  Upgrade from 2.3: Replace tur-request.sh                     
+                                                               
+#---------------------------------------------------------------#
+ 2.3   : Add: Added option badchars. Previously, the chars     
+              "\*|\[|\]|\{|\]|\^|\~" would not be allowed. It  
+              still is, but now you can change them. '/' is    
+              still hardcoded though.                          
+                                                               
+         Add: Added option usersdir which points to the users  
+              dir (duh). Its used when sending messages if you 
+              have msgsdir defined, to verify that the user    
+              really exists so it dosnt fill up with "dead"    
+              messages.                                        
+                                                               
+      Change: Change how it announces for most of the irc      
+              stuff. It no longer uses the triggers REQUEST    
+              REQFILLED or REQSTATUS in favor of using one     
+              trigger: TURGEN. This is the same as some of my  
+              other scripts.                                   
+                                                               
+              In light of this, the announcesystem was         
+              rewritten to use one procedure for all announces 
+              to easy for those without dZSbot.tcl.            
+              The new 'proc_output()' is at the bottom of the  
+              included config.                                 
+                                                               
+              This means that if you request from irc, all     
+              irc announces go to the chan the command was     
+              initiated in.                                    
+                                                               
+              4 new settings in the announce part of the .conf 
+              since it stopped using the old triggers.         
+              When someone requests something:                 
+              REQANNOUNCE=                                     
+              When someone requests something, using -for:     
+              REQANNOUNCE2=                                    
+              When someone fills a request:                    
+              FILLANNOUNCE=                                    
+              Header for static status messages:               
+              STATUSANNOUNCE=                                  
+                                                               
+              When running from irc, it no longer writes to    
+              glftpd.log like it does from inside glftpd.      
+              Instead, its just echoed so the output from irc  
+              always shows up in the channel it was executed   
+              in.                                              
+                                                               
+      Change: CHANGELOG split from README.                     
+                                                               
+      Change: Missed one or two wc -L. Fixed that for fbsd     
+              functionality.                                   
+              Rewrote a few sections while I was at it.        
+                                                               
+      Change: tur-request.tcl was changed a bit. You need this 
+              on instead now if you want !requests to work.    
+                                                               
+  Upgrade from 2.2: Replace tur-request.sh                     
+                    Replace tur-request.tcl                    
+                     .restart the bot                          
+                                                               
+                    Check the default config file. You need 6  
+                    new settings (badchars, usersdir,          
+                    REQANNOUNCE, REQANNOUNCE2, FILLANNOUNCE &  
+                    STATUSANNOUNCE) as well as the entire      
+                    proc_output() section.                     
+                                                               
+                    In dZSbot.tcl:                             
+                    Remove triggers REQUEST, REQFILLED and     
+                    REQSTATUS. See README for how to add       
+                    TURGEN instead, unless you already have it 
+                    in your dZSbot.tcl.                        
+                                                               
+#---------------------------------------------------------------#
+ 2.2   : Add: Added ability to send a message to the user      
+              doing the request when its filled.               
+              If -for: was used then the message will be sent  
+              to whoever was specified.                        
+                                                               
+              2 new options in the config for this:            
+              msgsdir=/ftp-data/msgs                           
+              cc=TRUE                                          
+                                                               
+              First is just the path, relative to your glroot  
+              which holds the msgs dir.                        
+              cc= if set to TRUE and the requested used -for:  
+              should a message go to the requester as well?    
+              For example, if I, as turranius, would request   
+              something -for:Hujer, the reqfilled message will 
+              always go to Hujer. But if cc is TRUE, a message 
+              will ALSO go to turranius, telling me my request 
+              for Hujer was filled by..                        
+                                                               
+              Setting msgsdir="" disables this function.       
+                                                               
+         Fix: Just some fixes to make it work on fbsd.         
+              Apart from the non visable fixes, I also added   
+              an option to the config.                         
+              datebin=                                         
+              Here you can specify which date binary to use.   
+              Leaving it empty ("") is prefered as it will     
+              just run 'date' from path. Should work for all   
+              linux users. fbsd users however, must download   
+              the sh-utils pack and specify gdate, which comes 
+              with it, here.                                   
+                                                               
+              Note. Try NOT to specify full path to gdate or   
+              whatever you set here. Using /glftpd/bin/gdate   
+              will work fine from shell, but not from inside   
+              glftpd due to chroot. Just put gdate in your     
+              path somewhere and also copy it to /glftpd/bin.  
+              Then just specify datebin="gdate"                
+                                                               
+         Fix: 'site request' made a request for 'request'. ops 
+              Now shows a quick help instead.                  
+                                                               
+                                                               
+#---------------------------------------------------------------#
+ 2.1.1 : Fix: Option -hide and -for: did not work when         
+              starting an argument with it. I rewrote how it   
+              checks for -hide and -for: and how it detects    
+              whats the releasename and whats not.             
+                                                               
+  Update from 2.1: Replace tur-request.sh                      
+                                                               
+#---------------------------------------------------------------#
+ 2.1   : NEW: Totally rewritten. Nah, just kidding.            
+              Added options to delete filled requests when     
+              running 'tur-request.sh checkold'. Make SURE to  
+              read the config file for how to use these ones.  
+              You need a new binary thats included if you plan 
+              to use it. If not, you have to disable it.       
+                                                               
+     Updated: To update from 2.0, you need to copy the new     
+              file_date binary or compile the source.          
+              Replace tur-request.sh too.                      
+                                                               
+              There are help text in the config for the        
+              new settings, so probably easier to copy your    
+              current settings into the new one. Just dont     
+              remove any of the NEW settings in it =)          
+              The new ones are (with default settings):        
+                                                               
+              removefdays=30                                   
+              file_date="/glftpd/bin/file_date"                
+              mustinclude='^FILLED\-'                          
+              exclude='\.requests|^REQ\-'                      
+                                                               
+                                                               
+#---------------------------------------------------------------#
+ 2.0   : NEW: Totally rewritten from scratch. Old one got      
+              messy through the different versions and hard to 
+              keep track of. This should ease further updates. 
+              Probably full of bugs too. hehe.                 
+              Bot configuration is still the same so no need   
+              to anything to dZSbot.tcl if you had it working  
+              before.                                          
+                                                               
+              If you crontabbed tur-request.sh status auto,    
+              thats the same as before as well.                
+                                                               
+              This README was split out of tur-requests.sh     
+                                                               
+         Add: Changed how you reqfill, reqdel and reqwipe by   
+              popular demand. It now uses a number infront of  
+              the request in the requests file. Use this       
+              number instead of the releasename for filling.   
+                                                               
+              This means that two settings are gone.           
+              REQINFILE and REQINFILE2 are now hardcoded and   
+              they have to be for me to parse the number,      
+              dirname and when it was requested (see below).   
+              The look of the .requests file is therefor no    
+              longer configurable.                             
+                                                               
+              Maximum requests are 99. Can probably add more   
+              but it will look like shit =)                    
+                                                               
+              Your old .requests file will have to be replaced 
+                                                               
+         Add: Since the above will probably crap out sometime  
+              I added a new argument, 'fix' to rebuild the     
+              .requests file with the correct numbers.         
+              ( no reports of this yet, but cant hurt ).       
+                                                               
+         Add: Added another command, checkold. Running this    
+              from shell will cause it to check if the request 
+              was made later then 'removedays' ( a new setting 
+              in the config ). If it is, it will automatically 
+              do a reqdel on that release and announce it to   
+              the chan. This function requires a crontab.      
+              reqdel automatically dels the dir too, if empty. 
+                                                               
+         Add: Another setting in the config, showonauto.       
+              If TRUE, it will display the remaining requests  
+              on irc when it automatically deletes an old      
+              request. With it to FALSE, it will only display  
+              what it deleted.                                 
+                                                               
+         Add: Added a new variable in the config; replacewith  
+              If you have allowspaces on FALSE, meaning you do 
+              not allow people to request something with a     
+              space in it, you can set this variable to a      
+              single char and it will replace all spaces with  
+              that char instead ( default is '_' )             
+                                                               
+         Add: New variable: log. This is another logfile,      
+              seperate from glftpd.log, where it will log all  
+              requests, fills, dels and wipes. Set to "" to    
+              disable if you dont want it.                     
+                                                               
+         Add: When doing a 'reqdel' it will now delete the dir 
+              too if there is one but ONLY if its empty.       
+              If you wish to really wipe it, use reqwipe.      
+              Ofcourse, already filled requests cant be wiped  
+              or deleted since when filled it leaves this      
+              scripts autohority =)                            
+                                                               
+         Add: -hide and -for:<username> can now be used at any 
+              place in the request, so:                        
+              site request -hide -for:turranius Release-GRP    
+              is the same as                                   
+              site request Release-GRP -for:turranius -hide    
+                                                               
+         Fix: Previously, when reqfilling and the FILLED- dir  
+              already existed, it couldnt move it from REQ- to 
+              FILLED-. Now it will simply add a 1 to the end   
+              of the FILLED- dirname. If that exists, it will  
+              add 2, etc etc.                                  
+              It will make up to 20 tries before giving up and 
+              just leave it.                                   
+                                                               
+         Fix: The argument tmp, to define the temporary dir    
+              is by default /tmp, meaning /glftpd/tmp, but if  
+              you ran it from irc, it didnt add the /glftpd    
+              part. This could cause permission errors since   
+              users would have to have full rights both to     
+              /tmp as well as /glftpd/tmp.                     
+                                                               
+         Chg: A few of the custom texts have changed or been   
+              removed, so best to replace current config.      
+                                                               
+      Update: To update, replace tur-request.sh and            
+              tur-request.tcl ( in the bot. .rehash ).         
+              Recomend you replace the config as well.         
+              Check above for how to add it to glftpd.conf as  
+               that changed for some of the commands.          
+              Make sure the required binaries are in you       
+               /glftpd/bin dir.                                
+              Make a new .requests file.                       
+                                                               
+#---------------------------------------------------------------#
+                                                               
+ 1.2.2 : Fix: Previously, it checked $FLAGS and $GROUP to find 
+              out if it was running in glftpd or shell (irc).  
+              This would fail if the user was in no group.     
+              It now checks $FLAGS only.                       
+                                                               
+         Add: * [ ] { ] can not be used when requesting now.   
+                                                               
+         NOTE: Added to config is NONSTANDARDCHAR for what to  
+               say when someone tries to use one of the above  
+               chars. Add it to your previous one if upgrading.
+                                                               
+ 1.2.1 : Fix: Crap fixes.                                      
+                                                               
+ 1.2   : Fix: Modified instructions for reqdel above.          
+                                                               
+         Fix: If you had 3 requests, test1, test2 & test3 and  
+              reqfilled 'test', it would remove them all from  
+              the reqfile. Thanks LPC for reporting these.     
+                                                               
+         Add: Split up config to tur-request.conf              
+                                                               
+ 1.1.1 : Fix: -hide didnt work when requesting.                
+                                                               
+ 1.1   : Fix: The requested folder created had a space at the  
+              end if you requested from glftpd.                
+                                                               
+         Fix: Requests starting with a - had problems.         
+                                                               
+         Fix: All checks for if a request exists or is filled  
+              are now done in the file instead of checking if  
+              the directory exists. This was flaky before.     
+                                                               
+         Add: You can now use -for:name to specify WHO the     
+              request is for. REQINFILE2 text added.           
+              ( site request -for:turranius More.Money-BP )    
+              This will be displayed when checking requests.   
+                                                               
+         Add: Added another command. !reqdel. This will do a   
+              normal reqfilled, but will not announce in main  
+              chan. Replace the tcl for this to work from irc. 
+              Basically just a reqfilled -hide                 
+                                                               
+         Add: Added another command. reqwipe. This will delete 
+              the request from the reqfile AND wipe out the    
+              folder if there is one, even if its not empty.   
+              Replace the tcl as well if you want to use this. 
+                                                               
+ 1.0   : Initial release.                                      
+#---------------------------------------------------------------#

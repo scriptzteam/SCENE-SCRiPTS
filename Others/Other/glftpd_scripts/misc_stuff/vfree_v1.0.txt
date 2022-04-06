@@ -1,0 +1,67 @@
+Read the .tcl file and configure it correctly.
+Take care coz this script deletes or moves stuff
+so if you fuckup in the configuration part dont cry if it wipes
+your whole siteDir.
+
+If you found a bug or something like that mail me the error code
+and what you did exactly for get that error.
+
+Have a nice Day!
+Mr_V: vampirito@vampirito.com
+
+
+
+###########################################
+#      Mr V FreeSpace Maker v1.0          #
+###########################################
+#           PUBLIC RELEASE                #
+###########################################
+# Features:                               #
+# -Arhives/Deletes old releases           #
+# -glfTPD Log compatible                  #
+# -Easy Configuration                     #
+# -Multiple dirs per disk                 #
+# -Multiple disks per site                #
+# -All-in-one based script                #
+# -Valid on dated dirs (dels a whole day) #
+# -Valid on folder-releases dirs          #
+# -Excluded tags                          #
+# -Special tags                           #
+# -SQL Log feature                        #
+#                                         #
+#                                         #
+# Crontab "5,*5,*0,00 * * * *"            #
+# Configure it correctly..                #
+#                                         #
+# Needs:                                  #
+# Binarys on /glftpd/bin: du df           #
+# Tcl 8.4 atleast                         #
+# Tcl-Sql                                 #
+# SQL (Mysql,Postgres,Oracle..)           #
+#                                         #
+# SQL Table:                              #
+# create table vFree (                    #
+#   releaseName VARCHAR(255) NOT NULL,    #
+#   dateMake VARCHAR(50) NOT NULL,        #
+#   dateDel VARCHAR(50) NOT NULL,         #
+#   dateSecs VARCHAR(100) NOT NULL,       #
+#   section VARCHAR(50) NOT NULL,         #
+#   size VARCHAR(50) NOT NULL,            #
+#   PRIMARY KEY (dateDel, releaseName)    #
+# );                                      #
+#                                         #
+# The glftpd Log Output Structure is:     #
+# RELEASENAME SECTION SIZE                #
+# You must edit your sitebot TCL that read#
+# the gllog and customize the output..    #
+#                                         #
+###########################################
+# Author: Mr_V  <vampirito@vampirito.com> #
+###########################################
+# Extra Notes:                            #
+# Hi! if you got any idea about a script  #
+# that can be good to develope.. or ..    #
+# anything like that send me the idea and #
+# i will try to code it and make it public#
+#                      Best Regards, Mr_V #
+###########################################

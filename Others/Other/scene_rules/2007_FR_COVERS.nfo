@@ -1,0 +1,35 @@
+RULES FRENCH COVERS
+
+Mise à jour du 01/03/2007
+****************************************************************************************************************************
+
+Voici les rules pour la section covers
+
+
+1 - Type d'image : JPEG obligatoirement
+
+2 - Format image -> le minimum est de 300dpi, les autres alternatives sont 400dpi et 600dpi,
+					au dessus de ca, et en dessous la release sera nuke.
+
+3 - Tag -> Le tag de la release doit obligatoirement etre Titre.TYPE.HiGH.QUALiTY.DVDCOVER.FRENCH.SCAN-Team
+			ce tag decvra etre précédé d'un descriptif en 3 lettre de la provenance(TYPE) de la jaquette : 
+					Version Vente France : VFR
+					Version Vente Belge  : VBE
+					Version Loc France : LFR
+					Version Loc Belge : LBE
+			
+			Il faudra ensuite mettre obligatoirement dans le nfo si celle jaquette est une version location, retail ou promo.
+
+	Tag Console : Le tag pour un scan de jeux video sera le suivant Titre.SOURCE.HiGH.QUALiTY.DVDCOVER.CONSOLE.FRENCH.SCAN-Team
+			La SOURCE étant soit PAL soit NTSC
+			CONSOLE : Nom de la console Wii, PS2, XBOX...
+			Les releases Custom ne sont pas acceptée en covers jeux video.
+
+
+4 - Les Customs -> Le customs doit etre réalisé en 300 dpi. 
+                    Il peut etre réalisé à partir d'une jaquette US ou partir de rien. Le but des customs est de proposée  
+					une belle jaquette pouvant servir avant la sortie du dvd en location ou vente. Une seule release custom
+					par film sera autorisée par Team. La deuxieme release custom d'une meme team pour le meme film sera nuke. 
+					Un custom ne peut etre sorti après la parution d'une jaquette Z1 multi ou Z2.
+
+****************************************************************************************************************************

@@ -1,0 +1,8 @@
+Tur-NewsAnnounce
+
+Description: This is a script that announces the latest news on this webpage 
+(www.grandis.nu/glftpd) to your irc chan/staffchan automatically. Really neat.
+
+Author:   Turranius
+Version:  1.0
+Added on: 05-Oct-2004

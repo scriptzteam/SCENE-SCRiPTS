@@ -1,0 +1,408 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<title>vnStat - a network traffic monitor for Linux and BSD</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link href="style.css" type="text/css" rel="stylesheet">
+</head>
+<body bgcolor="#f0f0f0">
+<center>
+
+<br><br>
+
+<table bgcolor=black width="700" cellpadding="0" cellspacing="1" border="0">
+<tr><td>
+ <table bgcolor=white width="100%" cellpadding="6" cellspacing="1" border="0">
+ <tr><td class="theader">vnStat</td></tr>
+ <tr><td>
+
+ <br>
+ <p>
+vnStat is a console-based network traffic monitor for Linux and BSD that keeps
+a log of network traffic for the selected interface(s). It uses the network
+interface statistics provided by the kernel as information source. This means
+that vnStat won't actually be sniffing any traffic and also ensures light use
+of system resources.
+ </p><p>
+This program is open source / GPL'ed and can be installed either as root or
+as a single user. Better instructions are included in the README. Feel free
+to send comments by
+<a href="mailto:tst@ThisIsTheSpamFilterTextYouRemove.iki.fi">email</a>
+(remove the spamfilter) or try contacting me from irc (Vergo @ IRCNet).
+ </p>
+ <br>
+
+ </td></tr>
+ <tr><td class="theader2"><b>Features</b></td></tr>
+ <tr><td>
+ <br>
+
+<ul>
+ <li>quick and simple to install and get running
+ <li>gathered statistics persists through system reboots
+ <li>can monitor multiple interfaces at the same time
+ <li>several output options
+ <ul>
+  <li>summary, hourly, daily, monthly, weekly, top 10 days
+  <li>optional png image output (using libgd)
+ </ul>
+ <li>months can be configured to follow billing period
+ <li>light, minimal resource usage
+ <li>same low cpu usage regardless of traffic
+ <li>can be used without root permissions
+ <li><a href="coloredit/">online color configuration editor</a> </ul>
+<br>
+
+ </td></tr>
+ <tr><td class="theader2"><b>Downloads</b></td></tr>
+ <tr><td>
+ <br>
+
+<ul>
+ <li><a href="vnstat-1.18.tar.gz">vnstat-1.18.tar.gz</a> (<a href="vnstat-1.18.tar.gz.asc">sig</a>) - source for Linux and BSD (236.8 KiB) <ul>
+ <li>Man pages:
+  <ul>
+   <li>vnstat [<a href="man/vnstat.html">html</a>] [<a href="man/vnstat.pdf">pdf</a>] [<a href="man/vnstat.ps">ps</a>]
+   <li>vnstatd [<a href="man/vnstatd.html">html</a>] [<a href="man/vnstatd.pdf">pdf</a>] [<a href="man/vnstatd.ps">ps</a>]
+   <li>vnstati [<a href="man/vnstati.html">html</a>] [<a href="man/vnstati.pdf">pdf</a>] [<a href="man/vnstati.ps">ps</a>]
+   <li>vnstat.conf [<a href="man/vnstat.conf.html">html</a>] [<a href="man/vnstat.conf.pdf">pdf</a>] [<a href="man/vnstat.conf.ps">ps</a>]
+  </ul>
+ <li><a href="CHANGES">CHANGES</a> - changelog
+<!-- <li><a href="TODO">TODO</a>  - possible features for next version and current implementation status -->
+ <li><a href="FAQ">FAQ</a> - Frequently Asked Questions
+ <li><a href="cgidemo/">image output demo</a>
+</ul>
+</ul>
+
+<ul>
+ <li>Git repository: <a href="https://github.com/vergoh/vnstat">github.com/vergoh/vnstat</a>
+ <ul>
+  <li>Latest development version: <a href="https://github.com/vergoh/vnstat/archive/master.zip">master.zip</a>
+ </ul>
+</ul>
+<br>
+
+ </td></tr>
+ <tr><td class="theader2"><b>Links</b></td></tr>
+ <tr><td>
+ <br>
+
+<table border=0 align=center>
+<tr><td valign=top width="250">
+Similar programs:
+
+<ul>
+ <li><a href="https://www.ntop.org/">ntop</a>
+ <li><a href="https://unix4lyfe.org/darkstat/">darkstat</a>
+ <li><a href="https://oss.oetiker.ch/mrtg/">MRTG</a>
+ <li><a href="https://www.gropp.org/?id=projects&sub=bwm-ng">bwm-ng</a>
+ <li><a href="http://www.ex-parrot.com/pdw/iftop/">iftop</a>
+ <li><a href="http://iptraf.seul.org/">IPTraf</a>
+</ul>
+
+</td><td valign=top width="250">
+
+vnStat related:
+
+<ul>
+ <li><a href="https://rakudave.ch/category/jsvnstat/">jsvnstat</a>
+ <li><a href="http://www.sqweek.com/sqweek/index.php?p=1">vnStat PHP frontend</a>
+ <li><a href="https://github.com/tinyclub/vnstatsvg">vnStat SVG frontend</a>
+ <li><a href="https://sourceforge.net/projects/vnstatsystray/">VnstatSystrayIcon (Windows)</a>
+</ul>
+
+</td></tr>
+</table>
+<br>
+
+ </td></tr>
+ <tr><td class="theader2"><b>Screenshots</b></td></tr>
+ <tr><td>
+ <br>
+
+<p>
+Since vnStat doesn't have/need a fancy GUI, all 'screenshots' are console
+captures. Examples of the image output can be found from the <a href="cgidemo/">cgi demo</a> page.
+</p>
+
+<br>
+
+<center>
+<table>
+<tr><td>
+<pre>
+$ vnstat --help
+ vnStat 1.18 by Teemu Toivola
+
+         -q,  --query          query database
+         -h,  --hours          show hours
+         -d,  --days           show days
+         -m,  --months         show months
+         -w,  --weeks          show weeks
+         -t,  --top10          show top10
+         -s,  --short          use short output
+         -u,  --update         update database
+         -i,  --iface          select interface (default: eth0)
+         -?,  --help           short help
+         -v,  --version        show version
+         -tr, --traffic        calculate traffic
+         -ru, --rateunit       swap configured rate unit
+         -l,  --live           show transfer rate in real time
+
+See also "--longhelp" for complete options list and "man vnstat".
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat
+Database updated: Sat Aug  1 22:50:01 2009
+
+   eth1 since 11/20/08
+
+          rx:  3.32 TiB      tx:  2.81 TiB     total:  6.13 TiB
+
+   monthly
+                     rx      |     tx      |    total    |   avg. rate
+     ------------------------+-------------+-------------+---------------
+       Jul '09    609.40 GiB |  282.21 GiB |  891.61 GiB |    2.79 Mbit/s
+       Aug '09     16.95 GiB |   10.46 GiB |   27.40 GiB |    2.80 Mbit/s
+     ------------------------+-------------+-------------+---------------
+     estimated    552.14 GiB |  340.70 GiB |  892.83 GiB |
+
+   daily
+                     rx      |     tx      |    total    |   avg. rate
+     ------------------------+-------------+-------------+---------------
+     yesterday     19.19 GiB |    8.63 GiB |   27.82 GiB |    2.70 Mbit/s
+         today     16.95 GiB |   10.46 GiB |   27.40 GiB |    2.80 Mbit/s
+     ------------------------+-------------+-------------+---------------
+     estimated     17.81 GiB |   10.99 GiB |   28.80 GiB |
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+(with 2 interfaces)
+$ vnstat
+
+                      rx      /      tx      /     total    /   estimated
+ Internet (eth1):
+       Jul '09     31.90 GiB  /   28.05 GiB  /   59.95 GiB
+       Aug '09    281.04 MiB  /   99.45 MiB  /  380.49 MiB  /   12.05 GiB
+     yesterday      1.23 GiB  /  473.23 MiB  /    1.69 GiB
+         today    281.04 MiB  /   99.45 MiB  /  380.49 MiB  /     397 MiB
+
+ Local (eth0):
+       Jul '09     25.13 GiB  /  116.94 GiB  /  142.07 GiB
+       Aug '09    234.75 MiB  /    5.03 GiB  /    5.26 GiB  /  170.76 GiB
+     yesterday    520.55 MiB  /    2.21 GiB  /    2.72 GiB
+         today    234.75 MiB  /    5.03 GiB  /    5.26 GiB  /    5.51 GiB
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat -h
+ eth0                                                                     19:36
+  ^                                 t
+  |                                 t
+  |                                 t
+  |                                 t
+  |                                rt           t        t        t
+  |            t                   rt           t  t  t  t  t     t
+  |   t     t  t     t  t  t     t rt  t  t     t  t  t  t  t     t     t  t
+  |   t  t  t  t  t  t  t  t  t  t rt  t  t  t  t  t  t  t  t  t  t  t  t  t
+  |   t  t  t  t  t  t  t  t  t  t rt  t  t  t  t  t  t  t  t  t  t  t  t  t
+  |   t rt  t  t rt  t  t rt  t  t rt rt  t rt rt  t rt rt  t rt rt  t rt rt
+ -+--------------------------------------------------------------------------->
+  |  20 21 22 23 00 01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19
+
+ h   rx (KB)    tx (KB)  ][  h   rx (KB)    tx (KB)  ][  h   rx (KB)    tx (KB)
+20      1,245      6,079 ][ 04      1,186      5,193 ][ 12      2,301      8,135
+21      1,671      5,245 ][ 05      1,303      6,999 ][ 13      1,512      9,351
+22      1,177      6,188 ][ 06      9,530     14,294 ][ 14      1,319      7,273
+23      1,393      7,301 ][ 07      1,453      6,760 ][ 15      1,482      5,061
+00      1,451      4,850 ][ 08      1,352      7,066 ][ 16      1,473      8,597
+01      1,355      6,632 ][ 09      1,588      4,843 ][ 17        987      4,314
+02      1,385      6,757 ][ 10      1,535      9,041 ][ 18      1,896      7,099
+03      1,678      6,225 ][ 11      1,411      8,035 ][ 19      2,014      6,373
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat -d
+
+ eth1  /  daily
+
+         day         rx      |     tx      |    total    |   avg. rate
+     ------------------------+-------------+-------------+---------------
+      07/03/09     10.90 GiB |    6.39 GiB |   17.29 GiB |    1.68 Mbit/s
+      07/04/09     21.21 GiB |    5.65 GiB |   26.87 GiB |    2.61 Mbit/s
+      07/05/09     10.58 GiB |    6.67 GiB |   17.25 GiB |    1.67 Mbit/s
+      07/06/09     49.90 GiB |    9.69 GiB |   59.59 GiB |    5.79 Mbit/s
+      07/07/09     28.09 GiB |    7.58 GiB |   35.68 GiB |    3.46 Mbit/s
+      07/08/09     17.60 GiB |    6.83 GiB |   24.43 GiB |    2.37 Mbit/s
+      07/09/09     20.80 GiB |   15.64 GiB |   36.44 GiB |    3.54 Mbit/s
+      07/10/09     16.10 GiB |   11.14 GiB |   27.24 GiB |    2.64 Mbit/s
+      07/11/09      9.79 GiB |    4.96 GiB |   14.76 GiB |    1.43 Mbit/s
+      07/12/09      9.36 GiB |    9.60 GiB |   18.97 GiB |    1.84 Mbit/s
+      07/13/09     11.26 GiB |    8.16 GiB |   19.42 GiB |    1.89 Mbit/s
+      07/14/09     32.65 GiB |    9.56 GiB |   42.21 GiB |    4.10 Mbit/s
+      07/15/09     35.32 GiB |   15.55 GiB |   50.88 GiB |    4.94 Mbit/s
+      07/16/09     20.71 GiB |   15.24 GiB |   35.95 GiB |    3.49 Mbit/s
+      07/17/09     15.10 GiB |   15.34 GiB |   30.44 GiB |    2.95 Mbit/s
+      07/18/09     14.23 GiB |    5.20 GiB |   19.44 GiB |    1.89 Mbit/s
+      07/19/09     23.59 GiB |    6.73 GiB |   30.32 GiB |    2.94 Mbit/s
+      07/20/09     36.36 GiB |    7.53 GiB |   43.90 GiB |    4.26 Mbit/s
+      07/21/09     28.11 GiB |    6.06 GiB |   34.16 GiB |    3.32 Mbit/s
+      07/22/09     20.80 GiB |   15.36 GiB |   36.16 GiB |    3.51 Mbit/s
+      07/23/09     18.20 GiB |   10.71 GiB |   28.91 GiB |    2.81 Mbit/s
+      07/24/09     13.07 GiB |    6.25 GiB |   19.33 GiB |    1.88 Mbit/s
+      07/25/09      9.74 GiB |    6.38 GiB |   16.11 GiB |    1.56 Mbit/s
+      07/26/09     11.51 GiB |    6.66 GiB |   18.17 GiB |    1.76 Mbit/s
+      07/27/09     16.68 GiB |    9.18 GiB |   25.86 GiB |    2.51 Mbit/s
+      07/28/09     17.06 GiB |    6.61 GiB |   23.67 GiB |    2.30 Mbit/s
+      07/29/09     23.19 GiB |    7.21 GiB |   30.41 GiB |    2.95 Mbit/s
+      07/30/09      9.34 GiB |    7.79 GiB |   17.13 GiB |    1.66 Mbit/s
+      07/31/09     19.19 GiB |    8.63 GiB |   27.82 GiB |    2.70 Mbit/s
+      08/01/09     17.13 GiB |   10.50 GiB |   27.63 GiB |    2.81 Mbit/s
+     ------------------------+-------------+-------------+---------------
+     estimated     17.94 GiB |   11.00 GiB |   28.94 GiB |
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat -m
+
+ eth1  /  monthly
+
+      month         rx      |      tx      |    total     |   avg. rate
+    ------------------------+--------------+--------------+---------------
+     Nov '08      74.94 GiB |    96.48 GiB |   171.42 GiB |  554.76 kbit/s
+     Dec '08     279.32 GiB |   276.05 GiB |   555.37 GiB |    1.74 Mbit/s
+     Jan '09     324.34 GiB |   413.38 GiB |   737.72 GiB |    2.31 Mbit/s
+     Feb '09     273.73 GiB |   362.49 GiB |   636.22 GiB |    2.21 Mbit/s
+     Mar '09     353.50 GiB |   270.03 GiB |   623.53 GiB |    1.95 Mbit/s
+     Apr '09     361.74 GiB |   365.01 GiB |   726.74 GiB |    2.35 Mbit/s
+     May '09     345.62 GiB |   440.43 GiB |   786.05 GiB |    2.46 Mbit/s
+     Jun '09     758.45 GiB |   359.30 GiB |     1.09 TiB |    3.62 Mbit/s
+     Jul '09     609.40 GiB |   282.21 GiB |   891.61 GiB |    2.79 Mbit/s
+     Aug '09      17.13 GiB |    10.50 GiB |    27.63 GiB |    2.81 Mbit/s
+    ------------------------+--------------+--------------+---------------
+    estimated    556.15 GiB |   340.85 GiB |   897.00 GiB |
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat -t
+
+ eth1  /  top 10
+
+    #      day          rx      |     tx      |    total    |   avg. rate
+   -----------------------------+-------------+-------------+---------------
+    1   06/24/09      80.56 GiB |   10.47 GiB |   91.03 GiB |    8.84 Mbit/s
+    2   06/09/09      49.11 GiB |   21.65 GiB |   70.76 GiB |    6.87 Mbit/s
+    3   06/15/09      38.01 GiB |   28.77 GiB |   66.78 GiB |    6.48 Mbit/s
+    4   06/26/09      53.03 GiB |   10.57 GiB |   63.60 GiB |    6.17 Mbit/s
+    5   07/06/09      49.90 GiB |    9.69 GiB |   59.59 GiB |    5.79 Mbit/s
+    6   06/25/09      47.32 GiB |   10.11 GiB |   57.43 GiB |    5.58 Mbit/s
+    7   02/20/09      19.15 GiB |   37.55 GiB |   56.70 GiB |    5.50 Mbit/s
+    8   02/02/09      20.65 GiB |   34.03 GiB |   54.68 GiB |    5.31 Mbit/s
+    9   01/14/09      20.00 GiB |   32.99 GiB |   52.99 GiB |    5.14 Mbit/s
+   10   04/26/09      32.37 GiB |   19.22 GiB |   51.59 GiB |    5.01 Mbit/s
+   -----------------------------+-------------+-------------+---------------
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat -w
+
+ eth1  /  weekly
+
+                      rx      |     tx      |    total    |   avg. rate
+   ---------------------------+-------------+-------------+---------------
+    last 7 days    114.11 GiB |   56.58 GiB |  170.69 GiB |    2.38 Mbit/s
+      last week    137.79 GiB |   58.96 GiB |  196.75 GiB |    2.73 Mbit/s
+   current week    102.60 GiB |   49.92 GiB |  152.52 GiB |    2.49 Mbit/s
+   ---------------------------+-------------+-------------+---------------
+      estimated    121.38 GiB |   59.06 GiB |  180.44 GiB |
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat -tr
+3103 packets sampled in 5 seconds
+Traffic average for eth1
+
+      rx          50.41 KiB/s           289 packets/s
+      tx          82.11 KiB/s           331 packets/s
+</pre>
+</td></tr>
+</table><br>
+
+<table>
+<tr><td>
+<pre>
+$ vnstat -l
+Monitoring eth0...    (press CTRL-C to stop)
+
+   rx:        0 kbit/s     1 p/s          tx:        4 kbit/s     2 p/s
+
+
+ eth0  /  traffic statistics
+
+                           rx         |       tx
+--------------------------------------+------------------
+  bytes                       21 KiB  |          36 KiB
+--------------------------------------+------------------
+          max              60 kbit/s  |       72 kbit/s
+      average            3.36 kbit/s  |     5.76 kbit/s
+          min               0 kbit/s  |        0 kbit/s
+--------------------------------------+------------------
+  packets                        262  |             272
+--------------------------------------+------------------
+          max                 94 p/s  |          94 p/s
+      average                  5 p/s  |           5 p/s
+          min                  0 p/s  |           0 p/s
+--------------------------------------+------------------
+  time                    50 seconds
+</pre>
+</td></tr>
+</table><br>
+
+</center>
+
+ <br>
+ </td></tr>
+
+ </table>
+</td></tr>
+</table>
+<font size="-2">vnStat is &copy; 2002-2018 Teemu Toivola</font>
+
+</center>
+</body>
+</html>

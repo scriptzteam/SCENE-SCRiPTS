@@ -1,0 +1,245 @@
+As most of you are aware, the PDA scene as a whole has been working with a new set of rules but have nothing written down except the good old rules written by some of the older PDA groups (respects to you) but as we all know times change and so must the rules, The new set of rules you will see below havent changed that much from the old (old used as template).There are however "some" changes that have been made for various reasons (some will be explained through-out the new set). As new improvements are made in the PDA world im sure there will be more changes made to this but as it stands today this is the new set of rules, Please pass it on to new groups that need a copy as we all hate seeing the scene flooded with incorrectly packed/released programs just wasting nukers time.
+
+Release Name Creation :
+***********************
+
+PalmOS:
+
+<developers name>.<program name>.vX.xx.<optional Language>.PalmOS.<cracktype>-<groupname>
+<developers name>.<program name>.vX.xx.<optional Language>.PalmOS5.<cracktype>-<groupname>
+<developers name>.<program name>.vX.xx.<optional Language>.PalmOS5.4.<cracktype>-<groupname>
+
+etc
+
+Phone:
+
+<developers name>.<program name>.vX.xx.<optional Language>.Platform.JAVA.<cracktype>-<groupname>
+<developers name>.<program name>.vX.xx.<optional Language>.Platform.J2Mev1.<cracktype>-<groupname>
+<developers name>.<program name>.vX.xx.<optional Language>.Platform.J2Mev2.<cracktype>-<groupname>
+<developers name>.<program name>.vX.xx.<optional Language>.Platform.SymbianOS.<cracktype>-<groupname>
+<developers name>.<program name>.vX.xx.<optional Language>.Platform.SymbianOS6.1<cracktype>-<groupname>
+<developers name>.<program name>.vX.xx.<optional Language>.Platform.SymbianOS7.<cracktype>-<groupname>
+
+etc
+
+Platform can be: S60, S60v1, S60v2, S60v3, UIQ, UIQ3 OR specific phone: e.g. N9210 or N70
+
+S60 is used when the app runs on all Series 60 editions: 1.0, 1.2, 2.0, 3.0
+be aware that if this platform is used the SymbianOS tag should be without a version number since S60 editions run on different versions of Symbian OS
+
+S60v3 apps which run on S60v3 will have to use SymbianOS9.1 or later
+
+UIQ is used for apps which run on UIQ versions 2.0, 2.1
+
+UIQ3 should be used for UIQ v3, be aware that UIQ3 is only used in SymbianOS9.1 or later
+
+PHONE: if the app is for a specific phone model please use: SE.P9x0 for SonyEricsson P900/P910 or NN70 for Nokia NN70, e.g.
+
+PPC:
+
+<developers name>.<program name>.vX.xx.<optional Language>.CPU.OP-SYS.<cracktype>-<groupname>
+
+OP-SYS can be:
+
+CE......that is CE 2.0
+PPC.... that is for WinCE 3.0 but its not called CE, 99% runs also on new ARM machines with PPC2002
+HPC2000 that is a HandheldPC with keyboard (no pen) only ONE from HP existing
+PPC2002 that is successor of PPC now most common and runs only on ARM machines
+WM2003..that is for XScale machines running Windows Mobile 2003
+WM2005..that is for XScale machines running Windows Mobile 2005
+
+CPU types can be:
+
+SH3 is SH3 CPU
+MIPS is MIPS CPU
+ARM is STRONG ARM CPU
+IPAQ is NOT a cpu but runs ARM , there are progs that run only on IPAQ so IPAQ has to be named as CPU
+XSCALE is XSCALE CPU
+
+........For future extensions :
+........If there is a program version for a special machine then name the machine type instead of the cpu ( see the IPAQ example above ! )
+
+<groupname> has to be <name>pda..to part the pda section !!!
+
+Examples:
+DevelopersName.ProgramName.v1.2.JAPANESE.PalmOS.Regged-GROUPpda
+DevelopersName.ProgramName.v1.2.JAPANESE.ARM.PPC2002.Regged-GROUPpda
+DevelopersName.ProgramName.v1.2.JAPANESE.SymbianOS.Regged-GROUPpda
+
+* Optional language tag should only be used on NON english releases...
+
+
+PDA EBooks :
+*************
+
+<ebook name>.<Edition>.<optional Language>.OP-SYS.-<groupname>
+
+Edition : Bookversion or Edition..
+OP-SYS..: OperatingSystems eg. PalmOS, PPC
+
+
+CrackTypes :
+*************
+
+Can Be :
+
+- Regged................serial data is included in nfo
+- Cracked.............. the program file has been altered to register the proggy. The program is then "Preregistered", "any name and/or serial can be entered" or "nags/trials removed"
+- Incl.Keymaker........ if keymaker is included in package
+- Incl.Keymaker.Patch.. if program is patched and shows correct serial relating to the hotsyncname(palmos,ppc) after program start or after entering any serial
+- Incl.PalmOS.Keymaker..if keymaker for PalmOS is in the package (if you want use some kind of plugin system for your keygen you HAVE to incl. the plugin program also (not only the plugin))
+- Incl.WinCE.Keymaker.. if keymaker for WinCE is in the package (if you wanna use some kind of plugin system for your keygen you HAVE to incl. the plugin program also (not only the plugin))
+- Incl.Java.Keymaker....if keymaker comes via java applet, the java applet has to be delivered with a name.html file that loads the java app.
+
+* If a Keymaker is only in the package then a url to get the prg has to be included in nfo !
+* If a Serial (HOTSYNC independent!) is only in the package then a url to get the program has to be included in nfo !
+
+Allowed are :
+
+- Keymaker.Only
+- JAVA.Keymaker.Only
+- PalmOS.Keymaker.Only
+- OPL.Keymaker.Only (Epoc16)
+- OP32.Keymaker.Only (Epoc32)
+- CPU.OP-SYS.Keymaker.Only
+
+Keymakers can be written in :
+
+Dos, Win32, PalmOS, WinCE, Java ( with start.html )
+
+Keymaker / Keygen same difference.. replace as you see fit in the above examples.
+
+
+Release Rules :
+****************
+
+Release format/size :
+
+If a release is bigger than 5mb then it has to be parted in 5mb packages
+
+Keygens:.... A keymaker is allowed to be only (re-)released
+
+1) when a major version hop of the application occurs i.e. 1.xx -> 2.xx
+2) when the key algo changes. An algo-change has to be announced by including READ.NFO in dirname AND a short description in the nfo (for example: "Keygen algo changed")
+3) when there has not been a re-release within a 1/2 year.
+
+Example(1) : Keymaker released first time for v1.11 .
+The first time it can be replaced for not being a dupe is when the version changes to v2.xx or if the key algo changes. So also in v1.12 ;)
+
+Example(2): Prog.v1.1.incl.Keymaker-GRP released 01/01/2006 the next allowed release date for Prog.v1.11.incl.Keymaker-GRP would be 07/01/2006. Its (of course) NOT allowed to release the SAME version again ever.
+
+Keymaker.Only releases are allowed, but then include the url where where to download the program in the nfo.
+
+Keygenpatch: A Keygenpatch is a patch that alters the program that it shows the right serial for the actual hotsync (and which regs it of course).
+
+Keygenpatches are like Keygens (same rules here) with one difference:
+Its allowed to release a Keygen after a Keygenpatch (even for the same version)
+
+Cracks:......Cracks in form of patched programs can be released for every version UNTIL they got keygened or a serial is released.
+
+If a keygen or serial gets invalid for some reason a new crack can be released.
+
+Regged:......Can be a serial or name + serial. (hotsync id independent)
+
+(Serial).... Same rules as for keygens apply here (major version hops, serial change, 1 year rule)
+Retail:......A retail is treated like a crack with these exceptions:
+- You are allowed to release a retail after a regged/crack/keygen/keygenpatch IF (!) there's something special added (some kind of extra stuff that you dont have in the shareware/demo version). If thats the case you have to add a READ.NFO to the dirname and list whats the additional stuff
+
+Normally retails should be released when its not possible to download an uncrippled version which can be regged/keygenned.
+
+
+Additional Notes:
+******************
+
+If possible (we all know it is) PLEASE TRY and include the developers name at the begining of your release. This will help prevent unnecessary nukes for mistaken duplicates and help...If the developers name is too long it is OK to abbreviate it or leave it out but PLEASE TRY to make sure it gets in there.
+
+All releases must be (zip-)packed with the necessary files for the release and a .nfo and .diz from the group.
+
+Minor Updates (for KEYGEN(incl.patch) & REGGED):..As explained above this is set at every 6mths , It USED to be 1 year in the old set of rules
+
+....but we have all agreed upon the notion that every 6months is sufficient as programs can change
+....ALOT within 6months and without flooding the scene with mu's that are 14days etc like 0day.
+
+
+
+Internals: As internals may save you from a dupe nuke, they should NEVER be raceable, hence you should only pre them on your WHQ or a site "you" own...Internals are meant to be just that.. INTERNAL .. please keep it that way.
+
+
+READ NFO:..IF you label a release READ.NFO please have a clearly stated section in your nfo on what the READ.NFO is all about, dont make people guess...If you want people to read it for a certain reason make sure they can :)
+
+
+EXTRA INFO IN DIRS:..If you have extra information in dirs, such as READ.NFO, DIRFIX, NFOFIX.. It MUST go as follows...
+
+...... DevelopersName.ProgramName.v1.2.PalmOS.Regged.READ.NFO-GROUPpda
+...... DevelopersName.ProgramName.v1.2.ALL.PPC.Regged.DIRFIX-GROUPpda
+...... etc
+
+...... Other information such as HAPPY.NEW.YEAR, MERRY.CHRISTMAS,HAPPY.NEW.YEAR.OF.THE.DOG.DIE.OLD.CHICKEN etc ...... PLEASE ONLY tag ONE of your releases as such, you dont need to tell people happy new year 5 or 50 times in one pre.
+
+
+PDA Trainer rules:
+*******************
+
+Naming:
+
+Folder names:
+........For Trainers naming should be:
+........DevelopersName.Game.Version.Plus.X.Trainer.OS-Group
+
+example:
+........ExampleSoft.Mario.v1.0.Plus3.Trainer.PalmOS-FooBarPDA
+
+For cheats/guides naming should be:
+........DevelopersName.Game.Version.Type.OS-Group
+
+example:
+........ExampleSoft.Mario.v1.0.Cheats.PalmOS-FooBarPDA
+
+
+Allowed types are:
+........- Cheats
+........- Walkthrough
+........- Guide
+
+Allowed OS: same as above PDA rules, if PDA rules change, so does this.
+
+All file names MUST follow 8.3 rule.
+
+If a trainer is already released, a trainer with more cheats is allowed. A group is only allowed to release ONE trainer for each game
+(if group X releases +3 and group Y release +4, group X can NOT release +5).
+
+If a game is released with more than one version (lowres and highres), the trainer-release must include trainers with equal functionality for all these versions.
+
+Trainers/Cheats for games that have not been release on the scene is NOT allowed. The scene release can not be more than 4 months old.
+
+When releasing a Trainer/Cheat you MUST include a public URL in the nfo directing people where to go to download the ORIGINAL program.
+
+
+Trainers MUST:
+... Work on both cracked/uncracked versions
+
+Trainers MUST NOT:
+... Be bigger than 100k bytes
+... Bundle the game
+... Cracks the game.
+... Require better PDA than the game
+
+Cheats MUST NOT:
+... Be stolen from anywere (you have to hack them out yourself)
+
+Important Info To Siteops/Nukers :
+**********************************
+
+As we have seen in the past, there are some rules which prevent groups releases being nuked on an affiliate site...We think that if a valid nuke reason applies to any release, it should be nuked on all sites - affil or not.
+
+................ ->>> AFFIL PREVENTS NOT FROM BEING NUKED !!! <<
+
+
+.....................................RULES SIGNED BY
+.................... -+-+-+-+-+-+-+-+-
+
+.. FEB 2006.. --..XXXXXX
+.. FEB 2006.. --..XXXXXX
+.. FEB 2006.. --..XXXXXX
+.. FEB 2006.. --..XXXXX
+.. FEB 2006.. --..XXXXX

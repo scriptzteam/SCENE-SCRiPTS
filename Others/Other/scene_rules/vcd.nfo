@@ -1,0 +1,143 @@
+GUIDELINES FOR GROUPS/SITES/SITEOPS/NUKERS
+regarding VCDs and other mpeg releases:
+
+
+
+1.) THEATRICAL RELEASES
+
+
+- Releases are valid only if a particlar title can not be bought/rented
+legally anywhere in the world.
+
+- Made-for-TV movies and Direct-to-video titles are BANNED.
+
+- Subtitled movies are banned. Foreign language films with english subs are
+allowed only if approved by siteop.
+
+- All releases must be in .cue/.bin format. (Raw .dat and .mpg are banned)
+
+- All releases must be playable on standalone VCD/DVD players.
+
+- Each release must include a .sfv and .nfo file. Filenames may not include
+any NON-Dos characters or spaces. MS-DOS 8.3 filenames are recommended.
+
+EXAMPLE: TFA-BUM1.RAR
+WHAT CHARATERS NOT TO USE: (),[]|/\;:'{}"<>$#%!&+=^*
+
+- File size of releases are limited to 15-20 Megabytes, not to exceed
+20000000 bytes.
+
+- The only accepted archive format is RAR. Compression is left up the
+individual group/packager to decide.
+
+- To determine quality without having to download the whole release, ALL
+releases must include a 5-10 Megabyte preview clip in .mpg format and
+should be put in a subdir called "Sample" for scripting purposes. The
+sample name must be a new filename each time, the rar name for example:
+
+EXAMPLE: TFA-BUM1.RAR, the sample name will be TFA-BUM.MPG
+
+- At all times, the quality of the VCD image determines whether it is a
+viable release or not, however a Cam cannot be released after a Telesync
+has been released, a Telesync cannot be released after a Screener has been
+released , unless the quality of the screener is extremely poor and deemed
+unacceptable. Workprints will be judged by the quality of the SAMPLE at all
+times.
+
+
+
+
+Labels for VCD releases:
+(from worst quality to best)
+
+VCD types:
+
+1. Cam: This catagory represents movies that were cammed in a
+theater with a STEADY BASE such as a TRIPOD. The audio
+of these movies were taken from the mic on the camera,
+and is usually very hollow. The video can be with a
+straight angle or slightly tilted.
+HANDHELD CAMS ( shaky, crowd noise ...) ARE BANNED.
+
+2. Telesync: This catagory represents movies that were cammed in a
+theater with a steady base such as a tripod. The audio
+of these movies are taken from some sort of an ALTERNATE
+source. The video can be with a straight angle or slightly
+tilted. If the sound is hollow and/or you can hear an
+audience, it's a cam.
+
+3. Workprint: This catagory represents movies that were taken usually from
+VHS tape. If the source is as good as first generation VHS
+demo tape with GOOD encoding, it should be labeled Screener.
+All other home-made VCDs must be labeled Workprint. If you
+know your copy is not complete, use this label. (missing
+scenes, missing audio tracks, additional scenes, alternate
+ending etc.)
+
+4. Screener: Best quality. This catagory represents movies taken from
+either DVD, Laserdisc, or tape. They may contain warnings,
+B&W sections, TCR codes or NOT. Also includes Telecine.
+
+
+All releases must have a dirname in the right format describing the actual
+quality of the release and type of VCD (DO NOT release Telesync as Screener)
+Call CAMS what they are: CAM. Release it as Telesync when an audio cable has
+been used to tape the movie. The dirnames may not include any NON-Dos
+characters or spaces.
+
+EXAMPLES: Moviename.TYPEOFVCD.Quality.Extras-RELEASEGROUP
+
+Go.VCD.Screener.Widescreen-TFAiSO
+Lick.Em.Dry.XXX.VCD-PEEPERS (since all porn releases are screeners or store
+bought VCDs, you can leave quality out.)
+
+Image area wider than 4:3 aspect ratio must be lebeled Widescreen.
+
+
+Releases of the same type are dupes. All mislabeled releases should be either
+nuked or renamed correctly. When a better version of the same movie is
+released, all previous releases should be nuked 0x to make space.
+
+
+The sites themselves can decide what quality to allow and what not.
+Same goes for porn, DVD rips etc. However, it is STRONGLY ADVISED to allow
+all types of VCDs.
+
+
+
+
+2.) OTHER RELEASES:
+
+Releases such as: DVD rips, VHS rips, TV shows, Pay-Per-View specials,
+Porn, Anime etc.
+
+
+
+- They should be in separate dir(s) if possible, not in the same dir as
+theatrical releases.
+
+Example: /PORN, /TV
+
+- It is totally up to siteops if they are going to to allow all or some of
+them and should be clearly stated in site rules.
+
+- DVD/VHS rips are allowed only if there was no SCREENER released
+previously.
+
+- All releases must be in either .mpg, .cue/.bin or .asf format. (.asf is
+especially recommended for TV shows)
+
+- Each release must include a .sfv and .nfo file for each release. Dir names
+should follow the same guidelines as theatrical releases.
+
+- File size of releases are limited to 15-20 Megabytes, not to exceed
+20000000 bytes.
+
+- The only accepted archive format is RAR. Compression is left up the
+individual group/packager to decide.
+
+- To determine quality without having to download the whole release, ALL
+releases must include a 5-10 Megabyte preview clip in .mpg format and
+should be put in a subdir called "Sample" for scripting purposes. The
+sample name must be a new filename each time, i suggest the name of the
+rars.

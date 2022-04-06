@@ -1,0 +1,303 @@
+                       -/\/-  MP3 Rules  (2005-03-03)  -\/\-
+  1. No Dupes !
+
+   We check complete albums/releases, not single tracks. So a release is not
+   a dupe if it has different or more tracks.
+   Exceptions:
+   1.1.
+    It's also a dupe if the complete release is included in a previous one.
+    For example CDM is released, now someone releases the CDS and all tracks
+    of the CDS were already included on the CDM (excactly the same).
+   1.2.
+    You are allowed to create a duplicate release from a release that has a
+    source of lower quality (not lower bitrate! (see rule 11)).
+    Example: if vinyl is out then a CD-release is allowed.
+    If you do that then please add this info to NFO and dirname.
+   1.3.
+    All MIXED cds should be ripped as one track supplied with a .cue.
+    If they are not, they may be duped by another group that releases it as
+    one track with a .cue supplied.
+
+   Note: if you want to release an import-album or some "extendend edition"
+   then check rule 7 as well !
+
+
+  2. An .SFV and .NFO file must be included in every release.
+
+  3. Directoryname must at least contain:
+
+   3.1 Artist Name - Title - Published Year (decimal) - Group name
+    (extra info is allowed of course)
+
+   3.2
+    All bootleg releases must have the word BOOTLEG in the dirname.
+    Street mixes that are not available at major retailers or only at one
+    suspicious webshop are bootlegs and they need to be labeled as such.
+    (bootleg rule start: 2005-03-14)
+
+   Exception:
+   If a vinyl/cd has no title then it's allowed to replace the title by
+   labelname+catnumber (both!). If there is only one artist on the vinyl/cd
+   then you must add the artistname.
+
+
+  4. Filename must at least contain:
+
+   Track Number - Song Title
+
+   If it's an album with different artists (one artist per track) then you
+   must add the artist name as well ("VA-tracks" like mixes don't need
+   artistnames).
+   Make sure that your filename is unique otherwise some sites might
+   dupeskip it. (You can search for filenames here as well)
+
+   Exception:
+   If no tracknames are supplied by the source (cd,vinyl,..) then you *must*
+   provide proof that these tracks have no names. Either by a scan of the
+   original cover of the record company/label (no selfmade cdr or bootleg
+   covers) or a link to an official or trusted webpage with proofs. If
+   these "untitled tracks" are part of a big mix (no silence between the
+   "tracks") then it's considered as one track and you must rip it as one
+   mp3/cue and give this track same name as the "album".
+
+
+  5. Files/directories must only contain characters; a-z A-Z 0-9 _ . - ()
+
+   This is to avoid problems with windows/linux-filesystem and ftp-servers.
+
+
+  6. Self-made releases
+
+   6.1.
+    Self-made compilations are not allowed !
+    A self-made compilation is when you select tracks from other sources,
+    put them together and release that as something new.
+
+   6.2.
+    A self-made MIX or completely self-made music is allowed if it's good.
+    Sites decide if it's shit by nuking it. We won't nuke/unnuke such a
+    release.
+    If you are releasing self-made stuff then that must be clearly visible
+    in your nfo. If it's not possible to see that it's self-made then it
+    will get nuked as bad pack.
+    Exception: if the selfmade release is free available at release time
+    or when you obviously know that it will be available soon then it's not
+    allowed to release it.
+
+   If it's not clear if it's selfmade or not and it's not possible to find
+   any information about the release/artist/label then it's up to the group
+   to prove that this release is not selfmade (coverscan, url, ...). If
+   they are not able to prove that it's real it will get nuked as bad pack.
+
+
+  7. The entire CD,Vinyl,etc. must be released (not individual tracks)
+
+   If you think it's too much work to rip all tracks you better don't rip
+   at all. Releasing the complete CD/Vinyl is necessary because otherwise
+   it would be possible to make several (different) releases of the same
+   cd/vinyl/etc..
+
+   Exception for albums:
+   If an RETAIL album has been released in different editions and the only
+   difference is one or more bonus tracks (imports) then it's allowed to
+   release the bonustrack(s) only. But you may NOT re-release an entire
+   inital edition within the first three months.
+   Example: album released in US with 10 tracks, japanese edition with 11
+   tracks (1 bonus track that is a new song) then you MUST release the jap
+   bonus track only (without including previously released tracks of the
+   US album) during the first three months after first full retail release.
+   If it's more than 3 months later then you are allowed to do either the
+   bonustrack-only or the full album.
+   Moreover, it is NOT allowed to re-release a new edition of an retail
+   album EVER if the extra/bonus tracks are already included in one (!)
+   previous release. For example, USA album is released and four months
+   later japanese with simply a remix from an old CDM/CDS still wouldn't
+   be allowed.
+
+
+  8. Current maximum directory/filename-length is 128 characters
+
+   Because of limitations on windows cd-filesystem (linux has 256char-limit)
+   and about 99of the people here use either windows or linux.
+
+
+  9. No fake-releases
+
+   It's a fake release when artist, title, group or source is incorrect
+   (different).
+   examples:
+   - Some_Artist-Crappy_Music-2004-GRP not released by GRP
+   - Another_Artist-Lots_of_Noise-CDM-2004-GRP was ripped from TV or
+     downloaded from a paysite
+   - Madonna-Something_New-2004-GRP really containing some tracks by
+     Marilyn Manson
+
+
+  10. A bad rip/release must be reported by either 3 independent people
+
+   (from different groups) or the group which released it.
+   If you re-release something that hasn't been nuked/marked yet then add
+   this info to your nfo-file. Otherwise it will get nuked as dupe.
+
+
+  11. Quality
+
+   current minimum bitrate is 160kbit
+   it's not allowed to re-release something in 192kbit (or higher) because
+   a previous release was only 160kbit.
+
+
+  12. Promos/Advances
+
+   If a release is considered not to have every track from the source then
+   it must be labelled as a promo and can be duped by any legitament retail
+   release that DOES contain all tracks. The legitament release can be
+   identified by the CAT number, or more suitable proof.
+
+   Promos do not have to contain track listings, they are promotional
+   material, they are not considered legitament releases, and are still
+   governed by quality rules.
+
+   If you release a promo when the retail is already out then you must
+   provide proof that this promo is real to make sure this is not a
+   selfmade "promo".
+
+   to reduce amount of fakes (starting on 2005-03-14):
+   ALL promos/advances must either have cover scans or be VBR/Lame+preset
+   (any Lame version, any preset, 3.90.3/APS recommended).
+   A one track promo single release must include cover scans even if it is
+   VBR/Lame+preset already.
+
+  13. Re-encodes are strictly forbidden.
+
+
+  14. Don't add duplicate nuke requests unless it differs from the original.
+
+
+  15. FREE MP3s
+
+   Free MP3s that are legally available on the net (artist / record company
+   allows it) in acceptable quality are NOT allowed to release.
+
+
+  16. SOURCE
+
+   The tracks of a release must all be from the same source and have the
+   same quality/bitrate. Taking tracks from other scene releases or internal
+   group releases of other groups is strictly forbidden.
+   If the source is not CDDA or vinyl (tv,radio,web,whatever,..) then it
+   must be either part of the dirname (-TV-, -RADIO-, -WEB-, etc.) or
+   mentioned in your NFO file.
+
+
+  Notes:
+  - When dupe checking input partial text of the release name in the search
+    field, do not search for the entire album name that you have, because it
+    may have already been released under something slightly different.
+
+  - Radio rips that were recorded via the radio tuner can be duped by a
+    source that is superior in quality AND if there is proof of mastering
+    involved, for example, removing commercials and commentary.
+
+  - Releases with an apparently incorrect year may not be nuked. However
+    the year should be correct of course. Keep in mind that a lot of sites
+    nuke for fake year when it's incorrect. (The Year in dirname is not the
+    year when you released it but when the record company/artist published
+    it!)
+
+  - If a release labeled as "advance" is identical to the retail version
+    then the advance turns into a retail release. This means then it is not
+    allowed to dupe it and it counts as retail for ALL rules. If the retail
+    is different then of course it's allowed to release it.
+
+  - We tolerate typos if it still is readable and either artist or title is
+    100correct.
+
+  - For webrips (bought online) we assume that they are made from a digital
+    source. So duping them for better quality (rule 1, exception 2) is not
+    allowed.
+
+  Nukerequest/Re-Rip info for older releases:
+
+   Our rules started on 2000-09-17. To describe which of the older releases
+   are allowed to re-release or nukerequested here are some notes how we
+   handle these older releases:
+
+   before RIAA:
+   RIAA rules started 1. february 1999. Releases before 1999-02-01 are taken
+   as is. This means we just accept the nuke-status and you are not allowed
+   to re-release a group-release that has been accepted. To count as
+   "group-release" it needs at least a groupname, artistname and
+   track/albumname. If it has these attributs and it's not nuked then it's
+   valid.
+
+   RIAA time:
+   With exception of rule 7 the RIAA-rules were active from 1999-02-01 to
+   2000-09-17.
+   You are allowed to request nukes for releases made during RIAA period
+   according to the RIAA rules except rule 7.
+
+   There was a 64-char limit for dirnames during RIAA time. However sites
+   usually didn't nuke releases that had longer dirnames.
+   Since this rule (RIAA-rule #7) was ignored by a lot of sites/groups we
+   will not nuke any releases because of that rule. However if the sites
+   nuked it we will not unnuke it. In other words: we don't touch it. If
+   it's nuked you are allowed to re-release it, if not then not. No
+   nukerequests allowed.
+
+   general:
+   There was no bitrate limit until 2000-09-17.
+   Releases before that date that have been accepted (were not nuked) here
+   or on the sites can *NOT* be nukerequested or re-ripped because of the
+   bitrate !
+
+   An incomplete tracklist here is *NO* reason for a nukerequest or re-rip.
+   That we didn't scan it completely doesn't mean it was released incomplete.
+   We started on only one site and had some problems with the scan-script
+   first. If you want to re-release something because you are sure it was
+   incomplete then you must give proofes in your nfo.
+
+   The mix-exception that it's allowed to re-release something when the
+   first release was single tracks and not one file with cue (rule 1.3)
+   does *not* count for releases before 2001-05-08. Releases before that
+   date are not allowed to re-release as single track.
+
+   The dupe-rule that we dupe for whole releases and not for single tracks
+   always has been used (even if it wasn't written down) so it counts for
+   ALL releases even the very old ones.
+
+   That a self-made release is only allowed when it's possible to see that
+   in the NFO starts on 2003-07-15.
+
+   Listing non-cd/vinyl source is mandatory since 2004-10-11.
+
+   Rule 3.2 (bootleg tag) and VBR/coverscan part of rule 12 started on
+   2005-03-14.
+
+  change-log:
+  09-17-2000 - first version
+  12-31-2000 - changed rule 1,11
+  05-08-2001 - updated rule 10, added rule1/exception 3, added rules 12-15,
+               added notes
+  11-15-2001 - changed exception of rule 7
+  09-16-2002 - added exception to rule 3
+  01-14-2003 - changed exception of rule 7, added note to rule 1
+  02-05-2003 - added rule 15
+  02-05-2003 - added exception to rule 6
+  03-21-2003 - added Nukerequest/Re-Rip info
+  04-02-2003 - changed wording of rule 4 to make clear that one-track mixes
+               with lots of artists don't need artistname in filename
+  05-17-2003 - added exception to rule 4, added rule 16
+  07-15-2003 - rules 6 changed (selfmade rels in nfo)
+  09-28-2003 - added "retail" to rule 7 to make sure it does not count for
+               advance/promos
+  09-28-2003 - "promo proof after retail" sentence added to rule 12
+  12-14-2003 - added "advance" note
+  12-23-2003 - added "decimal" to rule 3
+  10-11-2004 - added explanation to rule 9 (fakes), rule 16: listing
+               non-cd/vinyl source is mandatory now, typo note and webrip
+               note added
+  12-14-2004 - fake year notes added
+  03-03-2005 - added bootleg info to rule 3 (3.2), start: 2005-03-14
+  03-03-2005 - added VBR + cover scan info to rule 12, start: 2005-03-14
+

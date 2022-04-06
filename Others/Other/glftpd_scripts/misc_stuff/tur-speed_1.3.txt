@@ -1,0 +1,10 @@
+Speed (GL1&2)
+
+Description: This is a replacement/standalone !speed script for checking 
+speed/activity from irc. Messages can be configured easely and in its full glory, 
+its something like: Turranius/SiTEOPS is downloading at 764.10 Kb/sec on 
+ost-file.rar in DIVX/OstFilens.Revenge-OsT
+
+Author:   Turranius
+Version:  1.3
+Added on: 23-Apr-2003

@@ -1,0 +1,3 @@
+v0.2: make it a bit more fault-proof
+v0.3: make it a bit more verbose, by means of a logfile
+v1.0: write the bloody thing in C

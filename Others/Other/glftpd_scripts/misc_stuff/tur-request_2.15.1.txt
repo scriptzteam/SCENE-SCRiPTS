@@ -1,0 +1,14 @@
+Request (GL1&2)
+
+Description: My own little request system. Works from both site and irc ( !request,
+!reqfilled and !requests from irc ).
+Will create a file to store requests and you can set glftpd to display that file 
+when users enter the request dir.
+It can also create the requested folder with a header you choose (REQ- by default),
+and if that is on, rename the dir when reqfilled (FILLED- by default).
+Announcing to chan is of course in as well. Instructions for zipscript-c included. 
+Got a few more goodies too.
+
+Author:   Turranius
+Version:  2.15.1
+Added on: 23-Apr-2003

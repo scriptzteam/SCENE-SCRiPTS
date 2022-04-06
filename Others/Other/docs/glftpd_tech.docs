@@ -1,0 +1,238 @@
+glFTPD Technical Docs for v2.00
+	Maintained by: Bloody_A #glftpd (efnet)
+
+This document goes over a number of technical specifications that could be useful
+for coders of external utils/scripts. The nature of these documents is really technical
+and this document is not ment for the general user.
+
+In this document we assume that the reader has basic understanding of programming C
+or is capable to understand things as structs.
+
+
+
+
+Table of contents:
+I.	Binary (log) files.
+II.	passwd and group file.
+III.	User files.
+IV.	Group files.
+V.	Shared memory.
+
+
+.-------------------------.
+|I.   Binary (log) files. |
+`-------------------------'
+
+1.   The dirlog.
+
+The dirlog contains all the directories created via the site.  This is used
+when executing `site new` or `site search`.  It should be updated
+if anything moves on the site. 
+
+The format is as the below shown C struct.
+
+struct dirlog {
+        ushort status;			/* 0 = NEWDIR, 1 = NUKE, 2 = UNNUKE, 3 = DELETED */
+        time_t uptime;			/* Creation time since epoch (man 2 time) */
+        ushort uploader;		/* The userid of the creator */
+        ushort group;			/* The groupid of the primary group of the creator */
+        ushort files;			/* The number of files inside the dir */
+        unsigned long long bytes;	/* The number of bytes in the dir */
+        char dirname[255];		/* The name of the dir (fullpath) */
+        struct dirlog *nxt;		/* Unused, kept for compatibility reasons */
+        struct dirlog *prv;		/* Unused, kept for compatibility reasons */
+};
+
+
+2.   The laston log.
+
+The laston log file contains all the logins from all users with flags that specify
+which kind of actions the user did while being logged in.
+
+The format is as the below shown C struct.
+
+struct lastonlog { 
+        char uname[24];			/* username */
+        char gname[24];			/* users primary group */
+        char tagline[64];		/* users tagline */
+        time_t logon;			/* users logon time */
+        time_t logoff;			/* users logoff time */
+        unsigned long long upload;	/* bytes uploaded */
+        unsigned long long download;	/* bytes downloaded */
+        char stats[7];			/* what did the user do ? */
+};
+
+The stats field is always filled with 6 chars. Each different option has its own place
+in the field. If a flag is set the letter will be there, if not there will be a - in that place.
+The possible flags are: U - user uploaded, D - user downloaded, L - user lost connection, 
+			T - user timed out, A - user added a new user, N - user did atleast one nuke.
+
+
+3.   The nukelog.
+
+The nukelog contains all the information on nuked directories.
+
+The format is as the below shown C struct.
+
+struct nukelog {
+        ushort status;		/* 0 = NUKED, 1 = UNNUKED */
+        time_t nuketime;	/* The nuke time since epoch (man 2 time) */
+        char nuker[12];		/* The name of the nuker */
+        char unnuker[12];	/* The name of the unnuker */
+        char nukee[12];		/* The name of the nukee */
+        ushort mult;		/* The nuke multiplier */
+        float bytes;		/* The number of bytes nuked */
+        char reason[60];	/* The nuke reason */
+        char dirname[255];	/* The dirname (fullpath) */
+        struct nukelog *nxt;	/* Unused, kept for compatibility reasons */
+        struct nukelog *prv;	/* Unused, kept for compatibility reasons */
+};
+
+
+4.   The dupefile.
+
+The dupefile contains the dupe database for all files uploaded through glftpd.
+
+The format is as the below shown C struct.
+
+struct dupefile {
+        char filename[256];	/* The filename */
+        time_t timeup;		/* Creation time since epoch (man 2 time) */
+        char uploader[25];	/* Name of the uploader */
+};
+
+
+5.   The onelinerslog.
+
+The onelinerslog contains all the oneliners added by the users.
+
+The format is as the below shown C struct.
+
+struct oneliner {
+	char uname[24];		/* The user that added the oneliner */
+	char gname[24];		/* The primary group of the user who added the oneliner */
+	char tagline[64];	/* The tagline of the user who added the oneliner */
+	time_t timestamp;	/* The time the message was added (epoch) */
+	char message[100];	/* The message (oneliner) */
+};
+
+
+.-----------------------------.
+|II.  passwd and group file.  |
+`-----------------------------'
+
+These files are standard unix password/group files. 
+
+*** Note: glftpd does not have support for shadow files.
+
+1.   The passwd file
+
+This file contains the username, password, UID and home directory for
+each glftpd user.  The format is as follows:
+
+glftpd:6uwHOjJ3grid6:0:0:0:/site:/bin/false
+user:encrypted passwd:UID:GID:Creation Date:homedir:irrelevant
+
+2.   The group file
+
+This file contains the groupnames, long groupnames and the gid (group id)
+for all your non-private groups. The format is as follows:
+
+glftpd:glftpd:0:5
+short group name:long group name:GID:irrelevant
+
+
+
+.-----------------.
+|III. User files. |
+`-----------------'
+
+The userfiles are used to store user specific information. This includes
+things like up and download stats, credits, allow ip's to login from and 
+many many other things. A complete list of options with descriptions is
+shown below. The vars are shown in C printf format and a short description
+is added behind the //. The fields between the [SECTION] and [ENDSECTION]
+markers have the fields specified for each existing section.
+
+--------Start--------
+USER %s				// Custom comment line (can be set with site change)
+GENERAL %d,%lu %d %lu %lu	// Weekly Allotment sections, weekly allotment / max idle time / max down speed / max up speed
+LOGINS %d %d %d %d		// Max simult. logins / max simult. logins from the same IP / max simult. downloads / max simult. uploads
+TIMEFRAME %d %d			// Allowed logins from hour / till hour
+FLAGS %s			// The users flags
+TAGLINE %s			// The users tagline
+DIR %s				// The users startup dir
+ADDED %ld %s			// The user was added on time by luser
+[SECTION]
+CREDITS %lld 			// The amount of credits the user has
+RATIO %d			// The ratio of the user
+ALLUP %u %llu %lu		// Files / Bytes / Time
+ALLDN %u %llu %lu		// Files / Bytes / Time
+WKUP %u %llu %lu		// Files / Bytes / Time
+WKDN %u %llu %lu		// Files / Bytes / Time
+DAYUP %u %llu %lu		// Files / Bytes / Time
+DAYDN %u %llu %lu		// Files / Bytes / Time
+MONTHUP %u %llu %lu		// Files / Bytes / Time
+MONTHDN %u %llu %lu		// Files / Bytes / Time
+NUKE %lu %u %llu		// Last time nuked / Times nuked / Bytes nuked
+[ENDSECTION]
+TIME %d %ld %d %ld		// Number of times logged in / Last time we saw the user / Max online time a day / Time online today
+GROUP %.15s %d			// This line can be repeated if the user is in more than 1 group, groupname / gadmin
+PRIVATE %s			// This line can be repeated if the user is in more than 1 private group, groupname
+IP %s				// This line can be repeated if the user has multiple ip's added, IP
+--------Stop--------
+
+The line below works only in default.* files and will be parsed on user 
+creation and change the home dir of the added user to that.
+
+HOMEDIR /site/$gluser		// The $gluser will be replaced with the users username.
+
+
+
+.------------------.
+|IV.  Group files. |
+`------------------'
+
+The groupfiles are used to store group specific information. This is for 
+example, slots, max simult. logins. A complete list of options with descriptions is
+shown below. The vars are shown in C printf format and a short description
+is added behind the //.
+
+--------Start--------
+GROUP %s		// Custom comment, can be set with site grpchange
+SLOTS %d %d %d %lu	// The group slots / group leech slots / weekly allotment slots / max allotment size a gadmin can give
+GROUPNFO %s		// A group description
+SIMULT %d		// The max number of users from this group who can login to the site at the same time
+--------Stop--------
+
+
+
+.--------------------.
+|V.   Shared memory. |
+`--------------------'
+
+Glftpd makes use of shared memory for keeping track of all actions of all processes
+since its not a threaded program. To access shared memory you need an ipc key. 
+This key can be specified in the glftpd.conf, if none was specified the default key
+is used which is "0x0000DEAD". In the shmem we store a struct for each running proccess
+with information about it. Since shared memory needs to be initialized with a specific
+size we have a max_users setting in the config. The sum of the 2 options for this setting
+times the size of the struct will be initialized. The struct used in the shared memory
+is below in a C struct.
+
+struct ONLINE {
+  char   tagline[64];		  /* The users tagline */
+  char   username[24];		  /* The username of the user */
+  char   status[256];		  /* The status of the user, idle, RETR, etc */
+  short int ssl_flag;		  /* 0 = no ssl, 1 = ssl on control, 2 = ssl on control and data */
+  char   host[256];		  /* The host the user is comming from (with ident) */
+  char   currentdir[256];	  /* The users current dir (fullpath) */
+  long   groupid;		  /* The groupid of the users primary group */
+  time_t login_time;		  /* The login time since the epoch (man 2 time) */
+  struct timeval tstart;          /* replacement for last_update. */
+  struct timeval txfer;		  /* The time of the last succesfull transfer. */
+  unsigned long long bytes_xfer;  /* bytes transferred so far. */
+  pid_t  procid;		  /* The processor id of the process */
+};
+
+

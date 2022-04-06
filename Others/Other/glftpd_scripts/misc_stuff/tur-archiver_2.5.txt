@@ -1,0 +1,11 @@
+Archiver (GL1&2)
+
+Description: This script will match something in a directory and move, copy or make
+a symlink of that dir to another predefined dir. Good for most about everything 
+like archiving KeyGens, archiving TV shows to their own dirs etc. Can be configured
+to check that the release is completed and that its old enough (both definable) to 
+be moved. 
+
+Author:   Turranius
+Version:  2.5
+Added on: 23-Apr-2003

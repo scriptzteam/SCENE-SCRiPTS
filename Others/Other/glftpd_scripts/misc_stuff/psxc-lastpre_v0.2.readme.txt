@@ -1,0 +1,183 @@
+#!/bin/bash
+
+# psxc-lastpre v0.2
+####################
+#
+# This small script will symlink the last pre'd release. How you wish to run
+# it is up to you - you can run it from crontab, interactive, from the prescript
+# itself. It works both inside and outside glftpd's chroot.
+#
+# HISTORY:
+##########
+# v0.1  2004-03-17 - Initial release. Not public, though.
+# v0.2  2004-03-19 - Added support for links to other places than in the root
+#                    of /site/
+
+# CONFIG #
+##########
+
+# For compatibility, I've included an option to call the pre-script from within
+# this script - ie, when people do a pre, you should set up glftpd to execute
+# this script instead of the real prescript. Just give full path to the
+# prescript below. If PRESCRIPTNAME is anything but empty, it will be executed
+# first. No guarantees it will work, though it has been tested with foo-pre and
+# eur0-pre.
+PRESCRIPTNAME="/bin/pre.sh"
+#PRESCRIPTNAME=""
+
+# If the prescript given in PRESCRIPTNAME exits with an error, should we still
+# try to run the script? In most cases it will do no harm either way. Set to
+# 0 to NOT ignore errors, 1 to ignore them.
+PREIGNOREERROR=0
+
+# Path to the root directory of glftpd. Set this to "/" if you run this within
+# glftpd's chroot, or the full path if you run it from the outside (crontab/bot).
+GLROOT=/
+#GLROOT=/glftpd
+
+# Path to glftpd.log.
+GLLOG=$GLROOT/ftp-data/logs/glftpd.log
+
+# The "trigger"-name which separate pre's from other announces in glftpd.log.
+PRETRIGGER="PRE:"
+
+# In glftpd.log, there's a list of strings after PRETRIGGER separated by spaces.
+# These strings are contained within "". Depending on how your prescript logs
+# entries, you need to tell the number(s) of the strings which contain the path
+# to the pre'd release. The path must fill the whole string, or several strings
+# may be combined to give the path. The strings will be combined in the order
+# you put the numbers in, with STRINGSEP between them.
+# example:
+# the strings "mycoolstuff-iND" "apps" may appear in your log, like this:
+# Wed Mar 17 12:12:47 2004 PRE: "mycoolstuff-iND" "apps" "psxc" "L33T" "No Tagline Set"
+# In this case, STRINGNUMS="2 1" and STRINGSEP="/" - that will give a path like
+# "/apps/mycoolstuff-iND/", which is a valid path (GLROOT and SITEPATH will be 
+# added - if the SITEPATH is part of the string(s) extracted, it's okay - it
+# will still work).
+STRINGNUMS="1"
+
+# If you have more than one number in STRINGNUMS, it is possible you must
+# separate them with a slash ( / ) or some other char. In most cases, this
+# variable should not be changed - any double STRINGSEP ( // ) will be replaced
+# by a single STRINGSEP ( / ) before the symlink is created.
+STRINGSEP="/"
+
+# The name of your sitepath
+SITEPATH="/site"
+
+# Here you set up what to name the link of the last pre. The link will be put
+# in the root of SITEPATH. You may use a path in this variable.
+# You may use the following cookies:
+# %prename% - original name of the pre
+# %presection% - the section the release was pre'd in.
+LINKDEST="/incoming/_PRE_-_%presection%_-_%prename%"
+#LINKDEST="PRE_-__%prename%"
+
+# How many pre's do you wish to keep symlinks for?
+KEEPLINKS=5
+
+# I need a file to log to. This file must exist and have read and write
+# permission set (chmod 666 should suffice).
+LOGFILE=$GLROOT/ftp-data/logs/psxc-lastpre.log
+
+# Debug option. Sort of. Turn it off once you see it's working okay.
+DEBUG="ON"
+
+# Number of lines to tail in glftpd.log, to find a pre-line. Depending
+# on your setup, you may wish to change this. If you use crontab to run
+# this script, the number should be higher than if you run it right
+# after a pre has been made.
+GLLINES=5
+#GLLINES=500
+
+#  END OF CONFIG #
+##################
+
+args=$@
+
+# sanity check
+if [ ! -e $GLLOG ]; then
+  echo "$GLLOG not found."
+  exit 1
+fi
+if [ ! -r $GLLOG ]; then
+  echo "permissions on $LOGFILE is wrong."
+  exit 1
+fi
+if [ ! -e $LOGFILE ]; then
+  echo "$LOGFILE not found."
+  exit 1
+fi
+if [ ! -r $LOGFILE ] || [ ! -w $LOGFILE ]; then
+  echo "permissions on $LOGFILE is wrong."
+  exit 1
+fi
+
+# Execute the prescript, if defined
+if [ ! -z "$PRESCRIPTNAME" ] && [ -x "$PRESCRIPTNAME" ]; then
+  $PRESCRIPTNAME $args
+  errorid=$?
+  if [ ! -z $errorid ] && [ ! "$PREIGNOREERROR" = "0" ]; then
+    exit $errorid
+  fi
+fi
+
+# Let's find the last PRE line in gllog
+prepath="$STRINGSEP"
+lastline="`tail -n $GLLINES $GLLOG | grep -e "$PRETRIGGER" | tail -n 1`"
+for num in $STRINGNUMS; do
+  let tempnum=num+1
+  tempstring="`echo "$lastline" | tr '\"' '\n' | grep -v "^\ " | head -n $tempnum | tail -n 1`"
+  prepath="${prepath}${tempstring}${STRINGSEP}"
+done
+
+# Let's check to see if we found a pre line
+if [ -z "$tempstring" ]; then
+  if [ ! -z "$DEBUG" ]; then
+    echo "No ${PRETRIGGER}-lines found in $GLLOG."
+  fi
+  exit 0
+fi
+
+# Format some paths and variables
+prepath="`echo "${prepath}" | sed "s|$SITEPATH||" | tr -s '/'`"
+prepathused="`echo "${SITEPATH}/${prepath}" | tr -s '/'`"
+prepathfull="`echo "${GLROOT}/${SITEPATH}/${prepath}" | tr -s '/'`"
+prename="`basename "$prepath"`"
+presect="`dirname "$prepath" | tr '/' '\n' | tail -n 1`"
+lndest="`echo "${LINKDEST}" | sed "s|%prename%|$prename|g" | sed "s|%presection%|$presect|g" | tr -s '/' | sed "s|^/||"`"
+lndestused="`echo $lndest | sed "s|$SITEPATH||"`"
+lndestfull="`echo "${GLROOT}/${SITEPATH}/${lndest}" | tr -s '/'`"
+
+# remove old link, create new one, log.
+cd ${GLROOT}/${SITEPATH}
+if [ -d "${prepathfull}" ]; then
+  if [ -d `dirname "${lndestfull}"` ]; then
+    rm "$lndestfull" 2>/dev/null
+    oldlink="`head -n 1 $LOGFILE`"
+    if [ ! -z "$oldlink" ]; then
+      rm "$oldlink" 2>/dev/null
+    fi
+    echo "$lndestfull" >>$LOGFILE
+    ln -s "$prepathused" "$lndestused"
+    tempvar="`tail -n $KEEPLINKS $LOGFILE`"
+    echo "$tempvar" >$LOGFILE
+  else
+    if [ ! -z "$DEBUG" ]; then
+      echo "ERROR: `dirname "$lndestfull"` does not exist."
+    fi
+  fi
+else
+  if [ ! -z "$DEBUG" ]; then
+    echo "Unable to make the symlink - the pre path does not exist."
+    echo "I came up with this line from the last $PRETRIGGER line:"
+    echo "  $lastline"
+    echo "  $prepath"
+    echo ""
+    echo "Please check your config."
+  fi
+fi
+
+# finished.
+exit 0
+

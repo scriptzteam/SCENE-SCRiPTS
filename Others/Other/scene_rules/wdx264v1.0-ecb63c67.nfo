@@ -1,0 +1,1065 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+³          ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿         ³
+ÃÄÄÄÄÄÄÄÄÄÄ´      Web Definitions for x264 v1.0 a.k.a. wdx264       ÃÄÄÄÄÄÄÄÄÄ´
+ÃÄÄÄÄÄÄÄÄÄÄ´ THE.2016.WEB.AND.WEBRIP.SD.HD.X264.RULESET.v1.0-WDX264 ÃÄÄÄÄÄÄÄÄÄ´
+³          ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ         ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³ [ Intro ]                                                                   ³
+³ In the last 18 months, web based streaming and video on-demand services     ³
+³ have increased in popularity. Initially used as a source for missed         ³
+³ broadcasts, it has since evolved into an exclusive source for original      ³
+³ content. Like most technology, online services are continually evolving     ³
+³ the way in which files re provided to end users. As codecs mature,          ³
+³ bandwidth increases in speed and decreases in price, equivalent             ³
+³ improvements in quality follows at the benefit to the end-users. This       ³
+³ increase in quality has the flow-on effect of often being a legitimate      ³
+³ logo-free alternative to antiquated MPEG-2 HDTV streams. As companies       ³
+³ such as Netflix and Amazon continue to produce popular content at an        ³
+³ exponential rate, it became obvious that this new broadcast medium          ³
+³ deserved to be recognised with an original ruleset.                         ³
+³                                                                             ³
+³ The purpose of this document is to create a high standard for web-sourced   ³
+³ files. It attempts to prevent any improper handling of files, and reduce    ³
+³ the potential for adding to the increasing number of ongoing nuke-wars.     ³
+³ This ruleset is structured in such a way that everything attempts to be     ³
+³ clear and concise, and something everyone must adhere to.                   ³
+³                                                                             ³
+³ Compliance with this document is optional as of its pre date, and           ³
+³ mandatory as of 2016-03-21 00:00:00 UTC (1458518400 Unix time).             ³
+³                                                                             ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³ 1) [ Untouched: WEB.H264 / WEB.x264 ]                                       ³
+³  1.1) Untouched releases must be considered as anything that has been       ³
+³       losslessly downloaded by official (offered) or unofficial (backdoor)  ³
+³       methods.                                                              ³
+³   1.1.1) Untouched video streams must use a commercial (e.g. CoreAVC,       ³
+³          MainConcept) or GPL-licensed (e.g. x264, x265) H.264/MPEG-4 AVC    ³
+³          or H.265/HEVC codec.                                               ³
+³  1.2) Source video and audio streams must be left as obtained from the      ³
+³       source. Transcoding of audio or video streams is not allowed.         ³
+³  1.3) Untouched video streams without x264 headers must be tagged as        ³
+³       WEB.H264. Untouched video streams with x264 headers present in the    ³
+³       H264 stream must be tagged as WEB.x264.                               ³
+³   1.3.1) In situations where HEVC/H265 is used, any untouched sections      ³
+³          referring to H264/x264 must be considered as H265/x265.            ³
+³    1.3.1.1) H265 must be used in place of H264.                             ³
+³    1.3.1.2) x265 must be used in place of x264.                             ³
+³   1.3.2) Until H265/x265 support is improved in mainstream demuxers,        ³
+³          untouched video streams which use H265/x265 do not dupe H264/x264  ³
+³          files, and vice-versa.                                             ³
+³           e.g. WEB.H265 does not dupe WEB.H264                              ³
+³                WEB.x264 does not dupe WEB.x265.                             ³
+³  1.4) Transcoding untouched files must only occur if files do not meet the  ³
+³       standards and specifications listed in this section, and must only    ³
+³       be a last resort.                                                     ³
+³   1.4.1) Any transcoding of untouched files must follow the transcoding     ³
+³          standards, see section 2.                                          ³
+³   1.4.2) Transcoding must be done from files of the highest resolution and  ³
+³          bitrate offered.                                                   ³
+³   1.4.3) Transcoding may occur when correcting a technical flaw.            ³
+³           e.g. Cropping black borders, deinterlacing an interlaced source.  ³
+³   1.4.4) In situations where a target resolution is not offered by any      ³
+³          lossless source, or the resolution offered by any source does not  ³
+³          meet the minimum resolution requirements, transcoding from the     ³
+³          highest resolution and bitrate offered is allowed. However, if at  ³
+³          least one source can provide the correct resolution, transcoding   ³
+³          is not allowed.                                                    ³
+³           e.g. If 1080p and 720p can be retrieved from multiple sources,    ³
+³                but SD cannot be retrieved from any source, transcoding the  ³
+³                1080p to SD is allowed.                                      ³
+³   1.4.5) If the untouched file does not contain any technical flaws and     ³
+³          meets the minimum standards required, transcoding to create any    ³
+³          WEBRip.x264 is not allowed, use INTERNAL.                          ³
+³           e.g. 1080p.WEB.H264 -> 720p.WEBRip.x264.                          ³
+³  1.5) Untouched video streams which do not use an AVC or HEVC codec must be ³
+³       transcoded and follow the transcoding standards, see section 3.       ³
+³  1.6) Standard definition (SD) refers to a resolution with a horizontal     ³
+³       minimum of 720 pixels or a resolution which does not exceed the       ³
+³       specifications of 720p, see rule 6.2.                                 ³
+³   1.6.1) If all sources provide standard definition resolutions which fall  ³
+³          below the above minimum, transcoding from the highest available    ³
+³          resolution is allowed, see rule 1.4.4.                             ³
+³   1.6.2) Except in situations where only one source has the file on offer   ³
+³          at a specific resolution. If the resolution of the file falls      ³
+³          below the above minimum, the file may still be released, but the   ³
+³          NFO must state why the resolution does not meet the minimum.       ³
+³  1.7) DRM and any user identifiable information must be removed.            ³
+³  1.8) Dupes based on source are not allowed, use INTERNAL.                  ³
+³  1.9) YouTube may only be used as a source if geographical restrictions     ³
+³       apply to legitimate content uploaded by the rights holder or on a     ³
+³       verified channel.                                                     ³
+³  1.10) Must use the highest available bitrate offered by the source for     ³
+³        that resolution.                                                     ³
+³         e.g. Releasing a 720p at 4,000 Kbps bitrate, when a 720p at         ³
+³              8,000 Kbps bitrate is offered is not allowed.                  ³
+³  1.11) Must be free of technical flaws. Including, but not limited to: DRM, ³
+³        sync issues, interlaced, lack of IVTC, bad AR, missing footage,      ³
+³        missing dialogue, unrelated footage or commercials, under or over    ³
+³        crop.                                                                ³
+³  1.12) VFR (Variable Frame Rate) methods are allowed only if present in the ³
+³        original source.                                                     ³
+³   1.12.1) If CFR (Constant Frame Rate) can be used when remuxing and does   ³
+³           not result in playback issue, CFR must be used.                   ³
+³  1.13) Trimming unrelated footage (section 8) is allowed and must be done   ³
+³        losslessly via keyframe intervals (GOP). MKVToolnix is the           ³
+³        recommended tool.                                                    ³
+³   1.13.1) If unrelated footage cannot be removed via this method, the file  ³
+³           must be transcoded and follow the transcoding standards, see      ³
+³           section 3.                                                        ³
+³  1.14) Incorrect pixel aspect ratio (PAR) or a non-square sample aspect     ³
+³        ratio (SAR) must be fixed using the correct display aspect ratio     ³
+³        (DAR) set at a container level (--aspect-ratio). MKVToolnix is the   ³
+³        recommended tool.                                                    ³
+³         e.g. A video stream with a non-square SAR must specify the correct  ³
+³              DAR when muxing.                                               ³
+³  1.15) Releases with a non-square SAR are not considered technically        ³
+³        flawed.                                                              ³
+³   1.15.1) However, a source which provides files with a square SAR will     ³
+³           trump an equivalent file with a non-square SAR. It is recommended ³
+³           to use a source which provides files with a square SAR.           ³
+³   1.15.2) In situations where a source initially provides a non-square SAR  ³
+³           file and later updates with a square SAR file, the initial        ³
+³           release with a non-square SAR is considered of lower quality      ³
+³           and a technical flaw.                                             ³
+³            e.g. Release A: 960x720, SAR: 4:3, DAR: 16:9.                    ³
+³                 Release B: 1280x720, SAR: 1:1, DAR: 16:9.                   ³
+³                 Both releases are considered as 720p.                       ³
+³                 If Release A is first: Release A remains unnuked and is a   ³
+³                 valid release until Release B is released. Release B then   ³
+³                 propers Release A.                                          ³
+³                 If Release B is first: Release A dupes Release B.           ³
+³                                                                             ³
+³ 2) [ Untouched: Audio ]                                                     ³
+³  2.1) Must use the original audio track offered by the source.              ³
+³  2.2) Non-destructive audio normalisation tools such as ReplayGain may be   ³
+³       used, and must be done to the maximum gain. Audio normalisation on    ³
+³       lossy tracks is optional.                                             ³
+³  2.3) Standard definition releases must only contain an audio track with a  ³
+³       maximum of 2.0 channels.                                              ³
+³   2.3.1) Except where the only available audio track on offer contains more ³
+³          than 2.0 channels. The NFO must mention why an audio track with    ³
+³          more than 2.0 channels was used.                                   ³
+³   2.3.2) In situations where a source provides two audio tracks, a 2.0 and  ³
+³          5.1 track, the 2.0 audio track must be used.                       ³
+³   2.3.3) If a source provides identical audio tracks using two different    ³
+³          codecs, it is at the discretion of the group which track is used.  ³
+³          It is recommended to use the smaller file.                         ³
+³           e.g. A source offers AC3 2.0 and AAC 2.0, the group may choose to ³
+³                remux the AC3 or AAC.                                        ³
+³  2.4) High Definition releases must use the highest available audio format  ³
+³       and quality offered by the source.                                    ³
+³   2.4.1) In situations where a lesser audio format is offered for larger    ³
+³          resolutions in comparison to lower resolutions, groups must use    ³
+³          the highest available audio format from all resolutions.           ³
+³           e.g. A source provides an AC3 5.1 track for SD resolutions, but   ³
+³                an AAC 2.0 track for 720p/1080p. The AC3 5.1 track must be   ³
+³                used for 720p/1080p resolutions.                             ³
+³   2.4.2) If using the highest available audio format results in a technical ³
+³          flaw (e.g. sync issues or glitches), minor adjustments to the      ³
+³          audio track may be applied. If groups are unable to correct any    ³
+³          flaws, the original audio track must be used.                      ³
+³                                                                             ³
+³ 3) [ Transcoded: WEBRip.x264 ]                                              ³
+³  3.1) Transcoded releases should be considered as anything that has been    ³
+³       captured or encoded by a group to a lesser format or quality (lossy). ³
+³  3.2) Transcoded releases must be tagged as WEBRip.x264.                    ³
+³  3.3) Dupes based on source are not allowed, use INTERNAL.                  ³
+³  3.4) Must be free of technical flaws. Including, but not limited to: DRM,  ³
+³       sync issues, interlaced, lack of IVTC, bad AR, missing footage,       ³
+³       missing dialogue, unrelated footage or commercials, under or over     ³
+³       crop, dupe or dropped frames.                                         ³
+³  3.5) Upscaling video streams is not allowed.                               ³
+³        e.g. 2160p from a 1080p stream is not allowed.                       ³
+³  3.6) Streams must be captured at the highest available resolution and      ³
+³       bitrate offered.                                                      ³
+³   3.6.1) Streams must not have any degradation in quality throughout the    ³
+³          capture, and releases with drops to a lower resolution or bitrate  ³
+³          is considered a technical flaw.                                    ³
+³   3.6.2) 1080p and 2160p streams are considered of equal value when         ³
+³          capturing, and encodes (SD/720p/1080p) produced from 1080p or      ³
+³          2160p captures are considered identical. It is encouraged, and     ³
+³          recommended, to capture from a 2160p stream where possible and     ³
+³          resize so as to produce a higher quality encode.                   ³
+³   3.6.3) Audio must be captured in the highest format offered by the source ³
+³          stream, not what the capturing device is capable of. This includes ³
+³          channel count and bitrate offered.                                 ³
+³           e.g. If a Netflix show lists a 5.1 track, the resultant capture   ³
+³                and release should also contain a 5.1 audio track.           ³
+³  3.7) Captures should be done at the native broadcast framerate of the      ³
+³       source.                                                               ³
+³   3.7.1) Captures from devices which are unable to output a native format   ³
+³          must be restored to the original framerate.                        ³
+³   3.7.2) If captures cannot be completely restored to their native          ³
+³          framerate, such as a single dupe frame every 1000 or blended/ghost ³
+³          frames due to mangling from the streaming device, this is          ³
+³          considered a technical flaw.                                       ³
+³  3.8) Captures should be done at the native colour space of the source      ³
+³       (e.g. YUV or RGB), and manual corrections should be made to achieve   ³
+³       an output near-identical to the source.                               ³
+³  3.9) Capture software and hardware which introduces video cropping greater ³
+³       than 2 pixels on any side is not allowed, and is considered a         ³
+³       technical flaw.                                                       ³
+³  3.10) Final resolution must maintain the same aspect ratio as the source   ³
+³        after cropping and kept at mod 2.                                    ³
+³   3.10.1) Sources must have all black borders cropped to the widest frame.  ³
+³   3.10.2) The same aspect ratio, as calculated from the source, must be     ³
+³           used, see rule 6.17.                                              ³
+³  3.11) If the video is being transcoded from an untouched source (rule      ³
+³        1.4.4 and 1.4.5), the NFO must state the reason for transcoding.     ³
+³   3.11.1) If a technical flaw is present that is being rectified by         ³
+³           transcoding (rule 1.4.5), the flaw must also be included with the ³
+³           reason for transcoding.                                           ³
+³            e.g. A file from 2 lossless providers both have the same         ³
+³                 interlacing flaw.                                           ³
+³                 The flaw: Interlaced video.                                 ³
+³                 The reason: No other WEB.H264 provider has a correctly      ³
+³                 deinterlaced file.                                          ³
+³                                                                             ³
+³ 4) [ Transcoded: Codec ]                                                    ³
+³  4.1) x264 8-bit must be used.                                              ³
+³   4.1.1) Custom builds of x264 are allowed and must be based off the x264   ³
+³          codebase, e.g. x264-tMod, x264-kMod.                               ³
+³   4.1.2) Any experimental or alternate codecs (e.g. x265) are not allowed,  ³
+³          use INTERNAL.                                                      ³
+³  4.2) x264 revision must be no more than 50 revisions from the latest at    ³
+³       pre time. It is recommended to use the latest revision when encoding. ³
+³       Use the official x264 git repo as the only                            ³
+³       reference: http://git.videolan.org/?p=x264.git;a=summary              ³
+³  4.3) Segmented encoding is not allowed.                                    ³
+³  4.4) Justification must be listed in the NFO for use of non-standard CRF   ³
+³       values.                                                               ³
+³  4.5) Decimal values may be used for CRF values.                            ³
+³  4.6) Constant Rate Factor (--crf) must be used by default.                 ³
+³   4.6.1) A CRF value of 19 must be used for all SD resolutions.             ³
+³    4.6.1.1) If the resultant video bitrate exceeds 2,000 Kbps, the CRF      ³
+³             value must be incremented by 1.                                 ³
+³    4.6.1.2) If the resultant video bitrate exceeds 1,500 Kbps, the CRF      ³
+³             value may be optionally incremented by up to 1.0, e.g. 19.2,    ³
+³             19.6.                                                           ³
+³   4.6.2) A CRF value of 18 must be used for all 720p resolutions.           ³
+³    4.6.2.1) If the resultant video bitrate exceeds 9,000 Kbps, the CRF      ³
+³             value must be incremented by 1.                                 ³
+³    4.6.2.2) If the resultant video bitrate exceeds 8,000 Kbps, the CRF      ³
+³             value may be optionally incremented by up to 1.0, e.g. 18.2,    ³
+³             18.6.                                                           ³
+³   4.6.3) A CRF value of 17 must be used for all 1080p resolutions.          ³
+³    4.6.3.1) If the resultant video bitrate exceeds 15,000 Kbps, the CRF     ³
+³             value must be incremented by 1.                                 ³
+³    4.6.3.2) If the resultant video bitrate exceeds 14,000 Kbps, the CRF     ³
+³             value may be optionally incremented by up to 1.0, e.g. 17.2,    ³
+³             17.6.                                                           ³
+³   4.6.4) A CRF value of 17 must be used for all 2160p resolutions.          ³
+³  4.7) Use of 2-pass is accepted for all resolutions of 720p and above,      ³
+³       however this method should be used only in extreme cases and not as   ³
+³       a primary replacement for CRF methods. e.g. If the source contains an ³
+³       excessive amount of grain or black and white scenes.                  ³
+³   4.7.1) 2-pass should be a last resort when encoding. Instead, groups are  ³
+³          encouraged and recommended to use CRF as the default encoding      ³
+³          method.                                                            ³
+³   4.7.2) The NFO must provide sufficient evidence of 2-pass producing a     ³
+³          visual improvement, bitrate, or file size advantage over CRF in    ³
+³          regards to the source used.                                        ³
+³   4.7.3) There is no maximum or minimum file size when using 2-pass methods ³
+³          as target bitrates should take precedent over target file sizes.   ³
+³          Multiples of 1120MiB (1,174,405,120 bytes) may be used as a        ³
+³          general guide for calculating target bitrates.                     ³
+³   4.7.4) If groups are unsure of how to calculate an adequate target        ³
+³          bitrate applicable for the source, CRF should be used.             ³
+³    4.7.4.1) 720p bitrate must be between 4,000 Kbps and 9,000 Kbps          ³
+³             inclusive, and should have a target bitrate of approximately    ³
+³             5,500 Kbps. Minimum bitrate for animation is 2,500 Kbps.        ³
+³    4.7.4.2) 1080p bitrate must be between 9,000 Kbps and 15,000 Kbps        ³
+³             inclusive, and should have a target bitrate of approximately    ³
+³             10,500 Kbps. Minimum bitrate for animation is 5,500 Kbps.       ³
+³    4.7.4.3) 2160p bitrate must not exceed 60,000 Kbps.                      ³
+³  4.8) Resultant bitrate must not exceed the source bitrate.                 ³
+³   4.8.1) When transcoding from an untouched source, it is recommended to    ³
+³          use SelectRangeEvery() for a rough estimation on the final CRF     ³
+³          value to use.                                                      ³
+³   4.8.2) The following algorithm can also be used to estimate a CRF value   ³
+³          if the value originally used results in a bitrate which exceeds    ³
+³          the source.                                                        ³
+³           ValidCRF = [-6 * (DestinationBitrate - ExcessiveBitrate) /        ³
+³                      ExcessiveBitrate] + CRFUsed                            ³
+³            e.g. Source bitrate: 4,500Kbps                                   ³
+³              Target bitrate: ~4,400Kbps                                     ³
+³              Encoded bitrate @ CRF17: 5,900Kbps                             ³
+³              ValidCRF = (-6 * (4400 - 5900) / 5900) + 17                    ³
+³              ValidCRF = 18.52, round up to 19 should result in an average   ³
+³              bitrate below the source.                                      ³
+³  4.9) Settings cannot go below what is specified by --preset slow.          ³
+³        e.g. -subme 7 or -me hex is not allowed.                             ³
+³  4.10) Deblocking (--deblock) must be used. Values used are left to the     ³
+³        discretion of the group. Recommended values: -3:-3 for film, 1:1     ³
+³        for animation.                                                       ³
+³  4.11) Sample Aspect Ratio (--sar) must be square (1:1).                    ³
+³  4.12) Keyframe interval (--keyint) must be at least 200, and at most 300.  ³
+³        It is recommended to let x264 decide which value to use, but         ³
+³        10*framerate is a good guideline.                                    ³
+³  4.13) Minimum GOP length (--minkeyint) must be 30 or less.                 ³
+³  4.14) Level 3.1 must be used for SD resolutions.                           ³
+³  4.15) Level 4.1 must be used for all 720p and 1080p resolutions.           ³
+³  4.16) Level 5.1 must be used for all 2160p resolutions.                    ³
+³  4.17) Encoded colourspace (--output-csp) must be 4:2:0.                    ³
+³  4.18) Colour matrix (--colormatrix) must be set for all SD resolutions.    ³
+³   4.18.1) 'bt709' must be used for encodes from high definition sources.    ³
+³   4.18.2) Source specification must be used for standard definition         ³
+³           sources.                                                          ³
+³   4.18.3) 'undef' must be used if not specified by the source for standard  ³
+³           definition sources.                                               ³
+³  4.19) Colour matrix (--colormatrix) may be optionally set to 'bt709' for   ³
+³        all resolutions of 720p and above, but is not required.              ³
+³  4.20) Custom matrices are not allowed.                                     ³
+³  4.21) Zones (--zones) are not allowed.                                     ³
+³  4.22) Optional tuning (--tune) parameters allowed are: film, grain, or     ³
+³        animation.                                                           ³
+³  4.23) Optional settings recommended for tuning per source, see doom9.org   ³
+³        for further information:                                             ³
+³   4.23.1) For complex video, --preset slower/placebo is encouraged.         ³
+³   4.23.2) --aq-mode 3 --aq-strength x.x                                     ³
+³            e.g. 0.6-0.9 for digital films.                                  ³
+³                 0.5-0.7 for grainy films.                                   ³
+³                 0.9-1.1 for animation.                                      ³
+³   4.23.3) --psy-rd x.x:0.0                                                  ³
+³            e.g. 0.8-1.2 for films.                                          ³
+³                 0.5-0.8 for animation.                                      ³
+³   4.23.4) --trellis 2, --no-fast-pskip, --no-mbtree                         ³
+³                                                                             ³
+³ 5) [ Transcoded: Audio ]                                                    ³
+³  5.1) Segmented encoding is not allowed.                                    ³
+³  5.2) Audio tracks already in a lossy format must not be transcoded, but    ³
+³       kept in the original format.                                          ³
+³  5.3) Stereo must be used for stereo sources, and mono must be used for     ³
+³       mono sources.                                                         ³
+³   5.3.1) Any audio track with identical channels is considered a mono       ³
+³          source.                                                            ³
+³   5.3.2) Dual mono is not allowed.                                          ³
+³  5.4) VBR AAC LC (Low Complexity) must be used for SD releases.             ³
+³   5.4.1) Apple/QAAC, FDK-AAC or Nero must be used.                          ³
+³   5.4.2) Quality based VBR encoding must be used, targeted or constrained   ³
+³          VBR must not be used. Only the following methods are allowed (in   ³
+³          order of preference):                                              ³
+³    5.4.2.1) QAAC: --tvbr 82 --quality 2                                     ³
+³    5.4.2.2) FDK-AAC: --bitrate-mode 4 --profile 2                           ³
+³    5.4.2.3) Nero: -q 0.4                                                    ³
+³   5.4.3) AAC audio must be normalised to the maximum gain. Normalisation    ³
+³          must be a complete 2-pass method. No pre-defined values or         ³
+³          estimations of maximum gain is allowed. Only the following         ³
+³          normalisation methods are allowed (in order of preference):        ³
+³    5.4.3.1) eac3to: -normalize                                              ³
+³    5.4.3.2) sox: --norm                                                     ³
+³    5.4.3.3) QAAC: --normalize                                               ³
+³   5.4.4) Any existing normalisation values must be stripped prior to        ³
+³          applying normalisation.                                            ³
+³   5.4.5) FFmpeg, FAAC, and MEncoder are banned.                             ³
+³   5.4.6) AC3 is allowed for INTERNAL releases only.                         ³
+³   5.4.7) Audio with more than 2 channels must be down-mixed to stereo,      ³
+³          with the exception of INTERNAL releases.                           ³
+³   5.4.8) Audio must not be resampled. Audio must be kept in the original    ³
+³          format as the source. e.g. 48KHz for 48KHz sources.                ³
+³  5.5) AC3, DTS, DTS-ES, E-AC3, MP2, and FLAC are the only allowed formats   ³
+³       for resolutions 720p and above.                                       ³
+³   5.5.1) AC3 bitrate must not be below 640 Kbps, unless the original source ³
+³          audio is already in a low bitrate lossy format. In which case, the ³
+³          original audio must be used and not transcoded.                    ³
+³   5.5.2) AC3 640 Kbps, DTS 1536 Kbps, and FLAC must be created from a       ³
+³          higher bitrate source.                                             ³
+³                                                                             ³
+³ 6) [ Video / Resolution ]                                                   ³
+³  6.1) Standard definition (SD) refers to a maximum horizontal display       ³
+³       resolution of 720 pixels.                                             ³
+³  6.2) 720p refers to a maximum display resolution of 1280x720.              ³
+³  6.3) 1080p refers to a maximum display resolution of 1920x1080.            ³
+³  6.4) 2160p refers to a maximum display resolution of 3840x2160.            ³
+³  6.5) Upscaling is not allowed.                                             ³
+³  6.6) Resolution must be mod 2.                                             ³
+³  6.7) English spoken titles with foreign overlays (e.g. locations and       ³
+³       on-screen text shown in another language) are not allowed, use        ³
+³       INTERNAL.                                                             ³
+³  6.8) Non-English spoken titles with hardcoded English subtitles must be    ³
+³       tagged as SUBBED.                                                     ³
+³  6.9) Dupes based on resolution are not allowed.                            ³
+³   6.9.1) Except in situations of releases with a different aspect ratio.    ³
+³          The relevant tag must be used, and the reason mentioned in the     ³
+³          NFO, see rule 19.5.3.                                              ³
+³   6.9.2) Releases which contain an additional 20 pixels or more worth of    ³
+³          video on any side are not considered dupes. These releases must be ³
+³          tagged as WS or OM (open matte) and not PROPER, and the original   ³
+³          release must not be nuked.                                         ³
+³  6.10) Retention or removal of faded edges is left to the discretion of the ³
+³        group. Inclusion of faded edges is not a technical flaw, and cannot  ³
+³        be propered.                                                         ³
+³   6.10.1) Faded edges refer to a line of pixels which are of similar        ³
+³           appearance to pixels' parallel to the video frame.                ³
+³  6.11) Black borders and anything that is not part of the video must be     ³
+³        cropped.                                                             ³
+³   6.11.1) Black borders refer to: black or coloured borders, duplicate      ³
+³           lines, dirty lines or pixels.                                     ³
+³  6.12) Video can be over or under cropped by a maximum of 1px per side.     ³
+³        Over or under cropping by more than 1px per side is considered a     ³
+³        technical flaw.                                                      ³
+³   6.12.1) Under crop refers to portions of the video frame which is not     ³
+³           actual picture. Files which contain black borders greater than    ³
+³           1px on any side is considered a technical flaw.                   ³
+³   6.12.2) Releases which include faded edges must consider faded edges as   ³
+³           a valid part of the video frame and do not count as black         ³
+³           borders.                                                          ³
+³            e.g. A release cannot be propered if 1px of faded edges and 1px  ³
+³                 of black exists.                                            ³
+³   6.12.3) Situations where video cropping of the same content varies        ³
+³           between sources are not considered a technical flaw, and may      ³
+³           not be propered.                                                  ³
+³  6.13) In the case of varying aspect ratios throughout the video, cropping  ³
+³        must be done to the widest video frame.                              ³
+³   6.13.1) Studio logos, intertitles, and credits must be disregarded when   ³
+³           determining the widest frame.                                     ³
+³  6.14) Any sort of visual glitch present in the video stream is considered  ³
+³        a technical flaw.                                                    ³
+³   6.14.1) Except in situations where glitches are a result of a live-stream ³
+³           or issues with the broadcast or source and are completely         ³
+³           unavoidable. It is recommended, but optional, to mention glitches ³
+³           or gaps in playback in the NFO.                                   ³
+³   6.14.2) Unavoidable glitches as a result of broadcast, live-stream, or    ³
+³           mastering issues may be propered with a glitch-free version.      ³
+³   6.14.3) Visual glitches are defined as, but not limited to:               ³
+³           visual/compression artifacts, signal/stream issues, missing       ³
+³           frames.                                                           ³
+³  6.15) Resized and transcoded video must be within 0.5% of the original     ³
+³        aspect ratio.                                                        ³
+³  6.16) Sample aspect ratio (SAR):                                           ³
+³        SAR = (PixelHeight / PixelWidth) / (DARHeight / DARWidth)            ³
+³  6.17) Display aspect ratio (DAR):                                          ³
+³        DAR = (PixelWidth * DARWidth) / (PixelHeight * DARHeight)            ³
+³  6.18) Display resolution:                                                  ³
+³        DisplayWidth = PixelWidth * (SARWidth / SARHeight)                   ³
+³  6.19) Aspect ratio (AR) error:                                             ³
+³        Original AR = (SourceWidth - [CropLeft + CropRight]) /               ³
+³                      (SourceHeight - [CropTop + CropBottom])                ³
+³        Release AR = EncodeWidth / EncodedHeight                             ³
+³        AR Error % = [(Original AR - Release AR) / Original AR] * 100        ³
+³  6.20) Target resolution when resizing to maintain mod2 and reduce AR       ³
+³        error:                                                               ³
+³        TargetHeight = TargetWidth / [(SourceWidth -                         ³
+³                       [CropLeft + CropRight]) / (SourceHeight -             ³
+³                       [CropTop + CropBottom])]                              ³
+³        The correct mod 2 value can also be calculated from the ceiling of   ³
+³        TargetHeight if the value is odd, and the floor of TargetHeight if   ³
+³        the value is even.                                                   ³
+³  6.20.1) Alternatively, the following can be used to confirm the correct    ³
+³          resolution is used from the above method by calculating the upper  ³
+³          and lower integer limit of TargetHeight:                           ³
+³          HeightA = floor(TargetHeight + [TargetHeight mod 2])               ³
+³          HeightB = floor(TargetHeight - [TargetHeight mod 2])               ³
+³          The TargetHeight value (HeightA or HeightB) which results in an    ³
+³          aspect ratio error which tends to zero must be used.               ³
+³           e.g. TargetWidth: 1280.                                           ³
+³                SourceWidth: 1920, SourceHeight: 1080.                       ³
+³                CropLeft + CropRight = 0, CropTop + CropBottom = 4.          ³
+³                TargetHeight = 1280 / ((1920 - 0) / (1080 - 4)) or 717.33.   ³
+³                HeightA = floor(717.33 + (717.33 mod 2)) or 718.             ³
+³                HeightB = floor(717.33 - (717.33 mod 2)) or 716.             ³
+³                TargetWidth x HeightA = 1280x718 with -0.09% AR error.       ³
+³                TargetWidth x HeightB = 1280x716 with 0.19% AR error.        ³
+³                -0.09% tends closer to zero than 0.19% does (0.09 < 0.19),   ³
+³                therefore, HeightA must be used.                             ³
+³                                                                             ³
+³ 7) [ Framerate / Filters ]                                                  ³
+³  7.1) IVTC, deinterlacing, or decimation must be applied as required.       ³
+³  7.2) Only smart deinterlacers, such as Yadif, QTGMC, or TFM, must be used. ³
+³   7.2.1) FieldDeinterlace must not be used for deinterlacing.               ³
+³  7.3) Only accurate field matching filters, such as TIVTC or Decomb, must   ³
+³       be used for inverse telecining (IVTC).                                ³
+³   7.3.1) Use of MEncoder, MJPEG tools, libav, libavcodec, or FFmpeg as IVTC ³
+³          filters are not allowed.                                           ³
+³   7.3.2) Deinterlacing filters must not be applied to telecined sources as  ³
+³          a method of inverse telecine. Use of an accurate field matching    ³
+³          filter must be used on telecined sources to recreate progressive   ³
+³          frames and must be decimated to remove any duplicate frames.       ³
+³           e.g. Yadif must not be used on a telecined source with a frame    ³
+³                sequence of PPIIP, as Yadif will attempt to deinterlace      ³
+³                every frame, including the progressive frames. TFM and       ³
+³                TDecimate should be used in this situation.                  ³
+³  7.4) Only sharp resizers are allowed. Simple resizers such as bicubic,     ³
+³       simple, etc, are not allowed. Only the following resizers are allowed ³
+³       (in order of preference):                                             ³
+³   7.4.1) Spline36Resize/Spline64Resize.                                     ³
+³   7.4.2) BlackmanResize.                                                    ³
+³   7.4.3) LanczosResize/Lanczos4Resize.                                      ³
+³  7.5) Sources which contain footage at varying FPS throughout (hybrid       ³
+³       sources) and may or may not require IVTC is left to the discretion    ³
+³       of the group. The NFO must list a reason as to the final decision.    ³
+³   7.5.1) It is assumed that the majority of a title contains enough unique  ³
+³          frames at 30,000/1,001 fps to warrant a higher framerate. If it    ³
+³          can be proven IVTC/decimating does not result in any loss of       ³
+³          unique frames, this is considered a technical flaw.                ³
+³           e.g. The native format of a Netflix title is 30,000/1,001 fps but ³
+³                contains some footage filmed at 24,000/1,001 fps. Choosing   ³
+³                to encode the entire release at 30,000/1,001 fps is valid.   ³
+³  7.6) Native and converted framerates refers to the standard in which the   ³
+³       video was produced.                                                   ³
+³   7.6.1) NTSC produced video is native to NTSC.                             ³
+³   7.6.2) PAL produced video is native to PAL.                               ³
+³   7.6.3) NTSC produced video that is broadcast in PAL is considered as      ³
+³          converted video.                                                   ³
+³   7.6.4) PAL produced video that is broadcast in NTSC is considered as      ³
+³          converted video.                                                   ³
+³  7.7) Converted video that has significant artifacts (e.g. blended frames)  ³
+³       and cannot be reversed to the native format must be tagged as         ³
+³       CONVERT.                                                              ³
+³   7.7.1) Converted video which does not have any artifacts does not require ³
+³          the CONVERT tag and must not be nuked for the conversion.          ³
+³  7.8) 50 / 60 fps video may be released at 50 / 60 fps or 25 / 30 fps.      ³
+³       True 25 / 30 video released at 50 / 60 fps is not allowed and         ³
+³       considered a technical flaw.                                          ³
+³   7.8.1) In rare situations, 25 / 50 fps sources should be restored to      ³
+³          24 or 30 fps.                                                      ³
+³   7.8.2) In rare situations, 30 / 60 fps sources should be restored to      ³
+³          25 fps.                                                            ³
+³                                                                             ³
+³ 8) [ Audio ]                                                                ³
+³  8.1) Audio must be in the original format provided. Minor adjustments      ³
+³       (channel count, adding or removing frames) in order to prevent issues ³
+³       with playback or sync is allowed.                                     ³
+³   8.1.1) Valid lossy codecs are: AAC, AC3, DTS, DTS-ES, E-AC3, MP2.         ³
+³   8.1.2) For audio originally packaged in a lossless (LPCM) format, audio   ³
+³          must be converted to a lossy format without any down-mixing of     ³
+³          surround channels. e.g. AC3 640 Kbps, DTS 1536 Kbps, and FLAC.     ³
+³  8.2) Transcoding lossy audio to another lossy format is not allowed.       ³
+³  8.3) Sync must not drift at all during the entire release.                 ³
+³  8.4) Glitches that occur in any audio channel present (e.g. L, R, C, SL,   ³
+³       SR, etc.) are considered a technical flaw.                            ³
+³   8.4.1) Except in situations where glitches are a result of a live-stream  ³
+³          or issues with the broadcast or source and are completely          ³
+³          unavoidable. It is recommended, but optional, to mention glitches  ³
+³          or gaps in playback in the NFO.                                    ³
+³   8.4.2) Unavoidable glitches as a result of broadcast, live-stream, or     ³
+³          mastering issues may be propered with a glitch-free version.       ³
+³   8.4.3) Glitches are defined as, but not limited to: an audible glitch,    ³
+³          missing audio, pops or clicks as a result of encoding, gaps within ³
+³          playback, missing dialogue, muted or muffled audio, echoing.       ³
+³  8.5) A release must only contain a single audio track.                     ³
+³   8.5.1) Dual-language audio tracks are allowed for non-English material    ³
+³          only.                                                              ³
+³  8.6) If the original language of a title is not English:                   ³
+³   8.6.1) An English dubbed track is allowed as a secondary audio track.     ³
+³   8.6.2) Releases containing only a dubbed audio track must be tagged as    ³
+³          DUBBED.                                                            ³
+³  8.7) Non-English releases without a secondary English audio track must     ³
+³       use a language tag indicating the primary spoken language.            ³
+³  8.8) Dupes based on audio format or multiple audio tracks are not allowed, ³
+³       use INTERNAL.                                                         ³
+³  8.9) Retail audio may be used in placed of audio tracks extracted from     ³
+³       the source. Proof of the source disc must be provided, see            ³
+³       section 13.                                                           ³
+³                                                                             ³
+³ 9) [ Credits / Previously On / Unrelated Footage ]                          ³
+³  9.1) Credits and 'Previously On' footage must be included and is not       ³
+³       optional.                                                             ³
+³  9.2) Any unrelated commercials or paid advertisements, regardless of       ³
+³       duration (e.g. 1 faded/half opacity frame or 10 seconds) must be      ³
+³       completely removed from the release.                                  ³
+³  9.3) Content rating cards and viewer warnings separate to the show must    ³
+³       be completely removed and it is considered a technical flaw if        ³
+³       present.                                                              ³
+³   9.3.1) Except in situations where the content warning is integrated into  ³
+³          the opening of the show and cannot be removed, e.g. Cops.          ³
+³                                                                             ³
+³ 10) [ Container ]                                                           ³
+³  10.1) Container must be Matroska (.mkv). MKVToolnix is the recommended     ³
+³        muxer.                                                               ³
+³  10.2) Custom muxing tools are allowed. However, the output must adhere to  ³
+³        the latest Matroska specification and must retain identical          ³
+³        compatibility with demuxers as files created with MKVToolnix.        ³
+³  10.3) Support for file streaming and playback from RAR is mandatory.       ³
+³  10.4) Matroska header compression must not be enabled.                     ³
+³  10.5) Header stripping or modification is not allowed.                     ³
+³  10.6) Falsifying or modification of encoding parameters and information    ³
+³        is not allowed.                                                      ³
+³                                                                             ³
+³ 11) [ Subtitles ]                                                           ³
+³  11.1) Subtitles for English spoken titles without foreign dialogue are     ³
+³        optional, but encouraged.                                            ³
+³   11.1.1) Optical character recognition (OCR) must not result in spelling   ³
+³           errors or mistakes.                                               ³
+³            e.g. Zero ('0') used in place of an upper-case O ('o').          ³
+³   11.1.2) Minor errors in grammar or punctuation which do not change the    ³
+³           meaning of the sentence are allowed, however, it is recommended   ³
+³           all errors be corrected.                                          ³
+³  11.2) English spoken titles with foreign dialogue must include a separate  ³
+³        subtitle track for forced subtitles.                                 ³
+³   11.2.1) Foreign dialogue subtitle tracks must be set as forced and it is  ³
+³           considered a technical flaw if not done correctly.                ³
+³   11.2.2) In situations where the source video stream contains hardcoded    ³
+³           subtitles for English spoken titles with foreign dialogue, a      ³
+³           separate subtitle track for the forced subtitles is not required. ³
+³  11.3) Non-English spoken titles without hardcoded subtitles must include   ³
+³        an English subtitle track set as default.                            ³
+³  11.4) Group watermarks in subtitles are not allowed.                       ³
+³  11.5) Dupes based on subtitles are not allowed, use INTERNAL.              ³
+³  11.6) Propers based on the inclusion of optional subtitles is not allowed. ³
+³  11.7) Fan-made or custom subtitles are not allowed.                        ³
+³  11.8) Groups must not burn subtitles in to the video stream.               ³
+³  11.9) External subtitles located in 'Subs' directories are not allowed.    ³
+³  11.10) Must be free of any technical flaws. Including, but not limited     ³
+³         to: sync issues, incorrect OCR, invalid default or forced muxing    ³
+³         flags.                                                              ³
+³  11.11) Subtitles must be extracted from the original source, or obtained   ³
+³         from another source which provides the same video.                  ³
+³          e.g. A source obtained from iTunes does not contain subtitles, but ³
+³               can be extracted from Netflix. These subtitles can be muxed   ³
+³               into the final release.                                       ³
+³  11.12) Retail subtitles may be used in place of subtitles extracted from   ³
+³         the source. Proof of the source disc must be provided, see section  ³
+³         13.                                                                 ³
+³  11.13) Adjustments and edits may be made to subtitle tracks.               ³
+³   11.13.1) Edits can refer to: adjusting timecodes, fixing grammar,         ³
+³            spelling, or punctuation errors, etc.                            ³
+³   11.13.2) A summary of the changes must be listed in the NFO.              ³
+³             e.g. Shifted all timecodes by 2 seconds to ensure sync is       ³
+³                  maintained throughout, or spelling errors fixed            ³
+³                  throughout, etc.                                           ³
+³  11.14) Subtitles must be muxed into the final MKV in text based            ³
+³         format, i.e. SubRip (.srt) or SubSation Alpha (.ssa/.ass).          ³
+³   11.14.1) Retail subtitles must be muxed in text based (.srt/.ssa/.ass)    ³
+³            or PGS (.sup) format. PGS is recommended.                        ³
+³   11.14.2) All subtitle tracks must have the character set (--sub-charset)  ³
+³            set to a Unicode format or UTF-8 when muxing.                    ³
+³   11.14.3) Subtitles must not set as default or forced unless otherwise     ³
+³            specified.                                                       ³
+³   11.14.4) The correct ISO 639 language code supported by MKVToolnix must   ³
+³            be set for all subtitle tracks.                                  ³
+³   11.14.4.1) In situations where the language is not supported by           ³
+³              MKVToolnix, 'und' must be used.                                ³
+³               e.g. en for English, de for German, etc.                      ³
+³   11.14.5) The correct character encoding                                   ³
+³                                                                             ³
+³ 12) [ Packaging ]                                                           ³
+³  12.1) Must be packed with RAR files, broken into a maximum of 99 volumes.  ³
+³  12.2) RAR5/RARv5.0 is not allowed. RAR3/v2.0 or RAR4/v2.9 must be used.    ³
+³   12.2.1) Custom RAR tools are permitted. However, files must adhere to     ³
+³           the RAR4/RARv2.9 archive specification and must retain identical  ³
+³           compatibility with extractors and demuxers as files created with  ³
+³           WinRAR/rar.                                                       ³
+³  12.3) Permitted RAR sizes are:                                             ³
+³   12.3.1) 15,000,000 bytes or 20,000,000 bytes for SD. Multiples of these   ³
+³           values are not allowed.                                           ³
+³   12.3.2) Positive integer multiples of 50,000,000 bytes for all            ³
+³           resolutions.                                                      ³
+³            e.g. (50 * 10^6) * n bytes, where n > 0.                         ³
+³                 (50 * 10^6) * 4 bytes, 100,000,000 bytes,                   ³
+³                 400,000,000 bytes, etc.                                     ³
+³   12.3.3) Releases must have a minimum of 10 volumes before the next        ³
+³           multiple of 50,000,000 bytes is used.                             ³
+³            e.g. 10 volumes at 50,000,000 bytes can be repackaged to 5       ³
+³                 volumes at 100,000,000 bytes.                               ³
+³                 5 volumes at 100,000,000 bytes cannot be repacked to 4      ³
+³                 volumes at 150,000,000 bytes.                               ³
+³  12.4) Must have SFV and NFO.                                               ³
+³  12.5) RAR, SFV, and Sample files must have unique, lower-case filenames    ³
+³        with the group tag.                                                  ³
+³   12.5.1) Group tags must be unique to each group, and may be an            ³
+³           abbreviated variation of the group name.                          ³
+³  12.6) Missing RAR(s) or SFV on all sites is considered a technical flaw.   ³
+³  12.7) Corrupt RAR(s) (errors upon extraction) is considered a technical    ³
+³        flaw.                                                                ³
+³  12.8) RAR compression and recovery records are not allowed.                ³
+³  12.9) Encryption or password protection is not allowed.                    ³
+³                                                                             ³
+³ 13) [ Proof ]                                                               ³
+³  13.1) Proof picture(s) must have unique filenames and placed in a separate ³
+³        directory named 'Proof'.                                             ³
+³   13.1.1) Proof file(s) must be included in every release which requires    ³
+³           proof.                                                            ³
+³  13.2) Proof must be in JPEG or PNG format.                                 ³
+³  13.3) Proof is required for iTunes sourced files only. A screenshot of     ³
+³        the download in progress must be provided.                           ³
+³   13.3.1) A release which fails to pre with the required proof is           ³
+³           considered a technical flaw and can be propered.                  ³
+³   13.3.2) Proof fixes must be within 24 hours of original pre. Fixes        ³
+³           provided after a proper has been released, or after 24 hours has  ³
+³           elapsed from the original pre, will not be accepted.              ³
+³   13.3.3) It is also recommended, in an unobstructed way, to include the    ³
+³           group name within the screenshot written in Notepad or a similar  ³
+³           text editor.                                                      ³
+³  13.4) Releases which include retail-sourced elements (e.g. retail          ³
+³        subtitles) must include source proof.                                ³
+³   13.4.1) Proof must be photographs of the printed side of all physical     ³
+³           discs used with the group tag clearly visible.                    ³
+³   13.4.2) The minimum resolution for photographs is 640x480px. Disc details ³
+³           must be clear and legible.                                        ³
+³  13.5) Small identifiable or sensitive information may be obscured or       ³
+³        redacted.                                                            ³
+³  13.6) User identifiable EXIF data must be stripped. It is recommended all  ³
+³        EXIF data be stripped.                                               ³
+³                                                                             ³
+³ 14) [ Samples ]                                                             ³
+³  14.1) All releases must include a 50-70 second sample for each release.    ³
+³  14.2) Samples must have unique filenames and placed in a separate          ³
+³        directory named 'Sample'.                                            ³
+³  14.3) Samples must be cut from the final video, not encoded separately.    ³
+³                                                                             ³
+³ 15) [ NFO ]                                                                 ³
+³  15.1) NFO must be present in every release.                                ³
+³  15.2) It is recommended, but optional, to include the following            ³
+³        information in the NFO:                                              ³
+³   15.2.1) Release name and group.                                           ³
+³   15.2.2) Title and release date.                                           ³
+³   15.2.3) CRF value / bitrate used.                                         ³
+³   15.2.4) Audio format.                                                     ³
+³   15.2.5) Source.                                                           ³
+³   15.2.6) Relevant IMDB/TVDB/Amazon link.                                   ³
+³   15.2.7) Total video size or RAR count.                                    ³
+³  15.3) It is optional, but highly recommended, that the source for          ³
+³        untouched files be mentioned in the NFO.                             ³
+³                                                                             ³
+³ 16) [ Tagging ]                                                             ³
+³  16.1) Only the following additional tags are allowed:                      ³
+³        ALTERNATIVE.CUT, CONVERT, COLORIZED, DC, DIRFIX, DOCU, DUBBED,       ³
+³        EXTENDED, FESTIVAL, FINAL, INTERNAL, LIMITED, MULTI, NFOFIX, OM,     ³
+³        PPV, PROOFFIX, PROPER, REAL, REMASTERED, READNFO, REPACK, RERIP,     ³
+³        SAMPLEFIX, SOURCE.SAMPLE, SUBBED, THEATRICAL, UNCENSORED, UNRATED,   ³
+³        UNCUT, and WS.                                                       ³
+³  16.2) Variations of any additional tags are not allowed.                   ³
+³         e.g. READ.NFO or RNFO is not allowed, READNFO must be used.         ³
+³  16.3) READNFO should be used sparingly. Discretion is recommended.         ³
+³   16.3.1) The READNFO tag must not be used with PROPER, REPACK, or RERIP.   ³
+³           The NFO is required to contain a reason, therefore the tag is     ³
+³           redundant.                                                        ³
+³  16.4) Tags must only be used once, but the order is left to the discretion ³
+³        of the group.                                                        ³
+³   16.4.1) Except in situations where the REAL tag is required to be stacked ³
+³           to differentiate between multiple invalid releases.               ³
+³            e.g. A REAL.REAL.PROPER.REPACK is required for a                 ³
+³                 REAL.PROPER.REPACK and PROPER.REPACK.                       ³
+³  16.5) Tags must be grouped together, period-delimited, and must follow the ³
+³        mandatory directory format, see rule 17.4.                           ³
+³         e.g. EXTENDED.LIMITED, REMASTERED.REPACK, REAL.PROPER.              ³
+³                                                                             ³
+³ 17) [ Directory Nomenclature ]                                              ³
+³  17.1) Acceptable characters allowed for directories are:                   ³
+³        ABCDEFGHIJKLMNOPQRSTUVWXYZ                                           ³
+³        abcdefghijklmnopqrstuvwxyz                                           ³
+³        0123456789.-                                                         ³
+³  17.2) Single punctuation must be used. Consecutive punctuation is not      ³
+³        allowed.                                                             ³
+³         e.g. Show----Name.S01E01, Show.Name....S01E01,                      ³
+³              Show.-.Name.--.S01E01, etc.                                    ³
+³  17.3) Typos or spelling mistakes in the directory are not allowed.         ³
+³  17.4) Releases must follow the matching directory format:                  ³
+³   17.4.1) Movie.YEAR.<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP          ³
+³   17.4.2) Weekly.TV.Show.SXXEXX[Episode.Part].[Episode.Title].<TAGS>.       ³
+³           [LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP                            ³
+³   17.4.3) Miniseries.Show.Name.Part.XX.[Episode.Title].<TAGS>.              ³
+³           [LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP                            ³
+³   17.4.4) Daily.TV.Show.YYYY.MM.DD.[Guest.Name].<TAGS>.                     ³
+³           [LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP                            ³
+³   17.4.5) Daily.Sport.League.YYYY.MM.DD.Event.<TAGS>.                       ³
+³           [LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP                            ³
+³   17.4.6) Monthly.Competition.YYYY.MM.Event.<TAGS>.                         ³
+³           [LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP                            ³
+³   17.4.7) Yearly.Competition.YYYY.Event.<TAGS>.                             ³
+³           [LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP                            ³
+³  17.5) Named directory arguments formatted inside <> must be included.      ³
+³        Optional arguments formatted inside [] may be used in some cases.    ³
+³   17.5.1) Episode part refers to episodes, usually cartoons or animation,   ³
+³           which split episodes into stories by different directors.         ³
+³           Episodes parts must be alphanumeric (a-z, A-Z, 0-9).              ³
+³            e.g. The first episode from Season 2 of SpongeBob SquarePants    ³
+³                 is split into S02E01A/B, etc. https://goo.gl/CVGXKu         ³
+³   17.5.2) Episode title and guest names are optional.                       ³
+³   17.5.3) Guest name(s) used must be in the order in which they appear on   ³
+³           the show to avoid any confusion.                                  ³
+³   17.5.4) Tags refers to all permitted tags only, see section 16.           ³
+³   17.5.5) Non-English releases must include the language tag and must be    ³
+³           used to denote the language of the audio track. English releases  ³
+³           must not include the language tag.                                ³
+³    17.5.5.1) Language tags must be the full name of the language.           ³
+³              Abbreviations or language codes are not allowed.               ³
+³               e.g. FRENCH, RUSSIAN, GERMAN.                                 ³
+³   17.5.6) Resolution identifiers are only applicable for releases 720p and  ³
+³           above, and must precede the format of the release, see section 6  ³
+³           for resolution specifications.                                    ³
+³            e.g. 720p.WEB.H264, 2160p.WEBRip.x264.                           ³
+³   17.5.7) Format refers to whether the release is transcoded (WEBRip.x264)  ³
+³           or untouched (WEB.H264/WEB.x264).                                 ³
+³  17.6) Do not indicate source, ripping, or encoding methods that were used. ³
+³        Use the NFO for any technical details.                               ³
+³  17.7) All movie releases must include the production year.                 ³
+³  17.8) Movie distribution tags (FESTIVAL, LIMITED) must be used with        ³
+³        discretion. Use boxofficemojo.com or IMDB screen details as          ³
+³        references.                                                          ³
+³  17.9) Different shows with the same title and format produced in different ³
+³        countries must have the ISO 3166-1 alpha 2 country code in the       ³
+³        show name.                                                           ³
+³   17.9.1) Except for UK shows, which should use UK, not GB.                 ³
+³   17.9.2) This rule does not apply to an original show, only shows that     ³
+³           precede the original with the same premise or format.             ³
+³            e.g. The.Office.S01E01 and The.Office.US.S01E01.                 ³
+³  17.10) Different shows with the same title produced in the same country    ³
+³         which begin in different years must have the year of the first      ³
+³         season in the directory.                                            ³
+³   17.10.1) The year is not required for the show broadcasted first.         ³
+³             e.g. Second.Chance.S01E01 and Second.Chance.2016.S01E01.        ³
+³  17.11) Different shows with the same titles produced in the same country   ³
+³         which begin in different years must have the ISO-3166-1 alpha 2     ³
+³         country code followed by the year of the first season in the        ³
+³         directory.                                                          ³
+³   17.11.1) See rules 17.12 and 17.13 for country code and year              ³
+³             explanations.                                                   ³
+³             e.g. Wanted.S01E01 (2005), Wanted.AU.S01E01 (2013),             ³
+³                  Wanted.AU.2016.S01E01 (2016).                              ³
+³  17.12) Show names which are hyphenated or include punctuation must follow  ³
+³         the format shown in the title sequence or credits of the first      ³
+³         episode congruent to the list of acceptable characters.             ³
+³   17.12.1) If no title card exists, the format listed on the official       ³
+³            website for the show must be used, followed by what is listed    ³
+³            by the streaming service.                                        ³
+³   17.12.2) Additional titles and names given to an individual season must   ³
+³            not be used.                                                     ³
+³             e.g. Archer.Vice.S05, Strike.Back.Legacy.S05.                   ³
+³  17.13) Directory nomenclature and numbering must remain consistent         ³
+³         across the lifetime of an individual show or event.                 ³
+³   17.13.1) Shows which contain acronyms or secondary titles must follow the ³
+³            format used by the first release.                                ³
+³             e.g. Law.and.Order.SVU.S01E01 is the standard format that must  ³
+³                  be used for all following episodes,                        ³
+³                  Law.and.Order.Special.Victims.Unit.S01E02 is not allowed.  ³
+³                  Shadowhunters.The.Mortal.Instruments.S01E01 is the         ³
+³                  standard format, Shadowhunters.S01E02 is not allowed.      ³
+³   17.13.2) Groups cannot change the directory format of a show after a      ³
+³            second release or episode with the same format exists.           ³
+³             e.g. 2016-01-01: Law.and.Order.SVU.S01E01 sets the format.      ³
+³                  2016-01-08: Law.and.Order.SVU.S01E02 continues the format. ³
+³                  2016-01-09: Law.and.Order.Special.Victims.Unit.S01E01.     ³
+³                  DIRFIX is not valid as the second episode already exists   ³
+³                  and continues with the previously defined format.          ³
+³   17.13.3) Except in situations where the show has an official change in    ³
+³            its name, whereby all official references by the broadcaster or  ³
+³            studio is of the new name. This change must be mentioned in the  ³
+³            first NFO with the new name with relevant references.            ³
+³             e.g. Gold.Rush.Alaska.S01E01 changed to Gold.Rush.S02E01.       ³
+³   17.13.4) Official name changes for a show does not include the renaming   ³
+³            of individual seasons. Seasonal name changes must be ignored.    ³
+³             e.g. Power.Rangers.S01 and Power.Ranges.S07 must be used.       ³
+³                  Power.Rangers.Lost.Galaxy.S07 must not be used.            ³
+³                  Strike.Back.S03, Strike.Back.S05 must be used.             ³
+³                  Strike.Back.Vengeance.S03, Strike.Back.Legacy.S05 must     ³
+³                  not be used.                                               ³
+³   17.13.5) Any deviations or changes require sufficient evidence listed in  ³
+³            the NFO as to the reason for change.                             ³
+³  17.14) For shows which begin on network television and continue            ³
+³         exclusively on a web-based service, the title or numbering of the   ³
+³         show shall not change.                                              ³
+³   17.14.1) Except in situations where the show is not a direct continuation ³
+³            of the previous seasons.                                         ³
+³   17.14.2) If the show continues without any changes, the title of the show ³
+³            shall not change, but will follow the season and episode         ³
+³            numbering as listed on the web-based service which purchased     ³
+³            the show.                                                        ³
+³  17.15) User contributed services such as TVRage, TVMaze, or TheTVDB must   ³
+³         not be used as a reference when naming and numbering episodes. It   ³
+³         may be used as a general guide; however, official guides must be    ³
+³         used.                                                               ³
+³   17.15.1) The following order must be used as the primary source for       ³
+³            naming and numbering.                                            ³
+³    17.15.1.1) Official website of the show.                                 ³
+³    17.15.1.2) Order and format listed by the streaming service.             ³
+³    17.15.1.3) Network guide.                                                ³
+³                                                                             ³
+³ 18) [ Fixes ]                                                               ³
+³  18.1) Only the following fixes are allowed:                                ³
+³        DIRFIX, NFOFIX, PROOFFIX, and SAMPLEFIX.                             ³
+³  18.2) Any other form of fix is not allowed.                                ³
+³         e.g. RARFIX, SFVFIX, SUBFIX, etc.                                   ³
+³  18.3) All fixes require an NFO and must state which release is being       ³
+³        fixed.                                                               ³
+³  18.4) A proper may not be released for an error that can be fixed with     ³
+³        the above methods, with the exception of proof fixes, see rule       ³
+³        13.3.2.                                                              ³
+³  18.5) If multiple releases from a single season require a DIRFIX, a single ³
+³        DIRFIX per season is allowed and is recommended.                     ³
+³         e.g. Show.Name.S01.DIRFIX.WEBRip.x264-GROUP.                        ³
+³  18.5.1) If a single DIRFIX is used, all relevant releases and              ³
+³          corresponding fixes must be listed in the NFO.                     ³
+³                                                                             ³
+³ 19) [ Dupes ]                                                               ³
+³  19.1) Same second releases, with a maximum acceptable variance of two      ³
+³        seconds (+/- 2 seconds) between timestamps reported by a majority    ³
+³        of pre bots, are not considered dupes and should not be nuked.       ³
+³   19.1.1) Timestamps must be considered as whole integers and round half    ³
+³           towards zero.                                                     ³
+³   19.1.2) The earliest timestamp must be used when considering dupes.       ³
+³            e.g. Release A: 1451572201.427158 -> 1451572201                  ³
+³                 Release B: 1451572203.626645 -> 1451572203                  ³
+³                 Release C: 1451572204.137665 -> 1451572204                  ³
+³                 Release B does not dupe Release A: 1451572203 - 1451572201  ³
+³                 = 2, i.e. maximum variance allowed.                         ³
+³                 Release C dupes Releases A and B: 1451572204 - 1451572201   ³
+³                 = 3, i.e. 3 > 2.                                            ³
+³   19.1.3) In situations where a release is found to contain a technical     ³
+³           flaw, same second dupes which do not exhibit any technical flaws  ³
+³           must be considered the final release. Groups may release a DIRFIX ³
+³           to PROPER for their original release, but it is not required.     ³
+³            e.g. Release A and Release B are released at the same time.      ³
+³                 Release A is nuked as containing glitches, Release B then   ³
+³                 becomes the de facto release and a DIRFIX to PROPER may be  ³
+³                 released.                                                   ³
+³  19.2) WEBRip.x264 dupes WEB.H264/x264.                                     ³
+³  19.3) WEB.H264/x264 does not dupe WEBRip.x264.                             ³
+³  19.4) WEB.H264/x264 and WEBRip.x264 does not dupe DSR/PDTV.                ³
+³  19.5) WEB.H264/x264 and WEBRip.x264 dupes an equivalent AHDTV/HDTV/Retail  ³
+³        release.                                                             ³
+³   19.5.1) SD WEB.H264/x264 and WEBRip.x264 dupes an SD AHDTV/HDTV/Retail    ³
+³           release.                                                          ³
+³   19.5.2) 720p, 1080p, 2160p WEB.H264/WEB.x264 and WEBRip.x264 dupes a      ³
+³           respective AHDTV/HDTV/Retail release.                             ³
+³            e.g. 720p.WEB.H264 dupes 720p.HDTV.x264, 1080p.WEBRip.x264       ³
+³                 dupes 1080p.AHDTV.x264.                                     ³
+³                 1080p.WEB.H264 does not dupe 720p.BluRay.x264 if            ³
+³                 1080p.BluRay.x264 does not exist.                           ³
+³   19.5.3) Except in situations where the aspect ratio of a                  ³
+³           WEB.H264/x264 and WEBRip.x264 release exceeds that of its         ³
+³           respective AHDTV/HDTV/Retail release.                             ³
+³            e.g. A 2.39:1 release will not dupe a 1.78:1 retail provided     ³
+³                 there is clearly more footage visible on-screen. Proof      ³
+³                 demonstrating this difference is recommended, but not       ³
+³                 mandatory.                                                  ³
+³   19.5.4) Except in situations where a WEB.H264/x264 or WEBRip.x264 release ³
+³           is an uncensored or extended edit of its respective               ³
+³           AHDTV/HDTV/Retail release.                                        ³
+³            e.g. An uncensored WEB.H264 release does not dupe HDTV.x264,     ³
+³                 EXTENDED.WEBRip.x264 does not dupe BluRay.x264.             ³
+³  19.6) Releases with hardcoded subtitles (i.e. SUBBED) dupes releases with  ³
+³        muxed-in subtitles.                                                  ³
+³  19.7) Releases with muxed-in subtitles do not dupe releases with hardcoded ³
+³        subtitles.                                                           ³
+³  19.8) Native video streams do not dupe converted video streams.            ³
+³  19.9) Converted video streams dupe native video streams.                   ³
+³                                                                             ³
+³ 20) [ Propers / Rerips / Repacks ]                                          ³
+³  20.1) Detailed reasons must be included in the NFO for all repacks,        ³
+³        rerips, and propers.                                                 ³
+³   20.1.1) Proper reasons must be clearly stated in the NFO, including       ³
+³           timestamps and specifics in regards to the flaw when appropriate. ³
+³           A sample demonstrating the flaw in the original release is        ³
+³           encouraged, but not mandatory.                                    ³
+³  20.2) Propers are only permitted in the case of a technical flaw in the    ³
+³        original release.                                                    ³
+³  20.3) If fixing a technical flaw requires transcoding of the file, it must ³
+³        follow the transcoding rules and tagged as WEBRip.x264.              ³
+³  20.4) Transcoded releases cannot proper any untouched files.               ³
+³         e.g. WEBRip.x264 cannot proper WEB.H264.                            ³
+³   20.4.1) Unless it is a transcode of a lossless stream correcting the      ³
+³           technical flaw, see rule 1.4.                                     ³
+³   20.4.2) Unless it can be proven that all untouched sources are flawed     ³
+³           which cannot be repaired by transcoding, but a WEBRip does not    ³
+³           exhibit the same technical flaw(s).                               ³
+³            e.g. iTunes, Amazon, and Netflix only offer the content. Amazon  ³
+³                 and iTunes sourced files cannot be repaired by transcoding, ³
+³                 however a Netflix WEBRip is fine.                           ³
+³  20.5) Untouched files can proper transcoded releases for any valid         ³
+³        technical flaw.                                                      ³
+³  20.6) Audio or visual glitches can be propered with a release which does   ³
+³        not exhibit the same flaw.                                           ³
+³   20.6.1) In situations where mastering issues results in visual or audio   ³
+³           glitches, a release must not be nuked until a valid proper,       ³
+³           repack, or rerip using a glitch-free source or master is          ³
+³           released.                                                         ³
+³  20.7) RERIP must be used for ripping or encoding issues.                   ³
+³  20.8) REPACK must be used for packing or muxing issues.                    ³
+³  20.9) Propers are only valid for releases with timestamps after the        ³
+³        official start date of this ruleset.                                 ³
+³   20.9.1) Groups cannot proper existing releases using rules created as a   ³
+³           result of this ruleset.                                           ³
+³            e.g. If the resolution is not mod 2 or x264 revision used is     ³
+³                 older than 50 revisions at the time of pre, the release     ³
+³                 cannot be nuked.                                            ³
+³   20.9.2) With exceptions of a release containing technical flaws which     ³
+³           would apply to any ruleset regardless of section. e.g. bad IVTC,  ³
+³           sync issues, bad or invalid cropping, etc.                        ³
+³                                                                             ³
+³ 21) [ Internals ]                                                           ³
+³  21.1) Internals are allowed to be released for any reason, including, but  ³
+³        not limited to: releases containing technical flaws, use of          ³
+³        alternate codecs, containers, or settings for experimental purposes. ³
+³  21.2) Any severe technical flaws must be mentioned in the NFO.             ³
+³  21.3) Internal releases may only be nuked for technical flaws that are not ³
+³        mentioned in the NFO.                                                ³
+³   21.3.1) In situations where technical flaws are not mentioned in the NFO, ³
+³           groups may provide an NFOFIX to avoid or reverse a nuke.          ³
+³  21.4) Using DIRFIX.INTERNAL to avoid a nuke is not allowed, and must be    ³
+³        nuked fix.for.nuke.                                                  ³
+³                                                                             ³
+³ 22) [ Ruleset Specifics ]                                                   ³
+³  22.1) This ruleset is to be considered the ONLY official ruleset in        ³
+³        regards to WEB and WEBRip releases. It supersedes all previous       ³
+³        rules and precedents derived from existing TV and Retail rules in    ³
+³        regards to WEB sources.                                              ³
+³  22.2) Rules listed under untouched or transcoded labelled sections only    ³
+³        apply to releases of that type and supersede any similar rule        ³
+³        mentioned elsewhere.                                                 ³
+³         e.g. Rule 6.1 defines SD as resolutions with a maximum horizontal   ³
+³              display of 720 pixels, unless the release is considered        ³
+³              untouched, in which case rule 1.6 applies.                     ³
+³  22.3) If there is a question as to the validity of a source used, the      ³
+³        release may be nuked within 24 hours of pre requesting a source      ³
+³        sample and must include the initial suspicion or reason.             ³
+³         e.g. source.sample.requested_suspicion.of.invalid.decimation.       ³
+³   22.3.1) The group has 24 hours from the first nuke to pre a source        ³
+³           sample that is at least 10 seconds in length.                     ³
+³   22.3.2) Source samples must be packed with RAR files, and use the         ³
+³           SOURCE.SAMPLE tag.                                                ³
+³   22.3.3) Providing insufficient proof to disprove any claims, or a         ³
+³           failure to provide any source proof, and the release must remain  ³
+³           nuked and can be propered.                                        ³
+³  22.4) The following definition of keywords throughout this ruleset are as  ³
+³        follows:                                                             ³
+³   22.4.1) Must: the rule is explicit in the definition and is compulsory.   ³
+³   22.4.2) Should: implies the rule is a suggestion, and is non-compulsory.  ³
+³   22.4.3) Can or may: implies the rule is optional, and is non-compulsory.  ³
+³                                                                             ³
+³ 23) [ Notes ]                                                               ³
+³  23.1) Proof is only enforced for iTunes as all other sources require       ³
+³        various unofficial (backdoor) methods of downloading. Creating a     ³
+³        fake GUI showing an active download is not difficult, which could    ³
+³        result in proof being fabricated. As such, it is pointless to        ³
+³        require proof for anything but iTunes, where streams can only be     ³
+³        downloaded by a single method.                                       ³
+³   23.1.1) This includes web stores or shops which provide video files via a ³
+³           regular HTTP download. Policing or moderating these methods would ³
+³           be implausible for a single ruleset. Providing screenshots of a   ³
+³           download in progress from a website does not prove the file was   ³
+³           obtained from an official source.                                 ³
+³  23.2) The burden of proving P2P source material is on the propering group  ³
+³        or nuker.                                                            ³
+³  23.3) The inclusion of 2-pass in this ruleset should not be misconstrued   ³
+³        as preferring it for every release, CRF must always be considered    ³
+³        the primary method. Instead, it is encouraged for groups to use      ³
+³        2-pass methods for rare cases when files provided are of extreme     ³
+³        high quality.                                                        ³
+³   23.3.1) Video which contains an excessive amount of noise may often       ³
+³           result in an unnecessary large bitrate. In such situations,       ³
+³           using a smaller bitrate using 2-pass can result in a file size    ³
+³           improvement with negligible loss in video quality.                ³
+³                                                                             ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³ [ Signed ]                                                                  ³
+³                                                                             ³
+³      2HD AEROHOLiCS ALTEREGO AZR AMB3R ANiHLS ANiURL BARGE BATV BiQ C4TV    ³
+³       CHAMPiONS DEADPOOL DEFEATER DEFLATE DRAWER FADE FaiLED FiHTV FQM      ³
+³     GORE HatchetGear iBlade KOENiG KYR Ltu NTROPiC QCF REGRET RiVER RPTV    ³
+³      SH0W SiGeRiS SKGTV spamTV TASTETV TiMELiNE WaLMaRT W4F WNN ZOMBiE      ³
+³                                                                             ³
+³ [ Refused to sign ]                                                         ³
+³                                                                             ³
+³                                     CBFM                                    ³
+³                                                                             ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+³                                                                             ³
+³ [ Revisions ]                                                               ³
+³  2016-03-16 - ecb63c67 - Final commit and public release of ruleset.        ³
+³                                                                             ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ

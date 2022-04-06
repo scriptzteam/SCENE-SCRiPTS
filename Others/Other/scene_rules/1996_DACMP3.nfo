@@ -1,0 +1,446 @@
+   . . . .  Digital Audio Crew  . . . .
+   .                                  .
+   .       .______  ___ ______. .     .
+   .     .:\_ .  \/   \\_  .  \:..    .
+   .     ../ ./  / <\  \/ ./__/.      .
+   .    .:<_____<____\  >___  >: .    .
+   .       .mr!       \/    \/:.      .
+   .                                  .
+   . . . . . .  MP3 How-To  . . . . . .
+
+
+   DAC MP3 "Mini How-To" V4.0.1
+   Revision [30/08/1996 EDT 00:00]
+   (Non-internal/First public release)
+   by ShereKhan/MegaByte/MindRape of DAC
+
+
+   This Mini HowTo started out as an internal document for DAC members, to
+   standardize how DAC music releases are ripped, encoded, and packaged.
+   Since then, MPEG Layer III Audio (heretofore called "MP3") has grown in
+   popularity rapidly. However, quality has not improved similarly and many
+   of the new encodings I've encountered sound like crap. Most people who
+   have approached DAC (and I'm sure this is even more the case for the
+   online community in general) just do not have the experience in recording
+   digital audio, nor the familiarity with encoding MP3 needed to produce
+   the near-perfect quality we expect in all DAC releases. Hopefully this
+   guide will help you achieve the purest possible encodes from your CDs as
+   well.
+                                         
+   Before going further, you need to get latest MP3 encoder, L3ENC v2.60 for
+   DOS (Linux/SunOS/NeXT versions are also available if you prefer), one or
+   more of the CD-ripping utilities mentioned in this guide (CDDA, DIDO, DAC,
+   CD-Grab Pro), and a good WAV-editing program such as CoolEdit95, Sound
+   Forge/32, or GoldWave. DAC members also need the current release NFO and
+   DIZ files. Please read through this ENTIRE HowTo, before running to one
+   of us for help!
+
+   Many of these tools can be found at MindRape's DAMAGED CYBERNETICS page at:
+  
+     http://www.futureone.com/~damaged
+
+   Good Luck!
+
+
+   1.  Resources for DAC members
+
+      1.1  /DAC-PAK on the #DAC bot(s)
+
+           All the ripping/encoding utilities, plus the current NFO and DIZ
+           for packaging into releases (as well as this How-To) are available
+           from the channel bot. Always make sure you are using the LATEST
+           versions of the NFO/DIZ before finalizing any release!
+
+      1.2  DAC WWW Page (ask members for address)
+
+           fRSTGUMP has put up a quick WWW page for DAC, with the latest NFO,
+           DIZ, and a table of DAC releases (not always 100% current, but the
+           closest thing). The server is secured with htaccess (DAC internal
+           use ONLY); if you have access to the channel bot, you should be
+           able to use the same login and passwd for the WWW page.
+
+
+   2.  Ripping a song from CD (direct digital copy)
+
+      2.1  Mitsumi CD-ROM drives
+
+           Before pulling out your hair trying to rip with a Mitsumi CD-ROM,
+           I should tell you that most (all?) Mitsumi CD-ROM drives cannot
+           read "raw" CDDA data (Read_Long) and therefore cannot be used to
+           aquire CD-audio by direct digital copy with ANY program; this
+           includes CDDA/DIDO/DAC/etc. Mitsumi FX001D/FX001DE (2X) and the
+           newer FX400* (4X) drives are known to have this "defect"; the
+           manufacturer has purposely not included Read_Long in their drive
+           logic or drivers to prevent copyright infringement (lesson: don't
+           buy Mitsumi from now on.)
+
+      2.2  CDDA Version 1.4 build 12c [DOS]
+
+           CDDA is a DOS-based, command line CD ripping tool which allows
+           you to copy CD redbook audio DIRECT to WAV without recording or
+           sampling of any kind ... This type of "copying" gives the cleanest
+           possible results and is MUCH preferred over trying to record the
+           playback from the CD with CoolEdit or GoldWave. Direct copying, or
+           "ripping" as we like to call it, gives you the maximum dynamic
+           range from the songs, and thus NO clipping (which is a real problem
+           with the "record" technique), since with CDDA  you are copying the
+           original signal strengths too with every signal peak. Think of it
+           as "Automatic Level Detection" for your CDROM drive. Also ripping
+           does not have problems with "skipping" due to buffer over/underrun
+           you often encounter when record CD playback using SoundRecorder,
+           CoolEdit, etc.
+                                    
+           MegaByte has done a quick comparison test of CDDA and DIDO4 and
+           lists a few pros and cons for CDDA:
+
+             PROS: De-jittering technique MAY improve sound quality (unknown)
+
+             CONS: Must use /o switch to override CD copy protection.
+                   DOS based; may not work under windows on some systems.
+                   Does not work on some systems.
+
+           If you are using Win95, you will need to first make sure you are
+           using the DOS or 16-bit (Real Mode) Win3.x drivers for your CD-ROM
+           drive, as the Win95 built-in drivers are NOT compatible with CDDA
+           or any of the other direct copy utilities! Also make sure to read
+           the manual with CDDA and use the included tester programs to see
+           if your CDROM drive is capable of "long reads" (if not, you can't
+           do a direct rip). These test utilities (for DOS) are useful even
+           if you decide to use another ripper than CDDA.
+           
+           A sample command line to rip a track off an *IDE* CD-Rom drive with
+           CD-DA might be: "CDDA /t [track] /m /f [filewav.wav] /w /o" PLEASE
+           read the CDDA manual to see what switches you need to use ... ATAPI,
+           SCSI, IDE all need different command line options! Additional info
+           from MegaByte's comparison tests on CDDA's dejitter feature:
+
+             [From CDDA.DOC:]
+             > "Many CDs have been mastered from digital sources. In this
+             > case the source may have been synthesized digitally which gives
+             > absolutely perfect sounds which are very repetitive and exactly
+             > the same. When this happens, it may possibly confuse the jitter
+             > correction routines. There is not a lot I can do about it at
+             > the moment, and there is less that any of the other programs
+             > like mine can do."
+
+             In one particular CD, which had repeating sound patterns, CDDA
+             had a dejitter error. In another CD, which had more "analog"
+             music, the error wasn't preesent. This may or may not be a
+             result of the problem expressed in the above quote.
+                       
+      2.3  DIDO 4.0 [Windows]
+
+           DIDO4 is a Windows-based CD ripping tool with a GUI. Like CDDA, it
+           copies the RedBook audio data directly from the CD to WAV. I have
+           not personally tested it but from MegaByte's comparison testing,
+           DIDO4 sounds very good. As with the other ripping utilities, you
+           need to use the *DOS* or older 16-bit "real mode" Win3.1 CDROM
+           drivers if you're under Win95. Some pros/cons from MegaByte:
+
+             PROS: GUI, easy to use, easy track view/recording time selector.
+
+             CONS: Has errors on some systems in accessing CD-ROM drives.
+                   (see the workaround below)
+                   Sometimes produces synchronization errors.
+                   (can be worked around by changing end time a little)
+
+           MegaByte's workaround for the DIDO4 errors:
+
+             DIDO4 seems to have some difficulties reading CD's under Windows.
+             On [my] computer it stalls at 0 sectors on the read. To work
+             around this problem, eject the CD and reinsert it at the Save
+             File dialog box. Remember to hold the shift key under Windows 95
+             to prevent Autoplay. Also, disabling Flexi-CD can solve some
+             problems. If the CD is ejected, reinserted, and then "ok" in the
+             save dialog box is clicked, recording works... as long as no
+             autoplay program has opened.
+
+      2.4  DAC 2.2 [DOS]
+
+           People who have not been able to use CDDA has reported success
+           with DAC in some cases. DAC has a nicer menu interface and is
+           fairly easy to use. However, we do not have a registered version
+           of DAC, which means you cannot do partial rips (to test sound
+           quality, as you can with DIDO4 or CDDA) ... only the full track.
+           Also at least one of the optimization switches is missing in the
+           shareware version of DAC.
+
+           Here is a quick start to using DAC to rip CD tracks:
+
+             Load up DAC 2.2
+             Select the track to copy
+             Go to Action
+             Select copy
+             Pretty easy eh?
+
+           Of course, read the docs for DAC to see if you need to enable any
+           special options. As with CDDA and DIDO, you'll have to use the DOS
+           or old 16-bit "real mode" Win3.x CD-ROM drivers under Win95, NOT
+           the built-in Win95 miniport drivers! (Win95 CDROM drivers usually
+           don't support CDDA/"raw" mode).
+
+      2.5  CD-Grab Pro V3.21 [DOS]
+
+           This is similar to CDDA, just a bit older. Haven't used this yet,
+           anyone want to review it and let me know if it's good? I know that
+           this ripper DOES have dejitter functions.
+
+      2.6  General problems ripping in Win95
+
+           Some Win95 users may encounter problems when starting a copy with
+           CDDA, even if they have the correct DOS/real-mode drivers installed
+           and their drive DOES support Read_Long ... this can often be fixed
+           by starting up CD Player (in Win95) and putting the CD-ROM into
+           pause mode; while the player is still paused, open a DOS window
+           (if you're using a DOS-based ripper) and start copying the audio
+           with CDDA/DIDO/etc.
+      
+      2.7  Using a CD-R (burner)
+
+           If you are lucky enough to have use of a CD-R burner, you can use
+           EZ-CD Pro (for Win3/Win95) or one of the various programs bundled
+           with the burner to direct COPY audio tracks from any CD. Typically
+           the read mechanism in CD-R drives are higher quality than regular
+           CD-ROMs and the drivers/software are made with copying in mind.
+
+
+   3.  Sampling (recording output from CD player)
+
+       Although this method of aquiring a CD track as WAV isn't recommended,
+       many people either have incompatible hardware (Mitsumi or other CDROM
+       incapable of Read_Long) or software (try booting to DOS mode if you use
+       Win95, though!) and thus have no other choice than to sample the audio.
+       Unfortunately, many people who CAN (and should) use direct digital copy
+       are still sampling their CDs, either out of ignorance or laziness. This
+       accounts for MANY of the shittier sounding MP3 encodes out there.
+
+       You'll need good WAV-editing tools if you want to do a good sampling
+       job; the "standard" recorder/editor programs bundled with Sound Blaster
+       or PAS16, etc. usually aren't flexible enough and lack the buffering
+       features required to make a skip-free recording. Instead, you should
+       use a high-quality package such as SoundForge32, CoolEdit95, or Gold
+       Wave to do your sampling and post-processing (read on). A section on
+       using these programs will be in a future version of this How-To ...
+
+
+   4.  Examining the WAV prior to compression
+
+       This is perhaps the MOST IMPORTANT STEP quality-wise in the process!
+       It is critical that you load the WAV you're ripped with CDDA/DIDO4/etc
+       into CoolEdit95 or SoundForge32 (or similar wave editors) and examine
+       it for defects, clipping, too quiet, etc. Visually you can see defects
+       that might not be noticible to the ear until AFTER compression (then
+       it's much more annoying to fix!) Here are some common problems you might
+       find in your freshly ripped (or if you cannot rip, recorded *bleh*) WAV:
+
+      4.1  Clipping
+
+           If you hear a tiny "pops" during playback of your WAV, and/or see
+           a lot of sound peaks that look cut off (pops and cut-off waveforms
+           should coincide) you've clipped the audio. This shouldn't happen
+           with direct ripping, but with recording it happens often. You'll
+           have to do it over if you have any noticible clips. Remember that
+           different parts of the same song may have very different volume
+           levels, so it isn't sufficient to just listen to one part of the
+           WAV when determining the correct recording level (if you sampled).
+
+      4.2  Too quiet
+
+           The other common problem is the entire wave is too quiet. When you
+           view a properly ripped/recorded WAV in SoundForge or CoolEdit, etc,
+           the loudest parts of the song should have peaks that ALMOST reach
+           the top/bottom edges of the waveform display; if even the loudest
+           peaks never get close to the limits, then you'll either have to set
+           the recording level a bit higher (if you're recording), or use the
+           "Normalize" feature of CoolEdit/SoundForge (do this ONLY if you did
+           a direct digital copy and know that no noise was introduced, other
+           wise the flaws will be amplified) Again, IF you did a direct rip,
+           and the resulting WAV is still very quiet, the Normalize (sort of
+           a smart amplify) function to maximize the dynamic range for the
+           entire file. Now you should see the loudest peaks in the song JUST
+           touch the top/bottom margins, without blowing out the passages in
+           the song that are supposed to be quiet.
+
+      4.3  Rough ends
+
+           After you're satisfied with the quality of your WAV rip, use your
+           wave editor to create "smooth ends" for the song. In CoolEdit95,
+           Select Entire Wave, use the "Envelope" function and choose "Smooth
+           Ends". If you cut the beginning or end of the song accidentally (or
+           on purpose) you might have to use the "fade-in" and or "fade-out"
+           tools to make a nice intro/ending. Finally, save to Microsoft PCM
+           (.WAV) at 44100Hz/16-bit/stereo.
+
+
+   5.  Compressing from WAV to MPEG Layer III Audio (MP3)
+
+      5.1  L3ENC 2.60 Registered [DOS] - ftp.fhg.de /pub/layer3/
+
+           This is the encoder for DOS. Make SURE you register the encoder,
+           otherwise many of the command-line options will be locked out,
+           ones DAC members will need to use for their releases! (Registration
+           codes are below:
+
+           > From: Psychotron <mikead@slip.net>
+           > X-Sender: ShereKhan <ursus@alpha.c2.org>
+           > Newsgroups: alt.binaries.sounds.music,alt.binaries.sounds.utilities
+           > Subject: THE "FIRST" REG CODES 4 WINPLAY3 AND L3ENC This iz kewl!!!
+           > Date: Tue, 06 Aug 1996 23:28:13 -0700
+           > 
+           > You may like to know that these are the very first reg
+           > codes for both "l3enc" and "WinPlay3", They will not make
+           > the programs run any better then from any other code but
+           > if you look at the serial number on your program after
+           > you reg your software with these number it will say 0001.
+           > kina kewl isn't it. Get it while you can
+           >
+           > L3ENC    = 909GCB0A091E-9
+           > WINPLAY3 = 100011-301000-5000
+
+             NOTE: Here is another reg code for WinPlay3 v1.40
+             (from WinPlay3 v1.30, when it was freeware):
+ 
+             UserName=ISO FreeWare
+             RegistrationCode=222221-025226-0002
+
+           Here is a sample commandline for compressing a WAV (infile.wav) to
+           MP3 (outfile.mp3) REMEMBER YOU MUST REGISTER THE ENCODER FIRST!:
+
+             l3enc [infile.wav] [outfile.mp3] -br 128000 -crc
+    
+           The -br 128000 tells L3ENC to produce a MP3 that will playback at
+           at 128000 bit/s ... this is the optimum compromise setting to get
+           the maximum compression ratio for CD-quality music while still
+           producing a MP3 that has virtually all the clarity of the original
+           song and a very respectable dynamic range (16khz rolloff at -br
+           128000) Compare this to the original CD-audio specification, which
+           rolls off at 22khz; humans can only hear up to about 20khz besides,
+           and virtually no natural sources, and very few artificially created
+           sounds you might find on a CD ever approach 20khz.
+
+           The default for the shareware L3ENC (pre-2.60) USED to be -br
+           128000 but for 2.60 and newer, it has been changed to -br 112000.
+           We at DAC feel a 112k bitrate sacrifices too much dynamic range
+           for a minimal gain in compression ratio, and therefore recommend
+           that -br 128000 be used for all encodes from CD sources.
+
+           An average 3-4 minute song will need about 10,000 frames to encode;
+           if you're smart, you'll encode only about 1,000 frames or so the
+           first time around (press CTRL+C to stop the encoder) to see if the
+           MP3 sounds good (no popping or dropouts, not too quiet) When you
+           seem to have a good test encode then delete the partial MP3 and
+           make the full-length MP3. L3ENC v2.60 has a nice progress indicator
+           which tells you what % of the encoding is completed.
+
+           If you have a fast computer (>P100) then you can try using the
+           "High Quality" switch in L3ENC (-hq). This will make the encoder
+           do extra quality checking so no errors are produced in the final
+           MP3 file. WARNING: this may take up to 3x as long (according to
+           RainMkr). Basically, -hq possibly may give you slightly higher
+           quality MP3, but at greatly reduced encoding speed. Try it for
+           yourself.
+
+           You better have a fast CPU, like P133 -> PP200, if you're going to
+           do a lot of encoding. ESPECIALLY if you want to use the -hq switch.
+           Otherwise do the encoding at night while you are sleeping, watching
+           tele, or whatnot. Encoding a 5 minute song on a i586-133 takes
+           approximately 15-20 minutes, while on a i486-80 it takes almost
+           1 hour. L3ENC is a 32-bit DOS executable, but it will run under
+           Win95/NT DOS boxes just fine. In fact. many people have run 4 DOS
+           sessions parallel, encoding 4 songs at once without problems.
+                                                                
+      5.2  Linux version of L3ENC V2.60
+
+           Some people report that the unix L3ENCoder is faster than the DOS
+           version, although I haven't tested it myself. Should work exactly
+           the same as DOS version. There is no Linux realtime player like
+           WinPlay3, unfortunately. Also since I don't know which tools you'd
+           use to rip the cd audio to WAV, I'm not sure it would be practical
+           to encode MP3 with Linux unless you also had DOS bootable on the
+           same machine (FTPing 40-50MB isn't fun, even on a T1).
+
+
+   6.  Testing the completed MPEG3 file
+
+      6.1  Listening test
+   
+           After you've finished compressing the MP3 you'll want to check it
+           over thoroughly of course ... Listen to it with WinPlay3 V1.40
+           REGISTERED (unregged V1.40 has a 20-second time limit for playback)
+           The reg code for WinPlay3 V1.40 is listed above. Make sure you have
+           at least a P90 to be able to playback at full 44100Hz/16-bit/stereo
+           output. You should not hear ANY nasty clicks, pops, or other defect
+           that aren't heard on the CD; these might mean doing the rip/encode
+           again. Also, if the song is VERY quiet, you might have set the
+           record level too low, or forgot to Normalize the WAV before
+           compressing (if you ripped). Lesson: be careful when you're making
+           the source WAV; most problems aren't from the L3ENC, so save time
+           by making sure the input WAV is pristine before encoding!
+
+
+   7.  Packaging for DAC release
+
+       Non-DAC members can probably skip this section, which simply outlines
+       our procedure for putting together a release, starting from the freshly
+       encoded MP3 song.
+                       
+      7.1  Generate a MD5 checksum
+
+           After you've finished encoding your song(s) with L3ENC, use the
+           utility MD5SUM to calculate a MD5 checksum for the file. This is
+           for the release list maintainer to archive, as it allows you to
+           see if a file is the same as the checksum you originally generated
+           (test for dupes, other groups ripping off DAC releases, etc). The
+           way to use MD5SUM is as follows:
+
+             md5sum -bv file.mp3
+
+           This will print the MD5 sum for file.mp3 to the screen; put it into
+           the appropriate place in the DAC.NFO file (which you will e-mail to
+           dac@jt.org as well as package into the release ZIP ... read on)
+
+           If you have a whole list of files, you can generate a set of their
+           MD5 checksums by piping the output to a text file:
+
+             md5sum -bv *.mp3>md5sum.txt
+
+           After the output file is generated (md5sum.txt) you can later check
+           any of the MP3 files against their checksums in the md5sum.txt
+           (tells  you if the files are identical). This is accomplished by
+           executing:
+
+             md5sum -cv md5sum.txt
+
+           NOTE: md5sum.exe will expect the files to check to be in the same
+           locations as were defined in the input list (md5sum.txt), so if you
+           later move the MP3s you should edit the paths in the MD5SUM.TXT to
+           reflect that.
+
+      7.2  Filling out the NFO/DIZ
+
+           This part is probably the easiest, just fill in all the appropriate
+           checkboxes and blanks in the DAC.NFO and DAC.DIZ. Remember to
+           rename DAC.DIZ to File_ID.DIZ before you zip up the package! Always
+           use the most current NFO and DIZ from ShereKhan or the channel bot.
+
+      7.3  Email NFO to fRSTGUMP
+
+           Don't forget to Email your completed NFO to fRSTGUMP so he can keep
+           an accurate list of our releases ... This is particularly important
+           to avoid duping already encoded songs by CDA or other groups.In the
+           near future this step may be replaced with a WWW forms inteface ...
+
+      7.4  Releasing the package
+
+           Each release should include a filled-out DIZ, NFO (always use the
+           latest available) and the actual MP3 song. Make sure the ZIP file
+           is named DAC-????.zip and FTP the completed package to the archive
+           site and/or any mirror sites DAC is feeding at the time. Also make
+           sure you DCC a copy of the ZIP to whomever is managing the current
+           offer bot(s).
+
+
+--
+DAC MP3 "Mini How-To" V4.0.1
+Revision [30/08/96 EDT 00:00]
+by ShereKhan, et al of DAC

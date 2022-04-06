@@ -1,0 +1,14 @@
+FolderByGroup (GL1&2)
+
+Description: Ment for MP3 dated dirs, but should work for 0days folder too. It 
+will, when run at midnight, go through yesterdays (dated) folder and sort all 
+releases by groupname. So
+/0707/Rock_-_We-Love-Turranius-GayFeds
+would be moved into
+/0707/GayFeds/Rock_-_We-Love-Turranius-GayFeds.
+It can also create a new dated dir and change the symlinks to it.
+Edit the .sh for full documentions.
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Apr-2003

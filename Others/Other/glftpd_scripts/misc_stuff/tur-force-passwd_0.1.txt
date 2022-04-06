@@ -1,0 +1,8 @@
+Tur-Force-Passwd
+
+Description: This is a rather small script used to block users from dirlisting 
+until they change their password.
+
+Author:   Turranius
+Version:  0.1
+Added on: 08-Jul-2005

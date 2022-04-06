@@ -1,0 +1,33 @@
+xL-genrefind v1.1 README
+------------------------
+
+CHANGELOG
+---------
+1.0
+First public release
+
+1.1
+Added Opening year+ as an argument
+
+DESCRIPTION
+-----------
+This script is made for those who have psxc-imdb and use the .imdb feature.
+It searches a certain section for movies with a specific genre/rating.
+Usage: !grfind <section> <genre> <imdbrating (x.x or x.x-x.x)> [min votes] [max hits] [Opening year+]
+
+INSTALLATION
+------------
+* Extract the file ( gzip -dc xl-genrefind_v1.1.tar.gz | tar -xof- ) 
+* Edit and copy xl-genrefind.sh to /glftpd/bin and chmod a+x
+* Copy xl-genrefind.tcl to your eggdrop script dir and add it to your eggdrop.conf
+
+CONTACT
+-------
+Please contact me if u have any questions about this script or if you experience any bugs.
+
+email: xolax@home.se
+IRC:   xoLax@EFnet
+
+NOTES
+-----
+Greets to psxc for his great imdb script!

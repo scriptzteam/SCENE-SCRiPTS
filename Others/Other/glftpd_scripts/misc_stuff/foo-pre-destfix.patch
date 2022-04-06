@@ -1,0 +1,11 @@
+--- foo-pre.c_orig      2011-11-02 19:24:58.000000000 +0100
++++ foo-pre.c   2013-12-20 22:11:27.903580112 +0100
+@@ -1212,6 +1212,7 @@
+                if (buf[0] == '/') {
+                        strncpy(tmp, buf, reps);
+                        buf[reps] = 0;
++                       tmp[reps] = 0;
+                }
+                else {
+                        tmpp= strrchr(tmp, '/');
+

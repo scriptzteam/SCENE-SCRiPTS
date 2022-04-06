@@ -1,0 +1,138 @@
+ISOs
+
+1) Use blindwrite to make your images.. Doesn't matter if you haven't used it before, figure it out and use it.. It
+makes perfect bins almost ALWAYS.. There's also CD-RWin. It works well, but can make corrupted bins and is worthless
+if you have yours cracked.
+The basic idea is the bin.  A bin is basically a CD image of sector size 2352, usually mode 1 for apps and mode2 for
+multimedia. If you receive a cd image in any other format (2048 or 2356) use CDMage to extract to 2352. The .cue
+file can be generated manually in this format
+
+FILE MYiSO.bin BINARY
+  TRACK 01 MODE1/2352
+    INDEX 01 00:00:00
+
+as an example.
+
+
+1) If there is a crack to include, you must extract all the files from the CD to a folder using winimage or
+isobuster, and make sure to write down the proper cd-label . Add the crack to the appropriate folder. Some people
+try and slip one in using WinonCD but this is highly discouraged. Now Burn the result and make a new bin from that
+using the appropriate cd-label.
+
+To make an image from HD collection without a burner you need to make the image using CDRWin (build and save iso9660
+image) and use CDMage to convert to 2352.
+
+2) Take the resulting cue file and make sure to edit out the path, IE: "c:\cdready\newdisk.bin" becomes just
+"newdisk.bin"
+
+3) Use binchunker 1.60 to verify the bin file (CDMage scan for corruption is also acceptable) to make sure it's a
+valid bin.. ANY errors and you need to start again. The binchunker included in fireburner is ver. 1.70 and can often
+miss errors.
+
+4) Use winrar to rar up the bin and cue files, using the options: Best compression, dictionary size 1024K, solid
+archive. The filenames MUST be 8.3 format, thats 8 chars , period, rar extension. Files should be 15MB in size. Use
+the old winar (pre 3.0) as consideration.
+
+5) Create an sfv table using Winsfv32.exe or pdsfv32.exe. Make sure you only include the rars in the .sfv, and not
+any other files, like a text file or anything else in that folder.
+
+6) The rars and the sfv need to be in the same folder.
+
+7) UnRar (Unpack) the rars to get the new bin/cue file. Why? We've got to test it! Open it up to another box or get
+someone else to.  Scan for corruption the extracted bin. Test the compression by checking any of the rar files with
+rar.exe from a command line: rar -vt myisorls.r42  . This returns an m#e rating, where m0e is lowest compression and
+m5e is highest. If this was a cracked ISO where you added files, install the program on a clean system. All the way
+to actually running it. No cheating! Releasing something that doesn't work is useless to everyone ;)
+
+8) Upload it, and test it under glftpd, where it will check that all the files sfv OK.
+
+NFO
+1) Make sure you know these things,
+How many CD's,
+the packaged size,
+when it is due for release,
+
+2) Include a description and a webpage resource for the cd
+
+3) Include the system requirements for the cd including OS and hardware.
+
+4) Always ask about a serial number or crack. If it needs either be VERY specific on how to use it. If there is a
+crack, you almost need to do it once yourself or at least have the person using the crack explain it very
+specifically.
+
+5) In the title of the proggy at the top of the NFO make sure there is A VERSION NUMBER
+
+ 
+RIPS
+Rips must be packaged in this way
+1) RAR files, best compression, solid archive, 1024K dictionary size. Prefer 2.88 Mb files, up to a maximum of 150Mb
+(some sites allow more). 8.3 naming convention again. No sfv is needed.
+
+2) Unrar the file and make sure the original program is not installed in your machine.. try and install the ripped
+program. THIS IS THE MOST IMPORTANT STEP! NO CHEATING!
+
+3) Make a file_id.diz which is a text file with this on it [XX/00] where 00 represents the number of files.. if it
+is less than ten (ie: 5) then it would look like this [XX/05]. DO NOT place individual numbers on each file.. ie
+[01/16] as that screws up the zipscripts. No other info goes on the file_id.diz save maybe a very small and very
+simple graphic with no funny ascii chars.
+
+4) Package every rar up into a zip accompanied by a file_id.diz . the zip must be named 6 to 7 characters as close
+to the rar names as possible. ie: crdoracl.rar becomes crdora01.zip or letters of the alphabet are also acceptable
+ie: crdoraca.zip, crdoracb.zip etc.
+
+5) Inside of the first zip goes an NFO file. the nfo must contain the exact same info that an ISO does, but with all
+the ISO extensions gone. It is neccessary to include the system req. to run the file or if the file needs additional
+other files IE: plugins needs photoshop to run. It must also have relevant serial and crack information.
+
+6) Folder names fall under the same category as the ones for ISO. No spaces, version number must be there and end
+with -RiP ie: Bigtalk.kickapp.v1.0-RiP. If you dont have a "-" before the groupname you will be nuked for no
+groupname. No version is also a nuke.
+
+7) When uploading to topsites, keep the nfo handy in case their zipscript does not extract the nfo from the first
+zip but dont upload it. Be careful with rips.. they travel around the world insanely fast.. so you don't want to
+have anything messed up.
+
+1)If you forgot a serial or CDkey then release an
+Bigtalk.Kickapp_v1.0_NFO.FIX-MYiSO
+or
+Bigtalk.Kickapp_v1.0_NFO.FIX-RiP
+
+2) If you did a bin error CD
+Bigtalk.Kickapp_v1.0_REPACK-MYiSO
+
+3) If you packed it wrong
+Bigtalk.Kickapp_v1.0_REPACK-RiP
+File_id.diz fixes are placed in a zip, ISO sfv fixes in an rar, with a new sfv for that rar.
+To do a
+Bigtalk.Kickapp.v1.0.NFO.FIX is complicated..
+Upload an new new nfo in a folder named as such.
+
+ 
+COVERS
+1) SINGLE rar have all three covers, preferably jpg's. Try and keep it down to a couple megs or so, make the        
+appropriate SFV and NFO
+
+2) Package it all in a folder called Covers.
+
+ 
+READY FOR PRE / RELEASE
+1) Make sure the name of the folder is dead on what it is.
+1b) The OS is labelled. default is 2K/XP. Win98 should be labelled if its not 2K compliant. 
+
+2) No spaces, always do it like this This.Is.A.Sample.File_V1.0-MYiSO taking care to make sure of three things.
+a) No spaces
+b) THERE HAS TO BE A VERSION NUMBER
+c) Dash before MyISO (the group name)
+
+3) For multi-CD releases, don't put the full release name on the CD1, CD2 folders.
+It looks like this
+Full.Title.Here_v1.0-MYiSO
+- CD1 (no spaces in CD1)
+-files and sfv
+- CD2
+-files and sfv
+- nfo
+The CD# folders are subfolders of the Full.Title folder. The nfo goes outside the seperate cd's not inside.. Just   
+put the rar files and .sfv inside the CD# directories. Upload one nfo per release in the main folder. And please    
+remember to make sure the CD1 is capitalized, no spaces. Some script auto rename the Cd to CD and then it creates   
+all hell in racing it around.

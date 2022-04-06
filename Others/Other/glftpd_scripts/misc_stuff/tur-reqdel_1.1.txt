@@ -1,0 +1,9 @@
+ReqDel
+
+Description: A reqdel script for those using glftpds internal request system but 
+want a 'site reqdel' command to delete requests instead of using 'site reqfilled' 
+for it.
+
+Author:   Turranius
+Version:  1.1
+Added on: 18-Oct-2003

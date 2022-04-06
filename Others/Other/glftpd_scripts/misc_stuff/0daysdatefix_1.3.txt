@@ -1,0 +1,11 @@
+0DaysDateFix (GL1&2)
+
+Description: Running 0DAYS or MP3 in dated dirs and want the dates on the folders 
+be the same as the folder name? It reads the foldername and timestamps the folder 
+to the same date. Handles an infinite amount of dated dirs and has the option to 
+exclude certain folders. Has the ability to rename folders from MMDD to MMDDYY, for
+archives more then a year old.
+
+Author:   Turranius
+Version:  1.3
+Added on: 23-Apr-2003

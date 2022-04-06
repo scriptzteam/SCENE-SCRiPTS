@@ -1,0 +1,24 @@
+#####################
+# Precheck by Teqno #
+#####################
+# Version 0.4
+# 
+# It had a minor grep error when searching for groupname
+# which is fixed in this version. You can choose what prefix
+# you want it to search for before groupname. Most of the groups
+# use - as prefix.
+#
+# Version 0.3
+# 
+# Removed the hard coded "preed a total of .... times since"
+# replaced it with a check of the logfile
+#
+# Version 0.2
+#
+# Added the feature to show the last 5 releases
+# of a group.
+# Some cosmetic changes as well ;D
+#
+# Version 0.1
+#
+# *Initial Release

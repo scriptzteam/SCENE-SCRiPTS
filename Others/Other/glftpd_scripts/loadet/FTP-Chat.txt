@@ -1,0 +1,30 @@
+#!/bin/sh
+#---------------------------------------------------------------------------------------#
+#  Name:         FTP-Chat                                                    		#
+#  Version:      1.0                                                         		#
+#  Last Updated: 2002-07-13                                                  		#
+#  Author:       loadet (C) 2002                                             		#
+#  Contact:      loadet on EFNet or loadet@gbit.dk                           		#
+#  Usage:        site say have a nice day!                                     		#
+#  Notes:        This script makes it possible to talk to sitechannel through ftp.  	#
+#  Requirements: date echo sitebot ircchannel                                 		#
+#---------------------------------------------------------------------------------------#
+# add this to glftpd.conf								#	
+#											#				
+# site_cmd SAY            EXEC    /bin/say.sh						#	
+# custom-say      !8 *									#					
+#											#					
+# add this to dZSbot.tcl								#	
+#											#
+# set msgtypes(DEFAULT) add SAY								#
+# set disable(SAY)                0							#			
+# set variables(SAY)         "%msg %user %group"					#
+# set announce(SAY) "%uline\(%uline%boldSAY%bold\%uline)%uline ->  %bold%user%bold@%group says: %msg"
+#---------------------------------------------------------------------------------------#
+#  Thnx to insomnia for getting me started on this! Dont try this at home kids =) 	#
+#---------------------------------------------------------------------------------------#
+
+#############
+#config done#
+#############
+echo `date "+%a %b %d %T %Y"` SAY: \"$@\" \"$USER\" \"$GROUP\" >> /ftp-data/logs/glftpd.log

@@ -1,0 +1,22 @@
+#want to check the rls on the ftp and dont waste download time?
+#mount --bind /dev /glftpd/dev
+#cp /bin/umount and /bin/mount and /usr/local/bin/unrar to /glftpd/bin
+#get binchunker from http://hes.iki.fi/bchunk/ and place the bin in /glftpd/bin
+#give your test user uid 0 in /glftpd/etc/passwd
+#add custom command to glftpd.conf for both scripts below 
+#and change your paths in them to fit your needs
+
+#mount.sh
+#!/bin/sh
+unrar e $1/*.rar /site/private/STAFF/ISOTEST/
+bchunk /site/private/STAFF/ISOTEST/*.bin /site/private/STAFF/ISOTEST/*.cue /site/private/STAFF/ISOTEST/
+rm -rf /site/private/STAFF/ISOTEST/*.cue
+rm -rf /site/private/STAFF/ISOTEST/*.bin
+mount -n -t iso9660 -o loop /site/private/STAFF/ISOTEST/*.iso /site/private/STAFF/ISOTEST/MOUNTED
+
+
+
+#umount.sh
+#!/bin/sh
+umount -n /site/private/STAFF/ISOTEST/MOUNTED
+rm -rf /site/private/STAFF/ISOTEST/*.iso

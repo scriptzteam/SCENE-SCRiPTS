@@ -1,0 +1,5 @@
+# incomplete-list.sh replacement for project-zs (included in the
+# sitewho.tgz package available on dark0n3's website)
+#
+# some people complained about nested INCOMPLETES not reporting
+# properly -- this is my own solution to the problem -- t0xic

@@ -1,0 +1,8 @@
+LastOn (GL1&2)
+
+Description: Tur-LastOn is a small snippet of Tur-UserInfoi. Its used as a !seen 
+script on irc to show when the user was last logged on to the site.
+
+Author:   Turranius
+Version:  1.0
+Added on: 21-May-2003

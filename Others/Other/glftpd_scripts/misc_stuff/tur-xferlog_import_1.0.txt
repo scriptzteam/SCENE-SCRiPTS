@@ -1,0 +1,8 @@
+Tur-Xferlog_Import
+
+Description: This imports your xferlog into a MySQL database. Its required for a 
+few of my scripts.
+
+Author:   Turranius
+Version:  1.0
+Added on: 11-Jul-2005

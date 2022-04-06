@@ -1,0 +1,10 @@
+Rules (GL1&2)
+
+Description: !rules script for irc. Reads your current rules file which might need 
+some modifications in order for this to work. !rules section (searchword) meaning 
+it can search for one word in a sections rules (!rules svcd limited) as well as 
+display all rules for a specific section.
+
+Author:   Turranius
+Version:  1.0
+Added on: 23-Apr-2003

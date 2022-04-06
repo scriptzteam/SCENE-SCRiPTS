@@ -1,0 +1,11 @@
+Section Gods (GL1&2)
+
+Description: From irc, you can type (for instance) !gods DIVX and it will check 
+owner of all files in that section and show the top 5 users in the channel. Pretty 
+fun and equally useless :)
+Check the.sh file for installation instructions.
+Thanks to JanG for the idea and the file owner check string.
+
+Author:   Turranius
+Version:  1.1
+Added on: 23-Apr-2003

@@ -1,0 +1,559 @@
+Web Definitions for x264 v1.0 a.k.a. wdx264
+THE.2016.WEB.AND.WEBRIP.SD.HD.X264.RULESET.v1.0-WDX264
+
+[ Intro ]
+In the last 18 months, web based streaming and video on-demand services have increased in popularity. Initially used as a source for missed broadcasts, it has since evolved into an exclusive source for original content. Like most technology, online services are continually evolving the way in which files are provided to end users. As codecs mature, bandwidth increases in speed and decreases in price, equivalent improvements in quality follows at the benefit to the end-users. This increase in quality has the flow-on effect of often being a legitimate logo-free alternative to antiquated MPEG-2 HDTV streams. As companies such as Netflix and Amazon continue to produce popular content at an exponential rate, it became obvious that this new broadcast medium deserved to be recognised with an original ruleset.
+
+The purpose of this document is to create a high standard for web-sourced files. It attempts to prevent any improper handling of files, and reduce the potential for adding to the increasing number of ongoing nuke-wars. This ruleset is structured in such a way that everything attempts to be clear and concise, and something everyone must adhere to.
+
+Compliance with this document is optional as of its pre date, and mandatory as of 2016-03-21 00:00:00 UTC (1458518400 Unix time).
+
+1) [ Untouched: WEB.H264 / WEB.x264 ]
+    1.1) Untouched releases must be considered as anything that has been losslessly downloaded by official (offered) or unofficial (backdoor) methods.
+        1.1.1) Untouched video streams must use a commercial (e.g. CoreAVC, MainConcept) or GPL-licensed (e.g. x264, x265) H.264/MPEG-4 AVC or H.265/HEVC codec.
+    1.2) Source video and audio streams must be left as obtained from the source. Transcoding of audio or video streams is not allowed.
+    1.3) Untouched video streams without x264 headers must be tagged as WEB.H264. Untouched video streams with x264 headers present in the H264 stream must be tagged as WEB.x264.
+        1.3.1) In situations where HEVC/H265 is used, any untouched sections referring to H264/x264 must be considered as H265/x265.
+            1.3.1.1) H265 must be used in place of H264.
+            1.3.1.2) x265 must be used in place of x264.
+        1.3.2) Until H265/x265 support is improved in mainstream demuxers, untouched video streams which use H265/x265 do not dupe H264/x264 files, and vice-versa.
+            e.g. WEB.H265 does not dupe WEB.H264
+                 WEB.x264 does not dupe WEB.x265.
+    1.4) Transcoding untouched files must only occur if files do not meet the standards and specifications listed in this section, and must only be a last resort.
+        1.4.1) Any transcoding of untouched files must follow the transcoding standards, see section 2.
+        1.4.2) Transcoding must be done from files of the highest resolution and bitrate offered.
+        1.4.3) Transcoding may occur when correcting a technical flaw.
+            e.g. Cropping black borders, deinterlacing an interlaced source.
+        1.4.4) In situations where a target resolution is not offered by any lossless source, or the resolution offered by any source does not meet the minimum resolution requirements, transcoding from the highest resolution and bitrate offered is allowed. However, if at least one source can provide the correct resolution, transcoding is not allowed.
+            e.g. If 1080p and 720p can be retrieved from multiple sources, but SD cannot be retrieved from any source, transcoding the 1080p to SD is allowed.
+        1.4.5) If the untouched file does not contain any technical flaws and meets the minimum standards required, transcoding to create any WEBRip.x264 is not allowed, use INTERNAL.
+            e.g. 1080p.WEB.H264 -> 720p.WEBRip.x264.
+    1.5) Untouched video streams which do not use an AVC or HEVC codec must be transcoded and follow the transcoding standards, see section 3.
+    1.6) Standard definition (SD) refers to a resolution with a horizontal minimum of 720 pixels or a resolution which does not exceed the specifications of 720p, see rule 6.2.
+        1.6.1) If all sources provide standard definition resolutions which fall below the above minimum, transcoding from the highest available resolution is allowed, see rule 1.4.4.
+        1.6.2) Except in situations where only one source has the file on offer at a specific resolution. If the resolution of the file falls below the above minimum, the file may still be released, but the NFO must state why the resolution does not meet the minimum.
+    1.7) DRM and any user identifiable information must be removed.
+    1.8) Dupes based on source are not allowed, use INTERNAL.
+    1.9) YouTube may only be used as a source if geographical restrictions apply to legitimate content uploaded by the rights holder or on a verified channel.
+    1.10) Must use the highest available bitrate offered by the source for that resolution.
+        e.g. Releasing a 720p at 4,000 Kbps bitrate, when a 720p at 8,000 Kbps bitrate is offered is not allowed.
+    1.11) Must be free of technical flaws. Including, but not limited to: DRM, sync issues, interlaced, lack of IVTC, bad AR, missing footage, missing dialogue, unrelated footage or commercials, under or over crop.
+    1.12) VFR (Variable Frame Rate) methods are allowed only if present in the original source.
+        1.12.1) If CFR (Constant Frame Rate) can be used when remuxing and does not result in playback issue, CFR must be used.
+    1.13) Trimming unrelated footage (section 8) is allowed and must be done losslessly via keyframe intervals (GOP). MKVToolnix is the recommended tool.
+        1.13.1) If unrelated footage cannot be removed via this method, the file must be transcoded and follow the transcoding standards, see section 3.
+    1.14) Incorrect pixel aspect ratio (PAR) or a non-square sample aspect ratio (SAR) must be fixed using the correct display aspect ratio (DAR) set at a container level (--aspect-ratio). MKVToolnix is the recommended tool.
+        e.g. A video stream with a non-square SAR must specify the correct DAR when muxing.
+    1.15) Releases with a non-square SAR are not considered technically flawed.
+        1.15.1) However, a source which provides files with a square SAR will trump an equivalent file with a non-square SAR. It is recommended to use a source which provides files with a square SAR.
+        1.15.2) In situations where a source initially provides a non-square SAR file and later updates with a square SAR file, the initial release with a non-square SAR is considered of lower quality and a technical flaw.
+            e.g. Release A: 960x720, SAR: 4:3, DAR: 16:9.
+                 Release B: 1280x720, SAR: 1:1, DAR: 16:9.
+                 Both releases are considered as 720p.
+                 If Release A is first: Release A remains unnuked and is a valid release until Release B is released. Release B then propers Release A.
+                 If Release B is first: Release A dupes Release B.
+
+2) [ Untouched: Audio ]
+    2.1) Must use the original audio track offered by the source.
+    2.2) Non-destructive audio normalisation tools such as ReplayGain may be used, and must be done to the maximum gain. Audio normalisation on lossy tracks is optional.
+    2.3) Standard definition releases must only contain an audio track with a maximum of 2.0 channels.
+        2.3.1) Except where the only available audio track on offer contains more than 2.0 channels. The NFO must mention why an audio track with more than 2.0 channels was used.
+        2.3.2) In situations where a source provides two audio tracks, a 2.0 and 5.1 track, the 2.0 audio track must be used.
+        2.3.3) If a source provides identical audio tracks using two different codecs, it is at the discretion of the group which track is used. It is recommended to use the smaller file.
+            e.g. A source offers AC3 2.0 and AAC 2.0, the group may choose to remux the AC3 or AAC.
+    2.4) High Definition releases must use the highest available audio format and quality offered by the source.
+        2.4.1) In situations where a lesser audio format is offered for larger resolutions in comparison to lower resolutions, groups must use the highest available audio format from all resolutions.
+            e.g. A source provides an AC3 5.1 track for SD resolutions, but an AAC 2.0 track for 720p/1080p. The AC3 5.1 track must be used for 720p/1080p resolutions.
+        2.4.2) If using the highest available audio format results in a technical flaw (e.g. sync issues or glitches), minor adjustments to the audio track may be applied. If groups are unable to correct any flaws, the original audio track must be used.
+
+3) [ Transcoded: WEBRip.x264 ]
+    3.1) Transcoded releases should be considered as anything that has been captured or encoded by a group to a lesser format or quality (lossy).
+    3.2) Transcoded releases must be tagged as WEBRip.x264.
+    3.3) Dupes based on source are not allowed, use INTERNAL.
+    3.4) Must be free of technical flaws. Including, but not limited to: DRM, sync issues, interlaced, lack of IVTC, bad AR, missing footage, missing dialogue, unrelated footage or commercials, under or over crop, dupe or dropped frames.
+    3.5) Upscaling video streams is not allowed.
+        e.g. 2160p from a 1080p stream is not allowed.
+    3.6) Streams must be captured at the highest available resolution and bitrate offered.
+        3.6.1) Streams must not have any degradation in quality throughout the capture, and releases with drops to a lower resolution or bitrate is considered a technical flaw.
+        3.6.2) 1080p and 2160p streams are considered of equal value when capturing, and encodes (SD/720p/1080p) produced from 1080p or 2160p captures are considered identical. It is encouraged, and recommended, to capture from a 2160p stream where possible and resize so as to produce a higher quality encode.
+        3.6.3) Audio must be captured in the highest format offered by the source stream, not what the capturing device is capable of. This includes channel count and bitrate offered.
+            e.g. If a Netflix show lists a 5.1 track, the resultant capture and release should also contain a 5.1 audio track.
+    3.7) Captures should be done at the native broadcast framerate of the source.
+        3.7.1) Captures from devices which are unable to output a native format must be restored to the original framerate.
+        3.7.2) If captures cannot be completely restored to their native framerate, such as a single dupe frame every 1000 or blended/ghost frames due to mangling from the streaming device, this is considered a technical flaw.
+    3.8) Captures should be done at the native colour space of the source (e.g. YUV or RGB), and manual corrections should be made to achieve an output near-identical to the source.
+    3.9) Capture software and hardware which introduces video cropping greater than 2 pixels on any side is not allowed, and is considered a technical flaw.
+    3.10) Final resolution must maintain the same aspect ratio as the source after cropping and kept at mod 2.
+        3.10.1) Sources must have all black borders cropped to the widest frame.
+        3.10.2) The same aspect ratio, as calculated from the source, must be used, see rule 6.17.
+    3.11) If the video is being transcoded from an untouched source (rule 1.4.4 and 1.4.5), the NFO must state the reason for transcoding.
+        3.11.1) If a technical flaw is present that is being rectified by transcoding (rule 1.4.5), the flaw must also be included with the reason for transcoding.
+            e.g. A file from 2 lossless providers both have the same interlacing flaw.
+                 The flaw: Interlaced video.
+                 The reason: No other WEB.H264 provider has a correctly deinterlaced file.
+
+4) [ Transcoded: Codec ]
+    4.1) x264 8-bit must be used.
+        4.1.1) Custom builds of x264 are allowed and must be based off the x264 codebase, e.g. x264-tMod, x264-kMod.
+        4.1.2) Any experimental or alternate codecs (e.g. x265) are not allowed, use INTERNAL.
+    4.2) x264 revision must be no more than 50 revisions from the latest at pre time. It is recommended to use the latest revision when encoding. Use the official x264 git repo as the only reference: http://git.videolan.org/?p=x264.git;a=summary
+    4.3) Segmented encoding is not allowed.
+    4.4) Justification must be listed in the NFO for use of non-standard CRF values.
+    4.5) Decimal values may be used for CRF values.
+    4.6) Constant Rate Factor (--crf) must be used by default.
+        4.6.1) A CRF value of 19 must be used for all SD resolutions.
+            4.6.1.1) If the resultant video bitrate exceeds 2,000 Kbps, the CRF value must be incremented by 1.
+            4.6.1.2) If the resultant video bitrate exceeds 1,500 Kbps, the CRF value may be optionally incremented by up to 1.0, e.g. 19.2, 19.6.
+        4.6.2) A CRF value of 18 must be used for all 720p resolutions.
+            4.6.2.1) If the resultant video bitrate exceeds 9,000 Kbps, the CRF value must be incremented by 1.
+            4.6.2.2) If the resultant video bitrate exceeds 8,000 Kbps, the CRF value may be optionally incremented by up to 1.0, e.g. 18.2, 18.6.
+        4.6.3) A CRF value of 17 must be used for all 1080p resolutions.
+            4.6.3.1) If the resultant video bitrate exceeds 15,000 Kbps, the CRF value must be incremented by 1.
+            4.6.3.2) If the resultant video bitrate exceeds 14,000 Kbps, the CRF value may be optionally incremented by up to 1.0, e.g. 17.2, 17.6.
+        4.6.4) A CRF value of 17 must be used for all 2160p resolutions.
+    4.7) Use of 2-pass is accepted for all resolutions of 720p and above, however this method should be used only in extreme cases and not as a primary replacement for CRF methods. e.g. If the source contains an excessive amount of grain or black and white scenes.
+        4.7.1) 2-pass should be a last resort when encoding. Instead, groups are encouraged and recommended to use CRF as the default encoding method.
+        4.7.2) The NFO must provide sufficient evidence of 2-pass producing a visual improvement, bitrate, or file size advantage over CRF in regards to the source used.
+        4.7.3) There is no maximum or minimum file size when using 2-pass methods as target bitrates should take precedent over target file sizes. Multiples of 1120MiB (1,174,405,120 bytes) may be used as a general guide for calculating target bitrates.
+        4.7.4) If groups are unsure of how to calculate an adequate target bitrate applicable for the source, CRF should be used.
+            4.7.4.1) 720p bitrate must be between 4,000 Kbps and 9,000 Kbps inclusive, and should have a target bitrate of approximately 5,500 Kbps. Minimum bitrate for animation is 2,500 Kbps.
+            4.7.4.2) 1080p bitrate must be between 9,000 Kbps and 15,000 Kbps inclusive, and should have a target bitrate of approximately 10,500 Kbps. Minimum bitrate for animation is 5,500 Kbps.
+            4.7.4.3) 2160p bitrate must not exceed 60,000 Kbps.
+    4.8) Resultant bitrate must not exceed the source bitrate.
+        4.8.1) When transcoding from an untouched source, it is recommended to use SelectRangeEvery() for a rough estimation on the final CRF value to use.
+        4.8.2) The following algorithm can also be used to estimate a CRF value if the value originally used results in a bitrate which exceeds the source.
+            ValidCRF = [-6 * (DestinationBitrate – ExcessiveBitrate) / ExcessiveBitrate] + CRFUsed
+                e.g. Source bitrate: 4,500Kbps
+                     Target bitrate: ~4,400Kbps
+                     Encoded bitrate @ CRF17: 5,900Kbps
+                     ValidCRF = (-6 * (4400 – 5900) / 5900) + 17
+                     ValidCRF = 18.52, round up to 19 should result in an average bitrate below the source.
+    4.9) Settings cannot go below what is specified by --preset slow.
+        e.g. –subme 7 or –me hex is not allowed.
+    4.10) Deblocking (--deblock) must be used. Values used are left to the discretion of the group. Recommended values: -3:-3 for film, 1:1 for animation.
+    4.11) Sample Aspect Ratio (--sar) must be square (1:1).
+    4.12) Keyframe interval (--keyint) must be at least 200, and at most 300. It is recommended to let x264 decide which value to use, but 10*framerate is a good guideline.
+    4.13) Minimum GOP length (--minkeyint) must be 30 or less.
+    4.14) Level 3.1 must be used for SD resolutions.
+    4.15) Level 4.1 must be used for all 720p and 1080p resolutions.
+    4.16) Level 5.1 must be used for all 2160p resolutions.
+    4.17) Encoded colourspace (--output-csp) must be 4:2:0.
+    4.18) Colour matrix (--colormatrix) must be set for all SD resolutions.
+        4.18.1) 'bt709' must be used for encodes from high definition sources.
+        4.18.2) Source specification must be used for standard definition sources.
+        4.18.3) 'undef' must be used if not specified by the source for standard definition sources.
+    4.19) Colour matrix (--colormatrix) may be optionally set to 'bt709' for all resolutions of 720p and above, but is not required.
+    4.20) Custom matrices are not allowed.
+    4.21) Zones (--zones) are not allowed.
+    4.22) Optional tuning (--tune) parameters allowed are: film, grain, or animation.
+    4.23) Optional settings recommended for tuning per source, see doom9.org for further information:
+        4.23.1) For complex video, --preset slower/placebo is encouraged.
+        4.23.2) --aq-mode 3 --aq-strength x.x
+            e.g. 0.6-0.9 for digital films.
+                 0.5-0.7 for grainy films.
+                 0.9-1.1 for animation.
+        4.23.3) --psy-rd x.x:0.0
+            e.g. 0.8-1.2 for films.
+                 0.5-0.8 for animation.
+        4.23.4) --trellis 2, --no-fast-pskip, --no-mbtree
+
+5) [ Transcoded: Audio ]
+    5.1) Segmented encoding is not allowed.
+    5.2) Audio tracks already in a lossy format must not be transcoded, but kept in the original format.
+    5.3) Stereo must be used for stereo sources, and mono must be used for mono sources.
+        5.3.1) Any audio track with identical channels is considered a mono source.
+        5.3.2) Dual mono is not allowed.
+    5.4) VBR AAC LC (Low Complexity) must be used for SD releases.
+        5.4.1) Apple/QAAC, FDK-AAC or Nero must be used.
+        5.4.2) Quality based VBR encoding must be used, targeted or constrained VBR must not be used. Only the following methods are allowed (in order of preference):
+            5.4.2.1) QAAC: --tvbr 82 --quality 2
+            5.4.2.2) FDK-AAC: --bitrate-mode 4 --profile 2
+            5.4.2.3) Nero: -q 0.4
+        5.4.3) AAC audio must be normalised to the maximum gain. Normalisation must be a complete 2-pass method. No pre-defined values or estimations of maximum gain is allowed. Only the following normalisation methods are allowed (in order of preference):
+            5.4.3.1) eac3to: –normalize
+            5.4.3.2) sox: --norm
+            5.4.3.3) QAAC: --normalize
+        5.4.4) Any existing normalisation values must be stripped prior to applying normalisation.
+        5.4.5) FFmpeg, FAAC, and MEncoder are banned.
+        5.4.6) AC3 is allowed for INTERNAL releases only.
+        5.4.7) Audio with more than 2 channels must be down-mixed to stereo, with the exception of INTERNAL releases.
+        5.4.8) Audio must not be resampled. Audio must be kept in the original format as the source. e.g. 48KHz for 48KHz sources.
+    5.5) AC3, DTS, DTS-ES, E-AC3, MP2, and FLAC are the only allowed formats for resolutions 720p and above.
+        5.5.1) AC3 bitrate must not be below 640 Kbps, unless the original source audio is already in a low bitrate lossy format. In which case, the original audio must be used and not transcoded.
+        5.5.2) AC3 640 Kbps, DTS 1536 Kbps, and FLAC must be created from a higher bitrate source.
+
+6) [ Video / Resolution ]
+    6.1) Standard definition (SD) refers to a maximum horizontal display resolution of 720 pixels.
+    6.2) 720p refers to a maximum display resolution of 1280x720.
+    6.3) 1080p refers to a maximum display resolution of 1920x1080.
+    6.4) 2160p refers to a maximum display resolution of 3840x2160.
+    6.5) Upscaling is not allowed.
+    6.6) Resolution must be mod 2.
+    6.7) English spoken titles with foreign overlays (e.g. locations and on-screen text shown in another language) are not allowed, use INTERNAL.
+    6.8) Non-English spoken titles with hardcoded English subtitles must be tagged as SUBBED.
+    6.9) Dupes based on resolution are not allowed.
+        6.9.1) Except in situations of releases with a different aspect ratio. The relevant tag must be used, and the reason mentioned in the NFO, see rule 19.5.3.
+        6.9.2) Releases which contain an additional 20 pixels or more worth of video on any side are not considered dupes. These releases must be tagged as WS or OM (open matte) and not PROPER, and the original release must not be nuked.
+    6.10) Retention or removal of faded edges is left to the discretion of the group. Inclusion of faded edges is not a technical flaw, and cannot be propered.
+        6.10.1) Faded edges refer to a line of pixels which are of similar appearance to pixels’ parallel to the video frame.
+    6.11) Black borders and anything that is not part of the video must be cropped.
+        6.11.1) Black borders refer to: black or coloured borders, duplicate lines, dirty lines or pixels.
+    6.12) Video can be over or under cropped by a maximum of 1px per side. Over or under cropping by more than 1px per side is considered a technical flaw.
+        6.12.1) Under crop refers to portions of the video frame which is not actual picture. Files which contain black borders greater than 1px on any side is considered a technical flaw.
+        6.12.2) Releases which include faded edges must consider faded edges as a valid part of the video frame and do not count as black borders.
+            e.g. A release cannot be propered if 1px of faded edges and 1px of black exists.
+        6.12.3) Situations where video cropping of the same content varies between sources are not considered a technical flaw, and may not be propered.
+    6.13) In the case of varying aspect ratios throughout the video, cropping must be done to the widest video frame.
+        6.13.1) Studio logos, intertitles, and credits must be disregarded when determining the widest frame.
+    6.14) Any sort of visual glitch present in the video stream is considered a technical flaw.
+        6.14.1) Except in situations where glitches are a result of a live-stream or issues with the broadcast or source and are completely unavoidable. It is recommended, but optional, to mention glitches or gaps in playback in the NFO.
+        6.14.2) Unavoidable glitches as a result of broadcast, live-stream, or mastering issues may be propered with a glitch-free version.
+        6.14.3) Visual glitches are defined as, but not limited to: visual/compression artifacts, signal/stream issues, missing frames.
+    6.15) Resized and transcoded video must be within 0.5% of the original aspect ratio.
+    6.16) Sample aspect ratio (SAR):
+        SAR = (PixelHeight / PixelWidth) / (DARHeight / DARWidth)
+    6.17) Display aspect ratio (DAR):
+        DAR = (PixelWidth * DARWidth) / (PixelHeight * DARHeight)
+    6.18) Display resolution:
+        DisplayWidth = PixelWidth * (SARWidth / SARHeight)
+    6.19) Aspect ratio (AR) error:
+        Original AR = (SourceWidth – [CropLeft + CropRight]) / (SourceHeight – [CropTop + CropBottom])
+        Release AR = EncodeWidth / EncodedHeight
+        AR Error % = [(Original AR – Release AR) / Original AR] * 100
+    6.20) Target resolution when resizing to maintain mod2 and reduce AR error:
+        TargetHeight = TargetWidth / [(SourceWidth – [CropLeft + CropRight]) / (SourceHeight – [CropTop + CropBottom])]
+        The correct mod 2 value can also be calculated from the ceiling of TargetHeight if the value is odd, and the floor of TargetHeight if the value is even.
+    6.20.1) Alternatively, the following can be used to confirm the correct resolution is used from the above method by calculating the upper and lower integer limit of TargetHeight:
+        HeightA = floor(TargetHeight + [TargetHeight mod 2])
+        HeightB = floor(TargetHeight – [TargetHeight mod 2])
+        The TargetHeight value (HeightA or HeightB) which results in an aspect ratio error which tends to zero must be used.
+        e.g. TargetWidth: 1280.
+             SourceWidth: 1920, SourceHeight: 1080.
+             CropLeft + CropRight = 0, CropTop + CropBottom = 4.
+             TargetHeight = 1280 / ((1920 – 0) / (1080 – 4)) or 717.33.
+             HeightA = floor(717.33 + (717.33 mod 2)) or 718.
+             HeightB = floor(717.33 - (717.33 mod 2)) or 716.
+             TargetWidth x HeightA = 1280x718 with -0.09% AR error.
+             TargetWidth x HeightB = 1280x716 with 0.19% AR error.
+             -0.09% tends closer to zero than 0.19% does (0.09 < 0.19), therefore, HeightA must be used.
+
+7) [ Framerate / Filters ]
+    7.1) IVTC, deinterlacing, or decimation must be applied as required.
+    7.2) Only smart deinterlacers, such as Yadif, QTGMC, or TFM, must be used.
+        7.2.1) FieldDeinterlace must not be used for deinterlacing.
+    7.3) Only accurate field matching filters, such as TIVTC or Decomb, must be used for inverse telecining (IVTC).
+        7.3.1) Use of MEncoder, MJPEG tools, libav, libavcodec, or FFmpeg as IVTC filters are not allowed.
+        7.3.2) Deinterlacing filters must not be applied to telecined sources as a method of inverse telecine. Use of an accurate field matching filter must be used on telecined sources to recreate progressive frames and must be decimated to remove any duplicate frames.
+            e.g. Yadif must not be used on a telecined source with a frame sequence of PPIIP, as Yadif will attempt to deinterlace every frame, including the progressive frames. TFM and TDecimate should be used in this situation.
+    7.4) Only sharp resizers are allowed. Simple resizers such as bicubic, simple, etc, are not allowed. Only the following resizers are allowed (in order of preference):
+        7.4.1) Spline36Resize/Spline64Resize.
+        7.4.2) BlackmanResize.
+        7.4.3) LanczosResize/Lanczos4Resize.
+    7.5) Sources which contain footage at varying FPS throughout (hybrid sources) and may or may not require IVTC is left to the discretion of the group. The NFO must list a reason as to the final decision.
+        7.5.1) It is assumed that the majority of a title contains enough unique frames at 30,000/1,001 fps to warrant a higher framerate. If it can be proven IVTC/decimating does not result in any loss of unique frames, this is considered a technical flaw.
+            e.g. The native format of a Netflix title is 30,000/1,001 fps but contains some footage filmed at 24,000/1,001 fps. Choosing to encode the entire release at 30,000/1,001 fps is valid.
+    7.6) Native and converted framerates refers to the standard in which the video was produced.
+        7.6.1) NTSC produced video is native to NTSC.
+        7.6.2) PAL produced video is native to PAL.
+        7.6.3) NTSC produced video that is broadcast in PAL is considered as converted video.
+        7.6.4) PAL produced video that is broadcast in NTSC is considered as converted video.
+    7.7) Converted video that has significant artifacts (e.g. blended frames) and cannot be reversed to the native format must be tagged as CONVERT.
+        7.7.1) Converted video which does not have any artifacts does not require the CONVERT tag and must not be nuked for the conversion.
+    7.8) 50 / 60 fps video may be released at 50 / 60 fps or 25 / 30 fps. True 25 / 30 video released at 50 / 60 fps is not allowed and considered a technical flaw.
+        7.8.1) In rare situations, 25 / 50 fps sources should be restored to 24 or 30 fps.
+        7.8.2) In rare situations, 30 / 60 fps sources should be restored to 25 fps.
+
+8) [ Audio ]
+    8.1) Audio must be in the original format provided. Minor adjustments (channel count, adding or removing frames) in order to prevent issues with playback or sync is allowed.
+        8.1.1) Valid lossy codecs are: AAC, AC3, DTS, DTS-ES, E-AC3, MP2.
+        8.1.2) For audio originally packaged in a lossless (LPCM) format, audio must be converted to a lossy format without any down-mixing of surround channels. e.g. AC3 640 Kbps, DTS 1536 Kbps, and FLAC.
+    8.2) Transcoding lossy audio to another lossy format is not allowed.
+    8.3) Sync must not drift at all during the entire release.
+    8.4) Glitches that occur in any audio channel present (e.g. L, R, C, SL, SR, etc.) are considered a technical flaw.
+        8.4.1) Except in situations where glitches are a result of a live-stream or issues with the broadcast or source and are completely unavoidable. It is recommended, but optional, to mention glitches or gaps in playback in the NFO.
+        8.4.2) Unavoidable glitches as a result of broadcast, live-stream, or mastering issues may be propered with a glitch-free version.
+        8.4.3) Glitches are defined as, but not limited to: an audible glitch, missing audio, pops or clicks as a result of encoding, gaps within playback, missing dialogue, muted or muffled audio, echoing.
+    8.5) A release must only contain a single audio track.
+        8.5.1) Dual-language audio tracks are allowed for non-English material only.
+    8.6) If the original language of a title is not English:
+        8.6.1) An English dubbed track is allowed as a secondary audio track.
+        8.6.2) Releases containing only a dubbed audio track must be tagged as DUBBED.
+    8.7) Non-English releases without a secondary English audio track must use a language tag indicating the primary spoken language.
+    8.8) Dupes based on audio format or multiple audio tracks are not allowed, use INTERNAL.
+    8.9) Retail audio may be used in placed of audio tracks extracted from the source. Proof of the source disc must be provided, see section 13.
+
+9) [ Credits / Previously On / Unrelated Footage ]
+    9.1) Credits and 'Previously On' footage must be included and is not optional.
+    9.2) Any unrelated commercials or paid advertisements, regardless of duration (e.g. 1 faded/half opacity frame or 10 seconds) must be completely removed from the release.
+    9.3) Content rating cards and viewer warnings separate to the show must be completely removed and it is considered a technical flaw if present.
+        9.3.1) Except in situations where the content warning is integrated into the opening of the show and cannot be removed, e.g. Cops.
+
+10) [ Container ]
+    10.1) Container must be Matroska (.mkv). MKVToolnix is the recommended muxer.
+    10.2) Custom muxing tools are allowed. However, the output must adhere to the latest Matroska specification and must retain identical compatibility with demuxers as files created with MKVToolnix.
+    10.3) Support for file streaming and playback from RAR is mandatory.
+    10.4) Matroska header compression must not be enabled.
+    10.5) Header stripping or modification is not allowed.
+    10.6) Falsifying or modification of encoding parameters and information is not allowed.
+
+11) [ Subtitles ]
+    11.1) Subtitles for English spoken titles without foreign dialogue are optional, but encouraged.
+        11.1.1) Optical character recognition (OCR) must not result in spelling errors or mistakes.
+            e.g. Zero ('0') used in place of an upper-case O ('o').
+        11.1.2) Minor errors in grammar or punctuation which do not change the meaning of the sentence are allowed, however, it is recommended all errors be corrected.
+    11.2) English spoken titles with foreign dialogue must include a separate subtitle track for forced subtitles.
+        11.2.1) Foreign dialogue subtitle tracks must be set as forced and it is considered a technical flaw if not done correctly.
+        11.2.2) In situations where the source video stream contains hardcoded subtitles for English spoken titles with foreign dialogue, a separate subtitle track for the forced subtitles is not required.
+    11.3) Non-English spoken titles without hardcoded subtitles must include an English subtitle track set as default.
+    11.4) Group watermarks in subtitles are not allowed.
+    11.5) Dupes based on subtitles are not allowed, use INTERNAL.
+    11.6) Propers based on the inclusion of optional subtitles is not allowed.
+    11.7) Fan-made or custom subtitles are not allowed.
+    11.8) Groups must not burn subtitles in to the video stream.
+    11.9) External subtitles located in 'Subs' directories are not allowed.
+    11.10) Must be free of any technical flaws. Including, but not limited to: sync issues, incorrect OCR, invalid default or forced muxing flags.
+    11.11) Subtitles must be extracted from the original source, or obtained from another source which provides the same video.
+        e.g. A source obtained from iTunes does not contain subtitles, but can be extracted from Netflix. These subtitles can be muxed into the final release.
+    11.12) Retail subtitles may be used in place of subtitles extracted from the source. Proof of the source disc must be provided, see section 13.
+    11.13) Adjustments and edits may be made to subtitle tracks.
+        11.13.1) Edits can refer to: adjusting timecodes, fixing grammar, spelling, or punctuation errors, etc.
+        11.13.2) A summary of the changes must be listed in the NFO.
+            e.g. Shifted all timecodes by 2 seconds to ensure sync is maintained throughout, or spelling errors fixed throughout, etc.
+    11.14) Subtitles must be muxed into the final MKV in text based format, i.e. SubRip (.srt) or SubSation Alpha (.ssa/.ass).
+        11.14.1) Retail subtitles must be muxed in text based (.srt/.ssa/.ass) or PGS (.sup) format. PGS is recommended.
+        11.14.2) All subtitle tracks must have the character set (--sub-charset) set to a Unicode format or UTF-8 when muxing.
+        11.14.3) Subtitles must not set as default or forced unless otherwise specified.
+        11.14.4) The correct ISO 639 language code supported by MKVToolnix must be set for all subtitle tracks.
+        11.14.4.1) In situations where the language is not supported by MKVToolnix, 'und' must be used.
+            e.g. en for English, de for German, etc.
+        11.14.5) The correct character encoding
+
+12) [ Packaging ]
+    12.1) Must be packed with RAR files, broken into a maximum of 99 volumes.
+    12.2) RAR5/RARv5.0 is not allowed. RAR3/v2.0 or RAR4/v2.9 must be used.
+        12.2.1) Custom RAR tools are permitted. However, files must adhere to the RAR4/RARv2.9 archive specification and must retain identical compatibility with extractors and demuxers as files created with WinRAR/rar.
+    12.3) Permitted RAR sizes are:
+        12.3.1) 15,000,000 bytes or 20,000,000 bytes for SD. Multiples of these values are not allowed.
+        12.3.2) Positive integer multiples of 50,000,000 bytes for all resolutions.
+            e.g. (50 * 10^6) * n bytes, where n > 0.
+                 (50 * 10^6) * 4 bytes, 100,000,000 bytes, 400,000,000 bytes, etc.
+        12.3.3) Releases must have a minimum of 10 volumes before the next multiple of 50,000,000 bytes is used.
+            e.g. 10 volumes at 50,000,000 bytes can be repackaged to 5 volumes at 100,000,000 bytes.
+                 5 volumes at 100,000,000 bytes cannot be repacked to 4 volumes at 150,000,000 bytes.
+    12.4) Must have SFV and NFO.
+    12.5) RAR, SFV, and Sample files must have unique, lower-case filenames with the group tag.
+        12.5.1) Group tags must be unique to each group, and may be an abbreviated variation of the group name.
+    12.6) Missing RAR(s) or SFV on all sites is considered a technical flaw.
+    12.7) Corrupt RAR(s) (errors upon extraction) is considered a technical flaw.
+    12.8) RAR compression and recovery records are not allowed.
+    12.9) Encryption or password protection is not allowed.
+
+13) [ Proof ]
+    13.1) Proof picture(s) must have unique filenames and placed in a separate directory named 'Proof'.
+        13.1.1) Proof file(s) must be included in every release which requires proof.
+    13.2) Proof must be in JPEG or PNG format.
+    13.3) Proof is required for iTunes sourced files only. A screenshot of the download in progress must be provided.
+        13.3.1) A release which fails to pre with the required proof is considered a technical flaw and can be propered.
+        13.3.2) Proof fixes must be within 24 hours of original pre. Fixes provided after a proper has been released, or after 24 hours has elapsed from the original pre, will not be accepted.
+        13.3.3) It is also recommended, in an unobstructed way, to include the group name within the screenshot written in Notepad or a similar text editor.
+    13.4) Releases which include retail-sourced elements (e.g. retail subtitles) must include source proof.
+        13.4.1) Proof must be photographs of the printed side of all physical discs used with the group tag clearly visible.
+        13.4.2) The minimum resolution for photographs is 640x480px. Disc details must be clear and legible.
+    13.5) Small identifiable or sensitive information may be obscured or redacted.
+    13.6) User identifiable EXIF data must be stripped. It is recommended all EXIF data be stripped.
+
+14) [ Samples ]
+    14.1) All releases must include a 50-70 second sample for each release.
+    14.2) Samples must have unique filenames and placed in a separate directory named 'Sample'.
+    14.3) Samples must be cut from the final video, not encoded separately.
+
+15) [ NFO ]
+    15.1) NFO must be present in every release.
+    15.2) It is recommended, but optional, to include the following information in the NFO:
+        15.2.1) Release name and group.
+        15.2.2) Title and release date.
+        15.2.3) CRF value / bitrate used.
+        15.2.4) Audio format.
+        15.2.5) Source.
+        15.2.6) Relevant IMDB/TVDB/Amazon link.
+        15.2.7) Total video size or RAR count.
+    15.3) It is optional, but highly recommended, that the source for untouched files be mentioned in the NFO.
+
+16) [ Tagging ]
+    16.1) Only the following additional tags are allowed: 
+        ALTERNATIVE.CUT, CONVERT, COLORIZED, DC, DIRFIX, DOCU, DUBBED, EXTENDED, FESTIVAL, FINAL, INTERNAL, LIMITED, MULTI, NFOFIX, OM, PPV, PROOFFIX, PROPER, REAL, REMASTERED, READNFO, REPACK, RERIP, SAMPLEFIX, SOURCE.SAMPLE, SUBBED, THEATRICAL, UNCENSORED, UNRATED, UNCUT, and WS.
+    16.2) Variations of any additional tags are not allowed.
+        e.g. READ.NFO or RNFO is not allowed, READNFO must be used.
+    16.3) READNFO should be used sparingly. Discretion is recommended.
+        16.3.1) The READNFO tag must not be used with PROPER, REPACK, or RERIP. The NFO is required to contain a reason, therefore the tag is redundant.
+    16.4) Tags must only be used once, but the order is left to the discretion of the group.
+        16.4.1) Except in situations where the REAL tag is required to be stacked to differentiate between multiple invalid releases.
+            e.g. A REAL.REAL.PROPER.REPACK is required for a REAL.PROPER.REPACK and PROPER.REPACK.
+    16.5) Tags must be grouped together, period-delimited, and must follow the mandatory directory format, see rule 17.4.
+        e.g. EXTENDED.LIMITED, REMASTERED.REPACK, REAL.PROPER.
+
+17) [ Directory Nomenclature ]
+    17.1) Acceptable characters allowed for directories are:
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        abcdefghijklmnopqrstuvwxyz
+        0123456789.-
+    17.2) Single punctuation must be used. Consecutive punctuation is not allowed.
+        e.g. Show----Name.S01E01, Show.Name....S01E01, Show.-.Name.--.S01E01, etc.
+    17.3) Typos or spelling mistakes in the directory are not allowed.
+    17.4) Releases must follow the matching directory format:
+        17.4.1) Movie.YEAR.<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP
+        17.4.2) Weekly.TV.Show.SXXEXX[Episode.Part].[Episode.Title].<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP
+        17.4.3) Miniseries.Show.Name.Part.XX.[Episode.Title].<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP
+        17.4.4) Daily.TV.Show.YYYY.MM.DD.[Guest.Name].<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP
+        17.4.5) Daily.Sport.League.YYYY.MM.DD.Event.<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP
+        17.4.6) Monthly.Competition.YYYY.MM.Event.<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP
+        17.4.7) Yearly.Competition.YYYY.Event.<TAGS>.[LANGUAGE].<RESOLUTION>.<FORMAT>-GROUP
+    17.5) Named directory arguments formatted inside <> must be included. Optional arguments formatted inside [] may be used in some cases.
+        17.5.1) Episode part refers to episodes, usually cartoons or animation, which split episodes into stories by different directors. Episodes parts must be alphanumeric (a-z, A-Z, 0-9).
+            e.g. The first episode from Season 2 of SpongeBob SquarePants is split into S02E01A/B, etc. https://goo.gl/CVGXKu
+        17.5.2) Episode title and guest names are optional.
+        17.5.3) Guest name(s) used must be in the order in which they appear on the show to avoid any confusion.
+        17.5.4) Tags refers to all permitted tags only, see section 16.
+        17.5.5) Non-English releases must include the language tag and must be used to denote the language of the audio track. English releases must not include the language tag.
+            17.5.5.1) Language tags must be the full name of the language. Abbreviations or language codes are not allowed.
+                e.g. FRENCH, RUSSIAN, GERMAN.
+        17.5.6) Resolution identifiers are only applicable for releases 720p and above, and must precede the format of the release, see section 6 for resolution specifications.
+            e.g. 720p.WEB.H264, 2160p.WEBRip.x264.
+        17.5.7) Format refers to whether the release is transcoded (WEBRip.x264) or untouched (WEB.H264/WEB.x264).
+    17.6) Do not indicate source, ripping, or encoding methods that were used. Use the NFO for any technical details.
+    17.7) All movie releases must include the production year.
+    17.8) Movie distribution tags (FESTIVAL, LIMITED) must be used with discretion. Use boxofficemojo.com or IMDB screen details as references.
+    17.9) Different shows with the same title and format produced in different countries must have the ISO 3166-1 alpha 2 country code in the show name.
+        17.9.1) Except for UK shows, which should use UK, not GB.
+        17.9.2) This rule does not apply to an original show, only shows that precede the original with the same premise or format.
+            e.g. The.Office.S01E01 and The.Office.US.S01E01.
+    17.10) Different shows with the same title produced in the same country which begin in different years must have the year of the first season in the directory.
+        17.10.1) The year is not required for the show broadcasted first.
+            e.g. Second.Chance.S01E01 and Second.Chance.2016.S01E01.
+    17.11) Different shows with the same titles produced in the same country which begin in different years must have the ISO-3166-1 alpha 2 country code followed by the year of the first season in the directory.
+        17.11.1) See rules 17.12 and 17.13 for country code and year explanations.
+            e.g. Wanted.S01E01 (2005), Wanted.AU.S01E01 (2013), Wanted.AU.2016.S01E01 (2016).
+    17.12) Show names which are hyphenated or include punctuation must follow the format shown in the title sequence or credits of the first episode congruent to the list of acceptable characters.
+        17.12.1) If no title card exists, the format listed on the official website for the show must be used, followed by what is listed by the streaming service.
+        17.12.2) Additional titles and names given to an individual season must not be used.
+            e.g. Archer.Vice.S05, Strike.Back.Legacy.S05.
+    17.13) Directory nomenclature and numbering must remain consistent across the lifetime of an individual show or event.
+        17.13.1) Shows which contain acronyms or secondary titles must follow the format used by the first release.
+            e.g. Law.and.Order.SVU.S01E01 is the standard format that must be used for all following episodes, Law.and.Order.Special.Victims.Unit.S01E02 is not allowed.
+                 Shadowhunters.The.Mortal.Instruments.S01E01 is the standard format, Shadowhunters.S01E02 is not allowed.
+        17.13.2) Groups cannot change the directory format of a show after a second release or episode with the same format exists.
+            e.g. 2016-01-01: Law.and.Order.SVU.S01E01 sets the format.
+                 2016-01-08: Law.and.Order.SVU.S01E02 continues the format.
+                 2016-01-09: Law.and.Order.Special.Victims.Unit.S01E01.DIRFIX is not valid as the second episode already exists and continues with the previously defined format.
+        17.13.3) Except in situations where the show has an official change in its name, whereby all official references by the broadcaster or studio is of the new name. This change must be mentioned in the first NFO with the new name with relevant references.
+            e.g. Gold.Rush.Alaska.S01E01 changed to Gold.Rush.S02E01.
+        17.13.4) Official name changes for a show does not include the renaming of individual seasons. Seasonal name changes must be ignored.
+            e.g. Power.Rangers.S01 and Power.Ranges.S07 must be used. Power.Rangers.Lost.Galaxy.S07 must not be used.
+                 Strike.Back.S03, Strike.Back.S05 must be used. Strike.Back.Vengeance.S03, Strike.Back.Legacy.S05 must not be used.
+        17.13.5) Any deviations or changes require sufficient evidence listed in the NFO as to the reason for change.
+    17.14) For shows which begin on network television and continue exclusively on a web-based service, the title or numbering of the show shall not change.
+        17.14.1) Except in situations where the show is not a direct continuation of the previous seasons.
+        17.14.2) If the show continues without any changes, the title of the show shall not change, but will follow the season and episode numbering as listed on the web-based service which purchased the show.
+    17.15) User contributed services such as TVRage, TVMaze, or TheTVDB must not be used as a reference when naming and numbering episodes. It may be used as a general guide; however, official guides must be used.
+        17.15.1) The following order must be used as the primary source for naming and numbering.
+            17.15.1.1) Official website of the show.
+            17.15.1.2) Order and format listed by the streaming service.
+            17.15.1.3) Network guide.
+
+18) [ Fixes ]
+    18.1) Only the following fixes are allowed:
+        DIRFIX, NFOFIX, PROOFFIX, and SAMPLEFIX.
+    18.2) Any other form of fix is not allowed.
+        e.g. RARFIX, SFVFIX, SUBFIX, etc.
+    18.3) All fixes require an NFO and must state which release is being fixed.
+    18.4) A proper may not be released for an error that can be fixed with the above methods, with the exception of proof fixes, see rule 13.3.2.
+    18.5) If multiple releases from a single season require a DIRFIX, a single DIRFIX per season is allowed and is recommended.
+        e.g. Show.Name.S01.DIRFIX.WEBRip.x264-GROUP.
+    18.5.1) If a single DIRFIX is used, all relevant releases and corresponding fixes must be listed in the NFO.
+
+19) [ Dupes ]
+    19.1) Same second releases, with a maximum acceptable variance of two seconds (+/- 2 seconds) between timestamps reported by a majority of pre bots, are not considered dupes and should not be nuked.
+        19.1.1) Timestamps must be considered as whole integers and round half towards zero.
+        19.1.2) The earliest timestamp must be used when considering dupes.
+            e.g. Release A: 1451572201.427158 -> 1451572201
+                 Release B: 1451572203.626645 -> 1451572203
+                 Release C: 1451572204.137665 -> 1451572204
+                 Release B does not dupe Release A: 1451572203 – 1451572201 = 2, i.e. maximum variance allowed.
+                 Release C dupes Releases A and B: 1451572204 – 1451572201 = 3, i.e. 3 > 2.
+        19.1.3) In situations where a release is found to contain a technical flaw, same second dupes which do not exhibit any technical flaws must be considered the final release. Groups may release a DIRFIX to PROPER for their original release, but it is not required.
+            e.g. Release A and Release B are released at the same time. Release A is nuked as containing glitches, Release B then becomes the de facto release and a DIRFIX to PROPER may be released.
+    19.2) WEBRip.x264 dupes WEB.H264/x264.
+    19.3) WEB.H264/x264 does not dupe WEBRip.x264.
+    19.4) WEB.H264/x264 and WEBRip.x264 does not dupe DSR/PDTV.
+    19.5) WEB.H264/x264 and WEBRip.x264 dupes an equivalent AHDTV/HDTV/Retail release.
+        19.5.1) SD WEB.H264/x264 and WEBRip.x264 dupes an SD AHDTV/HDTV/Retail release.
+        19.5.2) 720p, 1080p, 2160p WEB.H264/WEB.x264 and WEBRip.x264 dupes a respective AHDTV/HDTV/Retail release.
+            e.g. 720p.WEB.H264 dupes 720p.HDTV.x264, 1080p.WEBRip.x264 dupes 1080p.AHDTV.x264.
+                 1080p.WEB.H264 does not dupe 720p.BluRay.x264 if 1080p.BluRay.x264 does not exist.
+        19.5.3) Except in situations where the aspect ratio of a WEB.H264/x264 and WEBRip.x264 release exceeds that of its respective AHDTV/HDTV/Retail release.
+            e.g. A 2.39:1 release will not dupe a 1.78:1 retail provided there is clearly more footage visible on-screen. Proof demonstrating this difference is recommended, but not mandatory.
+        19.5.4) Except in situations where a WEB.H264/x264 or WEBRip.x264 release is an uncensored or extended edit of its respective AHDTV/HDTV/Retail release.
+            e.g. An uncensored WEB.H264 release does not dupe HDTV.x264, EXTENDED.WEBRip.x264 does not dupe BluRay.x264.
+    19.6) Releases with hardcoded subtitles (i.e. SUBBED) dupes releases with muxed-in subtitles.
+    19.7) Releases with muxed-in subtitles do not dupe releases with hardcoded subtitles.
+    19.8) Native video streams do not dupe converted video streams.
+    19.9) Converted video streams dupe native video streams.
+
+20) [ Propers / Rerips / Repacks ]
+    20.1) Detailed reasons must be included in the NFO for all repacks, rerips, and propers.
+        20.1.1) Proper reasons must be clearly stated in the NFO, including timestamps and specifics in regards to the flaw when appropriate. A sample demonstrating the flaw in the original release is encouraged, but not mandatory.
+    20.2) Propers are only permitted in the case of a technical flaw in the original release.
+    20.3) If fixing a technical flaw requires transcoding of the file, it must follow the transcoding rules and tagged as WEBRip.x264.
+    20.4) Transcoded releases cannot proper any untouched files.
+        e.g. WEBRip.x264 cannot proper WEB.H264.
+        20.4.1) Unless it is a transcode of a lossless stream correcting the technical flaw, see rule 1.4.
+        20.4.2) Unless it can be proven that all untouched sources are flawed which cannot be repaired by transcoding, but a WEBRip does not exhibit the same technical flaw(s).
+            e.g. iTunes, Amazon, and Netflix only offer the content. Amazon and iTunes sourced files cannot be repaired by transcoding, however a Netflix WEBRip is fine.
+    20.5) Untouched files can proper transcoded releases for any valid technical flaw.
+    20.6) Audio or visual glitches can be propered with a release which does not exhibit the same flaw.
+        20.6.1) In situations where mastering issues results in visual or audio glitches, a release must not be nuked until a valid proper, repack, or rerip using a glitch-free source or master is released.
+    20.7) RERIP must be used for ripping or encoding issues.
+    20.8) REPACK must be used for packing or muxing issues.
+    20.9) Propers are only valid for releases with timestamps after the official start date of this ruleset.
+        20.9.1) Groups cannot proper existing releases using rules created as a result of this ruleset.
+            e.g. If the resolution is not mod 2 or x264 revision used is older than 50 revisions at the time of pre, the release cannot be nuked.
+        20.9.2) With exceptions of a release containing technical flaws which would apply to any ruleset regardless of section. e.g. bad IVTC, sync issues, bad or invalid cropping, etc.
+
+21) [ Internals ]
+    21.1) Internals are allowed to be released for any reason, including, but not limited to: releases containing technical flaws, use of alternate codecs, containers, or settings for experimental purposes.
+    21.2) Any severe technical flaws must be mentioned in the NFO.
+    21.3) Internal releases may only be nuked for technical flaws that are not mentioned in the NFO.
+        21.3.1) In situations where technical flaws are not mentioned in the NFO, groups may provide an NFOFIX to avoid or reverse a nuke.
+    21.4) Using DIRFIX.INTERNAL to avoid a nuke is not allowed, and must be nuked fix.for.nuke.
+
+22) [ Ruleset Specifics ]
+    22.1) This ruleset is to be considered the ONLY official ruleset in regards to WEB and WEBRip releases. It supersedes all previous rules and precedents derived from existing TV and Retail rules in regards to WEB sources.
+    22.2) Rules listed under untouched or transcoded labelled sections only apply to releases of that type and supersede any similar rule mentioned elsewhere.
+        e.g. Rule 6.1 defines SD as resolutions with a maximum horizontal display of 720 pixels, unless the release is considered untouched, in which case rule 1.6 applies.
+    22.3) If there is a question as to the validity of a source used, the release may be nuked within 24 hours of pre requesting a source sample and must include the initial suspicion or reason.
+        e.g. source.sample.requested_suspicion.of.invalid.decimation.
+        22.3.1) The group has 24 hours from the first nuke to pre a source sample that is at least 10 seconds in length.
+        22.3.2) Source samples must be packed with RAR files, and use the SOURCE.SAMPLE tag.
+        22.3.3) Providing insufficient proof to disprove any claims, or a failure to provide any source proof, and the release must remain nuked and can be propered.
+    22.4) The following definition of keywords throughout this ruleset are as follows:
+        22.4.1) Must: the rule is explicit in the definition and is compulsory.
+        22.4.2) Should: implies the rule is a suggestion, and is non-compulsory.
+        22.4.3) Can or may: implies the rule is optional, and is non-compulsory.
+
+23) [ Notes ]
+    23.1) Proof is only enforced for iTunes as all other sources require various unofficial (backdoor) methods of downloading. Creating a fake GUI showing an active download is not difficult, which could result in proof being fabricated. As such, it is pointless to require proof for anything but iTunes, where streams can only be downloaded by a single method.
+        23.1.1) This includes web stores or shops which provide video files via a regular HTTP download. Policing or moderating these methods would be implausible for a single ruleset. Providing screenshots of a download in progress from a website does not prove the file was obtained from an official source.
+    23.2) The burden of proving P2P source material is on the propering group or nuker.
+    23.3) The inclusion of 2-pass in this ruleset should not be misconstrued as preferring it for every release, CRF must always be considered the primary method. Instead, it is encouraged for groups to use 2-pass methods for rare cases when files provided are of extreme high quality.
+        23.3.1) Video which contains an excessive amount of noise may often result in an unnecessary large bitrate. In such situations, using a smaller bitrate using 2-pass can result in a file size improvement with negligible loss in video quality.
+
+[ Signed ]
+
+2HD AEROHOLiCS ALTEREGO AZR AMB3R ANiHLS ANiURL BARGE BATV BiQ C4TV CHAMPiONS DEADPOOL DEFEATER DEFLATE DRAWER FADE FaiLED FiHTV FQM GORE HatchetGear iBlade KOENiG KYR Ltu NTROPiC QCF REGRET RiVER RPTV SH0W SiGeRiS SKGTV spamTV TASTETV TiMELiNE WaLMaRT W4F WNN ZOMBiE
+
+[ Refused to sign ]
+
+CBFM
+
+[ Revisions ]
+ 2016-03-16 - ecb63c67 - Final commit and public release of ruleset. 

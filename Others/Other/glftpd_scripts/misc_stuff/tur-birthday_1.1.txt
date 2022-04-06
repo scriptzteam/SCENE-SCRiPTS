@@ -1,0 +1,13 @@
+Birthday (GL1&2)
+
+Description: A birthday script. Users can add themselfs to the db with when they 
+have their birthday and on that day they will be given a present automatically =)
+The present may consist of leech for 24 hours and/or credits. A percentage can be 
+set to be given leech and a min-max number for how much credits. Has a few more 
+gadgets but thats basically it.
+Ofcourse, it can also announce in the chan to congratulate the user and tell him 
+what he got.
+
+Author:   Turranius
+Version:  1.1
+Added on: 24-Jul-2003

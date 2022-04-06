@@ -1,0 +1,66 @@
+                     Û   Û ÛÛÛÛ  ÛÛÛÛ  ÛÛÛÛ
+                     Û   Û Û   Û Û   Û Û   Û
+                     ÛÛÛÛÛ Û   Û ÛÛÛÛ  ÛÛÛÛ
+                     Û   Û Û   Û Û Û   Û Û  
+                     Û   Û ÛÛÛÛ  Û  ÛÛ Û  ÛÛ v.2.0  
+                                                      
+       ÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ       
+                                                      
+ ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ High Definition Rip RULES ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
+
+
+1) Video:
+
+[1.1]... Seul le XViD (1.x)/x264/ (container MKV pour le x264) sont acceptés.
+[1.2]... Une team se doit de toujours releaser le XViD (1.x) en 2 pass.
+[1.2]... Une team se doit de toujours releaser le x264 en 2 pass au minimum.
+[1.3]... Seul les tailles 720p ou 1080p sont autorisés.
+[1.4]... Un bitrate minimal de 4000 Kbps est exigé.
+[1.5]... Une team est autorisée à faire une release sous forme de DVD5. 
+[1.5]... Une team est autorisée à faire une release sous forme de DVD9 toutefois
+         cette team dois fournir script et logiciel dans le but de diviser
+         cette release en 2 DVD5.
+[1.6]... Les framerates à respecter sont:
+          23.976 Fps pour les rips HD-DVD et Blu-Ray.
+          23.976 Fps pour les rips de chaines HD américaine.
+          25 Fps pour les rips de chaines HD européenne.
+[1.7]... L'aspect ratio original doit être respecter.
+[1.8]... Le cropping d'une release est obligatoire.
+[1.8]... Le chapitrage n'est pas obligatoire.
+
+
+2) Audio:
+
+[2.1]... Seul l'AC3 ou DTS est autorisé.
+[2.2]... Une release XViD (1.x) .avi dois être FR uniquement.
+[2.2]... Une release XViD (1.x) multi est autorisée en container .mkv.
+[2.3]... Une release x264 multi est autorisée en container .mkv.
+[2.4]... Les sous-titres FR sont obligatoire et doivent être muxé dans le .mkv lorsqu'il 
+         s'agit d'une release multi XViD (1.x)/x264 en container .mkv.
+
+
+2) Package:
+
+[3.1]... TITRE.TAiLLE.LANGUE.SOURCE.FORMAT.AUDIO-TEAM.
+[3.2]... Le titre de la release dois être soit francais ou anglais.
+[3.2]... La taille (720p/1080p) d'une release doit toujours se retrouver dans le DIRNAME.
+[3.2]... La langue (FRENCH/MULTI) d'une release doit toujours se retrouver dans le DIRNAME.
+[3.2]... La source (HDRip/HDDVDRip/BRDRip) d'une release doit toujours se retrouver dans le DIRNAME.
+[3.2]... Le format video (XViD/x264) d'une release doit toujours se retrouver dans le DIRNAME.
+[3.2]... Le format audio (AC3/DTS) d'une release doit toujours se retrouver dans le DIRNAME.
+[3.2]... Le nom de la team doit toujours se retrouver dans le DIRNAME.
+[3.2]... La mention .TRUEFRENCH. peut être inscrite dans le DIRNAME lorsqu'une version VQC à 
+         été releaser antérieurement.
+[3.3]... Un dirname ne doit pas excéder 128 caractères.
+[3.3]... Voici la liste des caractères autorisés pour un dirname:
+ 
+                      ABCDEFGHIJKLMNOPQRSTUVWXYZ
+                      abcdefghijklmnopqrstuvwxyz
+                      0123456789.-_
+
+[3.4]... Les sous-dossiers doivent être nommés DISK1/DVD1 : aucun autre nom n'est autorisé.
+[3.5]... Les fichiers RAR doivent être en taile de 50/100mb et nommé en OLD Format (.rxx).
+
+
+ ÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛÛ
+

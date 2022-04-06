@@ -1,0 +1,9 @@
+Release Traffic - Pentagon
+Shell script with a Tcl frontend.
+
+Load the .tcl in your bot, and take a look at the example config.
+If you don't like the output, then edit the putquick line at the end.
+
+Example:
+<you> !traffic A.Movie.DVDR-RELEASE
+<bot> (SiTE) A.Movie.DVDR-RELEASE Was uploaded by 3 users from 1 group (3954 MB) and leeched by 3 users from 2 groups (715 MB)

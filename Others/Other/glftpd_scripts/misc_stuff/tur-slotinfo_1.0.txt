@@ -1,0 +1,17 @@
+Tur-SlotInfo (GL1&2)
+
+Description: A script to display, in irc and/or shell, the gadmin slots information
+on a group.
+Output might look something like
+
+!slotinfo SiTEOPS
+Total users for group SiTEOPS: 4 - No gadmins found.
+
+!slotinfo Osten
+Total users for group Osten: 8 - # of gadmins: 1 (OstChefen)
+Total slots: 8 (8 used, 0 free).
+Leech slots: 6 (4 used, 2 free).
+
+Author:   Turranius
+Version:  1.0
+Added on: 18-Aug-2004

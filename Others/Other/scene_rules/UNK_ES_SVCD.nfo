@@ -1,0 +1,91 @@
+Reglas de Creación de SVCD
+
+
+Punto 1. Solo se aceptará el formato de video MPEG2, así como el formato de audio mp2 
+
+(Layer-2) o bien AC3 (en aquellos casos en que el sonido original sea de gran calidad 
+
+y el ripper así lo prefiera). 
+
+
+Punto 2. Solo se admitirá la conversión DVD -> SVCD o SAT -> SVCD, quedando prohibidas 
+
+conversiones del tipo DivX -> SVCD, VCD -> SVCD, VHS -> SVCD, etc.
+
+
+Punto 3. El formato de video será 480 x 576 que es el 
+
+formato standard de SVCD PAL y 25 FPS, o bien 480 x 480 para el formato SVCD NTSC y 29,97 
+
+FPS.
+
+
+Punto 4. El tamaño máximo por cd será de 80' (~ 790 mb) quedando prohibido el OverSize. 
+
+El tamaño mínimo será de 74' (~ 730 mb).
+
+
+Punto 5. El encoder o programa de compresión deberá 
+
+permitir multipass, y se deberá hacer un mínimo de 2 pasadas en VBR (recomendándose un mínimo 
+
+de 4 pasadas para obtener la mayor calidad posible).
+
+
+Punto 6. En caso de que el video original 
+
+sea entrelazado, se utilizarán filtros para desentrelazarlo, de manera que se corrija tanto 
+
+en entrelazado como el "ghosting".
+
+
+Punto 7. El audio deberá tener un bitrate mínimo de 160 kbs 
+
+y máximo de 224 kbs en estereo. El audio deberá estar normalizado, y se conservará el DRC 
+
+(Dynamic Range Control)
+
+
+Punto 8. La frecuencia de audio se permitirá tanto 44.1 KHz como 48 KHz 
+
+(este último va en beneficio del tiempo de compresión y de la conservación del sincronismo
+
+ a/v, aunque si se demuestra que da problemas de compatibilidad en algunos reproductores se
+
+ forzaría a 44.1 KHz)
+
+
+Punto 9. El audio y el video deberán estar en todo momento sincronizados.
+
+
+Punto 10. Se conservará el Aspect Ratio original del DVD, y se eliminarán las franjas negras 
+
+verticales en aquellos casos en que tengan un tamaño considerable (más de 10 pixels por banda).
+
+
+Punto 11. Se podrán incluir subtitulos "flotantes" en el SVCD, y deberá indicarse en el nfo 
+
+el/los idiomas de éstos, así como su formato (SVCD o CVD)
+
+
+Punto 12. Se deberá crear la 
+
+estructura de directorios de un SVCD (EXT\, MPEG2\, SEGMENT\, etc) compatible.
+
+
+Punto 13. La release se deberá presentar en forma de iso (.cue y .bin) empaquetada con RAR en ficheros de 15 mb, 
+
+con método de compresión STORE.
+
+
+Punto 14. Se añadirá un fichero .SFV correspondiente a la verificación del CRC de los RAR 
+
+anteriores.
+
+
+Punto 15. Será obligatorio incluir un Sample del SVCD de una duración aproximada de 1 minuto,
+
+en formato .mpeg y sin empaquetar, dentro de una carpeta llamada SAMPLE.
+
+
+Nota: el standard SVCD utiliza audio Layer-2 a 44.1 KHz y 224 kbs.

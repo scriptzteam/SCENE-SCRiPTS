@@ -1,0 +1,258 @@
+
+
+
+
+
+
+                        Standard Iso Rules (S.I.R)
+
+ The follwing rules has been developed and improved upon the original ISO
+ rules, which was made and signed back in 1998. This should solve any future
+ questions and make a more structred and better suited ruleset, for the game
+ ISO scene to match future standards.
+
+ These rules shall be identified simply as the Standard Iso Rules (S.I.R).
+
+ Before you can sign the S.I.R rules, you have to be currently scene active
+ and represented by a group name, that have been scene active for mimimum 6
+ months of time.
+
+ These rules has been found acceptable, validated and signed by the following
+ groups: 
+
+
+ The Standard Iso Rules are as follows:
+
+
+ Title.CLONE + TYPE OF MEDIA-GROUPNAME
+
+ Examples: Title.CLONECD-GROUPNAME = Titles on CD
+           Title.CLONEDVD-GROUPNAME = Titles on DVD
+           Title.CLONEBD-GROUPNAME = Titles on BD
+
+ - For titles that has a cloned media as source.
+ - Release sub directories has to be labeled CD1 and CD2 if multiple CD's.
+ - Release sub directories has to be labeled DVD1 and DVD2 if multiple DVD's.
+ - Release sub directories has to be labeled BD1 and BD2 if multiple BD's.
+ - Any mediaformat is acceptable, as long as the nfo features detailed
+   information on how to mount it.
+ - Homemade or third party cloaker tools, such as Y.A.S.U are allowed, as long
+   as the nfo feature detailed information, what was used and how to get the
+   clone working. 
+ - CD clone releases have to be packed with WiNRAR in 15mb files.
+ - DVD clone releases have to be packed with WinRAR in 50mb files.
+ - DVD9 clone releases have to be packed with WinRAR in 100mb files.
+ - BD clone releases have to be packed with WinRAR in 300mb files.
+ - Release file generated sfv and nfo has to be included.
+
+ Title-GROUPNAME
+
+ - For titles that has a physical media or digital download service as source.
+ - Titles with third part install setups like STEAM, are allowed to be removed
+   and replaced by your own buildt setup or homemade installers.
+ - Cracked releases shall feature a seperate directory containing the cracked
+   material.
+ - Digital Download Editions are equal to a store bought CD, DVD and BD media
+   version.
+ - Enhanced Digital Download version after "normal" has to be released as DLC
+   content, unless the additional content changes the game drasticly.
+
+   Drastic game changes are: New levels and enhanced/improved graphics.
+   Non drastic game changes are: New units, cars, objects etc, sprite packs,
+                                 new music and content that does not change
+                                 anything to the general gameplay.
+
+ - Additional bonus material are not drastic game changes.
+ - CD, DVD and BD media versions after Digital Download version isn't allowed,
+   unless the game content(example: movies in HD quality) is enhancing the
+   previously released game content.
+ - Release sub directories has to be labeled CD1 and CD2 if multiple CD's.
+ - Release sub directories has to be labeled DVD1 and DVD2 if multiple DVD's.
+ - Release sub directories has to be labeled BD1 and BD2 if multiple BD's.
+ - CD releases have to be in BIN/CUE format and packed with WiNRAR in 15mb
+   files.
+ - DVD releases have to be in ISO format and packed with WinRAR in 50mb files.
+ - DVD9 releases have to be in ISO format and packed with WinRAR in 100mb
+   files.
+ - BD releases have to be in ISO format and packed with WinRAR in 300mb files.
+ - Release file generated sfv and nfo has to be included.
+
+ Title.DVD-GROUPNAME
+
+ - For titles that previously was relased as a CD edition.
+ - DVD version has to include new or enhanced game material to be allowed.
+ - Demo content, art, previews and movies about how the game was made, isn't
+   enhancing the game material therefore not allowed.
+ - Titles with third part installsetups like STEAM, are allowed to be removed
+   and replaced by your own buildt setup or homemade installers.
+ - Cracked releases shall feature a seperate directory containing the cracked
+   material.
+ - Digital Download Editions are equal to a store bought CD, DVD and BD media
+   version.
+ - DVD media version after Digital Download version isn't allowed.
+ - Release sub directories has to be labeled DVD1 and DVD2 if multiple DVD's.
+ - DVD releases have to be in ISO format and packed with WinRAR in 50mb files.
+ - DVD9 releases have to be in ISO format and packed with WinRAR in 100mb
+   files.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.BD-GROUPNAME
+
+ - For titles that previously was relased as a DVD edition.
+ - BD version has to include new or enhanced game material to be allowed.
+ - Demo content, art, previews and movies about how the game was made, isn't
+   enhancing the game material therefore not allowed.
+ - Titles with third part installsetups like STEAM, are allowed to be removed
+   and replaced by your own buildt setup or homemade installers.
+ - Cracked releases shall feature a seperate directory containing the cracked
+   material.
+ - Digital Download Editions are equal to a store bought CD, DVD and BD media
+   version.
+ - BD media version after Digital Download version isn't allowed.
+ - Release sub directories has to be labeled BD1 and BD2 if multiple BD's.
+ - BD releases have to be in ISO format and packed with WinRAR in 300mb
+   files.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.DVDRIP-GROUPNAME
+
+ - For DVD5(single layer) ripped releases.
+ - The DVDRIP must have some sort of installer and autorun.inf included.
+ - Crack copied with the installer or placed in a seperate directory is
+   allowed.
+ - Max 3 CD's are allowed.
+ - Release sub directories has to be labeled CD1, CD2 and CD3 if the release
+   consist of multiple CD's.
+ - CD releases have to be in BIN/CUE format and packed with WiNRAR in 15mb
+   files.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.DVD9RIP-GROUPNAME
+
+ - For DVD9(dual layer) ripped releases.
+ - The DVD9RIP must have some sort of installer and autorun.inf included.
+ - Crack copied with the installer or placed in a seperate directory is
+   allowed.
+ - Max 1 DVD5 is allowed for a one DVD9 game release.
+ - Max 2 DVD5's are allowed for a two DVD9 game release.
+ - Release sub directories has to be labeled DVD1 and DVD2 if multiple DVD's.
+ - DVD release have to be in ISO format and packed with WinRAR in 50mb files.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.BDRIP-GROUPNAME
+
+ - For BD ripped releases.
+ - The BDRIP must have some sort of installer.
+ - Crack copied with the installer or placed in a seperate directory is
+   allowed.
+ - Both DVD5 and DVD9 rips are allowed.
+ - Max 2 DVD's are allowed.
+ - Release sub directories has to be labeled DVD1 and DVD2 if multiple DVD's.
+ - DVD release have to be in ISO format and packed with WinRAR in 50mb files.
+ - DVD9 releases have to be in ISO format and packed with WinRAR in 100mb
+   files.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.DLC-GROUPNAME
+
+ - For additional game content, which can be found as digital download only.
+   Hence the name DLC: Down Load Content!
+ - DLC has to have some sort of installer and detailed instructions in the nfo
+   on how to install it correctly.
+ - Release sub directories has to be labeled CD1 and CD2 if multiple CD's.
+ - Release sub directories has to be labeled DVD1 and DVD2 if multiple DVD's.
+ - Release sub directories has to be labeled BD1 and BD2 if multiple BD's.
+ - CD releases have to be in BIN/CUE format and packed with WiNRAR in 15mb
+   files.
+ - DVD releases have to be in ISO format and packed with WinRAR in 50mb files.
+ - DVD9 releases have to be in ISO format and packed with WinRAR in 100mb
+   files.
+ - BD releases have to be in ISO format and packed with WinRAR in 300mb files.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.UPDATE VERSION.Update-GROUPNAME
+
+ - DD updates are allowed if they're not freely available and do need modified
+   content to work.
+ - Media cracked updates must have the cracked content included in a seperate
+   directory.
+ - Updates under 100mb in size are packed with WinRAR in 5mb files.
+ - Updates under 500mb in size are packed with WinRAR in 15mb files.
+ - Updates over 500mb in size are packed with WinRAR in 50mb files.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.Plus.AMOUNT OF OPTIONS.Trainer-GROUPNAME
+
+ - Trainers are allowed at max 1 month after the game or latest was scene
+   released. Meaning, that if a game title or update was relased on 6th June,
+   then you got until 6th of July to make the trainer a valid scene release.
+ - Trainer has to be for the newest version of the game title. Meaning, that if
+   there is an update out, then the trainer has to be for the latest version of
+   the game.
+ - Trainers for earlier versions of the game are not allowed.
+ - The trainer has to be packed with WinRAR in one file.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.UNLOCKER-GROUPNAME
+
+ - Unlockers are allowed at max 2 weeks after the game was released. It's done
+   to try and avoid groups from stealing gamesaves or modification files from
+   webpages.
+ - The unlocker has to be packed with WinRAR in one file.
+ - Release file generated sfv and nfo has to be included.
+
+
+ Title.CHEAT-GROUPNAME
+
+ - Cheatcodes or other ways to open up for some cheat possibilities are allowed
+   at max 2 weeks after the game was scene released. It's done to try and avoid
+   groups from stealing the codes or game cheat information from webpages.
+ - The cheat has to be included in a seperate txt/nfo file and packed with
+   WinRAR in one file.
+ - Release file generated sfv and nfo has to be included.
+
+
+ OTHER TYPES OF RELEASES
+
+ - Keygens, Covers, Guides, Multiplayer Hacks, Language selectors and any other
+   PC game iso relevant releases are of course allowed, as long as they consist
+   of some value to expand the pleasure of the release they are ment for.
+ - The releases has to be packed with WinRAR in one file.
+ - Release file generated sfv and nfo has to be included.
+ - BETA releases not allowed.
+
+
+ RELEASES IN OTHER LANGUAGES
+
+ - Foreign releases are of course allowed as long as the language isn't
+   featuring in another version of the game title.
+ - Non english releases has to be tagged with TYPE of LANGUAGE
+
+ Examples: Title.GERMAN-GROUPNAME
+           Title.ITALIAN.DVDRIP-GROUPNAME
+           Title.FRENCH.Plus.AMOUNT OF OPTIONS.Trainer-GROUPNAME
+           Title.SPANISH.UNLOCKER-GROUPNAME
+           Title.POLISH.UPDATE VERSION.Update-GROUPNAME
+
+ - Game iso releases with multiple LANGUAGES than previously released editions,
+   has to be tagged with MULTI and NUMBER of LANGUAGES.
+
+ Example: Title.MULTI3-GROUPNAME
+
+ - Keep in mind that a release, has to have a LANGUAGE not yet scene released.
+   Otherwise it's a nuke for duping other languages.
+
+
+ (c) Standard Iso Rules June 2010
+
+
+
+<END>

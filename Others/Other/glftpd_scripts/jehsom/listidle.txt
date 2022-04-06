@@ -1,0 +1,58 @@
+#!/bin/bash
+# -------------------------------------------------------------------------
+# Jehsom's listidle v1.0 - Lists inactive users & how long they've been idle
+# Copyright (C) 2001 jehsom@jehsom.com
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+# -------------------------------------------------------------------------
+# 
+# listidle goes through all your users in your glftpd users directory,
+#   and finds all the users that have not logged in for over $DAYS days.
+# If you want to implement this as a script that can be run from inside
+#   glftpd, for example SITE LISTIDLE, put these lines in glftpd.conf:
+#       site_cmd LISTIDLE       EXEC    /bin/listidle.sh
+#       custom-listidle         *
+
+# Path to your userfiles. If using this program standalone, should be full
+# path including rootpath. If you want to implement it as SITE LISTIDLE,
+# should be relative to the glftpd rootpath.
+USERPATH="/ftp-data/users"
+
+# Warn about users who have been idle for more than this number of days.
+DAYS="21"
+
+#######################
+### Ignore the rest ###
+#######################
+
+cd $USERPATH || { echo "Could not change to $USERPATH"; exit 1; }
+currtime=$(date +%s)
+for user in *; do
+    case "$user" in *default*) continue ;; esac
+	[ -f $user ] || continue
+	grep -E "^FLAGS .*6.*$" $user > /dev/null && continue
+	laston=$(grep "^TIME " $user | cut -f3 -d ' ')
+	[ -z "$laston" ] && continue
+	ago=$(( ($currtime - $laston) / 86400 ))
+	if [ "$ago" -gt "$DAYS" ]; then
+		groups=$(grep "^GROUP " $user | cut -f2 -d ' ' | tr '\n' ,)
+		case "$groups" in 
+			*$1*)
+				echo "$user@$groups inactive $ago days. ";;
+			*)
+				;;
+		esac		
+	fi	
+done

@@ -1,0 +1,435 @@
+.------------------------------.
+  Glftpd Questions and Answers
+`------------------------------'
+
+Q)  How do I upgrade glftpd?
+A)  Follow instructions in the UPGRADING file. If you're upgrading more than
+    one version up, it is recommended that you upgrade one version at a time,
+    log in to the site and globally change one of your users' attributes to
+    make glftpd re-write all userfiles (and do some conversions if necessary).
+    For example, log in as siteop and do "site change * max_ulspeed 0" after
+    each version upgrade.
+
+Q)  How do I restart glftpd?
+A)  Log off and back on. Glftpd reads its config file each time a user logs on.
+    If someone tells you to HUP inetd, tell him he's an idiot and doesn't
+    understand how glftpd works. HUPping inetd is needed after making changes
+    to inetd.conf, not glftpd.conf.
+
+Q)  Can I turn IP checking off?
+A)  To turn it off for all existing users and any future users, type this at
+    the shell:
+    ls /glftpd/ftp-data/users |while read usr; do echo "IP *@*" >>$usr; done
+    Change the path if you installed glftpd elsewhere.
+
+Q)  I want to create a symlink in /incoming that points to another partition.  
+    The link is there, but users are not able to change directory to it. 
+A)  For symlinks to work right, the target of the symlink must be in the glftpd
+    root path.
+    It is best to just mount the partition under /glftpd/site.
+    A symlink from /glftpd/site to /glftpd/bleh will have to be without the
+    rootpath, so it will go from /site to /bleh.
+    The above will only work if users' homedir is set to /. Users can't access
+    anything outside of their homedir, so if it is /site, they won't be able to
+    jump to /glftpd/bleh.
+    Otherwise, your links need to start with . and they can't have the
+    rootpath or homedir in them.  Examples:
+    ln -s ./incoming/mydir mydirshortcut
+    ln -s ../archive/games games
+    ln -s /incoming/uploads uploads
+    
+    The reason for this limitation is for security purposes.  When a user logs
+    in, he is "chrooted" to /glftpd (or whatever the rootpath is), so it is
+    physically impossible to access anything outside.  This prohibits any user
+    logged in from browsing outside the glftpd root directory.  If you're
+    familiar w/ wu-ftpd and telnet, normal users are permitted to browse
+    anywhere permissions permit. This is not a desired feature for this server,
+    and we feel the "cost" is worth the security.
+
+    You can also use the mount -bind command but this is for use with the
+    latest mount version on linux in 2.4+ kernels. This lets you mount a drive
+    to more than one mountpoint. Another option is to export a directory
+    outside of /glftpd via nfs and then nfs-mount it inside - but this will
+    slow things down.
+
+Q)  I want to setup a more "open" site.  I would like one login/password for a
+    multitude of users.  Essentially I want an "anonymous" style login.
+A)  Create the account w/ the password you desire, and set IP0 to *@*
+    (site addip <user> <pass> *@*).
+    If you want to use an email for password, or any password, see glftpd.docs
+    for syntax on the site chpass command.
+    You also need to set the number of simultaneous logins to what you need it
+    to be.  (site CHANGE <user> NUM_LOGINS 0) 0=infinite
+    (Update) In 1.15.6+ there is a new flag (8)..which is for anon users.
+    e.g.: 	site adduser mp3 mp3 *@*
+		site chpass mp3 * for any password
+		site chpass mp3 @ for email-style passwords
+
+    Then edit the ratio and credits...when the mp3 user logs in, the mp3
+    account is read in as a template...so each mp3 user that logs in will have
+    a fresh ratio and credits.
+
+Q)  GREAT! that works just like I need it to.  Now I want to add a "set ratio
+    per login" so each individual that logs in will start w/ a fresh ratio.
+A)  Only possible in 1.15.6 and above. Read above.
+
+Q)  How do users change their own password?
+A)  site PASSWD <password>; and as always READ glftpd.docs
+
+Q)  Where can I get a good FAQ on glFTPD?
+A)  *shrug* Your reading it.
+
+Q)  Where can I always find the absolute positively latest version of glFTPD?
+A)  http://www.glftpd.com will contain latest version, however check in #glftpd 
+    on efnet too.
+
+Q)  Where can I get scripts, and utilities for glFTPD?
+A)  Check the web site:  <http://www.glftpd.com>   
+
+Q)  When I create a directory for users to upload to, what permissions do I
+    need to give it?
+A)  777.  chmod 777 <directory>, and add the path to the rights section
+    of /etc/glftpd.conf. `man chmod` for more information.
+
+    All directories you want users to access through glftpd should be 755,
+    and incoming dirs (dirs users upload to) should be 777.
+
+Q)  How do I make dated directories automatically?
+A)  Crontab /glftpd/bin/dated.sh to run at or right after midnight.
+
+Q)  What is a NUKE?
+A)  When the user(s) uploads a file and a person with the nuke flag sees reason
+    for it to not be on the site, they can NUKE it.  This typically renames
+    the directory.  The rename format is definable in the config file.
+    Nuking is designed to take away the credits and transfer statistics for
+    the files from people that uploaded them.
+
+Q)  How do I disable DUPE checking?
+A1) Add nodupecheck /path/to/be/excluded/from/dupechecking to your config file.
+A2) Change your dupe_check argument to 0 in config file to disable all paths.
+
+Q)  Where can I get the source code?
+A)  Nowhere, it is not released for several reasons.
+    1. Evil hackers could find exploits easier and not report them.
+    2. Wanna-be 'coders' would start many variants of glftpd that they would
+       claim are their own and they probably wouldn't share any work they do.
+    There are several people with access to the source code; when we are
+    confident that #1 is not a big issue and when we no longer care about #2,
+    we will release the source code.
+
+Q)  Does it matter what distribution of Linux I use?? 
+A)  99.9% of distribution problems are user related.  Users of Redhat report
+    the most problems by percentage.
+    Need I say more?
+
+Q)  I have a question, but its not on this list.
+A)  Read the glftpd.docs and see if you can find an answer.
+    If you have a good question that should be here, contact us in #glftpd on
+    efnet or through web pages.
+
+Q)  Where can I find a Windows version of glFTPD?
+A)  See next question.
+
+Q)  When will a Windows version be released?
+A)  See previous question.
+
+Q)  What does the "gl" in glFTPD stand for?
+A)  -The creator's answer:  He keeps telling us it's because he's "Good Looking".
+    -More likely answer:   His nick is GreyLine.
+
+Q)  I get "site: command not found"? What am I doing wrong?
+A)  Are you logged INTO the ftpd?  Most likely not. (moron)
+    Type "ftp localhost portnumber", log in, try it again.
+
+Q)  When trying to use a site command, I get "?Invalid command". Why?
+A)  Some old ftp clients don't support site commands directly.
+    Try "quote site bleh" instead.
+
+Q)  How do I edit the dirlog?
+A)  Make a dirlog editor, the source was released to use as a base.
+    (Update) Thanks to evilution there are several utils to manipulate dirlog,
+    look in /glftpd/bin/sources.
+
+Q)  Where can I find a list of the changes that have occurred to glFTPD
+    throughout its life?
+A)  In the CHANGELOG included in the distribution package.
+
+Q)  How do install Linux ?
+A)  *SMACK*
+
+Q)  I have this GREAT idea for glFTPD.  How do I go about communicating
+    this idea back to the author(s)?
+A1) Post it to the forums (links to forum available at the glFTPD websites)
+A2) Drop in #glftpd on efnet and talk to an op.
+
+Q)  How can I have more then 1 simultaneous login?
+A)  site CHANGE <user> NUM_LOGINS 0 (0=infinite).
+    READ the included glftpd.docs
+
+Q)  How can I get the most out of my glFTPD experience?
+A)  READ glftpd.docs
+
+Q)  How can i keep any user from showing up in the user list and in the
+    stats commands (wkup, aldn, etc)?
+A)  Chown 99.99 userfile (located in /glftpd/ftp-data/users).
+
+Q)  If i have users on my shell but i dont want them browsing my ftp site,
+    what do i do to disallow them from doing this??
+A)  You can install glftpd into /jail/glftpd, chmod jail to 700 and chmod
+    glftpd 755 and leave everything else default.
+
+Q)  How do i give someone unlimited credits??
+A)  Site change user ratio 0....can you guess whats coming next??
+    This is all in the glftpd.docs file.
+
+Q)  Hey i can't do site users?? This must be a bug??
+A)  You need the +H flag. Try "site flags" for help, or rtfm.
+
+Q)  What do all the dirs mean?? I see them but dont understand there purpose.
+A)  /glftpd
+	- bin (This is where all the bins are stored for the server)
+	- etc (This is where the passwd and group files are...dont worry about
+	       the passwd- and group- they are only backups)
+	- dev (This is where null and zero are stored. Some scripts need them)
+	- lib (This is where all the libs are stored for all the external
+	       programs executed under glftpd.)
+	- ftp-data (This is where all the data for the server is stored)
+		- byefiles (This is where the user.bye files are stored. When a
+		  user is deleted, you can put the reason for the sudden
+		  departure of their account in there to be shown next time
+		  they try to log in)
+		- help (This is where the help files are stored. You can change
+		  how they look, they're just regular text files)
+		- logs (This is where the log files are. Usefull for siteops)
+		- misc (This is where some misc text files are kept, like
+		  welcome message, goodbye, etc. This is where you put most of
+		  your cookies to be displayed when users login, etc.)
+		- text (This is where all of the texts are stored. Go in and
+		  read them to get an idea what their purpose is)
+		- users (This is where the user data is stored. Sometimes it's
+		  easier to edit those files then to do it from the ftpd, but
+		  be warned you could fuck it up and hose the account)
+
+Q)  If i want to put glftpd on port 21 how do i do this?? I have tried and it
+    doesnt seem to work.
+A)  The standard ftp client under linux needs the line "ftp 21/tcp" in the
+    /etc/services file. Other clients should work fine. If you need the
+    standard ftp client to work, just keep your old "ftp 21" line in addition
+    to the "glftpd 21/tcp" line in the services file.
+
+Q)  I get a 220 Server Error: (SHMGET) Failed!, how do i fix this?
+A)  When you change the max_users you need to kill off all glftpd sessions
+    and stop running gl_spy.
+    To solve this, type: ipcs
+     ------ Shared Memory Segments --------
+     key        shmid     owner     perms     bytes     nattch    status      
+     0x00000000 0         nobody    600       46084     11        dest        
+     0x0000dead 2945      root      644       15840     0               locked
+     ------ Semaphore Arrays --------
+     key       semid     owner     perms     nsems     status      
+     ------ Message Queues --------
+     key       msqid     owner     perms     used-bytes  messages    
+     0x00000000 0         root      700       0
+     
+     For linux type: ipcrm shm shmid (In this example, shmid is 2945)
+     For FBSD type: ipcrm -m shmid
+Ab)  Make sure your kernel isn't screwing with shared memory.  Some "secure"
+     kernels (in new Mandrake linux distributions) are doing this.
+
+Q)  My rootpath is / and now help doesnt work anymore, please help!!
+A)  /glftpd/ftp-data/help/site.help needs to be edited to reflect the root_path
+    change.
+
+Q)  I get "200 username not unique" how can i fix this??
+A)  You have an entry in your /glftpd/etc/passwd file with the same user name.
+
+Q)  My time in glftpd isn't right, how do i fix this??
+A)  locate localtime ; cp /pathto/localtime /glftpd/etc
+    If that doesn't work, try copying it to /glftpd/usr/lib/zoneinfo or
+    /glftpd/usr/share/zoneinfo). Obviously, you need to create /glftpd/usr
+    and the share/lib dirs under it.
+
+Q)  My time in gl_spy isn't right, how do i fix this??
+A1) Don't use redhat
+A2) Locate localtime ; cp /pathto/localtime /usr/lib/zoneinfo
+
+Q)  What if i want to give a user a 3:1 ratio??
+A)  You can't, currently glftpd only support 1:x ratio.
+
+Q)  Site alup and other stat commands don't show the header/footer files
+    for all sections besides the default one.  How do I fix it?
+A)  You need to copy the head/foot/body files to SECTIONNAMEfile.head, etc.
+    For example, if you add a section called ISO, you need to do this:
+    cp alup.head ISOalup.head; cp alup.body ISOalup.body, etc, for every stats
+    file in the text dir.
+
+Q)  I deleted one of my logs from ftp-data/logs and glftpd doesn't re-create it,
+    what do I do?
+A)  Touch file.log (make sure you are root when you do this).
+
+Q)  How do I prevent subdirectories of a directory from being shown in site new?
+A)  Change your dirlog entry in config file to have a / at the end of the path.
+    For example: dirlog /site/incoming/*/ *
+    The above will log /site/incoming/Newdir but not /site/incoming/Newdir/dir1
+
+Q)  Does glftpd support upload resume??
+A)  Yes, but: 
+              1) The user must have resume permissions for that file (set in
+                 glftpd.conf)
+              2) The uploader must be the file's owner
+              3) The file's permissions need to be 644 (default in glftpd) 
+    Keep in mind that you might need to disable post_check (zipscript) in the
+    directory where you want resume to work - or modify it not to delete
+    incomplete files.
+    Another problem people encounter is the file_names setting in glftpd.conf,
+    which renames files people upload. This confuses many clients into thinking
+    the file doesn't exist yet, and they try to upload it from the beginning,
+    but when glftpd renames the new file name, it results in overwriting of
+    the old file (unless the user has no overwrite permission, which results
+    in an error).
+
+Q)  I get "200- Lock on password file failed." when trying to add a user
+A)  cd /glftpd/etc; cp passwd bleh; rm -f passwd; mv bleh passwd
+
+Q)  My glftpd won't start and my syslog says "Chroot failed." What's wrong?
+A1) You aren't running glftpd as root (the default line for inetd.conf runs
+    it as root, so you must have changed it)
+A2) Your rootpath is incorrect in glftpd.conf.
+
+Q)  How do I make symlinks on my site look like regular directories?
+A)  Add the -L option to your lslong options in glftpd.conf. exmp: lslong -alL
+
+Q)  How do I ban a specific IP from my site?
+A1) Ban it in your firewall.
+A2) If you're using tcpd in inetd.conf to call glftpd (this is default),
+    ban the IP in /etc/hosts.allow. Exmp: glftpd: ALL except 1.2.3.4
+    For more info, try "man tcpd" or "man 5 hosts_access" on slackware
+A3) To ban that IP for only specific user(s), add it to a file, with a ! in
+    front, and add that file as IP0 of that user. See addip syntax in docs.
+
+Q)  I can connect to newly installed glftpd from localhost, but not from
+    outside.
+A1) Add *@* to the user you're trying to connect as (yes, if your IP is not
+    added to any users, you won't even get a login prompt).
+A2) Add "glftpd: ALL" to /etc/hosts.allow (unless you didn't use tcpd in
+    inetd.conf)
+A3) Make sure you're not using a firewall of some kind.
+A4) If you're using "valid_ip" in config file, comment it out and try again.
+A5) Check glftpd logs and system logs (make sure your system logs errors)
+
+Q)  I make changes to glftpd.conf but they don't take effect when I re-login.
+A)  Are you modifying the correct config file? By default it's /etc/glftpd.conf
+    , not /glftpd/etc/glftpd.conf or /glftpd/glftpd.conf.
+
+Q)  How do I make new users start at a specific UID, like 10000?
+A)  Edit /glftpd/etc/passwd and change last user's UID to 10000.
+
+Q)  Can I disallow users to see or enter a directory but allow them to enter
+    its subdirectory via a symlink?
+A)  Yes. Add these lines to your config file:
+    privpath /site/hiddendir/yourdir *
+    privpath /site/hiddendir =NoOne
+    (make sure you don't have a group called NoOne)
+    Then go to /glftpd/site and make a symlink, ie.
+    ln -s ./hiddendir/yourdir link_to_yourdir
+    Note: once you cd to link_to_yourdir, you can't do "cd .." because ".." is
+    protected. To get out, either "cd /" or make a symlink in yourdir that
+    points to "../.." . Also, some clients will automatically cd to the proper
+    parent when you are in a symlink-directory, but only if they know it's a
+    symlink. If you use ls -L (or if your lslong setting in config file
+    has the L in its options), the symlink appears as normal directory so the
+    client thinks it's just a regular directory.
+   
+Q)  Can I restrict one command but not others in a case of bundled commands,
+    like "laston" and "onel", which are both controlled by the "-info" setting?
+A)  Yes. Here is what you need to add to restrict "site laston" to siteops only,
+    without affecting other commands controlled by "-info", to glftpd.conf:
+    site_cmd laston is laston
+    custom-laston 1
+    
+Q)  Why do my new users start in / instead of /site when they log in.
+A)  Are you missing the HOMEDIR line from your default.user file? Don't edit
+    default.* files with useredit.
+
+Q)  How do I get gl_spy to use color?
+A)  Run it in console, or if you have SecureCRT, set terminal to Linux, font
+    to vt100, and on the linux box set TERM to crt (TERM=crt in bash)
+
+Q)  Why does glftpd only recognize GIDs that are multiple of 100? Why do GIDs
+    seem to increase by themselves, yet glftpd still displays the same one?
+A)  Glftpd uses GID to store the number of times a file was downloaded (it
+    stops counting at 99). So, if a file's GID is 428, it means the real GID is
+    400 and the file was downloaded 28 times. This will increase each time the
+    file was downloaded until it reaches 499. The number of times the file was
+    downloaded is displayed in long directory listing (ls -l) if you have color
+    turned on (so as not to interfere with windows clients, which require color
+    to be off).
+
+Q)  Can I "unbind" one of the bundled site commands so I can have different
+    permission for it than for the rest?
+A)  No, but there is a work-around. For example, to allow everyone to execute
+    stat commands (wkup, daydn, etc) but only allow siteops to execute site
+    traffic, do this:
+     1. Add a custom command traffic: "site_cmd traffic is traffic"
+     2. Add permissions for your new command: "custom-traffic 1" (this will only
+        allow siteops to execute site traffic)
+     3. Your -stats permissions should be "*" to allow everyone to use them.
+    If you do it the other way around, giving "site traffic" * access and
+    "-stats 1", it will not work because site traffic now uses 2 sets of
+    permissions, one with the custom-traffic setting, and the other one with
+    the -stats setting; user has to pass both to be able to execute the command.
+
+Q)  Does glftpd run stand-alone, without inetd?
+A)  No, you need inetd, xinetd, or some other program that works in a similar
+    fashion. You need to run glftpd as root, anyway, so why not use inetd?
+
+Q)  Will glftpd support using system passwd file (/etc/passwd)?
+A)  No. Glftpd needs a userfile for each user; normal unix users don't have
+    any such thing, so you would have to generate a userfile for every person
+    even if glftpd supported it. It's just as easy to write a script that
+    will add the user to glftpd (by either modifying /glftpd/etc/passwd and
+    creating the userfile in ftp-data/users, or logging into glftpd and using
+    site commands).
+
+Q)  Does glftpd support /etc/shadow?
+    Shadow is simply the same thing as passwd but only readable by root.
+    Glftpd's passwd file can be made 600 already, so you could say glftpd always
+    supported it. For more info see the question above.
+
+Q)  What does the multiplier in 'site nuke' do?
+A)  Multiplier is a penalty measure. If it is 0, the user doesn't lose any
+    credits for the stuff being nuked. If it is 1, user only loses the
+    amount of credits he gained by uploading the files (which is calculated
+    by multiplying total size of file by his/her ratio). If multiplier is more
+    than 1, the user loses the credits he/she gained by uploading, PLUS some
+    extra credits. The formula is this: size * ratio + size * (multiplier - 1).
+    This way, multiplier of 2 causes user to lose size * ratio + size * 1,
+    so the additional penalty in this case is the size of nuked files. If the
+    multiplier is 3, user loses size * ratio + size * 2, etc.
+
+Q)  Listing directories through glftpd on my nfs/samba mounted drives, or in
+    directories with tons of subdirectories in them, takes a very long time,
+    but doing the same from the shell is very fast. What's wrong?
+
+A)  Disable your use_dir_size option for those directories or completely.
+
+Q) I think i found a bug, where do i report it?
+A) First you should CHECK if it really is a bug and not an user or configuration
+   error (this happens alot). If you are convinced its a bug you should go to
+   #glftpd@EFnet and shout out or mail the report to <bloody_a at glftpd.com>.
+
+Q) I am running 2 glftpd deamons and one of them always gives errors when i am
+   trying to do a transfer or a listing.
+A) If you are running more then one deamon you should always have atleast 1 port
+   between them!
+
+Q) My botscript is not working.
+A) Do you have {glftpd-root}/bin/sh, and is it working?
+
+Q) I turned off oneliners in the config and now REST or some other commands do not work.
+A) When oneliners are turned off but the welcome.msg contains the %ONEL super cookie it 
+   will display an error that oneliners are turned off. But because the cookie does not 
+   know if there will be more lines it does not supply the multiline indicator and some 
+   ftp clients might then not read the returning information properly. 
+   To fix this you need to remove the %ONEL cookie from your welcome.msg file.
+

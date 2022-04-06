@@ -1,0 +1,263 @@
++-----------------------------------------------------------------------------+
+¦                                                                             ¦
+¦                 XViD Rules SPANISH SCENE (ENGLISH VERSION)                  ¦
+¦                                                                             ¦
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¦                          +---[ RELEASE RULES ]---+                          ¦
+¦                                                                             ¦
+¦  Length of Video:                                                           ¦
+¦   - PAL (25 fps)                                                            ¦
+¦   - The length of a Release has to be of at least 50 minutes in order to    ¦
+¦     use the full capacity of the recording media.                           ¦
+¦     If the above is met the release has to be of at least 690mb and         ¦ 
+¦     no more than 702Mb (sizes between 353 and 680 will not be allowed).     ¦
+¦     and 1380mb and 1404mb (sizes between 703 and 1379 will not be allowed)  ¦
+¦     if the length excedes 100 minutes except Screeners where the size will  ¦
+¦      not be a Nuke reason.                                                  ¦
+¦   - TV-Show Rules will be discussed in a later stage                        ¦
+¦   - Movies larger than 700mb (EG. 1400mb) must not be divided in different  ¦     
+¦     parts                                                                   ¦
+¦                                                                             ¦                                                                               ¦									      ¦
+¦  AUDIO:                                                                     ¦
+¦   - MUST BE MP3 (vbr 128-192) or AC3 (AC3 transcoded is not allowed).       ¦
+¦   - MUST BE STEREO for Stereo sources and MONO for MONO sources             ¦
+¦   - MUST BE VBR! NO CBR MP3!                                                ¦
+¦   - The MP3 tracks must come in the original frecuency found on the DVD.    ¦
+¦     i.e. 48khz for 48khz and  44.1khz for 44.1khz.                          ¦
+¦   - MP3 files must be normalized.                                           ¦
+¦   - ABR is considered a VBR technique.                                      ¦
+¦   - AC3 MUST BE used both correctly and wisely, the ripper will decide      ¦
+¦     when to use it. Including AC3 or not will not be a NUKE reason          ¦
+¦   - MONO AC3 WILL NOT BE ALLOWED. If that is the case it should be          ¦
+¦     reencoded to be MP3 Mono.                                               ¦
+¦   - Multiple Language RLS ARE NOT Allowed! (Use INTERNAL!)                  ¦
+¦   - 1 cd ac3 unless the pixel frame is met.                                 ¦
+¦                                                                             ¦
+¦  VIDEO:                                                                     ¦
+¦   - WaterMarks will not be allowed!                                         ¦
+¦                                                                             ¦
+¦  Framerate:                                                                 ¦
+¦   - Must be as close as possible to the original rls                        ¦
+¦                                                                             ¦
+¦  Codec:                                                                     ¦
+¦   - MUST BE XViD (DIVX will be BANNED)                                      ¦
+¦   - 2 passes must be used for encoding.                                     ¦
+¦   - NO DUPES BASED ON CODEC, USE INTERNAL!                                  ¦
+¦                                                                             ¦
+¦  Resolution and Aspect Ratio:                                               ¦
+¦   - Width: 512 - 672 pixels for WS Movies (Letterbox is considered WS)      ¦
+¦            512 - 576 pixels for FS Movies (only 4:3).                       ¦
+¦   - Height and Width: Must be mutiples of 16.                               ¦
+¦   - Cropping must be as good as possible, movies with excesive crop         ¦
+¦     can get nuked as they dont meet the above stated.                       ¦
+¦     Some movies present a variable AR, in this case the crop will be done   ¦
+¦     over the image that has the largest ammount of pixels.                  ¦
+¦   - The Rls must be within a 2.5% difference from the original AR.          ¦
+¦     Calculating AR % error: (Release AR - Original AR)/Original AR x 100    ¦
+¦                                                                             ¦
+¦  Subs:                                                                      ¦
+¦  -  OPTIONAL- ONLY if the above is met, unless they are forced subs which   ¦
+¦     will have to be included for parts with script, when speaking or signs  ¦
+¦     are shown in a different language.                                      ¦
+¦   - VOBSUB is the prefferred format as it doesnt use OCR.                   ¦
+¦     Otherwise any format supported by VOBSUB is also allowed (SRT)          ¦
+¦   - The subtitles MUST come with the video track and must not be burned     ¦
+¦     burned with the image. (You have to be able to show them or not),       ¦
+¦     this can be a NUKING reason.                                            ¦
+¦   - The subtitles not burned in the image must come compressed in rar format¦
+¦     to the highest level of compression and will come in a folder labeled   ¦
+¦     'Subs'. THEY MUST NOT COME COMPRESSED WITH THE MOVIE.                   ¦
+¦   - If a group decides to start a show with subs and another group takes    ¦
+¦     over the show it will be resumed with subs. It will not be a NUKE reason¦
+¦     if the group decides not release them unless they are forced.           ¦
+¦                                                                             ¦
+¦  Packaging:                                                                 ¦
+¦   - All RLS must be in AVI, not in BIN/CUE.                                 ¦
+¦   - Password protected rls will be nuked                                    ¦
+¦   - They have to be splitted in  RAR and broken into 15/20MB files.         ¦ 
+¦   - Compression on the RLS will not be tolerated                            ¦
+¦   - Recovery and MD5 are recommended.                                       ¦
+¦   - MUST come with a SFV.                                                   ¦
+¦   - MUST COME WITH AN NFO.                                                  ¦
+¦   - NFO MUST HAVE:                                                          ¦
+¦       GRP NAME(optional)                                                    ¦
+¦       Title                                                                 ¦
+¦       RLS DATE(optional)                                                    ¦
+¦       Video Size                                                            ¦
+¦       Framesize/Aspect Ratio                                                ¦
+¦       Audio bitrate                                                         ¦
+¦       Video bitrate                                                         ¦
+¦       Lenght                                                                ¦
+¦       IMDB/Amazon/web sites with information of the rls                     ¦
+¦       Amount of RARS (i.e. 50x20MB)                                         ¦
+¦       Summary (optional)                                                    ¦
+¦                                                                             ¦
+¦  Credits:                                                                   ¦
+¦   - Credits can be encoded in a diferent bitrate only if the lenght         ¦
+¦     excedes the ammount of CDS to use. For example 103 mintes with source   ¦
+¦     pal at 25 FPS.                                                          ¦
+¦   - Movies with scenes inside the credits cannot be downcoded               ¦
+¦   - Credits MUST BE INCLUDED! (except screeners)                            ¦
+¦                                                                             ¦
+¦  Samples:                                                                   ¦
+¦   - REQUIRED!                                                               ¦
+¦   - 1 whole minute included in a different folder labeled 'Sample'          ¦
+¦     This File CANNOT be from the Beggining of the rls.                      ¦
+¦   - MUST BE Cut from the video and not reencoded                            ¦
+¦                                                                             ¦
+¦  Propers:                                                                   ¦
+¦   - Propers will only be allowed if there is a technical failure during     ¦
+¦     coding (i.e. Bad IVTC, Interlacing, bad number of CDs, Bad Cropping...) ¦
+¦   - Propers based on a ripper decission will not be allowed                 ¦
+¦     (i.e. No. of CDs, AC3 or MP3, etc).                                     ¦
+¦   - Desync only allowed if the desync is +-500ms for a period of at least   ¦
+¦     20 seconds.                                                             ¦
+¦                                                                             ¦
+¦  WS vs. FS:                                                                 ¦
+¦   - MOVIES FS AFTER WS ARE NOT ALLOWED                                      ¦
+¦   - Letterboxed DVDs are not considered FS even if the source is FS!        ¦
+¦                                                                             ¦
+¦  Especial Editions:                                                         ¦
+¦   - Allowed: SE, DC, EXTENDED, UNCUT, REMASTERED, UNRATED,                  ¦
+¦   - Special Editions that do not add anything to the original rls is dupe   ¦
+¦   - Remastered movies are only allowed if the original rls was B&W          ¦
+¦   - Remastered audio is dupe if its the only reason for the new RLS         ¦
+¦   - Homemade Rips are not allowed (Use INTERNAL!).                          ¦
+¦                                                                             ¦
+¦  Naming conventions:                                                        ¦
+¦   - All rls must include the year of production unless on TV when they will ¦ 
+¦     be required if its a remake.                                            ¦ 
+¦   - The ripping method is not required in the tag, video/audio Codecs...    ¦
+¦     Read NFO PART!                                                          ¦
+¦   - Allowed Tags are: PROPER, REPACK,SUBBED, DC,SE, UNCUT, EXTENDED,        ¦
+¦      REMASTERED.                                                            ¦
+¦   - Special Tags will be added between the year and the language.           ¦
+|   - Internal rls will have the tag "INT" after the grps name eg: grp_INT    ¦
+¦   - Characters accpted for directories are: (no space or semicolon allowed) ¦
+¦                                                                             ¦
+¦       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ¦
+¦       abcdefghijklmnopqrstuvwxyz                                            ¦
+¦       0123456789 .-_                                                        ¦
+¦                                                                             ¦
+¦                                                                             ¦ 
+¦                                                                             ¦
+¦                                                                             ¦
+¦   - Rar RLS will be tagged in lowercase and will follow this format:        ¦
+¦     a= grp name                                                             ¦
+¦     b= rls name (max 20 chars)                                              ¦
+¦     eg: a-b.rar                                                             ¦
+¦                                                                             ¦
+¦                                                                             ¦
+¦   Examples:                                                                 ¦
+¦   XviD- Name.Movie.Year.SPANiSH.DVDRiP.XViD-Group                           ¦
+¦   SCR-  Name.Movie.Year.SPANiSH.DVDSCR.XViD-Group                           ¦
+¦         Name.Movie.Year.SPANiSH.R5.XViD-Group                               ¦
+¦         Name.Movie.Year.SPANiSH.SCR.XViD-Group                              ¦
+¦         Name.Movie.Year.SPANiSH.TS.XViD-Group                               ¦
+¦   TV /SERIE -                                                               ¦
+¦         Name.Show.SXXEXX.SPANiSH.DVDRiP.XViD-Group                          ¦ 
+¦         Name.Show.SXXEXX.SPANiSH.DSR.XViD-Group                             ¦
+¦         Name.Show.SXXEXX.SPANiSH.HDTV.XViD-Group                            ¦
+¦   XXX-  Name.Movie.Year.SPANiSH.XXX.DVDRiP.XviD-Group                       ¦
+¦ DOCUS-  Name.Movie.Year.SPANiSH.DOC.DVDRiP.XviD-Group                       ¦
+¦                                                                             ¦
+¦                                                                             ¦
+¦  TV Show Notes:                                                             ¦
+¦   - All Episodes must follow these rules                                    ¦
+¦   - All TV Releases must be within 2MB of the default size                  ¦
+¦   - Size based on time:                                                     ¦
+¦       *  Video with MP3:                                                    ¦
+¦         - 18:00-23:59  175MB                                                ¦
+¦         - 24:00-34:59  233MB                                                ¦
+¦         - 35:00-52:59  350MB                                                ¦
+¦         - 53:00-59:59  440MB                                                ¦
+¦         - 60:00-64:59  525MB                                                ¦
+¦         - 65:00-95:00  700MB                                                ¦
+¦  *NOTE:  60:00-64:59  525 or 700MB Decission based on rippers choice        ¦
+¦                                                                             ¦
+¦       *  Videos IN AC3 5.1:                                                 ¦
+¦       *  350 MB - 20 a 35 mins.                                             ¦
+¦       *  525 MB - 40 a 60 mins.                                             ¦
+¦                                                                             ¦
+¦   - A TV show can be adjusted to meet a set number of DVDs (4200mb)         ¦
+¦     only when its within the maximum and minimum requirements               ¦
+¦   - The Rls cannot have a size lower than 7MB/min on average with MP3 Audio ¦
+¦   - The group that rls the premiere of the season can keep the whole season ¦
+¦     if and only if the episodes are rlsd within a week of the original      ¦
+¦     broadcast. If this is not met, another group can release that episode   ¦
+¦     and take ownership of the rest of the season. If a rls is propered the  ¦
+¦     grp releasing the proper takes ownership of the rest of the season.     ¦
+¦   - When a TV show changes group it will follow the same ripping standards  ¦
+¦     of the first episode rlsd of that season, like subbed, res, audio...    ¦
+¦   - This will only apply to DVDrip rls. If a group starts releasing a TV    ¦
+¦     show in dvdrip it has 48 hours to finish the release. After that other  ¦ 
+¦     groups can take over the rest of the season.                            ¦
+¦                                                                             ¦
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¦                        +---[ Notes To The Rules ]----+                      ¦
+¦                                                                             ¦
+¦  Notes about the Source:                                                    ¦
+¦   - DVD source must come from the RETAIL DVD.                               ¦
+¦   - Ripping from DVD-Rs downsampled are forbiden                            ¦
+¦                                                                             ¦
+¦  Internals:                                                                 ¦
+¦   - All internals must follow the rules stated above.                       ¦
+¦   - NOTE: INTERNAL dirfix is not allowed to avoid a nuke.                   ¦
+¦                                                                             ¦
+¦  Notes about the rip:                                                       ¦
+¦   - Maximum VIDEO bitrates are already taken care of based on the lenght    ¦
+¦   - Quant. Matrix must always be H.263/MPEG due to the lack of HW that      ¦
+¦     supports these Custom Matrixes.                                         ¦
+¦   - Quarterpel/GMC Forbiden due to the lack of HW that supports it          ¦
+¦   - The use of ITU-R is forbidden because it gives an AR error of 2% when   ¦
+¦     compared with the AR from the original DVD                              ¦
+¦   - Multilanguage Rls are only allowed in Internal RSL                      ¦
+¦     Multiple languages must be added to the AVI with a graphedit filter for ¦
+¦     each audio track.                                                       ¦
+¦   - NO intros, no previously, no sxxe00...                                  ¦
+¦   - Bits/(Pixel*frame) for xvid rls will never be below 0.180. if its the   ¦
+¦     case we will lower the resolution to increase the pixel frame.          ¦
+¦                                                                             ¦
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¦      Notes to the DVDR Rules                                                ¦
+¦                                                                             ¦
+¦  MOVIES : ONLY IN SPANISH                                                   ¦
+¦  TV: Spanish and English ripper decission                                   ¦
+¦                                                                             ¦
+¦      
+¦
+¦
+¦
+¦      Note to the 720p and 1080p rules
+¦
+¦  They will follow the INTL. Scene rules. Only releases ripped by the goups. 
+¦  Movies encoded by the group must not use English Video sources or audio 
+¦  comming from the spanish rls of the DVD.
+¦
+¦  Audio must always be  DTS or AC3 and always choosing the better option
+¦  For TV-720p English Video Sources are allowed
+¦
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¦
+¦	Extra Info:
+¦
+¦	This rules are released in english for the first time because we are
+¦	tired of the crap rls from the p2p that make our good releases become
+¦	dupe. These rules are a translation with small modifications of the 
+      set of rules we have been using actively in the spanish scene since the  
+      3rd of March 2008. We hope that the dupenets take a closer look to the 
+      p2p spanish rsl from groups like SpainScene,TED,T.E.D,Paradiso,Franco...
+      from now own. FUCK p2p.
+¦
+¦		This rules are signed by:
+¦
+¦   PROXY - FCC - XPERT - Blaze - kRc - Eithel - EnDoR - sPHD - pmh           ¦
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+

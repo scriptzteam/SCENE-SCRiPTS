@@ -1,0 +1,313 @@
+      ______      _______ ______    _______    _____      _____    _______
+    _/   _  )__ _/  _   /_\     \ _/  _   /_ _/     \_   /   _/_ _/  _   /__
+    \   _/     \\  -\___\ \\     \\  -\___\ \\   _\   \--\___   \\  -\___\  \
+   /    \       ·  _/      ·      ·  _/      ·   \     ·   :/    ·  _/      _\
+ ·/_____:\_____/____________\      \________/____:\_____\_______/___________\ 
+                            /______/                                          
+                        _______
+   _______   _____ _____\      \   __________    _____
+  /   __  )__\    \\    \\      \ /    _    /   /   _/____
+ /   /_      \     \     \       \\   -\____\---\___      \   0day scene 2010
+/      \      ·     \     .       .   _/      .   :/       \
+\______:\______\___________\       \___________\___________/· ----------------+
+.                          /_______/                       .                  
+
+
+This is intended as an addendum to the existing 0day rules. All the old rules 
+are still valid, unless they have been altered or updated by this addendum.
+
+The 0day scene has gone through major changes in this decade. As technologies 
+have changed, so have we, but our adaptations have left many grey areas in the 
+current rules. The last rules update was years ago when programs were much 
+smaller and transfer speeds much lower. The existing 0day rules did not address 
+problems of software encountered today, simply because at that date it did not 
+exist. These changes have led to a series of loopholes which groups have been 
+taking advantage of. The new rules we constructed aim to close these loopholes,
+as well as increase the general quality level of releases in the scene.
+
+This document covers a new ruleset for 0day.  These rules and guidelines are
+intended for release-groups in the first place, and sites secondary. We hope 
+that in time many sites will take over the majority of these rules. The 
+following groups have signed and committed to following these rules:
+
+  ACME AiR AGAiN ALiAS ARN BACKLASH BEAN BLiZZARD BRD CORE CRD CROSSFiRE
+     DIGERATI DVT EMBRACE FALLEN HERiTAGE iNViSiBLE LND MESMERiZE NGEN 
+        NULL ORiON OUTLAWS ROGUE SHOCK SSG TBE UNLEASHED VACE ZWT 
+
+These rules will go into effect starting January 31st, 2010.
+
+* Release Name
+~~~~~~~~~~~~~~
+
+[<Developer.name>.]<Program.name>.v<Version>[.<Language>][.<OS>][.<CPU>]
+[.<Release.Type>][.<Additional.Tags>]-<Groupname>
+
+Developer.Name is only mandatory if the application name is not unique enough
+for duping. Groups should use some common sense to keep the directory name 
+reasonable length.
+
+The program name should be the "official" name of the application. Do not omit
+dashes, think of your dupe results.
+
+The Language tag must be used only on NON english releases. Multilingual and
+bilingual are optional.
+
+Currently valid OS tags are: 
+        - Win98, WinME, WinNT, Win2k, WinXP, Win2k3, Vista, Win2k8, Win7
+          (can have an optional tag for more specific edition)
+	- [Distribution.]Linux
+	- MacOSX
+	- [Free|Net|Open]BSD
+	- [Open]Solaris
+	- AIX
+	- HPUX
+	- Open.Enterprise.Server (NetWare)
+
+The Operating.System tag should be omitted when WinAll (= NT5 based windows 
+and optionally earlier, always with latest official service pack). Using a 
+UnixAll (= all of the operating systems above, excluding Windows, Linux or 
+MacOSX) or a WinAll tag means your app *must* run on *all* of the operating 
+systems that fall under it.
+
+CPU should be omitted when x86, must be x64 for x86_64/EM64T, but not IA64!
+Currently valid CPU tags are: 
+	- x86, x64, IA64, PPC, SPARC, SPARC64, RISC, Alpha
+
+Release.Type can be omitted for Crack/Regged, but is mandatory for keygen
+releases. Possible tags are:
+	- Keygen.Only Keymaker.Only
+	- Incl.Keygen Incl.Keymaker
+	- Incl.Keygen.and.Patch Incl.Keymaker.and.Patch
+	- Cracked
+	- Regged
+
+Additional.Tags like READ.NFO, DIRFIX, NFOFIX.. must go as follows:
+  - DevelopersName.ProgramName.v1.2.Regged.READ.NFO-GROUP
+  - DevelopersName.ProgramName.v1.2.Regged.DIRFIX-GROUP
+
+You can use underscores or dots as seperator in the releasename, but do not mix
+them if there is no reason for it (e.g. a program name contains underscores and
+your seperator is a dot is a valid reason to mix)
+
+The lists in this section are by no means complete. They are here to serve as a
+guideline for proper dirname construction.
+
+* Packaging:
+~~~~~~~~~~~~
+
+Filenames must be named up to a maximum of 8.3 characters (filename/extension).
+
+Acceptable compression format at this time is any compression method that
+supports multiple volumes and long file names, followed by the traditional
+PKZIPing. Compressions other than RAR should include an extract utility or be a
+self-extracting archive.
+
+The traditional packaging methods (zip/diz) shall be maintained, with a diz 
+file being present in each zip. The diz file should contain as a bare minimum 
+the number of the current disk and the maximum number of disks. 
+
+Suggested file_id.diz layout is as follows:
+  [xx/??], where ?? is the total nr of disks in the release. The total number 
+  of lines of your diz should not exceed 30.
+
+On a side note: using ridiculous compressions that will save 10 disks but takes
+10 hours to unpack are not an acceptable solution.
+
+* Release Size:
+~~~~~~~~~~~~~~~
+
+Allowed split volume sizes are:
+	- 1,444,000 bytes
+	- 2,888,000 bytes
+	- 5,000,000 bytes
+	- 10,000,000 bytes
+	- 50,000,000 bytes
+
+The utils disk limit is as of now 70 x 5,000,000 bytes or 35 x 10,000,000 bytes. 
+This equates to a total of 350,000,000 bytes of compressed data. Oversize 
+releases are allowed when no ISO release exists and the group (or an iso group 
+they work with) is not in possession of the iso to release. In other words, 
+there is NO size limit for 0day apps, except when an iso exists!
+
+The games disk limit is as of now 80 x 5,000,000 bytes or 40 x 10,000,000 bytes.
+This equates to a total of 400,000,000 bytes of compressed data.
+
+Any release should have less than 100 volumes. In case 10,000,000 bytes do not
+suffice, you are allowed to use volumes of larger size; up to 50,000,000 bytes.
+
+A size proper is valid when a group manages to reduce the size of the original 
+release by at least 30% without sacrificing essential content:
+
+ - Documentation, help files, and other non functional items can be ripped from 
+   a release to decrease size. No functional parts of an application may be 
+   ripped.
+ - C++ redistributables, .NET framework, and other common operating system 
+   components may be ripped. The nfo should note what has been ripped and 
+   optionally include an url where it can be downloaded.
+ - A documentation addon is only allowed if the documentation cannot be 
+   downloaded freely and publicly (without registration) from the developer's 
+   website.
+
+* Specific Release Type:
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+All of these releases should provide functionality identical to that of a fully
+licensed copy.
+
+- Cracked: The program file has been altered to register the program. Any 
+  nags/trial limitations should be removed. Any remnants of "Trial" in the app
+  need to be removed. Any "phone-home" checks should be disabled!
+
+- Regged: Any way to make an application "registered" without requiring
+  modification of any of the applications executables/libraries. Must include
+  a text file with the required information, serials should not be put in the
+  release nfo. Please name this file carefully, as to deter possible 
+  webspiders looking for serial information.
+
+- Keygen: A small standalone program which generates valid serials/keyfiles
+  which are based on user input or hardware id.
+
+  Keygens can be written in any language but they should be native executables
+  for the OS the application is meant for: Linux keygens for Linux applications,
+  Mac keygens for Mac applications, etc. This means that if you do not follow
+  this suggestion, you could get propered. However, you won't be nuked if there
+  is no native keygen available.
+
+  A keygen that generates a system-dependant serial must explicitly warn the
+  user of this fact, either in the nfo OR at runtime.
+
+  Windows keygens in java are allowed if the the program is coded in java or 
+  uses java. Same with any other interpreter language. If a library is included
+  with the latest windows install, as is the case for VB6/.NET/VBScript 
+  currently, then keygens written in these languages are allowed without 
+  question. The motivation here is that a scene release should run on a clean
+  OS install, introducing no additional dependencies other than those imposed
+  by the application being released.
+
+  A console-based application that usually runs on headless systems (servers, 
+  etc) requires a console-based keygen.
+
+  Generic Keygens (All.Products) are allowed and dupe full releases for as long
+  as the generic keygen continues to work for *every* application it was
+  intended for.
+
+  Keygen.Only releases are releases that only contain the actual keygen, no
+  installation files. They are meant as an addition to previous Crack/Regged
+  releases. 
+
+  A Keygen.and.Patch release combines a keygen with a crack to enable full
+  functionality. You are still allowed to release a keygen.only for these
+  releases.
+
+- Retail: A store-bought supply is included in this release. You are allowed to
+  release a retail after a previous release if there is an added benefit to
+  using the retail version. In this case you are required to add a READ.NFO tag
+  to your dirname and list the benefits when compared to the previous release.
+
+- PROPER/WORKING: a proper of a previous scene-release that was not fully 
+  working should always include adequate proof and information for nukers to 
+  test and confirm the validity of the proper. This means including screenshots,
+  pieces of code, or clear steps to reproduce the problems that occur with
+  the release you are propering.
+
+- READ.NFO: If you label a release READ.NFO, please have a clearly stated 
+  section in your nfo on what the READ.NFO is all about, dont make people guess.
+  If you want people to read it for a certain reason, make sure they can.
+
+
+* Operating Systems:
+~~~~~~~~~~~~~~~~~~~~
+
+If a developer has not mentioned default or minimum requirements for operating
+system, the default is Windows XP, which is also a minimum.
+
+If a program supports Windows Operating Systems before WinXP, then your crack
+*should* work on them aswell.
+
+Optional: combine multiple operating system versions for the same CPU in 1 
+release if it remains within size limits, for example:
+- FreeBSD5,6,7 x86 can be in a single release tagged FreeBSD
+If the installers are freely downloadable (available without registration) and 
+the same keygen/crack works for every version, consider only including the 
+latest version of the OS.
+
+Please keep in mind that the contents of .tar.gz, .rpm, .deb and any other
+packaging system are generally identical. Please make a note in your nfo in
+case of exceptions.
+
+* Minor Updates:
+~~~~~~~~~~~~~~~~
+
+MU stands for Minor Update. This term denotes an update of a previously 
+released application within a certain time-period, the MU-period. Major updates
+are allowed regardless of the last time a previous version was released. In
+this case, the nfo should include some motivation for considering this a major
+update (security- and stability-critical hotfixes for instance)
+
+MU-period of 1 month, disregarding the number of days in a month. Examples:
+
+- a release on 2010-01-01 will be out of mu on 2010-02-01
+- a release on 2010-01-15 will be out of mu on 2010-02-15
+- a release on 2010-01-29 will be out of mu on 2010-02-28
+- a release on 2010-01-31 will be out of mu on 2010-02-28
+- a release on 2010-02-28 will be out of mu on 2010-03-28
+- a release on 2010-03-31 will be out of mu on 2010-04-30
+
+This ensures no more than a single release of the same application per month,
+while keeping duping simple. 
+
+The minor update period is counted from the last valid release which contained 
+the software itself. In other words, keymaker.only releases are not considered.
+
+* General Rules:
+~~~~~~~~~~~~~~~~
+
+- If the age of the last modified file of an installed program is older than 
+  one (1) year it is not allowed to pre it without a READ.NFO or INTERNAL tag.
+
+- A group should release the newest version of the software available.
+
+  Exceptions are possible when the software is not available publicly, or if
+  it was never released before, which *must* be mentioned in the nfo-file. 
+  This means you can release an older version of an application, but *only* if 
+  it is newer than any existing release of the same app, and you have a valid
+  reason for not releasing the latest version (for instance, it is very hard
+  to get the supply, or the application takes months to crack).
+
+  There is a grace-period of 3 days: if a new version came out in the last 3 
+  days before your release, you will not get nuked if you release the older 
+  one.
+
+- Releases should provide the same functionality as a retail copy of the
+  application (where possible and reasonable). Examples:
+  - a virus scanner must be able to update
+  - a flexlm application should include every useful feature
+  - a keygen should provide either all, or the best license (watermarks are 
+    still allowed)
+
+- Your nfo should provide a minimum of useful information, including:
+  - (complete) application name
+  - (complete) version, including if it is a beta version
+  - the release date
+  - type of crack included
+  - short description of the application/game
+  - description on how to use the crack (important!)
+  - operating systems this release will work on
+  - pre-requisites for the application/game
+  - url to the application's website
+
+- If you do not want your work to be used by other groups (be it documents, 
+  cracking methods, tools, or similar), then make sure you don't give it out
+  to anyone you can't trust. It is deemed public property as soon as it is
+  publicly available, and you lose any exclusive rights to it.
+
+- Stealing cracks/keygens from P2P, WEB, or other scene groups is clearly not 
+  allowed!
+
+- Security should be everyone's primary concern. Including nicknames or
+  identities of people that have not given explicit permission in your nfo's 
+  is absolutely not allowed, and may result in severe repercussions.
+
+A big thanks to everyone involved in creating this document! 
+
+Last modified: 10 January 2010

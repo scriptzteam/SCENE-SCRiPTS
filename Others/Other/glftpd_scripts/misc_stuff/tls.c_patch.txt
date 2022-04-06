@@ -1,0 +1,54 @@
+--- /home/nigga/_ssl_lbnc/lion/src/tls.c	2012-08-27 20:31:18.000000000 -0400
++++ tls.c	2015-08-15 14:16:35.000000000 -0400
+@@ -76,7 +76,7 @@
+
+
+ static char cfg_tlsciphers[] =
+-"RC4-SHA:RC4-MD5:DHE-DSS-RC4-SHA:DES-CBC3-SHA:DES-CBC3-MD5:EDH-RSA-DES-CBC3-SHA:EDH-DSS-DES-CBC3-SHA";
++"ALL:!ADH:!EXP";
+
+
+ // Master TLS context. Threads need to be able to access this! Or should children call init again?
+@@ -95,7 +95,7 @@
+ int tls_init( void )
+ {
+ 	int egdbytes, status;
+-
++	EC_KEY  *pECDH;
+
+ 	// Do we even want SSL on?
+ 	if (!net_client_SSL &&
+@@ -165,7 +165,7 @@
+
+
+ 	// Set some options
+-	SSL_CTX_set_options(tls_ctx, SSL_OP_NO_SSLv2);
++	SSL_CTX_set_options(tls_ctx, SSL_OP_NO_SSLv2 | SSL_OP_NO_SSLv3 | SSL_OP_SINGLE_DH_USE | SSL_OP_SINGLE_ECDH_USE | SSL_OP_CIPHER_SERVER_PREFERENCE);
+ #ifdef SSL_OP_NO_COMPRESSION
+ 	SSL_CTX_set_options(tls_ctx, SSL_OP_NO_COMPRESSION);
+ #endif
+@@ -215,7 +215,24 @@
+
+ 	}
+
+-
++	/*
++	* From ioFTPD's OpenSSL.c
++	* Elliptic-Curve Diffie-Hellman parameters are either "named curves"
++	* from RFC 4492 section 5.1.1, or explicitly described curves over
++	* binary fields. OpenSSL only supports the "named curves", which provide
++	* maximum interoperability. The recommended curve for 128-bit work-factor
++	* key exchange is "prime256v1" a.k.a. "secp256r1" from Section 2.7 of
++	* http://www.secg.org/download/aid-386/sec2_final.pdf
++	*/
++	if (!(pECDH = EC_KEY_new_by_curve_name(NID_secp256k1)) || !SSL_CTX_set_tmp_ecdh(tls_ctx, pECDH))
++	{
++		// it failed...
++		printf("Unable to set ECDH params");
++	}
++	if (pECDH)
++	{
++		EC_KEY_free(pECDH);
++	}
+
+ 	return 0;

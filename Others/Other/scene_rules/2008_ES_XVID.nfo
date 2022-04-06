@@ -1,0 +1,242 @@
++-----------------------------------------------------------------------------+
+¶                                                                             ¶
+¶                        REGLAS  SCENE ESPANOLA XVID                          ¶
+¶                                                                             ¶
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¶                          +---[ RELEASE RULES ]---+                          ¶
+¶                                                                             ¶
+¶  Duracion de la pelicula:                                                   ¶
+¶   - PAL (25 fps) = duracion MAXIMA de 100 minutos/CD.                       ¶
+¶   - La duracion de la Release debe ser de al menos 50 minutos para usar     ¶
+¶     la totalidad de la capacidad de un soporte grabable.                    ¶
+¶     En estos casos la release DEBE ocupar un minimo de 680 Mb y un m·ximo   ¶
+¶     de 702Mb (los tama±os comprendidos entre 350 y 680 no estan permitidos).¶
+¶   - Rules sobre las series consultad mas abajo                              ¶
+¶                                                                             ¶
+¶  AUDIO:                                                                     ¶
+¶   - DEBE SER MP3 (vbr 128-192) o AC3 (AC3 transcodeado esta prohibido).     ¶
+¶   - DEBE SER STEREO para fuentes STEREO, MONO para fuentes MONO             ¶
+¶   - DEBE SER VBR! NO CBR MP3!                                               ¶
+¶   - Las pistas en MP3 deben tener su frequencia original igual que en el DVD¶
+¶     i.e. 48khz para 48khz y 44.1khz para 44.1khz.                           ¶
+¶   - Los archivos MP3 DEBEN ser normalizados.                                ¶
+¶   - ABR es considerado una tecnica de VBR.                                  ¶
+¶   - AC3 DEBE SER usado sabia y correctamente. A discreccion del ripper      ¶
+¶     cuando usarlo. Usar o no usar AC3 NO ES MOTIVO de nuke.                 ¶
+¶   - MONO AC3 NO ESTA PERMITIDO, en ese caso debe encodearse como MP3 mono.  ¶
+¶   - Pistas de audio multi-language estan PROHIBIDAS! (Usad INTERNAL!)       ¶
+¶   - 1 cd ac3 prohibido a menos que se respete el pixel frame                ¶
+¶                                                                             ¶
+¶  VIDEO:                                                                     ¶
+¶   - Las Marcas de agua no seran toleradas!                                  ¶
+¶                                                                             ¶
+¶  Framerate:                                                                 ¶
+¶   - DEBE ajustarse lo maximo posible al framerate original                  ¶
+¶                                                                             ¶
+¶  Codec:                                                                     ¶
+¶   - DEBE SER XviD (codecs DIVX estan baneados).                             ¶
+¶   - DEBE usarse una tecnica de 2 pasadas durante el encode.                 ¶
+¶   - NO DUPES BASEDOS EN EL CODEC, USAD INTERNAL!                            ¶
+¶                                                                             ¶
+¶  Resolucion y Aspect Ratio:                                                 ¶
+¶   - Width: 512 - 672 pixels para peliculas WS (Letterboxed es considerado WS¶
+¶            448 - 576 pixels para peliculas FS (solo 4:3).                   ¶
+¶   - Height and Width: Deben ser multiplos de 16.                            ¶
+¶   - El cropping es obligatorio hacerlo al MAXIMO posible. Peliculas con     ¶
+¶     cropping excesivo seran consideradas como un fallo tecnico y pueden ser ¶
+¶     nukeadas                                                                ¶
+¶     Algunas peliculas presentan AR variable, en ese caso el cropping        ¶
+¶     se hara sobre la imagen que presente mas pixels (la mas ancha)          ¶
+¶   - Las releases deben estar dentro de un 5% de su AR original.             ¶
+¶     Calculating AR % error: (Release AR - Original AR)/Original AR x 100    ¶
+¶                                                                             ¶
+¶  Subs:                                                                      ¶
+¶  -  OPCIONAL- SOLO si todos los anteriores requerimientos han sido cumplidos¶
+¶     excepto los Subs forzados que se usen en el xvid para partes habladas o ¶
+¶     letreros en otros idiomas, los cuales seran SIEMPRE incluidos.          ¶
+¶   - VOBSUB es el formato preferido ya que no usa OCR.                       ¶
+¶     De todos modos, cualquier formato que pueda ser mostrado por VobSub es  ¶
+¶     aceptado (SRT).                                                         ¶
+¶   - Los subtitulos DEBEN estar junto con la pista de video, pero NO DEBEN   ¶
+¶     estar QUEMADOS en la imagen. (debe poder elegirse si mostrarlos o no),  ¶
+¶     esto puede ser motivo de NUKE                                           ¶
+¶   - Los subtitulos que no se incluyan junto a la pista de video DEBEN estar ¶
+¶     comprimidos en un archivo .rar con la mayor compresion disponible y     ¶
+¶     deben estar en un directorio llamado 'Subs', NO DEBEN estar comprimidos ¶
+¶     dentro de los rars de la pelicula.                                      ¶
+¶   - Si un grupo empieza una serie con subs, y otro grupo decide sacarla,    ¶
+¶     debe de seguir sacandola con subs. No es motivo de nuke si un grupo     ¶
+¶     decide no sacar la serie con subtitulos, salvo que sean forzados.       ¶
+¶                                                                             ¶
+¶  Packaging:                                                                 ¶
+¶   - Todas las RLS deben estar en AVI, no en BIN/CUE.                        ¶
+¶   - Password en la rls ser· motivo de nuke                                  ¶
+¶   - Deben estar comprimidas en RAR y partidas en columenes de 15 o 20 MB.   ¶
+¶   - La Compresion no esta permitida.                                        ¶
+¶   - Recovery y MD5 son recomendados.                                        ¶
+¶   - DEBE tener SFV incluido en cada CD.                                     ¶
+¶   - DEBEN tener NFO.                                                        ¶
+¶   - El NFO DEBE incluir:                                                    ¶
+¶       Nombre del grupo                                                      ¶
+¶       Titulo                                                                ¶
+¶       Dia de la salida de la release en xvid                                ¶
+¶       Tama±o del Video                                                      ¶
+¶       Framesize/Aspect Ratio                                                ¶
+¶       Audio bitrate                                                         ¶
+¶       Video bitrate                                                         ¶
+¶       Duracion de la pelicula                                               ¶
+¶       IMDB/Amazon/Otro sitio con informacion sobre el DVD                   ¶
+¶       Numero de rars por CD (i.e. 50x15MB)                                  ¶
+¶       Sinopsis                                                              ¶
+¶                                                                             ¶
+¶  Creditos:                                                                  ¶
+¶   - Los creditos pueden encodearse aparte a un bitrate mas bajo solo si     ¶
+¶     la duracion excede el numero de cds a usar. si durase por ejemplo 103   ¶
+¶     minutos siendo una fuente pal a 25 FPS.                                 ¶
+¶   - Las peliculas con escenas en los creditos NO DEBEN ser downsampleados.  ¶
+¶   - Cortar los creditos no esta permitido.                                  ¶
+¶   - En cuanto a Desync, solo ser· permitido proper si la desincronizaciÛn   ¶
+¶     supera los +-500ms durante un periodo de mas de 20 segundos.            ¶
+¶                                                                             ¶
+¶  Samples:                                                                   ¶
+¶   - REQUERIDOS!                                                             ¶
+¶   - 1 minuto completo de duracion y en una carpeta aparte llamada 'Sample'. ¶
+¶   - DEBE ser cortado de la pelicula - No encodeado aparte.                  ¶
+¶                                                                             ¶
+¶  Propers:                                                                   ¶
+¶   - Los propers SOLO estaran permitidos en caso de fallo tecnico en la      ¶
+¶     release (i.e. Bad IVTC, Interlacing, bad number of CDs, Bad Cropping...)¶
+¶   - Los propers basados en la decision del ripper no estan permitidos       ¶
+¶     (i.e. No. of CDs, AC3 or MP3, etc).                                     ¶
+¶   - En cuanto a Desync, solo ser· permitido proper si la desincronizacion   ¶
+¶     supera los +-500ms durante un periodo de mas de 20 segundos.            ¶
+¶                                                                             ¶
+¶  WS vs. FS:                                                                 ¶
+¶   - Peliculas FS despues de que hayan salido en WS estan PROHIBIDAS         ¶
+¶   - Letterboxed DVDs no seran considerados FS incluso si la fuente es FS!   ¶
+¶                                                                             ¶
+¶  Ediciones Especiales:                                                      ¶
+¶   - Allowed: SE, DC, EXTENDED, UNCUT, REMASTERED, UNRATED,                  ¶
+¶   - Ediciones especiales que no tengan nada diferente a la anterior edicion ¶
+¶     seran consideradas dupe                                                 ¶
+¶   - Peliculas remasterizadas estan permitidas si el motivo es que la        ¶
+¶     edicion era en BLANCO Y NEGRO y la nueva en color.                      ¶
+¶   - Audio remasterizado sera considerado dupe si es el unico motivo para    ¶
+¶     re-relesear la pelicula.                                                ¶
+¶   - Homemade Rips no estan permitidos (Usad INTERNAL!).                     ¶
+¶                                                                             ¶
+¶  Nombre de los directorios y rars:                                          ¶
+¶   - Todas las releases han de incluir el a±o de produccion.                 ¶
+¶   - NO indiqueis el metodo de ripeo, DVD/XviD fecha de la release, Genero,  ¶
+¶     Audio utilizado (no AC3) o cualquier otra cosa! (LEED EL NFO)           ¶
+¶   - Otros tags permitidos son: PROPER, REPACK,                              ¶
+¶     SUBBED, DC,SE, UNCUT, EXTENDED, REMASTERED.                             ¶
+¶   - Los tags especiales se colocaran entre el aÒo y el idioma.              ¶
+|   - Una rls INTERNAL se pondra en el tag detras del grupo como grupo_INT    ¶
+¶   - Caracteres aceptados al escribir el directorio de la rls (sin espacios  ¶
+¶     o dos puntos:                                                           ¶
+¶                                                                             ¶
+¶       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            ¶
+¶       abcdefghijklmnopqrstuvwxyz                                            ¶
+¶       0123456789 .-_                                                        ¶
+¶                                                                             ¶
+¶   - Releases que tengan mas de 1 CD DEBEN tagearse como CD1, CD2, CD3 etc   ¶
+¶     ('disc1' o algo parecido NO esta permitido).                            ¶
+¶                                                                             ¶
+¶   - Los rars de las releases a partir de ahora ya no tendran la limitacion  ¶
+¶     de 8+3 y deberan tagearse siempre en minusculas.                        ¶
+¶     Los tags seran de la siguiente forma:                                   ¶
+¶                                                                             ¶
+¶     a= nombre del grupo                                                     ¶
+¶     b= nombre release con una extension maximo de 20 caracteres.            ¶
+¶     a-b.rar                                                                 ¶
+¶                                                                             ¶
+¶                                                                             ¶
+¶   Ejemplos:                                                                 ¶
+¶   XviD- Nombre.Pelicula.AÒO.SPANiSH.DVDRiP.XViD-Group                       ¶
+¶   SCR-  Nombre.Pelicula.AÒO.SPANiSH.DVDSCR.XViD-Group                       ¶
+¶         Nombre.Pelicula.AÒO.SPANiSH.R5.XViD-Group                           ¶
+¶         Nombre.Pelicula.AÒO.SPANiSH.SCR.XViD-Group                          ¶
+¶         Nombre.Pelicula.AÒO.SPANiSH.TS.XViD-Group                           ¶
+¶   TV /SERIE - (DSR es como se llamaran ahora los DVB)                       ¶
+¶         Nombre.Serie.SXXEXX.A—O.SPANiSH.DVDRiP.XViD-Group                   ¶
+¶         Nombre.Serie.SXXEXX.A—O.SPANiSH.DSR.XViD-Group                      ¶
+¶         Nombre.Serie.SXXEXX.A—O.SPANiSH.HDTV.XViD-Group                     ¶
+¶   XXX-  Nombre.Pelicula.AÒO.SPANiSH.XXX.DVDRiP.XviD-Group                   ¶
+¶ DOCUS-  Nombre.Pelicula.AÒO.SPANiSH.DOC.DVDRiP.XviD-Group                   ¶
+¶                                                                             ¶
+¶                                                                             ¶
+¶  Notas para las Series de TV:                                               ¶
+¶   - Todos los episodios deben de seguir las siguientes normas.              ¶
+¶   - Capacidad del soporte usado:                                            ¶
+¶                                                                             ¶
+¶       *  SERIES EN MP3:                                                     ¶
+¶       *  175 MB - 15 a 22 mins.                                             ¶
+¶       *  233 MB - 22 a 32 mins.                                             ¶
+¶       *  350 MB - 32 a 50 mins.                                             ¶
+¶       *  420 MB - 50 a 60 mins.                                             ¶
+¶       *  525 MB - 60 a 75 mins.                                             ¶
+¶       *  700 MB - 75 a 100 mins.                                            ¶
+¶                                                                             ¶
+¶       *  SERIES EN AC3 5.1:                                                 ¶
+¶       *  350 MB - 20 a 35 mins.                                             ¶
+¶       *  525 MB - 40 a 60 mins.                                             ¶
+¶                                                                             ¶
+¶   - Se podra ajustar una serie a un numero de dvds (4200MB) determinado     ¶
+¶     siempre y cuando cumpla la maxima y minima calidad permitida.           ¶
+¶   - Las rls no podran tener un tamaÒo menor a 7 MB por minuto de media (MP3)¶
+¶   - El grupo que saque el primer capitulo de la serie, tendra la serie, y   ¶
+¶     se entiende que una serie sigue perteneciendo a ese grupo que saco      ¶
+¶     el primer capitulo siempre y cuando no se demore mas de 1 semana        ¶
+¶     despues de la emision de cada capitulo. Si al cabo de una semana no lo  ¶
+¶     ha sacado, otro grupo podr· sacarlo, y la serie pasara a ese grupo. Si  ¶
+¶     le propean la serie, pasara a ser del grupo que ha sacado el proper.    ¶
+¶   - Si la serie no la continua el grupo que saco el primer capitulo, deber·n¶
+¶     continuar con las mismas caracteristicas de rip del primer capitulo,    ¶
+¶     como subbed, resolucion, audio etc.                                     ¶
+¶   - El ultimo punto se aplicara a dvbrip. En el caso de las series          ¶
+¶     dvdrip (packs), quien saque el primer capitulo se queda con la serie    ¶
+¶     con un margen de 1 semana para completarla, quedando despues libre para ¶
+¶     cuantos grupos quieran completarla.                                     ¶
+¶                                                                             ¶
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¶                        +---[ NOTAS A LAS RULES ]----+                       ¶
+¶                                                                             ¶
+¶  Notas relativas a la Fuente:                                               ¶
+¶   - La fuente DVD debe ser del DVD RETAIL.                                  ¶
+¶   - El uso de DVD-Rs downsampleados esta PROHIBIDO.                         ¶
+¶                                                                             ¶
+¶  Internals:                                                                 ¶
+¶   - Todas las INTERNALS deben seguir las normas de este documento.          ¶
+¶   - NOTA: INTERNAL dirfix no esta permitido como base para evitar un nuke.  ¶
+¶                                                                             ¶
+¶  Notas relativas al ripeo:                                                  ¶
+¶   - Maximum VIDEO bitrates estan cubiertos por las normas de duracion.      ¶
+¶   - Quant. Matrix siempre ha de ser H.263/MPEG debido a la falta de hardware¶
+¶     que soporte estas Custom matrixes.                                      ¶
+¶   - Quarterpel/GMC PROHIBIDO debido a la falta de hardware que lo reproduzca¶
+¶   - El uso de ITU-R esta PROHIBIDO ya que da un AR error del 2% con respecto¶
+¶     al AR del DVD original.                                                 ¶
+¶   - Pistas Multi-language seran permitidas solo en rls INTERNALS.           ¶
+¶     Multiples idiomas deben estar unidos al AVI con un filtro del graphedit ¶
+¶     para cada pista de audio.                                               ¶
+¶   - NO intros, outros, o betweenos                                          ¶
+¶   - El Bits/(Pixel*frame) de los xvid nunca seran inferior a 0.180. Si es   ¶
+¶     inferior a dicho numero, se bajara la resolucion del xvid para aumentar ¶
+¶     el Pixel+Frame.                                                         ¶
+¶                                                                             ¶
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
+¶              Rules aprobadas el dia 03/03/2008 por los grupos:              ¶
+¶                                                                             ¶
+¶                 BlaZe CHaWiN EiTheL EnDoR EXiLiUM DrXxX FCC                 ¶
+¶                                                                             ¶
+¶                 iDeNT JaBuGo KiMERA kRc tmndISO UNiT YaKuZa                 ¶
+¶                                                                             ¶
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+

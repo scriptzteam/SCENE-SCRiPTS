@@ -1,0 +1,65 @@
+##############################################################
+##  Requires Eggdrop1.6.0 or greater and Darkones sitebot   ##
+##                     by  aCe2k                            ##
+##############################################################
+#     Greetings go to B0unTy for starting me off on this     #
+##############################################################
+
+# 1. First thing todo is to get gl to parse every nfo to see
+#    if theres and imdb url.  Edit project-zs/zipscript/conf/zsconfig.h
+#    to and set enable_accept_script from FALSE to TRUE
+#
+#    /* Enable/disable accept script (accept script is run, if file is ok)
+#     */
+#    #define enable_accept_script    TRUE
+#    #define accept_script           "/bin/imdb_parse.sh"
+#
+# 2. Recompile your zipscript
+#
+# 3. Extract imdb_parse.sh from archive to your glftpd/bin
+#    Remember permissions for glftpd to run it
+#
+# 4. Now you need to add a small script portion to your dZSbot.tcl
+#    locate: proc readlog
+#    Find the if statment that string compares "INVITE"
+#    Insert the following line on the line above it. Insert, not replace! 
+#
+#    if { ! [string compare $msgtype "IMDB"] } { imdbhandler [lindex $line 7] }
+#
+# 5. After this you need to disable announce by section
+#    A few lines down, locate if { ([denycheck "$path"] == 0 ) }
+#    and edit it to look like this...
+#
+#    if { ([denycheck "$path"] == 0 ) && $msgtype != "IMDB" }
+#
+#    NB! Because of limitations in tcl/tk i have not added the last bracket in the line above.
+#
+# 6. Edit your eggdrops conf file and point the  source /path/to/aCe.iMDB.tcl
+#      source scripts/aCe.iMDB.tcl 
+#    or
+#      source /glftpd/sitebot/aCe.iMDB.tcl
+#    if thats where you put it
+#
+
+#################
+##
+## VERSION LOG
+##
+## Bugfix 1.5.8 (29-Mar-2005)
+##  - Added support for old style imdb ruls
+##    u know  ../Title?number  style
+##
+## Bugfix 1.5.7 (22-Dec-2004)
+##  - Plot output or rather %outline now works
+##  - Runtime output now works too
+##  - Fix minor tcl/tk compatibility fix
+##  - Fixed error [cant read "nfofile": no such variable]
+##
+## Tweak 1.5.6 (12-Dec-2004)
+##  - Compatibility fix
+##  - Added public !imdb command in chan for version info
+##
+## Version 1.5.5 (09-Oct-2004)
+##  - First public release
+##
+#################

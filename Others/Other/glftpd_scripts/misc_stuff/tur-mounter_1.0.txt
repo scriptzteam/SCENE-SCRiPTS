@@ -1,0 +1,14 @@
+Tur-Mounter
+
+Description: This is a script for those that use removable disks and know the 
+problem with them always getting a, more or less, random device ID each time you 
+boot up the box or umount them.
+
+Basically, you create a file on each disk and when this script is executed, it 
+mounts the disks where they want to be mounted, according to the disk itself.
+Can also be used on "normal" disks if you, for some reason, does not like to use 
+fstab.
+
+Author:   Turranius
+Version:  1.0
+Added on: 09-Apr-2005

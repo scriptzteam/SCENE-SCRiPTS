@@ -1,0 +1,370 @@
++-------------------------------------------------------------------------------
+¦
+¦            Polish.DVDRiP.And.BDRiP.SDx264.Standards.v1.0-PLSDx264
+¦
+¦-------------------------------------------------------------------------------
+¦                             [ RELEASE RULES ]
+¦
+¦ 1. Video:
+¦-----------
+¦
+¦ a)  Sources requiring resize are to be cropped and resized using sharp
+¦     resizers such as  Lanczos4, Spline36, or Blackman. Bicubic is banned.
+¦ b)  Deinterlace/ivtc as necessary.
+¦ c)  Resolutions Width: 640-720.
+¦ d)  Width mod16 / Height mod2.
+¦ e)  Upscaling is forbidden.
+¦ f)  Max AR error 4%.   
+¦ g)  No watermarking, intros and etc.
+¦ h)  Releasing WS version after FS and vice versa is allowed.
+¦ i)  Overcropping/undercropping the picture:                 
+¦      - When cropping, remove everything that is not actual picture,
+¦        including black or other colored borders.                   
+¦      - Actual picture area may be over- or under-cropped by 2px maximum per
+¦        side. More than 2px on any side is considered a technical flaw.
+¦      - In the case of varying crops/mixed scenes, crop to largest image as
+¦        to not lose any pixels on any scene. 
+¦
+¦ 2. Codec:
+¦-----------
+¦
+¦ a)  Video codec must be H264 encoded with 8-bit depth x264.
+¦ b)  Custom Matrices are allowed.
+¦ c)  Stripping or falsifying encode information in the file header is banned. 
+¦ d)  Zones (--zones) are forbidden.
+¦ e)  Level 3.1 must be respected.  
+¦ f)  No setting can go below what is specified by --preset slow.
+¦ g)  Codec must be up to date. A maximum of 20 versions difference.
+¦ h)  Allowed CRF Values: 19-20. 
+¦
+¦                Suggested command line:
+¦   x264.exe --level 3.1 --preset slow --crf [19-20]  --no-fast-pskip 
+¦
+¦
+¦ 3. Container:
+¦---------------
+¦
+¦ a)  Container must be MP4.   
+¦ b)  Support for file streaming and playing from rars is strongly encouraged.
+¦
+¦
+¦ 4. Samples:
+¦-------------
+¦
+¦ a)  Required.  
+¦ b)  60-90 seconds in length and in a separate directory marked as Sample. 
+¦ c)  Must be taken from the encoded movie, not encoded separately.  
+¦
+¦
+¦ 5. Audio:
+¦-----------
+¦
+¦ a)  Allowed audio format is VBR AAC LC (Low Complexity).      
+¦ b)  Average bitrate on AAC audio must be between 96 - <Source Bitrate> kbps. 
+¦ c)  AAC audio must be normalized and downconverted to stereo.    
+¦ d)  Nero and Apple encoders are recommended. FFmpeg and FAAC are banned.  
+¦ e)  Release must contain polish, polish voice, polish dubbing audio track
+¦     or dual audio - first release wins.                        
+¦ f)  If release contain two audio tracks (dual) muxed into the mp4 container: 
+¦      - Polish, Polish Voice Over or Polish Dubbing along with       
+¦        original audio tracks must be used.  
+¦      - First track (default) MUST be Polish, Polish Voice or Polish Dubbing.
+¦
+¦
+¦ 6. Subtitles:     
+¦---------------
+¦
+¦ a)  Polish subtitles must be included (If they are on the disk).    
+¦ b)  Subtitles MUST be packed in a RAR file with the most compression
+¦     available. This RAR file must be placed in a directory named 'Subs' 
+¦     along with an SFV file containing standard checksum information for
+¦     that RAR. The subtitles must not be packaged in the main RARs for the 
+¦     release and the RAR file containing the subtitles must not be listed in
+¦     main SFV for the release.  
+¦ c)  Subs.rar = [ <mp4-name>.idx + <mp4-name>.sub ].    
+¦ d)  Burned subtitles are only permissible when present in the source.  
+¦ e)  Custom subtitles are not allowed on retail sources. 
+¦
+¦
+¦ 7. Packing:
+¦-------------
+¦
+¦ a)  Release must not be split.  
+¦ b)  Release must be packed in RAR file format.
+¦ c)  Rars may be in multiples of 50 000 000 bytes and 20 000 000 bytes.
+¦ d)  Compression is not allowed.    
+¦ e)  Recovery and MD5 record are recommended.
+¦ f)  Filenames (even subpack rar file) MUST be unique (to avoid dupe).   
+¦ g)  Encryption or password protection is forbidden.   
+¦ h)  Must have SFV and NFO.   
+¦ i)  RAR, SFV, and sample files must have unique, lowercase filenames with
+¦     the group tag.     
+¦ j)  NFO must be in the English language
+¦ k)  NFO MUST INCLUDE:  
+¦     - Title            
+¦     - Release Date     
+¦     - CRF Value Used   
+¦     - Final Size       
+¦     - Resolution / Aspect Ratio 
+¦     - Audio codec / Audio bitrate / Language (PL/PLDUB/DUAL) 
+¦     - Movie runtime   
+¦     - iMdb link 
+¦
+¦
+¦ 8. Propers: 
+¦-------------
+¦
+¦ a)  Propers are only permitted in the case of a technical flaw in the  
+¦     original release (e.g. Bad IVTC, Interlacing, missing footage, and 
+¦     bad x264 settings used).                                
+¦ b)  Propers MUST include a note in the NFO file detailing the reason.
+¦ c)  Sample of propered release is encouraged.  
+¦ d)  Qualitative propers are not allowed.  
+¦ e)  Releases can't be propered for bad tagging or missing nfo/sample.
+¦ 
+¦
+¦                                                                     
+¦ 9. Nukes: 
+¦-----------
+¦
+¦ Releases must be nuked for any of the following reasons: 
+¦ a)  Any valid proper listed in the propers section.   
+¦ b)  Missing nfo, sfv or missing Sample. Fix MUST out.
+¦ c)  Bad Tagged.      
+¦ d)  Is forbidden release movie which ware pred with xvid/divx codec - 
+¦     use INTERNAL!        
+¦
+¦
+¦ 10. Fixes:
+¦------------
+¦
+¦ a)  The following fixes are allowed: NFOFix, SampleFix, DirFix, SyncFix.  
+¦ b)  DirFix requires NFO and NFO must state which release is being fixed.  
+¦ c)  The original release shall be unnuked when a valid fix is released.   
+¦ d)  INTERNAL dirfix should not be used as a basis of avoiding a nuke.  
+¦
+¦
+¦ 11. Tagging: 
+¦--------------
+¦
+¦ a)  Required Tagging:           
+¦     <Movie.Name>.<Year>.PL/PLDUB.<Source>.x264-Group
+¦     <TV.Show>SxxExx.PL/PLDUB.<Source>.x264-Group    
+¦ b)  <Movie.Name/tv.show> must always be the same as imdb International 
+¦     English title or original title.          
+¦ c)  PL tag - Polish lector, PLDUB - Polish dubbing. 
+¦ d)  <Source> should indicate from what medium this movie is (DVDRiP/BDRiP). 
+¦ e)  Acceptable characters in naming a directory include (NO spaces or 
+¦     double dots - single dots or underscores ONLY): 
+¦
+¦     ABCDEFGHIJKLMNOPQRSTUVWXYZ   
+¦     abcdefghijklmnopqrstuvwxyz   
+¦     0123456789.-_         
+¦                                                                       
+¦ f)  Other permitted tags are: PROPER, REPACK, RERIP, NFOFix, SampleFix,  
+¦     DirFix, SyncFix, ProofFix, EXTENDED, REMASTERED, UNRATED, THEATRICAL.
+¦
+¦
+¦ 12. Proof:
+¦------------
+¦
+¦ a)  From 01.12.2012 to 31.01.2013 releases SHOULD include source proof, after
+¦     that time adding source proof is MANDATORY.   
+¦ b)  Snapshot (not scan) of the actual physical disc (printed side) in 
+¦     JPEG/PNG format with a group tag. Disc snapshot must be in good 
+¦     quality with disc details clear and readable. Small portions    
+¦     containing store stickers/barcodes may be blurred or blackened. 
+¦ c)  Proof MUST be placed within a separate subdirectory named "Proof".
+¦
+¦
+¦ Signed By:
+¦------------
+¦
+¦ A4O, AFrO, AiHD, BiL, BEER, BFHMOV, FLAME, N0L, SiBV.  
+¦
+¦
+¦ These rules apply from 2012-12-01 00:00:00 GMT+2    
+¦-------------------------------------------------------------------------------
+¦
+¦
+¦ 1. Video:                                                                  
+¦-----------
+¦
+¦ a)  Jezeli obraz zrodlowy wymaga zmiany rozmiaru, przyciecia powinny byc uzyte
+¦     filtry takie jak Lanczos4, Spline36 albo Blackman. Bicubis jest zabroniony
+¦ b)  Przeplot/itvc je£li jest potrzebny.                                       
+¦ c)  Rozdzielczosc szerokosc: 640-720.                                         
+¦ d)  Szerokosc mod16/ wysokosc mod2.                                           
+¦ e)  Powiekszanie jest zabronione.                                             
+¦ f)  Maksymalne blad AR 4%.                                                    
+¦ g)  Zabronione jest nanoszenie wszelkich znakow grupy, napisow itp.           
+¦ h)  Wydanie WS po wersji FS i odwrotnie jest dozwolone.                       
+¦ i)  Przycinanie obrazu:                                                       
+¦      -Jezeli jest koniecznosc przyciecia, przycinamy wszystko co nie jest     
+¦       obrazem filmu (czarne lub innego koloru obramowanie).                   
+¦      -Obraz moze byc przyciety maksymalnie 2px wiecej lub mniej z kazdej      
+¦       strony.                                                                 
+¦      -Zawsze przycinamy najwiekszy obraz w filmie aby nie stracic zadnej      
+¦       pikseli w innych scenach.                                               
+¦                                                                               
+¦
+¦ 2. Kodeki:                                                                    
+¦------------
+¦
+¦ a)  Do kodowanie nalezy uzywc kodeka H264 z 8-bitowa glebia x264.             
+¦ b)  Niestandardowe matryce sa zabronione.                                     
+¦ c)  Odizolowania czy falszowanie kodowania informacji w naglowku pliku jest
+¦     zabronione.    
+¦ d)  Zones (--zones) jest zabronione.                                          
+¦ e)  Level 3.1 musi byc przestrzegany.                                         
+¦ f)  Zadne ustawienie nie moze zejsc ponizej tego co jest okreslone jako
+¦     --preset slow/.    
+¦ g)  Kodeki musza byc aktualizowane. Nie starsze niz 20 wersji wstecz.       
+¦ h)  Dopuszczalna wartosc CRF 19-20.                                         
+¦                                                                             
+¦                 Sugerowana linia polecen                                    
+¦     x264.exe --level 3.1 --preset slow --crf [19-22]  --no-fast-pskip       
+¦                                                                             
+¦
+¦ 3. Kontener:    
+¦--------------
+¦
+¦ a)  Dopuszczalny kontener tylko mp4.                                      
+¦ b)  Wsparcie dla plikow strumieniowych i odtwarzanie z RAR mile widziane. 
+¦
+¦
+¦ 4. Sample:                                                               
+¦------------
+¦
+¦ a)  Sample musi byc dolaczony.                                                
+¦ b)  Musi trwac od 60-90 sekund i zapisany w osobnym katalogu - Sample.
+¦ c)  Sample musi byc wyciety z enkodowanego materialu, zabrania sie enkodowania
+¦     sample osobno.                                                            
+¦                                                                               
+¦
+¦ 5. Audio:                                                                    
+¦-----------
+¦
+¦ a)  Dopuszczalny format audio to VBR AAC LC (Low Complexity).
+¦ b)  Sredni bitrate w AAC musi sie zawierac miedzy od 96 do oryginalnego
+¦     bitrate kbps.     
+¦ c)  AAC audio musi byc znormalizowane i przekodowane do stereo.               
+¦ d)  Dopuszczalne enkodery to Nero i Apple. Zabronione FFmpeg i FAAC.          
+¦ e)  Film musi zawierac sciezke polska, polskiego lektora, polski dubbing
+¦     lub podwojne audio (dual).
+¦ f)  Jezeli zawiera podwojne audio (dual) zmuksowane w kontenerze mp4:        
+¦      - do sciezki audio polskiej, polskiego lektora, polskiego dubbingu
+¦        musi byµ dodana oryginalna sciezka filmu.                       
+¦      - pierwsza sciezka (domyslna) audio MUSI byc polska (lektor, dubbing).
+¦                
+¦                
+¦ 6. Napisy:
+¦------------
+¦           
+¦ a)  Polskie napisy musza byc dolaczone (jezeli takie ss na dysku).            
+¦ b)  Napisy musza byc spakowane w archiwum RAR z najwiekszj kompresji.
+¦     Spakowane plik RAR musi byc umieszczony w katalogu "Subs" z plikiem .sfv.
+¦     Napisy nie moga byc pakowane w archiwum z filmem.                        
+¦ c)  Subs.rar = [ <nazwa-mp4>.idx + <nazwa-mp4>.sub ].
+¦ c)  Napisy bezposrednio na filmie sa dozwolone jedynie gdy wystepuja na
+¦     plikach zrodlowych.
+¦ d)  "Wlasnoreczne" napisy sa niedopuszczalne.                           
+¦
+¦
+¦ 7. Pakowanie:
+¦---------------
+¦              
+¦ a)  Rls nie moze byc podzielony.                                           
+¦ b)  Rls musi byc spakowany w archiwum RAR.                                 
+¦ c)  Podzielny na czesci w wielkosci 50 000 000 bajtow i 20 000 000 bajtow.
+¦ b)  Brak kompresji.                                                        
+¦ e)  Zalecane dane naprawcze.                                               
+¦ f)  Nazwy plikow musza byc unikalne.                                       
+¦ g)  Szyfrowanie i dodawanie hasel jest zabronione.                         
+¦ h)  Musi byc dodany plik .sfv z sumami kontrolnym oraz plik .nfo           
+¦ i)  RAR, SFV i nazwa sampla musi byc unikalna i musi zawierac 
+¦     "malymi literami" tag grupy.
+¦ j)  NFO musi byc w jezyku angielskim
+¦ k)  Plik NFO MUSI zawierac:     
+¦      - Tytul filmu              
+¦      - Date wydania             
+¦      - Wartosc CRF              
+¦      - Wielkosc finalna pliku   
+¦      - Rozdzielczosc / Aspect Ratio                                       
+¦      - Kodek Audio / Bitrate / Jezyki (PL/PLDUB/DUAL)                     
+¦      - Czas trwania filmu                                                 
+¦      - Link do filmu na iMdb.                                             
+¦               
+¦                                                                           
+¦ 8. Propery:
+¦-------------
+¦
+¦ a)  Propery sa dopuszczalne jedynie jezli sa bledy natury technicznej (np.
+¦     przeplot, zly IVTC, uciety film, zle ustawienia kodeka, zle przyciecie).
+¦ b)  Powod wydania propera musi byc zawarty w pliku nfo.                     
+¦ c)  Dolaczenia sampla z poprawionego rls jest mile widziane.                
+¦ d)  Jakosciowe propery zabronione.                                          
+¦ e)  Jezeli rls byl znukowany za zly tag, brak nfo/sample nie mozna wydac
+¦     propera.
+¦                   
+¦                                                                             
+¦
+¦ 9. Nuki:                                                                    
+¦----------
+¦
+¦ Rls musi byc znukowane jezeli:                                            
+¦ a)  Z ktoregos powodu zawartego w punkcie 8 propery.                      
+¦ b)  Brakuje nfo, sample, sfv albo sample. Poprawka MUSI byc zrobiona.  
+¦ c)  Zle nazwany katalog.                                                  
+¦ d)  Zabrania sie wydawania filmow, ktore byly wydane z uzyciem kodeka 
+¦     xvid/divx - uzywaj INTERNAL!                                      
+¦
+¦
+¦ 10. Poprawki:
+¦---------------
+¦
+¦ a)  Nastepujace poprawki sa dozwolone: NFOFix, SampleFix, DirFix, SyncFix.    
+¦ b)  DirFix musi zawierac nfo w ktorym jest napisane ktory rls jest poprawiony.
+¦ c)  Oryginalny rls powinien byc unnuked jezeli poprawka byla zrobiona.        
+¦ d)  Nie powinno uzywac sie dirfix internal aby uniknac nuka za 'dupe'.        
+¦            
+¦            
+¦ 11. Nazwa Rls:
+¦----------------
+¦               
+¦ a)  Wymagane Nazwa                                                          
+¦     <Tytul.Filmu>.<Rok.Produkcji>.PL/PLDUB.<zrodlo>.x264-Grupa              
+¦     <Tytul.Serialu>.SxxExx.PL/PLDUB.<zrodlo>.x264-Grupa                     
+¦ b)  <Tytul.Filmu>/<Tytul.Serialu> musi zawsze byc taka sama jak International
+¦     English title or original title na iMdb.                                 
+¦ c)  PL tag - Polski lektor, PLDUB - Polski dubbing.                          
+¦ d)  <zrodlo> - powinno wyjasniac z jakiego nosnika film zostal zgrany
+¦     (DVDRiP/BDRiP).    
+¦ e)  Dopuszczone znaki w nazwie katalogi i plikow.                          
+¦                                                                            
+¦        ABCDEFGHIJKLMNOPQRSTUVWXYZ                                          
+¦        abcdefghijklmnopqrstuvwxyz                                          
+¦        0123456789.-_                                                       
+¦
+¦ f)  Inne dozwolone nazwy to: PROPER, REPACK, RERIP, NFOFix, SampleFix,     
+¦     DirFix, SyncFix, ProofFix, EXTENDED, REMASTERED, UNRATED, THEATRICAL.  
+¦
+¦
+¦ 12. Dowod:
+¦------------
+¦
+¦ a)  Od 01.12.2012 do 31.01.2013 Rls powinien zawierac dowod nosnika, po tym  
+¦     czasie dolaczenie dowodu jest OBOWIAZKOWE.                               
+¦ b)  zdjecie (nie skan) nosnika z nadrukowana strona w JPEG/PNG wraz z nazwa
+¦     grupy. Zdjecie musi byc dobrej jakosci z detalami dysku wyraznymi i 
+¦     czytelnymi.              
+¦ c)  Dowod musi byc umieszczony w osobnym katalogu nazwanym "Proof".
+¦
+¦
+¦ Podpisane przez:                                                           
+¦-------------------
+¦
+¦  A4O, AFrO, AiHD, BiL, BEER, BFHMOV, FLAME, N0L, SiBV.  
+¦                                                                           
+¦ Zasady zaczynaja obowiazywac od 2012-12-01 00:00:00 GMT+2                     
++-------------------------------------------------------------------------------

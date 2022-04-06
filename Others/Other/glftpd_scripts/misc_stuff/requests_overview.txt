@@ -1,0 +1,19 @@
+###################################################################
+# 
+# public request system (standalone) - Pentagon (pentagonuk@hotmail.com)
+#
+# USAGE
+# <trigger>requests
+# <trigger>request <request here>
+# <trigger>reqfilled <request here>
+#
+# INSTALL
+# tar zxvf requests.tar.gz
+# cp requests.tcl /home/eggdrop/dir/scripts
+# source scripts/requests.tcl
+#
+# add these (if not already added of course ;) to your glftpd.conf, edit to suit.
+#
+# upload	/site/REQUESTS/			!*
+# makedir	/site/REQUESTS/*/		!*
+# hidden_files	.requests .requests-temp

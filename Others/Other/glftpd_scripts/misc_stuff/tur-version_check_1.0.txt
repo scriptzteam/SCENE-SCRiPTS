@@ -1,0 +1,10 @@
+Tur-VersionCheck
+
+Description: This is a script that will check a list of scripts/version located at 
+my webserver against those tur- scripts you have installed. If the version differs,
+it will let you know. Good if you want to make sure your 200 installed tur- scripts
+are up to date.
+
+Author:   Turranius
+Version:  1.0
+Added on: 12-Aug-2004

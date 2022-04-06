@@ -1,0 +1,19 @@
+AddIP (GL1&2)
+
+Description: Script that lets users add/del/list their own IPs from irc. Also, 
+changing ones tagline is possible.
+Whats different from the other million similar scripts are that it uses ftp to 
+actually log on as a siteop and add/del/list/change tagline. No changes directly to
+the userfile which also means it automatically obeys any IP rules set in 
+glftpd.conf. 
+Users can also change tagline with this script. The tagline function is good if you
+have a MSS ring where normal users does not have access to the HUB. With this, they
+can still add IPs and change their tagline, which is about all users do anyway. 
+Has some security settings, like dont allow certain flags to run it (bad if someone
+gets hold of the siteops username and adds his own IP to it, etc). You can also set
+a maximim number of IPs that are allowed in the userfile before the user is denied
+access to add more without deleting some.
+
+Author:   Turranius
+Version:  1.3
+Added on: 08-Nov-2003

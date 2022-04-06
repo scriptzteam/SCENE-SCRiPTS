@@ -1,0 +1,446 @@
+The 720p TV x264 Releasing Standards 2016 a.k.a. tvx264
+The.720p.TV.x264.Releasing.Standards.2016-TVx264
+
+[ Intro ]
+Since the last revision of this document in 2011, TV-X264 has grown and become a major section that many people contribute to and depend on. This new revision aims to update the standards from 2011 to standards suitable for 2016 and the future. Adding clarity and patching loopholes to once again allow for consistent and quality releases, which was the aim of this standard back in 2011.
+
+Compliance with this document is optional as of its pre date, and mandatory as of 2016-04-10 00:00:00 UTC (1460246400 Unix time).
+
+[ Recommended ]
+It is recommended to view the unformatted version of this ruleset bundled within this release.
+
+1) [ HDTV Sources ]
+    1.1) HDTV is considered as a high definition natively recorded transport stream.
+    1.2) HDTV sources must not be upscaled, see section 3.
+    1.3) Providers which downscale 1080i to 720p (e.g. BellTV) are not allowed.
+
+2) [ AHDTV Sources ]
+    2.1) Analogue HDTV is considered as a high definition captured stream from the analog output (e.g. Component, DVI, HDMI) of a set-top box.
+    2.2) Captures must be done at the native broadcast format of the source.
+        2.2.1) Captures from devices which are unable to output a native format must be restored to the original framerate.
+        2.2.2) If captures cannot be completely restored to their native framerate, such as a single dupe frame every 1000 or blended/ghost frames due to mangling from the set-top box or capture device, this is considered a technical flaw.
+
+3) [ HR.PDTV Sources ]
+    3.1) High-Resolution PDTV is considered as non-high definition content which has been upscaled and broadcasted on a high definition channel.
+        3.1.1) Windowboxed content (large black bars on all sides) lack sufficient source resolution to be considered HR.PDTV, and is not allowed.
+    3.2) Video must be cropped and resized to fit within a maximum resolution of:
+        3.2.1) 960x720 for aspect ratios less than 1.78:1.
+            e.g. 1920x1080 --> Crop(240,0,-240,-0) --> 1440x1080 --> 960x720
+        3.2.2) 960x540 for aspect ratios greater than or equal to 1.78:1.
+            e.g. 1920x1080 --> Crop(2,0,-2,-0) --> 1916x1080 --> 960x540
+                 1280x720 --> Crop(2,0,-2,-0) --> 1276x720 --> 960x540
+
+4) [ Codec ]
+    4.1) Video must be H.264/MPEG-4 AVC encoded with x264 8-bit.
+        4.1.1) Custom builds of x264 (e.g. x264-tMod, x264-kMod) are allowed and must be based off the x264 codebase.
+    4.2) x264 headers must remain intact and must not be modified or removed.
+    4.3) x264 must be kept up to date, with a maximum allowance, or grace period, of 60 days before groups are required to update to the latest revision.
+        4.3.1) The official x264 git repository is the only reference for determining the current revision: http://git.videolan.org/?p=x264.git;a=summary
+        4.3.2) The 60 day grace period must only be applied at pre time, not the tagged encoded date.
+        4.3.3) The grace period is only applicable to the revision preceding the latest update and does not reset active grace periods of preceding revisions.
+            e.g. 2016-01-01: Revision A is used.
+                 2016-01-02: Revision B is committed, 60-day grace period begins for revision A.
+                 2016-01-05: Revision C is committed, 60-day grace period begins for revision B.
+                 2016-03-02: Revision A is no longer allowed, Revision B or C may be used.
+                 2016-03-05: Revision B is no longer allowed, Revision C must be used.
+    4.4) Constant Rate Factor (--crf) must be used.
+        4.4.1) CRF values below 18 and above 23 are never allowed.
+        4.4.2) Justification must be listed in the NFO for the use of non-standard CRF values.
+            4.4.2.1) Groups are not required to follow non-standard CRF values used by another group.
+            4.4.2.2) It is suggested that if the average video bitrate exceeds 5000kb/s, a higher CRF value should be chosen, when possible.
+    4.5) Standard CRF values are as follows:
+        ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÂÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ¿
+        ³ Compressibility ³  CRF  ³ General Examples                          ³
+        ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÅÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ´
+        ³ High            ³ 18-19 ³ Scripted, Talk Shows, Animation, Stand-Up ³
+        ³ Medium          ³ 20-21 ³ Documentary, Reality, Variety, Poker      ³
+        ³ Low             ³ 22-23 ³ Sports, Awards, Live Events               ³
+        ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÁÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÙ
+    4.6) Settings cannot go below what is specified by preset (--preset) 'slow'.
+        e.g. --subme 7 or --me hex are not allowed.
+    4.7) Level (--level) must be '4.1'.
+    4.8) Colour matrix (--colormatrix) may be optionally set to 'bt709'.
+    4.9) Colour space (--output-csp) must be 'i420' (4:2:0).
+    4.10) Sample aspect ratio (--sar) must be '1:1' (square).
+    4.11) Deblocking (--deblock) must be used. Values used are left to the discretion of the group.
+    4.12) Keyframe interval (--keyint) must be at least 200, and at most 300.
+        4.12.1) It is recommended to let x264 decide which value to use, but 10*framerate is a good guideline (e.g. Film=240, PAL=250, NTSC=300).
+        4.12.2) For 50 or 60 FPS content, the maximum keyframe interval must be at least 200, and at most 600.
+    4.13) Minimum GOP length (--minkeyint) must be 30 or less.
+        4.13.1) It is recommended to let x264 decide which value to use, but 1*framerate is a good guideline (e.g. Film=24, PAL=25, NTSC=30).
+        4.13.2) For 50 or 60 FPS content, values of 60 or less must be used for the minimum GOP length.
+    4.14) Custom matrices are not allowed.
+    4.15) Zones (--zones) are not allowed.
+    4.16) x264 parameters must not vary within a release.
+    4.17) Optional tuning (--tune) parameters allowed are: 'film', 'grain' or 'animation'.
+    4.18) Suggested command line: x264 --crf ## --preset slow --level 4.1 --output out.mkv in.avs
+
+5) [ Video / Resolution ]
+    5.1) Resolution must be mod 2.
+    5.2) Upscaling is not allowed.
+    5.3) Adding borders is not allowed.
+    5.4) Multiple video tracks are not allowed.
+    5.5) English spoken titles with foreign overlays, not intended by content creators (e.g. locations, on-screen text shown in another language) are not allowed, use INTERNAL.
+        5.5.1) This does not apply to opening titles or credits, but to relevant show content only.
+    5.6) Non-English spoken titles with hardcoded English subtitles must be tagged as SUBBED.
+        5.6.1) English spoken titles with hardcoded English subtitles present for English spoken scenes must be tagged as SUBBED.
+        5.6.2) English spoken titles with hardcoded Non-English subtitles present for English spoken scenes are not allowed, use INTERNAL.
+        5.6.3) Hardcoded subtitles added by content creators are exempt (e.g. Alien hardsubs, drunk talk hardsubs, hardsubs due to muffled mic).
+    5.7) Dupes based on resolution are not allowed.
+        5.7.1) Except in situations of releases with a different aspect ratio. The relevant tag must be used, and the reason mentioned in the NFO.
+        5.7.2) Releases which contain at least an additional 20 pixels worth of video on any side are not considered dupes. These releases must be tagged as WS or OM (open matte) and not proper, and the original release must not be nuked.
+    5.8) Black borders and anything (e.g. coloured borders, duplicate lines, dirty pixels, full-time tickers) that is not part of the video must be cropped.
+        5.8.1) Retention or removal of faded edges is left to the discretion of the group. Inclusion of faded edges is not a technical flaw, and cannot be propered.
+            5.8.1.1) Faded edges refer to a line of pixels which are of similar appearance to pixels' parallel to the video frame.
+        5.8.2) In the case of varying aspect ratios throughout the video, cropping must be done to the most common frame size (e.g. primary view of the pitch during sports, studio view during talk shows).
+        5.8.3) Cropping of letterboxed sources with hardcoded subtitles positioned within the black borders is left to the discretion of the group. Video may be left uncropped or cropped evenly both top and bottom to the widest frame without removing any subtitles.
+            5.8.3.1) Cropping out hardcoded subtitles entirely is allowed, only when they are not required, leaving any trace of subtitles or over-cropping actual picture to remove subtitles is considered to be a technical flaw.
+        5.8.4) Video may be over or under cropped by a maximum of 1px per side. Over or under cropping by more than 1px per side is considered a technical flaw.
+    5.9) 720p refers to a maximum display resolution of 1280x720.
+        5.9.1) 720i or 720p sources must be cropped as required and must not be resized.
+        5.9.2) 1080i or 1080p sources must be cropped and resized as required, with width at 1280 and/or height at 720.
+    5.10) Resized video must be within 0.5% of the original aspect ratio.
+        Original AR = (SourceWidth – [CropLeft + CropRight]) / (SourceHeight – [CropTop + CropBottom])
+        Release AR = EncodeWidth / EncodedHeight
+        AR Error % = [(Original AR – Release AR) / Original AR] * 100
+
+        Target resolution when resizing to maintain mod2 and reduce AR error:
+        TargetHeight = TargetWidth / [(SourceWidth – [CropLeft + CropRight]) / (SourceHeight – [CropTop + CropBottom])]
+        The correct mod 2 value can also be calculated from the ceiling of TargetHeight if the value is odd, and the floor of TargetHeight if the value is even.
+
+6) [ Filters ]
+    6.1) IVTC or deinterlacing must be applied as required.
+    6.2) Only smart deinterlacers, such as Yadif or QTGMC, must be used.
+        6.2.1) FieldDeinterlace must not be used for deinterlacing.
+    6.3) Only accurate field matching filters, such as TIVTC or Decomb, must be used for inverse telecining (IVTC).
+        6.3.1) Filters included in MEncoder, MJPEG tools, libav, libavcodec or FFmpeg must not be used for IVTC.
+        6.3.2) Deinterlacing filters must not be applied to telecined sources as a method of inverse telecine.
+    6.4) Only sharp resizers, such as Spline36Resize, BlackmanResize or LanczosResize/Lanczos4Resize, must be used.
+        6.4.1) Simple resizers, such as Bicubic, PointResize or Simple, are not allowed.
+
+7) [ Framerate ]
+    7.1) Constant frame rate (CFR) must be used.
+        7.1.1) Variable frame rate (VFR) methods are not allowed.
+    7.2) True 50 / 60 FPS video must be released at 50 / 60 FPS. True 25 / 30 FPS video released at 50 / 60 FPS is not allowed and considered a technical flaw.
+        7.2.1) Failure to apply a deinterlacer with bobbing enabled (e.g. QTGMC, Yadif(mode=1)) to double framerate (bob) 25i / 30i video back to true 50 / 60 FPS, is considered a technical flaw.
+        7.2.2) In cases of varying framerates of 25 / 30 FPS and true 50 / 60 FPS, the framerate of the main feature must be used (e.g. studio for talk shows, game coverage for sports).
+        7.2.3) In rare situations, 25 / 50 FPS sources must be restored to 24 or 30 FPS.
+        7.2.4) In rare situations, 30 / 60 FPS sources must be restored to 25 FPS.
+    7.3) Sources which contain footage at varying FPS throughout (hybrid sources) and may or may not require IVTC is left to the discretion of the group. The NFO must list a reason as to the final decision.
+        7.3.1) It is assumed that the majority of a title contains enough unique frames at 30,000/1,001 FPS to warrant a higher framerate. If it can be proven IVTC/decimating does not result in any loss of unique frames, this is considered a technical flaw.
+    7.4) Native and converted framerates refers to the standard in which the video was produced.
+        7.4.1) NTSC produced video is native to NTSC.
+        7.4.2) PAL produced video is native to PAL.
+        7.4.3) NTSC produced video that is broadcast in PAL is considered as converted video.
+        7.4.4) PAL produced video that is broadcast in NTSC is considered as converted video.
+    7.5) Converted video that has significant abnormalities (e.g. blended frames, jerky playback due to missing or duplicate frames) due to the conversion and cannot be reversed to the native format must be tagged as CONVERT.
+        7.5.1) Converted video which does not have significant abnormalities do not require the CONVERT tag and must not be nuked for the conversion.
+    7.6) Dupes based on framerate are not allowed, use INTERNAL.
+
+8) [ Audio ]
+    8.1) Audio must be in the original format provided.
+        8.1.1) Transcoding audio is not allowed.
+        8.1.2) Audio which is broadcasted as AAC LATM or LOAS (e.g. Freeview) must have the headers converted to AAC ADTS without transcoding.
+    8.2) Multiple language audio tracks are allowed.
+        8.2.1) The default audio track must be the language intended for release (e.g. An English release containing English, German and Russian audio tracks, must have the default flag set on the English track).
+        8.2.2) The correct ISO 639 language code supported by MKVToolnix must be set for all secondary audio tracks, default may be left undefined.
+            8.2.2.1) In situations where the language is not supported by MKVToolnix, 'und' must be used.
+    8.3) If the original language of a title is not English:
+        8.3.1) An English dubbed track is allowed as a secondary audio track.
+        8.3.2) Releases containing only a dubbed audio track must be tagged as DUBBED.
+    8.4) Dupes based on multiple audio tracks or audio format are not allowed, use INTERNAL.
+
+9) [ Glitches / Missing Footage ]
+    9.1) Where audio or video issues are unavoidable due to a live-broadcast or mastering issues, a release must not be nuked until a valid proper, repack or rerip which does not exhibit the same flaw is released.
+    9.2) Scrolling or other alert messages added by the broadcasting station (e.g. Weather or Amber alerts) appearing for a cumulative total of at least 30 seconds throughout the entire release is considered a technical flaw.
+    9.3) Video frame abnormalities (e.g. Abnormal snipes/pop-ups, banner advertisements that do not fade out entirely) as a result of broken splicing originating from the broadcasting station is considered a technical flaw.
+    9.4) Missing or repeated video footage without any loss of dialogue must be at least 2 seconds long at any one instance to be considered a technical flaw.
+        9.4.1) Except in situations where on-screen text is lost due to missing footage. Loss of on-screen text is considered a technical flaw.
+        9.4.2) Except in situations where minor missing or repeated video footage flaws are present throughout the majority of the release. Excessive flaws such as these are considered a technical flaw.
+            e.g. Video frame glitches occurring every 2 minutes throughout the entire release but only in the amount of 1 second per instance, is considered excessive and a technical flaw.
+                 Repeated footage occurring every 5 minutes throughout the entire release but only in the amount of 1.5 seconds per instance, is considered excessive and a technical flaw.
+                 Video frame glitches of 1 second per instance occurring 6 times throughout the entire release is NOT considered excessive or a technical flaw.
+    9.5) Audio which drifts at least 120ms at a single point or a total of at least 120ms between multiple points throughout the entire release is considered a technical flaw.
+        e.g. Sync drifting +120ms after 10 minutes is considered a technical flaw.
+             Sync drifting +80ms after 5 minutes, -40ms after 15 minutes, for a total of 120ms, is considered a technical flaw.
+    9.6) Glitches that occur in any audio channel present (e.g. L, R, C, SL, SR) are considered a technical flaw.
+        9.6.1) Glitches are defined as, but not limited to: missing dialogue, repeated dialogue, inability to understand dialogue, bad channel mix, large gaps within playback, persistent clicks/pops/muted/echoing/muffled audio.
+
+10) [ Editing / Adjustments ]
+    10.1) Minor adjustments to video or audio tracks (e.g. duplicating or removing frames, channel count) in order to prevent issues with playback or sync is allowed.
+    10.2) Multi-episode releases with no clear delineation between episodes (e.g. end credits) must not be split.
+    10.3) Including previously-on footage is optional, but recommended.
+    10.4) Including upcoming/teaser/scenes from the next episode footage found at the conclusion of an episode is optional, but recommended.
+    10.5) Credits must be included if they contain unique show content. (e.g. bloopers, outtakes, dialogue, unique uninterrupted soundtrack, in memory of message)
+        10.5.1) End credits must only be considered optional if they do not contain unique show content (e.g. regular plain credits with or without promos), and may be removed at the discretion of the group.
+        10.5.2) A simulcast which does not contain unique content in the credits cannot be propered from a primary broadcaster which contains unique content, use EXTENDED.
+        10.5.3) If a different broadcaster or re-broadcast of a show contains unique content not present in the original broadcast, the first release cannot not be propered, use EXTENDED.
+            10.5.3.1) In situations where a unique uninterrupted soundtrack is the only additional unique content included in the credits, use of EXTENDED is not allowed, use INTERNAL.
+            10.5.3.2) It is recommended, but not required, to include unique content included in the credits that was omitted from the original broadcast.
+    10.6) Inclusion of bumper segments, 5-20 second segments containing coming up/preview/backstage footage (e.g. SNL, Cops) is optional and at the discretion of the group.
+        10.6.1) In situations where bumper segments have been omitted in the first release, a secondary release which includes all bumper segments is allowed and must be tagged as UNCUT.
+        10.6.2) In situations where bumpers are included:
+            10.6.2.1) All bumper segments must be free of any technical flaws.
+            10.6.2.2) All bumper segments must be included, missing any bumper segment is considered a technical flaw.
+        10.6.3) Small segments containing actual show content, not containing coming up/preview/backstage footage, are not considered as bumper segments (e.g. Talking Dead, Comic Book Men, Portlandia).
+    10.7) Any unrelated video (e.g. commercials, rating cards, viewer/content warnings), regardless of duration (e.g. 1 faded/half opacity frame or 10 seconds) must be completely removed.
+        10.7.1) Content warnings can be retained or removed at the discretion of the group, except when they are intended by content creators and must be retained (e.g. Tosh 0, Robot Chicken, South Park, Law and Order SVU).
+            10.7.1.1) This does not apply to scripted or animation content. Content warnings not intended by content creators must always be removed in these cases.
+            10.7.1.2) Following the opening segment for non-scripted and non-animation content, all content warnings which precede each segment must be removed.
+        10.7.2) Sponsorship advertisements which are integrated into show content and cannot be removed (e.g. Jimmy Kimmel, Talking Dead, Deadliest Catch) are exempt.
+        10.7.3) Show transition cards appearing at the start or end of segments on some broadcasters (e.g. Seven, Channel 4, ITV1) can be retained or removed at the discretion of the group.
+        10.7.4) Opening and closing interleaves (e.g. HBO opening animation, ... presents, this has been a ... production, ... original series) can be retained or removed at the discretion of the group, except when they contain show content and must be retained.
+    10.8) Any unrelated audio (e.g. alerts, commercials), regardless of duration (e.g. 100ms or 10 seconds) must be completely removed.
+        10.8.1) Except when a broadcaster (e.g. ABC) splices unrelated audio into the beginning of a segment, that does not result in sync issues.
+
+11) [ Subtitles ]
+    11.1) Subtitles for English spoken titles without foreign dialogue are optional, but encouraged.
+    11.2) English spoken titles with foreign dialogue must include a separate subtitle track for forced subtitles.
+        11.2.1) Foreign dialogue subtitle tracks must be set as forced and it is considered a technical flaw if not done correctly.
+        11.2.2) In situations where the source video stream contains hardcoded subtitles for English spoken titles with foreign dialogue, a separate subtitle track for the forced subtitles is not required.
+        11.2.3) If a broadcaster which is primarily English spoken (e.g. FOX, BBC) does not contain hardcoded subtitles for scenes with foreign dialogue in the video stream, then forced subtitles are not required but recommended.
+    11.3) Non-English spoken titles without hardcoded subtitles must include an English subtitle track set as forced before it is considered to be an English release.
+    11.4) Subtitles must be extracted from the original source.
+        11.4.1) Fan-made or custom subtitles are not allowed.  
+    11.5) Adjustments and edits (e.g. adjusting timecodes, fixing grammar, spelling, punctuation errors) may be made to subtitle tracks.
+    11.6) Subtitles must be muxed into the final MKV in text based format, i.e. SubRip (.srt) or SubStation Alpha (.ssa/.ass).
+        11.6.1) Subtitles must not be set as default or forced unless otherwise specified.
+        11.6.2) The correct ISO 639 language code supported by MKVToolnix must be set for all subtitle tracks.
+            11.6.2.1) In situations where the language is not supported by MKVToolnix, 'und' must be used.
+    11.7) External subtitles located in 'Subs' directories are not allowed.
+    11.8) Dupes based on subtitles are not allowed, use INTERNAL.
+
+12) [ Container ]
+    12.1) Container must be Matroska (.mkv). MKVToolnix is the recommended muxer.
+        12.1.1) Custom muxing tools are allowed. However, the output must adhere to the Matroska specifications and must retain identical compatibility with demuxers as files created with MKVToolnix.
+    12.2) Support for file streaming and playback from RAR is mandatory.
+    12.3) Matroska header compression must not be enabled.
+    12.4) Chapters are allowed, and recommended for long events (e.g. long poker games to mark each round).
+    12.5) Watermarks, intros, outros or any other forms of defacement in any track (e.g. video, audio, subtitles, chapters) are not allowed.
+
+13) [ Packaging ]
+    13.1) Must be packed with RAR files, broken into a maximum of 101 volumes (.rar to .r99)
+    13.2) RAR5/RARv5.0 is not allowed. RAR3/RARv2.0 or RAR4/v2.9 must be used.
+        13.2.1) Custom RAR tools are allowed. However, files must adhere to the RAR4/RARv2.9 archive specifications and must retain identical compatibility with extractors and demuxers as files created with WinRAR/rar.
+    13.3) Permitted RAR sizes are:
+        13.3.1) Positive integer multiples of 50,000,000 bytes.
+            e.g. (50 * 10^6) * n bytes, where n > 0.
+                 (50 * 10^6) * 4 bytes, 100,000,000 bytes, 400,000,000 bytes, etc.
+        13.3.2) Releases must have a minimum of 10 volumes before the next multiple of 50,000,000 bytes is used.
+            e.g. 10 volumes at 50,000,000 bytes can be repackaged to 5 volumes at 100,000,000 bytes.
+                  5 volumes at 100,000,000 bytes cannot be repacked to 4 volumes at 150,000,000 bytes.
+    13.4) SFV and NFO must be present.
+    13.5) RAR, SFV and Sample files must have unique, lower-case filenames with the group tag.
+        13.5.1) Group tags must be unique to each group, and may be an abbreviated variation of the group name.
+    13.6) Missing RAR(s) or SFV on all sites is considered a technical flaw.
+    13.7) Corrupt RAR(s) (errors upon extraction) is considered a technical flaw.
+    13.8) RAR compression and recovery records are not allowed.
+    13.9) Encryption or password protection is not allowed.
+    13.10) RARs must only contain a single mkv file, any other files (e.g. multiple mkv files, txt files) are not allowed.
+
+14) [ Samples / Source Samples ]
+    14.1) Releases must include a single 50-70 second sample.
+    14.2) Samples must have unique filenames and placed in a separate directory named 'Sample'
+    14.3) Samples must be cut from the final video, not encoded separately.
+    14.4) If there is a question as to the validity of a source, encoding methods or filters used, the release may be nuked within 24 hours of pre requesting a source sample and must include the initial suspicion or reason.
+            e.g. source.sample.requested_suspicion.of.invalid.decimation.
+                 source.sample.requested_suspicion.of.analog.source.used.
+        14.4.1) The group has 24 hours from the first nuke to pre a source sample that is at least 10 seconds in length.
+        14.4.2) Requests may be of a specific timecode to verify the sample provided is the same source used for the encode in question (e.g. include.banner.at.4m13s).
+        14.4.3) Source sample(s) must be packed as per section 13, and use the SOURCE.SAMPLE tag.
+        14.4.4) Providing insufficient proof to disprove any claims, or a failure to provide any source proof, and the release must remain nuked and can be propered.
+        14.4.5) If there are any questionable issues (e.g. mastering flaws) with the source, it is recommended to include uniquely named source sample(s) within the 'Sample' directory.
+
+15) [ Tagging ]
+    15.1) Only the following additional tags are allowed:
+        ALTERNATIVE.CUT, CONVERT, COLORIZED, DC, DIRFIX, DUBBED, EXTENDED, FINAL, INTERNAL, NFOFIX, OAR, OM, PPV, PROPER, REAL, REMASTERED, READNFO, REPACK, RERIP, SAMPLEFIX, SOURCE.SAMPLE, SUBBED, UNCENSORED, UNRATED, UNCUT, WEST.FEED, and WS.
+        15.1.1) WEST.FEED refers to an alternative version which airs exclusively on the west coast, such as a live episode of Undateable which has two separate performances of the same episode for each coast, east and west.
+            15.1.1.1) Releases must be tagged as WEST.FEED when they come from an exclusive west coast airing, even if no east feed has been released first.
+    15.2) Variations of any additional tags are not allowed.
+        e.g. READ.NFO or RNFO is not allowed, READNFO must be used.
+    15.3) READNFO should be used sparingly. Discretion is recommended.
+        15.3.1) The READNFO tag must not be used with PROPER, REPACK or RERIP. The NFO is required to contain a reason, therefore the tag is redundant.
+    15.4) Tags must only be used once, but the order is left to the discretion of the group.
+        15.4.1) Except in situations where the REAL tag is required to be stacked to differentiate between multiple invalid releases.
+            e.g. A REAL.REAL.PROPER is required for a REAL.PROPER and PROPER.
+    15.5) Tags must be grouped together, period-delimited, and must follow the mandatory directory format, see rule 16.4.
+        e.g. EXTENDED.RERIP, REMASTERED.REPACK.
+
+16) [ Directory Naming ]
+    16.1) Acceptable characters allowed for directories are:
+        ABCDEFGHIJKLMNOPQRSTUVWXYZ
+        abcdefghijklmnopqrstuvwxyz
+        0123456789._-
+    16.2) Single punctuation must be used. Consecutive punctuation is not allowed.
+        e.g. Show----Name.S01E01, Show.Name....S01E01
+    16.3) Typos or spelling mistakes in the directory are not allowed.
+    16.4) Releases must follow the matching directory format:
+        16.4.1) Single.Episode.Special.YYYY.<TAGS>.[LANGUAGE].720p.<FORMAT>-GROUP
+        16.4.2) Weekly.TV.Show.SXXEXX[Episode.Part].[Episode.Title].<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.3) Weekly.TV.Show.Special.SXXE00.Special.Title.<TAGS>.[LANGUAGE].720p.<FORMAT>-GROUP
+        16.4.4) Multiple.Episode.TV.Show.SXXEXX-EXX[Episode.Part].[Episode.Title].<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.5) Miniseries.Show.Name.Part.X.[Episode.Title].<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.6) Daily.TV.Show.YYYY.MM.DD.[Guest.Name].<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.7) Daily.Sport.League.YYYY.MM.DD.Event.<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.8) Monthly.Competition.YYYY.MM.Event.<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.9) Yearly.Competition.YYYY.Event.<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.10) Sports.Match.YYYY[-YY].Event.Round.XX.[Team.vs.Team].<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.11) Sport.Tournament.YYYY.Event.[Team/Person.vs.Team/Person].<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+        16.4.12) Country.YYYY.Event.<BROADCASTER>.FEED.<TAGS>.[LANGUAGE].720p.<FORMAT>.x264-GROUP
+    16.5) Named directory arguments formatted inside <> must be included. Optional arguments formatted inside [] may be used in some cases.
+        16.5.1) Mini-series parts must be at least 1 integer wide, and values used may extend past 9.
+            e.g. Miniseries.Part.1, Miniseries.Part.10, etc.
+        16.5.2) Episode and seasonal numbering must be at least 2 integers wide, and values used may extend past 99.
+            e.g. S01E99, S01E100, S101E01, etc.
+        16.5.3) Episode part refers to episodes, usually cartoons or animation, which split episodes into stories by different directors. Episodes parts must be alphanumeric (A-Z, a-z, 0-9).
+            e.g. The first episode from Season 2 of SpongeBob SquarePants is split into S02E01A/B, etc. https://en.wikipedia.org/wiki/List_of_SpongeBob_SquarePants_episodes#Episodes
+        16.5.4) Season must be omitted if a series does not have seasons, and is not a mini-series.
+            e.g. One Piece must be tagged as One.Piece.E01
+        16.5.5) Episode title and guest names are optional.
+        16.5.6) Guest name(s) used must be in the order in which they appear on the show to avoid any confusion.
+        16.5.7) Non-English releases must include the language tag. English releases must not include the language tag.
+            16.5.7.1) Language tags must be the full name of the language. Abbreviations or language codes are not allowed, unless they are already established and widely adopted (e.g. EE, SI, PL).
+                e.g. FRENCH, RUSSIAN.
+        16.5.8) Tags refers to all permitted tags only, see section 15.
+        16.5.9) Format refers to the video source used, i.e. AHDTV, HDTV, HR.PDTV.
+            16.5.9.1) 720p tag must be omitted when the format is HR.PDTV.
+    16.6) Do not indicate source, ripping or encoding methods that were used. Use the NFO for any technical details.
+    16.7) All single-episode titles, (e.g. documentaries, specials, movies) must include the production year.
+    16.8) Inclusion of the channel name is not allowed.
+        e.g. National.Geographic, HBO.Documentary, History.Channel.
+    16.9) Different shows with the same title produced in different countries must have the ISO 3166-1 alpha 2 country code in the show name.
+        16.9.1) Except for UK shows, which should use UK, not GB.
+        16.9.2) This rule does not apply to an original show, only shows that succeed the original.
+            e.g. The.Office.S01E01 and The.Office.US.S01E01.
+    16.10) Different shows with the same title produced in the same country which begin in different years must have the year of the first season in the directory.
+        16.10.1) The year is not required for the show broadcasted first.
+            e.g. Second.Chance.S01E01 and Second.Chance.2016.S01E01.
+    16.11) Different shows with the same titles produced in the same country which begin in different years must have the ISO-3166-1 alpha 2 country code followed by the year of the first season in the directory.
+        16.11.1) See rules 16.9 and 16.10 for country code and year explanations.
+            e.g. Wanted.S01E01 (2005), Wanted.AU.S01E01 (2013), Wanted.AU.2016.S01E01 (2016).
+    16.12) Show names which are hyphenated or include punctuation must follow the format shown in the title sequence or credits of the first episode, limited to the list of acceptable characters.
+        16.12.1) If no title card exists, see rule 16.14.1.
+        16.12.2) Additional titles and names given to an individual season must not be used.
+            e.g. Archer.Vice.S05, Strike.Back.Legacy.S05.
+        16.12.3) Acronyms which show the ellipsis of letters with non-standard characters must be replaced with a period.
+            e.g. M*A*S*H must be M.A.S.H.
+    16.13) Directory nomenclature and numbering must remain consistent across the lifetime of an individual show or event.
+        16.13.1) Shows which contain acronyms or secondary titles must follow the format used by the first release.
+            e.g. Law.and.Order.SVU.S01E01 is the standard format that must be used for all following episodes, Law.and.Order.Special.Victims.Unit.S01E02 is not allowed.
+                 Shadowhunters.The.Mortal.Instruments.S01E01 is the standard format, Shadowhunters.S01E02 is not allowed.
+        16.13.2) Shows which air with extended content under modified names must use the primary show name and numbering with the EXTENDED tag.
+            e.g. QI.S06E01 and QI.XL.S01E01, must be tagged as QI.S06E01 and QI.S06E01.EXTENDED respectively.
+                 Room.101.S01E01 and Room.101.Extra.Storage.S01E01, must be tagged as Room.101.S01E01 and Room.101.S01E01.EXTENDED respectively.
+        16.13.3) Groups cannot change the directory format of a show after a second release or episode with the same format exists.
+            e.g. 2016-01-01: Law.and.Order.SVU.S01E01 sets the format.
+                 2016-01-08: Law.and.Order.SVU.S01E02 continues the format.
+                 2016-01-09: Law.and.Order.Special.Victims.Unit.S01E01.DIRFIX is not valid as the second episode already exists and continues with the previously defined format.
+        16.13.4) Except in situations where the show has an official change in its name, whereby all official references by the broadcaster or studio is of the new name. This change must be mentioned in the first NFO with the new name with relevant references.
+            e.g. Gold.Rush.Alaska.S01E01 changed to Gold.Rush.S02E01.
+        16.13.5) Official name changes for a show does not include the renaming of individual seasons. Seasonal name changes must be ignored.
+            e.g. Power.Rangers.S01 and Power.Rangers.S07 must be used. Power.Rangers.Lost.Galaxy.S07 must not be used.
+                 Strike.Back.S03, Strike.Back.S05 must be used. Strike.Back.Vengeance.S03, Strike.Back.Legacy.S05 must not be used.
+        16.13.6) Any deviations or changes require sufficient evidence listed in the NFO as to the reason for change.
+    16.14) User contributed services such as TVRage, TVMaze or TheTVDB must not be used as a reference when naming and numbering episodes. It may be used as a general guide; however, official guides must be used.
+        16.14.1) The following order must be used as the primary source for naming and numbering.
+            16.14.1.1) Official website of the show.
+            16.14.1.2) Order and format listed by the original broadcaster.
+            16.14.1.3) Network guide.
+        16.14.2) In situations where official sources have inconsistent listings, or offer none at all, previously established numbering must be used.
+            e.g. Mythbusters, National Geographics Special Episodes.
+
+17) [ Fixes ]
+    17.1) The following fixes are allowed: DIRFIX, NFOFIX and SAMPLEFIX. Any other form of fix is not allowed.
+    17.2) All fixes require an NFO and must state which release is being fixed.
+    17.3) A proper cannot be released for an error that can be fixed with the above methods.
+    17.4) If multiple releases from a single season require a DIRFIX, a single DIRFIX per season is allowed and is recommended.
+        17.4.1) If a single DIRFIX is used, all relevant releases and corresponding fixes must be listed in the NFO.
+
+18) [ Dupes ]
+    18.1) Same second releases, with a maximum acceptable variance of one second (+/- 1 second) between timestamps reported by a majority of pre bots, are not considered dupes and should not be nuked.
+        18.1.1) Timestamps must be considered as whole integers and round half towards zero.
+        18.1.2) The earliest timestamp must be used when considering dupes.
+            e.g. Release A: 1451572201.427158 -> 1451572201
+                 Release B: 1451572202.626645 -> 1451572202
+                 Release C: 1451572203.137665 -> 1451572203
+                 Release B does not dupe Release A: 1451572202 – 1451572201 = 1, i.e. maximum variance allowed.
+                 Release C dupes Releases A and B: 1451572203 – 1451572201 = 2, i.e. 2 > 1.
+        18.1.3) In situations where a release is found to contain a technical flaw, same second dupes which do not exhibit any technical flaws must be considered the final release. Groups may release a DIRFIX to PROPER for their original release, but it is not required.
+            e.g. Release A and Release B are released at the same time. Release A is nuked as containing glitches, Release B then becomes the de facto release and a DIRFIX to PROPER may be released.
+    18.2) AHDTV dupes HDTV.
+    18.3) HDTV does not dupe AHDTV.
+    18.4) HR.PDTV dupes HDTV and AHDTV
+    18.5) AHDTV, HDTV and HR.PDTV dupes an equivalent Retail release.
+        18.5.1) Except in situations where the aspect ratio of the release exceeds that of its respective Retail release.
+            e.g. A 2.39:1 release will not dupe a 1.78:1 retail release provided there is clearly more visible on-screen footage. Proof demonstrating this difference is recommended, but not mandatory.
+        18.5.2) Except in situations where the release is a different version (i.e ALTERNATIVE.CUT, COLORIZED, EXTENDED, OAR, OM, REMASTERED, UNCENSORED, UNRATED, UNCUT, WEST.FEED, WS) of its respective retail release, and is not censored after uncensored.
+            e.g. An UNCENSORED.720p.HDTV.x264 release does not dupe a censored 720p.BluRay.x264.
+    18.6) Releases with hardcoded subtitles (i.e. SUBBED) dupe releases with muxed-in subtitles.
+    18.7) Releases with muxed-in subtitles do not dupe releases with hardcoded subtitles.
+    18.8) Native video streams do not dupe converted video streams.
+    18.9) Converted video streams dupe native video streams.
+    18.10) Different versions of releases (i.e ALTERNATIVE.CUT, COLORIZED, EXTENDED, OAR, OM, REMASTERED, UNCENSORED, UNRATED, UNCUT, WEST.FEED, WS) do not dupe their counterparts or vice versa, except for censored after uncensored and FS after WS.
+    18.11) Programs which have identical footage but have different narrators in the same language (e.g. British narrator for BBC and American narrator for Discovery) dupe each other, use INTERNAL.
+    18.12) Different broadcasters which offer alternate commentary and coverage in the same language (e.g. CTV for Canada, NBC for America, BBC for England) for special worldwide events (e.g. The Olympics), do not dupe each other.
+
+19) [ Propers / Rerips / Repacks ]
+    19.1) Detailed reasons must be included in the NFO for all repacks, rerips and propers.
+        19.1.1) Proper reasons must be clearly stated in the NFO, including timestamps and specifics in regards to the flaw when appropriate. A sample demonstrating the flaw in the original release is encouraged, but not mandatory.
+    19.2) Propers are only permitted in the case of a technical flaw in the original release.
+        19.2.1) Flaws present in optional content cannot be propered, use INTERNAL.
+            19.2.1.1) In situations where bumper segments have been included, see rule 10.6.2.
+        19.2.2) Time compressed sources (e.g. ABC, Freeform, NBC) that contain blended and missing frames cannot be propered for bad IVTC, which is the result of the time compression.
+        19.2.3) Releases which exhibit minor IVTC flaws as a result of source compression, video glitches, logos, ratings bugs, snipes or banner advertisements, are not considered technically flawed and cannot be propered.
+            19.2.3.1) Except in situations where the same flaws result in excessive frame abnormalities or issues throughout the majority of the release.
+    19.3) Qualitative propers are not allowed, use INTERNAL.
+        19.3.1) Sources with different crops cannot be propered from a different source which contains more valid pixels than the original releases.
+
+20) [ Internals ]
+    20.1) Internals are allowed to be released for any reason (e.g. releases containing technical flaws, use of alternate codecs, containers, settings for experimental purposes).
+    20.2) Any severe technical flaws must be mentioned in the NFO.
+    20.3) Internal releases may only be nuked for technical flaws that are not mentioned in the NFO.
+        20.3.1) In situations where technical flaws are not mentioned in the NFO, groups may provide an NFOFIX to avoid or reverse a nuke.
+    20.4) Using DIRFIX.INTERNAL to avoid a nuke is not allowed, and must be nuked fix.for.nuke.
+
+21) [ Ruleset Specifics ]
+    21.1) In the absence of a country specific ruleset, this ruleset must be considered the ONLY official ruleset for TV-X264. It supersedes all previous revisions, rulesets and precedents.
+        21.1.1) Releasing under former rulesets (e.g. TV-VCD 2002, TV-XVID 2007) or codecs (e.g. VCD, XVID) is not allowed, and must be nuked defunct.ruleset or defunct.codec.
+        21.1.2) The naming standards listed in this document must only take effect once a current running season has ended. Any existing naming schemes must be used in the event of missing episode(s) from older seasons being filled.
+    21.2) When releasing with foreign language tags (e.g. SWEDISH, FRENCH, POLISH), all occurrences of the word 'English' in sections 5, 8 and 11 must be replaced with the tagged language.
+            e.g. POLISH, rule 5.6 becomes "Non-Polish spoken titles with hardcoded Polish subtitles must be tagged as SUBBED.".
+        21.2.1) Foreign language tags must represent the language intended for release, the following rules apply to Non-English releases only.
+            21.2.1.1) Already established and widely adopted compact tags for subbed, dubbed and language, are allowed (e.g. PLDUB, SWESUB, SUBFRENCH, NLSUBBED).
+            21.2.1.2) The DUBBED tag may be omitted or included at the discretion of the group.
+                e.g. French TV series airing in Sweden with French audio and Swedish hardcoded subtitles must be tagged as SWEDISH.SUBBED or SWESUB.
+                     Danish TV series airing in Poland with Polish dubbed audio and no hardcoded subtitles must be tagged as POLISH, POLISH.DUBBED or PLDUB.
+                     Greek TV series airing in Greece with Greek audio must be tagged as GREEK.
+            21.2.1.3) Soft-subbed releases are not allowed when the primary audio track is not the language tagged as, use INTERNAL or SUBPACK.
+                e.g. Game.of.Thrones.S01E01.SWEDISH.720p.HDTV with English audio and Swedish soft-subs is not allowed, use INTERNAL or SUBPACK.
+                     Game.of.Thrones.S01E01.DANISH.SUBBED.720p.HDTV with English audio and Danish hard-subs is allowed.
+                     French TV series Le Clan S01E01 airing in Denmark with French audio and Danish soft subtitles must be tagged as FRENCH, if no other release of the episode exists.
+                     French TV series Le Clan is already released as Le.Clan.S01E01.FRENCH.720p.HDTV.x264, only an INTERNAL or SUBPACK release is allowed for soft-subs in another language.
+            21.2.1.4) Hard-subbed releases dupe SUBPACK when the primary audio track is not the language tagged as, use INTERNAL.
+                e.g. Game.of.Thrones.S01E01.TURKISH.SUBBED.720p.HDTV with English audio and Turkish hard-subs dupes Game.of.Thrones.S01E01.TURKISH.SUBPACK.
+        21.2.2) Releases with foreign language tags only dupe releases with the same foreign language tags.
+                e.g. Game.of.Thrones.S01E01.SWEDISH.SUBBED.720p.HDTV does not dupe Game.of.Thrones.S01E01.POLISH.DUBBED.720p.HDTV or vice versa.
+                     Game.of.Thrones.S01E01.FINNISH.SUBBED.720p.HDTV does not dupe Game.of.Thrones.S01E01.720p.HDTV or vice versa.
+    21.3) The following definition of keywords throughout this ruleset are as follows:
+        21.3.1) Must: the rule is explicit in the definition and is compulsory.
+        21.3.2) Should: implies the rule is a suggestion, and is non-compulsory.
+        21.3.3) Can or may: implies the rule is optional, and is non-compulsory.
+        21.3.4) e.g: refers to common examples, elements listed should not be considered as all possibilities.
+
+[ Signed - 72 Groups ]
+aAF ALTEREGO ALTiTV AMB3R AMBIT ANGELiC ASCENDANCE AVS AZR BAJSKORV BARGE BATV C4TV CBFM CCCAM COMPETiTiON COMPULSiON CREED CROOKS CURIOSITY D0NK DEADPOOL DHD DiFFERENT DIMENSION DKiDS DOCERE EDUCATE EMX EXECUTION FiHTV FoV FRiES FRiSPARK FUtV HYBRiS iDiB iFH iNGOT KAFFEREP KILLERS KNiFESHARP KYR MiNDTHEGAP MORiTZ NORiTE NSN ORENJI PANZeR PRiNCE ProPLTV QCF RCDiVX RDVAS REGRET RiVER SH0W SKANK SKGTV SORNY SQUEAK SRiZ TASTETV TLA TVBYEN TViLLAGE TvNORGE UAV WaLMaRT WNN YesTV ZOMBiE
+
+[ Refused to Sign - 3 Groups ]
+BRISK BWB FLEET
+
+[ Revisions ]
+2007-05-08 - First TV-X264 standards, with 2-pass based encoding.
+2008-04-17 - Major rewrite better sizing and HR.PDTV now included.
+2011-06-15 - First TV-X264 standards with CRF, instead of 2-pass based encoding.
+2011-08-07 - Updated with standard CRF values, much better rule coverage and more groups signing.
+2016-04-04 - Total rewrite, all known issues and loopholes have been addressed, switched to number based marking of rules.
+
+Dedicated to Spatula (RIP 2010-11-22) who made the first ever scene TV-X264 release: The.Unit.S01E04.HD720p.x264-MiRAGETV.

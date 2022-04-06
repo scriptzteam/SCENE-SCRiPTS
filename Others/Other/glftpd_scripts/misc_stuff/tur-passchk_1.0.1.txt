@@ -1,0 +1,12 @@
+PassChk (GL1&2)
+
+Description: Tur-Passchk is a replacement passchk for dark0n3s Zipscript-C. When 
+using /msg botnick !invite, users can send a code instead of their real password 
+for security. Issuing a command in glftpd will provide the users with his code 
+which does not change unless he changes password on site. 
+This is the easiest way to do this since it requires only one little change in 
+dZSbot.tcl to enable (switch passchk binary option).
+
+Author:   Turranius
+Version:  1.0.1
+Added on: 02-May-2004

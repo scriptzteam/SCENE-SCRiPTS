@@ -1,0 +1,107 @@
+The.2011.German.COMPLETE.BLURAY.Releasing.Standards.v1.1
+
+
+
+General ( COMPLETE BLURAY ):
+---------------------------
+
+1.1)  Kopierschutz wie AACS, BD+ muss entfernt werden, dies gilt auch fuer nachtraeglich
+      modifizierte Ordner wie ANY! ( Any! is nichts Anderes als das umbenannte Dir AACS )
+      und auch Any-Files , welche man des öfteren im Dir " CERTIFICATE " findet.
+
+      Diese Files heissen : AnyDVD.xig , AnyDVD.xrl und AnyDVD.xrt und sind nochmal im
+      Dir CERTIFICATION/BACKUP enthalten.
+
+1.2)  Die Releases muessen als .iso mit UDF2.5 vorliegen.
+
+1.3)  Rar/Sfv/Nfo/Sample sind zwingend erforderlich.
+
+1.4)  Das Release muss Region Free sein.
+
+1.5)  BD-Live muss deaktiviert werden.Wenn BD-Live nicht deaktiviert wurde, findet man
+      in dem Dir CERTIFICATION und CERTIFICATION/BACKUP die Files : online.crl , online.crt
+      und online.sig.
+      Wenn diese Files noch vorhanden sind im ISO ist BD-LIVE noch Aktiv und das Release wird nuked !
+
+1.6)  Standalone (SAP) und PS3 Kompatibilitaet ist zu gewaehrleisten, d.h. unter anderem die original
+      Verzeichnisstruktur muss erhalten bleiben. Verzeichnisse wie AUXDATA, BDJO, JAR, META
+      sind, falls nicht vorhanden, manuell hinzufuegen.
+
+1.7)  Ein Sample von etwa 60 Sek., das aus dem finalen Release herausgeschnitten wird, ist im
+      Unterordner /Sample beizulegen.
+
+1.8)  Es darf nichts gestripped werden.
+
+Tagging:
+
+1.9)  Titel.{Sxx.DISCx.}JAHR{.DOCU}{.DISCx}<.DUAL|.MULTi|.German>.COMPLETE.BLURAY{.PROPER|.iNTERNAL|.READNFO|.REPACK|.RERiP}-GROUP
+      Syntax: {optional}
+2.0)  Die Jahresangabe ist das Produktionsjahr und muss von imdb uebernommen werden.
+2.1)  Titel in GERMAN oder ENGLISH bzw. Originaltitel entscheided die jeweilige Group fuer sich.    
+
+Packaging:
+
+2.2)  Als Volumengroesse sind folgende Groessen zulaessig: 500 MB
+2.3)  Packen im Classic Style
+2.4)  Wiederherstellungsinformation von 1% ist Pflicht.( Put recovery record )
+2.5)  Kompressionsverfahren ist immer STORE bzw. Speichern ( Unkomprimiert )
+
+Nfo:
+----
+
+2.6)  In der Nfo muessen mindestens folgende Informationen enthalten sein:
+
+      - Titel
+      - Release date
+      - Source (BD25/BD50)
+      - Rar Groesse und Anzahl
+      - German Cine Date bzw. STV
+      - Runtime
+      - Genre
+      - imdb.com Link
+      - imdb Rating
+      - Resolution
+      - Video Bitrate ( UNTOUCHED )
+      - alle vorhandenen Audiosprachen/Audiokanaele muessen angegeben , ausgenommen AUDIO-KOMMENTARE
+      - alle vorhandenen Untertitel ( Angaben wie " all included " oder Aehnliches sind nicht erlaubt )
+
+
+                                          Notes :
+
+
+       Wir haben uns bemueht aufzuzeigen, dass ein SAUBERES Image absolut einwandfrei funktioniert
+
+       und keinerlei Verbindung mehr zum Internet aufnimmt, wenn man vor allem die Punkte 1.1 und
+
+       1.5 beachtet. Es weiss Niemand was an Daten vom PC des Image-Erstellers in diesen Any-Files
+
+       enthalten ist. Genauso moechte wohl kaum jemand seine IP bei Warner , Universal oder
+
+       anderen Filmvertrieben finden , ohne dieses zu wissen. Deshalb ist das Deaktivieren von
+
+       BD-LIVE unerlaesslich. Bei 3D-BLURAYS laesst sich ohne ANY!-Dir zur Zeit noch keine
+
+       lauffaehige ISO erstellen und aus diesem Grund Verzichten wir auf die 3D-BLURAYS mit
+
+       dem neuen Standard zugunsten der Sicherheit bis eine Loesung gefunden ist.
+
+
+       Rules signed by : FULLSiZE , BLUBYTE , TRexHD , SLM , SMAHD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

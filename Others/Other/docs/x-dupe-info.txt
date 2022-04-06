@@ -1,0 +1,186 @@
+==============================================================================
+
+                        Introducing the X-DUPE feature
+
+                              by Hoopy, June 2001
+
+==============================================================================
+
+1. What is it?
+
+The X-DUPE mechanism helps you saving time when uploading files by avoiding
+"dupes"; in this case we refer to the term "dupes" as files which already have
+been uploaded to the same directory by other users.
+
+For example, there's something new to upload. 10 people start uploading files.
+You are one of them. You are using a FTP or FXP client where you can tag a
+whole directory... you just select the new directory, press some hotkey for
+transferring it, and let the program handle the rest. Let's say there is a
+total of 50 files to transfer, so after you finished your first file, your
+program tries to upload the second file. However we got 10 people uploading,
+so you'll probably run into a dupe. Running into a dupe looks like this:
+
+STOR blabla.r03
+553- blabla.r03: This file looks like a dupe!!
+553 It was uploaded by someone ( 0m 41s ago).
+
+... and maybe you won't get this only once, but 5 or even 10 times in a row.
+In short, you might lose precious time by trying to upload files which already
+are on the server. 
+
+This is where X-DUPE comes in. X-DUPE stands for extended dupe information
+and makes the server send information about  which files have been uploaded
+already  to the client. The client can read this information and use it to
+remove files from its upload queue. It will not try to upload these dupes then
+and you'll spend the time on uploading instead of getting one dupe message
+after the other.
+
+==============================================================================
+
+2. How does it work?
+
+The bad news is that your ftp/fxp client has to support this feature. The
+good news is that pFtp (popular fxp client for Linux) already does. If you
+like the idea of this feature, you should encourage other FTP client authors
+to implement support for it in their programs. It should not be hard to
+implement and we're pretty confident support will be added if enough people
+ask for it.
+
+The idea behind it is very simple. When X-DUPE mode is turned in and you run
+into a dupe, you'll get an output like
+
+STOR blabla.r03
+553- X-DUPE: blabla.rar blabla.r00 blabla.r01 blabla.r02 blabla.r03
+553- X-DUPE: blabla.r04 blabla.r05
+553- blabla.r03: This file looks like a dupe!!
+553  It was uploaded by someone ( 0m 41s ago).
+
+Your FTP client checks those X-DUPE lines and uses them to remove those files
+from your upload queue. 
+
+==============================================================================
+
+3. I'm author of a FTP/FXP client and want to support it. 
+   What do I have to do?
+
+To get those X-DUPE lines, you have to turn on extended dupe information mode
+first. This is done with the new "SITE XDUPE" ftp command.
+
+You should send this command somewhere between logging in and trying to upload
+a file. A server which does not have this feature will probably reply with
+something like "500 'SITE XDUPE 1': command not understood.". 
+
+There are different modes of operation for the XDUPE command:
+
+1) Sending "SITE XDUPE" without any parameters will show the current status. 
+   Example:
+   
+   > site xdupe
+   200 Extended dupe mode is disabled.
+
+   Another example:
+   
+   > site xdupe
+   200 Extended dupe mode 1 is enabled.
+   
+2) Sending "SITE XDUPE 1" turns extended dupe checking on. Mode 1 means that in
+   X-DUPE replies several filenames will be shown per line, up to a maximum
+   of 80 chars total line length. Filenames longer than 66 chars will be
+   truncated.
+   
+   Example:
+
+   > site xdupe 1
+   200 Activated extended dupe mode 1.   
+
+   Example X-DUPE output:
+   STOR blabla.r03
+   553- X-DUPE: blabla.rar blabla.r00 blabla.r01 blabla.r02 blabla.r03 blabla.r04
+   553- X-DUPE: blabla.r05 blabla.r06
+   553- blabla.r03: This file looks like a dupe!!
+   553  It was uploaded by someone ( 0m 41s ago).
+
+3) Sending "SITE XDUPE 2" turns on extended dupe checking mode 2. In mode 2, the
+   server will send only one filename per X-DUPE line, and the maximum line
+   length is 80 chars. This means filenames longer than 66 chars are
+   truncated as in mode 1.
+
+   Example:
+   
+   > site xdupe 2
+   200 Activated extended dupe mode 2.   
+   
+   > stor nanana03.zip
+   553- X-DUPE: nanana01.zip
+   553- X-DUPE: nanana02.zip
+   553- X-DUPE: nanana03.zip
+   553- X-DUPE: nanana04.zip
+   553- X-DUPE: nanana05.zip
+   553- X-DUPE: nanana06.zip
+   553- X-DUPE: nanana07.zip
+   553- X-DUPE: 01234567890123456789012345678901234567890123456789.zip
+   553- X-DUPE: 012345678901234567890123456789012345678901234567890123456789.zip
+   553- X-DUPE: 012345678901234567890123456789012345678901234567890123456789012345
+   553- X-DUPE: 012345678901234567890123456789012345678901234567890123456789012345
+   553 Error: You have no rights to overwrite in this directory.
+
+4) Sending "SITE XDUPE 3" turns on extended dupe checking mode 3. In mode 3, only
+   one filename is sent per X-DUPE line, and the filename will not be 
+   truncated. This means the line will be as long as the filename + the 553 
+   prefix + the "X-DUPE" prefix. Use this mode only if your client is
+   flexible enough to handle long lines.
+   
+   Example:
+   
+   > site xdupe 3
+   200 Activated extended dupe mode 3.   
+   
+   > stor nanana03.zip
+   553- X-DUPE: nanana01.zip
+   553- X-DUPE: nanana02.zip
+   553- X-DUPE: nanana03.zip
+   553- X-DUPE: nanana04.zip
+   553- X-DUPE: nanana05.zip
+   553- X-DUPE: nanana06.zip
+   553- X-DUPE: nanana07.zip
+   553- X-DUPE: 01234567890123456789012345678901234567890123456789.zip
+   553- X-DUPE: 012345678901234567890123456789012345678901234567890123456789.zip
+   553- X-DUPE: 0123456789012345678901234567890123456789012345678901234567890123456789.zip
+   553- X-DUPE: 01234567890123456789012345678901234567890123456789012345678901234567890123456789.zip
+   553 Error: You have no rights to overwrite in this directory.
+
+5) Sending "SITE XDUPE 4" turns on extended dupe checking mode 4. In mode 4, all
+   files are listed on one long line, up to a maximum of 1024 characters. Files
+   which are too long to fit will be skipped.
+
+6) Sending "SITE XDUPE 0" turns extended dupe information off again. This is the
+   default setting on server side. Thus, if you want any X-DUPE information
+   at all, you have to set mode 1, 2 or 3 first.
+
+Basically X-DUPE lines can only be part of the possible 553 reply after a STOR
+command. The X-DUPE mode you choose mainly depends on which filenames you 
+expect on the server and how flexible your client is with both parsing the
+X-DUPE lines and reading long server lines. All the files listed in X-DUPE
+lines should be removed from your upload queue.
+
+==============================================================================
+
+4. Acknowledgements
+
+Thanks go to ...
+
+Easy from TFCISO for demonstrating how much time can be lost when running into 
+a lot of dupes and helping me getting this idea.
+
+HoE who contributed a lot by instantly picking up the idea and implementing it
+in his great Linux FXP client, pFtp. 
+
+Usurper for enabling this feature for all sites by putting it into the 
+official glFtpD release.
+
+==============================================================================
+
+If you like the idea, ask FTP/FXP client authors to add support for it in
+their programs!
+
+-- Hoopy

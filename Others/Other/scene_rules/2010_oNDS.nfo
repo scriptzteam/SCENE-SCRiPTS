@@ -1,0 +1,60 @@
+      ______      _______ ______    _______    _____      _____    _______
+    _/   _  )__ _/  _   /_\     \ _/  _   /_ _/     \_   /   _/_ _/  _   /__
+    \   _/     \\  -\___\ \\     \\  -\___\ \\   _\   \--\___   \\  -\___\  \
+   /    \       .  _/      .      .  _/      .   \     .   :/    .  _/      _\
+ ./_____:\_____/____________\      \________/____:\_____\_______/___________\ 
+                            /______/                                          
+                        _______
+   _______   _____ _____\      \   __________    _____
+  /   __  )__\    \\    \\      \ /    _    /   /   _/____ NDS Scene Rules 2010
+ /   /_      \     \     \       \\   -\____\---\___      \   [01 June 2010]
+/      \      .     \     .       .   _/      .   :/       \ 
+\______:\______\___________\       \___________\___________/. ----------------+
+.                          /_______/                       .                  
+
+ 1.1)  Releases must be packed in RAR. SFV and NFO must be included.
+ 1.2)  Rars must be split to volumes of 5 MB (5,000,000 bytes)
+ 1.3)  Rars must be compressed with M1 (fastest) or better.
+ 1.4)  For the sake of better current and future flashcart compatibility and to 
+       keep ROM data consistent, full untouched, unmodified, unaltered dumps 
+       are prefered. However, if an altered/introed/cracked ROM is released on 
+       the scene before an untouched ROM then it will be allowed. 
+ 1.5)  Cracks to make games work on specific hardware are allowed but should 
+       only be released as a PATCH and should not include the original ROM 
+       game data. Flashcarts used to test a crack or patch must be listed in 
+       the NFO, this includes the name of the flashcart, firmware name and the
+       firmware version number.
+ 1.6)  Any redump of the altered ROM should be tagged as CLEAN or REDUMP and 
+       not as a PROPER nor should any crack be tagged as a PROPER of a valid 
+       clean release.
+ 1.7)  The ROM image of the NDS game must be .nds
+ 1.8)  Directory names must include: Game name, region, system name, group name
+ 1.9)  If a game does not include the English language, this must be specified
+       in the dir name unless the region tag implies that region's native 
+       language is the only language in the game eg. game tagged JPN is Japanese 
+       only, hence does not need to state the language.
+ 1.10) If a game is rereleased with additional foreign languages, the directory
+       name can be tagged MULTI, however the NFO must specify which additional 
+       languages are included.
+ 1.11) Acceptable characters for a dirname are:
+       ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.-_
+ 1.12) Recommended directory format:
+       Game_Name_<REGION>_<MULTI#/PROPER/READNFO/REPACK/CRACK/etc.>_NDS-GRPNAME
+       Game.Name.<REGION>.<MULTI#/PROPER/READNFO/REPACK/CRACK/etc.>.NDS-GRPNAME
+ 1.13) DSi and DSi related releases will be regarded as NDS releases and will
+       adhere to this ruleset. DSi related releases must have the tag DSi 
+       in the directory name. Recommended directory format is:
+       Game_Name_<REGION>_<MULTI#/PROPER/READNFO/REPACK/CRACK/etc.>_DSi_NDS-GRPNAME
+       Game.Name.<REGION>.<MULTI#/PROPER/READNFO/REPACK/CRACK/etc.>.DSi.NDS-GRPNAME
+       Game_Name_<REGION>_<MULTI#/PROPER/READNFO/REPACK/CRACK/etc.>_DSiWARE_NDS-GRPNAME
+       Game.Name.<REGION>.<MULTI#/PROPER/READNFO/REPACK/CRACK/etc.>.DSiWARE.NDS-GRPNAME
+
+            The.Official.NintendoDS.Ruleset.2010.NDS-CONSOLE - v1.0 
+       active as of Thursday 3 June 2010 00:00:00 GMT (1275523200 Unix time)
+           Signed by the following groups on behalf of the NDS scene:
+
+        . 2CH . 6rz . BAHAMUT . Caravan . DDumpers . DeNovo . EXiMiUS .
+
+         . HR . Loli . MainichiHentaiShimbun . NRP . NukeThis . OneUp .
+
+                    . RFTD .  SCZ . TRM . WetNWild . WRG .

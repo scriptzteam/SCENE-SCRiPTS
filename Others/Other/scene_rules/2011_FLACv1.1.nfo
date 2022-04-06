@@ -1,0 +1,213 @@
+                       ---------------------------------
+              ----==== Official.FLAC.Standard.Rules v1.1 ====----
+                       ---------------------------------
+
++-------------------------------------------------------------------------------+
+| INTRODUCTION                                                                  |
+|  To satisfy the long lasting audiophile's demand for a music scene of higher  |
+|  quality than LAME mpeg compression encoding, and since nowdays space and     |
+|  bandwidth are able to accomodate more, this set of rules were made to        |
+|  initiate the LOSSLESS music scene space.                                     |
+|  To avoid mistakes made in the music scene in the past, a group of old farts  |
+|  gathered to decide upon these rules. A common understanding amongst all is   |
+|  that material from non-physical media can easily be doubtful of its          |
+|  origin of source and hence of questionable quality. To keep things simple    |
+|  and to avoid mess as experienced in existing music scene, these rules        |
+|  decided to strictly consider only physical media as a valid source.          |
+|                                                                               |
+| NOTE: The definitions of these keywords are to be interpreted as follows:     |
+|       MUST=obligatory (not allowed if not comply).                            |
+|       SHOULD=suggested.                                                       |
+|       CAN+MAY=optional (allowed if not comply).                               |
+|                                                                               |
++-------------------------------------------------------------------------------+
+| GENERAL                                                                       |
+|  1.1 Releases must contain an SFV, NFO, JPG (proof).                          |
+|  1.2 Currently valid media sources are: CD, VINYL for the time being.         |
+|  1.3 Bonus tracks from previously released albums must be released separately.|
+|      Mandatory " BONUS_TRACKS " dir tagging (ref to rule 3.6).                |  
+|  1.4 Releasing a previously released album again is only allowed if:          |
+|     .1 The previous release was ripped from a lower quality source.           |
+|        Higher to Lower: CD > Vinyl                                            |
+|     .2 The new release has 30% or 5 tracks more.                              |
+|     .3 The new release has bonus tracks and the previous release is older     |
+|         than 91 days.                                                         |
+|  1.5 Trackfixes are not allowed, bad quality rips require a complete repack.  |
+|      Obligatory -REPACK- dir tagging (ref to rule 3.6).                       |
+|  1.6 The following reasons can be a reason for a bad quality rip:             |
+|     .1 One or more tracks from the release are incomplete or contain skips.   |
+|     .2 The tracks are distorted and constantly clipping (eg. vinyl rips).     |
+|     .3 The tracks contain a constant hiss which was avoidable (eg. vinyl rips)|
+|      NOTE: A -PROPER- rip with no hiss should exist. (also -PROPER- must      |
+|            mention which release its propering in nfo).                       |
+|  1.7 If tracks from release were already pred as bonus or inside any other    |
+|      reissue/limited/special/deluxe editions they will be considered as dupes.|
+|  1.8 The maximum directory and filename length is 128 characters. Directories |
+|      and filenames must only contain valid characters: a-z A-Z 0-9 _ . - ()   |
+|  1.9 Releasing a retail is not allowed if its 100% identical to advance       |
+|      release.                                                                 |
+| 1.10 All CD releases (including mixed CD's / e.g. DJ-Mixes) MUST be ripped    |
+|      as separated tracks according the TOC (Table Of Contents) on the CD.     |
+|      The only occasion where a CD is released as one single track is when     |
+|      there is only 1 track on the CD.                                         | 
+|  NOTE: Lossless data compression excludes the possibility of the introduction |
+|      of padding, all lossless audio file formats are inherently gapless.      |  
++-------------------------------------------------------------------------------+
+| ENCODING CD/VINYL                                                             |
+|  2.1 Releases must be encoded using FLAC 1.2.1 with compression level 8 (best)|
+|  2.2 Encoding quality must be: 44.100 Hz / 16 bit PCM (2.0) for CD sources    |
+|      and 48.000 Hz / 24 bit PCM (2.0) for VINYL sources.                      |
++-------------------------------------------------------------------------------+
+| RELEASE NAME                                                                  |
+|  3.1 The FLAC tag must be included in the release name before YEAR-GROUP.     |
+|  3.2 Release name MUST contain: Artist, Title, Source, Year, Group.           |
+|  3.3 Using CATALOGUE number in a release name is optional but recommended.    |
+|  3.4 Currently valid SOURCE tags:                                             |
+|      .1 CD, CDS, CDM, CDR, MCD, CDEP (2CD, 3CD etc.)                          |
+|      .2 VINYL, VLS, LP, MLP, EP (2VINYL, 3VINYL etc.)                         |
+|  3.5 Currently valid TYPE tags:                                         |
+|      - Advance, Bonus, Bootleg, Deluxe, Digipak, Ltd, Limited, Mag, Magazine, |
+|      - Promo, Reissue, Remastered, Retail, Sampler, 7-Inch, 10-Inch, 12-Inch, |
+|      - Special, Collectors, Ed, Edition, Extra, Flexi, Split, Demo, Tracks.   |
+|  3.5.1 TYPE can be a combination of the keywords featured in 3.5 rule using   | 
+|        the _ (underscore) space replacement. (eg. -Deluxe_Special_Edition-)   |
+|  3.6 Currently recommended ADDITIONAL tags:                                   |
+|      - DIRFIX, NFOFIX, PROPER, READNFO, REPACK, BONUS, RERIP.                 |
+|  3.7 LANGUAGE (LANG) must follow the ccTLD identifiers (2-chars):             |
+|      http://www.iana.org/domains/root/db/                                     |
+|  3.8 Mandatory release name formats:                                          |
+|      - Artist-Title-SOURCE-FLAC-YEAR-GROUP                                    |
+|      - Artist-Title-LANG-SOURCE-FLAC-YEAR-GROUP                               |
+|      - Artist-Title-LANG-TYPE-SOURCE-FLAC-YEAR-GROUP                          |
+|      - Artist-Title-(CATALOGUE)-LANG-ADDITIONAL-SOURCE-FLAC-YEAR-GROUP        |
+|      - Artist-Title-(CATALOGUE)-LANG-TYPE-SOURCE-FLAC-YEAR-GROUP              |
+|      - Artist-Title-(CATALOGUE)-LANG-ADDITIONAL-TYPE-SOURCE-FLAC-YEAR-GROUP   |
+|  3.8.1 Any spaces in ARTIST and TITLE should be replaced with _ (underscore). |
+|        If ARTIST or TITLE has . (dots) or - (dash), it is encouraged to be    |
+|        kept as close as they appear on the cover/booklet/physical medium,     |
+|        but they do not have to be nuked if not.                               |
+|  3.9 .1 Internal releases must be tagged GRP_iNT or GRP_INT.                  |
+|      .2 Internal releases must follow FLAC ruleset.                           |
+|      .3 Internal releases must not dupe an existing one that is 732 days old  |
+|      or newer.                                                                |
+| 3.10 YEAR tag must be the year when the record company/artist published it.   |
+|      (example: release originally released in 1990, but rip is from 2000      |
+|      reissue correct year would be 2000, with additional TYPE tagging.        |
+| 3.11 LANGUAGE tag is MANDATORY for non english releases.                      |
+|      If the vocals are non-english and the majority of them must be described |
+|      using one TLD country code abbreviation, then the most appropriate       |
+|      TLD SHOULD be chosen and MUST be used as a tag in the release name.      |
+| 3.12 Typos in a release name ARE NOT TOLERATED. A proper ADDITIONAL tag must  |
+       be used to fix it -DIRFIX- (ref to rule 3.6).                            |
+|                                                                               |
+| NOTES:                                                                        |
+|  - CATALOGUE + TYPE are optional tags. Altho when using, must be placed in    |
+|    correct order.                                                             |
++-------------------------------------------------------------------------------+
+| FILENAME                                                                      |
+|  4.1 Filename must at least contain: Track number, Track artist, Track title. |
+|  4.2 All filenames (including SFV, NFO, JPG) should always be lowercase.      |
+|  4.3 Track titles must be exactly the same as written on the covers/cd/inlay  |
+|      and contain all additional infos like featured artists or remixers as    |
+|      long it does not exceed the maximum filename length (see rule 1.8).      |
+|  4.4 Recommended filename formats:                                            |
+|      - nr-artist-title.flac                                                   |
+|      - nr-artist-title_(remixer_or_featured_artist).flac                      |
+|      - nr-artist-title__remixer.flac                                          |
+|      - a1-artist-title.flac                                                   |
+|      - b2-artist-title.flac                                                   |
+|  4.5 Including -groupname in the filenames is allowed but not recommended.    |
++-------------------------------------------------------------------------------+
+| TAGS                                                                          |
+|  5.1 Filenames must only contain vorbis comment tags.                         |
+|      Mandatory ogg comment tags must be unique                                |
+|  5.2 Tags must at least have: TRACKNUMBER, ARTIST, TITLE, ALBUM, GENRE,       |
+|      DATE (format: YYYY).                                                     |
+|  5.3 FLAC PICTURE block must be empty. Any cover, booklet scans go with       |
+|      additional covers, apply to rule 7.5                                     |
+|  5.4 Tag field contents allow UTF-8 character encoding but it is recommended  |
+|      to use ASCII characters as much as possible. The field contents should   |
+|      not be internationalized; this is only a concession to simplicity not an |
+|      attempt to exclude the majority of the world that doesn't speak English. |
+|  5.5 For the time being GENRE tag MUST be the same for all the files of the   |
+|      release and it MUST be one of the genres listed in the id3 specification |
+|      list: http://www.id3.org/id3v2.3.0#line-1089 and the additional nullsoft |
+|      genres index number 125 onwards. namely:                                 |
+|      Goa, Drum & Bass, Club House, Hardcore, Terror, Indie, BritPop,          |
+|      Negerpunk, Polsk Punk, Beat, Christian Gangsta Rap, Heavy Metal,         |
+|      Black Metal, Crossover, Contemporary Christian, Christian Rock,          |
+|      Merengue, Salsa, Thrash Metal, Anime, JPop, Synthpop, Unknown.           |
+|  5.5.1 These additional genres are considered valid for the previous ruleset  |
+|        as well and any nuked releases for that reason should be unnuked.      |
++-------------------------------------------------------------------------------+
+| PROMO/BOOTLEG                                                                 |
+|  6.1 Promo releases can always be duped by any retail release even if the     |
+|      tracks on both releases are identical.                                   |
+|  6.2 Promo releases with voice over, silence, cuts on tracks are not allowed. |
+|  6.3 A bootleg is a release or recording that was not officially released by  |
+|      the artist or record company (unofficial / unlicensed recordings).       |
+|  6.4 Conditions for bootleg releases are:                                     |
+|      - There are no signs that the record company really released it.         |
+|      - The artist or record company did not confirm the release as valid.     |
+|      - The record company has no connection to the artist on the release.     |
+|      - The record company does not exist and the release not self-released.   |
+|      - The release is not available at at least three retail stores.          |
+|  6.5 Currently valid retail stores (alphabetic order):                        |
+|      - www.amazon.com                                                         |
+|      - www.boomkat.com                                                        |
+|      - www.bestbuy.com                                                        |
+|      - www.cduniverse.com                                                     |
+|      - www.decks.de                                                           |
+|      - www.deejay.de                                                          |
+|      - www.hmv.com                                                            |
+|      - www.juno.co.uk                                                         |
+|      - www.sonymusicstore.com                                                 |
+|      - www.virgin.com                                                         |
+|      - www.ukdancerecords.com                                                 |
+|      - www.walmart.com                                                        |
+| NOTE: The shop itself must sell the record, no private sellers.               |
++-------------------------------------------------------------------------------+
+| PROOF                                                                         |
+|  7.1 Releases must always contain a proof CAMERA picture in JPG format.       |
+|  7.2 Proof camera pictures must contain both, medium and cover together.      |
+|      If cover isnt possible, a booklet or promo sheet or anything valid       |
+|      proving ripper has release. If the medium/cover/booklet contain anything |
+|      that may expose your identity, then that part of image can be blurred or |
+|      blackened.                                                               |
+|  7.3 The proof picture MUST include small piece of paper over medium and/or   |
+|      cover with GRP name.                                                     |
+|      Artist, title and any other relevant info that proves release, must not  |
+|      be hidden behind the piece of paper.                                     |
+|  7.4 GROUP tag must be photographed in the proof picture, software-edited     |
+|      tags are considered invalid proof. Camera picture proof must not be      |
+|      changed except to hide anything that might expose ripper (read rule 7.2).|
+|  7.5 Additional scans may be added but DO NOT count for proof.                |
+|  7.6 Proof camera pictures resolution must be at least 640 width and 480      |
+|      height in JPEG format.                                                   |
+|      Artist and/or album/single title must be clearly readable.               |
+|  7.7 Proof fixes are not allowed, missing proof picture or bad resolution     |
+|      requires a complete repack.                                              |
+| NOTE: EXIF metadata should be removed from JPEG files! Uniquely identifying   |
+|       information such as the camera serial number and GPS coordinates can    |
+|       pose a security threat if not removed, so this is very ESSENTIAL!       |
++-------------------------------------------------------------------------------+
+|                                                                               |
+|  CHANGELOG:                                                                   |
+|                                                                               |
+|  2011-10-03 first version (v1.0)                                              |
+|  2011-10-10 rule 1.10 with NOTE added to forbid single file+cue unless        |
+|             source is single track with index.                                |
+|  2011-10-10 rule 3.5.1 added (explanation for TYPE tag).                      |
+|  2011-10-10 rule 3.8.1 added (explanation for ARTIST and TITLE tags).         |
+|  2011-10-10 rule 5.1 adjusted                                                 |
+|  2011-10-10 rule 5.5 adjusted                                                 |
+|  2011-10-10 rule 5.5.1 added                                                  |
+|                                                                               |
++-------------------------------------------------------------------------------+
+|                                                                               |
+|  Rules signed by (in alphabetic order):                                       |
+|                                                                               |
+|  2Eleven AUDIO BriBerY dL FWYH GRAVEWISH LITF MANDY PsyCZ SATURN SCORN SPL    |
+|                                                                               |
+|  FLAC rules V1.1  apply from 2011-10-03 00:00:00 GMT.                         |
++-------------------------------------------------------------------------------+

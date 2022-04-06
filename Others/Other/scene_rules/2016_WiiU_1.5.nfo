@@ -1,0 +1,60 @@
+ÚÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ�¿
+³                                                                                       ³
+³                       [ Wii U - Release Standards v1.5 2016 ]                         ³
+³                                                                                       ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ�´
+³                                                                                       ³
+³ 1.1) Releases must be packed in RAR. SFV and NFO must be included.                    ³
+³ 1.2) Rars must be in multiples of 50 000 000 bytes and no more than 99 files.         ³
+³ 1.3) WUD and File Format releases are acceptable.                                     ³
+³    1.3.1) WUD trumps SCRUBBED releases.                                               ³
+³    1.3.2) File Format rips must be tagged as SCRUBBED                                 ³
+³    1.3.3) WUD after SCRUBBED is allowed. SCRUBBED after WUD is not allowed.           ³
+³    1.3.4) File Format must be compressed with M1 (fastest) or better.                 ³
+³    1.3.5) WUD must be compressed with RAR5, using 512MB or 1024 MB dictionary         ³
+³           with Best/m5 compression.                                                   ³
+³ 1.4) All releases must include a proof picture with disc and a group tag              ³
+³    1.4.1) Proof picture must not be scanned and must be in JPEG format.               ³
+³    1.4.2) Proof picture must not be blurry. Disc/Cart Code must be clearly visible.   ³
+³    1.4.3) Releases with blurry or without proof can be PROPERED.                      ³
+³           Proof fixes are not allowed.                                                ³
+³ 1.5) File Format/SCRUBBED releases must have the following directory structure:       ³
+³      Gamename/                                                                        ³
+³            code /                                                                     ³
+³            content/                                                                   ³
+³            meta /                                                                     ³
+³      The full game with the 3 folders in Gamename folder                              ³
+³ 1.6) eShop releases can be in File Format and does not need a proof picture.          ³
+³ 1.7) Allowed regions are JPN(JAP), USA, EUR, AUS, CHN, KOR, and TWN.                  ³
+³    1.7.1) Region dupes are allowed. E.g. EUR does not dupe USA, etc.                  ³
+³    1.7.2) If a game is re-released for having additional foreign languages, the       ³
+³           release must be tagged as MULTI and the nfo must specify which additional   ³
+³           languages are included.                                                     ³
+³ 1.8) All previous File Format releases can be re-released as WUD.                     ³
+³    1.8.1) Only WUD re-releases need to be tagged as COMPLETE. Future releases are     ³
+³           unaffected.                                                                 ³
+³    1.8.2) All WUD re-releases can have region dupes.                                  ³
+³ 1.9) The dirname MUST have a region tag like EUR, USA, etc. The source region         ³
+³      should also be included in the nfo.                                              ³
+³                                                                                       ³
+³      Suggested directory format:                                                      ³
+³       Game_Name_USA_WiiU-GRPNAME                                                      ³
+³       Game_Name_EUR_SCRUBBED/READNFO/REPACK_WiiU-GRPNAME                              ³
+³       Game_Name_JAP_MULTI_PROPER/READNFO/REPACK_WiiU-GRPNAME                          ³
+³                                                                                       ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ�´
+³ A new standard ruleset had to be made in light of new exploits and install methods    ³
+³ on the Nintendo Wii U. File Format rips cannot be used because the method of dumping  ³
+³ does not dump critical disc files used by the new installation method. A Wii U game   ³
+³ dumped as WUD contains a 1:1 clone of the disc and, therefore, has all the necessary  ³
+³ files. A WUD can be converted to a SCRUBBED/File Format, but not vice versa. It is    ³
+³ in the best interest of this section to set a precedent that will allow gamers to     ³
+³ choose their method of installing/playing their favorite games.                       ³
+³                                                                                       ³
+³ You either get behind us and sign it or fall into obscurity.                          ³
+ÃÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ�´
+³                                                                                       ³
+³ These rules are signed and will be followed by following groups:                      ³
+³ ANTiDOTE, BAHAMUT, FAKE, Googlecus, LiGHTFORCE,  PoWeRUp, PSiCO, PUSSYCAT             ³
+³                                                                                       ³
+ÀÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄÄ�Ù

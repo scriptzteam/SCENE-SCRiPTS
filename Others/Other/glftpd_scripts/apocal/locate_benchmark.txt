@@ -1,0 +1,90 @@
+I benchmarked the difference between using 'find' and my Locate script
+The settings for the 2 locate script's are exactly identical
+
+[06:33:52][Wed Apr 30][root@bleh][/home/apoc]: ./benchmark.pl
+Chroot successful!
+Find Result:
+/site/BookS/Individual_Files/wirelessforbeginners_110901.pdf
+
+Locate Result:
+|------------------------| Apocalypse Locate |------------------------|
+| /BookS/Individual_Files/wirelessforbeginners_110901.pdf             |
+|------------------------|    Version 1.3    |------[  1 match(es) ]--|
+
+OldLocate Result:
+|-------------------------|Apocalypse Locate|-------------------------|
+| Found 1 match, displaying it.                                       |
+| /BookS/Individual_Files/wirelessforbeginners_110901.pdf             |
+|-------------------------|   Version 1.2   |-------------------------|
+
+Find Time: 2.1313675 sec(s) [ 21.313675 total sec(s) ]
+Locate Time: 1.5273938 sec(s) [ 15.273938 total sec(s) ]
+OldLocate Time: 1.696557 sec(s) [ 16.96557 total sec(s) ]
+
+Benchmark script:
+
+#!/usr/bin/perl
+
+# Standard stuff to catch errors
+use strict qw(subs vars refs);				# Make sure we can't mess up
+use warnings qw(all);					# Enable warnings to catch errors
+
+# Use Time::HiRes::time for fine granularity
+use Time::HiRes qw( time tv_interval gettimeofday );
+
+# Autoflush
+$| = 1;
+
+# Chroot to /glftpd
+if ( ! chroot("/glftpd") ) {
+	print "Error in chroot!\n";
+	exit 1;
+} else {
+	print "Chroot successful!\n";
+}
+
+my ( $result, $result2, $result3, $count );
+my ( @findstart, @findstop, @locatestart, @locatestop, $locatetime, $findtime, @findtimes, @locatetimes, @oldlocatestart, @oldlocatestop, @oldlocatetimes );
+
+for ( 1 .. 10 ) {
+	# Run the Find
+	@findstart = [gettimeofday];
+	$result = `/bin/find /site -type f -iregex ".*sfo.*" 2>/dev/null`;
+	@findstop = [gettimeofday];
+	push( @findtimes, tv_interval( @findstart, @findstop ) );
+
+	# Run the Locate
+	@locatestart = [gettimeofday];
+	$result2 = `/bin/apoclocate.pl NOCHK -f sfo 2>/dev/null`;
+	@locatestop = [gettimeofday];
+	push( @locatetimes, tv_interval( @locatestart, @locatestop ) );
+
+	# Run the old Locate
+	@oldlocatestart = [gettimeofday];
+	$result3 = `/bin/apoclocate.old.pl -f sfo 2>/dev/null`;
+	@oldlocatestop = [gettimeofday];
+	push( @oldlocatetimes, tv_interval( @oldlocatestart, @oldlocatestop ) );
+}
+
+# Statistic variables
+my $findtimescount = 0;
+my $locatetimescount = 0;
+my $oldlocatetimescount = 0;
+
+foreach $count ( @findtimes ) { $findtimescount += $count }
+foreach $count ( @locatetimes ) { $locatetimescount += $count }
+foreach $count ( @oldlocatetimes ) { $oldlocatetimescount += $count }
+
+# Do some averaging
+my $findtimesavg = ( $findtimescount / 10 );
+my $locatetimesavg = ( $locatetimescount / 10 );
+my $oldlocatetimesavg = ( $oldlocatetimescount / 10 );
+
+# Print the statistics
+print "Find Result:\n", $result, "\n";
+print "Locate Result:\n", $result2, "\n";
+print "OldLocate Result:\n", $result3, "\n";
+
+print "Find Time: $findtimesavg sec(s) [ $findtimescount total sec(s) ]\n";
+print "Locate Time: $locatetimesavg sec(s) [ $locatetimescount total sec(s) ]\n";
+print "OldLocate Time: $oldlocatetimesavg sec(s) [ $oldlocatetimescount total sec(s) ]\n";

@@ -1,0 +1,51 @@
+#!/bin/bash
+
+RAPELIST="/tmp/rapes.list" #relative to rootpath
+DATAPATH="/ftp-data" #relative to rootpath
+LOGFILE="/ftp-data/logs/glftpd.log" #relative to rootpath
+
+>> "$RAPELIST" 2>/dev/null
+
+[ -z "$1" ] && {
+    echo "Usage: SITE RAPE username"
+    echo ""
+    echo "-=[ CURRENT STANDINGS ]=-"
+    echo ""
+    echo -e "  Rapes\tUser"
+    echo -e "  -----\t----"
+    grep ":" "$RAPELIST" | cut -f2 -d: | sort | uniq -c
+    exit 0
+}
+
+[ -w "$RAPELIST" ] || {
+    echo "Error: $RAPELIST not writable."
+    exit 2
+}
+
+[ -f "$DATAPATH/users/$1" ] || {
+    echo "User '$1' doesn't exist."
+    exit 2
+}
+
+[ "$USER" = "$1" ] && {
+    echo "Why the fuck are you raping yourself? Just whack off instead!"
+    exit 1
+}
+
+grep "^$USER:" "$RAPELIST" | {
+    IFS=":" read this that && {
+        echo "You have already chosen to rape '$that' this week."
+        exit 1
+    }
+    exit 0
+} || exit 1
+
+echo "$USER:$1" >> "$RAPELIST"
+
+rapes=$(($(grep ":$1$" "$RAPELIST" | wc -l)))
+
+[ -w "$LOGFILE" ] && {
+    echo "$(date +'%a %b %d %T %Y') RAPE: $1 was just raped by $USER. This makes $rapes times!" >> "$LOGFILE"
+}
+
+exit 0

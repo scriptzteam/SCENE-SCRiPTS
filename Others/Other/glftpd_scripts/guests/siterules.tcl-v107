@@ -1,0 +1,49 @@
+# v-1.07 22 Mar 12 (11:38:52)
+# I got tired of not being able to find a rule script that worked 100% how I wanted
+# so I finally stumbled around in TCL and wrote this for myself.  This is my second
+# attempt ever to write TCL, so any comments are appreciated.  I can usually be found
+# on efnet in #pzs-ng.  -Genocaust
+#
+# Version history:
+#    1.05: Initial public release
+#    1.06: Fixed a small error in displaying available sections
+#    1.07: Hardcoded the errormessage for invalid sections; one less thing people need to configure now
+#
+# rulespath - Where the script should look for your section rules files, they need to have a .rules extention
+# sections  - What sections you would like to list rules for, case insensitive
+
+bind pub - !rules pub:rules
+
+set rulespath   "/glftpd/ftp-data/misc"
+set sections     "GENERAL 0DAY ANIME APPS DVDR DVDR-CLASSIC DOX EBOOK GAMECUBE GBA KID-GAMES MP3 PC-GAMES PS2 REQUESTS SVCD TV-XVID VCD XBOX XVID XXX XXX-DVDR"
+
+### Don't touch below here
+
+proc pub:rules {nick uhost handle chan arg} {
+ global rulespath
+ global sections
+ global errmsg
+ set readsect [string tolower [lindex $arg 0]]
+ if { $arg == "" } {
+  putquick "PRIVMSG $chan :Syntax is !rules <section>"
+  putquick "PRIVMSG $chan :Valid sections are: [string toupper $sections]"
+  return
+ }
+ foreach sect $sections {
+  if { [string equal $readsect [string tolower $sect]] } {
+   if { ![file readable "$rulespath/$readsect.rules"] } {
+    putquick "PRIVMSG $chan :Unable to read $readsect.rules, please verify that it exists and is readable."
+    return
+   }
+   foreach line [split [exec cat $rulespath/$readsect.rules] "\n"] {
+    putquick "PRIVMSG $nick :$line"
+   }
+   return
+  }
+ }
+  putquick "PRIVMSG $chan :Invalid section."
+  putquick "PRIVMSG $chan :Valid sections are: [string toupper $sections]"
+  return
+}
+
+putlog "Site Rules 1.07 loaded"

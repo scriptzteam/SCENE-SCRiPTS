@@ -1,0 +1,8 @@
+tuLS
+
+Description: A stand-alone 'ls' binary thats script friendly.
+Some of my other scripts uses this one.
+
+Author:   Turranius
+Version:  1.0
+Added on: 16-Apr-2004

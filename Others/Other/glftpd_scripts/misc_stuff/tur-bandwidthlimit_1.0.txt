@@ -1,0 +1,13 @@
+Tur-BandwidthLimit (GL1&2)
+
+Description: This is a script that will measure the traffic your site has generated
+over a defined period.
+Once that limit is reached, it will do whatever you tell it to do.
+Great for those paying for a certain traffic amount per month and want to close the
+site down once it reaches a certain amount.
+Can be configured to do almost anything and also to reverse what you tell it to do,
+perhaps every new month or so.. Up to you.
+
+Author:   Turranius
+Version:  1.0
+Added on: 26-Jul-2004

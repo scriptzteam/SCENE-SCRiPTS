@@ -1,0 +1,196 @@
++-----------------------------------------------------------------------------------------------------+
+¦                      OFFiCiAL.NULLED.SCRiPT.RULES.2010-DRAFT2                                       ¦
+¦                                                                                                     ¦
++-----------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+¦     Requirements: Notepad with terminal font or any other ascii viewer.                             ¦
++-----------------------------------------------------------------------------------------------------¦
+¦ Date: 04.05.2010 - 20:00 GMT+1                                                                      ¦
++-----------------------------------------------------------------------------------------------------+
+¦    An Alle 0Day Groups die es Interessiert: Diese Rules sind derzeit nur ein Vorschlag,
+¦    wer fixes einarbeiten moechte, etwas aendern moechte oder generell Sie nur Signen moechte
+¦    kann uns gerne unter unserer Email Adresse (Steht unten) erreichen.
+¦
+¦    Sollte sich keiner bis 10.05.2010 melden werden wir diese Rules 1:1 uebernehmen.
+¦
+¦    PS: Hilfe beim uebersetzen in andere Sprachen (FR/ES zB.) ist immer gerne gesehen.
++-----------------------------------------------------------------------------------------------------+
+¦
+¦-GERMAN-
+¦
+¦iNDEX:
+¦    0: Generelle Rules
+¦    1: Packaging / NFO
+¦     1.1: Beispiel
+¦     1.2: NFO
+¦    2: Naming
+¦     2.1: Themes/Addons
+¦     2.2: Updates
+¦    3: NULLiNG Rules
+¦     3.1: KEYGEN Rules
+¦    4: NUKE RULES / REASONS
+¦
+¦    Vorwort:
+¦   Da die letzte PHP bzw. Script Release Group schon lange tot ist und es keinerlei feste Rules
+¦   in diesem Bereich gibt, haben wir uns entschlossen neue Rules zu verfassen, damit bei
+¦   zukuenftigen Releases keine Verwirrung entsteht und auch andere 0Day Groups beginnen koennen
+¦   Scrips zu releasen ohne Chaos zu verursachen.
+¦
+¦   Generell gilt: Die aktuellen 0Day Rules gelten fuer alle nicht behandelten Themen!
+¦
++-----------------------------------------------------------------------------------------------------+
+¦
+¦     0. Generelle Rules
+¦         -NULLED duped KEYGEN -NICHT- (und vice versa), beides hat unterschiedliche Vorteile.
+¦           dadurch sind pro Script 2 Releases erlaubt (exklusive PROPER/REPACK etc.)
+¦         -BETA/ALPHA muss nicht als iNTERNAL Released werden.
+¦         -CRACK.ONLY / KEYGEN.ONLY / KEYFiLEMAKER.ONLY sind nur erlaubt sofern die Software 
+¦           (zB. als Vollwertige, Unlockbare Demoversion)
+¦           Kostenlos und ohne Anmeldung direkt beim Hersteller Downloadbar ist.
+¦           Das sollte aber vermieden werden da KEYGEN/KEYFiLE NULLED nicht duped.
+¦         -On-the-Fly Patches sind erlaubt wenn sie benoetigt werden (zB. wenn eine SystemID 
+¦           zwangsweise fuer die Funktion der Software benoetigt wird) 
+¦           allerdings ist pre-patched (zB. NULLED auf Jede SystemID) dem vorzuziehen.
+¦
+¦           Dies ist nach folgendem Format zu Taggen:
+¦           <incl.KEYFiLEMAKER.and.PATCH|incl.KEYGEN.and.PATCH>
+¦           
++-----------------------------------------------------------------------------------------------------+
+¦
+¦     1. Packaging
+¦         -Standard 0Day Packing, Filenames maximal 8.3 Zeichen (Name.typ - 12345678.123)
+¦          Releases muessen in RAR Gepackt sein - Kompression ist erlaubt aber nicht Pflicht.
+¦          Jede ZIP sollte 5000000 Bytes (5Mb) umfassen. Demzufolge
+¦          ist die size pro Splittet RAR in etwa das gleiche.
+¦          Groessere Filesizes sind Erlaubt, siehe 0Day Rules.
+¦
+¦
+¦       1.1: Beispiel
+¦             12 Files - 26Mb
+¦             -5x 5Mb RAR + 1x 1Mb RAR -> grprls.rXX
+¦             (Anm.: die RARs koennen auch nur <grpname>.rXX benannt sein)
+¦             --Jede RAR in eigene ZIP
+¦             --5x 5Mb ZIP + 1x 1Mb ZIP -> grprls<a|b|c|etc>.zip
+¦             (Anm.: das jeweilige Naming der ZIPs 
+¦             (a|b oder 001|002, 01|02, 1|2) ist der Group ueberlassen.)
+¦   
+¦             Jede ZIP muss enthalten:
+¦              xxxx.rXX - file_id.diz - <group>.nfo
+¦
+¦             Falsches Naming der RARs/ZIPs ist kein Nuke Grund, sofern nicht ein anderer Grund
+¦              auch in frage kommt (dupe.filenames, special.chars u.a.)
+¦
+¦
+¦        1.2: NFO
+¦              In der NFO MUSS enthalten sein:
+¦              -Release Date
+¦              -Groesse (Alternativ: Diskcount)
+¦              -Developer Webseite
+¦              -Version
+¦              -Kurze Beschreibung (Copy & paste) des Apps
+¦              -Sprachen bei MULTi
+¦              -Kurze Verwendungsbeschreibung 
+¦
+¦              In der NFO erwuenscht ist:
+¦              -Preis (Waehrung irrelevant - nach Webseite richten)
+¦
++-----------------------------------------------------------------------------------------------------+
+¦
+¦     2: Naming
+¦         Naming nach folgendem Schema:
+¦          <> = noetig | [] = zusatz
+¦         Sprache muss nur bei nicht Englisch-Only Releases angegeben werden
+¦         Fuer den seltenen Fall das ein Release nur 2 Sprachen enthaelt 
+¦         ist statt MULTi BiLINGUAL als Tag zu waehlen.
+¦
+¦       <Name>.[Ausfuehrung].v<ersion>.[Sprache|MULTi|BiLiNGUAL].
+¦       <NULLED|incl.KEYGEN|incl.KEYFiLEMAKER|KEYFiLEMAKER.ONLY|KEYGEN.ONLY|CRACK.ONLY>.
+¦       [Beta|Alpha|RETAIL|REAL].[iNTERNAL|iNT|DiRFiX|NFOFiX|PROPER|REPACK|READ.NFO].
+¦       <PHP|ASP|etc>-GRP
+¦
+¦   Beispiele (fiktiv):
+¦
+¦   Vbulletin.v5.1.NULLED.PHP-GRP = Vbulletin 5.1 Englisch, Nulled
+¦   Vbulletin.v5.1.KEYGEN.ONLY.PHP-GRP = Vbulletin 5.1 Englisch, Keygen Only
+¦   Vbulletin.v5.1b3.NULLED.BETA.iNTERNAL.PHP-GRP = Vbulletin 5.1 Beta, Englisch, iNTERNAL, Nulled
+¦   Vbulletin.PRO.v5.1.NULLED.PHP-GRP = Vbulletin 5.1, Pro Edition, Englisch, Nulled
+¦   Vbulletin.v5.1.MULTi.incl.KEYGEN.PHP-GRP = Vbulletin 5.1, Multilanguage (Notes in NFO!), Keygen
+¦   Gallerypro.v2.1.GERMAN.NULLED.ASP-GRP = Gallerypro 2.1, Deutsch, Nulled, ASP 
+¦
+¦
+¦   Sofern das Script komplett Ungeschuetzt und un-encodiert verkauft wird (keine Callbacks o.ae.)
+¦   wird statt NULLED/KEYGEN einfach kein Tag benutzt:
+¦    Somesoftware.v1.5.PHP-GRP
+¦
+¦   In diesem Kontext gilt schon das descramblen/decodieren von Ioncube (oder aehnlich) 
+¦   encodiertem Code als NULLED, damit sollte ein Tagging mit .NULLED. benutzt werden.
+¦   (Hintergrund fuer das taggen mit NULLED ist vorallem Dupe abfrage und historischer Hintergrund)
+¦   Releases mit Key in NFO und nulled backend (keine Callbacks/Security Checks) 
+¦   sind ebenfalls als NULLED zu labeln.
+¦
+¦
+¦            2.1: Themes/Addons
+¦                  Themes/Addons fuer Wordpress/Joomla/Vbulletin etc.
+¦                 
+¦                 <Name>.<version>.for.<fuer>.<version>.[Sprache|MULTi].
+¦                 <NULLED|incl.KEYGEN>.[Beta|Alpha|RETAIL].
+¦                 [iNTERNAL|DiRFiX|NFOFiX|PROPER].<PHP|ASP|etc>-GRP
+¦
+¦                 Beispiele (fiktiv):
+¦                 Dark.Theme.v3.for.vBulletin.5.X.GERMAN.NULLED.PHP-GRP 
+¦                 = Dark Theme Version 3, fuer Vbulletin Version 5.X, Deutsch, Nulled
+¦                 Sidebar.Rotation.2.for.Wordpress.2.1.incl.KEYGEN.PHP-GRP 
+¦                 = Sidebar rotation 2 Addon fuer Wordpress 2.1, mit Keygen
+¦
+¦            2.2.: Updates
+¦                   Updates sind 4 Wochen nach dem Letzten Pre erlaubt 
+¦                   (gleiche MU Regelung wie bei 0Day)
+¦                   
++-----------------------------------------------------------------------------------------------------+
+¦
+¦
+¦       3: NULLiNG Rules
+¦           -Jegliche Callbacks muessen entfernt bzw. gepatcht werden 
+             (zB. Serial Check ueber den Hersteller Server)
+¦           -Keine Group Watermarks (auch nicht in Script Kommentaren).
+¦           -Bei encodeten Releases muessen alle Dateien voellig decodiert sein 
+¦             (zb. Ioncube, Sourceguardian, eval() etc.)
+¦
+¦            3.1: KEYGEN Rules
+¦                  -Keygens muessen im selben Format wie das Release vorliegen 
+¦                    (zB. Release ist PHP - Keygen auch in PHP)
+¦                  -Die Bedienungssprache muss bei MULTi entweder auswaehlbar (zB. DE,EN,PL) sein 
+¦                    oder der Keygen muss komplett in Englischer Sprache sein.
+¦                    Bei Spezifischen Releases (zB. GERMAN) kann der Keygen in der Sprache des 
+¦                    Releases (zB. Deutsch) oder voellig in Englisch sein.
+¦                  -Group Kommentare in Keygen Quelltexten sind ausdruecklich erwuenscht sofern 
+¦                    die Group den Code verstaendlich erklaeren will, sind allerdings 
+¦                    keinesfalls verpflichtend.
+¦                  -Encodeter Keygen Code sind erlaubt, solange keine externen Loader (zb. Ioncube) 
+¦                   verwendet werden. (Schutz vor Stealing)
+¦                  -ASCii Art / Bilder sind erlaubt, sollten aber sparsam benutzt werden um Browser
+¦                    und Webserver zu schonen.
+¦                  -Bilder eingebunden in Keygens duerfen die Funktion in keiner weise beeinflussen
+¦                    (zB. Bild fehlt = Keygen laedt nicht = Nuke/Proper Grund)
+¦                  -Bilder muessen beiliegen und duerfen nicht von externen Webseiten
+¦                    eingebunden werden (Sicherheitsgruende)
+¦                   (Bevorzugt ist die Einbindung als zB. BASE64 direkt im Quelltext zu 
+¦                   nutzen, und ohne Externe Files)
+¦
++-----------------------------------------------------------------------------------------------------+
+¦
+¦  4: NUKE und PROPER RULES / REASONS
+¦    NUKEs sind moeglich fuer:
+¦    -bad.pack (zB. RARs als parent statt ZIP) - stolen.from.[web|p2p|etc] - missing.files 
+¦    -bad.crack (= bad nulled) - keygen.not.working
+¦    -Common Sense Nukes (dupe.filename, mislabeled.<|>, etc.)
+¦    -Das ist keine Abschliessende Liste.
+¦
+¦   PROPER/DiRFiX/REPACK folgt den normalen, scene ueblichen Rules.
+¦    
+¦    
++-----------------------------------------------------------------------------------------------------+
+¦                                   SiGNED:                                                           ¦
+¦                               YET TO BE SIGNED                                                      ¦
+¦                 CONTACT: contactye@hush.com
++-----------------------------------------------------------------------------------------------------+

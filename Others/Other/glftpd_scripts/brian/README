@@ -1,0 +1,32 @@
+ xferlogDB
+--------------------------------------------------------
+ by Brian Christensen - brian@jordhulen.dk - http://www.jordhulen.dk/xferlogDB
+
+ 
+ ABOUT:
+ 
+ A PHP/MySQL tool for analysing xferlog and glftpd.log from glftpd.
+ xferlogDB reads the log files from glftpd and adds the data to a MySQL database.
+ The rest is done by PHP scripts.
+
+ It's testet with glftpd log files.
+
+ 
+ 
+ INSTALL:
+
+ Required a MySQL/Apache server running (with PHP support) and read access to the glftpd log file
+ - create a database on your MySQL server (eg. xferlogdb)
+ - create the tables, use the 'xferlogdb_tables.sql' script
+ - copy the PHP scripts and the 'styles.css' to a folder on your webserver
+ - edit the 'dbconnect.php'
+   (the 'xferlog', 'glftpd.log' file path, the ftp site root and MySQL user/passwd/host)
+ - that's it
+
+
+ USAGE:
+
+ Use the "Update xferlogDB" link to add data to the database
+ If you know PHP, feel free to edit the scripts - if not let me know if you
+ need more features.
+ You can use the "update.php" script in a cron job to update your database

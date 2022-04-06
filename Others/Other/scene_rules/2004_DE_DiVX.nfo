@@ -1,0 +1,234 @@
+Achtung: Diese Rules sind eine zusammenfassung der (nach wie vor) gueltigen 2002 
+         Rules (oddr-20020501a.htm11111.html) und der 2004er Beta3 Rules.
+         (ODDR-20040502_beta_3.html)
+         Alle Additions aus den 2004 RUles werden mit "*" am anfang eingefuegt.
+
+Dieses File wurde aus aktuellem anlass erstellt das Groups wie FmE meinen ihre
+eigenen not valid Rules erstellen zu duerfen.
+
+---------------------------------------------------------------------------------
+
+OFFiZiELLE DEUTSCHE DiVX REGELN
+
+             
+
+.PROLOG__________________________________________________________________
+Diese Regeln wurden aufgestellt, um eine Richtlinie für qualitativ hochwertige DiVX-Rips zu schaffen. Sie sollen Siteops und Nukern, aber 
+auch unetablierten Gruppen und dem letztendlichen Konsumenten, ein paar Grundsaetze vermitteln, die wir bei einem guten Rip als Minimalanspruch 
+erachten. Sie sind weder ein Gesetz, noch statisch. Aufgrund immer neuer Erkenntnisse und der Weiterentwicklung von Codecs und Programmen 
+koennen sie nur eine Momentaufnahme des jetzigen Erkenntnisstandes sein. Wir bitten euch deshalb um eure Mithilfe, diese Regeln immer so 
+aktuell und zeitgemaess wie moeglich zu halten.
+Bitte sprecht den Fuehrer eurer Gruppe bezueglich Verbesserungen oder Fehlern an und wir beruecksichtigen dies in der naechsten Version.
+
+Danke.
+
+.Aenderungen_____________________________________________________________
+ 
+seit ODDR-20011113a.htm: 03, 04, 05, 06, 07, 09, 11, 12
+ 
+.ALLGEMEiN_______________________________________________________________
+  1. Der Rip muss komplett von der Gruppe stammen, es muessen Video und Audio von derselben Quelle kodiert worden sein.
+
+  2. Es muss ein DVD- oder direkt kopierter digital-TV-Rip sein (d.h. die Quelle muss ein rein digital verarbeiter MPEG2-Stream sein).
+
+  3. Filme als dTV-Rips duerfen kein Senderlogo oder jegliche Einblendungen enthalten.
+
+  4. Ein Sample von 30 Sekunden, welches aus dem releasten AVI stammt (d.h. nicht extra kodiert wurde) muss in einem separaten Verzeichnis im 
+     Release enthalten sein.
+
+  5. Es muss per SBC 2-Pass kodiert worden sein.
+ *5. Es muss 2-Pass kodiert werden. Entweder mit XViD (Empfohlen!), oder mit DiVX 3.11.
+
+  6. Jedes Release muss eine minimale Aufloesung von freigestellten 135.000 Pixeln haben.
+ *6. Jedes Release muss eine Mindestaufloesung von freigestellten 135.000 Pixeln haben und darf eine X-Aufloesung von 512 nicht unterschreiten. 
+
+  7. a)   Die minimale/maximale Audiobitrate muss 128/192 (C/ABR) oder 96-160/128-224 (Lame VBR) sein. Die Audioaufloesung betraegt 44khz/48khz @ 16bit.
+ *7. a)   Die minimale/maximale MP3-Bitrate sollte bei 96-160/128-224 (Lame VBR) liegen. Die Audioaufloesung sollte 48khz und 16bit betragen.
+
+     (Hinweis: ein "SOLLTE" impliziert keine pflicht... Nach wie vor ist CBR erlaubt. ABR ist eine VBR Technik und somit ebenfalls erlaubt.)
+
+
+     b)   Bei einem 2CD-Release ist die AC3-Tonspur erwuenscht, sofern eine Videobitrate von 1000kbit nicht unterschritten wird.
+    *b)   2CD+ Rips sollten 2 MP3-Tonspuren (deutsch & original) haben, sofern die Videobitrate mindestens 1000 kbit betraegt.
+
+     c)   Sofern ein Film 2 CDs benoetigt und die Videospur mindestens 1000kbit betraegt, ist eine deutsche und die Originaltonspur erwuenscht 
+          (Die Tonspuren beide nur als MP3, nicht als AC3, siehe dazu 7a).
+ 
+     (Hinweis: Hier unterscheiden sich die Rules etwas.. Es kann also bei 2CD+ entweder DL oder Ac3 verwandt werden wenn die Video Bitrate 1000
+               nicht unterschreitet)
+
+
+  8. Das Seitenverhaeltnis der Videoaufloesung darf maximal 5% von dem des DVD-Bildes abweichen. 
+     Die X-Werte der Aufloesung muessen div32 sein, die Y-Werte div16.
+ 
+ *8. a) Das Seitenverhaeltnis (aspect ratio) der Videoaufloesung darf maximal 2% von dem des DVD-Bildes abweichen. 
+        Die X-Werte der Aufloesung muessen div32 sein, die Y-Werte div16. (Es wird GordianKnot zur Einstellung empfohlen.)
+ *   b) Das Video muss freigestellt (Cropped) werden. Zum Erreichen des richtigen Seitenverhaeltnisses sind bis zu 10 Pixelreihen 
+        oben und unten erlaubt.
+
+     (Hinweis: Cropping ist bereits in 6. geregelt (freigestellt..= ohne Balken)
+
+  9. Bei einem nCD Release, muss jede CD die <n
+     095 Minuten bei einem AR von 1.33:1
+     100 Minuten bei einem AR von 1.85:1
+     105 Minuten bei einem AR von 2.35:1
+     Film enthalten - ausgenommen sind vollstaendig computeranimierte Filme (z.B. Toy Story, Antz, Shrek), XXX und S/W.
+  
+    (Hinweis: An dieser Stelle ist anzumerken das es useless ist bei 106 minuten direkt auf 2 CDs zu gehen.)
+
+  10. Der Abspann muss in einem 1CD Release nicht vollstaendig enthalten sein, jedoch soweit, dass erkennbar ist, dass der Film tatsaechlich geendet hat. Falls im Abspann noch Filmszenen enthalten sind, muss dieser in gleichberechtigter Bitrate wie der eigentliche Film, soweit diese Szenen reichen, kodiert werden. In einem 2CD+ Release muss der Abspann in voller Laenge enthalten sein.
+     *Bei einem 2CD+ Release muss der Abspann in voller Laenge enthalten sein, darf jedoch mit geringerer Bitrate kodiert werden, sofern er nur Text enthaelt.
+
+  11. Inhaltsrelevante fremdsprachliche Dialoge (und nur diese) muessen mit den deutschen Untertiteln von der DVD versehen werden, sofern vorhanden. Falls die Untertitel softkodiert auf der DVD sind, müssen diese im Format von Vobsub releast werden.
+ *11. Untertitel in wenigstens Deutsch, Englisch und Franzoesisch sollten als RAR-gepackter VobSub-Rip im Release enthalten sein. 
+
+(Hinweis: Auch hier ist es etwas anders.. Generell kann man sagen..das adden der SUBS sollte kein Problem darstellen und auch die Crews nicht weiter aufhalten.)
+
+  12. Bei einem Nuke aufgrund technischer Maengel, muss ein Proper immer zugleich mit einem Fix in einem separaten Unterverzeichnis releast werden, sofern technisch möglich.
+
+.BENNENNUNG______________________________________________________________
+
+   <gruppe>-<filmtitel>_<cd#>.avi    1CD = grp-pitch_black.avi
+                                     2CD = grp-pitch_black_1.avi
+                                           grp-pitch_black_2.avi
+   <gruppe>-<abkuerzung><cd#>.rar    1CD = grp-pibl.rar
+                                     2CD = grp-pib1.rar
+                                           grp-pib2.rar
+   <gruppe>-<abkuerzung><cd#>.sfv    1CD = grp-pibl.sfv
+                                     2CD = grp-pib1.sfv
+                                           grp-pib2.sfv
+
+   <gruppe>-<filmtitel>_(<jahr>).nfo     = grp-pitch_black_(2000).nfo
+Die Benennung des Verzeichnisses ist beliebig - enthalten sein muss jedoch:
+   <Filmtitel> DiVX German <QUELLE> -<GRUPPE> 
+Beispiele, Quelle = DVD:
+   Pitch.Black.DiVX.DVDRIP.German-GRP
+   Pitch.Black.DiVX-DVDRIP-German-GRP
+   Pitch_Black_DiVX-DVDRIP-German-GRP
+Beispiele, Quelle = digital-TV:
+   Pitch.Black.DiVX.dTV.German-GRP
+   Pitch.Black.DiVX-dTV-German-GRP
+   Pitch_Black_DiVX-dTV-German-GRP
+.NFO_____________________________________________________________________
+
+In der NFO sollten mindestens folgende Informationen enthalten sein:
+  * Releasedatum 
+  * Anzahl der RARs pro CD 
+  * Videoaufloesung (*und Bitrate)
+  * Audioaufloesung (*und Bitrate)
+  * deutscher Titel und Originaltitel 
+  * deutscher Kinostart und DVD-Release-Datum 
+  * Name des Regisseurs 
+  * Laenge des Films 
+  * IMDB-Rating und URL zum Film 
+  * 5-zeilige Angabe desPlots 
+  * Informationen fuer die Beschaffung erforderlicher Codecs, Plugins, Tools
+Folgende Informationen sollten nicht in der NFO stehen:
+  * Nicks der Mitglieder 
+  * Namen von Sites / HQs 
+  * Adressen zur Kontaktierung. (Wer euch erreichen muss, soll "site msg" auf einem HQ nutzen.)
+
+
+
+.SiGNiERUNG______________________________________________________________
+
+Diese Regeln wurden von allen Fuehrern der offiziellen deutschen Divx-Gruppen anerkannt.
+
+(Diese Signierung gillt nur fuer diese Regeln OHNE die addons)
+
+
+ZUSATZ TV RULES
+---------------
+
+Also diese Rules sollen keine Eigenstaendigen sein, vielmehr sind Sie als eine Ergaenzung der ODDR anzusehen.
+Einige Rules moegen etwas hart klingen am Anfang, Sie machen bei naeherer Betrachtung aber durchaus Sinn, jeder
+von uns der Serien macht weiss bestimmt was in der englischen Serien Szene abgeht. Da wird mit Absicht mit
+Settings gerippt die inkompatibel zu nem Release der selben Serie einer anderen Group sind. Da werden dann
+von einer Group 2 Folgen auf fuer eine CD gerippt und eine andere Group die bei einer Folge schneller war macht es
+fuer 3 Folgen pro CD oder encoded gar auf 400mb damit das ja nicht passt 
+
+1.) Als Source zulässig sind nur DVDs und dTV Streams. Bei dTV sollte nach Moeglichkeit eine Nachtwiederholung als
+Quelle genommen werden, Warum? Ganz einfach: Auf Premiere werden Folgen nachts groessenteils mit einer hoeheren
+Aufloesung und/oder hoeheren Bitrates ausgestrahlt. Wer die Rules weiterliest versteht auch das es machbar ist eine
+Nachtwiederholung zu nehmen. Der Rip darf kein Logo/Watermark enthalten.
+
+****** 2.) Sollte zu einer Serien die im dTV laeuft innerhalb der naechsten 8 Wochen eine DVD erscheinen ist auf die DVD zu
+           warten.
+
+(Hinweis: Ebenfalls aus aktuellem Anlass... DIESE RULE IST WICHTIG UND SOLLTE ENDLICH MAL BEACHTET WERDEN!!!!!!!!!!!!!!)
+
+3.) Eine Serie die von einer Group angefangen wurde, sollte bei der Group bleiben, aber mit gewissen Einschränkungen:
+
+-> Faengt eine Group eine Serie an, muss Sie diese auch konsequent zu Ende rippen. Sollte bei einer taeglich
+ausgestrahlten Serie innerhalb von 7 Tagen und einer woechentlichen ausgestrahlten Serie innerhalb von
+14 Tagen kein Rip der zugehoerigen Group vorhanden sein, kann die Serie automatisch von einer anderen
+Group weiter gemacht werden, hier greift diese Rule dann auch wieder.
+-> Bei einer Serie auf DVD sollte innerhalb von 7 Tagen eine Episode released werden. Ist die erste Episode
+released hat automatisch die Group den Zuschlag fuer die ganze Serie  muss aber innerhalb der naechsten
+7 Tage jeweils eine Folge der DVD Box releasen, ansonsten greift hier Rule 3.1.
+-> Die Nummerierung muss immer von der Group uebernommen werden, welche die Serie begonnen hat. Es gibt
+viele Episodenguides mit vielen verschiedenen Nummerierungen und alle meinen Sie seien korrekt.
+-> Sollte einer Group ein Stream fehlen, weil defekt oder sonst irgendwelcher Problemchen, bedeutet dies NICHT
+das die Serie an eine andere Group faellt, erst wenn auch die Folgen danach nicht mehr kommen ist davon
+auszugehen das die Group hier grobe Fehler gemacht hat.
+
+4.) Bei den Episodennummerierungen ist ein Blick auf http://www.epguides.de/ hilfreich. Diese Adresse hat sich als
+korrekt fuer nahezu jede Serie erwiesen und enthaelt neben einer simplen Episodenbeschreibung nuetzliche
+Hintergrundinfos zu fast jeder Serie. Die Nummerierung ist NICHT fortlaufend zu waehlen.
+
+-> Richtig: S01E01
+S01E02
+S02E01
+...
+-> Falsch: S01E01
+S01E02
+S02E03
+...
+
+5.) Die Dirnamen sind den ODDR zu entnehmen es kommt lediglich eine eindeutige Seriennummerierung hinzu.
+
+Serientitel-S01E01-Episodentitel-German-DVDRiP-DivX-MMP
+Serientitel.S01E01.Episodentitel.German.DVDRiP.DivX-MMP
+
+-> Sollte eine Serie nur eine Staffel haben oder keine Staffelnummerierung, so kann die Staffelbezeichnung
+unerwähnt bleiben.
+
+Serientitel-E01-Episodentitel-German-DVDRiP-DivX-MMP
+Serientitel.E01.Episodentitel.German.DVDRiP.DivX-MMP
+
+Beispiele, Quelle = digital-TV:
+   Pitch.Black.DiVX.dTV.German-GRP
+   Pitch.Black.DiVX-dTV-German-GRP
+   Pitch_Black_DiVX-dTV-German-GRP
+
+(Hinweis an CONFUSED: Auch Ihr muesst das real Tag verwenden, also dTV und nicht SATRIP... SATRIP war nie valid...)
+
+-> Um eine einheitliche Nummerierung zu gewaehrleisten, muss eine Staffel-/Episodennummerierung immer zweistellig
+formatiert sein. Auch wenn die Serie weniger als 10 Staffeln/Episoden enthaelt. Dies schliesst auch Anime Serien
+ein.
+
+Richtig: S0xE0x
+Falsch: SxEx
+
+6.) Bei 4:3 Serien sollte generell eine Aufloesung von 512x384 Pixeln gewaehlt werden. (Achtung, hier ist der AR zu beachten! 
+AR fehler muessen auch hier mit GordianKnot korrigiert werden *siehe oben*)
+ 
+Serien die nicht 4:3 sind sollten je nach Source entschieden werden, Bei dTV streams sollte eine Aufloesung von 576xXXX nicht ueberschritten werden.
+Bei DVD sollten 640xXXX nicht ueberschritten werden.
+
+7.) Kommen wir nun zur Dateigroesse: Bei 20-25 Minuten Kurzserien sollten 3 Folgen auf eine Gesamtgroesse von 700 MB
+encoded werden. Bei einer Laenge von 45 Minuten sollten 2 Folgen auf 700 MB encoded werden.
+
+8.) Dies ist keine richtige Rule nur ein Hinweis: Jede Serien Group sollte hin und wieder mal einen Blick auf
+http://www.wunschliste.de/ werfen. Dort stehen viele zukuenftige Serienstarts, man kann fuer Serien woechentlich
+voten und es gibt ein Serien Rating System.
+
+Wir hoffe vorallem das mit diesen Rules der Massenpre der Serien aufhoert, denn im Moment geht das fast nicht anders, sowie
+eine Group eine Serie anfängt, stuerzen sich andere Groups mit drauf, obwohl Sie von alleine niemals darauf gekommen waeren
+diese Serie zu encoden, es bleibt einen also im Moment nix anderes uebrig als eine Serie fast komplett in einem Ruck zu pren.
+Auch wird mit den Einschraenkungen zur Rule 3 kein Ausruhrecht fuer eine Group definiert. Fuer die obigen Rules gibt es genug
+Beispiele wieso so etwas langsam noetig wird, noch vor einem Jahr haetten wir keine eigenstaendigen Serien Rules gebraucht. Ich
+weiss Rule 3 klingt etwas hart, aber damit wird einmal unnoetiger Traffic vermieden, weil nicht mehr nach Group Internal Rips
+gefragt werden muss (viele Groups verwenden nunmal andere Aufloesungen und Settings, jedem sein gutes Recht.) und die Spannungen
+werden damit hoffentlich endlich mal beendet. Wer natuerlich die 7 Tage verpennt ist selber Schuld, ich denk mit 7 Tagen ist die
+Rule recht annehmbar.

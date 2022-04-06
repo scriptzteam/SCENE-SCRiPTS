@@ -1,0 +1,19 @@
+Tur-MySQLSearch
+
+Description: This is a package of two scripts. One that indexes your releases into 
+a MySQL database (option to store size and keep it updated etc) and another script 
+(.sh/.tcl) to search this database.
+
+This works basically the same as 'site search' where the MySQL database is the 
+dirlog. The difference is that the database also stores the sitename for each 
+indexed release, so that if you have multiple sites, you can move to this system 
+instead and have each box write to the same MySQL database. This way you can keep 
+ONE search script that will search all the sites at once and displayes the site 
+its on.
+
+If you only have one site and have no other use for this database, you might as 
+well stick to the standard 'site search' command.
+
+Author:   Turranius
+Version:  1.0
+Added on: 13-Jul-2005

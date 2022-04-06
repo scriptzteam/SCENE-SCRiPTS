@@ -1,0 +1,20 @@
+Invite (GL1&2)
+
+Description: A standaline !invite script for +i chans.
+Its ripped out from Dark0n3s dZSbot.tcl and enhanced to not invite users with flag 
+6.
+Always hated how dZSbot.tcl did that.
+
+It can also announce differently depending on if the user is deleter or if he 
+dosnt exist at all. 
+
+You can specify special chans to invite to depending on what group(s) the user is 
+in. Also, invite to specific chans only if the user specifies it (!invite user pass
+mp3chan) 
+
+If you want to upgrade your current dZSbot.tcl with this functionality, download it
+and it tells you what to do. Otherwise it works fine stand alone too.
+
+Author:   Turranius
+Version:  1.4
+Added on: 31-Aug-2003

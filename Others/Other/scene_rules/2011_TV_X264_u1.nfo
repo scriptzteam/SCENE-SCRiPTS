@@ -1,0 +1,292 @@
+зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+Ё                                                                             Ё
+Ё                  The 720p x264 TV Releasing Standards 2011                  Ё
+юддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддды
+зддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддд©
+Ё     Requirements: Notepad with terminal font or any other ascii viewer.     Ё
+цддддддддддддддддддддддддддддддбдддддддддддддддбдддддддддддддддддддддддддддддд╢
+Ё                              юддд[ INTRO ]ддды                              Ё
+Ё                                                                             Ё
+Ё This  standard  aims  to produce consistent quality releases. If consistent Ё
+Ё release size doesn't  matter, but consistent quality does, this is for you. Ё
+Ё                                                                             Ё
+юдддддддббдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддббддддддды
+здддддддаадддддддддддддддддбдддддддддддддддддддддддбдддддддддддддддддааддддддд©
+Ё                          юддд[ RELEASE RULES ]ддды                          Ё
+Ё                                                                             Ё
+Ё  This document takes effect starting with shows airing from 2011-08-01.     Ё
+Ё                                                                             Ё
+Ё                                                                             Ё
+Ё  Video:                                                                     Ё
+Ё   - 1080i/p sources are to be cropped and resized using sharp resizers such Ё
+Ё     as  Lanczos/Lanczos4,  Spline36,   or   Blackman.  Bicubic  is  banned. Ё
+Ё   - Video  taken  from  the  decoded  HD  output  of  a  set-top box  (e.g. Ё
+Ё     component,  DVI,  HDMI)  may be used as a source; source must be tagged Ё
+Ё     in  dirname as AHDTV. Releases taken from a natively recorded transport Ё
+Ё     stream  shall  be  tagged as HDTV and do not dupe AHDTV releases. AHDTV Ё
+Ё     releases do dupe HDTV. AHDTV captures must be done at the native format Ё
+Ё     of the channel, i.e. 720p or 1080i.                                     Ё
+Ё   - Improper  methods  of  IVTC  that  result  in  loss  of half the fields Ё
+Ё     (SeparateFields.SelectEven,  YV12InterlacedSelectTopFields)  are banned Ё
+Ё   - Improper  IVTC  methods  that  result  in jerky playback, such as Force Ё
+Ё     Film, are banned                                                        Ё
+Ё   - 1080i video sources must be deinterlaced with a smart deinterlacer such Ё
+Ё     as Yadif. FieldDeinterlace is banned.                                   Ё
+Ё   - Group  watermarks  of  any  kind  on  the  video  will not be tolerated Ё
+Ё   - Intros,  outros,  betweenos,  or  any  other  form of defacement of the Ё
+Ё     episode will not be tolerated                                           Ё
+Ё   - Sources  that  sideconvert  1080i  to 720p (such as Bell Expressvu) are Ё
+Ё     banned                                                                  Ё
+Ё   - Upconverted  sources must not be done as 720p.x264. See notes regarding Ё
+Ё     HR.PDTV.x264.                                                           Ё
+Ё   - "Native" refers to the standard in which the video was produced (e.g.   Ё
+Ё     NTSC or PAL). NTSC produced video is native to NTSC, PAL produced video Ё
+Ё     is native to PAL. PAL produced video that is broadcast in NTSC is       Ё
+Ё     converted. NTSC produced video that is broadcast in PAL is converted.   Ё
+Ё   - Converted video that cannot be reversed to native must use CONVERT tag. Ё
+Ё   - Converts dupe natives. Natives do not dupe converts.                    Ё
+Ё                                                                             Ё
+Ё  Audio:                                                                     Ё
+Ё   - Must be original source audio, AC3 if available                         Ё
+Ё   - Re-encoding/transcoding audio or faking header is forbidden             Ё
+Ё   - Dupes  based  on audio format are forbidden and must be tagged INTERNAL Ё
+Ё   - Multi-language audio tracks are not allowed.                            Ё
+Ё   - Severe   audio   drops   resulting  in  a missing word or otherwise the Ё
+Ё     inability  to   understand  material  dialogue  is  considered  to  be  Ё
+Ё     technically flawed and may be propered.                                 Ё
+Ё   - Audio  that  is  120ms  or  more  out of sync or drifts more than 120ms Ё
+Ё     between any two points (e.g. needing -80 at one and +40 at another)  is Ё
+Ё     considered   to   be   technically   flawed   and   may   be   propered Ё
+Ё                                                                             Ё
+Ё  Framerate:                                                                 Ё
+Ё   - IVTC or deinterlacing must be applied as needed                         Ё
+Ё   - 50/60fps  video  such as live events may be kept at original fps, if it Ё
+Ё     was produced at such high rate (i.e. has unique frames)                 Ё
+Ё   - In rare cases, 25/50Hz sources should be IVTC'd to 24fps.               Ё
+Ё   - In rare cases, 30/60Hz sources should be IVTC'd to 25fps.               Ё
+Ё     Failure to IVTC is a technical flaw.                                    Ё
+Ё                                                                             Ё
+Ё  Codec/Container:                                                           Ё
+Ё   - Must be x264 (8-bit depth).                                             Ё
+Ё   - Must use Matroska (.mkv) for container                                  Ё
+Ё   - You will have 30 days from latest  x264  rev date to update in order to Ё
+Ё     maintain all bug fixes and improvements in the x264 codec               Ё
+Ё   - Stripping or falsifying encode information in the file header is banned Ё
+Ё   - Custom  muxing  tools are permitted; however, output must be compatible Ё
+Ё     with  standard  demuxers  to  the  same  extent that files created with Ё
+Ё     MKVToolnix  are.                                                        Ё
+Ё   - Custom Matrices are allowed                                             Ё
+Ё   - Encoded colourspace must be 4:2:0.                                      Ё
+Ё   - Deblocking  must  be  used;  values are at the discretion of the group. Ё
+Ё     (default is enabled, 0:0 settings)                                      Ё
+Ё   - Sample Aspect Ratio (--sar) must be square (1:1).                       Ё
+Ё   - No setting can go below what is specified by --preset slow.             Ё
+Ё   - Keyframe  interval  (--keyint) must be at least 200 and at most 300. It Ё
+Ё     is  recommended  to  be  10*framerate  (film=240,  PAL=250,  NTSC=300). Ё
+Ё   - Constant Rate Factor (--crf) must be as follows:                        Ё
+Ё     здддддддддддддддддбдддддддбддддддддддддддддддддддддддддддддддддддддддд© Ё
+Ё     Ё Compressibility Ё  CRF  Ё General Examples                          Ё Ё
+Ё     цдддддддддддддддддедддддддеддддддддддддддддддддддддддддддддддддддддддд╢ Ё
+Ё     Ё High            Ё 18-19 Ё Scripted, Talk Shows, Snooker, Poker      Ё Ё
+Ё     Ё Medium          Ё 20-21 Ё Documentary, Reality, Variety             Ё Ё
+Ё     Ё Low             Ё 22-23 Ё Sports, Awards, Live Events, Competitive- Ё Ё
+Ё     Ё                 Ё       Ё Reality                                   Ё Ё
+Ё     юдддддддддддддддддадддддддаддддддддддддддддддддддддддддддддддддддддддды Ё
+Ё   - x264 parameters shall not vary within a transcode.                      Ё
+Ё   - Zones (--zones) are forbidden.                                          Ё
+Ё   - Any deviation in CRF from given examples must be specifically justified Ё
+Ё     in  the  NFO.  Use discretion  when  deviating  CRF  by  matching  the  Ё
+Ё     compressibility of the show to a corresponding CRF value.               Ё
+Ё   - Allowed parameters for --tune (optional) are film/grain/animation       Ё
+Ё   - Level 4.1 must be respected.                                            Ё
+Ё   - Suggested command line should be:                                       Ё
+Ё     x264.exe --crf ## --preset slow --level 4.1 -o out.mkv in.avs           Ё
+Ё                                                                             Ё
+Ё  Resolution:                                                                Ё
+Ё   - Crop  to  closest  mod2 without under-cropping. Then, if width>1280 or  Ё
+Ё     height>720,  resize  so  that the frame fits within 1280x720 and either Ё
+Ё     width=1280 or height=720. Never upscale, never add borders.             Ё
+Ё   - Crop out everything that was not in the original picture and caused by  Ё
+Ё     the  broadcaster.  This includes but is not limited to: black borders,  Ё
+Ё     and duplicate lines.  Removing or retaining fading edges is at capper's Ё
+Ё     discretion and shall not be considered undercropped or overcropped.     Ё
+Ё   - Cropping  should  be  done  to  the  most  common  frame  size  (e.g.   Ё
+Ё     pitch/primary view in sports).                                          Ё
+Ё   - Actual picture area may be over- or under-cropped by 1px maximum.       Ё
+Ё   - Encoded Video resolution must be within 2% of the original aspect ratio Ё
+Ё     To calculate AR error (%): (Original AR - Release AR)/Original AR * 100 Ё
+Ё     OAR = (SourceWidth-CropLeft-CropRight)/(SourceHeight-CropTop-CropBottom)Ё
+Ё     Release AR  = EncodedWidth / EncodedHeight                              Ё
+Ё   - 720p sources shall never be scaled.                                     Ё
+Ё                                                                             Ё
+Ё  Subs:                                                                      Ё
+Ё   - Optional, but encouraged                                                Ё
+Ё   - Text  based  format  is preferred (e.g. SubRip, SubStation Alpha, etc). Ё
+Ё   - Subtitles must be muxed into the MKV. "Subs" directories are forbidden. Ё
+Ё   - Burned  subtitles  will  only  be  allowed  when  the  source  exhibits Ё
+Ё     such subtitles in the picture itself                                    Ё
+Ё   - Multi-language  subtitles  cannot  be  used  as  a  basis  for  a  dupe Ё
+Ё   - Group watermarks in subtitles are strictly forbidden.                   Ё
+Ё                                                                             Ё
+Ё  Packaging:                                                                 Ё
+Ё   - Releases must be packed in RAR file format.                             Ё
+Ё   - Rars must be in multiples of 50 MB, no more than 99 files               Ё
+Ё     1MB = 1,000,000 bytes                                                   Ё
+Ё   - Multi-episode  releases  with no clear delineation such as credits must Ё
+Ё     not be split                                                            Ё
+Ё   - RAR Compression must not be used                                        Ё
+Ё   - Recovery and MD5 record are optional                                    Ё
+Ё   - Encryption or password protection is forbidden                          Ё
+Ё   - Must have SFV and NFO                                                   Ё
+Ё   - RAR, SFV, and sample files must have unique, lowercase filenames with   Ё
+Ё     the group tag.                                                          Ё
+Ё                                                                             Ё
+Ё  Credits/Previously On:                                                     Ё
+Ё   - It  is  suggested  that  any  previously  on footage be included in the Ё
+Ё     release, but it is not required.                                        Ё
+Ё   - Full  end  credits  must  be  included  if they contain show content or Ё
+Ё     outtakes/bloopers.  End  credits  are  optional  if  they  are clean or Ё
+Ё     contain    promotions    for    future   episodes   or   other   shows. Ё
+Ё                                                                             Ё
+Ё  Samples:                                                                   Ё
+Ё   - REQUIRED!                                                               Ё
+Ё   - 50-70 seconds in length and  in  a  separate  folder  marked  as Sample Ё
+Ё   - Must   be  taken  from  the  episode, i.e.-   not   encoded  separately Ё
+Ё   - Stream  samples  are  recommended  for  any questionable issue with the Ё
+Ё     source, e.g. no IVTC possible, IVTC to 24.975fps, etc.                  Ё
+Ё                                                                             Ё
+Ё                                                                             Ё
+Ё  Propers:                                                                   Ё
+Ё   - Propers  are  only  permitted  in  the  case of a technical flaw in the Ё
+Ё     original release (e.g. Bad IVTC, Interlacing, missing footage, resizing Ё
+Ё     720p source, bad crop, commercials, bad x264 settings used, bad source, Ё
+Ё     etc.)                                                                   Ё
+Ё   - Scrolling messages added by a station (e.g. weather, Amber alerts) must Ё
+Ё     be   at   least   30   seconds   in  length  in  order  to  nuke/proper Ё
+Ё   - After exceptions, over- or under-cropping by > 1px is considered a      Ё
+Ё     technical flaw.                                                         Ё
+Ё   - Proper  reason  must  be clearly stated in nfo, including timecodes and Ё
+Ё     extent of the flaw when appropriate                                     Ё
+Ё   - Sample of propered release is encouraged                                Ё
+Ё   - Qualitative propers are not allowed                                     Ё
+Ё   - Flaws  (such  as  drops) present in any optional content are not a flaw Ё
+Ё     and shall not be nuked or propered.                                     Ё
+Ё   - Propers  based  upon  the  rules  set  forth  here  are allowed only on Ё
+Ё     releases that come after this document is made public                   Ё
+Ё                                                                             Ё
+Ё  Internals:                                                                 Ё
+Ё   - Internals  are  allowed  to  be pred for any reason, including releases Ё
+Ё     with technical flaws or those done with alternate codecs, containers,   Ё
+Ё     or settings for experimental purposes.                                  Ё
+Ё   - Any severe technical flaws or deviations must be mentioned in the NFO.  Ё
+Ё   - With the exception of the following rule, internal releases may only be Ё
+Ё     nuked for severe technical flaws or deviations that are not mentioned   Ё
+Ё     in the NFO.                                                             Ё
+Ё   - Using  INTERNAL.DIRFIX  as  a  cheap  attempt  at  avoiding  a  nuke is Ё
+Ё     forbidden.  If  the  release  is technically flawed, it is still deemed Ё
+Ё     nukable  both  before  and  after  an attempted INTERNAL.DIRFIX and the Ё
+Ё     DIRFIX shall be nuked for fix.for.nuke.                                 Ё
+Ё                                                                             Ё
+Ё  Directory Naming:                                                          Ё
+Ё   - Show.Name.SXXEXX.Episode.Title.720p.HDTV.x264-GROUP                     Ё
+Ё     Episode title is optional                                               Ё
+Ё     Episode title  is  required  on  some  shows   that  dont  have  SxxExx Ё
+Ё   - Show.Name.PartXX.720p.HDTV.x264-GROUP for miniseries                    Ё
+Ё   - Show.Name.YYYY-MM-DD.Guest.Name.720p.HDTV.x264-GROUP for daily shows    Ё
+Ё   - Guest name is optional                                                  Ё
+Ё     Sport:                                                                  Ё
+Ё     - League.YYYY.MM.DD.Event.EXTRA.TAGS.720p.HDTV.x264-GROUP               Ё
+Ё     - Competition.YYYY-MM.Event.EXTRA.TAGS.720p.HDTV.x264-GROUP             Ё
+Ё     Using  just  the  year  is only permitted if the event is once per year Ё
+Ё     (e.g. a WWE PPV).  In  the case of leagues which have seasons that span Ё
+Ё     multiple years, it is permissible to tag the release with just the yearsЁ
+Ё     of the season.  Inclusion  of MM and DD is mandatory for all constantly Ё
+Ё     running shows (e.g. WWE).                                               Ё
+Ё     If there is no league, the sport needs to be used instead               Ё
+Ё     The   following   are   some   examples  of  correct  directory  names: Ё
+Ё     - EPL.2010.01.01.Manchester.United.vs.Arsenal.720p.HDTV.x264-GROUP      Ё
+Ё     - TNA.Impact.2010.03.02.720p.HDTV.x264-GROUP                            Ё
+Ё     - WWE.WrestleMania.2010.PPV.720p.HDTV.x264-GROUP                        Ё
+Ё     - Tennis.US.Open.2011.Final.Player1.vs.Player2.720p.HDTV.x264-GROUP     Ё
+Ё   - ALL others are FORBIDDEN. (e.g 0x00 000 EXX.EP.TITLE)                   Ё
+Ё   - Different  shows  that have the same title in different countries (e.g. Ё
+Ё     Law & order) must  have  the  ISO 3166-1 alpha 2  country code  in  the Ё
+Ё     directory name,  except  for  UK  shows   (e.g.  Law.and.Order.UK   not Ё
+Ё     Law.and.Order.GB).  ISO  country  code  need  not  apply  to the show's Ё
+Ё     country  of  origin (e.g. Law.and.Order.US is forbidden).               Ё
+Ё   - Different  shows  with  the  same  name and produced in different years Ё
+Ё     must  have  the  year  of  the  first  season  in  the  directory name, Ё
+Ё     e.g.  Human.Target.2010  and  Doctor.Who.2005.   However,  the  initial Ё
+Ё     series does not need a year tag.                                        Ё
+Ё   - Do  not  prefix  release  name with channel name on any series starting Ё
+Ё     after  rules  effective  date.  Mini-series  and  single-episode docus  Ё
+Ё     may optionally be tagged with channel name.                             Ё
+Ё   - The use of audio format tags such as AAC, AC3, and AC3.x.x is FORBIDDEN Ё
+Ё   - READ.NFO    is    allowed;    however,    discretion   is   recommended Ё
+Ё   - PROPER.READ.NFO  is  NOT allowed. The NFO is REQUIRED to have a reason; Ё
+Ё     therefore, the tag is redundant.                                        Ё
+Ё   - All repacks are to include detailed reason as to why its being repacked Ё
+Ё     in .nfo                                                                 Ё
+Ё   - Other  permitted  tags are: PROPER, REPACK, RERIP, REAL, UNCUT, DUBBED, Ё
+Ё     SUBBED, INTERNAL, OAR, PPV, CONVERT                                     Ё
+Ё   - Acceptable  characters  in  naming  a  directory  include (NO spaces or Ё
+Ё     double dots - single dots ONLY):                                        Ё
+Ё                                                                             Ё
+Ё       ABCDEFGHIJKLMNOPQRSTUVWXYZ                                            Ё
+Ё       abcdefghijklmnopqrstuvwxyz                                            Ё
+Ё       0123456789._-                                                         Ё
+Ё                                                                             Ё
+Ё  Nukes:                                                                     Ё
+Ё   Releases must be nuked for any of the following reasons:                  Ё
+Ё   - Any valid proper listed in the propers section                          Ё
+Ё   - Missing nfo, or missing Sample                                          Ё
+Ё   - Invalid directory naming format                                         Ё
+Ё   - Mislabeled  directory  that  could  prevent  finding  the  release in a Ё
+Ё     dupecheck,  including  incorrect season/episode/date or incorrect title Ё
+Ё   - Dupe                                                                    Ё
+Ё                                                                             Ё
+Ё                                                                             Ё
+Ё   Fixes:                                                                    Ё
+Ё   - The  following  fixes are  allowed: NFOFix, SampleFix, DirFix, SyncFix, Ё
+Ё     ProofFix.                                                               Ё
+Ё   - RAR  and  SFV  fixes  are  not  allowed.  REPACK  your  entire release. Ё
+Ё   - DirFix requires NFO and NFO must state which release is being fixed.    Ё
+Ё   - The  original  release  shall  be  unnuked when a valid fix is released Ё
+Ё   - A  proper  may  not be released for an issue that was fixed, unless the Ё
+Ё     fix does not completely correct the issue                               Ё
+Ё                                                                             Ё
+юдддддддббдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддббддддддды
+здддддддаадддддддддддддддбддддддддддддддддддддддддддддбддддддддддддддааддддддд©
+Ё                        юддд[ NOTES TO THE RULES ]ддды                       Ё
+Ё                                                                             Ё
+Ё  HR.PDTV.x264:                                                              Ё
+Ё   - HR  PDTV  x264  encodes  are  allowed  for  non-HD  shows  airing fully Ё
+Ё     upscaled on HD channels                                                 Ё
+Ё   - Crop  to  closest  mod2  without  undercropping. Then, if  width>960 or Ё
+Ё     height>540,  downscale  with 1:1 SAR to fit in 960x540.  Never upscale, Ё
+Ё     never add borders.                                                      Ё
+Ё   - All other standard rules apply                                          Ё
+Ё                                                                             Ё
+юдддддддббдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддббддддддды
+здддддддаадддддддддддддддддддддддддддддддддддддддддддддддддддддддддддааддддддд©
+Ё           The 720p x264 TV Releasing Standards 2011 (2011-08-01)            Ё
+Ё                                                                             Ё
+юдддддддббдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддббддддддды
+здддддддаадддддддддддддддбддддддддддддддддддддддддддбддддддддддддддддааддддддд©
+Ё                        юдддддддд[ GROUPS ]дддддддды                         Ё
+Ё                                                                             Ё
+Ё              TVx2642k11 rules created by the following groups:              Ё
+Ё              ддддддддддддддддддддддддддддддддддддддддддддддддд              Ё
+Ё               187HD    2HD    aAF    BAJSKORV    BALLS    BiA               Ё
+Ё               C4TV   CTU   DAH  DiCH  DHD  DIMENSION  DiVERGE               Ё
+Ё               FTP   GNARLY   IMMERSE   KYR   LMAO  MiNDTHEGAP               Ё
+Ё               MiRAGETV   MOMENTUM   NGCHD  ORENJI  RIVER  SFM               Ё
+Ё               SiTV   SYS   W4F WHEELS xD2V YesTV                            Ё
+Ё                                                                             Ё
+Ё Dedicated to Spatula (RIP 11/22/2010) who made the first ever scene TV-x264 Ё
+Ё release: The.Unit.S01E04.HD720p.x264-MiRAGETV.                              Ё
+Ё                                                                             Ё
+юддбдддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддддбдды
+ юдадд\   Thanks  to   the   x264+matroska   developers   for   their   /ддады
+  юдддд\  assistance in determining the best mix of  encode settings.  /дддды
+   юдддд\                                                             /дддды

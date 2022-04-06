@@ -1,0 +1,172 @@
+               _______                _____  ___ ___ _____
+              |   |   |.--.--.-----. |     \|   |   |     \
+              |       ||  |  |     | |  --  |   |   |  --  |
+              |___|___||_____|__|__| |_____/ \_____/|_____/
+
+            ______         __                     __
+           |   __ \.-----.|  |.-----.---.-.-----.|__|.-----.-----. 
+           |      <|  -__||  ||  -__|  _  |__ --||  ||     |  _  | 
+           |___|__||_____||__||_____|___._|_____||__||__|__|___  | 
+                                                           |_____| 
+           _______ __                  __                __
+          |     __|  |_.---.-.-----.--|  |.---.-.----.--|  |.-----.
+          |__     |   _|  _  |     |  _  ||  _  |   _|  _  ||__ --|
+          |_______|____|___._|__|__|_____||___._|__| |_____||_____|
+
+
+ษออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออป
+บ Altalanos:                                                                   บ
+บ                                                                              บ
+บ . A release 4.3-4.37 Gb meretu kell, hogy legyen, kiveve ha a forras DVD5.   บ
+บ . PAL konvertalasa NTSC-re tilos.                                            บ
+บ . DivX, Xvid es egyeb gyengebb minosegu forras konvertalasa tilos.           บ
+บ                                                                              บ
+บ                                                                              บ
+บ Video:                                                                       บ
+บ                                                                              บ
+บ . Re-encodolas:                                                              บ
+บ                                                                              บ
+บ   . Minimum CCE 2.50+ verzio hasznalata a kesziteskor azokban az             บ
+บ     esetekben, ahol a video ujrakodolasa szukseges.                          บ
+บ   . REmpeg es TMPGenc hasznalata tilos.                                      บ
+บ   . Uj es hivatalos formaban meg nem jelent encoder programok hasznalata     บ
+บ     szigoruan tilos. CPC2 hasznalata TILOS!(Azert mert igenytelen szar.)     บ
+บ   . Automata programok, amik DVD9-bol DVD5-ot rippelnek 10 perc alatt,       บ
+บ     hasznalata TILOS! Pl. InstanCopy, DVDXCopy, DVDShrink, CloneDVD, DVD2One บ
+บ   . A minimum atlagos bitrata 3000kbit/s (2800 kbit/s TV sorozat eseten).    บ
+บ   . Amennyiben az atlagos bitrata nem elerheto, annak okarol egy teljeskoru, บ
+บ     ertelmes, reszletezett indoklast kotelezo az NFO-ba foglalni.            บ
+บ   . CCE hasznalata a sorozatok esetben is kotelezo.                          บ
+บ                                                                              บ
+บ . Minosegi kovetelmenyek:                                                    บ
+บ                                                                              บ
+บ   . CCE:                                                                     บ
+บ                                                                              บ
+บ       - CBR nem kosz. Multipass hasznalata kotelezo.                         บ
+บ       - Az elengedhetetlen 1. pass ami a .vaf file-t encodolja a CCE-ben nem บ
+บ         szamit a multipass-ok koze.                                          บ
+บ       - Az adott filmhez szukseges pass szamat a vegso bitrata fuggvenyeben  บ
+บ         kell meghatarozni. 4000k/s alatt kulonosen ajanlott 6-nal tobb pass  บ
+บ         hasznalata, de az 1+5 pass hasznalata a minimum.                     บ
+บ                                                                              บ
+บ Hang:                                                                        บ
+บ                                                                              บ
+บ  . Dolby Digital formatum az altalanos cel, ezert lehetoleg alabb ne adjatok.บ
+บ  . Ertelemszeruen ha a forras DD-t tartalmaz, az a kotelezo.                 บ
+บ  . Azon DVD-k, melyek csak PCM (Pulse Code Modulation) hangforrassal birnak, บ
+บ    engedelyezettek, de az NFO-ban ezt fell kel tuntetni.                     บ
+บ  . Amennyiben DVD9-rol tortenik a hangsav strippelese, az elsodleges sav     บ
+บ    megtart sa a cel. Azaz ha a DVD DD2.0 es DD5.1 savot tartalmaz egyazon    บ
+บ    nyelvbol, a jobbat, azaz a DD5.1-et kell megtartani.                      บ
+บ  . DTS es 5.1-es hangsav eseteben az 5.1 elvezzen elonyt. A DTS ezen feluli  บ
+บ    megtart sa a releaser dontesen mulik.                                     บ
+บ  . Termeszetesen a nem csak magyar nyelvet tartalmazo DVD-k eseteben az      บ
+บ    eredeti nyelv megtartasa kotelezo. Amennyiben megis eltavolitasra kerul   บ
+บ    azt az NFO-ban vilagos indoklassal kell ellatni. A "mertcsak" tipusu      บ
+บ    indoklasok NUKE-ot erdemelnek. A kommentarok megtartasa a releaser        บ
+บ    dontesen mulnak.                                                          บ
+บ                                                                              บ
+บ Feliratok:                                                                   บ
+บ                                                                              บ
+บ  . Az eredeti es a magyar feirat megtart sa kotelezo, a tobbi megtartasa     บ
+บ    a releaseren mulik.                                                       บ
+บ  . Abban az esetben ha a film eredeti nyelve magyar, felirat nem k”telezo.   บ
+บ  . Home-made sub-ok hasznalata esten CUSTOM.HUNSUB tag KOTELEZO!!!!          บ
+บ                                                                              บ
+บ Menu:                                                                        บ
+บ                                                                              บ
+บ  . Menut hagyjatok a rls-ben. Olyan specialis esetekben, amikor a bolti      บ
+บ    (retail) dvd nem tartalmaz menut, azt az NFO-ban fel kell tunteni.        บ
+บ  . Abban az esetben ha a filmet csak a menu miatt kell ujratomoriteni, de    บ
+บ    menu nelkul felfer tomoritetlenul, a menu elhagyhato.                     บ
+บ  . A menuk stillesitese (mozgobol-allo) csak akkor engedelyezett ha az       บ
+บ    200mb-n l nagyobb, vagy a film m skpp nem fr fel tomoritetlenul.        บ
+บ  . A menu nyelve, amennyiben a retail dvd-n magyarul elerheto, a rls-ben is  บ
+บ    kotelezoen az legyen.                                                     บ
+บ  . A felesleges linkeket tavolitsatok el. (disable/remove)                   บ
+บ  . Figyelmeztetesek, reklamlogok minden esetben legyenek eltavolitva.        บ
+บ  . Ha minden felesleget lepucoltatok a dvd-rol, de meg igy sem erheto el a   บ
+บ    min. 3000K/s atlagos bitrata, abban az esetben a menu tomoritheto, de     บ
+บ    szinten csak 3000k/s-ig.                                                  บ
+บ                                                                              บ
+บ                                                                              บ
+บ Extrak:                                                                      บ
+บ                                                                              บ
+บ  . Abban az esetben maradhat a korongon, ha nem rontja a video minoseget.    บ
+บ  . Egyb esetben kulon korongon helyezzetek el. Egyebekben:                  บ
+บ  . Hozz adott stuff. Szabadon ujrakodolhatok, a releaser belatasa szerint.   บ
+บ  . Azonban ha megteszi, 5 passt azert ne sajnaljon ra. Amennyiben lehetoseg  บ
+บ    van ra, inkabb kulon korongon helyezzetek el, igy eredeti minosegu        บ
+บ    maradhat az eredmeny.                                                     บ
+บ                                                                              บ
+บ                                                                              บ
+บ Csomagol s:                                                                  บ
+บ                                                                              บ
+บ  . Minden rls CSAK .ISO / .IMG formatumu lehet. Mas formatumok nem kivanosak บ
+บ    es nukeot erdemelnek.                                                     บ
+บ  . A rls-ek 50,000,000 bytes mereture alakitandok, winrar hasznalataval.     บ
+บ  . Recovery record (helyreallitasi bejegyzes) minden esetben kotelezo.       บ
+บ  . Felesleges a tomorites, eleg a store mod alakalmazasa.                    บ
+บ  . Az egyseg megteremtese erdekeben az "old style volume names" funkciot     บ
+บ    kapcsoljatok be.                                                          บ
+บ  . SFV es NFO kotelezo. Az NFO-t termeszetesen az SFV ne tartalmazza.        บ
+บ                                                                              บ
+บ                                                                              บ
+บ Az NFO kotelezo minimum tartalma:                                            บ
+บ                                                                              บ
+บ  . Releaser nev                                                              บ
+บ  . Film cime (angol es magyar)                                               บ
+บ  . Regio kod: PAL / NTSC                                                     บ
+บ  . Alkalmazott passok szama es a tomorites merteke amennyiben alkalmazasra   บ
+บ    kerult                                                                    บ
+บ  . Hangsavok es feliratok                                                    บ
+บ  . Eltavolitott tartalom (extra, commentaries stb.)                          บ
+บ  . IMDB cim kotelezoen es egy hasonlo magyar link (ez utobbi opcionalis)     บ
+บ                                                                              บ 
+บ                                                                              บ
+บ Sample:                                                                      บ
+บ                                                                              บ
+บ  . Sample minden esetben szukseges. Akkor is ha a kep erintetlen marad.      บ
+บ  . A sample hossza ne legyen 1 percnel hosszabb. Ebbol kifolyolag 50mb-nal   บ
+บ    se legyen nagyobb.                                                        บ
+บ  . Kulon "Sample" konyvtarban kell elhelyezni.                               บ
+บ  . A sample-nak az elkeszult rls-bol kell keszulnie.                         บ
+บ    (Ajanlott a VOBSplitter, ChopperXP, UleadVideo Studio...stb.)             บ
+บ                                                                              บ 
+บ                                                                              บ
+บ RLS KONYVTAR ELNEVEZES (KIEMELTEN FONTOS, AUTONUKE JAR A MEGSZEGESEERT)!!!   บ
+บ                                                                              บ
+บ  . Minden rls nevnek tartalmaznia kell a regio feltunteteset (PAL/NTSC)!     บ
+บ  . Ekezetes betuk hasznalata TILOS!                                          บ
+บ  . Hasznalhato karakterek a gyengebbek kedveert:                             บ
+บ                                                                              บ
+บ            ABCDEFGHIJKLMNOPQRSTUVWXYZ                                        บ
+บ            abcdefghijklmnopqrstuvwxyz                                        บ
+บ            0123456789 . -_                                                   บ
+บ                                                                              บ
+บ  . A hasznalando forma: Film.Cime.HUN.REGIO.DVDR-GROUP!                      บ
+บ  . A HunDub es hasonlok nem megengedettek, a jeloles: HUN/HU !!!             บ
+บ                                                                              บ
+บ PROPER:                                                                      บ
+บ                                                                              บ
+บ  . Proper verzio csak egy mar korabban megjelent, vmilyen technikai hibaban  บ
+บ    pl. menuhiba, szar minoseg, out of sync...stb.) szenvedo rls illetve      บ
+บ    nuke jelentetheto meg.                                                    บ
+บ  . Proper kiadasa csak azert mert a korabbi rls hibas dirname-mel jott ki    บ
+บ    nem erdemel toleralast!                                                   บ
+บ                                                                              บ
+บ    NFO javitasa:                                                             บ
+บ    Film.Cime.NFO.FIX.ROVID.INDOKLAS.A.JAVITOTT.TENYROL.REGIO.DVDR-GROUP      บ
+บ                                                                              บ
+บ Taggeles:                                                                    บ
+บ                                                                              บ
+บ  . Group in/outrok TILOSAK.                                                  บ
+บ  . Group vizjel elhelyezes a DVD-n belul TILTOTT!                            บ
+บ  . A kotetnevnek pontosan egyeznie kell az eredetivel.                       บ
+บ                                                                              บ
+บ                                                                              บ
+บ                                                                              บ
+บ      A NUKE szankciok 2008.januar 1-jetol eletbe lepnek.... HAVE FUN!        บ
+บ                                                                              บ
+บ                                                                              บ
+ศออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออออผ
